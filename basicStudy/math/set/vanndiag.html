@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<!-- Author : iseohyun -->
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        button {
+            width: 100px;
+            height: 30px;
+            margin: 0px;
+            padding: 0px;
+        }
+    </style>
+    <script>
+        var outline = new Path2D();
+        var shapeU = new Path2D();
+        var shapeA = new Path2D();
+        var shapeB = new Path2D();
+        var shapeAnB = new Path2D();
+        var shapeArB = new Path2D();
+        var shapeA_B = new Path2D();
+        var shapeB_A = new Path2D();
+
+        outline.lineWidth = 2;
+        outline.moveTo(60, 10);
+        outline.lineTo(50, 10);
+        outline.arc(50, 50, 40, - Math.PI / 2, Math.PI, true);
+        outline.lineTo(10, 250);
+        outline.arc(50, 250, 40, Math.PI, Math.PI / 2, true);
+        outline.lineTo(350, 290);
+        outline.arc(350, 250, 40, Math.PI / 2, 0, true);
+        outline.lineTo(390, 50);
+        outline.arc(350, 50, 40, 0, -Math.PI / 2, true);
+        outline.lineTo(100, 10);
+        outline.moveTo(150 - Math.cos(Math.PI / 16 * 7) * 100, 150 - Math.sin(Math.PI / 16 * 7) * 100);
+        outline.arc(150, 150, 100, - Math.PI / 16 * 9, - Math.PI / 16 * 7, true);
+
+        outline.moveTo(250 - Math.cos(Math.PI / 16 * 7) * 100, 150 - Math.sin(Math.PI / 16 * 7) * 100);
+        outline.arc(250, 150, 100, - Math.PI / 16 * 9, - Math.PI / 16 * 7, true);
+
+        shapeU.moveTo(50, 10);
+        shapeU.arc(50, 50, 40, - Math.PI / 2, Math.PI, true);
+        shapeU.lineTo(10, 250);
+        shapeU.arc(50, 250, 40, Math.PI, Math.PI / 2, true);
+        shapeU.lineTo(350, 290);
+        shapeU.arc(350, 250, 40, Math.PI / 2, 0, true);
+        shapeU.lineTo(390, 50);
+        shapeU.arc(350, 50, 40, 0, -Math.PI / 2, true);
+        shapeU.lineTo(50, 10);
+
+        shapeA.moveTo(250, 150);
+        shapeA.arc(150, 150, 100, 0, Math.PI * 2, true);
+
+        shapeB.moveTo(350, 150);
+        shapeB.arc(250, 150, 100, 0, Math.PI * 2, true);
+
+        shapeAnB.moveTo(150 + Math.cos(Math.PI / 3) * 100, 150 + Math.sin(Math.PI / 3) * 100);
+        shapeAnB.arc(150, 150, 100, Math.PI / 3, -Math.PI / 3, true);
+        shapeAnB.arc(250, 150, 100, -Math.PI / 3 * 2, Math.PI / 3 * 2, true);
+
+        shapeArB.moveTo(150 + Math.cos(Math.PI / 3) * 100, 150 + Math.sin(Math.PI / 3) * 100);
+        shapeArB.arc(150, 150, 100, Math.PI / 3, -Math.PI / 3, false);
+        shapeArB.arc(250, 150, 100, -Math.PI / 3 * 2, Math.PI / 3 * 2, false);
+
+        shapeA_B.moveTo(150 + Math.cos(Math.PI / 3) * 100, 150 + Math.sin(Math.PI / 3) * 100);
+        shapeA_B.arc(150, 150, 100, Math.PI / 3, -Math.PI / 3, false);
+        shapeA_B.arc(250, 150, 100, -Math.PI / 3 * 2, Math.PI / 3 * 2, true);
+
+        shapeB_A.moveTo(150 + Math.cos(Math.PI / 3) * 100, 150 + Math.sin(Math.PI / 3) * 100);
+        shapeB_A.arc(150, 150, 100, Math.PI / 3, -Math.PI / 3, true);
+        shapeB_A.arc(250, 150, 100, -Math.PI / 3 * 2, Math.PI / 3 * 2, false);
+
+        function textout(ctx) {
+            ctx.font = "30px 신명";
+            ctx.fillText('U', 70, 20);
+            ctx.fillText('A', 140, 60);
+            ctx.fillText('B', 240, 60);
+        }
+    </script>
+</head>
+
+<body>
+    <table>
+        <tr>
+            <td rowspan="8">
+                <canvas id="intersection" width="400" height="300"></canvas>
+            </td>
+            <td><button id="a" onclick="draw(this.id);">A</button></td>
+            <td><button id="not a" onclick="draw(this.id)">A<sup>c</sup></button></td>
+        </tr>
+        <tr>
+            <td><button id="b" onclick="draw(this.id)">B</button></td>
+            <td><button id="not b" onclick="draw(this.id)">B<sup>c</sup></button></td>
+        </tr>
+        <tr>
+            <td><button id="and" onclick="draw(this.id)">A ∩ B</button></td>
+            <td><button id="not a and b" onclick="draw(this.id)">(A ∩ B)<sup>c</sup></button></td>
+        </tr>
+        <tr>
+            <td><button id="or" onclick="draw(this.id)">A ∪ B</button></td>
+            <td><button id="not a or b" onclick="draw(this.id)">(A ∪ B)<sup>c</sup></button></td>
+        </tr>
+        <tr>
+            <td><button id="a-b" onclick="draw(this.id)">A - B</button></td>
+            <td><button id="not(a-b)" onclick="draw(this.id)">(A - B)<sup>c</sup></button></td>
+
+        </tr>
+        <tr>
+            <td><button id="b-a" onclick="draw(this.id)">B - A</button></td>
+            <td><button id="not(b-a)" onclick="draw(this.id)">(B - A)<sup>c</sup></button></td>
+        </tr>
+        <tr>
+            <td><button id="a xor b" onclick="draw(this.id)">B xor A</button></td>
+            <td><button id="not(a xor b)" onclick="draw(this.id)">(B xor A)<sup>c</sup></button></td>
+        </tr>
+        <tr>
+            <td colspan="2" style="padding: 0;font-size: 0.5em;text-align: right;color: #ddd;">min-size:614x340, shared by iseohyun</td>
+        </tr>
+    </table>
+    <script>
+        var input = "a";
+        ctx = document.getElementById('intersection').getContext('2d');
+        ctx.stroke(outline);
+        textout(ctx);
+
+        function draw(id) {
+            ctx.clearRect(0, 0, 400, 300);
+            ctx.stroke(outline);
+
+            var path = new Path2D();
+            ctx.beginPath();
+            switch (id) {
+                case "a":
+                    path = new Path2D(shapeA); break;
+                case "b":
+                    path = new Path2D(shapeB); break;
+                case "a and b": case "anb": case "a+b": case "and":
+                    path = new Path2D(shapeAnB);; break;
+                case "a or b": case "arb": case "axb": case "or":
+                    path = new Path2D(shapeArB);; break;
+                case "not a":
+                    path = new Path2D(shapeA);
+                    path.addPath(shapeU); break;
+                case "not b":
+                    path = new Path2D(shapeB);
+                    path.addPath(shapeU); break;
+                case "not a and b":
+                    path = new Path2D(shapeAnB)
+                    path.addPath(shapeU); break;
+                case "not a or b":
+                    path = new Path2D(shapeArB);
+                    path.addPath(shapeU); break;
+                case "a-b":
+                    path = new Path2D(shapeA_B); break;
+                case "b-a":
+                    path = new Path2D(shapeB_A); break;
+                case "not(a-b)":
+                    path = new Path2D(shapeU);
+                    path.addPath(shapeA_B); break;
+                case "not(b-a)":
+                    path = new Path2D(shapeU);
+                    path.addPath(shapeB_A); break;
+                case "a xor b":
+                    path = new Path2D(shapeA);
+                    path.addPath(shapeB); break;
+                case "not(a xor b)":
+                    path = new Path2D(shapeA);
+                    path.addPath(shapeB);
+                    path.addPath(shapeU); break;
+            }
+            ctx.fillStyle = '#8888';
+            ctx.fill(path, 'evenodd');
+            ctx.closePath();
+
+            // 글자 출력
+            ctx.fillStyle = '#666';
+            textout(ctx);
+            
+            btnTextColor(id);
+        }
+        var last = 'a';
+        function btnTextColor(id){
+            document.getElementById(last).style.color='black';
+            document.getElementById(last).style.border="1px solid black";
+            document.getElementById(id).style.color='red';
+            document.getElementById(id).style.border="2px solid black";
+            last = id;
+        }
+        draw('a');
+    </script>
+</body>
+
+</html>

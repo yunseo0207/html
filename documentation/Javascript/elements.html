@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <!-- 모바일 스케일 고정 -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="튜토리얼을 제공합니다.">
+  <meta keywords="iseohyun, 튜토리얼, 객체 접근">
+  <meta author="iseohyun">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 페이지 타이틀 -->
+  <title>객체 접근: javascript - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">javascript: 객체 접근</div>
+
+    <h1>기본조작</h1>
+    <h2>접근</h2>
+    <span class="blockquote-title">사용 예</span>
+    <blockquote>
+      <pre>&lt;input type="text" id="output">
+&lt;script>
+  var output = document.getElementById('output');</li>
+  consol.log(output.value);
+&lt;/script></pre>
+    </blockquote>
+    <style>
+      .all-left-align td {
+        text-align: left;
+        padding-left: 10px;
+      }
+    </style>
+    <span class="tutorial">B_Elements >> [No].html</span>
+    <table class="all-left-align">
+      <caption>검색함수</caption>
+      <thead>
+        <tr>
+          <th class="tutorial">No</th>
+          <th>함수명</th>
+          <th>동작</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tutorial">a</td>
+          <td>document.getElementById</td>
+          <td>id로검색합니다.</td>
+        </tr>
+        <tr>
+          <td class="tutorial">a2</td>
+          <td>document.getElementsByClassName</td>
+          <td>class이름으로 검색합니다.</td>
+        </tr>
+        <tr>
+          <td class="tutorial">a3</td>
+          <td>document.querySelectorAll</td>
+          <td>CSS선택자를 인자로 받아 검색합니다.<br>
+            #id1 : id1인 객체를 모두 검색<br>
+            .class1 : class1인 클래스를 모두 검색
+          </td>
+        </tr>
+    </table>
+
+    <h2>생성</h2>
+    <blockquote>
+      <pre>
+&lt;script>
+  // 상위 객체를 가져옵니다.
+  var body = document.querySelector('body');
+
+  // 새로운 객체를 생성합니다.
+  var newDiv = document.createElement('div');
+
+  // 상위 객체에 추가합니다.
+  body.appendChild(newDiv);
+&lt;/script></pre>
+    </blockquote>
+    <span class="tutorial">B_Elements >> b_create.html</span>
+
+    <h2>조작</h2>
+    <p>&nbsp;다음과 같이 가정 할 때, 각각의 접근은 아래와 같습니다.</p>
+    <blockquote>
+      &lt;tag class="class1 ..." attribute="attribute-value" style="style-attr:style-attr-value">content&lt;/tag>
+    </blockquote>
+
+    <style>
+      .not-important {
+        color: #ccc;
+      }
+    </style>
+    <span class="tutorial">B_Elements >> [No].html</span>
+    <table class="last-td-left">
+      <caption>Attribute접근 방법</caption>
+      <thead>
+        <tr>
+          <th class="tutorial">No</th>
+          <th>종류</th>
+          <th>코드</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tutorial">c</td>
+          <td>class</td>
+          <td><span class="not-important">tag</span>.className<br>
+            ※ 문자열로 넘겨받기 때문에 추가제거를 편하게 하려면,<br>
+            객체.classList.contains(클래스명) : 확인용<br>
+            객체.classList.add(클래스명) : 추가<br>
+            객체.classList.remove(클래스명) : 제거
+          </td>
+        </tr>
+        <tr>
+          <td class="tutorial">c2</td>
+          <td>attribute<br>(ID 포함)</td>
+          <td><span class="not-important">tag</span>.attribute = "attribute-value"<br>
+            <span class="not-important">tag</span>.id = "myID";<br>
+            getAttribute, setAttribute로도 접근 가능
+          </td>
+        </tr>
+        <tr>
+          <td class="tutorial">c3</td>
+          <td>style</td>
+          <td><span class="not-important">tag</span>.style.styleAttr = "style-attr-value"<br>
+            <span class="not-important">tag</span>.style.fontSize = "1.5em";<br>
+            ※ font-size > fontSize<br>
+            ※ style은 개별속성과 상속받은 속성이 있습니다. <br>
+            문서에 반영된 속성은 상속속성 + 개별속성이므로 반영된 속성을 참고하려면, window객체로부터 속성을 받아와야 합니다.
+          </td>
+        </tr>
+        <tr>
+          <td class="tutorial">c4</td>
+          <td>contents</td>
+          <td><span class="not-important">tag</span>.innerText(테그도 그대로 출력)<br>
+            <span class="not-important">tag</span>.innerHtml
+          </td>
+        </tr>
+    </table>
+
+    <h1>Form 예시</h1>
+    <table>
+      <caption>Form 접근</caption>
+      <thead>
+        <tr>
+          <th>대상</th>
+          <th>방법</th>
+          <th>자료형</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>입력된 값</td>
+          <td>value</td>
+          <td>문자열</td>
+        </tr>
+        <tr>
+          <td>캡션(버튼이름)</td>
+          <td>textContent</td>
+          <td>문자열</td>
+        </tr>
+        <tr>
+          <td>활성화 여부</td>
+          <td>disabled</td>
+          <td>true, false</td>
+        </tr>
+    </table>
+    <span class="tutorial">C_Form >> [No].html</span>
+    <style>
+      #table-js-read-exampe>tr>td::nth-last-child(2) {
+        text-align: left;
+        padding: 5px;
+      }
+
+      #table-js-read-exampe td {
+        padding: 5px;
+      }
+
+      #table-js-read-exampe pre {
+        text-align: left;
+      }
+    </style>
+    <table id="table-js-read-exampe">
+      <caption>읽기 예제</caption>
+      <thead>
+        <tr>
+          <th class="tutorial">No</th>
+          <th>예제 명</th>
+          <th>코드</th>
+          <th>실행 모습</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="tutorial">a</td>
+          <td>A에서 복사하여 B에 붙여넣기</td>
+          <td>
+            <pre>&lt;input type="password" id="getElemnet-text"
+  onkeydown="document.getElementById('getElemnet-text2').value = this.value">&lt;/input>
+&lt;input type="text" id="getElemnet-text2" disabled>&lt;/input></pre>
+          </td>
+          <td>
+            메시지를 입력하세요.<br>
+            <input type="password" id="getElemnet-text"
+              onkeyup="document.getElementById('getElemnet-text2').value = this.value"></input><br>
+            <input type="text" id="getElemnet-text2" disabled></input>
+          </td>
+        </tr>
+        <tr>
+          <td class="tutorial">b</td>
+          <td> 버튼이 눌릴 때 마다 캡션 바꾸기 </td>
+          <td>
+            <pre>&lt;button onclick=
+"if(this.textContent=='열기'){
+  this.textContent='닫기'
+}else{
+  this.textContent='열기'
+};">
+열기&lt;/button></pre>
+          </td>
+          <td>
+            <style>
+              .origin-button {
+                appearance: auto;
+                writing-mode: horizontal-tb !important;
+                text-rendering: auto;
+                color: buttontext;
+                letter-spacing: normal;
+                word-spacing: normal;
+                line-height: normal;
+                text-transform: none;
+                text-indent: 0px;
+                text-shadow: none;
+                display: inline-block;
+                text-align: center;
+                align-items: flex-start;
+                cursor: default;
+                box-sizing: border-box;
+                background-color: buttonface;
+                margin: 0em;
+                padding: 1px 6px;
+                border-width: 2px;
+                border-style: outset;
+                border-color: buttonborder;
+                border-image: initial;
+                border: 1px solid #666;
+                box-shadow: none;
+              }
+            </style>
+            <button class="origin-button"
+              onclick="if(this.textContent=='열기'){this.textContent='닫기'}else{this.textContent='열기'};">열기</button>
+          </td>
+        </tr>
+        <tr>
+          <td class="tutorial">c</td>
+          <td>라디오 버튼</td>
+          <td>
+            <pre>
+&lt;input name="sex" type="radio" value="남자" onclick="writeGender(this.value)">남자
+&lt;input name="sex" type="radio" value="여자" onclick="writeGender(this.value)">여자&lt;br>
+
+&lt;input type="radio" name="color" value="red" onclick="setColor(this.value)">Red
+&lt;input type="radio" name="color" value="green" onclick="setColor(this.value)">Green
+&lt;input type="radio" name="color" value="blue" onclick="setColor(this.value)">Blue
+
+&lt;textarea id="textarea-js-test">&lt;/textarea>
+&lt;script>
+  function writeGender(value) {
+    document.getElementById('textarea-js-test').textContent = value;
+  }
+  function setColor(value) {
+    document.getElementById('textarea-js-test').style.backgroundColor = value;
+    document.getElementById('textarea-js-test').style.color = "white";
+    document.getElementById('textarea-js-test').style.fontWeight = "Bold";
+  }
+&lt;/script></pre>
+          </td>
+          <td>
+            <input name="sex" type="radio" value="남자" onclick="writeGender(this.value)">남자
+            <input name="sex" type="radio" value="여자" onclick="writeGender(this.value)">여자<br>
+
+            <input type="radio" name="color" value="red" onclick="setColor(this.value)">Red
+            <input type="radio" name="color" value="green" onclick="setColor(this.value)">Green
+            <input type="radio" name="color" value="blue" onclick="setColor(this.value)">Blue
+            <textarea id="textarea-js-test"></textarea>
+          </td>
+          <script>
+            function writeGender(value) {
+              document.getElementById('textarea-js-test').textContent = value;
+            }
+            function setColor(value) {
+              document.getElementById('textarea-js-test').style.backgroundColor = value;
+              document.getElementById('textarea-js-test').style.color = "white";
+              document.getElementById('textarea-js-test').style.fontWeight = "Bold";
+            }
+          </script>
+        </tr>
+        <tr>
+          <td class="tutorial">d</td>
+          <td>슬라이드 바</td>
+          <td>
+            <pre>마우스move: &lt;input id="range-js-test" type=<q>"range"</q> min="0" max="100" <q>onmousemove</q>="apply_progress(this.value)">&lt;br>
+on change: &lt;input id="range-js-test" type=<q>"range"</q> min="0" max="100" <q>onchange</q>="apply_progress(this.value)">&lt;br>
+반영된 값: <q>&lt;progress</q> id="progress-js-test" value="0" max="100">
+&lt;script>
+  function apply_progress(value) {
+    document.getElementById('progress-js-test').value = value;
+    document.getElementById('textarea-js-test').textContent = value;
+  }
+&lt;/script></pre>
+            <script>
+              function apply_progress(value) {
+                document.getElementById('progress-js-test').value = value;
+                document.getElementById('textarea-js-test').textContent = value;
+              }
+            </script>
+          </td>
+          <td>마우스move: <input id="range-js-test" type="range" min="0" max="100"
+              onmousemove="apply_progress(this.value)"><br>
+            on change: <input id="range-js-test" type="range" min="0" max="100"
+              onchange="apply_progress(this.value)"><br>
+            반영된 값: <progress id="progress-js-test" value="0" max="100"></td>
+        </tr>
+        <tr>
+          <td class="tutorial">e</td>
+          <td>체크박스</td>
+          <script>
+            function enableButton(sts) {
+              document.getElementById('button-js-test').disabled = sts;
+            }
+          </script>
+          <td>
+            <pre>확인하였습니다.&lt;input type='checkbox' onchange="enableButton(!this.checked)">&lt;br>
+&lt;button id="button-js-test" disabled>후원&lt;/button>
+&lt;script>
+  function enableButton(sts) {
+    document.getElementById('button-js-test').disabled = sts;
+  }
+&lt;/script></pre>
+          </td>
+          <td>확인하였습니다.<input type='checkbox' onchange="enableButton(!this.checked)"><br><button id="button-js-test"
+              disabled onclick="document.getElementById('textarea-js-test').textContent = '마음 잘 받았읍니다.ㅠㅠ'">후원</button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>데이터베이스</h1>
+    <p>&nbsp;json파일을 통해 DB처럼 이용할 수 있습니다.<br>
+      파일형식과 관련해서 <a href="/etc/column/fileformat/json.html" target="_blank">Json파일구조</a>문서를 참조하십시오.</p>
+    <h2>파일 열기</h2>
+    <span class="tutorial">B_Elements >> f_json.html</span>
+    <blockquote>
+      <pre>
+var request = new XMLHttpRequest();
+request.open('GET', '/myData.json');
+request.responseType = 'json';
+request.send();
+request.onload = function () {
+  var list = request.response;
+  ...
+}</pre>
+    </blockquote>
+
+    <h2>파일 읽기</h2>
+    <span class="tutorial">B_Elements >> f_print.html</span>
+    <h3>map</h3>
+
+    <span class="blockquote-title">데이터 구조</span>
+    <blockquote>
+      <pre>
+{
+  key1:value1,
+  key2:value2,
+  key3:value3
+}
+</pre>
+    </blockquote>
+    <span class="blockquote-title">접근</span>
+    <blockquote>
+      data.key1 = value1;<br>
+      var newValue = data.key2;
+    </blockquote>
+
+    <h3>Array</h3>
+
+    <span class="blockquote-title">데이터 구조</span>
+    <blockquote>
+      <pre>
+{
+  "value1",
+  "value2",
+  "value3"
+}
+</pre>
+    </blockquote>
+    <span class="blockquote-title">접근</span>
+    <blockquote>
+      data[0] = new_value;<br>
+      var newValue = data[1];
+    </blockquote>
+
+  </article>
+</body>
+
+</html>

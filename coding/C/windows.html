@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="MSVS를 이용하여 desktop application을 작성하는 요령을 설명합니다..">
+  <meta keywords="iseohyun, 튜토리얼, C, MSVS, 튜토리얼">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>윈도우 프로그램: C - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+
+    .all-center td {
+      text-align: center !important;
+    }
+
+    span.comment {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">C 윈도우 프로그램</div>
+    MSVS(Microsoft Visual Studio)가 필요합니다.<br>
+    <a href="https://github.com/iseohyun/C-Example/tree/master/VSprj/WindowsProject"
+      target="_blank">https://github.com/iseohyun/C-Example/tree/master/VSprj/WindowsProject</a>의 내용을 설명합니다.
+    <h1 data-ke-size="size23">기초지식</h1>
+    <ul style="list-style-type: disc;" data-ke-list-type="disc">
+      <li>C에서는 Desktop Application이라고 부릅니다.</li>
+      <li>OS에 등록하고, 보여지고, 메시지 처리(무한루프)로 처리합니다.</li>
+      <li>메시지 처리 함수에서, HWND는 ID, Message는 이벤트 대분류, WPARAM/LPARAM은 세부정보를 의미합니다.</li>
+    </ul>
+    <p style="font-size:0.8em">코드 참조 :
+      https://docs.microsoft.com/ko-kr/cpp/windows/walkthrough-creating-windows-desktop-applications-cpp</p>
+
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vQBXnjf2PNM6LjR3D6Y4H8I8Di7HZiWxebLoZ27dUaOJ-otz4w8t6lIWCoN6DxnFjihZhgnznNMG1eh/embed?start=false&amp;loop=false&amp;delayms=3000"
+      width="95%" height="500px" frameborder="0" allowfullscreen="true"></iframe>
+
+    <h3>00_WindowsProject - 기본 작성</h3>
+    <img class="tut_img" src="https://blog.kakaocdn.net/dn/DA0I3/btrqgbolbd1/GU2LZ2JmUKfpRg6sBv8OYK/img.png"></img>
+
+    <h3>00b_Title - 타이틀 설정하기</h3>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/TRzbs/btrqgbWauOa/cRzIsEoOhmcPFYfSVH2NtK/img.png"></img>
+    </p>
+    <h3>00c_Drawing - 기본 그리기</h3>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/edsTUc/btrqaI7Ral2/aakZlIziYaxKoOfKjNevpK/img.png"></img>
+    </p>
+
+    <h1>예제모음</h1>
+    <p><iframe
+        src="https://docs.google.com/presentation/d/e/2PACX-1vS25DoZdrRyGSBHGHSZeAVtFWYOT4D_wXRwTWEWlNCbDHBxgQpX9mV31T3m4AyQe4CMdPKEAYN3r49m/embed?start=false&amp;loop=false&amp;delayms=3000"
+        width="960" height="749" frameborder="0" allowfullscreen="true"></iframe></p>
+
+    <style>
+      img.tut_img {
+        width: 100%;
+      }
+    </style>
+    <h2>클릭 이벤트 처리(DrawRect)</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/7ueCT/btrp6RFa5QF/NekITE16VhDYTf8lZxiywk/img.gif"></img>
+    </p>
+    <h2>드레그 이벤트(DrawCursor)</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/bbe33q/btrp8qfMrA6/bVFkfDFxKemglnYfCocy8K/img.gif"></img>
+    </p>
+    <h2>드레그 이미지(DragRect)</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/bkmYju/btrp7HayCK6/ULSHxIpxCXvqXZqXZKBBV1/img.gif"></img>
+    </p>
+    <h2>바탕화면 가져오기(GetFullScreen)</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/bwe06k/btrp6xmzQFm/2vhEVITVQEIeaqyhpK7nU1/img.gif"></img>
+    </p>
+    <h2>팝업메시지(Popup)</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/899b4/btrqgb9IOHJ/ZTOo5ATyqEwOoWbEG89l91/img.gif"></img>
+    </p>
+    <h2>SelectObject함수</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/epD7eG/btrp54R5aVp/dTAGy24oKVSUXfxAX5RLE1/img.gif"></img>
+    </p>
+    <h2>PenStyle매크로</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/dkdCpX/btrp6RkOTTj/lqQG2PsKKK9Z6gAzK2Mnv1/img.png"></img>
+    </p>
+    <h2>BrushStyle매크로</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/cyHkHy/btrqgaiE0HK/Sy1rReovGKtPgW18EkkRuk/img.png"></img>
+    </p>
+    <h3>SetDC함수</h3>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/cdvKuk/btrqaJyT4ZI/RY6WzQmG8vXzKOA07ywRR1/img.png"></img>
+    </p>
+    <h2>오목게임</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/biwSDI/btrp7SKmvxN/taLwhy7WkS9WcqHlALXFoK/img.gif"></img>
+    </p>
+    <h2>텍스트 출력(99단)</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/AwbpD/btrp8qGQnXZ/UxE2J5kbmNXxHDjCatAsi1/img.png"></img>
+    </p>
+    <h2>Timer 사용하기</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/YV8EB/btrp6QM4kab/uFO64P1xxRlpdkpdWPWtA1/img.gif"></img>
+    </p>
+    <h2>출력 성능</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/OCLqQ/btrp7iWRjIA/jXdbdYRVAuKmYqbPyvcEzK/img.gif"></img>
+    </p>
+    <h2>어플리케이션 통신</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/UH0zk/btrqgawcz9w/Jwfqd8PnjrEpG4WKoEmPK0/img.gif"></img>
+    </p>
+    <h2>Button 컴포넌트</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/eI7WFZ/btrp7RELc7B/Oyyp7AZBfnfa8qaQymSEzK/img.gif"></img>
+    </p>
+    <h2>ComboBox</h2>
+    <p>
+      <img class="tut_img" src="https://blog.kakaocdn.net/dn/DnTOj/btrqgaJJhzH/f4794ZS3ZVuwjCC4kILBkK/img.gif"></img>
+    </p>
+  </article>
+</body>
+
+</html>

@@ -1,0 +1,599 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="튜토리얼을 제공합니다.">
+  <meta keywords="iseohyun, 튜토리얼, SVG, 채우기">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>채우기: SVG - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+    #board {
+      background-color: white;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">SVG: 참조영역</div>
+    <p>&nbsp;&lt;refs>영역에는 실제로 객체가 그려지기 이전에 참조할만한 데이터들을 정의합니다. 색, 패턴모양, 끝선 모양, 심볼, 필터, 글꼴을 미리 지정할 수 있습니다. id를 통해 불러옵니다.
+    </p>
+    <table class="last-td-left">
+      <caption>참조영역 정의 및 불러오기</caption>
+      <thead>
+        <tr>
+          <th>종류</th>
+          <th>정의</th>
+          <th>호출</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>채우기</td>
+          <td>linearGradient<br>radialGradient</td>
+          <td>style='fill="url(#id)'</td>
+        </tr>
+        <tr>
+          <td>패턴</td>
+          <td>pattern</td>
+          <td>style='fill="url(#id)'</td>
+        </tr>
+        <tr>
+          <td>끝선 모양</td>
+          <td>marker</td>
+          <td>marker-start="ulr(#id)"<br>
+            (*방향: 오른쪽에서 0,0으로)<br>
+            marker-mid="url(#id)"<br>
+            marker-end="url(#id)"</td>
+        </tr>
+        <tr>
+          <td>심볼</td>
+          <td>symbol</td>
+          <td>&lt;use xlink:href="#id"></td>
+        </tr>
+        <tr>
+          <td>필터</td>
+          <td>filter</td>
+          <td>style='filler="url(#id)'</td>
+        </tr>
+        <tr>
+          <td>글꼴</td>
+          <td>style bx:fonts="id"<br>
+            @import url(...)
+          </td>
+          <td>
+            style font-family:id;
+          </td>
+        </tr>
+        <tr>
+          <td>오리기</td>
+          <td>clipPath</td>
+          <td>clip-path=url("#id")</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h1>채우기</h1>
+    <table>
+      <caption>그라데이션 종류</caption>
+      <thead>
+        <tr>
+          <td>그라데이션 종류</td>
+          <td>옵션</td>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>
+            linearGradient
+          </td>
+          <td>시작점(x1, y1), 끝점(x2, y2)</td>
+        </tr>
+        <tr>
+          <td>
+            RadialGradient
+          </td>
+          <td>
+            중앙점(cx, cy), 초점(fx, fy), 반경(r)
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>직선 그라디언트</h2>
+    <span class="tutorial">C_Reference >> linearGradient.svg</span>
+    <blockquote>
+      <b>&lt;defx>&lt;linearGradient id="<span
+          style="color:red">grad_id</span>">...&lt;/linearGradient>&lt;/defx></b><br>
+      &lt;object ... fill="url(#<span style="color:red">grad_id</span>") />
+    </blockquote>
+    <p>아래 예제는 2가지 예제를 다루고 있습니다. 시작점(x1, y1)과 끝점(x2, y2)를 이용하여 방향을 결정 할 수 있습니다.</p>
+    <svg width="240" height="240" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="Gradient1">
+          <stop class="stop1" offset="0%" />
+          <stop class="stop2" offset="60%" />
+          <stop class="stop3" offset="100%" />
+        </linearGradient>
+        <style>
+          #rect1 {
+            fill: url(#Gradient1);
+          }
+
+          .stop1 {
+            stop-color: red;
+          }
+
+          .stop2 {
+            stop-color: black;
+            stop-opacity: 0;
+          }
+
+          .stop3 {
+            stop-color: blue;
+          }
+        </style>
+
+        <linearGradient id="Gradient2" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0" stop-color="red" />
+          <stop offset="0.4" stop-color="black" stop-opacity="0" />
+          <stop offset="1" stop-color="blue" />
+        </linearGradient>
+      </defs>
+
+      <rect id="rect1" x="10" y="10" rx="15" ry="15" width="100" height="100" />
+      <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#Gradient2)" />
+      <circle cx="170" cy="60" r="50" fill="url(#Gradient1)" />
+      <circle cx="170" cy="170" r="50" fill="url(#Gradient2)" />
+    </svg>
+    <pre>
+      <code class="language-html">&lt;def>
+  &lt;!-- 방법 1: -->
+  &lt;linearGradient id="Gradient1">
+    &lt;stop class="stop1" offset="0%" />
+    &lt;stop class="stop2" offset="60%" />
+    &lt;stop class="stop3" offset="100%" />
+  &lt;/linearGradient>
+  &lt;style>
+    &lt;![CDATA[
+            #rect1 { fill: url(#Gradient1); }
+            .stop1 { stop-color: red; }
+            .stop2 { stop-color: black; stop-opacity: 0; }
+            .stop3 { stop-color: blue; }
+          ]]>
+  &lt;/style>
+
+  &lt;!-- 방법 2: -->
+  &lt;linearGradient id="Gradient2" x1="0" y1="0" x2="1" y2="1">
+    &lt;stop offset="0" stop-color="red" />
+    &lt;stop offset="0.4" stop-color="black" stop-opacity="0" />
+    &lt;stop offset="1" stop-color="blue" />
+  &lt;/linearGradient>
+&lt;/defs>
+
+&lt;rect id="rect1" x="10" y="10" rx="15" ry="15" width="100" height="100" />
+&lt;rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#Gradient2)" />
+&lt;circle cx="170" cy="60" r="50" fill="url(#Gradient1)" />
+&lt;circle cx="170" cy="170" r="50" fill="url(#Gradient2)" />
+      </code>
+    </pre>
+
+    <h2>원형 그라디언트</h2>
+    <span class="tutorial">C_Reference >> radialGradient.svg</span>
+    <blockquote>
+      <b>&lt;defx>&lt;<u>radial</u>Gradient id="<span
+          style="color:red">grad_id</span>">...&lt;/<u>radial</u>Gradient>&lt;/defx></b><br>
+      &lt;object ... fill="url(#<span style="color:red">grad_id</span>") />
+    </blockquote>
+    <p>&nbsp;마우스를 올려서 두 그라데이션의 차이를 알아봅니다.(모바일:터치)</p>
+    <svg id="grad_2d" viewbox="0 0 220 220" version="1.1" xmlns="http://www.w3.org/2000/svg" width="220"
+      style="cursor:none;border:1px solid gray;padding:5px;border-radius: 15px;">
+      <defs>
+        <radialGradient id="RadialGradient" cx="0.25" cy="0.25" r="0.5">
+          <stop offset="0%" stop-color="red" />
+          <stop offset="50%" stop-color="blue" />
+          <stop offset="100%" stop-color="white" />
+        </radialGradient>
+      </defs>
+      <rect x="10" y="10" rx="15" ry="15" width="200" height="200" fill="url(#RadialGradient)" />
+    </svg>
+    <script>
+      var grad_2d = document.getElementById("grad_2d");
+      var ptr = grad_2d.getElementById("RadialGradient");
+      grad_2d.addEventListener("mousemove", (e) => {
+        var x = e.clientX - grad_2d.getClientRects()[0].x;
+        var y = e.clientY - grad_2d.getClientRects()[0].y;
+        ptr.cx.baseVal.value = (x - 10) / 200;
+        ptr.cy.baseVal.value = (y - 10) / 200;
+      });
+    </script>
+    <svg id="grad_ln" viewbox="0 0 220 220" version="1.1" xmlns="http://www.w3.org/2000/svg" width="220"
+      style="cursor:none;border:1px solid gray;padding:5px;border-radius: 15px;">
+      <defs>
+        <linearGradient id="linearGradient" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="red" />
+          <stop offset="50%" stop-color="blue" />
+          <stop offset="100%" stop-color="white" />
+        </linearGradient>
+      </defs>
+      <rect x="10" y="10" rx="15" ry="15" width="200" height="200" fill="url(#linearGradient)" />
+    </svg>
+    <script>
+      var grad_ln = document.getElementById("grad_ln");
+      var ptr_ln = grad_ln.getElementById("linearGradient");
+      grad_ln.addEventListener("mousemove", (e) => {
+        var x = e.clientX - grad_ln.getClientRects()[0].x;
+        var y = e.clientY - grad_ln.getClientRects()[0].y;
+        ptr_ln.x2.baseVal.value = (x - 10) / 200;
+        ptr_ln.y2.baseVal.value = (y - 10) / 200;
+      });
+    </script><br>
+    <pre>
+      <code class="language-html">&lt;defs>
+  &lt;radialGradient id="RadialGradient" cx="0.25" cy="0.25" r="0.5">
+    &lt;stop offset="0%" stop-color="red" />
+    &lt;stop offset="50%" stop-color="blue" />
+    &lt;stop offset="100%" stop-color="white" />
+  &lt;/radialGradient>
+&lt;/defs>
+&lt;rect x="10" y="10" rx="15" ry="15" width="200" height="200" fill="url(#RadialGradient)" />
+      </code>
+    </pre>
+
+    <p>&nbsp;초점 테스트(마우스를 올려서 테스트 해보세요. 모바일:터치)</p>
+    <svg id="grad_2d2" viewbox="0 0 220 220" version="1.1" xmlns="http://www.w3.org/2000/svg" width="220"
+      style="cursor:none;border:1px solid gray;padding:5px;border-radius: 15px;">
+      <defs>
+        <radialGradient id="RadialGradient2" cx="0.5" cy="0.5" r="0.40" fx="0.25" fy="0.25" spreadMethod="repeat">
+          <stop offset="0%" stop-color="red" />
+          <stop offset="50%" stop-color="blue" />
+          <stop offset="100%" stop-color="white" />
+        </radialGradient>
+      </defs>
+      <rect x="10" y="10" rx="15" ry="15" width="200" height="200" fill="url(#RadialGradient2)" />
+    </svg>
+    <script>
+      var grad_2d2 = document.getElementById("grad_2d2");
+      var ptr3 = grad_2d2.getElementById("RadialGradient2");
+      grad_2d2.addEventListener("mousemove", (e) => {
+        var x = e.clientX - grad_2d2.getClientRects()[0].x;
+        var y = e.clientY - grad_2d2.getClientRects()[0].y;
+        ptr3.fx.baseVal.value = (x - 10) / 200;
+        ptr3.fy.baseVal.value = (y - 10) / 200;
+      });
+    </script>
+    <br>
+    <button onclick='ptr3.spreadMethod.baseVal=1'>pad</button>
+    <button onclick='ptr3.spreadMethod.baseVal=2'>repeat</button>
+    <button onclick='ptr3.spreadMethod.baseVal=3'>Reflect</button><br>
+    <input type="range" min="50" max="100" value="50" onchange="ptr3.r.baseVal.value=(this.value/100)"><br>
+
+    <svg width="220" height="220" version="1.1" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="GradientPad" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="pad">
+          <stop offset="0%" stop-color="red" />
+          <stop offset="100%" stop-color="blue" />
+        </radialGradient>
+        <radialGradient id="GradientRepeat" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="repeat">
+          <stop offset="0%" stop-color="red" />
+          <stop offset="100%" stop-color="blue" />
+        </radialGradient>
+        <radialGradient id="GradientReflect" cx="0.5" cy="0.5" r="0.4" fx="0.75" fy="0.75" spreadMethod="reflect">
+          <stop offset="0%" stop-color="red" />
+          <stop offset="100%" stop-color="blue" />
+        </radialGradient>
+      </defs>
+
+      <rect x="10" y="10" rx="15" ry="15" width="100" height="100" fill="url(#GradientPad)" />
+      <rect x="10" y="120" rx="15" ry="15" width="100" height="100" fill="url(#GradientRepeat)" />
+      <rect x="120" y="120" rx="15" ry="15" width="100" height="100" fill="url(#GradientReflect)" />
+
+      <text x="15" y="30" fill="white" font-family="sans-serif" font-size="12pt">
+        Pad
+      </text>
+      <text x="15" y="140" fill="white" font-family="sans-serif" font-size="12pt">
+        Repeat
+      </text>
+      <text x="125" y="140" fill="white" font-family="sans-serif" font-size="12pt">
+        Reflect
+      </text>
+    </svg>
+
+    <h1>패턴</h1>
+    <p>&nbsp;정해진 모양을 반복해서 붙여넣는 것을 패턴이라고 합니다.</p>
+    <svg width="200" height="200" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="Grad1">
+          <stop offset="5%" stop-color="white" />
+          <stop offset="95%" stop-color="blue" />
+        </linearGradient>
+        <linearGradient id="Grad2" x1="0" x2="0" y1="0" y2="1">
+          <stop offset="5%" stop-color="red" />
+          <stop offset="95%" stop-color="orange" />
+        </linearGradient>
+
+        <pattern id="Pattern" x="0" y="0" width=".25" height=".25">
+          <rect x="0" y="0" width="50" height="50" fill="skyblue" />
+          <rect x="0" y="0" width="25" height="25" fill="url(#Grad2)" />
+          <circle cx="25" cy="25" r="20" fill="url(#Grad1)" fill-opacity="0.5" />
+        </pattern>
+      </defs>
+      <rect fill="url(#Pattern)" stroke="black" width="200" height="200" />
+    </svg>
+
+    <pre><code>&lt;svg width="200" height="200"
+  xmlns="http://www.w3.org/2000/svg">
+  &lt;defs>
+    &lt;pattern id="Pattern" x="0" y="0" width=".25" height=".25">
+      &lt;rect x="0" y="0" width="50" height="50" fill="skyblue" />
+      &lt;rect x="0" y="0" width="25" height="25" fill="red" />
+      &lt;circle cx="25" cy="25" r="20" fill="blue" fill-opacity="0.5" />
+    &lt;/pattern>
+  &lt;/defs>
+  &lt;rect fill="url(#Pattern)" stroke="black" width="200" height="200" />
+&lt;/svg></code></pre>
+
+    <h1>끝선</h1>
+    <span class="tutorial">C_Reference >> marker.svg</span>
+    <blockquote>
+      <ul>
+        <li>ah1은 끝 화살표, ah2는 시작화살표, cir는 원형 끝선을 그립니다.</li>
+        <li>marker-start또는 marker-end를 이용해서 시작과 끝을 불러옵니다.</li>
+        <li>화살표의 방향은 path의 방향에 맞춰서 자동으로 그려줍니다.(오른쪽 화살표(3개)참조)</li>
+      </ul>
+    </blockquote>
+    <svg viewbox="0 0 250 170" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink"
+      style="width: 80%;min-height: 170px;border: 1px solid #eee;margin: 10px; padding:20px; border-radius: 15px;">
+      <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M9 0L0 4 0 -4 z" />
+      </marker>
+      <marker id="ah2" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M0 0L9 4 9 -4z" />
+      </marker>
+      <marker id="cir" viewBox="-5 -5 10 10" markerWidth="5" markerHeight="5">
+        <ellipse style="fill:black;stroke:none" cx="0" cy="0" rx="5" ry="5"></ellipse>
+      </marker>
+      <path marker-end="url(#ah1)" d="M10 20 h100" style="fill:none;stroke:#000" />
+      <path marker-start="url(#ah1)" d="M10 50 h100" style="fill:none;stroke:#000" />
+      <path marker-start="url(#ah2)" d="M10 80 h100" style="fill:none;stroke:#000" />
+      <path marker-start="url(#ah2)" marker-end="url(#ah1)" d="M10 110 h100" style="fill:none;stroke:#000" />
+      <path marker-start="url(#cir)" marker-end="url(#ah1)" d="M10 140 h100" style="fill:none;stroke:#000" />
+      <path marker-end="url(#ah1)" d="M150 20 h50 a20 20 0 0 1 20 20" style="fill:none;stroke:#000" />
+      <path marker-end="url(#ah1)" d="M150 90 h30 a20 20 0 0 0 20 -20" style="fill:none;stroke:#000" />
+      <path marker-end="url(#ah1)" d="M150 120 Q180 120 220 150" style="fill:none;stroke:#000" />
+    </svg>
+    <pre><code>&lt;marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+  &lt;path d="M9 0L0 4 0 -4 z" />
+&lt;/marker>
+
+&lt;marker id="ah2" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+  &lt;path d="M0 0L9 4 9 -4z" />
+&lt;/marker>
+
+&lt;marker id="cir" viewBox="-5 -5 10 10" markerWidth="5" markerHeight="5">
+  &lt;ellipse style="fill:black;stroke:none" cx="0" cy="0" rx="5" ry="5">&lt;/ellipse>
+&lt;/marker>
+
+&lt;path marker-end="url(#ah1)" d="M10 20 h100" style="fill:none;stroke:#000" />
+&lt;path marker-start="url(#ah1)" d="M10 50 h100" style="fill:none;stroke:#000" />
+&lt;path marker-start="url(#ah2)" d="M10 80 h100" style="fill:none;stroke:#000" />
+&lt;path marker-start="url(#ah2)"  marker-end="url(#ah1)" d="M10 110 h100" style="fill:none;stroke:#000" />
+&lt;path marker-start="url(#cir)"  marker-end="url(#ah1)" d="M10 140 h100" style="fill:none;stroke:#000" /></code></pre>
+
+    <h1>심볼</h1>
+    <span class="tutorial">C_Reference >> symbol.svg</span>
+    <p>&nbsp;한 번 저장한 경로를 두고두고 가져올 수 있습니다.</p>
+
+    <style>
+      svg {
+        max-width: 500px;
+        border: 1px solid #ccc;
+        margin-left: 5vw;
+      }
+    </style>
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+      xmlns:bx="https://boxy-svg.com" id="symbol-example">
+      <defs>
+        <symbol id="symbol-0" viewBox="0 0 100 100" bx:pinned="true">
+          <path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 8px;"
+            d="M 20 95 L 20 44 L 4 44 L 49 5 L 94 44 L 78 44 L 78 95 L 59 95 L 59 69 C 59 59 49 52 44 58 C 41 60 39 64 39 69 L 39 95 L 20 95 Z" />
+        </symbol>
+      </defs>
+
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(2, 0, 0, 2, 270, 185)"
+        style="mix-blend-mode: difference; fill:red; stroke:red" />
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 227, 158)"
+        style="mix-blend-mode: difference; fill:orange; stroke:orange" />
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 207, 100)"
+        style="mix-blend-mode: difference; fill:yellow; stroke:yellow" />
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 60, 109)"
+        style="mix-blend-mode: difference; fill:green; stroke:green" />
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 376, 138)"
+        style="mix-blend-mode: difference; fill:blue; stroke:blue" />
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(2, 0, 0, 2, 136, 155)"
+        style="mix-blend-mode: difference; fill:purple; stroke:purple" />
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(3, 0, 0, 3, -31, 176)"
+        style="mix-blend-mode: difference; fill:white; stroke:gray" />
+      <use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 264, 60)"
+        style="mix-blend-mode: difference; fill:black; stroke:black" />
+    </svg>
+    <pre><code>&lt;defs>
+  &lt;symbol id="symbol-0" viewBox="0 0 100 100" bx:pinned="true">
+    &lt;path style="stroke-linecap: round; stroke-linejoin: round; stroke-width: 8px;"
+      d="M 20 95 L 20 44 L 4 44 L 49 5 L 94 44 L 78 44 L 78 95 L 59 95 L 59 69 C 59 59 49 52 44 58 C 41 60 39 64 39 69 L 39 95 L 20 95 Z" />
+  &lt;/symbol>
+&lt;/defs>
+
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(2, 0, 0, 2, 270, 185)"
+  style="mix-blend-mode: difference; fill:red; stroke:red" />
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 227, 158)"
+  style="mix-blend-mode: difference; fill:orange; stroke:orange" />
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 207, 100)"
+  style="mix-blend-mode: difference; fill:yellow; stroke:yellow" />
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 60, 109)"
+  style="mix-blend-mode: difference; fill:green; stroke:green" />
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 376, 138)"
+  style="mix-blend-mode: difference; fill:blue; stroke:blue" />
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(2, 0, 0, 2, 136, 155)"
+  style="mix-blend-mode: difference; fill:purple; stroke:purple" />
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(3, 0, 0, 3, -31, 176)"
+  style="mix-blend-mode: difference; fill:white; stroke:gray" />
+&lt;use width="100" height="100" xlink:href="#symbol-0" transform="matrix(1, 0, 0, 1, 264, 60)"
+  style="mix-blend-mode: difference; fill:black; stroke:black" />
+    </code></pre>
+
+
+    <h1>필터</h1>
+    <span class="tutorial">C_Reference >> filter.svg</span>
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+      <defs>
+        <filter id="drop-shadow-filter">
+          <!-- 그림자 위치, 색 -->
+          <feOffset dx="10" dy="10" />
+          <feComponentTransfer result="offsetblur">
+            <feFuncA id="spread-ctrl" type="linear" slope="0.5" />
+          </feComponentTransfer>
+          <feFlood flood-color="rgba(0,0,0,0.3)" />
+          <feComposite in2="offsetblur" operator="in" />
+          <!-- 원본과 그림자를 그린다. -->
+          <feMerge>
+            <feMergeNode />
+            <feMergeNode in="SourceGraphic" />
+          </feMerge>
+        </filter>
+
+        <filter id="gaussian-blur-filter">
+          <feGaussianBlur stdDeviation="5 5" edgeMode="none" />
+        </filter>
+      </defs>
+      <rect x="100" y="100" width="200" height="100"
+        style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); filter: url('#drop-shadow-filter');" rx="18" ry="18" />
+      <rect x="100" y="300" width="200" height="100"
+        style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); filter: url('#gaussian-blur-filter');" rx="18" ry="18" />
+    </svg>
+
+    <pre><code>&lt;defs>
+  &lt;filter id="drop-shadow-filter">
+    &lt;!-- 그림자 위치, 색 -->
+    &lt;feOffset dx="10" dy="10"/>
+    &lt;feComponentTransfer result="offsetblur">
+      &lt;feFuncA id="spread-ctrl" type="linear" slope="0.5"/>
+    &lt;/feComponentTransfer>
+    &lt;feFlood flood-color="rgba(0,0,0,0.3)"/>
+    &lt;feComposite in2="offsetblur" operator="in"/>
+    &lt;!-- 원본과 그림자를 그린다. -->
+    &lt;feMerge>
+      &lt;feMergeNode/>
+      &lt;feMergeNode in="SourceGraphic"/>
+    &lt;/feMerge>
+  &lt;/filter>
+  
+  &lt;filter id="gaussian-blur-filter">
+    &lt;feGaussianBlur stdDeviation="5 5" edgeMode="none"/>
+  &lt;/filter>
+&lt;/defs>
+&lt;rect x="100" y="100" width="200" height="100" style="fill: #ddd; stroke: #000; filter: url('#drop-shadow-filter');" rx="18" ry="18"/>
+&lt;rect x="100" y="300" width="200" height="100" style="fill: #ddd; stroke: #000; filter: url('#gaussian-blur-filter');" rx="18" ry="18"/></code></pre>
+
+    <h1>글꼴</h1>
+    <span class="tutorial">C_Reference >> font.svg</span>
+    <p>&nbsp;글꼴을 link이외에 embed로 삽입 할 수 있습니다. 파일 용량이 무의미하게 커지는 이유와, 핸드컨트롤이 어렵다는 이유로 생략합니다.</p>
+    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+      <desc>
+        (c) 2024 @iseohyun.com
+        All rights reserved.
+        CC-BY-SA
+      </desc>
+      <title>filter test</title>
+      <defs>
+        <style bx:fonts="ABeeZee" bx:pinned="true">
+          @import url(https://fonts.googleapis.com/css2?family=ABeeZee%3Aital%2Cwght%400%2C400%3B1%2C400&amp;display=swap);
+        </style>
+      </defs>
+      <text style="fill: rgb(51, 51, 51); font-family: ABeeZee; font-size: 16.7px; white-space: pre;" x="100" y="215"
+        transform="matrix(2, 0, 0, 5, -113, -824)">This is a ABeeZee.</text>
+    </svg>
+    <pre><code>&lt;defs>
+  &lt;style bx:fonts="ABeeZee" bx:pinned="true">@import url(https://fonts.googleapis.com/css2?family=ABeeZee%3Aital%2Cwght%400%2C400%3B1%2C400&amp;display=swap);&lt;/style>
+&lt;/defs>
+&lt;text style="fill: rgb(51, 51, 51); font-family: ABeeZee; font-size: 16.7px; white-space: pre;" x="100" y="215" transform="matrix(2, 0, 0, 5, -113, -824)">This is a ABeeZee.&lt;/text></code></pre>
+
+    <h1>오리기</h1>
+    <span class="tutorial">C_Reference >> clipPath.svg</span>
+    <p>&nbsp;원본의 그림을 원하는 부분만 출력 할 수 있습니다.</p>
+    <style>
+      .clippath-imgs {
+        display: flex;
+        flex-direction: row;
+      }
+
+      .clippath-imgs img {
+        width: 45%
+      }
+    </style>
+    <div class="clippath-imgs">
+      <img src="clipPath_origin.svg">
+      <img src="clipPath.svg">
+    </div>
+    <div class="simple-box">
+      https://pixabay.com/vectors/mountains-landscape-nature-travel-8314422/<br>
+      Uploader: insspirito<br>
+      License: Pixbay License
+    </div>
+
+    <pre><code>&lt;svg width="40%" viewbox="0 0 210 110" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  &lt;defs>
+    &lt;clipPath id="cut-off-bottom">
+      &lt;rect x="0" y="0" width="200" height="100" />
+    &lt;/clipPath>
+  &lt;/defs>
+  &lt;circle cx="100" cy="100" r="100" clip-path="url(#cut-off-bottom)" />
+&lt;/svg>
+    </code></pre>
+    <p>&nbsp;circle은 반지름이 100인 원을 그리는것이지만, clipPath를 이용하여, 200 x 100으로 잘랐습니다.</p>
+    <svg height="250px" viewbox="0 0 310 110" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink" style="border:1px solid #aaa;border-radius: 10px;padding:15px">
+      <defs>
+        <clipPath id="cut-off-bottom">
+          <rect x="0" y="0" width="200" height="100" />
+        </clipPath>
+      </defs>
+      <circle cx="100" cy="100" r="100" clip-path="url(#cut-off-bottom)" />
+    </svg>
+  </article>
+</body>
+
+</html>

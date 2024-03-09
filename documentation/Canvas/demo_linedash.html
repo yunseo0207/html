@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo : linedash</title>
+</head>
+
+<body>
+  <canvas id="linedash" height="150" width="150" style="border: 1px solid #ccc"></canvas>
+  <script>
+    var offset = 0;
+    function lineDash() {
+      var canvas = document.getElementById('linedash');
+      var ctx = canvas.getContext('2d');
+
+      ctx.clearRect(0, 0, canvas.width, canvas.height); // 지운다
+      ctx.setLineDash([4, 2]);
+      ctx.lineDashOffset = -offset;
+      ctx.strokeRect(10, 10, 100, 100); // 다시 그린다.
+    }
+
+    function march() {
+      offset++; // 한 칸씩 민다.
+      if (offset > 16) {
+        offset = 0;
+      }
+
+      lineDash();
+      setTimeout(march, 20); // 0.02초마다 나를 다시 호출한다.
+    }
+    march();
+  </script>
+</body>
+
+</html>

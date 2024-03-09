@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="C의 기초 문법과 구성에 대해서 설명합니다.">
+  <meta keywords="iseohyun, 튜토리얼, C, 문법, 함수">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>함수: C - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+
+    .all-center td {
+      text-align: center !important;
+    }
+
+    span.comment {
+      color: green;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">C: 함수</div>
+
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vQAsddxIF9eYl7jaC0cobsyPAk16onUApiV2zA_Uw4W5eya_xtE3TufTmmXiayAE2YQSlyIUxxN7OJu/embed?start=false&amp;loop=false&amp;delayms=3000"
+      width="95%" height="500px" frameborder="0" allowfullscreen="true"></iframe>
+
+    <h1>기본 문법</h1>
+    <h2>용어(term)</h2>
+    <style>
+      #function-term td:nth-child(1),
+      #function-term td:nth-child(2) {
+        white-space: nowrap;
+        text-align: center;
+      }
+
+      #function-term tr>td:last-child {
+        text-align: left;
+        padding-left: 10px;
+      }
+
+      #function-term td {
+        white-space: normal;
+        word-break: break-word;
+        padding-left: 5px;
+        line-height: 1.5em;
+      }
+    </style>
+    <table id="function-term">
+      <caption>함수와 관련된 용어</caption>
+      <thead>
+        <tr>
+          <th>용어</th>
+          <th>한국어</th>
+          <th>의미</th>
+        </tr>
+      </thead>
+      <tr>
+        <td>function</td>
+        <td rowspan="2">함수</td>
+        <td>입력과 출력을 갖는 논리 구조</td>
+      </tr>
+      <tr>
+        <td>method</td>
+        <td>메서드method: 객체가 가진 함수</td>
+      </tr>
+      <tr>
+        <td>argument</td>
+        <td rowspan="2">(전달)인자</td>
+        <td>
+          아규먼트argument: 함수에게 전달하는 정보<br>
+          args(argument string) = 문자열<br>
+          argc(argument count) = 정보의 갯수</td>
+      </tr>
+      <tr>
+        <td>parameter</td>
+        <td>param(파라메터): argument를 전달받는 함수 입장에서 부를 때</td>
+      </tr>
+      <tr>
+        <td>retrun</td>
+        <td>반환</td>
+        <td>리턴return: 함수의 출력</td>
+      </tr>
+      <tr>
+        <td>body</td>
+        <td>내용</td>
+        <td>함수내용, 코드블록</td>
+      </tr>
+      <tr>
+        <td>declaration</td>
+        <td>선언</td>
+        <td>등록하는 과정, 선언 문구<br>
+          prototype(시제품): body가 빠진 선언
+        </td>
+      </tr>
+      <tr>
+        <td>definition</td>
+        <td>정의</td>
+        <td>코드블록이 포함된 문구<br>
+          ※ go to definition: 함수로 이동</td>
+      </tr>
+      <tr>
+        <td>call</td>
+        <td>호출</td>
+        <td>함수 수행</td>
+      </tr>
+    </table>
+    <div class="simple-box" style="border:none">
+      <p>
+        * 함수가 호출되기 위해서는 반드시 '정의'가 되어있어야 합니다. '선언'되었다는 표현은 일반적으로 맞을 수 있지만, 엄밀하게 말하면 등록하는 과정을 의미하므로, 수동으로 등록하는 과정을
+        거친다면(옵션), 두 과정(정의와 선언)을 혼돈해서는 안 될 것입니다.
+      </p>
+    </div>
+
+    <h2>문법(syntax)</h2>
+    <div class="blockquote-title">함수를 선언 할 때</div>
+    <blockquote>
+      <pre>
+[리턴형] 함수이름([전달인자]) {
+  내용;
+  return [리턴 변수];
+}</pre>
+    </blockquote>
+    <div class="blockquote-title">함수를 호출 할 때</div>
+    <blockquote>
+      [리턴 받을 변수] = 함수이름([전달인자]);
+    </blockquote>
+
+    <div class="blockquote-title">예시</div>
+    <blockquote>
+      <pre>
+int Max(int a, int b){
+  int max = (a > b)?a:b;
+  return max;
+}</pre>
+    </blockquote>
+
+    <p>&nbsp;함수는 기능을 하나로 묶어서 호출이 되었을 때, 기술된 내용을 수행합니다.</p>
+    <ul>
+      <li>전달인자(Argument)는 여러개이거나 생략될 수 있습니다.</li>
+      <li>전달인자는 넘겨주는 타입과 순서가 중요합니다.</li>
+      <li>리턴(retnrun)은 한개 또는 생략만 가능합니다.</li>
+      <li>리턴을 생략할 땐, void를 명시해야 합니다.
+        <blockquote>
+          <em>void</em> setName(char[] name) { ... }
+        </blockquote>
+      </li>
+      <li>리턴이 수행되면, 그 행에서 함수가 종료되고, 호출한 함수로 돌아갑니다.</li>
+    </ul>
+
+    <h2>오버로딩(overloading)</h2>
+    <p>&nbsp;함수 오버로딩(overloading)의 목적은 비슷한 기능을 하는 여러개의 함수를 하나의 함수명으로 관리함으로써 개발자의 개발 부담을 줄여주는 효과가 있습니다.</p>
+    <p>&nbsp;함수를 구분하는 기준은 "함수명+전달인자 갯수/타입"입니다. (<u>리턴인자는 함수를 구분하는데 영향을 주지 않습니다.</u>) 함수를 구분한다는 의미는, 컴파일러가 함수가 호출되었을 때,
+      어떤 함수를 호출할지 결정하는데 참고하겠다는 의미입니다. 예를들어:</p>
+    <blockquote>
+      <pre>
+void setVariable(int height); <span class="comment">// function 1</span>
+
+void setVariable(<em>float</em> height); <span class="comment">// function 2</span>
+
+void setVariable(int <em>width</em>); <span class="comment">// function 3</span>
+
+<em>int</em> setVariable(int height); <span class="comment">// function 4</span>
+
+void setVariable(int height, <em>int width</em>); <span class="comment">// function 5</span></pre>
+    </blockquote>
+
+    <ul>
+      <li> function 1 vs 2 : 전달인자의 타입이 다르므로 둘은 서로 다른 함수로 인식</li>
+      <li> function 1 vs 3 : 전달인자의 인자명은 함수를 구분하는 기준이 아니므로 둘은 서로 같은 함수(컴파일러 오류)</li>
+      <li> function 1 vs 4 : 리턴인자의 타입은 함수를 구분하는 기준이 아니므로 둘은 서로 같은 함수(컴파일러 오류)</li>
+      <li> function 1 vs 5 : 전달인자의 갯수가 각각 1, 2개로 서로 다르므로 서로 다른 함수로 인식</li>
+    </ul>
+
+    <h2>콜 스텍(call stack)</h2>
+    <p>(슬라이더 19page ~) &nbsp;함수를 호출(call)했을 때, CPU는 할당받은 메모리 영역에 현재의 수행위치와 전달인자를 저장해두고, 함수의 수행위치를 호출된 함수로 변경하게 됩니다.<br>
+      &nbsp;스텍(stack)은 선입후출의 저장 알고리즘입니다. 저장공간이 무한하지 않기 때문에, 함수가 반환되지 않고 계속해서 호출된다면 스텍 오버플로우(overflow; 넘침)이 발생하게 됩니다.
+      스텍 오버플로우는 syntax error(문법 에러)가 아니고 run time error(수행 중 에러)이기 때문에 예상과 감지가 어려운 편입니다.</p>
+
+    <h2>재귀(reculsive)</h2>
+    <p>&nbsp;재귀함수는 자기자신을 호출하는 함수를 말합니다. 스텍 오버플로우 가능성을 필연적으로 갖는 함수이다보니 선호되는 호출 방식은 아닙니다. 유명한 몇 가지 재귀호출 함수를 소개합니다.</p>
+    <div class="blockquote-title">팩토리얼 수열</div>
+    <blockquote>
+      <pre>
+static int <em>factorial</em>(int n) {
+  if (n == 1)
+      return 1;
+  else
+      return n * <em>factorial</em>(n - 1);
+}</pre>
+    </blockquote>
+
+    <div class="blockquote-title">최대공약수</div>
+    <blockquote>
+      <pre>    static int <em>gcd</em>(int p, int q) {
+        if (q == 0)
+            return p;
+        else
+            return <em>gcd</em>(q, p % q);
+    }
+    </pre>
+    </blockquote>
+
+    <div class="blockquote-title">피보나치 수열</div>
+    <blockquote>
+      <pre>
+static int <em>fibonacci</em>(int n) {
+  if (n < 2)
+      return n;
+  else
+      return <em>fibonacci</em>(n - 1) + <em>fibonacci</em>(n - 2);
+}</pre>
+    </blockquote>
+    <h1>참조</h1>
+    <h2>프로토타입</h2>
+    <p>&nbsp;근래의 언어는 컴파일러가 명시된 모든 엘리먼트를 1차적으로 리스트업합니다. 반면, C언어는 코드를 위에서부터 순차적으로 파싱(parsing; 해석)하기 때문에, 뒤에 어떠한 내용이 등장 할
+      것이라고 미리 알려주는 작업을 수행하여야 합니다. 프로토타입(prototype; 시제품)은 함수의 개형 정보를 컴파일러에게 전달하는 역할을 합니다.<br>
+      함수의 바디(body; 내용)을 작성하지 않고 세미콜론(;)으로 마무리하면 됩니다. 함수의 선언이 존재해야 합니다.</p>
+    <div class="blockquote-title">프로토타입 문법</div>
+    <blockquote>
+      [반환형] [함수명]([전달인자]...)<em>;</em>
+    </blockquote>
+    <div class="blockquote-title">예시</div>
+    <blockquote>
+      int max(int a, int b);
+    </blockquote>
+
+    <h3>헤더(header)</h3>
+    <p>&nbsp;함수의 프로토타입을 정의하면, 실제 함수의 선언이 반드시 존재해야 합니다. 하지만 반드시 같은 파일이나 내가 작성한 파일에 존재해야 하는 것은 아닙니다.
+      프로토타입의 정보는 코딩에 대한 본질적인 내용이 아니고, 컴파일에 필요한 메타 정보 입니다. 이를 header라고 하고, .h라는 확장자를 사용합니다. 그리고 이 헤더를 불러올 때는 #include
+      예약어를 사용합니다.</p>
+    <div class="blockquote-title">헤더파일 예시</div>
+    <blockquote>
+      #include &lt;stdio.h>
+    </blockquote>
+    <p>&nbsp;stdio(StanDard Input / Output)는 입출력과 관련된 함수를 가지고 있습니다. 따라서 stdio.h에는 다음과 같은 내용을 확인 할 수 있습니다.(minGW64기준입니다.)
+    </p>
+    <div class="blockquote-title">stdio.h 발췌</div>
+    <blockquote>
+      int printf (const char *__format, ...)
+    </blockquote>
+    <div class="simple-box">
+      <p>문제 해결 (undefined reference to ~)
+        <hr>
+        &nbsp;기존의 방식대로(?) 빌드하려고 할 때, 오류가 발생할 수 있습니다. 파일 하나를 컴파일 하려고 할 때, 명령어는
+      <blockquote>
+        gcc excute_file foo.cpp
+      </blockquote>
+      이 명령어를 수행하면 excute_file.exe파일이 생성됩니다.<br>
+      만약, 추가로 컴파일이 필요한 파일을 추가하려고 하면
+      <blockquote>
+        gcc excute_file foo.cpp bar.cpp
+      </blockquote>
+      만약, 해당 폴더에 포함된 모든 cpp파일을 추가하려고 하면, 다음과 같이 추가할 수 있습니다.
+      <blockquote>
+        gcc excute_file *.cpp
+      </blockquote>
+      </p>
+    </div>
+
+    <h1>인자(arguments)전달</h1>
+    <p>&nbsp;변수를 호출하면 컴파일러는 정해진 규칙에 의해서 정해진 위치에 순서대로 할당하게 됩니다.
+      컴파일러는, 현실세계와 마찬가지로, 같은 이름이더라도 어디에 속해있는지에 따라 호출되는 변수를 참조하게 됩니다.<br>
+      &nbsp;이러한 이유로 코더Coder는 호출되는 위치가 함수 안인지 밖인지를 주의해야하며, 만약 외부의 변수를 사용하고 싶다면 추가 문법을 명시해야 합니다.</p>
+    <h2>life cycle</h2>
+    <p>&nbsp;기본적으로 변수의 Life cycle은 선언될 때, 생성되고, 선언된 '}'(중괄호 닫힘)를 만나면 소멸합니다.<del>(실제로 삭제되는 것은 아닙니다.)</del> 정확한 내용은
+      pointer에서
+      다룹니다. 일반적으로:</p>
+    <blockquote>
+      <pre>
+int i = 9; <span class="comment">// 첫째</span>
+
+int main()
+{
+  int i = 8; <span class="comment">// 둘째</span>
+  {
+    int i = 7; <span class="comment">// 셋째</span>
+    {
+      int i = 6; <span class="comment">// 넷째</span>
+    }
+    <span class="comment">// 위치 1</span>
+  }
+  <span class="comment">// 위치 2</span>
+}
+    </pre>
+    </blockquote>
+    <p>&nbsp;똑같은 i라는 변수가 여러번 선언 되었다고 할 때, 컴파일러가 참조하는 변수는 각각 해제되지 않은 최근의 변수를 사용하게 됩니다. 예를들어:</p>
+    <ul>
+      <li>첫째 위치에서는 첫째를 참조합니다.</li>
+      <li>둘째 위치에서는 둘째를 참조합니다.</li>
+      <li>셋째 위치에서는 셋째를 참조합니다.</li>
+      <li>넷째 위치에서는 넷째를 참조합니다.</li>
+      <li>위치 1에서는 셋째를 참조합니다.(넷째 소멸)</li>
+      <li>위치 2에서는 둘째를 참조합니다.(셋째 소멸)</li>
+    </ul>
+    <p>&nbsp;첫 째의 위치는 변수가 해제될 수 없는 위치에 선언되었습니다. 따라서 모든 함수에서 사용될 수 있기 때문에 "<u>전역변수</u>"라고 합니다.<br>
+      &nbsp;전역변수는 높은 범용성을 지니지만, 항상 메모리에 상주하고 있으므로 일정부분의 손해를 감수해야 합니다.
+      &nbsp;전역변수와 대비되는 개념이 "<u>지역변수</u>"입니다. 지역변수는 함수 내에서 선언되는 변수를 말합니다. 지역변수는 종료와 함께 소멸한다는 것을 주의해야 합니다.</p>
+
+    <h2>static</h2>
+    <p>&nbsp;static 예약어는 해당 변수가 호출된 후 유지되도록 요청합니다.</p>
+    <blockquote>
+      <pre>
+void foo()
+{
+  static int i = 0;
+  i++;
+  printf("foo 호출: %d\n", i);
+}</pre>
+    </blockquote>
+
+    <h2>호출(Call)방법</h2>
+    <p>&nbsp;변수를 전달하는 방법에 따라 Call by Value, Call by Reference, Call by Address가 있습니다. (포인터 편 참조)</p>
+    <div class="blockquote-title">Call by Value</div>
+    <blockquote>
+      void callbyValue(int);<br><br>
+
+      callbyValue(input);
+    </blockquote>
+    <p>값(value)를 직접 복사하여 전달합니다. 따라서, 값을 변경한다고 해도 원래 값에 변경이 적용되지 않습니다.</p>
+
+    <div class="blockquote-title">Call by Reference</div>
+    <blockquote>
+      void callbyRef(int*);<br><br>
+
+      callbyRef(&input);
+    </blockquote>
+    <p>주소(reference, address, pointer)를 복사하여 전달합니다. 주소의 값을 변경하기 때문에, 원래 값에 변경이 적용됩니다.</p>
+
+    <div class="blockquote-title">Call by Address</div>
+    <blockquote>
+      void callByAddr(int&);<br><br>
+
+      callByAddr(input);
+    </blockquote>
+    <p>주소(reference, address, pointer)를 참조해서 전달합니다. 해당 주소의 값을 변경하기 때문에, 값의 변경이 적용됩니다.</p>
+
+    <h2>가변 인자</h2>
+    <p>참조: <a href="https://learn.microsoft.com/ko-kr/cpp/cpp/functions-with-variable-argument-lists-cpp?view=msvc-160"
+        target="_blank">https://learn.microsoft.com/ko-kr/cpp/cpp/functions-with-variable-argument-lists-cpp?view=msvc-160</a>
+    </p>
+    <p>&nbsp;전달해야 하는 인자의 갯수가 변경되는 경우가 발생할 수 있습니다. 예를들어 printf함수가 그렇습니다.</p>
+    <blockquote>
+      printf("%d", i); <span class="commnet">// 전달 인자 2개</span><br>
+      printf("%d %d", i, j); <span class="commnet">// 전달 인자 3개</span>
+    </blockquote>
+    <p>&nbsp;이를 해결하는 방법은 va_구조를 사용하는 방법입니다. 간단한 예시는</p>
+
+    <blockquote>
+      <pre>
+int addAll(int size, ...)
+{
+    int _Result = 0;
+
+    va_list vl;
+    va_start(vl, size);
+    for (int i = 0; i < size; i++)
+        _Result += va_arg(vl, int);
+    va_end(vl);
+
+    return _Result;
+}</pre>
+    </blockquote>
+  </article>
+</body>
+
+</html>

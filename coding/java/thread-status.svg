@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 250"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:bx="https://boxy-svg.com">
+  <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+    <path d="M9 0L0 4 0 -4 9 0z"/>
+  </marker>
+  <marker id="ah2" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+    <path d="M9 0L0 4 0 -4 9 0z" stroke="#bbb" fill="none"/>
+  </marker>
+
+  <g style="stroke:#888;fill:none">
+    <rect x="10" y="100" width="80" height="50" rx="5" ry="5"/>
+    <!-- new -->
+    <rect x="210" y="100" width="80" height="50" rx="5" ry="5"/>
+    <!-- runnable -->
+    <rect x="410" y="100" width="80" height="50" rx="5" ry="5"/>
+    <!-- terminated -->
+    <rect x="110" y="10" width="80" height="50" rx="5" ry="5"/>
+    <!-- wait -->
+    <rect x="310" y="10" width="80" height="50" rx="5" ry="5"/>
+    <!-- timed_waiting -->
+    <rect x="210" y="190" width="80" height="50" rx="5" ry="5"/>
+    <!-- blocked -->
+  </g>
+
+  <g style="font-size:15;text-anchor:middle;dominant-baseline:middle">
+    <text x="50" y="128">NEW</text>
+    <text x="250" y="128" style="font-size:14">RUNNABLE</text>
+    <text x="450" y="128" style="font-size:12">TERMINATED</text>
+    <text x="250" y="216">BLOCKED</text>
+    <text x="150" y="36">WAITING</text>
+    <text x="350" y="26">TIMED</text>
+    <text x="350" y="46">WAITING</text>
+  </g>
+  <g style="stroke:#888;fill:none">
+    <path d="M90 125 L200 125" marker-end="url(#ah1)"/>
+    <path d="M290 125 L400 125" marker-end="url(#ah1)"/>
+    <path d="M210 110 h-50 a20 20 0 0 1 -20 -20 v -20" marker-end="url(#ah1)" stroke-dasharray="3"/>
+    <path d="M290 110 h50 a20 20 0 0 0 20 -20 v -20" marker-end="url(#ah1)" stroke-dasharray="3"/>
+    <path d="M250 150 v30" marker-end="url(#ah1)" stroke-dasharray="3"/>
+    <path d="M300 40 h-30 a 20 20 0 0 0 -20 20 M200 40 h30 a 20 20 0 0 1 20 20" marker-end="url(#ah2)" stroke="#bbb"/>
+    <path d="M230 190 v-30" marker-end="url(#ah2)" stroke="#bbb"/>
+  </g>
+  <g style="font-size:10;text-anchor:middle;dominant-baseline:middle;" fill="red">
+    <text x="150" y="132">start()</text>
+    <text x="300" y="85">sleep/wait/join(long millis)</text>
+    <text x="280" y="168">lock.wait()</text>
+    <text x="250" y="30">notify()</text>
+  </g>
+
+</svg>

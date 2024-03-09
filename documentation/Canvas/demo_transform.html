@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>행렬변환</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="transform" width="200" height="200"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var ctx = document.getElementById('transform').getContext('2d');
+
+    // 검정 색상 예제
+    ctx.translate(100, 100);    // 중심점을 이동
+
+    var sin30 = Math.sin(Math.PI / 6); // 30도
+    var cos30 = Math.cos(Math.PI / 6);
+    var c = 0;
+    for (var i = 0; i <= 12; i++) {
+      c = Math.floor(255 / 13 * i);   // 색상정보엔 정수가 들어가야 함(내림)
+      ctx.fillStyle = `rgb(${c},${c},${c})`;
+      ctx.fillRect(0, 0, 100, 10);
+      ctx.transform(cos30, sin30, -sin30, cos30, 0, 0);
+    }
+
+    // 핑크 색 예제
+    ctx.setTransform(-1, 0, 0, 1, 110, 110);    // 중심 (110,110), x축반전
+    ctx.fillStyle = 'rgba(255, 128, 255, 0.5)';
+    ctx.fillRect(0, 0, 50, 50);
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

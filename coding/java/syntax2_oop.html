@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="Java의 기초 문법과 구성에 대해서 설명합니다.">
+  <meta keywords="iseohyun, 튜토리얼, Java, 문법, syntax">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>문법 2: Javascript - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 코드뷰어 -->
+  <script src="/modules/codeview.js"></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+
+    del {
+      text-decoration-color: inherit;
+      color: #BBB;
+    }
+
+    .control tr+tr td {
+      text-align: left;
+      padding: 5px 15px;
+      vertical-align: top;
+    }
+
+    .control tr+tr td:last-child {
+      text-align: left;
+      padding: 5px 15px;
+      vertical-align: top;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">Java: 문법 2</div>
+
+    <p>
+      예제코드에서 다운로드는 <a href="setting.html#git%20bash(옵션)" target="_blank">첫 페이지</a>참조<br>
+      각각의 실습코드는 <sub>SUB</sub>에 해당하는 폴더를 참조하세요.
+    </p>
+
+    <p style="font-size: 0.75em;">
+      ※ 문법을 1, 2로 나눈 의미는 없습니다. oop개념이 없는 상태에서 예시를 들기 어려운 문법들을 따로 정리했을 뿐입니다.
+    </p>
+
+    <p><iframe
+        src="https://docs.google.com/presentation/d/e/2PACX-1vQrUg5-WIEUc1pUG26xfJYYKljseH98SOtHS0ioW7vuutY7s4Qy0QkVEbg9br41bfHePkEwgye5Xw_b/embed?start=false&amp;loop=false&amp;delayms=3000"
+        width="95%" height="500" frameborder="0" allowfullscreen="true"></iframe>
+    <h1>제네릭<sub>a_Generic</sub></h1>
+
+    <h2>함수에서의 제네릭<sub>A</sub></h2>
+    <blockquote>
+      &lt;T> void print(T n) { ... }
+    </blockquote>
+    <h2>클래스에서의 제네릭<sub>B</sub></h2>
+    <blockquote>
+      class Gen&lt;T> { ... }
+    </blockquote>
+    <h2>제네릭의 범위 한정<sub>C, D</sub></h2>
+    <blockquote>
+      <ul>
+        <li>
+          class G&lt;T extends W1> { ... } <samp>W1을 상속받은 객체만 인정</samp>
+        </li>
+        <li>
+          <pre>
+class W1 { ... }
+class W2 extends W1 { ... }
+class W3 extends W2 { ... }
+class G<T extends W1> { <samp> // ? : 와일드카드</samp>
+  static void print(G<?> g) { ...	} <samp> // W1을 상속받은 아무나</samp>
+  static void printSu(G<? super W2> g) { ... } <samp> // W2이상, W1, W2가능</samp>
+  static void printEx(G<? extends W2> g) { ... } <samp> // W2이하, W2, W3가능</samp>
+}</pre>
+        </li>
+      </ul>
+    </blockquote>
+
+    <h1>함수의 간략화<sub>b_Lambda</sub></h1>
+
+    <h2>람다식<sub>A</sub></h2>
+    람다식은 함수명이 굳이 필요하지 않은 1회성 함수에 관하여 선언하지 않고 사용하는 문법
+    <blockquote>
+      () -> { ... }<br>
+      (int x) -> { return x; }
+    </blockquote>
+    <h2>레퍼런스<sub>B</sub></h2>
+    ::기호를 이용하여 함수(메서드)를 반환한다.
+    <blockquote>
+      interfase A { abstract void M(); }<br>
+      class B { void N() { ... } }<br>
+      A a = B::N;
+    </blockquote>
+    <blockquote>
+      A a = System.out::println;<br>
+      a.print("test program");
+    </blockquote>
+    <h2>예제<sub>C</sub></h2>
+    아래 리스트에서, apple리스트, red리스트를 만들고 싶다.
+    <pre>
+      <code class="language-java">List<Fruit> origin = Arrays.asList(
+  new Fruit("Apple", "Red"), 
+  new Fruit("Orange", "Orange"), 
+  new Fruit("banana", "yellow"),
+  new Fruit("Orange", "Orange"),
+  new Fruit("Strawberry", "Red"),
+  new Fruit("Apple", "Green"),
+  new Fruit("Apple", "White"),
+  new Fruit("Cherry", "Red"));
+      </code>
+    </pre>
+    기존의 코드가 처리하던 방식은 이렇다.<sub>C1</sub>
+    <ul>
+      <li>과일명을 비교하는 함수를 만든다.</li>
+      <li>색깔을 비교하는 함수를 만든다.</li>
+    </ul>
+    <pre>
+      <code class="language-java">static List<Fruit> extractName(List<Fruit> fruits, String fruitType) {
+  List<Fruit> resultList = new ArrayList<>();
+  for (Fruit fruit : fruits) {
+    if (fruit.getName() == fruitType) {
+      resultList.add(fruit);
+    }
+  }
+  return resultList;
+}
+
+static List<Fruit> extractColor(List<Fruit> fruits, String color) {
+  List<Fruit> resultList = new ArrayList<>();
+  for (Fruit fruit : fruits) {
+    if (fruit.getColor() == color) {
+      resultList.add(fruit);
+    }
+  }
+  return resultList;
+}
+      </code>
+    </pre>
+    변경된 사항은 다음과 같다.<sub>C2</sub>
+    <ul>
+      <li>??를 비교하는 함수를 만든다. ??을 전달한다.</li>
+    </ul>
+    <pre>
+      <code class="language-java">List<Fruit> apple = extract(origin, (f) -> (f.getName() == "Apple"));
+List<Fruit> red = extract(origin, (f) -> (f.getColor() == "Red"));
+      </code>
+    </pre>
+
+    <h1>어노테이션<sub>c_Annotation</sub></h1>
+    </summary>
+    어노테이션은 코드의 부가정보를 기술하는 문법으로 @ 뒤에 예약어를 작성합니다. Java에서 지원하는 대부분의 어노테이션은 주석으로써의 의미가 강하지만, 크로스 플랫폼에서 외부에서 코드를 분석하게 하는 요소로도
+    사용됩니다.
+    <ul>
+      <li>Deprecated: 지원 종료 예정</li>
+      <li>Override: 오버라이드 됨</li>
+      <li>SuppressWarnings: 디버거에서 경고출력을 지움</li>
+    </ul>
+  </article>
+
+</body>
+
+</html>

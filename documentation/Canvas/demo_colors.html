@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>채우기</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="colors" width="400" height="150"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var ctx = document.getElementById('colors').getContext('2d');
+    // 왼쪽 알록달록 박스
+    for (var i = 0; i < 6; i++) {
+      for (var j = 0; j < 6; j++) {
+        ctx.fillStyle = `RGB(${255 - 51 * i}, ${255 - 51 * j}, 0)`;
+        ctx.fillRect(j * 25, i * 25, 25, 25);
+      }
+    }
+
+    // 가운데 원
+    ctx.arc(225, 75, 75, 0, Math.PI * 2);
+    ctx.fillStyle = 'cadetblue';
+    ctx.fill();
+
+    // 오른쪽 반투명 빨강박스
+    ctx.fillStyle = '#FF000077';
+    ctx.fillRect(250, 0, 150, 150);
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

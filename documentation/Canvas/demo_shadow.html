@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>그림자</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="shadow" width="200" height="150"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('shadow').getContext('2d');
+
+    ctx.shadowOffsetX = 2;
+    ctx.shadowOffsetY = 2;
+    ctx.shadowBlur = 2;
+    ctx.shadowColor = "#0007";
+
+    ctx.font = "30px 궁서체";
+    ctx.fillStyle = "Black";
+    ctx.fillText("그림자 예제", 5, 30);
+
+    ctx.strokeRect(50, 50, 90, 20);
+
+    ctx.shadowOffsetX = 10;
+    ctx.shadowOffsetY = 10;
+    ctx.shadowBlur = 10;
+    ctx.shadowColor = "#F00A";
+    ctx.fillRect(50, 80, 90, 20);
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

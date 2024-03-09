@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <!-- 모바일 스케일 고정 -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="튜토리얼을 제공합니다.">
+  <meta keywords="iseohyun, 튜토리얼, SVG, 선 그리기">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>선 그리기: SVG - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css">
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">SVG: 선 그리기</div>
+
+    <p>&nbsp;도형을 그립니다. <u>모든 도형은 그리기(윤곽선)와 채우기 중 적어도 하나는 선택해야 합니다.</u> 아래는 그리기와 채우기의 예시를 보여줍니다.</p>
+
+    <svg viewBox="0 0 600 600" xmlns="http://www.w3.org/2000/svg"
+      style="font-size: 30px; width: 300px; border: 1px solid #eee; border-radius: 15px; padding: 20px; margin: 20px auto; box-shadow: #8888 5px 5px 5px;">
+      <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M9 0L0 4 0 -4 9 0z" />
+      </marker>
+      <path style="stroke: black; fill: none; stroke-linecap: round; stroke-linejoin: round; stroke-width: 46px;"
+        d="M 84 440 C -1 341 38 223 68 161 S 151 23 234 34 S 363 164 327 217 S 245 273 198 229 S 187 105 245 77 S 432 108 432 212 S 354 371 393 420 C 431 460 468 436 468 407" />
+      <path style="stroke: red; fill: none; stroke-width: 1px;"
+        d="M 84 440 C -1 341 38 223 68 161 S 151 23 234 34 S 363 164 327 217 S 245 273 198 229 S 187 105 245 77 S 432 108 432 212 S 354 371 393 420 C 431 460 468 436 468 407" />
+      <path marker-end="url(#ah1)" d="M430, 120 Q650 50 500 40" style="fill:none;stroke:#000" />
+      <g transform="translate(370,0)">
+        <text x="0" y="25">윤곽선:</text>
+        <text x="0" y="60">채우기:</text>
+        <text x="0" y="95">윤곽선 넓이: 46px</text>
+        <rect x="85" y="1" width="30" height="30" style="stroke:black;fill:black" />
+        <rect x="85" y="35" width="30" height="30" style="stroke:black;fill:none" />
+        <path style="fill:none;stroke:black;stroke: width 1px;" d="M85 35 l30 30 m-30 0 l30 -30" />
+      </g>
+
+      <path style="stroke: none; fill: blue;" d="M 99 289 C 183 296 239 392 188 468" />
+      <path style="stroke: red; fill: none;" d="M 99 289 C 183 296 239 392 188 468" />
+      <path marker-end="url(#ah1)" d="M150, 400 Q100 430 130 470" style="fill:none;stroke:#000" />
+      <g transform="translate(100,480)">
+        <text x="0" y="25">윤곽선:</text>
+        <text x="0" y="60">채우기:</text>
+        <rect x="85" y="1" width="30" height="30" style="stroke:black;fill:none" />
+        <rect x="85" y="35" width="30" height="30" style="stroke:black;fill:blue" />
+        <path style="fill:none;stroke:black;stroke: width 1px;" d="M85 1 l30 30 m-30 0 l30 -30" />
+      </g>
+
+      <path style="stroke: orange; stroke-linecap: round; stroke-width: 20px; fill: green;"
+        d="M 246 311 C 335 320 324 390 291 462 Z" />
+      <path style="stroke: red;fill:none" d="M 246 311 C 335 320 324 390 291 462 Z" />
+      <path marker-end="url(#ah1)" d="M330, 410 Q350 430 350 470" style="fill:none;stroke:#000" />
+      <g transform="translate(300,480)">
+        <text x="0" y="25">윤곽선:</text>
+        <text x="0" y="60">채우기:</text>
+        <rect x="85" y="1" width="30" height="30" style="stroke:black;fill:orange" />
+        <rect x="85" y="35" width="30" height="30" style="stroke:black;fill:green" />
+      </g>
+
+      <text x="50" y="580"> 원래 선(1px):</text>
+      <path d="M240 570 h 100" style="fill:none;stroke:red;stroke-width:2px;" />
+    </svg>
+
+    <h1>선 그리기(path)</h1>
+    <table>
+      <caption>path테그의 d 어트리뷰트</caption>
+      <thead>
+        <tr>
+          <td>기호</td>
+          <td>절대</td>
+          <td>상대</td>
+          <td>설명</td>
+        </tr>
+      </thead>
+      <tr>
+        <td>Movo To</td>
+        <td>M</td>
+        <td>m</td>
+        <td style="text-align: left;">뗀선 그리기</td>
+      </tr>
+      <tr>
+        <td>Line To</td>
+        <td>L</td>
+        <td>l</td>
+        <td style="text-align: left;">선 그리기</td>
+      </tr>
+      <tr>
+        <td>Horizon</td>
+        <td>H</td>
+        <td>h</td>
+        <td style="text-align: left;">수평 그리기</td>
+      </tr>
+      <tr>
+        <td>Verticalness</td>
+        <td>V</td>
+        <td>v</td>
+        <td style="text-align: left;">수직 그리기</td>
+      </tr>
+      <tr>
+        <td>return to Zero</td>
+        <td colspan="2">Z, z</td>
+        <td style="text-align: left;">시작점으로</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Quadratic Bezier</td>
+        <td>Q</td>
+        <td>q</td>
+        <td style="text-align: left;">2차 베지어 곡선</td>
+      </tr>
+      <tr>
+        <td>T</td>
+        <td>t</td>
+        <td style="text-align: left;">2차 베지어 곡선(연속)</td>
+      </tr>
+      <tr>
+        <td rowspan="2">Cubic Bezier</td>
+        <td>C</td>
+        <td>c</td>
+        <td style="text-align: left;">3차 베지어 곡선</td>
+      </tr>
+      <tr>
+        <td>S</td>
+        <td>s</td>
+        <td style="text-align: left;">3차 베지어 곡선(연속)</td>
+      </tr>
+      <tr>
+        <td>Arc</td>
+        <td>A</td>
+        <td>a</td>
+        <td style="text-align: left;">원호 그리기</td>
+      </tr>
+    </table>
+    <p>&nbsp;좌표(x, y)는 가독성을 위해서 <var>,</var>(콤마)를 작성해도 되고, 작성하지 않아도 됩니다.</p>
+    <blockquote>
+      <pre>&lt;path d="M100<span style="color:red">,</span>50 L200<span style="color:red">,</span>50 m0<span style="color:red">,</span>50 l200<span style="color:red">,</span>50" style="stroke:#000;" />
+또는
+&lt;path d="M100 50 L200 50 m0 50 l200 50" style="stroke:#000;" /></pre>
+    </blockquote>
+
+    <h2>선 긋기(L)</h2>
+    <blockquote>
+      <span style="color: red;">절대위치(100, 50)으로 이동</span><br>
+      <span style="color: orange;">절대위치(200, 50)으로 선 긋기</span><br>
+      <span style="color: rgb(200, 200, 0);">상대위치(+0, +50) → (200,100)으로 선 긋기</span><br>
+      <span style="color: green;">상대위치(+200, +50) → (400,150)으로 선 긋기</span><br>
+    </blockquote>
+
+    <blockquote>
+      &lt;path d="<u>M100 50 L200 50 m0 50 l200 50</u>" style="stroke:#000;" />
+    </blockquote>
+    <svg id="svgline" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 300"
+      style="border:1px solid #aaa;">
+      <path d="M100 50 L200 50 m0 50 l200 50" style="stroke:#000;" />
+      <circle cx="100" cy="50" r="5" style="fill:red" />
+      <text x="100" y="70" style="fill:red">M100,50</text>
+      <circle cx="200" cy="50" r="5" style="fill:orange" />
+      <text x="200" y="70" style="fill:orange">L200,50</text>
+      <circle cx="200" cy="100" r="5" style="fill:rgb(200, 200, 0)" />
+      <text x="180" y="125" style="fill:rgb(200, 200, 0)">m0,50</text>
+      <circle cx="400" cy="150" r="5" style="fill:green" />
+      <text x="380" y="175" style="fill:green">l200,50</text>
+    </svg>
+
+    <h2>수평(H), 수직(V)</h2>
+    <blockquote>
+      <span style="color: red;">절대위치(100, 50)으로 이동</span><br>
+      <span style="color: orange;">가로로(x=350)까지 선 긋기</span><br>
+      <span style="color: rgb(200, 200, 0);">세로로(y=200)까지 선 긋기</span><br>
+      <span style="color: green;">상대위치(x=-150) → (x=350-150)으로 선 긋기</span><br>
+      <span style="color: blue;">상대위치(y=80) → (y=200+80)으로 선 긋기</span><br>
+    </blockquote>
+    <blockquote>
+      &lt;path d="<u>M100,50 H350 V200 h-150 v80</u>" style="stroke:#000; fill:none" />
+    </blockquote>
+    <svg id="svghv" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 300"
+      style="border:1px solid #aaa;">
+      <path d="M100,50 H350 V200 h-150 v80" style="stroke:#000; fill:none" />
+      <circle cx="100" cy="50" r="5" style="fill:red" />
+      <text x="100" y="70" style="fill:red">M100,50</text>
+      <circle cx="350" cy="50" r="5" style="fill:orange" />
+      <text x="360" y="70" style="fill:orange">H350</text>
+      <circle cx="350" cy="200" r="5" style="fill:rgb(200, 200, 0)" />
+      <text x="360" y="210" style="fill:rgb(200, 200, 0)">V200</text>
+      <circle cx="200" cy="200" r="5" style="fill:green" />
+      <text x="200" y="185" style="fill:green">h-150</text>
+      <circle cx="200" cy="280" r="5" style="fill:blue" />
+      <text x="210" y="275" style="fill:blue">v80</text>
+    </svg>
+
+    <h2>제자리 돌아오기(Z)</h2>
+    <blockquote>
+      선그리기를 시작한 지점으로 회귀(가까운 점 X)<br>
+      <span style="color: red;">(200, 150)</span>에서 x-=100; → y-=100;
+      <span style="color: orange;">(Z로 이동)</span>&nbsp; 다시
+      <span style="color: red;">M </span>으로
+      <span style="color: blue;">이동</span><br>
+      <span style="color: rgb(200, 200, 0);">(200, 150)</span>에서 y-=100; → x-=100;
+      <span style="color: green;">(Z로 이동)</span>&nbsp; 다시
+      <span style="color: red;">M </span>으로
+      <span style="color: blue;">이동</span>
+    </blockquote>
+    <blockquote>
+      &lt;path d="M200,150 h-100 v-100<u> Z </u>M300,200 v-100 h-100<u> z</u>" style="stroke:#000; fill:none" />
+    </blockquote>
+    <svg id="svgzero" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 300"
+      style="border:1px solid #aaa;">
+      <defs>
+        <marker id="ah1" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" viewBox="0 0 20 10"
+          orient="auto">
+          <path d="M9 0L0 4 0 -4 9 0z" fill="blue" />
+        </marker>
+      </defs>
+      <path d="M200,150 h-100 v-100 Z M300,200 v-100 h-100 z" style="stroke:#000; fill:none" />
+      <circle cx="200" cy="150" r="5" style="fill:red" />
+      <text x="110" y="165" style="fill:red">M200,150</text>
+      <circle cx="100" cy="50" r="5" style="fill:orange" />
+      <text x="110" y="40" style="fill:orange">Z</text>
+      <circle cx="300" cy="200" r="5" style="fill:rgb(200, 200, 0)" />
+      <text x="310" y="210" style="fill:rgb(200, 200, 0)">M300,200</text>
+      <circle cx="200" cy="100" r="5" style="fill:green" />
+      <text x="200" y="85" style="fill:green">z</text>
+
+      <path marker-end="url(#ah1)" stroke="blue" stroke-width="3" fill="none" d="M125 75 l50 50" />
+      <path marker-end="url(#ah1)" stroke="blue" stroke-width="3" fill="none" d="M225 125 l50 50" />
+    </svg>
+
+    <h2>베지어 곡선(Q,T,C,S)</h2>
+    <p>
+      베지어 곡선은 n차 함수를 좀 더 직관적으로 작성하도록 도와줍니다. 이론적 이해는 <a href="/etc/column/bezier/bezier.html" target="_blank">베지어 곡선의
+        이해</a> 문서를 참조하십시오.
+    </p>
+    <iframe style="width:100%;height:650px"
+      src="http://127.0.0.1:5500/etc/fun/Bezier/Bezier.html?p=0.156,0.336,0.35,0.678,0.798,0.693,"></iframe>
+    <p>
+      <a href="/etc/fun/Bezier/Bezier.html" download>
+        <button>bazier.html 다운로드</button></a> @iseohyun.com CC-BY-SA
+    </p>
+
+    <blockquote>
+      &lt;path d="M100 80 C120,200 300,100 320,220" style="stroke:#000; fill:none" />
+    </blockquote>
+    <svg id="svgzero" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 300"
+      style="border:1px solid #aaa;">
+      <defs>
+        <marker id="ah-blue" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" viewBox="-20 -10 20 10"
+          orient="auto">
+          <path d="M0 0 L-9 4 -9 -4 z" fill="blue" stroke="blue" />
+        </marker>
+      </defs>
+      <path d="M100 80 C120,200 300,100 320,220" style="stroke:#000; fill:none" />
+      <circle cx="100" cy="80" r="5" style="fill:red" />
+      <text x="80" y="65" style="fill:red">M100,80</text>
+      <circle cx="120" cy="200" r="5" style="fill:orange" />
+      <text x="100" y="230" style="fill:orange">C120,200</text>
+      <circle cx="300" cy="100" r="5" style="fill:rgb(200, 200, 0)" />
+      <text x="280" y="80" style="fill:rgb(200, 200, 0)">300,100</text>
+      <circle cx="320" cy="220" r="5" style="fill:green" />
+      <text x="300" y="250" style="fill:green">320,220</text>
+
+      <path marker-end="url(#ah-blue)" stroke="blue" stroke-width="3" fill="none" d="M100 80 L120 200" />
+      <path marker-end="url(#ah-blue)" stroke="blue" stroke-width="3" fill="none" d="M320 220 300 100" />
+    </svg>
+
+
+    <blockquote>
+      2차곡선은(시작점, 제어점, 종착점)을 필요로 합니다.<br>
+      시작점은 이전노드를 사용합니다.<br>
+      T는 제어점을 생략할 때 사용합니다. 제어점은 곡선의 제어점180도 위치에 있거나 참조 할 수 없을 때, 시작점으로 간주합니다.
+    </blockquote>
+
+    <h2>타원(A)</h2>
+
+    <p><a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/Paths" target="_blank">mozila.org > SVG >
+        Tutorial > Paths</a>의 예제를 재구성하였습니다.</p>
+    <blockquote>
+      A(또는 a)(<br>
+      &nbsp; rx, ry(타원반지름),<br>
+      &nbsp; [0-360](회전각),<br>
+      &nbsp; [0-1](예각-둔각),<br>
+      &nbsp; [0-1](반시계-시계방향),<br>
+      &nbsp; x2, y2(도착점)<br>
+      )
+    </blockquote>
+
+    <pre><code class="language-html">&lt;path d="M10 315  // 좌하단 시작
+        L 110 215 // 대각 이동
+        A 30 50 0 0 1 162.5 162.5 // 1번째 똑바로 선 타원
+        L 172.5 152.5 // 대각이동
+        A 30 50 -45 0 1 215 110 // 2번째 누운 타원
+        L 315 10" // 마지막 대각이동
+        ... // 중략
+/>
+    </code></pre>
+
+    <svg viewbox="0 0 320 320" width="45%" xmlns="http://www.w3.org/2000/svg" style="display:block; margin-left:10vw">
+      <path d="M10 315
+                 L 110 215
+                 A 30 50 0 0 1 162.5 162.5
+                 L 172.5 152.5
+                 A 30 50 -45 0 1 215 110
+                 L 315 10" stroke="black" fill="green" stroke-width="2" fill-opacity="0.5" marker-end="url(#ah1)" />
+      <ellipse rx="30" ry="50" cx="0" cy="0" fill="transparent" stroke="red" stroke-opacity="0.5" stroke-width="3"
+        transform="translate(136,188)" />
+      <ellipse rx="30" ry="50" cx="0" cy="0" fill="transparent" stroke="red" stroke-opacity="0.5" stroke-width="3"
+        transform="translate(194,131) rotate(-45)" />
+    </svg>
+
+    <p>
+      도착점이 생각보다 가까우면, 타원의 중심점을 외각으로 미뤄주고,<br>
+      도착점이 생각보다 멀면, 타원을 임의로 키워서 어쨌든 도착점에 도착할 수 있도록 계산해준다.
+    </p>
+    <pre><code class="language-html">&lt;path d="M10 315
+          L 110 215
+          a 30 50 0 0 1 30 -30 // 30, -30은 너무 가깝다.
+          L 172.5 152.5
+          a 30 50 -45 0 1 80 -80 // 80, -80은 너무 멀다.
+          L 315 10"
+          ... //중략
+/></code></pre>
+
+    <svg viewbox="0 0 320 320" width="45%" xmlns="http://www.w3.org/2000/svg" style="display:block; margin-left:10vw">
+      <path d="M10 315
+                 L 110 215
+                 a 30 50 0 0 1 30 -30
+                 L 172.5 152.5
+                 a 30 50 -45 0 1 80 -80
+                 L 315 10" stroke="black" fill="blue" stroke-width="2" fill-opacity="0.5" marker-end="url(#ah1)" />
+      <ellipse rx="30" ry="50" cx="0" cy="0" fill="transparent" stroke="red" stroke-opacity="0.5" stroke-width="3"
+        transform="translate(136,188)" />
+      <ellipse rx="30" ry="50" cx="0" cy="0" fill="transparent" stroke="red" stroke-opacity="0.5" stroke-width="3"
+        transform="translate(194,131) rotate(-45)" />
+    </svg>
+    <h3>예각/둔각, 시계방향에 대하여</h3>
+    <svg width="325" height="325" xmlns="http://www.w3.org/2000/svg"
+      style="border:1px solid #aaa;border-radius: 10px;padding:3px;display:block; margin-left:10vw">
+      <text x="90" y="15" fill="black">예각:0</text>
+      <text x="240" y="15" fill="black">둔각:1</text>
+      <text fill="black" transform="translate(5, 75) rotate(90)">반시계:0</text>
+      <text fill="black" transform="translate(5, 230) rotate(90)">시계:1</text>
+      <path d="M0,23 h325" stroke="#000" />
+      <path d="M0,180 h325" stroke="#888" />
+      <path d="M23,0 v325" stroke="#000" />
+      <path d="M180,0 v325" stroke="#888" />
+      <g transform="matrix(1, 0, 0, 1, 0, 0)">
+        <path d="M80 80
+                 A 45 45, 0, 0, 0, 125 125
+                 L 125 80 Z" fill="green" stroke="black" stroke-width="3" fill-opacity="0.5" />
+        <circle cx="80" cy="80" r="5" stroke="red" fill="transparent" />
+        <text x="30" y="75" fill="black">출발점</text>
+        <circle cx="125" cy="125" r="5" stroke="red" fill="transparent" />
+        <text x="75" y="145" fill="black">도착점</text>
+        <circle cx="125" cy="80" r="45" stroke="gray" fill="transparent" />
+        <circle cx="80" cy="125" r="45" stroke="gray" fill="transparent" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 150, 0)">
+        <path d="M80 80
+                 A 45 45, 0, 1, 0, 125 125
+                 L 125 80 Z" fill="red" stroke="black" stroke-width="3" fill-opacity="0.5" />
+        <circle cx="125" cy="80" r="45" stroke="gray" fill="transparent" />
+        <circle cx="80" cy="125" r="45" stroke="gray" fill="transparent" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 0, 150)">
+        <path d="M80 80
+                 A 45 45, 0, 0, 1, 125 125
+                 L 125 80 Z" fill="blue" stroke="black" stroke-width="3" fill-opacity="0.5" />
+        <circle cx="125" cy="80" r="45" stroke="gray" fill="transparent" />
+        <circle cx="80" cy="125" r="45" stroke="gray" fill="transparent" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 150, 150)">
+        <path d="M80 80
+                 A 45 45, 0, 1, 1, 125 125
+                 L 125 80 Z" fill="purple" stroke="black" stroke-width="3" fill-opacity="0.5" />
+        <circle cx="125" cy="80" r="45" stroke="gray" fill="transparent" />
+        <circle cx="80" cy="125" r="45" stroke="gray" fill="transparent" />
+      </g>
+    </svg>
+
+    <h2>화살표</h2>
+    <pre><code class="language-html">&lt;marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+  &lt;path d="M9 0 L0 4 0 -4z" />
+&lt;/marker></code></pre>
+    <p>"M9,0 L0,4 0,-4z" 코드를 보면 앞으로 이동(M9,0), 화살표 왼쪽(L0,4). 화살표 오른쪽(4,0), 제자리(z)인 것을 확인 할 수 있다. 이를 원하는 직선에 다음과 같이 적용이
+      가능하다.</p>
+    <blockquote>
+      &lt;path d="M100 50 L300 180" <u>marker-end="url(#ah1)</u>"/>
+    </blockquote>
+    <svg id="svgline" xmlns="http://www.w3.org/2000/svg" width="100%" viewBox="0 0 500 300"
+      style="border:1px solid #aaa; border: 1px solid #aaa; display: block; width: 90%; margin: 10px auto;">
+      <circle cx="100" cy="50" r="5" style="fill:red" />
+      <text x="100" y="40" style="fill:red">M100,50</text>
+      <circle cx="300" cy="180" r="5" style="fill:orange" />
+      <text x="300" y="200" style="fill:orange">L200,50</text>
+      <path d="M100 50 L300 180" style="stroke:#000;" marker-end="url(#ah1)" />
+    </svg>
+
+
+    <h1>도형 그리기</h1>
+
+    <svg width="350" height="250" version="1.1" xmlns="http://www.w3.org/2000/svg"
+      style="display: block;margin-left: 5vw;">
+      <text x="0" y="30" fill="black">사각형:</text>
+      <rect x="60" y="10" width="30" height="30" stroke="black" fill="transparent" stroke-width="5" />
+      <rect x="110" y="10" rx="10" ry="10" width="30" height="30" stroke="black" fill="transparent" stroke-width="5" />
+      <rect x="160" y="10" rx="30" ry="30" width="30" height="30" stroke="black" fill="transparent" stroke-width="5" />
+      <rect x="210" y="10" rx="60" ry="30" width="60" height="30" stroke="black" fill="#aaa" stroke-width="5" />
+
+      <text x="0" y="80" fill="red">원:</text>
+      <circle cx="50" cy="75" r="20" stroke="red" fill="transparent" stroke-width="5" />
+      <text x="80" y="80" fill="red">타원:</text>
+      <ellipse cx="150" cy="75" rx="20" ry="20" stroke="red" fill="transparent" stroke-width="5" />
+      <ellipse cx="220" cy="75" rx="40" ry="20" stroke="red" fill="#faa" stroke-width="5" />
+
+      <text x="0" y="135" fill="orange">직선:</text>
+      <g transform="matrix(1, 0, 0, 1, 50, 0)">
+        <line x="100" y="10" x1="10" x2="50" y1="110" y2="150" stroke="orange" stroke-width="5" />
+      </g>
+      <text x="110" y="135" fill="orange">자유직선(개방):</text>
+      <g transform="matrix(1, 0, 0, 1, 160, 0)">
+        <polyline points="60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 145" stroke="orange"
+          fill="transparent" stroke-width="5" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 210, 0)">
+        <polyline points="60 110 65 120 70 115 75 130 80 125 85 140 90 135 95 150 100 110" stroke="orange" fill="#fd4"
+          stroke-width="5" />
+      </g>
+      <text x="0" y="195" fill="green">자유직선(닫힘):</text>
+      <g transform="matrix(1, 0, 0, 1, 100, 0)">
+        <polygon id="star" points="50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180" stroke="green"
+          fill="transparent" stroke-width="5" />
+      </g>
+      <g transform="matrix(1, 0, 0, 1, 160, 0)">
+        <polygon id="star" points="50 160 55 180 70 180 60 190 65 205 50 195 35 205 40 190 30 180 45 180" stroke="green"
+          fill="#8F8" stroke-width="5" />
+      </g>
+    </svg>
+    <table>
+      <thead>
+        <tr>
+          <td width="100px">함수</td>
+          <td>인자</td>
+        </tr>
+      </thead>
+      <tr>
+        <td>rect</td>
+        <td style="text-align: left;">x, y, width(폭), height(높이), rx, ry(둥근꼭지)</td>
+      </tr>
+      <tr>
+        <td>circle</td>
+        <td style="text-align: left;">r(반지름), cx, cy(중심점)</td>
+      </tr>
+      <tr>
+        <td>ellipse</td>
+        <td style="text-align: left;">rx, ry(반지름 넓이), cx, cy(중심점)</td>
+      </tr>
+      <tr>
+        <td>line</td>
+        <td style="text-align: left;">x1, x2(시작점), x2, y2(도착점)</td>
+      </tr>
+      <tr>
+        <td>polyline</td>
+        <td style="text-align: left;">points(점 나열:열린도형)</td>
+      </tr>
+      <tr>
+        <td>polygon</td>
+        <td style="text-align: left;">points(점 나열:닫힌도형)</td>
+      </tr>
+    </table>
+
+    <h1>선 특성</h1>
+    <h2>끝선 처리</h2>
+    <blockquote>
+      <b>stroke-linecap="[butt | square | round]"<br>
+        stroke-linejoin="[butt | round | bevel ]"</b><br>
+    </blockquote>
+    <svg viewbox="0 0 200 200" width="50%" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <line x1="40" x2="120" y1="20" y2="20" stroke="black" stroke-width="20" stroke-linecap="butt" />
+      <line x1="40" x2="120" y1="20" y2="20" stroke="red" />
+      <text x="35" y="40" font-size="10">stroke-linecap="butt"</text>
+      <line x1="40" x2="120" y1="60" y2="60" stroke="black" stroke-width="20" stroke-linecap="square" />
+      <line x1="40" x2="120" y1="60" y2="60" stroke="red" />
+      <text x="30" y="80" font-size="10">stroke-linecap="square"</text>
+      <line x1="40" x2="120" y1="100" y2="100" stroke="black" stroke-width="20" stroke-linecap="round" />
+      <text x="30" y="120" font-size="10">stroke-linecap="round"</text>
+      <line x1="40" x2="120" y1="100" y2="100" stroke="red" />
+    </svg>
+
+    <svg viewbox="0 0 160 280" width="30%" xmlns="http://www.w3.org/2000/svg" version="1.1">
+      <polyline points="40 60 80 20 120 60" stroke="black" stroke-width="20" stroke-linejoin="butt" fill="none"
+        stroke-linejoin="miter" />
+      <polyline points="40 60 80 20 120 60" stroke="red" stroke-width="1" stroke-linejoin="butt" fill="none"
+        stroke-linejoin="miter" />
+      <text x="35" y="80" font-size="10">stroke-linejoin="butt"</text>
+
+      <polyline points="40 140 80 100 120 140" stroke="black" stroke-width="20" stroke-linejoin="round" fill="none"
+        stroke-linejoin="round" />
+      <polyline points="40 140 80 100 120 140" stroke="red" stroke-width="1" stroke-linejoin="round" fill="none"
+        stroke-linejoin="round" />
+      <text x="30" y="160" font-size="10">stroke-linejoin="round"</text>
+
+      <polyline points="40 220 80 180 120 220" stroke="black" stroke-width="20" stroke-linejoin="square" fill="none"
+        stroke-linejoin="bevel" />
+      <polyline points="40 220 80 180 120 220" stroke="red" stroke-width="1" stroke-linejoin="square" fill="none"
+        stroke-linejoin="bevel" />
+      <text x="30" y="240" font-size="10">stroke-linejoin="bevel"</text>
+    </svg>
+
+    <h2>점 선</h2>
+    <blockquote>
+      <b>stroke-dasharray="[0-9]+ [0-9]+..."</b><br>
+      예) 5 5 : 5칠하고, 5비우고, 5칠하고, 5비우고...<br>
+      3 6 9: 3칠하고, 6비우고, 9칠하고, 3비우고, 6칠하고, 9비우고 ...<br>
+      <b>stroke-dashoffset</b>="[0-9]+" <samp> // 앞 뒤로 밀기 옵션(음수 가능)</samp>
+    </blockquote>
+    <svg width="200" height="150" xmlns="http://www.w3.org/2000/svg" version="1.1"
+      style="border:1px solid #aaa;border-radius: 10px;padding:3px;display:block;margin-left:5vw">
+
+      <path d="M 10 75 Q 50 10 100 75 T 190 75" stroke="black" stroke-linecap="round" stroke-dasharray="3 6 9"
+        fill="none" />
+      <path d="M 10 75 L 190 75" stroke="red" stroke-linecap="round" stroke-width="1" stroke-dasharray="5 5"
+        fill="none" />
+    </svg>
+  </article>
+</body>
+
+</html>

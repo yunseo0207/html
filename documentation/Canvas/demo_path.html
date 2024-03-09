@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Path2D로 그림그리기</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="path2D" width="300" height="120"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var ctx = document.getElementById('path2D').getContext('2d');
+
+    // Path2D 객체를 생성한 후 그리기 예제
+    var drawing = new Path2D();
+    drawing.rect(10, 10, 50, 50);
+    drawing.moveTo(125, 35);
+    drawing.arc(100, 35, 25, 0, 2 * Math.PI);
+
+    ctx.fill(drawing);
+
+    // SVG 경로를 생성한 후 그리기 예제
+    // Move(200,10) → horizontal(수평) 80 이동 → vertical(수직) 80이동 → 수평 -40이동 → 원점으로
+    var p = new Path2D('M200 10 h 80 v 80 h -40 Z');
+
+    ctx.stroke(p);
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

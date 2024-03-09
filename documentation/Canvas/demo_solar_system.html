@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>태양계</title>
+</head>
+
+<body onload="init()">
+  <canvas id="solars" width="300" height="300"></canvas>
+</body>
+
+</html>
+
+<script>
+  function init() {
+    setInterval(solarsystem, 100);
+  }
+
+  function solarsystem() {
+    var ctx = document.getElementById('solars').getContext('2d');
+
+    ctx.clearRect(0, 0, 300, 300); // 캔버스를 비운다
+
+    ctx.globalCompositeOperation = 'destination-over';
+
+    ctx.fillStyle = 'rgba(0,0,0,0.1)';
+    ctx.strokeStyle = 'rgba(0,153,255,0.4)';
+    ctx.save();
+    ctx.translate(150, 150);
+
+    // 지구
+    var time = new Date();
+    ctx.rotate(((2 * Math.PI) / 60) * time.getSeconds() + ((2 * Math.PI) / 60000) * time.getMilliseconds());
+    ctx.beginPath();
+    ctx.arc(105, 0, 12, 0, Math.PI * 2, true);
+    ctx.fillStyle = "blue";
+    ctx.fill();
+    ctx.translate(105, 0);
+    var grad = ctx.createLinearGradient(0, 0, 50, 0);
+    grad.addColorStop(0, '#fff7');
+    grad.addColorStop(1, '#1127');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, -12, 50, 24); // Shadow
+
+    // 달
+    ctx.save();
+    ctx.rotate(((2 * Math.PI) / 6) * time.getSeconds() + ((2 * Math.PI) / 6000) * time.getMilliseconds());
+    ctx.translate(0, 28.5);
+    ctx.beginPath();
+    ctx.arc(0, 0, 5, 0, Math.PI * 2, true);
+    ctx.fillStyle = "#dd0";
+    ctx.fill();
+    ctx.stroke();
+    ctx.restore();
+
+    ctx.beginPath();
+    ctx.arc(0, 0, 28.5, 0, Math.PI * 2, false); // 달 궤도
+    ctx.stroke();
+
+    ctx.restore();
+
+    ctx.beginPath();
+    ctx.arc(150, 150, 105, 0, Math.PI * 2, false); // 지구 궤도
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.fillStyle = "#ff8";
+    ctx.arc(150, 150, 20, 0, Math.PI * 2, true); // 태양
+    ctx.fill();
+    ctx.stroke();
+    ctx.fillStyle = "#112";
+    ctx.fillRect(0, 0, 300, 300);
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

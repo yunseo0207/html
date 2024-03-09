@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>마스크</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="stars"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var width = 400;
+    var height = 400;
+
+    var stars = document.getElementById('stars');
+    var ctx = stars.getContext('2d');
+    stars.setAttribute("width", width);
+    stars.setAttribute("height", height);
+
+    ctx.fillRect(0, 0, width, height);   // 검정배경
+
+    // 동그란 모양의 잘라내기 경로를 생성한다
+    ctx.beginPath();
+    ctx.arc(width / 2, height / 2, (Math.min(width, height) - 20) / 2, 0, Math.PI * 2, true);
+    ctx.clip();
+
+    // 하늘 배경 그라데이션 - 은근 섬세한 mdn
+    var lingrad = ctx.createLinearGradient(0, 0, 0, 150);
+    lingrad.addColorStop(0, '#232256');
+    lingrad.addColorStop(1, '#143778');
+
+    ctx.fillStyle = lingrad;
+    ctx.fillRect(0, 0, width, height);
+
+    // 별 출력
+    var numStars = height * width / 800;
+    for (var j = 0; j < numStars; j++) {
+      ctx.save();
+      var light = Math.random() * 15 + 230;
+      ctx.fillStyle = `rgb(${light},${light},${light})`;
+      ctx.translate(Math.floor(Math.random() * width), Math.floor(Math.random() * height));
+      drawStar(ctx, Math.floor(Math.random() * 4) + 2);
+      ctx.restore();
+    }
+  }
+
+  function drawStar(ctx, r) { // r = 반지름, 별 크기
+    ctx.save();
+    ctx.beginPath()
+    ctx.rotate(Math.PI * Math.random()); // 별 기울기 랜덤
+    ctx.moveTo(r, 0);
+    for (var i = 0; i < 9; i++) {
+      ctx.rotate(Math.PI / 5);
+      if (i % 2 == 0) {
+        ctx.lineTo(r / 2, 0); // 움푹
+      } else {
+        ctx.lineTo(r, 0); // 뾰족
+      }
+    }
+    ctx.closePath();
+    ctx.fill();
+    ctx.restore();
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

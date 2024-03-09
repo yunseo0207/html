@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>선 이음부</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="lineJoin" width="450" height="350"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('lineJoin').getContext('2d');
+    var dashArray = [[20], [20, 20], [20, 40], [20, 40, 80]];
+
+    // lineJoin 적용(반투명 검정)
+    ctx.strokeStyle = '#0008';
+    ctx.lineWidth = 10;
+    for (var i = 0; i < dashArray.length; i++) {
+      ctx.beginPath();
+      ctx.setLineDash(dashArray[i]);
+      ctx.moveTo(0, 50 + 75 * i);
+      ctx.lineTo(450, 50 + 75 * i);
+      ctx.stroke();
+    }
+
+    // 붉은 선(경로 표시용)
+    ctx.strokeStyle = '#F00';
+    ctx.lineWidth = 1;
+    ctx.font = "30px sans-serif";
+    ctx.textAlign = "center";
+    ctx.beginPath();
+    ctx.setLineDash([0]);
+    for (var i = 0; i < dashArray.length; i++) {
+      ctx.moveTo(0, 50 + 75 * i);
+      ctx.lineTo(450, 50 + 75 * i);
+      ctx.fillText(dashArray[i], 100, 30 + 75 * i);
+    }
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = '#F88';
+    ctx.lineWidth = 10;
+    ctx.setLineDash([20, 120]);
+    ctx.moveTo(0, 310);
+    ctx.lineTo(450, 310);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = '#8F8';
+    ctx.lineWidth = 10;
+    ctx.setLineDash([40, 100]);
+    ctx.lineDashOffset = -20;
+    ctx.moveTo(0, 320);
+    ctx.lineTo(450, 320);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = '#88F';
+    ctx.lineWidth = 10;
+    ctx.setLineDash([80, 60]);
+    ctx.lineDashOffset = -60;
+    ctx.moveTo(0, 330);
+    ctx.lineTo(450, 330);
+    ctx.stroke();
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

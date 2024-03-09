@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="sin 법칙을 소개합니다.">
+  <meta keywords="iseohyun, 튜토리얼, 수학, 사인법칙, 증명, 유도">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>Sin법칙: 삼각함수 - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+
+    .graph {
+      width: 300px;
+      min-width: 40vw;
+      padding: 30px;
+      margin: 10px auto;
+      display: block;
+      border: 1px solid #eee;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">Sin 법칙</div>
+    
+    <h1>사인법칙 증명</h1>
+    <h2>삼각형의 내각의 합은 180&deg;</h2>
+    <ul>
+      <li>모든 삼각형은 자신의 변과 평행한 보조선을 그을 수 있다.</li>
+      <li>&cir;은 동위각으로 같다.</li>
+      <li>&triangle;은 엇각으로 같다.</li>
+      <li><u>삼각형은 언제나 내각의 총 합이 180&deg;가 된다.</u></li>
+    </ul>
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg viewBox="0 100 500 350" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="graph">
+      <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M0 4 L9 0 0 -4" style="fill:none; stroke:black" />
+      </marker>
+      <marker id="ah2" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M5 4 L9 0 5 -4 M0 4 L5 0 0 -4" style="fill:none; stroke:black" />
+      </marker>
+
+      <g style="stroke: #000;fill:none">
+        <path d="M0 350 h500"></path>
+
+        <path d="M-200 750 l600 -800"></path> <!-- 3/4 -->
+        <path d="M0 750 l600 -800"></path> <!-- 3/4 -->
+        <path d="M0 400 l500 -250"></path>
+        <path d="M0 500 l500 -250"></path>
+        <path d="M130 310 l30 -40" marker-end="url(#ah1)" />
+        <path d="M330 310 l30 -40" marker-end="url(#ah1)" />
+        <path d="M200 300 l30 -15" marker-end="url(#ah2)" />
+        <path d="M400 300 l30 -15" marker-end="url(#ah2)" />
+
+        <ellipse cx="149" cy="339" rx="5" ry="5" />
+        <ellipse cx="349" cy="339" rx="5" ry="5" />
+
+        <path d="M335 320 h10 l-5 -10z" />
+        <path d="M373 227 h10 l-5 -10z" />
+
+        <path d="M284 350 a20 20 0 0 1 40 0" style="stroke:red" />
+
+        <path style="stroke-width:3px" d="M100 350 h200 l120 -160z" />
+        <!-- 420, 190 -->
+        <path d="M425 200 l10 20" marker-end="url(#ah4)"></path>
+        <path d="M430 195 l20 10" marker-end="url(#ah4)"></path>
+        <path d="M415 180 l-10 -20" marker-end="url(#ah4)"></path>
+        <path d="M410 185 l-20 -10" marker-end="url(#ah4)"></path>
+      </g>
+      <g style="font-family:'times new roman';font-size: 16.4px;font-style:italic">
+        <text x="300" y="370">180&deg;</text>
+      </g>
+    </svg>
+    <h2>외접원에서 각A는 언제나 같다.</h2>
+    <ol>
+      <li>A점은 원 위에 임의의 점이다.</li>
+      <li>삼각형 각 점에서 중심까지 선을 그으면, 반지름이 일정하므로(//), 언제나 이등변삼각형 3개가 생성된다.</li>
+      <li>(위에서 내각의 합을 구한 논리로,) &cir;는 &times;2 &cir;, &triangle; 은 &times;2 &triangle; 가 된다.</li>
+      <li>즉, A가 어느점에 위치하든 언제나 중심각의 절반이다.</li>
+      <li>따라서, <u>A는 어느점에 위치하든 그 크기가 항상 같다.</u></li>
+    </ol>
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg viewBox="0 -15 500 510" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="graph">
+      <marker id="ah3" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M0 5 L0 -5 M7 5 L7 -5 " style="fill:none; stroke:black" />
+      </marker>
+      <marker id="ah4" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M0 4 L9 0 0 -4z" />
+      </marker>
+
+      <g style="stroke: #000;fill:none">
+        <ellipse cx="250" cy="250" rx="240" ry="240" />
+        <path d="M0 350 h500"></path>
+
+        <path d="M32 350 L250 250 468 350 M250 250 L150 32"></path>
+        <path d="M153 294 L141 300" marker-end="url(#ah3)" />
+        <path d="M347 294 L359 300" marker-end="url(#ah3)" />
+        <path d="M206 153 L200 141" marker-end="url(#ah3)" />
+        <path d="M150 32 L310 381" style="stroke-dasharray: 5;" />
+
+        <ellipse cx="152" cy="82" rx="5" ry="5" />
+        <ellipse cx="60" cy="320" rx="5" ry="5" />
+        <ellipse cx="227" cy="275" rx="5" ry="5" />
+        <ellipse cx="246" cy="282" rx="5" ry="5" />
+
+        <!-- 삼각형 -->
+        <path d="M180 86 h10 l-5 -10z" />
+        <path d="M405 315 h10 l-5 -10z" />
+        <path d="M270 278 h10 l-5 -10z" />
+        <path d="M283 292 h10 l-5 -10z" />
+
+        <path d="M140 60 A30 30 0 0 0 171 53" style="stroke:red" />
+        <path d="M232 258 A20 20 0 0 0 268 258" style="stroke:red" />
+
+        <path style="stroke-width:3px" d="M32 350 L468 350 L150 32z" />
+
+        <path d="M130 15 a250 250 0 0 0 -50 30" marker-end="url(#ah4)"></path>
+        <path d="M160 5 a250 250 0 0 1 50 -15" marker-end="url(#ah4)"></path>
+      </g>
+      <g style="font-family:'times new roman';font-size: 16.4px;font-style:italic">
+        <text x="255" y="245">2 A</text>
+        <text x="140" y="25">A</text>
+      </g>
+    </svg>
+
+    <iframe src="https://www.desmos.com/calculator/fyahj812io?embed" width="500" height="500"
+      style="border: 1px solid #ccc" frameborder=0></iframe>
+    <h2>사인법칙</h2>
+    <ol>
+      <li>어떤 삼각형이든 외접원을 그릴 수 있다.</li>
+      <li>(위 증명에 의해,) A를 움직여 직각삼각형을 만들더라도, 각A는 일정하다.</li>
+      <li>직각삼각형일 때, \(\displaystyle \sin A = \frac{a}{2R} \)이다.</li>
+    </ol>
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg viewBox="-15 0 515 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="graph">
+      <g style="stroke: #000;fill:none">
+        <ellipse cx="250" cy="250" rx="240" ry="240" />
+        <path d="M0 370 h500"></path>
+
+        <path d="M42 160 a30 30 0 0 0 26 -13" style="stroke:red" />
+
+        <path style="stroke-width:3px" d="M42 370 v-240 l415 240" />
+        <path style="stroke-width:3px;stroke:red" d="M42 370 h415
+        " />
+        <path d="M42 130 Q320 180 457 370" style="stroke-dasharray: 5;stroke:#666" />
+        <path d="M42 370 Q250 430 457 370" style="stroke-dasharray: 5;stroke:#666" />
+        <path d="M42 350 h20 v20" style="stroke:#666" />
+
+        <path d="M25 105 a250 250 0 0 1 38 -45" marker-end="url(#ah4)"></path>
+        <path d="M15 118 a250 250 0 0 0 -26 60" marker-end="url(#ah4)"></path>
+      </g>
+      <ellipse cx="250" cy="250" rx="5" ry="5" style="fill:black" />
+      <g style="font-family:'times new roman';font-size: 16.4px;font-style:italic">
+        <text x="255" y="245">O</text>
+        <text x="280" y="210">2R</text>
+        <text x="25" y="125">A</text> <!-- 42, 130 -->
+        <text x="250" y="420">a</text>
+      </g>
+    </svg>
+  </article>
+</body>
+
+</html>

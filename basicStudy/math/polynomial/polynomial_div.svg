@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200">
+  <style>
+    .disable{
+      fill:#ccc;
+    }
+  </style>
+  <g style="font-family:'Times New Roman'">
+    <!-- x + 2 -->
+    <text id="o17" x="12" y="37" font-style="italic">x</text>
+    <text id="o18" x="20" y="30" font-size="6pt">2</text>
+    <text id="o19" x="24" y="37">+</text>
+    <text id="o20" x="35" y="37">2</text>
+    
+    <!-- path -->
+    <path id="o16" d="M45,21 q10,10 0,20 M45,21 h130" stroke="black" fill="none"/>
+
+    <!-- 3x^3 + 4x^2 +0x^1 -5x^0 -->
+    <text id="o1" x="52" y="37">3</text>
+    <text id="o2" x="60" y="37" font-style="italic">x</text>
+    <text id="o3" x="68" y="30" font-size="6pt">3</text>
+    <text id="o4" x="73" y="37">+</text> <!-- x += 5 -->
+    <text id="o5" x="84" y="37">4</text> <!-- x += 11 -->
+    <text id="o6" x="93" y="37" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o7" x="101" y="30" font-size="6pt">2</text> <!-- x += 8 -->
+    <text id="o8" x="106" y="37" class="disable">+</text> <!-- x += 5 -->
+    <text id="o9" x="117" y="37" class="disable">0</text> <!-- x += 11 -->
+    <text id="o10" x="126" y="37" class="disable" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o11" x="134" y="30" class="disable" font-size="6pt">1</text> <!-- x += 8 -->
+    <text id="o12" x="139" y="37" style="font-family:monospace">－</text> <!-- x += 5 -->
+    <text id="o13" x="150" y="37">5</text> <!-- x += 11 -->
+    <text id="o14" x="159" y="37" class="disable" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o15" x="167" y="30" class="disable" font-size="6pt">0</text> <!-- x += 8 -->
+
+    <!-- 3x^2 -2x +4 -->
+    <text id="o21" x="52" y="17">3</text>
+    <text id="o22" x="60" y="17" font-style="italic">x</text>
+    <text id="o23" x="68" y="10" font-size="6pt">2</text>
+    <text id="o41" x="73" y="17">+</text> <!-- x += 5 -->
+    <text id="o42" x="84" y="17">4</text> <!-- x += 11 -->
+    <text id="o43" x="93" y="17" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o44" x="101" y="10" class="disable" font-size="6pt">1</text> <!-- x += 8 -->
+    <text id="o63" x="106" y="17">+</text> <!-- x += 5 -->
+    <text id="o64" x="117" y="17">4</text> <!-- x += 11 -->
+    <text id="o65" x="126" y="17" class="disable" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o66" x="134" y="10" class="disable" font-size="6pt">0</text> <!-- x += 8 -->
+    
+    <!-- 3x^3 -6x^2 -->
+    <text id="o24" x="52" y="58">3</text> <!-- y+= 21 -->
+    <text id="o25" x="60" y="58" font-style="italic">x</text>
+    <text id="o26" x="68" y="51" font-size="6pt">3</text>
+    <text id="o27" x="73" y="58">+</text> <!-- x += 5 -->
+    <text id="o28" x="84" y="58">6</text> <!-- x += 11 -->
+    <text id="o29" x="93" y="58" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o30" x="101" y="51" font-size="6pt">2</text> <!-- x += 8 -->
+    
+    <path id="o32" d="M45,62 h60" stroke="black" fill="none"/>
+    <path id="o31" d="M45,60 q6,-6 0,-12 M41,54 h-8" stroke="red" fill="none"/> <!-- x -=7, y +=2 -->
+
+    <!-- -2x^2 +0x^1 -->
+    <text id="o45" x="73" y="79" style="font-family:monospace">－</text> <!-- x += 5 --><!-- y+= 21 -->
+    <text id="o46" x="84" y="79">2</text> <!-- x += 11 -->
+    <text id="o47" x="93" y="79" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o48" x="101" y="72" font-size="6pt">2</text> <!-- x += 8 -->
+    <text id="o49" x="106" y="79" class="disable">+</text> <!-- x += 5 -->
+    <text id="o50" x="117" y="79" class="disable">0</text> <!-- x += 11 -->
+    <text id="o51" x="126" y="79" class="disable" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o52" x="134" y="72" class="disable" font-size="6pt">1</text> <!-- x += 8 -->
+
+    <!-- -2x^2 +0x^1 -->
+    <text id="o33" x="73" y="100" style="font-family:monospace">－</text> <!-- x += 5 --><!-- y+= 21 -->
+    <text id="o34" x="84" y="100">2</text> <!-- x += 11 -->
+    <text id="o35" x="93" y="100" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o36" x="101" y="93" font-size="6pt">2</text> <!-- x += 8 -->
+    <text id="o37" x="106" y="100" style="font-family:monospace">－</text> <!-- x += 5 -->
+    <text id="o38" x="117" y="100">4</text> <!-- x += 11 -->
+    <text id="o39" x="126" y="100" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o40" x="134" y="93" class="disable" font-size="6pt">1</text> <!-- x += 8 -->
+
+    <path id="o54" d="M70,104 h68" stroke="black" fill="none"/>
+    <path id="o53" d="M70,102 q6,-6 0,-12 M68,96 h-8" stroke="red" fill="none"/>
+
+    <!-- +4x^1 -5x^0 -->
+    <text id="o55" x="106" y="121" class="disable">+</text> <!-- x += 5 --><!-- y+= 21 -->
+    <text id="o56" x="117" y="121">4</text> <!-- x += 11 -->
+    <text id="o57" x="126" y="121" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o58" x="134" y="114" font-size="6pt" class="disable">1</text> <!-- x += 8 -->
+    <text id="o59" x="139" y="121" style="font-family:monospace">－</text> <!-- x += 5 -->
+    <text id="o60" x="150" y="121">5</text> <!-- x += 11 -->
+    <text id="o61" x="159" y="121" class="disable" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o62" x="167" y="114" class="disable" font-size="6pt">0</text> <!-- x += 8 -->
+
+    <!-- +4x^1 +8x^0 -->
+    <text id="o67" x="106" y="142" class="disable">+</text> <!-- x += 5 --><!-- y+= 21 -->
+    <text id="o68" x="117" y="142">4</text> <!-- x += 11 -->
+    <text id="o69" x="126" y="142" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o70" x="134" y="135" font-size="6pt" class="disable">1</text> <!-- x += 8 -->
+    <text id="o71" x="139" y="142">+</text> <!-- x += 5 -->
+    <text id="o72" x="150" y="142">8</text> <!-- x += 11 -->
+    <text id="o73" x="159" y="142" class="disable" font-style="italic">x</text> <!-- x += 9 -->
+    <text id="o74" x="167" y="135" class="disable" font-size="6pt">0</text> <!-- x += 8 -->
+
+    <path id="o76" d="M103,146 h68" stroke="black" fill="none"/>
+    <path id="o75" d="M103,144 q6,-6 0,-12 M101,138 h-8" stroke="red" fill="none"/>
+
+    <text id="o77" x="139" y="163" style="font-family:monospace">－</text> <!-- x += 5 -->
+    <text id="o78" x="150" y="163">13</text> <!-- x += 11 -->
+
+  </g>
+</svg>

@@ -1,0 +1,58 @@
+[
+  {
+    "date": "2023.3.18",
+    "content": "자유주제> 폰트"
+  },
+  {
+    "date": "2023.3.8",
+    "content": "기초학문> 삼각함수 > sin문서, cos문서, 반각, 배각 공식 문서 작성"
+  },
+  {
+    "date": "2023.3.4",
+    "content": "기초학문> 자유주제 > 베지어"
+  },
+  {
+    "date": "2023.3.3",
+    "content": "문서화> CSS 팁 추가(clac, flex-grow"
+  },
+  {
+    "date": "2023.3.2",
+    "content": "문서화> 수식입력기, latex 사용방법 추가<br>&nbsp; canvas 다운로드 코드 추가<br>&nbsp; CSS font특성 및 온라인 폰트를 추가<br>&nbsp; 문서화 > CSS > Snap추가"
+  },
+  {
+    "date": "2023.3.1",
+    "content": "google analysis 모든 페이지 삽입<br>&nbsp; 기초수학 폴더 header생성기 삽입<br>&nbsp; 정보: 예고편 삽입<br>&nbsp; 문서화:Javascript > jQuery 사용법: css수정 및 참고 방법"
+  },
+  {
+    "date": "2023.2.28",
+    "content": "google analysis를 이용한 page view추가<br>&nbsp; 대문 정리, info page 분리<br>&nbsp; 방명록 수정<br>&nbsp; header생성"
+  },
+  {
+    "date": "2023.2.24",
+    "content": "삼각함수 작성 중, svg애니메이션 항목 추가"
+  },
+  {
+    "date": "2023.2.23",
+    "content": "svg 페이지 첨삭, 검색 관련 추가, 수학 > 삼각함수 작성 중..."
+  },
+  {
+    "date": "2023.2.18",
+    "content": "검색 기능 추가, javascript 함수 페이지를 '함수'와 '변수'로 분리, cache-control추가"
+  },
+  {
+    "date": "2023.2.17",
+    "content": "<a href='tutorial/Javascript/function.html'>문서화 > javascript > 함수</a> &nbsp; 업데이트<br>&nbsp; &nbsp; 구조 json으로 변경 중..."
+  },
+  {
+    "date": "2023.2.16",
+    "content": "<a href='tutorial/Javascript/basic.html'>문서화 > javascript > 기초</a> &nbsp; 업데이트"
+  },
+  {
+    "date": "2023.2.16",
+    "content": "<a href='tutorial/CSS/gallery.html'>문서화 > CSS > 갤러리</a> &nbsp; 업데이트"
+  },
+  {
+    "date": "2023.2.15",
+    "content": "<a href='tutorial/CSS/animation.html'>문서화 > CSS > 애니메이션</a> &nbsp; 업데이트"
+  }
+]

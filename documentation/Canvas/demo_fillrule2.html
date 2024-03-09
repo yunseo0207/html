@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>채우기 규칙</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="fillrule" width="400" height="130"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('fillrule').getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(50, 60, 30, 0, Math.PI * 2, true);
+    ctx.moveTo(95, 60);
+    ctx.arc(80, 60, 30, 0, Math.PI * 2, true);
+    ctx.moveTo(90, 33);
+    ctx.arc(65, 33, 30, 0, Math.PI * 2, true);
+    ctx.fill('evenodd');    // 3개의 원을 그린 후 짝수번 겹치는 부분이 사라진 것을 볼 수 있다.
+
+    ctx.beginPath();
+    ctx.arc(150, 50, 30, 0, Math.PI * 2, true);
+    ctx.moveTo(210, 50);
+    ctx.arc(180, 50, 30, 0, Math.PI * 2, true);
+    ctx.fill('nonzero');    // nonzero 룰은 모든 영역을 선택한다.
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(250, 50, 30, Math.PI / 3, -Math.PI / 3, true);
+    ctx.arc(280, 50, 30, -Math.PI / 3 * 2, Math.PI / 3 * 2, true);
+    ctx.fill(); // 교집합 부분을 추출하는 룰이 없으므로 직접 그린다.
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(350, 50, 30, 0, Math.PI * 2, true); // 원을 그린다.
+    ctx.arc(350, 50, 30, 0, -Math.PI / 3, true);    // 교집합 부분을 그린다. moveTo로 이동하여 만두를 그릴 수도 있으나,
+    ctx.arc(380, 50, 30, Math.PI / 3 * 2, -Math.PI / 3 * 2, false); // 시작지점을 원의 끝지점(3시방향)에서 출발하는 것이 심플하다.
+    ctx.arc(350, 50, 30, Math.PI / 3, 0, true);
+    ctx.fill('evenodd');
+
+    ctx.beginPath();
+    ctx.strokeStyle = "red";
+    ctx.arc(350, 50, 30, 0, Math.PI / 3, false);
+    ctx.arc(380, 50, 30, Math.PI / 3 * 2, -Math.PI / 3 * 2, false);
+    ctx.arc(350, 50, 30, -Math.PI / 3, 0, false);
+    ctx.stroke();
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

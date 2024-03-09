@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>이벤트: 공 집어 던지기</title>
+  <!-- saved from url=(0120)https://yari-demos.prod.mdn.mozit.cloud/ko/docs/Web/API/Canvas_API/Tutorial/Advanced_animations/_sample_.adding_mouse_control.html -->
+  <!-- modified by iseohyun url= -->
+</head>
+
+<body onload="draw()">
+  <canvas id="canvas" width="600" height="300"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var canvas = document.getElementById('canvas');
+    var ctx = canvas.getContext('2d');
+    var raf;
+    var running = false;
+
+    var ball = {
+      x: 100,
+      y: 100,
+      vx: 5,
+      vy: 2,
+      radius: 25,
+      color: 'blue',
+      draw: function () {
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, true);
+        ctx.closePath();
+        ctx.fillStyle = this.color;
+        ctx.fill();
+      }
+    };
+
+    function drawball() {
+      ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+      ctx.fillRect(0, 0, canvas.width, canvas.height);
+      ball.draw();
+      ball.x += ball.vx;
+      ball.y += ball.vy;
+      ball.vy *= .99;
+      ball.vy += .25;
+
+      if (ball.y + ball.radius > canvas.height || ball.y < ball.radius) {
+        ball.vy = -ball.vy;
+      }
+      if (ball.x + ball.radius > canvas.width || ball.x < ball.radius) {
+        ball.vx = -ball.vx;
+      }
+
+      raf = window.requestAnimationFrame(drawball); // 마우스가 이미 들어온 뒤에도 꾸준히 호출되어야 합니다.
+    }
+
+    // 마우스가 들어오면, 공이 마우스 커서를 따라갑니다.
+    canvas.addEventListener('mousemove', function (e) {
+      if (!running) {
+        ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        ball.x = e.clientX;
+        ball.y = e.clientY;
+        ball.draw();
+      }
+    });
+
+    // 마우스가 클릭되면, 공을 놓습니다.
+    canvas.addEventListener('click', function (e) {
+      if (!running) {
+        raf = window.requestAnimationFrame(drawball);
+        running = true;
+      }
+    });
+
+    // 마우스가 나가면 running flag를 초기화하고, 다시 진입했을 때, 이벤트를 받을 준비를 합니다.
+    canvas.addEventListener('mouseout', function (e) {
+      window.cancelAnimationFrame(raf);
+      running = false;
+    });
+
+    ball.draw(); // 페이지를 로딩하고, 최초의 볼 하나를 그립니다.
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

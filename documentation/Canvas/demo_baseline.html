@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>베이스라인 정렬</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="baseline" width="500" height="90"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('baseline').getContext('2d');
+    ctx.font = "bold 30px arial"
+    ctx.fillText('alphabetic', 300, 50);
+    ctx.font = "30px arial"
+    ctx.textBaseline = 'bottom';
+    ctx.fillText('bottom', 10, 50);
+    ctx.textBaseline = 'ideographic';
+    ctx.fillText('ideographic', 120, 50);
+    ctx.textBaseline = 'middle';
+    ctx.fillText('middle', 70, 50);
+    ctx.textBaseline = 'hanging';
+    ctx.fillText('hanging', 200, 50);
+
+    ctx.beginPath();
+    ctx.moveTo(0, 40);
+    ctx.lineTo(500, 40);
+    ctx.strokeStyle = "#00F7";
+    ctx.stroke();
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+<style>
+  ol {
+    list-style: none;
+    counter-reset: my-counter;
+    border: 1px solid #ddd;
+    padding: 10px;
+    border-radius: 15px;
+    font-size: .5em;
+  }
+
+  ol li {
+    height: 20px;
+    counter-increment: my-counter;
+  }
+
+  ol li::before {
+    content: counter(my-counter) " > ";
+    color: red;
+    font-weight: bold;
+  }
+
+  li:hover:after {
+    content: "◀";
+    color: red;
+    margin-left: 10px;
+  }
+</style>
+
+<body style="overflow: hidden;">
+  <pre>
+ol {
+  list-style: none;
+  counter-reset: my-counter;
+}
+ol li {
+  counter-increment: my-counter;
+}
+  </pre>
+  <ol>
+    <li>content: counter(my-counter) ". "; </li>
+    <li>color: red;</li>
+    <li>font-weight: bold;</li>
+  </ol>
+
+
+
+</body>
+
+</html>

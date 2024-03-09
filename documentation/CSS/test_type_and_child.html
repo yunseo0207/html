@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<style>
+  p:nth-child(2){
+    background-color: #88b;
+  }
+  p:nth-of-type(2){
+    background-color: #bb8;
+  }
+  p:empty{
+    height: 25px;
+    border: 1px solid black;
+  }
+</style>
+<body style="overflow: hidden;">
+  <h4>&lt;h4> 1</h4>
+  <p>&lt;p> 2 : child(2)</p>
+  <p>&lt;p> 3 : type(2)</p>
+  <p>&nbsp;</p>
+  <p>5(4=공백있음, 6=아무것도 없음(empty))</p>
+  <p></p>
+</body>
+</html>

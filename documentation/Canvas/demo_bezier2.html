@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>말풍선</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="speech-bubble" width="360" height="150"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+
+    var ctx = document.getElementById('speech-bubble').getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(75, 25);
+    ctx.lineTo(25, 62.5);
+    ctx.lineTo(50, 100);
+    ctx.lineTo(30, 125);
+    ctx.lineTo(65, 100);
+    ctx.lineTo(125, 62.5);
+    ctx.lineTo(80, 30);
+    ctx.stroke();
+
+    // Quadratric curves example
+    ctx.beginPath();
+    ctx.moveTo(275, 25);
+    ctx.quadraticCurveTo(225, 25, 225, 62.5);
+    ctx.quadraticCurveTo(225, 100, 250, 100);
+    ctx.quadraticCurveTo(250, 120, 230, 125);
+    ctx.quadraticCurveTo(260, 120, 265, 100);
+    ctx.quadraticCurveTo(325, 100, 325, 62.5);
+    ctx.quadraticCurveTo(325, 25, 275, 25);
+    ctx.stroke();
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

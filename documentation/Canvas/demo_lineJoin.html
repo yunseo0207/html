@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>선 이음부</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="lineJoin" width="450" height="150"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('lineJoin').getContext('2d');
+    var lineJoin = ['round', 'bevel', 'miter'];
+
+    // lineJoin 적용(반투명 검정)
+    ctx.strokeStyle = '#0008';
+    ctx.lineWidth = 50;
+    for (var i = 0; i < lineJoin.length; i++) {
+      ctx.beginPath();
+      ctx.lineJoin = lineJoin[i];
+      ctx.moveTo(75 + i * 150, 150);
+      ctx.lineTo(75 + i * 150, 75);
+      ctx.lineTo(150 + i * 150, 75);
+      ctx.stroke();
+    }
+
+    // 붉은 선(경로 표시용)
+    ctx.strokeStyle = '#F00';
+    ctx.lineWidth = 1;
+    ctx.font = "30px sans-serif";
+    ctx.textAlign = "center";
+    ctx.beginPath();
+    for (var i = 0; i < lineJoin.length; i++) {
+      ctx.moveTo(75 + i * 150, 150);
+      ctx.lineTo(75 + i * 150, 75);
+      ctx.lineTo(150 + i * 150, 75);
+      ctx.fillText(lineJoin[i], 75 + i * 150, 25);
+    }
+    ctx.stroke();
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

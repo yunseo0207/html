@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" lang="ko">
+<!-- 모바일 스케일 고정 -->
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta discription="튜토리얼을 제공합니다.">
+<meta keywords="iseohyun, 튜토리얼, css, tip">
+<meta author="iseohyun">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-453XSP5W9M');
+</script>
+
+<!-- 페이지 타이틀 -->
+<title>팁: css - iseohyun </title>
+<link rel="shortcut " type="image/x-" href="/source/_seohyun.svg">
+
+<!-- 목차 생성 -->
+<script src="/modules/hd_list.js" defer></script>
+
+<!-- 공통스킨 -->
+<style type="text/css">
+  @import url("/style.css");
+</style>
+</head>
+
+<body>
+  <article>
+    <div id="title"> CSS 팁 </div>
+    <h1>표준과 비표준</h1>
+    <p>&nbsp;W3C홈페이지(w3.org)에는 CSS 표준(standard)를 발표하고 있습니다. 문제는 기술선도보다 표준이 항상 늦다는 겁니다(당연하게도). 각 진영에서는 해당브라우저의 실험버전의 테그들을
+      선보이고 있습니다. 물론 지금도 진행중입니다. 퍼블리셔(제작자) 입장에서는 최신기술을 접목하는 것과 레거시 사용자들에 대한 서비스 둘 다 제공하고 싶어합니다.
+    </p>
+    <table class="all-td-left">
+      <caption>
+        CSS3 표준과 브라우저 프리픽스, 
+        자료: 마켓쉐어@<a href="https://www.oberlo.com/statistics/browser-market-share" target="_blank">boerlo</a>
+      </caption>
+      <thead>
+        <tr>
+          <th>prefix</th>
+          <th>Browser</th>
+          <th>Example</th>
+          <th>Market Share</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>webkit</td>
+          <td>크롬, 사파리</td>
+          <td>-webkit-border-radius</td>
+          <td>62.85%, 20.04%<br>
+            Edge(5.50%) = 88%
+          </td>
+        </tr>
+        <tr>
+          <td>moz</td>
+          <td>파이어폭스</td>
+          <td>-moz-border-radius</td>
+          <td>3.23%</td>
+        </tr>
+        <tr>
+          <td>o</td>
+          <td>오페라</td>
+          <td>-o-border-radius</td>
+          <td>3.17%</td>
+        </tr>
+        <tr>
+          <td>ms</td>
+          <td>인터넷 익스플로러</td>
+          <td>-ms-border-radius</td>
+          <td>지원 종료</td>
+        </tr>
+        <tr>
+          <td>CSS3 표준</td>
+          <td>모든 브라우저</td>
+          <td>border-radius</td>
+          <td>100%</td>
+        </tr>
+    </table>
+    
+
+    <p>&nbsp;위 예시는 2010년 쯤 CSS3가 제정되기 이전에 난립(?)한 브라우져들의 인터페이스이고, 아래 표는 각 브라우저들이 적용한 시점입니다. 이상합니다. CSS Backgrounds and Borders Module Level 3가 적립된 것이 2023-12-19인데, 어째서 그 이전에 다 적용이 되었을까요? 이는 이미 거의 모든 브라우져가 미리 적용을 해주었기 때문입니다. 이 때문에 이미 표준 제정 이전부터 이 속성은 거의 확실히 표준에 들어갈 것이라는 확신이 있었습니다. 이전의 퍼블리셔들은 표준 이전에 사용하기위해 접두어를 붙여제공했습니다. 예를들면, 다음과 같습니다.</p>
+
+    <blockquote>
+      <pre>
+div {
+  border: 1px solid;
+  -webkit-border-radius : 10px;
+  -moz-border-radius : 10px;
+  -ms-border-radius : 10px;
+  -webkit-border-radius : 10px;
+}</pre>
+    </blockquote>
+
+    <table>
+      <caption>border-radius 적용시점, 자료@<a href="https://developer.mozilla.org/ko/docs/Web/CSS/border-radius"
+          target="_blank">mozilla</a></caption>
+      <thead>
+        <tr>
+          <td rowspan="2"></td>
+          <th colspan="5">desktop</th>
+          <th colspan="6">mobile</th>
+        </tr>
+        <tr>
+          <th> Chrome </th>
+          <th> Edge </th>
+          <th> Firefox </th>
+          <th> Opera </th>
+          <th> Safari </th>
+          <th> Chrome<br>Android </th>
+          <th> Firefox<br>for Android </th>
+          <th> Opera<br>Android </th>
+          <th> Safari<br>on iOS </th>
+          <th> Samsung<br>Internet </th>
+          <th> WebView<br>Android </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th>Date</th>
+          <td>2010-01-25</td>
+          <td>2015-07-29</td>
+          <td>2011-03-22</td>
+          <td>2010-03-02</td>
+          <td>2010-06-07</td>
+          <td>2012-06-27</td>
+          <td>2011-03-29</td>
+          <td>2011-03-22</td>
+          <td>2010-11-22</td>
+          <td>2013-04-27</td>
+          <td>2014-09-03</td>
+        </tr>
+        <tr>
+          <th>version</th>
+          <td>4</td>
+          <td>12</td>
+          <td>4</td>
+          <td>10.5</td>
+          <td>5</td>
+          <td>18</td>
+          <td>4</td>
+          <td>11</td>
+          <td>4.2</td>
+          <td>1.0</td>
+          <td>37</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>&nbsp;전략을 짠다면 어떨까요? <u>1. 표준코드만 씁니다.</u> 현재 제정된 효과들로만 페이지를 구성한다고 해도, 충분히 세련되게 꾸밀 수 있습니다. 게다가 실험적인 코드를 굳이 사용해서 소외받는 고객이 생기게 만들 이유도 없습니다. 좋은 전략입니다.<br>
+      &nbsp;<u>2. prefix를 씁니다.</u> 모든 prefix를 붙인다 해도 특성당 고작 4줄입니다. 게다가, CSS3가 제정되기 이전에도 사람들은 투박한 페이지에 만족했었다는 것을 기억해야 합니다. 지금은 webkit만 지원해도 88%가 넘는 고객에게 제공할 수 있습니다. webkit이 선두하는 분위기가 당분간은 지속될 것 같습니다. 역시 좋은 전략입니다.</p>
+
+    <h1>캐시 데이터 업데이트</h1>
+    <h3 id="캐시 데이터">캐시 데이터 컨트롤(새로고침)</h3>
+    <p>&nbsp;페이지가 로딩 될 때, 성능개선을 위해서 일부 데이터는 기존에 가지고 있는 데이터를 사용 할 수 있습니다. 최신 데이터로 새로고침을 할 때는 <u>('Ctrl + F5')</u>를 해야합니다.
+      다만 사용자에게 캐시 새로고침을 요구할 수 없는 것이 아쉽습니다.<br>
+      &nbsp;방법1: 캐쉬에 만료를 설정하여 해결 할 수 있습니다.
+    </p>
+    <blockquote>
+      &lt;meta http-equiv="Cache-Control" content="max-age=86400">
+    </blockquote>
+
+    <p>&nbsp;방법2: 캐쉬를 거부할 수도 있습니다.</p>
+    <blockquote>
+      &lt;meta http-equiv="Cache-Control" content="no-cache">
+    </blockquote>
+
+    <p>&nbsp;만기된 데이터라도, 새로고침을 해야 갱신이 됩니다. 어떤 버튼이 눌렸을 때, 새로고침을 강재할 수 있습니다.</p>
+    <blockquote>
+      &lt;button onClick="location.reload(true)">다시 로드&lt;/button>
+    </blockquote>
+  </article>
+</body>
+
+</html>

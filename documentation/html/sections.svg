@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg">
+  <g style="fill:none;stroke:#888;stroke-dasharray:3;">
+    <rect x="10" y="20" rx="5" width="380" height="40" /> <!-- head -->
+    <rect x="400" y="20" rx="5" width="90" height="40" /> <!-- nav -->
+  </g>
+  <g style="fill:none;stroke:#888;">
+    <rect x="10" y="70" rx="5" width="480" height="425" /> <!-- body -->
+    <rect x="15" y="95" rx="5" width="470" height="65" /> <!-- header -->
+    <rect x="15" y="165" rx="5" width="100" height="260" /> <!-- aside -->
+    <rect x="15" y="430" rx="5" width="470" height="60" /> <!-- footer -->
+    <rect x="120" y="165" rx="5" width="365" height="260" /> <!-- article -->
+  </g>
+  <g style="fill:none;stroke:#CCC;">
+    <rect x="125" y="190" rx="5" width="355" height="150" /> <!-- section -->
+    <rect x="130" y="215" rx="5" width="230" height="120" /> <!-- div -->
+    <rect x="151" y="237" rx="5" width="36" height="20" /> <!-- span -->
+  </g>
+  <g style="fill:none;stroke:#F0F0F0;">
+    <rect x="125" y="345" rx="5" width="355" height="40" />
+    <rect x="125" y="390" rx="5" width="355" height="10" />
+    <rect x="365" y="215" rx="5" width="110" height="55" />
+    <rect x="365" y="275" rx="5" width="110" height="60" />
+  </g>
+  <g style="fill:#888;font-size:15px"> <!-- x+8, y+17 -->
+    <text x="17" y="15">&lt;html></text>
+    <text x="17" y="37">&lt;head></text>
+    <text x="407" y="37">&lt;nav></text>
+    <text x="17" y="87">&lt;body></text>
+    <text x="23" y="113">&lt;header></text>
+    <text x="23" y="182">&lt;aside></text>
+    <text x="23" y="447">&lt;footer></text>
+    <text x="128" y="182">&lt;article></text>
+  </g>
+  <g style="fill:#AAA;font-size:10px">
+    <text x="133" y="207">&lt;section></text>
+    <text x="138" y="232">&lt;div></text>
+    <text x="138" y="252">.....&lt;span> ...</text>
+  </g>
+</svg>

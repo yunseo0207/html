@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg">
+  <svg style="display: inline; height:20px" view-box="0 0 60 40">
+    <marker id="cir" viewBox="-5 -5 10 10" markerWidth="5" markerHeight="5">
+      <ellipse style="fill:black;stroke:none" cx="0" cy="0" rx="5" ry="5" />
+    </marker>
+    <path marker-start="url(#cir)" marker-end="url(#cir)" style="stroke:black;fill:none" d="M10,10 h10 a10 10 0 0 1 10 10 a10 10 0 0 0 10 10 h 10"></path>
+  </svg>
+</svg>

@@ -1,0 +1,65 @@
+﻿<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="600" height="210" class="slides-canvas" viewBox="0 0 600 210">
+
+  <!-- 화살표 -->
+  <marker id="ah1" markerUnits="userSpaceOnUse" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+    <path d="M9 0L0 4 0 -4 9 0z" fill="#4472C4" />
+  </marker>
+
+  <g text-rendering="geometricPrecision" transform="scale(1, 1)" font-size="24pt" style="font-family:'Times New Roman'">
+    <!-- (2x^2 + 1)(3x-1)=6x^3 - 2x^2 + 3x -1-->
+    <text x="20" y="120">(</text>
+    <text x="33" y="120">2</text>
+    <text x="51" y="120" font-style="italic">x</text>
+    <text x="71" y="110" font-size="16.5pt">2</text>
+    <text x="92" y="120">+</text>
+    <text x="123" y="120">1</text>
+    <text x="140" y="120">)</text>
+    <text x="154" y="120">(</text>
+    <text x="167" y="120">3</text>
+    <text x="185" y="120" font-style="italic">x</text>
+    <text x="207" y="120" style="font-family:monospace">－</text>
+    <text x="281" y="120">=</text>
+    <text x="259" y="120">)</text>
+    <text x="241" y="120">1</text>
+    <text x="314" y="120">6</text>
+    <text x="331" y="120" font-style="italic">x</text>
+    <text x="351" y="110" font-size="16.5pt">3</text>
+    <text x="369" y="120" style="font-family:monospace">－</text>
+    <text x="403" y="120">2</text>
+    <text x="421" y="120" font-style="italic">x</text>
+    <text x="440" y="110" font-size="16.5pt">2</text>
+    <text x="462" y="120">+</text>
+    <text x="492" y="120">3</text>
+    <text x="510" y="120" font-style="italic">x</text>
+    <text x="532" y="120" style="font-family:monospace">－</text>
+    <text x="566" y="120">1</text>
+
+    <!-- 곡선 1, 2, 3, 4 -->
+    <g transform="matrix(0, 1, 1, 0, 29, -29)" class="step1">
+      <path marker-end="url(#ah1)" stroke="#4472C4" fill="none" d="M117 23C97 23 77 56 77 89 77 121 97 153 117 155L118 155" />
+    </g>
+    <g transform="matrix(0, 1, 1, 0, 53, -53)">
+      <path marker-end="url(#ah1)" stroke="#4472C4" fill="none" d="M142-1C107-1 72 44 72 89 72 133 106 178 142 179L142 179" />
+    </g>
+    <g transform="matrix(0, 1, 1, 0, 27, -27)">
+      <path marker-end="url(#ah1)" stroke="#4472C4" fill="none" d="M158 104C170 104 182 117 182 130 182 143 171 155 160 156" />
+    </g>
+    <g transform="matrix(0, 1, 1, 0, 52, -52)">
+      <path marker-end="url(#ah1)" stroke="#4472C4" fill="none" d="M182 79C212 79 241 105 241 130 241 155 213 180 184 181" />
+    </g>
+    <text x="180" y="70"  font-size="12pt">①</text>
+    <text x="224" y="55"  font-size="12pt">②</text>
+    <text x="175" y="160"  font-size="12pt">③</text>
+    <text x="222" y="182"  font-size="12pt">④</text>
+
+    <!-- 밑줄 1, 2, 3, 4 -->
+    <path stroke="#4472C4" fill="none" d="M314 126L361 126" />
+    <path stroke="#4472C4" fill="none" d="M373 126L453 126" />
+    <path stroke="#4472C4" fill="none" d="M462 126L525 126" />
+    <path stroke="#4472C4" fill="none" d="M536 126L580 126" />
+    <text x="329" y="145" font-size="12pt">①</text>
+    <text x="406" y="145" font-size="12pt">②</text>
+    <text x="485" y="145" font-size="12pt">③</text>
+    <text x="550" y="145" font-size="12pt">④</text>
+  </g>
+</svg>

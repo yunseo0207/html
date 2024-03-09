@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>글자 출력</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="text1" width="400" height="190"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var ctx = document.getElementById('text1').getContext('2d');
+    ctx.font = "italic bolder 48px '궁서'";
+    ctx.fillText('안녕하십니까?', 10, 50);
+    ctx.strokeText('안녕하십니까?', 10, 150);
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

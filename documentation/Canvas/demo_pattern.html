@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>패턴</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="pattern" width="500" height="300"></canvas>
+  <canvas id="patternImage" width="50" height="50" style="display:none;"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var img = new Image();
+    img.src = "/source/icon_search.svg";
+    // img.src = "/D_SVG/A_Start/home.svg";
+
+    // 이미지가 있는 캔버스, display:none
+    var patternImage = document.getElementById("patternImage");
+    var ctxImg = patternImage.getContext("2d");
+
+    // 보여질 캔버스
+    var pattern = document.getElementById("pattern");
+    var ctx = pattern.getContext("2d");
+
+    // 이미지가 로드되면..
+    img.onload = function () {
+      var newWidth = 50;
+      var newHeight = 50;
+
+      // drawImage(이미지, x좌표, y좌표, 너비, 높이)
+      ctxImg.drawImage(img, 0, 0, newWidth, newHeight);
+
+      // 패턴 채우기
+      var ptrn = ctx.createPattern(patternImage, "repeat");
+      ctx.fillStyle = ptrn;
+      ctx.fillRect(0, 0, 500, 300);
+    };
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

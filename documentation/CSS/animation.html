@@ -1,0 +1,1386 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" lang="ko">
+<!-- 모바일 스케일 고정 -->
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta discription="튜토리얼을 제공합니다.">
+<meta keywords="iseohyun, 튜토리얼, css, animation, 애니메이션">
+<meta author="iseohyun">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-453XSP5W9M');
+</script>
+
+<!-- 페이지 타이틀 -->
+<title>애니메이션: css - iseohyun </title>
+<link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- 목차 생성 -->
+<script src="/modules/hd_list.js" defer></script>
+
+<!-- 공통스킨 -->
+<style type="text/css">
+  @import url("/style.css");
+</style>
+<style>
+  [id^="animation"] {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    width: 90%;
+    height: 300px;
+    margin: 5px auto;
+    display: block;
+    box-shadow: #8888 5px 5px 5px;
+  }
+
+  button {
+    margin: 5px;
+  }
+
+  blockquote {
+    font-size: 0.8rem;
+    line-height: 1.4em;
+  }
+</style>
+</head>
+
+<body>
+  <article>
+    <div id="title"> CSS 애니메이션 예제 </div>
+
+    <p>다음 사이트가 참고되었습니다.<br>
+      vscode도움말 : <a href="https://developer.mozilla.org/ko/docs/Web/CSS/animation" target="_blank">
+        개발자를 위한 웹 기술 > CSS > animation</a>
+    </p>
+
+    <h1>애니메이션</h1>
+    <p>속기 옵션은 다음과 같습니다.</p>
+    <pre><blockquote>/* @keyframes duration | easing-function | delay |
+  iteration-count | direction | fill-mode | play-state | name */
+animation: 3s ease-in 1s 2 reverse both paused slidein;</blockquote></pre>
+    <style>
+      #css-animation-table td {
+        text-align: left;
+        padding-left: 10px;
+      }
+    </style>
+    <table id="css-animation-table">
+      <caption>애니메이션 테그 상세</caption>
+      <thead>
+        <tr>
+          <th>구문</th>
+          <th>효과</th>
+          <th>옵션</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>animation-duration</td>
+          <td>수행시각</td>
+          <td>s(초), ms(밀리초)<br>1.2s : 1.2초</td>
+        </tr>
+        <tr>
+          <td>animation-timing-function</td>
+          <td>움직임의 자연스러운 연출</td>
+          <td>linear, ease-in, ease-out, ease-in-out,<br>
+            linear(진행도 진행률%, 진행도 진행률% ...)<br>
+            cubic-bezier(시작x, 시작y, 끝x, 끝y좌표),<br>
+            step(숫자, [옵션=start, end])
+          </td>
+        </tr>
+        <tr>
+          <td>animation-delay</td>
+          <td>지연시작</td>
+          <td>s(초), ms(밀리초)<br>1.2s : 1.2초</td>
+        </tr>
+        <tr>
+          <td>animation-iteration-count</td>
+          <td>진행 횟수</td>
+          <td>정수, 소수, infinite(무한)</td>
+        </tr>
+        <tr>
+          <td>animation-direction</td>
+          <td>수행방향</td>
+          <td>normal(정방향:설정방향)<br>
+            reverse(역방향)<br>
+            alternate(정방향+역방향)<br>
+            alternate-reverse(역방향+정방향)
+          </td>
+        </tr>
+        <tr>
+          <td>animation-fill-mode</td>
+          <td>애니메이션이 끝난 후</td>
+          <td>none, backwords, forwards(끝난 상태 유지), both
+            <span class="tutorial">H_animation >> a_fillmode.html</span>
+          </td>
+        </tr>
+        <tr>
+          <td>animation-play-state</td>
+          <td>재생과 정지</td>
+          <td>running(재생), paused(정지)</td>
+        </tr>
+        <tr>
+          <td>animation-name</td>
+          <td>상세설정을 기록한 키프레임</td>
+          <td>키프래임 작성 방법 참고</td>
+        </tr>
+    </table>
+
+    <h2>ease function</h2>
+    <p>&nbsp;애니매이션의 자연스러운 연출을 위해서 아래와 같이 시간에 따른 움직임을 조절 할 수 있습니다.</p>
+    <img src="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function/ease.svg"></img>
+    <p>&nbsp;이미지 출처: <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/easing-function" target="_blank">mozilla
+        > easing-function</a></p>
+
+    <p>&nbsp;위의 공은 linear(선형) 움직임을 보여주며, 아래 공은 사용자가 선택한 움직임을 기준으로 움직입니다.</p>
+    <style>
+      #linear-test {
+        position: relative;
+        width: 90%;
+        height: 200px;
+        border: 1px solid #eee;
+        margin: 10px auto;
+        border-radius: 5px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      #linear-test div {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        background-color: blue;
+        background-image: radial-gradient(circle at 10px 10px,
+            rgb(25 255 255 / 80%),
+            rgb(25 255 255 / 40%));
+        border-radius: 50%;
+        top: 25px;
+        animation: 1.5s infinite normal move-right;
+        animation-timing-function: linear;
+      }
+
+      #linear-test div:last-child {
+        animation-timing-function: linear(0, 0.5 80%, 1);
+      }
+
+      @keyframes move-right {
+        from {
+          left: 10%;
+        }
+
+        to {
+          left: 90%;
+        }
+      }
+    </style>
+    <p>
+      선택(아랫 공 움직임):
+      <select id="easing-select">
+        <option>linear</option>
+        <option selected>linear(0, 0.5 80%, 1)</option>
+        <option>ease</option>
+        <option>ease-in</option>
+        <option>ease-in-out</option>
+        <option>ease-out</option>
+        <option>cubic-bezier(0.1, 0.6, 0.7, 0.2)</option>
+        <option>cubic-bezier(0, 2, 1, -1)</option>
+        <option>steps(5, end)</option>
+        <option>steps(3, start)</option>
+        <option>steps(4)</option>
+      </select>
+    </p>
+    <div id="linear-test">
+      <div></div>
+      <div></div>
+    </div>
+
+    <script>
+      const selectElem = document.querySelector("#easing-select");
+      selectElem.addEventListener("click", () => {
+        const target = document.querySelector("#linear-test div:last-child");
+        target.style.animationTimingFunction = selectElem.value;
+      });
+
+      selectElem.addEventListener("change", () => {
+        divElem.style.animationTimingFunction = selectElem.value;
+      });
+    </script>
+    <p>&nbsp;베지어 곡선에 대한 자세한 내용은 <a href="/etc/column/bezier/bezier.html">베지어 문서</a>를 참조해주세요.</p>
+    <style>
+      #bazier-test {
+        width: 850px;
+        height: 730px;
+        border: none;
+      }
+    </style>
+    <iframe id="bazier-test"
+      src="/etc/fun/Bezier/Bezier.html?p=0.32,0.707,0.388,0.227,0.714,0.605,0.779,0.169,"></iframe>
+
+    <h2>방향</h2>
+    <style>
+      #animation1 div {
+        position: relative;
+        width: 50px;
+        height: 50px;
+        margin: 10px;
+        background-color: blue;
+        background-image: radial-gradient(circle at 10px 10px,
+            rgb(25 255 255 / 80%),
+            rgb(25 255 255 / 40%));
+        border-radius: 50%;
+        top: 25px;
+        animation: 2s infinite normal move-right;
+        animation-timing-function: linear;
+      }
+    </style>
+    <div id="animation1">
+      <div></div>
+      <div></div>
+    </div>
+    animation-direction:
+    <button onclick='$("#animation1 div:last-child").css("animation-direction", "normal");'>normal</button>
+    <button onclick='$("#animation1 div:last-child").css("animation-direction", "reverse");'>reverse</button>
+    <button onclick='$("#animation1 div:last-child").css("animation-direction", "alternate");'>alternate</button>
+    <button onclick='$("#animation1 div:last-child").css("animation-direction", "alternate-reverse");'>
+      alternate-reverse</button><br>
+
+    animation-timing-function:
+    <button onclick='$("#animation1 div:last-child").css("animation-timing-function", "linear");'>linear</button>
+    <button onclick='$("#animation1 div:last-child").css("animation-timing-function", "ease-in");'>ease-in</button>
+    <button onclick='$("#animation1 div:last-child").css("animation-timing-function", "ease-out");'>ease-out</button>
+    <button
+      onclick='$("#animation1 div:last-child").css("animation-timing-function", "ease-in-out");'>ease-in-out</button><br>
+
+    animation-duration: <input type="range" min="2" max="30" value="20"
+      onmousemove='$("#animation1 div:last-child").css("animation-duration", (this.value/10) + "s");'>
+
+
+    <h2>멈춤</h2>
+    <p>&nbsp;마우스가 올라가 있을 때만, 회전 에니메이션이 동작합니다.</p>
+    <blockquote>
+      <pre>div{
+  animation-play-state: paused;
+}
+div:hover{
+  animation-play-state: running;
+}</pre>
+    </blockquote>
+    <style>
+      #spin-box {
+        width: 95%;
+        height: 200px;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #spin-box div {
+        background-color: rebeccapurple;
+        border-radius: 10px;
+        width: 100px;
+        height: 100px;
+        animation-name: rotate;
+        animation-duration: 0.7s;
+        animation-iteration-count: infinite;
+        animation-play-state: paused;
+      }
+
+      #spin-box div:hover {
+        animation-play-state: running;
+      }
+
+      @keyframes rotate {
+        0% {
+          transform: rotate(0);
+        }
+
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <div id="spin-box">
+      <div></div>
+    </div>
+
+    <h2>키프레임</h2>
+    <blockquote>
+      animation-name : keyframes move-right;
+    </blockquote>
+    <blockquote>
+      <pre>@keyframes move-right {
+  from {
+    left: 10%;
+  }
+
+  to {
+    left: 90%;
+  }
+}</pre>
+    </blockquote>
+
+
+    <h3>응용</h3>
+    <style>
+      #animation-stop-example {
+        position: absolute;
+        width: 100px;
+        height: 100px;
+        background-color: red;
+        animation: slide 2s linear 1 forwards;
+        animation-play-state: paused;
+      }
+
+      #animation-stop-example span {
+        font-size: 100px;
+        white-space: nowrap;
+        position: absolute;
+        top: 60px;
+        left: 40px;
+      }
+
+      @keyframes slide {
+        from {
+          opacity: 0.3;
+          transform: translateX(0);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateX(200px);
+        }
+      }
+    </style>
+    <span class="tutorial">H_animation >> b_delay.html</span>
+    <p>&nbsp;사용자 스크롤이 지나가면 애니메이션을 수행한다.</p>
+    <div id="animation-stop-example"><span>안녕하세요.</span></div>
+
+    <script>
+      var stopExample = document.querySelector("#animation-stop-example");
+      var boxPosition = stopExample.getBoundingClientRect().top + parseInt(window.getComputedStyle(stopExample).top);
+      var triggerPosition = boxPosition - window.innerHeight * 2;
+
+      console.log("박스 위치: " + boxPosition);
+      console.log("윈도우 세로 크기: " + window.innerHeight);
+      console.log("[이벤트 시작]: " + triggerPosition);
+
+      // 애니메이션이 시작되었는지 여부를 추적하는 변수
+      var animationStarted = false;
+
+      document.addEventListener("scroll", function () {
+        var scrollPosition = window.scrollY;
+
+        // console.log("현재 스크롤: " + scrollPosition);
+
+        // 1회만 수행
+        if (scrollPosition >= triggerPosition && !animationStarted) {
+          console.log("이벤트 시작");
+          animationStarted = true;
+          stopExample.style.animationPlayState = "running";
+        }
+      });
+    </script>
+
+    <h1 style="margin-top:300px">응용기술, 공유</h1>
+    <p>codepen은 개발환경 및 공유 환경을 제공합니다. 아래 예제는 codepen에서 제공하는 예제 중에 embeded항목으로 빌려왔습니다.</p>
+    <p class="codepen" data-height="300" data-default-tab="html,result" data-slug-hash="KKYPqMz" data-user="pfndesign"
+      style="height: 300px; box-sizing: border-box; display: flex; align-items: center; justify-content: center; border: 2px solid; margin: 1em 0; padding: 1em;">
+      <span>See the Pen <a href="https://codepen.io/pfndesign/pen/KKYPqMz">
+          Machinery dreams</a> by peyman (<a href="https://codepen.io/pfndesign">@pfndesign</a>)
+        on <a href="https://codepen.io">CodePen</a>.</span>
+    </p>
+    <script async src="https://cpwebassets.codepen.io/assets/embed/ei.js"></script>
+
+    <p>&nbsp;화려하게 보이는 효과는 결국 화려하게 애니메이션이 만든다기보다, 각 키프레임(정지영상)을 얼마나 화려하게 구현하는가에 따라 달라집니다. 효과는 <a href="gallery.html">CSS:
+        다양한 효과</a>을 참고 해주세요.</p>
+
+    <h3>마우스 올리기</h3>
+    <style>
+      #animation2>span:hover::before {
+        transform: scaleX(1);
+        transform-origin: left;
+      }
+
+      #animation2>#sub_line2:hover::before {
+        transform-origin: right;
+      }
+
+      #animation2>#sub_line3::before {
+        transform-origin: left;
+      }
+
+      #animation2>span::before {
+        transform: scaleX(0);
+        transform-origin: right;
+        content: " ";
+        position: absolute;
+        inset: 0 0 0 0;
+        background: #ffa58f;
+        z-index: -1;
+        transition: transform .3s ease;
+      }
+
+      #animation2>span {
+        position: relative;
+        top: 5px;
+        line-height: 1.2em;
+        font-size: 3rem;
+      }
+
+      #animation2 {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+
+    <div id="animation2">
+      <span>▶ 1번째 줄 →</span><br>
+      <span id="sub_line2">→ 2번째 줄 ◀</span><br>
+      <span id="sub_line3">▶ 3번째 줄 ←</span>
+    </div>
+
+    <h3>로딩</h3>
+    <div id="container">
+      <!--Element for spinner made with HTML + CSS-->
+      <div id="html-spinner"></div>
+
+      <!--Element for custom SVG spinner-->
+      <svg id="svg-spinner" xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 48 48">
+        <circle cx="24" cy="4" r="4" fill="#fff" />
+        <circle cx="12.19" cy="7.86" r="3.7" fill="#fffbf2" />
+        <circle cx="5.02" cy="17.68" r="3.4" fill="#fef7e4" />
+        <circle cx="5.02" cy="30.32" r="3.1" fill="#fef3d7" />
+        <circle cx="12.19" cy="40.14" r="2.8" fill="#feefc9" />
+        <circle cx="24" cy="44" r="2.5" fill="#feebbc" />
+        <circle cx="35.81" cy="40.14" r="2.2" fill="#fde7af" />
+        <circle cx="42.98" cy="30.32" r="1.9" fill="#fde3a1" />
+        <circle cx="42.98" cy="17.68" r="1.6" fill="#fddf94" />
+        <circle cx="35.81" cy="7.86" r="1.3" fill="#fcdb86" />
+      </svg>
+      <p>HTML을 이용</p>
+      <p>SVG를 이용</p>
+    </div>
+    <style>
+      #container {
+        background-color: #FABC20;
+        width: 90%;
+        height: 150px;
+        margin: 1em auto;
+        position: relative;
+        border-radius: 15px;
+        box-shadow: #ddd 5px 5px 5px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: end;
+      }
+
+      #container p {
+        font-size: 1.2em;
+        color: white;
+        position: relative;
+        top: 75px;
+      }
+
+      #html-spinner {
+        width: 40px;
+        height: 40px;
+        border-radius: 50%;
+        border: 4px solid #fcd779;
+        border-top: 4px solid white;
+        left: calc(25% - 20px);
+      }
+
+      #svg-spinner {
+        left: calc(75% - 20px);
+      }
+
+      #html-spinner,
+      #svg-spinner {
+        -webkit-transition-property: -webkit-transform;
+        -webkit-animation-name: rotate;
+        -webkit-animation-duration: 1.2s;
+        -webkit-animation-iteration-count: infinite;
+        -webkit-animation-timing-function: linear;
+
+        -moz-transition-property: -moz-transform;
+        -moz-animation-name: rotate;
+        -moz-animation-duration: 1.2s;
+        -moz-animation-iteration-count: infinite;
+        -moz-animation-timing-function: linear;
+
+        transition-property: transform;
+        animation-name: rotate;
+        animation-duration: 1.2s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+
+        position: absolute;
+        top: 40px;
+      }
+
+      @-webkit-keyframes rotate {
+        from {
+          -webkit-transform: rotate(0deg);
+        }
+
+        to {
+          -webkit-transform: rotate(360deg);
+        }
+      }
+
+      @-moz-keyframes rotate {
+        from {
+          -moz-transform: rotate(0deg);
+        }
+
+        to {
+          -moz-transform: rotate(360deg);
+        }
+      }
+
+      @keyframes rotate {
+        from {
+          transform: rotate(0deg);
+        }
+
+        to {
+          transform: rotate(360deg);
+        }
+      }
+    </style>
+    <ul>
+      <li>-webkit- : 크롬, 사파리</li>
+      <li>-moz- : 파이어폭스</li>
+      <li>-ms- : 엣지</li>
+      <li>-o- : 오페라</li>
+    </ul>
+
+    <h3>스크롤</h3>
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <style>
+      #animation-scroll {
+        width: 70%;
+        min-width: 500px;
+        height: 8em;
+        background-color: #34495e;
+      }
+
+      #animation-scroll>div {
+        position: relative;
+        color: #ecf0f1;
+        overflow: hidden;
+        font: 600 2em / 2em 'Lato', sans-serif;
+        height: 2em;
+        padding: 0 40px;
+        display: grid;
+        justify-content: center;
+      }
+
+      #animation-scroll>div::before {
+        left: 20px;
+        content: '[';
+      }
+
+      #animation-scroll>div::after {
+        right: 20px;
+        content: ']';
+      }
+
+      #animation-scroll>div::after,
+      #animation-scroll>div::before {
+        position: absolute;
+        top: -3px;
+        color: #16a085;
+
+        -webkit-animation: 1s infinite alternate linear opacity;
+        -moz-animation: 1s infinite alternate linear opacity;
+        -o-animation: 1s infinite alternate linear opacity;
+        animation: 1s infinite alternate linear opacity;
+      }
+
+      #animation-scroll ul {
+        margin-top: 0;
+        padding-left: 120px;
+        text-align: left;
+        list-style: none;
+
+        -webkit-animation: 10s infinite ease-in change;
+        -moz-animation: 10s infinite ease-in change;
+        -o-animation: 10s infinite ease-in change;
+        animation: 10s infinite ease-in change;
+      }
+    </style>
+    <div id="animation-scroll">
+      <div>
+        Hello
+        <ul>
+          <li>world !</li>
+          <li>bob !</li>
+          <li>users !</li>
+          <li>everybody !</li>
+        </ul>
+      </div>
+    </div>
+    <style>
+      @-webkit-keyframes opacity {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-webkit-keyframes change {
+
+        0%,
+        90% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        5%,
+        20% {
+          transform: translate3d(0, -75%, 0);
+        }
+
+        25%,
+        40% {
+          transform: translate3d(0, -25%, 0);
+        }
+
+        45%,
+        60% {
+          transform: translate3d(0, -50%, 0);
+        }
+
+        65%,
+        85% {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+
+      @-o-keyframes opacity {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-o-keyframes change {
+
+        0%,
+        90% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        5%,
+        20% {
+          transform: translate3d(0, -75%, 0);
+        }
+
+        25%,
+        40% {
+          transform: translate3d(0, -25%, 0);
+        }
+
+        45%,
+        60% {
+          transform: translate3d(0, -50%, 0);
+        }
+
+        65%,
+        85% {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+
+      @-moz-keyframes opacity {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @-moz-keyframes change {
+
+        0%,
+        90% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        5%,
+        20% {
+          transform: translate3d(0, -75%, 0);
+        }
+
+        25%,
+        40% {
+          transform: translate3d(0, -25%, 0);
+        }
+
+        45%,
+        60% {
+          transform: translate3d(0, -50%, 0);
+        }
+
+        65%,
+        85% {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+
+      @keyframes opacity {
+        0% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes change {
+
+        0%,
+        90% {
+          transform: translate3d(0, 0, 0);
+        }
+
+        5%,
+        20% {
+          transform: translate3d(0, -75%, 0);
+        }
+
+        25%,
+        40% {
+          transform: translate3d(0, -25%, 0);
+        }
+
+        45%,
+        60% {
+          transform: translate3d(0, -50%, 0);
+        }
+
+        65%,
+        85% {
+          transform: translate3d(0, -100%, 0);
+        }
+      }
+    </style>
+
+    <h3>버튼</h3>
+    <p>&nbsp;버튼이 커졌다가 줄어들면서, 체크 이미지가 보여집니다.</p>
+    <div id="animation-button">
+      <button>
+        <span>확인</span>
+        <img src="https://i.cloudup.com/2ZAX3hVsBE-3000x3000.png" height="62" width="62">
+      </button>
+    </div>
+    <style>
+      @-webkit-keyframes extend {
+        10% {
+          width: 400px;
+          height: 120px;
+          background: #fff;
+        }
+
+        20% {
+          width: 350px;
+          height: 100px fit-content;
+          background: #6fb07f;
+        }
+
+        100% {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background: #6fb07f;
+        }
+      }
+
+      @keyframes extend {
+        10% {
+          width: 400px;
+          height: 140px;
+          background: #fff;
+        }
+
+        20% {
+          width: 350px;
+          height: 100px fit-content;
+          background: #6fb07f;
+        }
+
+        100% {
+          width: 100px;
+          height: 100px;
+          border-radius: 50%;
+          background: #6fb07f;
+        }
+      }
+
+      @-webkit-keyframes disappear {
+        0% {
+          opacity: 1;
+        }
+
+        40% {
+          color: #fff;
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @keyframes disappear {
+        0% {
+          opacity: 1;
+        }
+
+        40% {
+          color: #fff;
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 0;
+        }
+      }
+
+      @-webkit-keyframes appear {
+        0% {
+          opacity: 0;
+        }
+
+        70% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      @keyframes appear {
+        0% {
+          opacity: 0;
+        }
+
+        70% {
+          opacity: 0;
+        }
+
+        100% {
+          opacity: 1;
+        }
+      }
+
+      #animation-button {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      #animation-button span {
+        width: 100%;
+      }
+
+      #animation-button>button {
+        position: absolute;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100px;
+        width: 350px;
+        border: 5px solid #6fb07f;
+        border-radius: 25px;
+        padding: 1em;
+        background: #fff;
+        color: #6fb07f;
+        font-size: 3em;
+      }
+
+      #animation-button>button>img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        opacity: 0;
+      }
+
+      #animation-button>button:hover {
+        background-color: #8FE3A4;
+      }
+
+      #animation-button>button:focus {
+        -webkit-animation: extend 1s ease-in-out forwards;
+        -ms-animation: extend 1s ease-in-out;
+        animation: extend 1s ease-in-out forwards;
+      }
+
+      #animation-button>button:focus>span {
+        -webkit-animation: disappear 1s ease-in-out forwards;
+        -ms-animation: disappear 1s ease-in-out;
+        animation: disappear 1s ease-in-out forwards;
+      }
+
+      button:focus>img {
+        -webkit-animation: appear 1s ease-in-out forwards;
+        -ms-animation: appear 1s ease-in-out;
+        animation: appear 1s ease-in-out forwards;
+      }
+    </style>
+
+    <h3>@(Rule)없는 애니메이션</h3>
+    &nbsp;transition 속성을 이용하여, 애니메이션을 만들 수 있습니다.<br>
+    ※ 본 예제에서 회전을 적용했는데, 회전시 target의 hit박스가 회전하기 때문에, 본의 아니게 덜그럭 거리는 모습이 보여지기도 합니다. (붉은 색이 히트박스입니다.)<br>
+    <blockquote>
+      #my-id { transition: attr } <br>
+      #my-id:hover { attr: value }
+    </blockquote>
+    <div id="animation-svg-wrapper">
+      <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 0 73 63" style="enable-background:new 0 0 73 63;" xml:space="preserve">
+        <path id="Combined-Shape" style="fill:#231F20"
+          d="M72.9,56.2l-0.5,0.4c-0.5,0.4-1.1,0.8-1.6,1.2l-0.4,0.3L70,57.9c-0.3-0.2-0.7-0.3-1.2-0.3 c-1.6,0-3.9,1.2-6,2.3c-2.4,1.2-4.9,2.5-7.1,2.6c-1,0-1.5-0.4-1.8-0.7c-0.9-1.2,0.3-3.4,1.7-6c1.3-2.5,3-5.6,1.8-6.6 C57.3,49,57.1,49,56.8,49c-1.5,0-4.6,2-8,5.1c-1.1,1-2.2,2-3.2,3c-3,2.9-5.4,5.3-7.5,5.3c-0.5,0-1-0.2-1.2-0.5 C35.1,59.5,40.4,50,41,48.9c0.9-1.7,1.9-3.3,2.8-5c2.4-4.1,4.6-7.9,3.8-9.3c-0.1-0.2-0.2-0.3-0.5-0.3c-2.1,0-7.8,4.4-13,10.9 c-2.6,3.1-5,6.5-7.1,9.5c-3.5,5.1-5.3,7.5-6.9,7.5c-0.3,0-0.5,0-0.6-0.1c-0.2-0.1-0.3-0.2-0.4-0.3c-1.7-2.2,2.1-14.6,7.4-24.2 c2.5-5.1,5.6-9.8,8.3-14c3.4-5.4,7.1-11.6,5.2-11.3c-1.5,0.2-4.1,1.3-7.8,4.3c-5.1,4-11,10.6-15.6,17.5c-5.5,8-9.4,16.5-11.2,20.8 c-0.5,1.3-1,2.4-1.4,3.4c-1.6,3.7-2,4.6-2.9,4.6c-0.8,0-1-0.8-1.1-1.2c0-1,0.9-7.7,4.4-15.9C8,36.9,14.1,27.3,20.8,20 c6.7-7.5,14.9-13.9,22.1-17.1c3.5-1.6,6.9-2.6,9.3-2.6c1.2,0,2,0.2,2.5,0.7c0.3,0.3,0.4,0.6,0.4,1c0,2.4-3.2,6.3-7.6,11.7 c-3,3.7-6.4,7.9-9.4,12.3c-4.3,5.9-7.1,11.4-8.4,14.2c-2.1,4.4-2.7,6.8-2.7,7.5c1-0.3,3.6-3.1,5.6-5.3c2.3-2.5,4.9-5.3,7.8-7.8 c5.1-4.8,10.8-8.2,13.7-8.2c1.1,0,1.9,0.5,2.1,1.4c0.6,2.2-1.8,5.6-4.9,10c-1.1,1.5-2.2,3.1-3.3,4.8c-3.7,5.4-5.9,10.5-5.3,11.9 c0.1,0.2,0.2,0.2,0.2,0.2c0.1,0,0.2,0,0.3,0c1.4,0,3.8-2,6.2-3.9c0.9-0.7,1.8-1.5,2.7-2.2c2.4-1.9,5.8-4.2,8.1-4.2 c0.9,0,1.6,0.3,1.9,1c1.4,1.8-0.4,4.9-2.1,7.8c-1.2,2-2.5,4.4-2,5.3c0.1,0.1,0.2,0.3,0.6,0.4c0.2,0,0.3,0,0.5,0 c1.7,0,3.7-0.9,5.6-1.8c2-0.9,3.9-1.7,5.5-1.7c0.8,0,1.6,0.2,2.2,0.6L72.9,56.2z M18.2,43.5c-1.2,0-2.1-1-2.1-2.1 c0-1.2,0.9-2.1,2.1-2.1s2.1,1,2.1,2.1C20.3,42.6,19.3,43.5,18.2,43.5z" />
+      </svg>
+    </div>
+    <style>
+      #animation-svg-wrapper {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        justify-content: flex-end;
+        padding: 20px;
+
+      }
+
+      #animation-svg-wrapper>svg {
+        border: 1px solid red;
+        width: 50px;
+        transition: width 1s, transform 1s;
+        -webkit-transition: width 1s, transform 1s;
+      }
+
+      #animation-svg-wrapper>svg:hover {
+        width: 100px;
+        transform: rotate(90deg);
+      }
+    </style>
+    <h3>도형그리기</h3>
+    <div id="animation-letter">
+      <div>
+        <div> <!-- 메일박스 -->
+          <div class="back-fold"></div>
+          <div class="letter">
+            <div class="letter-border"></div>
+            <div class="letter-title"></div>
+            <div class="letter-context"></div>
+            <div class="letter-stamp">
+              <div class="letter-stamp-inner"></div>
+            </div>
+          </div>
+          <div class="top-fold"></div>
+          <div class="right-fold"></div>
+          <div class="left-fold"></div>
+        </div>
+        <div class="shadow"></div>
+      </div>
+    </div>
+    <style>
+      #animation-letter {
+        background: #ddd;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        position: relative;
+      }
+
+      #animation-letter>div {
+        display: block;
+        position: absolute;
+        top: 35%;
+        left: 50%;
+        width: 200px;
+        height: 200px;
+        width: 200px;
+        height: 200px;
+        -webkit-transform: translate(-50%, -50%);
+        -moz-transform: translate(-50%, -50%);
+        transform: translate(-50%, -50%);
+        cursor: pointer;
+      }
+
+      .top-fold {
+        position: absolute;
+        top: 100px;
+        border-style: solid;
+        border-width: 50px 100px 0 100px;
+        -webkit-transform-origin: 50% 0%;
+        -webkit-transition: transform .4s .4s, z-index .2s .4s;
+        -moz-transform-origin: 50% 0%;
+        -moz-transition: transform .4s .4s, z-index .2s .4s;
+        transform-origin: 50% 0%;
+        transition: transform .4s .4s, z-index .2s .4s;
+        border-color: #cf4a43 transparent;
+        z-index: 2;
+      }
+
+      .back-fold {
+        position: absolute;
+        bottom: 0;
+        width: 200px;
+        height: 100px;
+        background: #cf4a43;
+        z-index: 0;
+      }
+
+      .left-fold {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 50px 0 50px 100px;
+        border-color: transparent transparent transparent #e15349;
+        z-index: 2;
+      }
+
+      .right-fold {
+        position: absolute;
+        bottom: 0;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 0 100px 200px;
+        border-color: transparent transparent #e95f55 transparent;
+        z-index: 2;
+      }
+
+      .letter {
+        left: 20px;
+        bottom: 0px;
+        position: absolute;
+        width: 160px;
+        height: 60px;
+        background: white;
+        z-index: 1;
+        overflow: hidden;
+        -webkit-transition: .4s .2s;
+        -moz-transition: .4s .2s;
+        transition: .4s .2s;
+      }
+
+      .letter-border {
+        height: 10px;
+        width: 100%;
+        background: repeating-linear-gradient(-45deg,
+            #cb5a5e,
+            #cb5a5e 8px,
+            transparent 8px,
+            transparent 18px);
+      }
+
+      .letter-title {
+        margin-top: 10px;
+        margin-left: 5px;
+        height: 10px;
+        width: 40%;
+        background: #cb5a5e;
+      }
+
+      .letter-context {
+        margin-top: 10px;
+        margin-left: 5px;
+        height: 10px;
+        width: 20%;
+        background: #cb5a5e;
+      }
+
+      .letter-stamp {
+        margin-top: 30px;
+        margin-left: 120px;
+        border-radius: 100%;
+        height: 30px;
+        width: 30px;
+        background: #cb5a5e;
+        opacity: 0.3;
+      }
+
+      .shadow {
+        box-shadow: none;
+        border: none;
+        position: absolute;
+        top: 245px;
+        left: 50%;
+        width: 400px;
+        height: 30px;
+        transition: .4s;
+        transform: translateX(-50%);
+        -webkit-transition: .4s;
+        -webkit-transform: translateX(-50%);
+        -moz-transition: .4s;
+        -moz-transform: translateX(-50%);
+
+        border-radius: 100%;
+        background: radial-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.0), rgba(0, 0, 0, 0.0));
+      }
+
+
+      #animation-letter>div:hover>div>div {
+        transition: transform .4s;
+        transform: translateY(30px);
+        -webkit-transform: translateY(30px);
+        -moz-transform: translateY(30px);
+      }
+
+      #animation-letter>div:hover>div>div.top-fold {
+        transition: transform .2s, z-index .2s;
+        transform: translateY(30px) rotateX(180deg);
+        -webkit-transition: transform .4s, z-index .2s;
+        -webkit-transform: translateY(30px) rotateX(180deg);
+        -moz-transition: transform .4s, z-index .2s;
+        -moz-transform: translateY(30px) rotateX(180deg);
+        z-index: 0;
+      }
+
+      #animation-letter>div:hover>div>div.letter {
+        transition: transform .2s, height 1s;
+        height: 180px;
+        transform: translateY(-10px)
+      }
+
+      #animation-letter>div:hover>div.shadow {
+        width: 250px;
+      }
+    </style>
+
+    <h3>토글 스위치</h3>
+    <div id="animation-toggle">
+      <input class="pristine" type="checkbox" name="toggle" value="on">
+    </div>
+    <style>
+      #animation-toggle {
+        width: 80%;
+        height: 200px;
+        border: 1px solid black;
+        background-position: 50% calc(50% + 0.2em);
+        display: grid;
+        place-items: center;
+      }
+
+      /* 크기 설정 */
+      #animation-toggle,
+      #animation-toggle>input {
+        font: 80px/1.5 sans-serif;
+      }
+
+      /* 배경 설정 */
+      #animation-toggle,
+      #animation-toggle>input[type=checkbox]:before {
+        background-image:
+          linear-gradient(90deg, #f1f2f3 2px, #f1f2f300 2px),
+          linear-gradient(#f1f2f3 2px, #fff 2px);
+        background-repeat: repeat;
+        background-size: 0.75em 0.375em;
+      }
+
+      #animation-toggle>input[type=checkbox] {
+        --off: #c7cad1;
+        /* 꺼질 때 색(회색) */
+        --mid: #829ad6;
+        /* 중간 색 */
+        --on: #255ff4;
+        /* 켜질 때 색(파랑색) */
+        --transDur: 0.5s;
+        --timing: cubic-bezier(0.6, 0, 0.4, 1);
+        animation: bgOff var(--transDur) var(--timing);
+        background-color: var(--off);
+        border-radius: 0.67em / 0.5em;
+        box-shadow:
+          /* 옆면 그림자 */
+          0 -0.5em 0 #0001 inset,
+          0 0.1em 0.1em #0001;
+        cursor: pointer;
+        position: relative;
+        width: 2.25em;
+        height: 1.5em;
+        -webkit-appearance: none;
+        /* 체크박스 v 표 지우기*/
+        appearance: none;
+        /* 	-webkit-tap-highlight-color: transparent; */
+      }
+
+      /* 구멍 뚫린 부분 */
+      #animation-toggle>input[type=checkbox]:before {
+        animation: handleOff var(--transDur) var(--timing);
+        background-attachment: fixed;
+        /* 배경 고정 */
+        background-position: calc(50% - 1.625em) calc(50% - 1.1875em);
+        border-radius: 0.5em / 0.375em;
+        box-shadow:
+          0 0.175em 0.175em 0 #0001 inset,
+          0 0.375em 0 #0002 inset,
+          0 0.375em 0 var(--off) inset,
+          0 0.475em 0.1em #0001 inset;
+        content: "";
+        display: block;
+        position: absolute;
+        top: 0.125em;
+        left: 0.125em;
+        width: 1em;
+        height: 0.75em;
+      }
+
+      #animation-toggle>input[type=checkbox]:checked {
+        animation: bgOn var(--transDur) var(--timing) forwards;
+      }
+
+      #animation-toggle>input[type=checkbox]:checked:before {
+        animation: handleOn var(--transDur) var(--timing) forwards;
+      }
+
+      #animation-toggle>input[type=checkbox]:focus {
+        outline: none;
+      }
+
+      #animation-toggle>input[type=checkbox].pristine,
+      #animation-toggle>input[type=checkbox].pristine:before {
+        animation: none;
+      }
+
+      /* Animations */
+      @keyframes bgOff {
+        from {
+          background-color: var(--on);
+        }
+
+        50% {
+          background-color: var(--mid);
+        }
+
+        to {
+          background-color: var(--off);
+        }
+      }
+
+      @keyframes bgOn {
+        from {
+          background-color: var(--off);
+        }
+
+        50% {
+          background-color: var(--mid);
+        }
+
+        to {
+          background-color: var(--on);
+        }
+      }
+
+      @keyframes handleOff {
+        from {
+          box-shadow:
+            0 0.175em 0.175em 0 #0001 inset,
+            0 0.375em 0 #0002 inset,
+            0 0.375em 0 var(--on) inset,
+            0 0.475em 0.1em #0001 inset;
+          left: 1.125em;
+          width: 1em;
+        }
+
+        50% {
+          box-shadow:
+            0 0.175em 0.175em 0 #0001 inset,
+            0 0.375em 0 #0002 inset,
+            0 0.375em 0 var(--mid) inset,
+            0 0.475em 0.1em #0001 inset;
+          left: 0.125em;
+          width: 2em;
+        }
+
+        to {
+          box-shadow:
+            0 0.175em 0.175em 0 #0001 inset,
+            0 0.375em 0 #0002 inset,
+            0 0.375em 0 var(--off) inset,
+            0 0.475em 0.1em #0001 inset;
+          left: 0.125em;
+          width: 1em;
+        }
+      }
+
+      @keyframes handleOn {
+        from {
+          box-shadow:
+            0 0.175em 0.175em 0 #0001 inset,
+            0 0.375em 0 #0002 inset,
+            0 0.375em 0 var(--off) inset,
+            0 0.475em 0.1em #0001 inset;
+          left: 0.125em;
+          width: 1em;
+        }
+
+        50% {
+          box-shadow:
+            0 0.175em 0.175em 0 #0001 inset,
+            0 0.375em 0 #0002 inset,
+            0 0.375em 0 var(--mid) inset,
+            0 0.475em 0.1em #0001 inset;
+          left: 0.125em;
+          width: 2em;
+        }
+
+        to {
+          box-shadow:
+            0 0.175em 0.175em 0 #0001 inset,
+            0 0.375em 0 #0002 inset,
+            0 0.375em 0 var(--on) inset,
+            0 0.475em 0.1em #0001 inset;
+          left: 1.125em;
+          width: 1em;
+        }
+      }
+    </style>
+    <script>
+      $('#animation-toggle>input[type=checkbox]').on("click", e => {
+        let tar = e.target;
+        tar.removeAttribute("class");
+      });
+    </script>
+
+    <p>출처 : http://alexkatz.me/<br>
+      https://blog.hubspot.com/website/css-animation-examples</p>
+
+  </article>
+</body>
+
+</html>

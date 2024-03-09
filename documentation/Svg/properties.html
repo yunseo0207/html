@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="튜토리얼을 제공합니다.">
+  <meta keywords="iseohyun, 튜토리얼, SVG, 변형, 저장">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>변형, 저장: SVG - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/darkmoss.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+
+    #board {
+      background-color: white;
+      opacity: 0.95;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">특성</div>
+
+    <h1>선, 색 특징</h1>
+
+    <svg viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+      <g style="fill:none; stroke: black;">
+        <rect x="20" y="16" width="40" height="40" />
+        <rect x="40" y="33" width="40" height="40" style="fill: red;" />
+        <rect x="120" y="16" width="40" height="40" style="fill:blue;" />
+        <rect x="140" y="33" width="40" height="40" style="fill: red; fill-opacity:0.5" />
+        <path
+          d="M 240 33 L 260 33 L 260 16 L 220 16 L 220 56 L 240 56 Z M 280 33 L 280 73 L 240 73 L 240 56 L 260 56 L 260 33 Z"
+          style=" fill-rule: nonzero; fill: rgb(99, 218, 66);" />
+        <rect x="320" y="16" width="40" height="40" />
+        <rect x="340" y="33" width="40" height="40" style="stroke: red;" />
+
+        <rect x="20" y="116" width="40" height="40" />
+        <rect x="40" y="133" width="40" height="40" style="stroke-width:3px" />
+        <path d="M 118 117 h 40 v 40 h -40" style="stroke-linecap:butt;stroke-width:5px" />
+        <path d="M 140 133 h 40 v 40 h -40" style="stroke-linecap:round;stroke-width:5px" />
+        <rect x="220" y="116" width="40" height="40" style="stroke-width:5px" />
+        <rect x="240" y="133" width="40" height="40" style="stroke-width:5px;stroke-linejoin:round" />
+        <rect x="320" y="116" width="40" height="40" />
+        <rect x="340" y="133" width="40" height="40" style="stroke-dasharray:5 5" />
+
+        <circle cx="139" cy="132" r="10" style="stroke: #0F0" />
+        <circle cx="279" cy="132" r="10" style="stroke: #0F0" />
+      </g>
+      <g style="font-family: Arial, sans-serif;font-size: 12px; text-anchor: middle; white-space: pre;">
+        <text x="50" y="92">fill: red</text>
+        <text x="150" y="92">opacity: 0.5</text>
+        <text x="250" y="92">fill-rule:nonzero</text>
+        <text x="350" y="92">stroke: red</text>
+        <text x="50" y="188" style="letter-spacing: -1px;">stroke-width:3px</text>
+        <text x="150" y="194" style="letter-spacing: -1px;">stroke-linecap:round</text>
+        <text x="250" y="188" style="letter-spacing: -1px;">stroke-linejoin:round</text>
+        <text x="350" y="195" style="letter-spacing: -1px;">stroke-dasharray: 5 5</text>
+      </g>
+    </svg>
+    <span class="tutorial">D_Properties >> fill-stroke-style.svg</span>
+    <table class="last-td-left">
+      <caption>선, 색 특성</caption>
+      <thead>
+        <tr>
+          <th>특성명</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>fill</td>
+          <td>배경색 칠하기</td>
+        </tr>
+        <tr>
+          <td>opacity</td>
+          <td>투명도</td>
+        </tr>
+        <tr>
+          <td>fill-rule</td>
+          <td>테두리선이 교차될 때, 칠하기 규칙</td>
+        </tr>
+        <tr>
+          <td>stroke</td>
+          <td>테두리 색</td>
+        </tr>
+        <tr>
+          <td>stroke-width</td>
+          <td>테두리 두께</td>
+        </tr>
+        <tr>
+          <td>stroke-linecap</td>
+          <td>열린도형에서 끝선 규칙</td>
+        </tr>
+        <tr>
+          <td>stroke-linejoine</td>
+          <td>꺾이는 부분의 이음처리</td>
+        </tr>
+        <tr>
+          <td>stroke-dasharray</td>
+          <td>점선 규칙</td>
+        </tr>
+    </table>
+
+    <h1>글자 스타일</h1>
+    <svg viewBox="0 0 450 400" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com"
+      style="border:1px #ddd solid">
+      <title>선, 색 예제</title>
+      <defs>
+        <style bx:fonts="Nanum Brush Script">
+          @import url(https://fonts.googleapis.com/css2?family=Nanum+Brush+Script%3Aital%2Cwght%400%2C400&amp;display=swap);
+        </style>
+      </defs>
+
+      <g style="fill: rgb(51, 51, 51);font-family: Arial, sans-serif; font-size: 16px;">
+        <text x="100" y="25">테스트 문자열 입니다.</text>
+        <text style="font-family: 'Nanum Brush Script';" x="100" y="50">나눔 브러쉬 폰트를 사용합니다.</text>
+        <text style="font-size: 7px;" x="100" y="75">글자의 크기를 줄입니다. 16 -&gt; 7</text>
+        <text style="font-weight: 900;" x="100" y="100">굵은 글씨를 사용합니다.</text>
+        <text style="font-style: italic;" x="100" y="125">이텔릭체를 사용합니다.</text>
+        <text style="letter-spacing: 4px;" x="100" y="150">문자간 간격이 늘어납니다(4)</text>
+        <text style="word-spacing: 20px;" x="100" y="175">단어간 간격이 늘어납니다.(20)</text>
+        <text style="text-transform: capitalize;" x="100" y="200">영문자 첫글자는 대문자로 aaaa aaa a aa</text>
+        <text style="text-anchor: end;" x="100" y="225">기준점 이동</text>
+        <text>
+          <tspan x="100" y="250" style="text-decoration: underline solid rgba(0, 0, 0, 0.8);">밑줄 테스트</tspan>
+          <tspan x="100" y="275" style="text-decoration: line-through solid rgba(255, 0, 0, 0);">취소선 테스트</tspan>
+          <tspan x="100" y="300" style="text-decoration: overline solid rgba(0, 0, 0, 0.8);">윗줄 테스트</tspan>
+        </text>
+        <text style="stroke: red;" x="100" y="325">문자열에 테두리(stroke)를 설정 했을 때</text>
+        <text style="fill: green" x="100" y="350">문자열에 칠하기(fill)을 설정 했을 때</text>
+        <text style="fill-opacity:0.5" x="100" y="375">투명도 0.5</text>
+        <!-- <text fill-opacity=".5" x="100" y="375">투명도 0.5</text> -->
+      </g>
+    </svg>
+    <span class="tutorial">D_Properties >> font-style.svg</span>
+    <table class="last-td-left">
+      <caption>폰트 특성 적용 결과 설명</caption>
+      <thead>
+        <tr>
+          <th>특성명</th>
+          <th>설명</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>font-family</td>
+          <td>글씨체</td>
+          <td>&lt;style bx:fonts="폰트명(별명)">
+            @import url(폰트 주소);
+            &lt;/style></td>
+        </tr>
+        <tr>
+          <td>글자 크기</td>
+          <td>font-size</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>글짜 두께</td>
+          <td>font-weight</td>
+          <td>100: Thin (Hairline)<br>
+            200: Extra Light (Ultra Light)<br>
+            300: Light<br>
+            400: Normal<br>
+            500: Medium<br>
+            600: Semi Bold (Demi Bold)<br>
+            700: Bold<br>
+            800: Extra Bold (Ultra Bold)<br>
+            900: Black (Heavy)</td>
+        </tr>
+        <tr>
+          <td>글자 모양</td>
+          <td>font-style</td>
+          <td>normal, italic, oblique, oblique #deg</td>
+        </tr>
+        <tr>
+          <td>글자 간격</td>
+          <td>letter-spacing</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>단어 간격</td>
+          <td>word-spacing</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>영단어 규칙</td>
+          <td>text-transform</td>
+          <td>capitalize, uppercase, lowercase
+          </td>
+        </tr>
+        <tr>
+          <td>정렬 기준</td>
+          <td>text-anchor</td>
+          <td>start, mid, end</td>
+        </tr>
+        <tr>
+          <td>밑줄</td>
+          <td>text-decoration</td>
+          <td>lowercase, line-through, overline</td>
+        </tr>
+        <tr>
+          <td>테두리 칠하기</td>
+          <td>stroke</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>(내용) 칠하기</td>
+          <td>fill</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>투명도</td>
+          <td>fill-opacity</td>
+          <td></td>
+        </tr>
+
+    </table>
+
+    <h2>흐르는 글자</h2>
+    <blockquote>
+      &lt;<b>text</b> x="" y="" dx="" dy="">Hello World&lt;/text><br>
+      &lt;<b>tspan</b> font-weight="[bold | light ...]" fill="[COLOR]">new text&lt;/tspan>
+    </blockquote>
+    <svg width="320" height="130" xmlns="http://www.w3.org/2000/svg"
+      style="dominant-baseline: hanging;font: 9px Verdana, Helvetica, Arial, sans-serif;border:1px solid #aaa;border-radius: 10px;padding:3px;display:block;margin-left:5vw">
+      <text x="10" y="10">Hello World!</text>
+      <text x="10" y="30" style="font-size:25px;">
+        This is
+        <tspan font-weight="bold" fill="red">bold and red</tspan>
+      </text>
+      <g transform="translate(0,50)">
+        <path id="text_path" d="M 20,20 C 80,60 100,40 220,20" fill="transparent" stroke="#F00A" />
+      </g>
+      <text style="font-size:20px;" dx="20" dy="50">
+        <textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#text_path">
+          흐르는 글자 ABCD
+        </textPath>
+      </text>
+    </svg>
+    <pre><code class="language-html">&lt;svg width="320" height="130" xmlns="http://www.w3.org/2000/svg">
+    &lt;text x="10" y="10">Hello World!&lt;/text>
+    &lt;text x="10" y="30" style="font-size:25px;">
+      This is
+      &lt;tspan font-weight="bold" fill="red">bold and red&lt;/tspan>
+    &lt;/text>
+    &lt;path id="text_path" d="M 20,20 C 80,60 100,40 220,20" fill="transparent" stroke="#F00A"/>
+    &lt;text style="font-size:20px;" dx="20" dy="50">
+      &lt;textPath xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="#text_path">
+        움직이는 글자 ABCD
+      &lt;/textPath>
+    &lt;/text>
+  &lt;/svg></code></pre>
+
+    <h1>변형</h1>
+    <p>&nbsp;이미 생성한 그림(객체)을 밀거나 회전 할 수 있습니다.<br>
+      &nbsp;<u>rotate함수는 (0,0)을 기준으로 회전</u>합니다(도형의 중심X). [도형을 (0,0)으로 가져오기 → 회전하기 → 원래자리로 가져가기]
+    </p>
+
+    <pre>
+      <code class="language-html">&lt;rect x="0" y="0" width="10" height="10" transform="translate(10,10)" fill="orange"/>
+&lt;rect x="0" y="0" width="10" height="10" transform="rotate(30)" fill="orange" />
+&lt;rect x="0" y="0" width="10" height="10" transform="translate(30,20) rotate(-30)" fill="blue" />
+&lt;rect x="0" y="0" width="10" height="10" transform="matrix(1.5, 0, 0, 2.5, 30, 20)" fill="blue" />
+      </code>
+    </pre>
+    <p>코드의 결과는 다음과 같습니다.</p>
+    <table class="last-td-left">
+      <caption>적용내용</caption>
+      <thead>
+        <tr>
+          <th>예제 이름</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>translate예제</td>
+          <td>
+            <span style="background-color:#ffe3ae;">오랜지박스</span> (10, 10) 밀기,
+            <span style="background-color:#e8e8ff; ">파랑박스</span>(30, 20) 밀기
+          </td>
+        </tr>
+        <tr>
+          <td>rotate 예제</td>
+          <td>
+            <span style="background-color:#ffe3ae;">오랜지박스</span> (30, 20) 밀기 > 45도 회전
+            <span style="background-color:#e8e8ff; ">파랑박스</span> 45도 회전 > (30, 20) 밀기
+          </td>
+        </tr>
+        <tr>
+          <td>matrix: 이동과 회전 예제</td>
+          <td>
+            <span style="background-color:#ffe3ae;">오랜지박스</span> 50% 축소 > (10, 10)이동
+            <span style="background-color:#e8e8ff; ">파랑박스</span> (1.5, 2.5)확대 및 (30, 20) 밀기
+          </td>
+        </tr>
+        <tr>
+          <td>rotate 예제</td>
+          <td>
+            <span style="background-color:#ffe3ae;">오랜지박스</span> matrix(1, 1, 0, 1, 10, 10)
+            <span style="background-color:#e8e8ff; ">파랑박스</span> matrix(1, 0, 0.5, 1, 30, 20)
+          </td>
+        </tr>
+    </table>
+
+    <svg width="40%" viewbox="0 0 50 50" style="border:1px solid #aaa;border-radius: 10px;padding:5px">
+      <rect x="0" y="0" width="10" height="10" fill="red" />
+      <rect x="0" y="0" width="10" height="10" transform="translate(10,10)" fill="orange" />
+      <rect x="0" y="0" width="10" height="10" transform="translate(30,20)" fill="blue" />
+      <text style="font-size:5px;" x="10" y="40">translate 예제</text>
+    </svg>
+    <svg width="40%" viewbox="0 0 50 50" style="border:1px solid #aaa;border-radius: 10px;padding:5px">
+      <rect x="0" y="0" width="10" height="10" fill="red" />
+      <rect x="0" y="0" width="10" height="10" transform="translate(30,20)" stroke="black" fill="white"
+        stroke-width="1" />
+      <rect x="0" y="0" width="10" height="10" transform="rotate(45) translate(30,20)" fill="orange" />
+      <rect x="0" y="0" width="10" height="10" transform="translate(30,20) rotate(45)" fill="blue" />
+      <text style="font-size:5px;" x="10" y="40">rotate 예제</text>
+    </svg><br>
+    <svg width="40%" viewbox="0 0 50 50" style="border:1px solid #aaa;border-radius: 10px;padding:5px">
+      <rect x="0" y="0" width="10" height="10" fill="red" />
+      <rect x="0" y="0" width="10" height="10" transform="translate(10,10) scale(0.5)" fill="orange" />
+      <rect x="0" y="0" width="10" height="10" transform="matrix(1.5, 0, 0, 2.5, 30, 20)" fill="blue" />
+      <text style="font-size:3px;" x="10" y="40">matrix: 이동과 회전</text>
+    </svg>
+    <svg width="40%" viewbox="0 0 50 50" style="border:1px solid #aaa;border-radius: 10px;padding:5px">
+      <rect x="0" y="0" width="10" height="10" fill="red" />
+      <rect x="0" y="0" width="10" height="10" transform="matrix(1, 1, 0, 1, 10, 10)" fill="orange" />
+      <rect x="0" y="0" width="10" height="10" transform="matrix(1, 0, 0.5, 1, 30, 20)" fill="blue" />
+      <text style="font-size:3px;" x="10" y="40">matrix: 비틀기</text>
+    </svg>
+
+    <p>&nbsp;메트릭스 변환식은 다음과 같다.</p>
+    $$ transform(a, b, c, d, e, f) = \begin{bmatrix} a & c & e \\ b & d & f \\ 0 & 0 & 1 \end{bmatrix} $$
+    <blockquote>
+      <b>a</b> : x 확대/축소<br>
+      <b>b</b> : x 기울기<br>
+      <b>c</b> : y 기울기<br>
+      <b>d</b> : y 확대/축소<br>
+      <b>e</b> : x 이동<br>
+      <b>f</b> : y 이동<br>
+    </blockquote>
+
+    <span class="tutorial">D_Properties >> transform.svg</span>
+    <svg viewBox="0 0 50 50" xmlns="http://www.w3.org/2000/svg" style="border:1px solid #ddd; width:50%">
+      <desc>
+        (c) 2024 @iseohyun.com
+        All rights reserved.
+        CC-BY-SA
+      </desc>
+      <title>이동, 변형 예제</title>
+
+      <rect x="0" y="0" width="10" height="10" fill="red" />
+      <rect x="0" y="0" width="10" height="10" transform="translate(30,20)" fill="blue" />
+      <rect x="0" y="0" width="10" height="10" transform="translate(30,20) rotate(45)" fill="orange" />
+      <rect x="0" y="0" width="10" height="10" transform="matrix(1, 1, 0, 1, 5, 15)" fill="green" />
+
+      <text style="font-size:3px;fill:red" x="1" y="13">10 x 10</text>
+
+      <text style="font-size:3px;fill:blue" x="25" y="18">translate(30,20)</text>
+      <text style="font-size:3px;fill:orange" x="25" y="37">rotate(45)</text>
+      <text style="font-size:3px;fill:green" x="2" y="42">matrix:1, 1, 0, 1, 5, 15</text>
+    </svg>
+
+    <pre><code>&lt;rect x="0" y="0" width="10" height="10" fill="red" />
+&lt;rect x="0" y="0" width="10" height="10" transform="translate(30,20)" fill="blue" />
+&lt;rect x="0" y="0" width="10" height="10" transform="translate(30,20) rotate(45)" fill="orange" />
+&lt;rect x="0" y="0" width="10" height="10" transform="matrix(1, 1, 0, 1, 5, 15)" fill="green" /></code></pre>
+  </article>
+</body>
+
+</html>

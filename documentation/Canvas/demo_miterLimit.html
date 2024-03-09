@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo : miterLimit</title>
+  <style>
+    table {
+      border-spacing: 0;
+    }
+
+    td {
+      border: 1px solid #ccc;
+    }
+  </style>
+</head>
+
+<body>
+  <table>
+    <tr>
+      <td><canvas id="miterlimit_concept" width="150" height="150"></canvas></td>
+      <td style="text-align: left;"><span class="highlight2" style="color: red;">이해를 돕기 위한 도면입니다. 예제코드에는 포함되어
+          있지 않습니다. 위 코드와 아래 코드의 검정색 라인은 <b>선굵기만 다르고</b> 똑같은 코드입니다.</span> 굵기가 1일 때, 왼쪽과 같이 표현됩니다. <br>
+        아래 예제는 검정 선의 굵기가 10일때, 아래와 같이 bevel을 그려줍니다. 사용자가 입력하는 숫자는 bevel의 예각이 사용자가 입력하는 임계각까지 그려줄 것입니다.</td>
+    </tr>
+    <tr>
+      <td><canvas id="miterlimit" width="150" height="150"></canvas></td>
+      <td>
+        4, 5, 6, 7, 8, 9, 10을 차례대로 입력해보면서 차이를 알아봅니다.(소수점 가능)
+        <input type="number" size="3" id="input_Limit" value="11" onchange="miterLimit()">
+      </td>
+    </tr>
+  </table>
+  <script>
+    var ctx = document.getElementById('miterlimit_concept').getContext('2d');
+
+    // 안내선을 그린다 (파란색 선)
+    ctx.strokeStyle = '#09f';
+    ctx.lineWidth = 2;
+    ctx.strokeRect(-5, 50, 160, 50);
+
+    // 선 스타일을 설정한다 (지그재그)
+    ctx.strokeStyle = '#000';
+    ctx.lineWidth = 1;
+    ctx.beginPath();
+    ctx.moveTo(0, 100);
+    for (i = 0; i < 24; i++) {
+      var dy = i % 2 == 0 ? 25 : -25;
+      ctx.lineTo(Math.pow(i, 1.5) * 2, 75 + dy);
+    }
+    ctx.stroke();
+    miterLimit();
+
+    function miterLimit() {
+      var ctx = document.getElementById('miterlimit').getContext('2d');
+
+      ctx.clearRect(0, 0, 150, 150);  // 캔버스를 비운다
+
+      // 안내선을 그린다 (파란색 선)
+      ctx.strokeStyle = '#09f';
+      ctx.lineWidth = 2;
+      ctx.strokeRect(-5, 50, 160, 50);
+
+      // 선 스타일을 설정한다 (지그재그)
+      ctx.strokeStyle = '#000';
+      ctx.lineWidth = 10;
+      // 입력 값을 검사한다
+      if (document.getElementById('input_Limit').value.match(/\d+(\.\d+)?/)) {    // 숫자(소수포함)을 입력했는지
+        ctx.miterLimit = parseFloat(document.getElementById('input_Limit').value);  // 값 설정
+      } else {
+        alert('양수(소수포함)을 넣어주세요.');
+      }
+
+      // 선을 그린다
+      ctx.beginPath();
+      ctx.moveTo(0, 100);
+      for (i = 0; i < 24; i++) {
+        var dy = i % 2 == 0 ? 25 : -25;
+        ctx.lineTo(Math.pow(i, 1.5) * 2, 75 + dy);
+      }
+      ctx.stroke();
+      return false;
+    }
+  </script>
+</body>
+
+</html>

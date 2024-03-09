@@ -1,0 +1,810 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" lang="ko">
+<!-- 모바일 스케일 고정 -->
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta discription="튜토리얼을 제공합니다.">
+<meta keywords="iseohyun, 튜토리얼, css, 다양한 효과">
+<meta author="iseohyun">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-453XSP5W9M');
+</script>
+
+<!-- 페이지 타이틀 -->
+<title>다양한 효과: css - iseohyun </title>
+<link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+<!-- 목차 생성 -->
+<script src="/modules/hd_list.js" defer></script>
+
+<!-- 공통스킨 -->
+<style type="text/css">
+  @import url("/style.css");
+</style>
+
+<style>
+  div[id*="-gallery-"] {
+
+    display: flex;
+    flex-direction: row;
+    height: 300px;
+    width: 100%;
+    align-items: center;
+    overflow-x: scroll;
+    flex-wrap: nowrap;
+  }
+
+  div[id*="-gallery-"]>div {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+  }
+
+  div[id*="-gallery-"]>div>div {
+    display: block;
+    width: 100px;
+    height: 100px;
+    border: 1px solid #ddd;
+    margin: 30px 70px;
+    background-color: white;
+  }
+
+  table td:last-child {
+    text-align: left;
+    padding-left: 10px;
+  }
+</style>
+</head>
+
+<body>
+  <article>
+    <div id="title">CSS: 다양한 효과</div>
+    <h1>filter overview</h1>
+    <table class="all-td-left">
+      <caption>다양한 필터효과</caption>
+      <thead>
+        <tr>
+          <th>효과</th>
+          <th>함수</th>
+          <th>인자</th>
+          <th>예시</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>흐리게</td>
+          <td>blur</td>
+          <td>(번짐길이)</td>
+          <td>blur(2px)</td>
+        </tr>
+        <tr>
+          <td>밝기</td>
+          <td>brightness</td>
+          <td>(밝기율%)</td>
+          <td>brightness(40%)</td>
+        </tr>
+        <tr>
+          <td>대조</td>
+          <td>contrast</td>
+          <td>(대조율%)</td>
+          <td>contrast(200%)</td>
+        </tr>
+        <tr>
+          <td>그림자</td>
+          <td>drop-hadow</td>
+          <td>(그림자거리x, y, 번짐크기, 색)</td>
+          <td>drop-shadow(5px 5px 5px #444)</td>
+        </tr>
+        <tr>
+          <td>회색비</td>
+          <td>grayscale</td>
+          <td>(회색조%)</td>
+          <td>grayscale(50%)</td>
+        </tr>
+        <tr>
+          <td>색 회전</td>
+          <td>hue-rotate</td>
+          <td>(회전각deg)</td>
+          <td>hue-rotate(90deg)</td>
+        </tr>
+        <tr>
+          <td>반전</td>
+          <td>invert</td>
+          <td>(반전율%)</td>
+          <td>invert(100%)</td>
+        </tr>
+        <tr>
+          <td>투명도</td>
+          <td>opacity</td>
+          <td>(투명률%)</td>
+          <td>opacity(25%)</td>
+        </tr>
+        <tr>
+          <td>채도</td>
+          <td>saturate</td>
+          <td>(채도%)</td>
+          <td>saturate(30%)</td>
+        </tr>
+        <tr>
+          <td>갈색조</td>
+          <td>sepia</td>
+          <td>(반영율%)</td>
+          <td>sepia(60%)</td>
+        </tr>
+    </table>
+    <iframe src="f_filter.html" height="470px;" width="100%"></iframe>
+
+    <h1>box-shadow</h1>
+    <table>
+      <caption>그림자 효과</caption>
+      <thead>
+        <tr>
+          <th>번호</th>
+          <th>이름</th>
+          <th>특징</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>기본</td>
+          <td>가장 기본적인 그림자</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>작은 그림자</td>
+          <td>그림자 크기, 번짐을 줄이고, 방향을 아래 방향 특성만 부여</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>후광효과</td>
+          <td>그림자 크기를 키우고, 은근한 색 사용. 방향은 없음</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>포스트잇</td>
+          <td>before로 객체를 추가 생성, 살짝 회전시켜서 좌하단만 노출, 실제로 포스트잇이 들리진 않고, 착시</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>음각</td>
+          <td>그림자에 inset 옵션</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>양각</td>
+          <td>실제로 음각(inset), border-radius를 적절히 조절</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>버튼</td>
+          <td>inset그림자 내림</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>떠있는 그림자</td>
+          <td>before로 객체 생성, 생성된 객체는 투명, 객체 그림자 생성 및 이동</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>invisible</td>
+          <td>객체는 투명, 그림자만 채색해서, 뭔가 있는 것 같은 효과</td>
+        </tr>
+    </table>
+    <style>
+      #affix-gallery-box-shadow>div:nth-child(1)>div {
+        box-shadow: 5px 5px 5px #8888;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(2)>div {
+        box-shadow: 0 10px 6px -6px #777;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(3)>div {
+        box-shadow: 0 0px 13px -2px #aaa;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(4) {
+        position: relative;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(4)>div::before {
+        z-index: -1;
+        position: absolute;
+        content: "";
+        left: 74px;
+        width: 75px;
+        top: 97px;
+        height: 17px;
+        box-shadow: 0 15px 10px #777;
+        transform: rotate(-4deg);
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(5)>div {
+        box-shadow: 5px 5px 5px #8888 inset;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(6)>div {
+        border-radius: 25%;
+        box-shadow: 6px 6px 20px -5px #8888 inset;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(7)>div {
+        border-radius: 25%;
+        box-shadow: 0px -15px 5px 1px #8888 inset;
+        transition: 1s box-shadow;
+        line-height: 1em;
+        display: flex;
+        justify-content: center;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(7)>div:hover {
+        border-radius: 25%;
+        box-shadow: 0px -8px 5px 1px #8888 inset;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(8)>div {
+        position: relative;
+        background-color: white;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(8)>div:before {
+        content: "";
+        background-color: transparent;
+        border-radius: 50%;
+        position: absolute;
+        left: 0px;
+        width: 101px;
+        top: 90px;
+        height: 15px;
+        box-shadow: 0px 22px 12px -2px #777;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(9)>div {
+        position: relative;
+        background-color: #eee;
+      }
+
+      #affix-gallery-box-shadow>div:nth-child(9)>div>div {
+        position: absolute;
+        min-width: 100px;
+        min-height: 100px;
+        box-shadow: 5px 5px 11px 5px;
+        background: transparent;
+        border: none;
+        transform: rotate(30deg);
+        top: 0;
+        left: 0;
+      }
+    </style>
+    <div id="affix-gallery-box-shadow">
+      <div>
+        <div>1</div>
+        <span>5px 5px 5px #8888;<br>좌, 우, 번짐</span>
+      </div>
+      <div>
+        <div>2</div>
+        <span>0 10px 6px -6px #777;<br>좌, 우, 번짐, 크기</span>
+      </div>
+      <div>
+        <div>3</div>
+        <span>0 0px 13px -2px #aaa;<br>&nbsp;</span>
+      </div>
+      <div>
+        <div>4</div>
+        <span>
+          ::before { 0 15px 10px #777;<br>
+          rotate(-4deg); }</span>
+      </div>
+      <div>
+        <div>5</div>
+        <span>5px 5px 5px #8888 inset;<br>inset = 안쪽</span>
+      </div>
+      <div>
+        <div>6</div>
+        <span>6px 6px 20px -5px #8888 inset<br>&nbsp;</span>
+      </div>
+      <div>
+        <div><span><br>mouse<br>over</span></div>
+        <span>양각 착시<br>0 -15px 5px 1px #8888 inset</span>
+      </div>
+      <div>
+        <div>8</div>
+        <span style="font-size:0.8em">before : {0 22px 12px -2px #777;<br>top:90px;}</span>
+      </div>
+      <div>
+        <div>9
+          <div></div>
+        </div>
+        <span style="font-size:0.8em">div>div: backgound:transpaent</span>
+      </div>
+    </div>
+
+    <h2>다중 그림자</h2>
+    <p>shadowing은 여러번에 걸쳐서 수행할 수 있습니다.</p>
+    <div id="test1"> test 1 </div>
+    <style>
+      #test1 {
+        height: 100px;
+        width: 100px;
+        margin: 10px auto;
+        padding: 20px;
+        text-align: center;
+        background-color: #444;
+        box-shadow: 5px 5px 15px 0px #f008, -5px -5px 10px #0ff8;
+      }
+    </style>
+    <blockquote>
+      <pre>
+        #test1 {
+        background-color: #444;
+        box-shadow: 5px 5px 15px 0px #f008, -5px -5px 10px #0ff8;
+      }</pre>
+    </blockquote>
+    <p>
+      여러개의 shadow는 좀 더 자연스러운 연출을 가능하게 합니다. 아래 사이트에서 디테일한 shadowing을 코드를 자동작성 할 수 있습니다.<br>
+      그림자 효과를 자동 생성해주는 툴 :
+      <a href="https://shadows.brumm.af/">https://shadows.brumm.af/</a>
+    </p>
+
+    <h1>border</h1>
+    <table>
+      <caption>border를 이용한 디자인</caption>
+      <thead>
+        <tr>
+          <th>순번</th>
+          <th>변경사항</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>가로0 세로0 상자를 그리고, border(테두리)의 크기를 100px으로 설정</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>왼쪽과 아랫쪽의 테두리 크기는 0으로 수정</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>오른쪽의 테두리는 투명으로 변경</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>filter: drop-shadow을 이용해 출력내용에 대한 그림자만 생성</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>4에서: border-radius: 100px 100px 0 0;</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>4에서: border-radius: 100px 0 0 0;</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>6에서: 본래 도형의 길이(width:70)를 늘림. 현재 도형은 하단 평평한 부분에 위치</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>7에서: 본래 도형의 높이(height:30)을 늘림</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>8에서: border-right를 삭제, 8과 9에서 차이나는 부분이 border-right</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>9에서: 우상단 모서리도 radius를 지정함.</td>
+        </tr>
+    </table>
+    <p>둥근 모서리도 4방향을 각각 지정 할 수 있습니다.</p>
+    <style>
+      #border-radius-example {
+        border: 1px solid #eee;
+        width: 95%;
+        height: 200px;
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        align-content: center;
+        justify-content: space-around;
+        align-items: center;
+      }
+
+      #border-radius-example div {
+        background-color: antiquewhite;
+        border: 1px solid black;
+        width: 80px;
+        height: 80px;
+      }
+
+      #border-radius-example div:nth-child(1) {
+        border-radius: 40px 0 0 0;
+      }
+
+      #border-radius-example div:nth-child(2) {
+        border-radius: 0 40px 0 0;
+      }
+
+      #border-radius-example div:nth-child(3) {
+        border-radius: 0 0 40px 0;
+      }
+
+      #border-radius-example div:nth-child(4) {
+        border-radius: 0 0 0 40px;
+      }
+    </style>
+    <div id="border-radius-example">
+      <div></div>
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+
+    <div id="affix-gallery-border">
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div>div {
+            background: none;
+            border: none;
+          }
+
+          #affix-gallery-border>div>span {
+            font-size: 0.8em;
+          }
+
+          #affix-gallery-border>div:nth-child(1)>div {
+            border-top: 50px solid #FFC000;
+            border-right: 50px solid red;
+            border-bottom: 50px solid blue;
+            border-left: 50px solid green;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+            width: 0;
+            height: 0;
+          }
+        </style>
+        <span>1: top,right border:100px</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div>div {
+            background: none;
+            border: none;
+          }
+
+          #affix-gallery-border>div>span {
+            font-size: 0.8em;
+          }
+
+          #affix-gallery-border>div:nth-child(2)>div {
+            border-top: 100px solid #FFC000;
+            border-right: 100px solid red;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+            width: 0;
+            height: 0;
+          }
+        </style>
+        <span>2: top,right border:100px</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div>div {
+            background: none;
+            border: none;
+          }
+
+          #affix-gallery-border>div>span {
+            font-size: 0.8em;
+          }
+
+          #affix-gallery-border>div:nth-child(3)>div {
+            border-top: 100px solid #FFC000;
+            border-right: 100px solid transparent;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, .5);
+            width: 0;
+            height: 0;
+          }
+        </style>
+        <span>3: top,right border:100px</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div:nth-child(4)>div {
+            border-top: 100px solid #FFC000;
+            border-right: 100px solid transparent;
+            width: 0;
+            height: 0;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+          }
+        </style>
+        <span>4: filter: drop-shadow(...);</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div:nth-child(5)>div {
+            border-radius: 100px 100px 0 0;
+            border-top: 100px solid #FFC000;
+            border-right: 100px solid transparent;
+            width: 0;
+            height: 0;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+          }
+        </style>
+        <span>5: top-radius: 100px;</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div:nth-child(6)>div {
+            border-radius: 100px 0 0 0;
+            border-top: 100px solid #FFC000;
+            border-right: 100px solid transparent;
+            width: 0;
+            height: 0;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+          }
+        </style>
+        <span>6: top-left radius: 100px;</span>
+      </div>
+
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div:nth-child(7)>div {
+            border-radius: 100px 0 0 0;
+            border-top: 100px solid #FFC000;
+            border-right: 100px solid transparent;
+            width: 100px;
+            height: 0;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+          }
+        </style>
+        <span>7: width: 100px</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div:nth-child(8)>div {
+            border-radius: 100px 0 0 0;
+            border-top: 30px solid #FFC000;
+            border-right: 100px solid transparent;
+            width: 100px;
+            height: 70px;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+          }
+        </style>
+        <span>8: border-top: 30px; height: 70px;</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div:nth-child(9)>div {
+            border-radius: 100px 0 0 0;
+            border-top: 30px solid #FFC000;
+            width: 100px;
+            height: 70px;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+          }
+        </style>
+        <span>9: border-right: 0px;</span>
+      </div>
+      <div>
+        <div></div>
+        <style>
+          #affix-gallery-border>div:nth-child(10)>div {
+            border-radius: 100px 100px 0 0;
+            border-top: 30px solid #FFC000;
+            width: 100px;
+            height: 70px;
+            filter: drop-shadow(0px 0px 10px rgba(0, 0, 0, .5));
+          }
+        </style>
+        <span>10: radius-top(all): 100px;</span>
+      </div>
+    </div>
+    <h1>이동, 회전</h1>
+    <table>
+      <caption>이동, 회전 함수</caption>
+      <thead>
+        <tr>
+          <th>함수명</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>translateX<br>translateY<br>translateZ</td>
+          <td>X, Y, Z방향의 이동(Z는 동작하지 않는다)</td>
+        </tr>
+        <tr>
+          <td>rotateX<br>rotateY<br>rotateZ</td>
+          <td>X, Y, Z방향의 회전</td>
+        </tr>
+    </table>
+    <div id="affix-gallery-rotate">
+      <div></div>
+      <div></div>
+    </div>
+    <style>
+      #affix-gallery-rotate>div {
+        position: absolute;
+        left: 45vw;
+        background-image: linear-gradient(to bottom right, red, blue);
+        min-width: 100px;
+        min-height: 100px;
+        margin: 0 auto;
+        transform: translate(10px);
+        box-shadow: #8888 5px 5px 5px;
+        border: 3px solid #fff;
+        transform: translateZ(0px);
+      }
+    </style>
+    <table>
+      <tr></tr>
+      <tr>
+        <td>
+          수평선(X축) 이동:
+        </td>
+        <td>
+          <input id="transX-range" type="range" min="-100" max="100" value="0"
+            onmousemove="change(this.value, 'translateX');document.getElementById('transX-text').value=this.value">
+        </td>
+        <td>
+          <input type="number" id="transX-text" min="-100" max="100" value="0"
+            onchange="change(this.value, 'translateX');document.getElementById('transX-range').value=this.value"><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          수직선(Y축) 이동:
+        </td>
+        <td>
+          <input type="range" id="transY-range" min="-100" max="100" value="0"
+            onmousemove="change(this.value, 'translateY');document.getElementById('transY-text').value=this.value">
+        </td>
+        <td>
+          <input type="number" id="transY-text" min="-100" max="100" value="0"
+            onchange="change(this.value, 'translateY');document.getElementById('transY-range').value=this.value">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          뚫고 나오는 선(Z축) 이동: <br>
+          Z-index로만 이동가능
+        </td>
+        <td>
+          <input id="transZ-range" type="range" min="-100" max="100" value="0"
+            onmousemove="change(this.value, 'translateZ');document.getElementById('transZ-text').value=this.value">
+        </td>
+        <td>
+          <input type="number" id="transZ-text" min="-100" max="100" value="0"
+            onchange="change(this.value, 'translateZ');document.getElementById('transZ-range').value=this.value">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          수평선(X축) 회전:
+        </td>
+        <td>
+          <input type="range" id="rotateX-range" min="-180" max="180" value="0"
+            onmousemove="change(this.value, 'rotateX');document.getElementById('rotateX-text').value=this.value"">          
+        </td>
+        <td>
+          <input type=" number" id="rotateX-text" min="-100" max="100" value="0"
+            onchange="change(this.value, 'rotateX');document.getElementById('rotateX-range').value=this.value">
+        </td>
+      </tr>
+      <tr>
+        <td>수직선(Y축) 회전:</td>
+        <td>
+          <input type="range" id="rotateY-range" min="-180" max="180" value="0"
+            onmousemove="change(this.value, 'rotateY');document.getElementById('rotateY-text').value=this.value"">          
+        </td>
+        <td>
+          <input type=" number" id="rotateY-text" min="-100" max="100" value="0"
+            onchange="change(this.value, 'rotateY');document.getElementById('rotateY-range').value=this.value">
+        </td>
+      </tr>
+      <tr>
+        <td>뚫고 나오는 선(Z축) 회전:</td>
+        <td>
+          <input type="range" id="rotateZ-range" min="-180" max="180" value="0"
+            onmousemove="change(this.value, 'rotateZ');document.getElementById('rotateZ-text').value=this.value"">          
+        </td>
+        <td>
+          <input type=" number" id="rotateZ-text" min="-100" max="100" value="0"
+            onchange="change(this.value, 'rotateZ');document.getElementById('rotateZ-range').value=this.value">
+        </td>
+      </tr>
+    </table>
+
+    <script>
+      function change(value, type) {
+        var affix_gallery_rotate = document.getElementById("affix-gallery-rotate");
+        var statement = affix_gallery_rotate.querySelector("div").style.transform;
+
+        var match = statement.match(type);
+
+        if (match == null) {
+          if (type.match("translate")) {
+            value = type + "(" + value + "px)";
+          } else {
+            value = type + "(" + value + "deg)";
+          }
+          statement += value;
+          console.log("new");
+        } else {
+          var subStr = statement.substring(match.index);
+          subStr = subStr.replace(/[\-0-9]+/, value);
+          statement = statement.substring(0, match.index) + subStr;
+          console.log("add ");
+        }
+        affix_gallery_rotate.querySelector("div").style.transform = statement;
+      }
+    </script>
+
+    <h1>색상</h1>
+    <p>&nbsp;그라데이션은 background 또는 background-image에 아래 함수를 이용해 적용할 색과 방향을 지정하면 됩니다. </p>
+    <blockquote>
+      linear-gradient(방향(각도), 색1, 색2, ... );<br>
+      repeating-linear-gradient(방향(각도), 색1 길이, 색2길이, ... );
+    </blockquote>
+    <div id="affix-gallery-color">
+      <div>
+        <div style="background-color: red;"></div>
+        <span><br>background-color: red;<br>&nbsp;</span>
+      </div>
+      <div>
+        <div style="background: linear-gradient(to right, red, blue);"></div>
+        <span>background-image: <br>
+          linear-gradient(to right,<br>
+          red, blue);</span>
+      </div>
+      <div>
+        <div style="background: linear-gradient(to bottom right, red, blue, purple);"></div>
+        <span>red to blue<br>to bottom right<br>&nbsp;</span>
+      </div>
+      <div>
+        <div style="background: linear-gradient(30deg, red, blue, yellow);"></div>
+        <span>red to blue<br>30deg<br>(xy축 기준, 1사분면)</span>
+      </div>
+      <div>
+        <div style="background: repeating-linear-gradient(to right, red, yellow 25px, green 50px);"></div>
+        <span>red, yello, green<br>to bottom right<br>&nbsp;</span>
+      </div>
+      <div>
+        <div
+          style="background: repeating-linear-gradient(-45deg, #cb5a5e, #cb5a5e 8px, transparent 8px, transparent 18px);">
+        </div>
+        <span>red red none none<br>-45deg<br>&nbsp;</span>
+      </div>
+      <div>
+        <div
+          style="border-top: 6px dotted; background-image: repeating-linear-gradient(to bottom, black, white 1px, white 14px);">
+        </div>
+        <span>black, white, white<br>top : 6px, dotted<br>&nbsp; </span>
+      </div>
+      <style>
+        #affix-gallery-color>div>div {
+          box-shadow: #8888 5pt 5pt 5pt;
+        }
+      </style>
+    </div>
+
+  </article>
+</body>
+
+</html>

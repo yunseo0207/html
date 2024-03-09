@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Position : Static</title>
+  <script>
+    var Request = function () {
+      this.getParameter = function (name) {
+        var rtnval = '';
+        var nowAddress = unescape(location.href);
+        var parameters = (nowAddress.slice(nowAddress.indexOf('?') + 1,
+          nowAddress.length)).split('&');
+        for (var i = 0; i < parameters.length; i++) {
+          var varName = parameters[i].split('=')[0];
+          if (varName.toUpperCase() == name.toUpperCase()) {
+            rtnval = parameters[i].split('=')[1];
+            break;
+          }
+        }
+        return rtnval;
+      }
+    }
+    var request = new Request();
+    var paramValue = request.getParameter('Type');
+  </script>
+</head>
+
+<body style="height: 1000px;">
+  <style>
+    div {
+      background-color: #eee;
+      width: 100px;
+      margin: 1px;
+      border: 1px solid black;
+      padding: 40px 0px;
+      text-align: center;
+    }
+
+    div.test {
+      position: posType;
+      top: 10px;
+      left: 20px;
+    }
+  </style>
+  <div>Original</div>
+  <div id="test2" class="test" style="background-color: #0000;"></div>
+  <div id="test3" class="test" style="background-color: #0000;"></div>
+  <script>
+    document.getElementById('test2').innerHTML = paramValue + "1";
+    document.getElementById('test2').style.position = paramValue;
+    document.getElementById('test3').innerHTML = paramValue + "2";
+    document.getElementById('test3').style.position = paramValue;
+  </script>
+</body>
+
+</html>

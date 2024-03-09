@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <!-- 모바일 스케일 고정 -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="튜토리얼을 제공합니다.">
+  <meta keywords="iseohyun, 튜토리얼, canvas">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>애니메이션: canvas - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+  </style>
+
+  <script>
+    function drawArrow(ctx, x1, y1, x2, y2, color = 'red', width = 1) {
+      var arrSz = 10;
+      var angle = 30;
+      var radian = (angle / 180) * Math.PI;
+      var arrowSlope = Math.atan2(y1 - y2, x1 - x2);
+
+      var lx = x2 + arrSz * Math.cos(arrowSlope + radian);
+      var ly = y2 + arrSz * Math.sin(arrowSlope + radian);
+      var rx = x2 + arrSz * Math.cos(arrowSlope - radian);
+      var ry = y2 + arrSz * Math.sin(arrowSlope - radian);
+
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.moveTo(lx, ly);
+      ctx.lineTo(x2, y2);
+      ctx.lineTo(rx, ry);
+
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = color;
+      ctx.stroke();
+    }
+  </script>
+</head>
+
+<body>
+  <article>
+    <div id="title">캔버스: 애니메이션</div>
+
+    <h1>타이머 설정</h1>
+    수정사항 : 일정 시간마다 정지된 그림을 출력해야하므로, 시작함수(init)과 출력함수(myfunc)을 구분합니다. 이어지는 예제는 출력함수(myfunc을 대체)에 추가되는 내용입니다.
+    <pre>
+    <code class="language-html">&lt;html>
+&lt;head>
+  &lt;script>
+    function init() {
+      &lt;!-- TODO: intert 'user function' -->
+      setInterval(myfunc,100);
+    }
+
+    function myfunc() {
+      var ctx = document.getElementById('myCanvas').getContext('2d');
+    }
+  &lt;/script>
+&lt;/head>
+&lt;body onload="init()">
+  &lt;canvas id="canvas1" width="200" , height="200">&lt;/canvas>
+&lt;/body>
+&lt;/html>
+    </code>
+  </pre>
+    <h1>애니메이션 예제</h1>
+    <h2>예제 1. 타이머세팅</h2>
+    <blockquote>
+      <b>setInterval</b>(함수명, delay); <font color="#8a8">// delay = 1/1000초, 계속 호출</font><br>
+      <b>setTimeout</b>(함수명, delay); <font color="#8a8">// 한번만 호출</font>
+    </blockquote>
+    * globalCompositeOperation은 합성/혼합 모드 : destination-over 이미 그려진것 아래 그립니다<sup>[<a
+        href="https://developer.mozilla.org/en-US/docs/Web/API/CanvasRenderingContext2D/globalCompositeOperation"
+        target="_blank">참고</a>]</sup><br>
+
+    <span class="tutorial">E_Animation > a_solar.html</span>
+    <a href="demo_solar_system.html" download><button class="download">예제파일</button></a>
+    <iframe src="demo_solar_system.html" height="330"></iframe>
+
+
+    <h2>예제 2. 시계</h2>
+    <span class="tutorial">E_Animation > a2_clock.html</span>
+    <a href="demo_animated_clock.html" download><button class="download">예제파일</button></a>
+    <iframe src="demo_animated_clock.html" width="160" height="180"></iframe>
+
+    <h2>예제 3. 파노라마</h2>
+    <p>
+      좌로 이동 로직은 구현되어 있지 않습니다. 그림이 끝까지 스크롤되었을 때, 왼쪽 빈 공간에 새로운 그림을 그리는 로직이 있어서, 마치 끊임없이 빙글빙글 돌고 있는 효과를 줍니다.</p>
+    <p>
+      <span class="tutorial">E_Animation > a3_paranoma.html</span>
+      <a href="demo_panorama.html" download><button class="download">예제파일</button></a>,
+      <a href="https://yari-demos.prod.mdn.mozit.cloud/ko/docs/Web/API/Canvas_API/Tutorial/Basic_animations/capitan_meadows,_yosemite_national_park.jpg"
+        download target="_blank"><button class="download">이미지</button></a> 출처 : 위키피디아, 요새미티 국립공원 > MDN
+    </p>
+    <iframe src="demo_panorama.html" width="850" height="350" loading="lazy"></iframe>
+
+    <img src="/source/capitan_meadows,_yosemite_national_park.jpg">
+
+
+    <h1>이벤트 처리</h1>
+    <blockquote>
+      <b>addEventListener</b>("이벤트명", 콜백함수); <font color="#8a8">// mouseout, mouseover</font><br>
+      핸들러 = <b>window.requestAnimationFrame</b>(콜백함수); <font color="#8a8"> 애니메이션으로 호출할 함수</font>
+      <b>window.cancelAnimationFrame</b>(핸들러); <font color="#8a8"> 애니메이션 취소</font>
+
+
+    </blockquote>
+    <span class="tutorial">E_Animation > b_hover.html</span>
+    <p>마우스를 가져가면 움직이는 공 <a href="demo_fiying_ball.html" download><button class="download">예제파일</button></a></p>
+    <iframe src="demo_fiying_ball.html" width="600" height="330"></iframe>
+    <p>&nbsp;공의 위치를 vx, vy만큼씩 이동시킵니다.</p>
+    <pre>
+    <code class="language-java">ball.x += ball.vx;
+ball.y += ball.vy;
+    </code>
+  </pre>
+
+    <h3>튕기는 공</h3>
+    <span class="tutorial">E_Animation > b2_bouncing.html</span>
+    <p>
+      <a href="demo_bouncing_ball.html" download><button class="download">예제파일</button></a>
+    </p>
+    <iframe src="demo_bouncing_ball.html" width="600" height="330"></iframe>
+    <p>&nbsp;추가된 내용</p>
+    <pre>
+    <code class="language-java">ball.x += ball.vx;
+ball.y += ball.vy;
+ball.vy *= .99; // 세로로 가속을 받습니다.
+ball.vy += .25;
+    </code>
+  </pre>
+
+    <h3>잔상남기는 공</h3>
+    <span class="tutorial">E_Animation > b3_tracing.html</span>
+    <p>
+      <a href="demo_trailing_effect_ball.html" download><button class="download">예제파일</button></a>
+    </p>
+    <iframe src="demo_trailing_effect_ball.html" width="600" height="330"></iframe>
+    <p>
+      &nbsp;주요코드
+    </p>
+    <pre><code>// 완벽히 지우는 것이 아니라, 30%만 지웁니다.
+ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+ctx.fillRect(0, 0, canvas.width, canvas.height);</code></pre>
+
+    <h3>마우스로 집어던지는 공</h3>
+    <span class="tutorial">E_Animation > b4_throw.html</span>
+    <p>
+      <a href="demo_click_ball.html" download><button class="download">예제파일</button></a>
+    </p>
+    <iframe src="demo_click_ball.html" width="600" height="330"></iframe>
+    <pre><code>// 마우스가 들어오면, 공이 마우스 커서를 따라갑니다.
+canvas.addEventListener('mousemove', function (e) {
+  if (!running) {
+    ctx.fillStyle = 'rgba(255, 255, 255, 0.3)';
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+    ball.x = e.clientX;
+    ball.y = e.clientY;
+    ball.draw();
+  }
+});
+
+// 마우스가 클릭되면, 공을 놓습니다.
+canvas.addEventListener('click', function (e) {
+  if (!running) {
+    raf = window.requestAnimationFrame(drawball);
+    running = true;
+  }
+});
+
+// 마우스가 나가면 running flag를 초기화하고, 다시 진입했을 때, 이벤트를 받을 준비를 합니다.
+canvas.addEventListener('mouseout', function (e) {
+  window.cancelAnimationFrame(raf);
+  running = false;
+});</code></pre>
+  </article>
+</body>
+
+</html>

@@ -1,0 +1,1126 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8" lang="ko">
+<!-- 모바일 스케일 고정 -->
+<meta name="viewport"
+  content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta discription="튜토리얼을 제공합니다.">
+<meta keywords="iseohyun, 튜토리얼, css, position, 객체 배치">
+<meta author="iseohyun">
+
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag() { dataLayer.push(arguments); }
+  gtag('js', new Date());
+  gtag('config', 'G-453XSP5W9M');
+</script>
+
+<!-- 페이지 타이틀 -->
+<title>객체 배치: css - iseohyun </title>
+<link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+<!-- 목차 생성 -->
+<script src="/modules/hd_list.js" defer></script>
+
+<!-- 공통스킨 -->
+<style type="text/css">
+  @import url("/style.css");
+
+  button {
+    width: 10%;
+    min-width: fit-content;
+  }
+</style>
+</head>
+
+<body>
+  <article>
+    <div id="title"> CSS 객체 배치 </div>
+    <h1>박스모델</h1>
+
+    <ol>
+      <li>모든 엘리먼트(div, span, p, blockquote, table, ol ...)는 모두 Box로 이루어져 있습니다.<br>
+        모든 Box는 margin, border, madding을 갖습니다.</li>
+      <svg height="200" viewbox="0 0 550 450" version="1.1" xmlns="http://www.w3.org/2000/svg" style="border:1px solid gray;border-radius: 15px;
+            margin:2em 3em 30px;box-shadow: #8888 5px 5px 5px;">
+        <g style="stroke: #000;stroke-width: 1px;">
+          <rect x="50" y="50" width="450" height="350" fill="#F9CC9D" style="stroke-dasharray: 5;"></rect>
+          <rect x="100" y="100" width="350" height="250" fill="#FDDD9B"></rect>
+          <rect x="150" y="150" width="250" height="150" fill="#C3D08B" style="stroke-dasharray: 5;"></rect>
+          <rect x="200" y="200" width="150" height="50" fill="#8CB6C0"></rect>
+        </g>
+        <g style="font-size: 1.5em;">
+          <text x="70" y="83">margin</text>
+          <text x="120" y="133">border</text>
+          <text x="170" y="183">padding</text>
+          <text x="220" y="233"> 100 × 100 </text>
+        </g>
+      </svg>
+      <li>Box(객체, element)의 위치는 상대적으로 배치될 수 있고, 절대적으로도 배치 될 수도 있습니다.</li>
+      <style>
+        [id^="model-test"] {
+          width: 50%;
+          border: 1px solid #888;
+          border-radius: 15px;
+          box-shadow: #8888 5px 5px 5px;
+          margin: 2em 3em;
+          padding: 15px;
+        }
+
+        [id^="model-test"]>div {
+          border: 1px solid #444;
+          padding: 10px;
+          margin: 5px;
+          background-color: bisque;
+        }
+
+        #model-test {
+          height: 250px;
+        }
+
+        #model-test>div:nth-child(1) {
+          width: 90px;
+          height: 40px
+        }
+
+        #model-test>div:nth-child(2) {
+          width: 160px;
+          height: 30px;
+        }
+
+        #model-test>div:nth-child(3) {
+          width: 120px;
+          height: 90px;
+        }
+
+        #model-test>div:nth-child(4) {
+          position: relative;
+          width: 80px;
+          height: 80px;
+          top: -146px;
+          left: 64px;
+          background-color: blue;
+          opacity: 0.5;
+        }
+      </style>
+      <div id="model-test">
+        <div>element 1</div>
+        <div>element 2</div>
+        <div>element 3</div>
+        <div>element 4</div>
+      </div>
+      <li>하위객체의 정렬기준은 상위객체에서 수행합니다.</li>
+      <style>
+        #model-test-3 {
+          display: flex;
+          height: 150px;
+        }
+
+        #model-test-3>div:nth-child(1) {
+          width: 90px;
+          height: 40px;
+        }
+
+        #model-test-3>div:nth-child(2) {
+          width: 160px;
+          height: 30px;
+        }
+
+        #model-test-3>div:nth-child(3) {
+          width: 120px;
+          height: 90px;
+        }
+
+        #model-test-3>div:nth-child(4) {
+          width: 80px;
+          height: 80px;
+
+        }
+      </style>
+      <div id="model-test-3">
+        <div>element 1</div>
+        <div>element 2</div>
+        <div>element 3</div>
+        <div>element 4</div>
+      </div>
+      <li>모든 엘리먼트는 고유의 속성을 갖습니다.<br>
+        고유의 속성이란 줄바꿈을 하는지, 절대위치를 할당 받는지 등을 의미합니다. 예를들어, 문단을 시작 할 때, 당연히 줄을 바꿀 것이라고 기대하기 때문에 &lt;p>테그는 기본속성으로 줄
+        바꿈(display:block)속성을 받지만, 밑줄 테그 &lt;u>의 경우 줄을 바꾸지 않고(display:inline), 밑줄 속성만(text-decoration:underline)
+        갖습니다.<br>
+        고유의 속성은 사용자가 언제든지 변경 할 수 있습니다.</li>
+    </ol>
+
+    <div class="simple-box">
+      정리:<br>
+      모든 객체는 Box로 이루어져 있습니다.<br>
+      Box는 절대적 위치를 부여받을 수도 있지만, 일반적으로 상대적으로 위치를 잡게 됩니다.<br>
+      상대적인 위치는 부모가 정한 규칙에 의해 정해집니다.
+    </div>
+
+    <h1>내부정렬</h1>
+    <p>아래 예시들은 부모객체의 설정에 따라 자식객체들이 어떻게 배열되는지 보여줍니다.</p>
+    <h2>flex-direction</h2>
+    <p>column: 기둥, 세로줄, 칼럼, 길게 늘어선 줄<br>
+      row: 옆으로 늘어선 줄
+    </p>
+    <button onclick='$("#model-test-align").css("flex-direction", "column");'>column<br>↓</button>
+    <button onclick='$("#model-test-align").css("flex-direction", "row");'>row<br>→</button>
+    <div id="model-test-align" style="display:flex;flex-direction: column;height:250px">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+
+    <h2>justify-content</h2>
+    <button onclick='$("#model-test-justify").css("justify-content", "flex-start");'>시작점(왼쪽)<br>flex-start</button>
+    <button onclick='$("#model-test-justify").css("justify-content", "center");'>중앙<br>center</button>
+    <button onclick='$("#model-test-justify").css("justify-content", "flex-end");'>끝점(오른쪽)<br>flex-end</button>
+    <button onclick='$("#model-test-justify").css("justify-content", "space-between");'>양쪽정렬<br>space-between</button>
+    <button onclick='$("#model-test-justify").css("justify-content", "space-around");'>양쪽(반간격)<br>space-around</button>
+    <button onclick='$("#model-test-justify").css("justify-content", "space-evenly");'>양쪽(간격고정)<br>space-evenly</button>
+
+    <ul>
+      <li>
+        양쪽(반간격)의 경우 1번과 4번의 바깥쪽 간격이, 기본 간격의 반이 된다.
+      </li>
+      <li>
+        양쪽(고정간격)의 경우 1번과 4번의 바깥쪽 간격이, 기본 간격과 같다.
+      </li>
+    </ul>
+
+    <div id="model-test-justify" style="display: flex;flex-direction: row;justify-content: flex-start;">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+    </div>
+
+    <h2>align-items</h2>
+    <button onclick='$("#model-test-item").css("align-items", "flex-start");'>시작점<br>flex-start</button>
+    <button onclick='$("#model-test-item").css("align-items", "center");'>중앙<br>center</button>
+    <button onclick='$("#model-test-item").css("align-items", "flex-end");'>끝점<br>flex-end</button>
+    <button onclick='$("#model-test-item").css("align-items", "stretch");'>양쪽<br>stretch</button>
+    <button onclick='$("#model-test-item").css("align-items", "baseline");'>Baseline<br>baseline</button>
+    <div id="model-test-item" style="display: flex;flex-direction: row;">
+      <div style="height:50px">1</div>
+      <div style="height:100px">2</div>
+      <div style="height:80px">3</div>
+      <div>4</div>
+    </div>
+    <p>&nbsp;1(50px), 2(100px), 3(80px)는 높이가 설정되어 있고, 4는 설정되어 있지 않다.</p>
+
+    <h2>align-content</h2>
+    <p>&nbsp;아래 내용과 같이, 행에 각 60px의 box가 3개 채워지면 다음 행에 채우도록 코딩되어 있다.</p>
+    <blockquote>
+      <pre>display: grid;
+direction: row;
+grid-template-columns: 60px 60px 60px;
+height: 200px;</pre>
+    </blockquote>
+    <style>
+      #model-test-grid {
+        display: grid;
+        direction: row;
+        grid-template-columns: 60px 60px 60px;
+        height: 200px;
+      }
+
+      #model-test-wrap {
+        display: flex;
+      }
+
+      #model-test-wrap>div {
+        display: block;
+        width: 100px;
+      }
+    </style>
+    <button onclick='$("#model-test-grid").css("align-content", "normal");'>기본<br>Normal</button>
+    <button onclick='$("#model-test-grid").css("align-content", "flex-start");'>시작점<br>flex-start</button>
+    <button onclick='$("#model-test-grid").css("align-content", "center");'>중앙정렬<br>center</button>
+    <button onclick='$("#model-test-grid").css("align-content", "flex-end");'>끝점<br>flex-end</button>
+    <button onclick='$("#model-test-grid").css("align-content", "space-around");'>양쪽정렬<br>space-between</button>
+    <button onclick='$("#model-test-grid").css("align-content", "space-between");'>양쪽(반간격)<br>space-around</button>
+    <button onclick='$("#model-test-grid").css("align-content", "space-evenly");'>양쪽(간격고정)<br>space-evenly</button>
+    <div id="model-test-grid">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <h2>flex-wrap</h2>
+    <ul>
+      <li>줄 바꿈: 하위객체들의 크기가 부모의 크기를 넘어갔을 때, 줄을 바꿉니다.
+      </li>
+      <li>
+        줄 바꾸지 않음: 하위객체의 크기가 명시되어 있지 않다면, 자동 계산하여 맞춥니다.<br>
+        만약, 하위객체가 너무 크면 부모 객체의 크기를 억지로 늘립니다.
+      </li>
+      <li>
+        줄바꿈(반대)란, 줄 시작의 기준점을 반대로 만듭니다.<br>
+        세로정렬 → 아래, 가로정렬 → 오른쪽
+      </li>
+    </ul>
+    <button onclick='$("#model-test-wrap").css("flex-wrap", "wrap");'>줄바꿈<br>wrap</button>
+    <button onclick='$("#model-test-wrap").css("flex-wrap", "nowrap");'>줄바꾸지 않음<br>nowrap</button>
+    <button onclick='$("#model-test-wrap").css("flex-wrap", "wrap-reverse");'>줄바꿈(반대)<br>wrap-reverse</button>
+    <div id="model-test-wrap">
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
+      <div>5</div>
+    </div>
+
+    <h2>flex 나머지 구간</h2>
+    flex-grow특성을 이용해서 나머지 구간을 설정할 수 있습니다.
+    <blockquote>
+      &lt;div style="border:1px solid #ccc;<em>flex-grow: 1</em>;">
+    </blockquote>
+    <div
+      style="border:1px solid #888; max-width:500px;display: flex;flex-direction: column; padding: 10px; border-radius: 10px; margin: 10px;">
+      <div style="border:1px solid #888; height:100px;display: flex;flex-direction: row; padding: 3px; margin: 3px;">
+        <div style="border:1px solid #ccc; width:100px;margin:3px">
+          넓이: 100
+        </div>
+        <div style="border:1px solid #ccc; width:100px;margin:3px">
+          넓이: 100
+        </div>
+        <div style="border:1px solid #ccc; width:100px;margin:3px">
+          넓이: 100
+        </div>
+      </div>
+      <div style="border:1px solid #888; height:100px;display: flex;flex-direction: row; padding: 3px; margin: 3px;">
+        <div style="border:1px solid #ccc; width:100px;margin:3px">
+          넓이: 100
+        </div>
+        <div style="border:1px solid #ccc;flex-grow: 1; margin:3px">
+          flex-grow: 1
+        </div>
+        <div style="border:1px solid #ccc; width:100px;margin:3px">
+          넓이: 100
+        </div>
+      </div>
+      <div style="border:1px solid #888; height:100px;display: flex;flex-direction: row; padding: 3px; margin: 3px;">
+        <div style="border:1px solid #ccc; width:100px;margin:3px">
+          넓이: 100
+        </div>
+        <div style="border:1px solid #ccc; width:100px;margin:3px">
+          넓이: 100
+        </div>
+        <div style="border:1px solid #ccc;flex-grow: 1; margin:3px">
+          flex-grow: 1
+        </div>
+      </div>
+    </div>
+
+
+
+    <h2>wrapper</h2>
+    <p>&nbsp;사각배열을 위해 부모객체에서 display:grid를 선택합니다. grid-column과 grid-row의 문법은 다음과 같습니다. 끝 블럭을 생략하면 1칸으로 간주합니다.</p>
+    <blockquote> grid-column : 시작 블럭 / 끝 블럭</blockquote>
+
+    <pre><blockquote>#wrapper-inner {
+  display: grid;
+  width: 550px;
+  height: 550px;
+  grid-template-columns: repeat(5, 100px);
+  grid-template-rows: repeat(5, 100px);
+  grid-gap: 10px;
+}
+#wrapper-inner div:first-child { /* 상자 1 */
+  background-color: bisque;
+  grid-column: 3 / 6;
+  grid-row: 3 / 6;
+}</blockquote></pre>
+
+    <p>&nbsp;"3 /6", 시작 블럭(3)은 3칸부터, 끝 블럭(6)은 6블럭 이전까지를 의미합니다.<br>
+      &nbsp;이 테그가 난해한 이유는 잘 못 입력을 받아도 어쨌든 해석을 하려고 한다는데 있습니다. 예를들어, 6이 넘아가거나, 심지어는 음수가 들어가도 동작합니다. 시작블럭보다 끝 블럭이 작아도 임의대로
+      해석해서 출력합니다.
+    </p>
+    <span class="tutorial">G_layout >> a_layout.html</span>
+
+    <style>
+      #wrapper-outer {
+        position: relative;
+        width: 560px;
+      }
+
+      #wrapper-inner {
+        display: grid;
+        width: 550px;
+        height: 550px;
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(5, 100px);
+        grid-gap: 10px;
+      }
+
+      #wrapper-inner div:first-child {
+        border: 1px solid #ddd;
+        background-color: bisque;
+        grid-column: 3 / 6;
+        grid-row: 3 / 6;
+        z-index: 3;
+      }
+
+      #wrapper-inner div:nth-child(2) {
+        border: 1px solid #ddd;
+        background-color: burlywood;
+        grid-column: 3 / 5;
+        grid-row: 1 / 6;
+        z-index: 2;
+      }
+
+      #wrapper-background {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: grid;
+        width: 550px;
+        height: 550px;
+        grid-template-columns: repeat(5, 100px);
+        grid-template-rows: repeat(5, 100px);
+        grid-gap: 10px;
+      }
+
+      #wrapper-background div {
+        height: 100px;
+        width: 100px;
+        border: 1px solid #ddd;
+        z-index: 4;
+      }
+
+      #wrapper-control-box {
+        width: 550px;
+      }
+
+      #wrapper-control-box div:first-child {
+        background-color: bisque;
+      }
+
+      #wrapper-control-box div:nth-child(2) {
+        background-color: burlywood;
+      }
+
+      #wrapper-control-box input {
+        width: 15%;
+        text-align: center;
+      }
+    </style>
+    <div id="wrapper-outer">
+      <div id="wrapper-background">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+      </div>
+      <div id="wrapper-inner">
+        <div></div>
+        <div></div>
+      </div>
+    </div>
+    <div id="wrapper-control-box">
+      <div>
+        <span>상자1:</span>
+        가로(<input id="first-col1" type="number" value="3"> /
+        <input id="first-col2" type="number" value="6">)
+        세로(<input id="first-row1" type="number" value="3"> /
+        <input id="first-row2" type="number" value="6">)
+      </div>
+      <div>
+        <span>상자2:</span>
+        가로(<input id="second-col1" type="number" value="3"> /
+        <input id="second-col2" type="number" value="5">)
+        세로(<input id="second-row1" type="number" value="1"> /
+        <input id="second-row2" type="number" value="6">)
+      </div>
+    </div>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        // 입력 값이 변경될 때마다 그리드 열 및 행 값을 설정합니다.
+        var numberInputs = document.querySelectorAll("input[type='number']");
+        numberInputs.forEach(function (input) {
+          input.addEventListener("change", function () {
+            var firstCol1 = document.getElementById("first-col1").value;
+            var firstCol2 = document.getElementById("first-col2").value;
+            var firstRow1 = document.getElementById("first-row1").value;
+            var firstRow2 = document.getElementById("first-row2").value;
+            var secondCol1 = document.getElementById("second-col1").value;
+            var secondCol2 = document.getElementById("second-col2").value;
+            var secondRow1 = document.getElementById("second-row1").value;
+            var secondRow2 = document.getElementById("second-row2").value;
+
+            document.querySelector("#wrapper-inner div:first-child").style.gridColumn = firstCol1 + " / " + firstCol2;
+            document.querySelector("#wrapper-inner div:first-child").style.gridRow = firstRow1 + " / " + firstRow2;
+            document.querySelector("#wrapper-inner div:nth-child(2)").style.gridColumn = secondCol1 + " / " + secondCol2;
+            document.querySelector("#wrapper-inner div:nth-child(2)").style.gridRow = secondRow1 + " / " + secondRow2;
+          });
+        });
+      });
+    </script>
+
+    <h1>개별정렬</h1>
+    <p>&nbsp;디자인을 결정할 때, 부모의 특성을 직접 수정하는 것이 가장 쉽고 빠르지만, 매번 부모객체를 변경하는 것은 꽤 부담스러운 일입니다. 경우에 따라 문제를 일으킬 수 도 있습니다. (예를 들어,
+      사이트 내 다른 페이지에서 사용되는 부모객체를 수정했을 경우) 따라서 본인의 크기를 임의대로 변경하여 마치 정렬이 된 것 처럼 디자인 할 수 있습니다.</p>
+    <p>&nbsp;1번 예제는 아무런 설정이 없기 때문에, 부모가 결정한 규칙 "왼쪽부터 순서대로 차곡차곡"의 룰을 따르고 있습니다.</p>
+    <p>&nbsp;2번 예제는 좌우에 여백을 auto로 설정하여 가로 크기를 부모만큼 size를 키운 상태입니다. 물론 다른 자식객체가 생긴다면, 다른 객체를 고려해서 가로 크기가 커지므로(auto) 중앙에
+      정렬되지 않을 것입니다.</p>
+    <p>&nbsp;3번 예제는 좌측 여백을 auto로 설정하여 마치 우측 정렬된 것 처럼 작성하였습니다. 부모 객체에 "우츨부터 차곡차곡"이라는 규칙을 부여할 수 있습니다. 사이트 내에 다른 페이지에서 해당
+      객체가 또 사용되고 있다면, 부작용을 유발할 것입니다.</p>
+
+    <p>&nbsp;4번 5번 예제는 객체가 가진 내부의 문자 정렬을 시행하고 있습니다. 객체 개념을 이해한 후라서 이와 같은 정렬이 얼마나 바보같은지 이해할 수 있습니다. 하지만 지금은 이해를 위해서 테두리를
+      그렸기 때문에 쉽게 이해가 가능합니다. 만약, 부모와 자식의 배경색이 같고 테두리가 없다면, 정렬이 왜 적용되지 않는지에 대해 깨닫는데 꽤 오랜 시간이 걸릴 수 도 있습니다.</p>
+
+    <style>
+      #model-test-each>div {
+        width: 50px;
+        padding: 0 10px;
+      }
+
+      #model-test-each b {
+        color: #f75757;
+      }
+    </style>
+    <div id="model-test-each">
+      <div>1</div>
+      ▼ style="<b>margin</b>: 0 auto;"
+      <div style="margin: 0 auto;">2</div>
+      ▼ style="<b>margin-left</b>:auto;"
+      <div style="margin-left:auto;">3</div>
+      ▼ style="<b>text-align</b>: center;"
+      <div style="text-align: center;">4</div>
+      ▼ style="<b>text-align</b>: right;"
+      <div style="text-align: right;">5</div>
+    </div>
+
+    <h2>함수로 위치 선정하기</h2>
+    &nbsp; 만약 아래와 같은 상황이 있다면, 함수를 통해서 위치를 선정할 수 있습니다.
+    <div
+      style="border:1px solid #888; max-width:500px;height:300px;display: flex;flex-direction: column; padding: 10px; border-radius: 10px; margin: 10px;">
+      전체 화면: max500(가변) x 300
+      <div style="border:1px solid #888;width:150px;">
+        메뉴: w150
+      </div>
+      <div style="border:1px solid #888; width:300px;flex-grow: 1; margin: 2px auto;">
+        sub 화면: w300 중앙정렬
+      </div>
+    </div>
+    &nbsp;<u>calc()함수를 이용해</u>서 다음과 같이 설정 할 수 있습니다.
+    <blockquote>
+      margin-left:calc((100% - 300px)/2)
+    </blockquote>
+    <div
+      style="border:1px solid #888; max-width:500px;height:300px;display: flex;flex-direction: column; padding: 10px; border-radius: 10px; margin: 10px;">
+      전체 화면: max500(가변) x 300
+      <div style="border:1px solid #888;width:150px;margin-left:calc((100% - 300px)/2 - 1px) ">
+        메뉴: w150
+      </div>
+      <div style="border:1px solid #888; width:300px;flex-grow: 1; margin: 2px auto;">
+        sub 화면: w300 중앙정렬
+      </div>
+    </div>
+
+    <h1>절대 위치</h1>
+
+    <p>&nbsp; 버튼을 눌렀을 때, 아래 실습파일의 position특성이 변경됩니다. 아래 버튼으로 position버튼을 누르고 <u>스크롤을 하면서</u> 각 특성의 차이점을 살펴봅니다.</p>
+    <div>
+      <button id="static" onclick="mode(this.id);">static</button>
+      <button id="relative" onclick="mode(this.id);">relative</button>
+      <button id="absolute" onclick="mode(this.id);">absolute</button>
+      <button id="fixed" onclick="mode(this.id);">fixed</button>
+      <button id="sticky" onclick="mode(this.id);">sticky</button>
+    </div>
+    <iframe id="ifrm"
+      style="border: 1px solid #ddd;border-radius:5px; box-shadow:#8888 5px 5px 5px; padding: 0px;margin:10px"
+      height="300"></iframe>
+
+    <table>
+      <caption>position tag</caption>
+      <thead>
+        <tr>
+          <th>특성명</th>
+          <th>특징</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>static</td>
+          <td style="text-align: left;">default; 다음 위치에 객체를 그린다. offset 무시됨.</td>
+        </tr>
+        <tr>
+          <td>relative</td>
+          <td style="text-align: left;">static위치에서 offset(top, left, right, bottom)을 지정할 수 있다.</td>
+        </tr>
+        <tr>
+          <td>absolute</td>
+          <td style="text-align: left;">문서를 기준으로, offset을 지정 할 수 있다. 스크롤시 사라짐</td>
+        </tr>
+        <tr>
+          <td>fixed</td>
+          <td style="text-align: left;">창을 기준으로, offset을 지정 할 수 있다. 스크롤시 영향 없음</td>
+        </tr>
+        <tr>
+          <td>sticky</td>
+          <td style="text-align: left;">absolute와 fix와 혼합. 스크롤 내리기 전까진 absolute, 스크롤 밖으로 나갈 것 같으면 fix, &lt;table의
+            &thead에 유용(테이블이 화면밖을 넘어가더라도, 머릿말을 유지)</td>
+        </tr>
+    </table>
+    </tbody>
+
+    <pre><blockquote>&lt;style>
+div.test {
+  position: posType;
+  top: 10px;
+  left: 20px;
+}
+&lt;/style>
+&lt;div>Original&lt;/div>
+&lt;div class="test">test2&lt;/div>
+&lt;div class="test">test3&lt;/div></blockquote></pre>
+    </div>
+    <script>
+      var last = "static";
+      function mode(id) {
+        document.getElementById(last).style.backgroundColor = "var(--button-bg-color)";
+        document.getElementById(id).style.backgroundColor = "red";
+        document.getElementById('ifrm').src = "test_position.html?Type=" + id;
+        last = id;
+      }
+      mode("static");
+    </script>
+
+    <p>&nbsp;절대 위치의 정렬은 top:, bottom:, left:, right:를 기준으로 합니다. 문서(:absolute)나 창(:fixed), 상위객체(상위객체의 position:relative인
+      경우)을 기준으로 해당 기준점에서 어디에 위치하는지에 따라 다릅니다.</p>
+
+    <h1>문단</h1>
+    <style>
+      #model-test-break {
+        height: 300px;
+        display: block;
+        width: 90%;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        margin: 0px auto;
+      }
+
+      #model-test-break div {
+        width: 100px;
+        height: 100px;
+        float: left;
+        margin: 15px;
+        border-radius: 10px;
+        border: #bbb;
+        writing-mode: sideways-lr;
+      }
+
+      #break-ctrl {
+        width: 95%;
+      }
+
+      #break-ctrl span {
+        text-align: center;
+        line-height: 1.3em;
+        margin-right: 8px;
+        width: 90px;
+      }
+
+      #break-ctrl>div {
+        display: flex;
+        align-items: center;
+      }
+
+      #break-ctrl button {
+        margin: 5px;
+      }
+    </style>
+
+    <div id="break-ctrl">
+      <div>
+        <span>text-align<br>(정렬)</span> :
+        <button onclick='$("#model-test-break p").css("text-align", "left");'>좌측정렬<br>left</button>
+        <button onclick='$("#model-test-break p").css("text-align", "center");'>중앙정렬<br>center</button>
+        <button onclick='$("#model-test-break p").css("text-align", "right");'>우측정렬<br>right</button>
+        <button onclick='$("#model-test-break p").css("text-align", "justify");'>양쪽정렬정렬<br>justify</button>
+      </div>
+      <div>
+        <span>line-height<br>(줄 높이)</span> :
+        <button onclick='$("#model-test-break").css("line-height", "1em");'>1배</button>
+        <button onclick='$("#model-test-break").css("line-height", "1.5em");'>1.5배</button>
+        <button onclick='$("#model-test-break").css("line-height", "2em");'>2배</button>
+      </div>
+      <div>
+        <span>word-break<br>(줄바꿈 규칙)</span> :
+        <button onclick='$("#model-test-break p").css("word-break", "break-all");'>
+          자유롭게 줄 바꿈<br>break-all</button>
+        <button onclick='$("#model-test-break p").css("word-break", "keep-all");'>
+          단어 유지하며 줄 바꿈<br>keep-all</button>
+      </div>
+      <div>
+        <span>column-count<br>(단)</span> :
+        <button onclick='$("#model-test-break").css("column-count", "1");'>1단</button>
+        <button onclick='$("#model-test-break").css("column-count", "2");'>2단</button>
+        <button onclick='$("#model-test-break").css("column-count", "3");'>3단</button>
+      </div>
+      <div>
+        <span>float<br>(그림배치)</span> :
+        <button onclick='$("#model-test-break div").css("float", "none");'>없음<br>none</button>
+        <button onclick='$("#model-test-break div").css("float", "left");'>왼쪽(시작)<br>left</button>
+        <button onclick='$("#model-test-break div").css("float", "right");'>오른쪽(끝)<br>right</button>
+      </div>
+      <div>
+        <span>writing-mode<br>(그림배치)</span> :
+        <button onclick='$("#model-test-break").css("writing-mode", "horizontal-tb");'>
+          가로쓰기(일반)<br>horizontal-tb</button>
+        <button onclick='$("#model-test-break").css("writing-mode", "vertical-rl");'>
+          세로쓰기 - 왼쪽<br>vertical-rl</button>
+        <button onclick='$("#model-test-break").css("writing-mode", "vertical-lr");'>
+          세로쓰기 - 오쪽<br>vertical-lr</button>
+      </div>
+    </div>
+    <br>
+    <div id="model-test-break">
+      <div>그림 1</div>
+      <p>
+        &nbsp;계절이 지나가는 하늘에는 가을로 가득 차 있습니다.<br>
+        &nbsp;나는 아무 걱정도 없이 가을 속의 별들을 다 헤일 듯합니다.<br>
+        &nbsp;가슴 속에 하나 둘 새겨지는 별을 이제 다 못 헤는 것은 쉬이 아침이 오는 까닭이요, 내일 밤이 남은 까닭이요, 아직 나의 청춘이 다하지 않은 까닭입니다.<br>
+        &nbsp;별 하나에 추억과 별 하나에 사랑과 별 하나에 쓸쓸함과 별 하나에 동경과 별 하나에 시와 별 하나에 어머니, 어머니,<br>
+        &nbsp;어머님, 나는 별 하나에 아름다운 말 한마디씩 불러 봅니다. 소학교 때 책상을 같이 했던 아이들의 이름과, 패, 경, 옥, 이런 이국 소녀들의 이름과, 벌써 아기 어머니 된 계집애들의
+        이름과, 가난한
+        &nbsp;이웃 사람들의 이름과, 비둘기, 강아지, 토끼, 노새, 노루, '프랑시스 잠', '라이너 마리아 릴케' 이런 시인의 이름을 불러 봅니다.<br>
+        &nbsp;이네들은 너무나 멀리 있습니다. 별이 아스라이 멀듯이.<br>
+        &nbsp;어머님, 그리고 당신은 멀리 북간도에 계십니다.<br>
+        &nbsp;나는 무엇인지 그리워 이 많은 별빛이 내린 언덕 위에 내 이름자를 써 보고 흙으로 덮어 버리었습니다.<br>
+        &nbsp;따는 밤을 새워 우는 벌레는 부끄러운 이름을 슬퍼하는 까닭입니다.<br>
+        &nbsp;그러나 겨울이 지나고 나의 별에도 봄이 오면 무덤 위에 파란 잔디가 피어나듯이 내 이름자 묻힌 언덕 위에도 자랑처럼 풀이 무성할 거외다.
+      </p>
+    </div>
+
+    <h1>순서</h1>
+    <p>
+      &nbsp;z-index는 ppt등의 '앞으로 가져오기', '뒤로 보내기'의 기능을 수행합니다. 숫자가 클수록 앞으로, 작을수록 뒤로 갑니다. 0보다 작으면, 기준보다 뒤에 있게 됩니다. 아래 예시에서
+      박스 안의 숫자는 우선순위를 나타냅니다. 그림배치 버튼은 빨간 상자의 z-index를 조정합니다.<br>
+      &nbsp;같은 z-index에서는 <u>먼저 선언 된 것을 먼저 그립니다.</u> 빨간 박스는 index:5(버튼)에서는 4보다 우선순위가 높기 때문에 위에 있고, index:4(버튼)에서는 나중에
+      그려졌기 때문에 위에 있습니다.
+    </p>
+
+    <div>
+      <span>우선순위(z-index)</span> :
+      <button onclick='$("#model-test-zindex div:last-child").css("z-index", "5");'>5</button>
+      <button onclick='$("#model-test-zindex div:last-child").css("z-index", "4");'>4</button>
+      <button onclick='$("#model-test-zindex div:last-child").css("z-index", "3");'>3</button>
+      <button onclick='$("#model-test-zindex div:last-child").css("z-index", "2");'>2</button>
+      <button onclick='$("#model-test-zindex div:last-child").css("z-index", "1");'>1</button>
+      <button onclick='$("#model-test-zindex div:last-child").css("z-index", "0");'>0</button>
+    </div>
+    <div id="model-test-zindex">
+      <div>4</div>
+      <div>3</div>
+      <div>2</div>
+      <div>1</div>
+      <div></div>
+    </div>
+    <style>
+      #model-test-zindex {
+        height: 200px;
+      }
+
+      #model-test-zindex>div {
+        border: 1px solid #eee;
+        box-shadow: #8888 5px 5px 5px;
+        width: 50px;
+        height: 50px;
+        position: relative;
+        text-align: center;
+        font-size: 2em;
+      }
+
+      #model-test-zindex>div:nth-child(1) {
+        left: 10px;
+        top: 50px;
+        z-index: 4;
+        text-align: left;
+      }
+
+      #model-test-zindex>div:nth-child(2) {
+        left: 65px;
+        top: -62px;
+        z-index: 3;
+      }
+
+      #model-test-zindex>div:nth-child(3) {
+        left: 30px;
+        top: -50px;
+        z-index: 2;
+        display: flex;
+        flex-direction: column-reverse;
+      }
+
+      #model-test-zindex>div:nth-child(4) {
+        left: 99px;
+        top: -154px;
+        z-index: 1;
+        text-align: right;
+      }
+
+      #model-test-zindex>div:nth-child(5) {
+        left: 50px;
+        top: -245px;
+        z-index: 0;
+        background-color: red;
+      }
+    </style>
+
+
+    <h1>테두리 응용</h1>
+    <p>&nbsp;테두리의 두께와 색을 지정할 수 있으며, 투명(transparent)를 이용해서, 간단하게 삼각형을 그릴 수 있습니다.</p>
+    <h3>1단계: 테두리 면적 키우기</h3>
+    <blockquote>
+      border-width: 40px;
+    </blockquote>
+    <style>
+      #model-test-border1 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+      }
+
+      #model-test-border1 div:first-child {
+        width: 60px;
+        height: 40px;
+        margin: 40px;
+      }
+
+      #model-test-border1 div:last-child {
+        width: 50px;
+        height: 40px;
+        border-width: 40px;
+      }
+    </style>
+    <div id="model-test-border1">
+      <div></div>
+      <div></div>
+    </div>
+
+    <h3>2단계: 테두리 면적 구분</h3>
+    <blockquote>
+      border-color: blue red yellow;
+    </blockquote>
+    <style>
+      #model-test-border2 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+      }
+
+      #model-test-border2 div:first-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px;
+      }
+
+      #model-test-border2 div:last-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px;
+        border-color: blue red yellow;
+      }
+    </style>
+    <div id="model-test-border2">
+      <div></div>
+      <div></div>
+    </div>
+
+    <h3>3단계: 필요한 부분만 사용</h3>
+    <blockquote>
+      border-color: blue transparent transparent;
+    </blockquote>
+
+    <style>
+      #model-test-border3 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+      }
+
+      #model-test-border3 div:first-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px;
+        border-color: blue red yellow;
+      }
+
+      #model-test-border3 div:last-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px;
+        border-color: blue transparent transparent;
+        background-color: transparent;
+      }
+    </style>
+    <div id="model-test-border3">
+      <div></div>
+      <div></div>
+    </div>
+
+    <h3>4단계: 곡선 반영</h3>
+    <blockquote>
+      border-radius: 70px;
+    </blockquote>
+    <style>
+      #model-test-border4 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+      }
+
+      #model-test-border4 div:first-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px;
+        border-color: blue transparent transparent;
+        background-color: transparent;
+      }
+
+      #model-test-border4 div:last-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px;
+        border-color: blue transparent transparent;
+        background-color: transparent;
+        border-radius: 70px;
+      }
+    </style>
+    <div id="model-test-border4">
+      <div></div>
+      <div></div>
+    </div>
+
+    <h3>5단계: 굵기 조절</h3>
+    <blockquote>
+      border-width: 40px 20px 0 0;
+    </blockquote>
+    <style>
+      #model-test-border5 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+      }
+
+      #model-test-border5 div:first-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px;
+        border-color: blue #eee white;
+        background-color: wheat;
+        border-radius: 70px;
+      }
+
+      #model-test-border5 div:last-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px 20px 3px 3px;
+        border-color: blue #eee white;
+        background-color: wheat;
+        border-radius: 70px;
+      }
+    </style>
+    <div id="model-test-border5">
+      <div></div>
+      <div></div>
+    </div>
+
+    <h3>6단계: before, after</h3>
+    <p>&nbsp;도형을 합칩니다. 구체적인 설정은 보면서 맞춰야 합니다.</p>
+    <pre><blockquote>div :before,
+div :after
+{
+  position: absolute;
+  content: "";
+  border-style: solid;
+  transform: translate(86px, 25px) rotate(30deg);
+}</blockquote></pre>
+
+    <style>
+      #model-test-border6 {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        width: 80%;
+        position: relative;
+      }
+
+      #model-test-border6 div:first-child {
+        width: 60px;
+        height: 40px;
+        border-width: 40px 20px 0 0;
+        border-color: blue transparent transparent;
+        background-color: transparent;
+        border-radius: 70px;
+      }
+
+      #model-test-border6 div:nth-child(2) {
+        width: 0;
+        height: 0;
+        padding: 0;
+        border-style: solid;
+        border-width: 40px;
+        border-color: transparent transparent transparent blue;
+        background-color: transparent;
+        transform: translate(-4px, 9px) rotate(27deg);
+      }
+
+      #model-test-border6 div:last-child {
+        position: relative;
+        border: 0;
+        width: 0;
+        height: 0;
+        padding: 0;
+      }
+
+      #model-test-border6 div:last-child::before {
+        position: absolute;
+        content: "";
+        width: 110px;
+        height: 140px;
+        border-style: solid;
+        border-width: 40px 22px 0 0;
+        border-color: blue transparent transparent;
+        background-color: transparent;
+        border-radius: 120px;
+        transform: translate(-20px, 5px) rotate(2deg);
+      }
+
+      #model-test-border6 div:last-child::after {
+        position: absolute;
+        content: "";
+        width: 0;
+        height: 0;
+        padding: 0;
+        border-style: solid;
+        border-width: 40px;
+        border-color: transparent transparent transparent blue;
+        background-color: transparent;
+        transform: translate(86px, 25px) rotate(30deg);
+      }
+    </style>
+    <div id="model-test-border6">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+    <span class="tutorial">G_layout >> b_border.html</span>
+
+    <h1>적응형</h1>
+    <p>&nbsp;사용자의 디바이스 환경과 상황에 따라 다르게 표현 할 수 있습니다.</p>
+    <style>
+      #css-media-table td {
+        text-align: left;
+      }
+
+      #css-media-table td:first-child {
+        text-align: center;
+      }
+    </style>
+    <table id="css-media-table">
+      <caption>CSS 상황별 표현</caption>
+      <thead>
+        <tr>
+          <th>미디어 유형</th>
+          <th>설명</th>
+          <th>예시</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>print</td>
+          <td>인쇄의 경우</td>
+          <td>
+            <pre>@media print {
+    body {
+        font-size: 12pt;
+    }
+}</pre>
+          </td>
+        </tr>
+        <tr>
+          <td>screen</td>
+          <td>스크린의 넓이에 따라 반응</td>
+          <td>
+            <pre>@media screen and (max-width: 400px) {
+    body {
+        color: blue;
+    }
+}</pre>
+          </td>
+        </tr>
+        <tr>
+          <td>speech</td>
+          <td>/* iOS VoiceOver에서 모든 문장 부호를 소리내어 읽습니다. */</td>
+          <td>@media speech {
+            code {
+            speak: literal-punctuation;
+            }
+            }</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>미디어 출력 방향</td>
+          <td>
+            <pre>@media (orientation: landscape) {
+    body {
+        color: rebeccapurple;
+    }
+}</pre>
+          </td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>터치스크린 여부</td>
+          <td>
+            <pre>@media (hover: hover) {
+    body {
+        color: rebeccapurple;
+    }
+}</pre>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+</body>
+
+</html>

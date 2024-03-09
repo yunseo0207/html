@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>이동</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="translating" width="155" height="155"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var ctx = document.getElementById('translating').getContext('2d');
+    for (var i = 0; i < 5; i++) {
+      for (var j = 0; j < 5; j++) {
+        ctx.save(); // translate를 save에서 수행하고 restore로 날려버림. 
+        ctx.fillStyle = `rgb(${(51 * i)}, ${(255 - 51 * j)}, 255)`;
+        ctx.translate(5 + j * 30, 5 + i * 30);
+        ctx.fillRect(0, 0, 25, 25);
+        ctx.restore();
+      }
+    }
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="Java의 기초 문법과 구성에 대해서 설명합니다.">
+  <meta keywords="iseohyun, 튜토리얼, Java, 문법, window, FX, awt, swing">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>윈도우: Java - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 코드뷰어 -->
+  <script src="/modules/codeview.js"></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">Java: GUI 프로그래밍</div>
+
+    <p>
+      예제코드에서 다운로드는 <a href="setting.html#git%20bash(옵션)" target="_blank">첫 페이지</a> 참조<br>
+      각각의 실습코드는 <sub>SUB</sub>에 해당하는 폴더를 참조하세요.
+    </p>
+
+    <table class="text-align-last-td-left">
+      <thead>
+        <tr>
+          <th>인터페이스 명</th>
+          <th>특징</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>AWT</td>
+          <td>Abstract Window Toolkit.<br> 가장 기본적인 GUI Kit. 외관, 기능면에서 제한적일 수 있으며, 특정 플랫폼에 종속적일 수 있음</td>
+        </tr>
+        <tr>
+          <td>Swing</td>
+          <td>AWT기반. 조금 더 많은 기능. 무거움.</td>
+        </tr>
+        <tr>
+          <td>Java FX</td>
+          <td>Java SE 8 부터 기본 라이브러리에 포함(AWT, Swing후속)<br>
+            플랫폼 독립적, CSS스타일링, 2D/3D, 애니메이션, 웹 렌더링 등 지원</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h1>AWT</h1>
+    <ul>
+      <li>
+        Frame클래스를 상속받는 것 만으로도 구현이 가능
+      </li>
+      <li>
+        이벤트 처리를 위해 Listener등록
+      </li>
+      <li>
+        GUI프로그램의 기본 개념을 이해하기에 좋은 실습자료
+      </li>
+    </ul>
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vQ_1-5_gmIXx94UpJBB3LA5PKhad8j9szKq2LlBRLiBul60qMI5N7YyR_LdyciJzyNA9zosRtWRPyiC/embed?start=false&amp;loop=false&amp;delayms=3000"
+      width="95%" height="500" frameborder="0" allowfullscreen="true"></iframe>
+    <table class="text-align-last-td-left">
+      <caption>AWT 단원별 목표</caption>
+      <thead>
+        <tr>
+          <th>주제</th>
+          <th>폴더</th>
+          <th>파일</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="6">기본</td>
+          <td rowspan="6"><sub>a_Basic</sub></td>
+          <td><sub>A1</sub></td>
+          <td>GUI프로그래밍을 위한 최소한의 코드로 구현합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>A2</sub></td>
+          <td>타이틀바에 문자열을 넣습니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B</sub></td>
+          <td>버튼을 추가합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C</sub></td>
+          <td>버튼에 기능을 추가합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>D1</sub></td>
+          <td>종료 기능을 넣습니다.</td>
+        </tr>
+        <tr>
+          <td><sub>D2</sub></td>
+          <td>종료 기능을 좀 더 간단하게 구현합니다.</td>
+        </tr>
+        <tr>
+          <td rowspan="9">컴포넌트</td>
+          <td rowspan="9"><sub>b_Component</sub></td>
+          <td><sub>A</sub></td>
+          <td>label을 실습합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B</sub></td>
+          <td>button을 실습합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C</sub></td>
+          <td>checkbot, radiobutton을 실습합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>D</sub></td>
+          <td>DropBox를 실습합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>E</sub></td>
+          <td>ListBox를 실습합니다. 중복허용 모드와 중복불가 모드에 대해 알아봅니다.</td>
+        </tr>
+        <tr>
+          <td><sub>F</sub></td>
+          <td>Textarea로 입력 또는 출력을 실습합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>G</sub></td>
+          <td>새로운 다이얼로그를 생성하고, 메시지를 보냅니다.</td>
+        </tr>
+        <tr>
+          <td><sub>H</sub></td>
+          <td>text형식의 파일을 열어, 내용을 textarea에 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>I</sub></td>
+          <td>Menubar에 메뉴를 추가하고, 이벤트를 처리합니다.</td>
+        </tr>
+        <tr>
+          <td rowspan="4">배치</td>
+          <td rowspan="4"><sub>c_layout</sub></td>
+          <td><sub>A</sub></td>
+          <td>버튼을 5개 생성하고, 자동배치모드를 이용해서 배치합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B</sub></td>
+          <td>동서남북모드로 버튼을 배치합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C</sub></td>
+          <td>사각모드로, 가로/세로 사이즈를 미리 정하고 순서대로 배치합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>D</sub></td>
+          <td>카드모드는 순서대로 번갈아가며 배치됩니다.</td>
+        </tr>
+        <tr>
+          <td rowspan="18">Graphics</td>
+          <td rowspan="18"><sub>d_Graphic</sub></td>
+          <td><sub>A1</sub></td>
+          <td>drawRec, drawRoundRect, drawArc, drawPolygon, fillRect, fillRoundRect, fillOval, clearRect를 실습합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>A2</sub></td>
+          <td>setCurve를 이용해 곡선을 그립니다.</td>
+        </tr>
+        <tr>
+          <td><sub>A3</sub></td>
+          <td>마우스를 드레그하면, 따라서 선을 그립니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B1</sub></td>
+          <td>jpg파일을 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B2</sub></td>
+          <td>인터넷 이미지를 가져와 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B3</sub></td>
+          <td>인터넷 이미지를 가져와 출력합니다. 로딩이 완료될 때까지 기다렸다가 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B4</sub></td>
+          <td>이미지를 출력할 때, 타원으로 잘라서 타원모양만 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C1</sub></td>
+          <td>Line2D, Rectangle2D, Ellipse2D 클래스를 이용해서 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C2</sub></td>
+          <td>GeneralPath.lineTo()를 이용해서 자유곡선을 그립니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C3</sub></td>
+          <td>클릭된 위치 정보를 가져와서, 이전 클릭된 위치까지 선을 긋습니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C4</sub></td>
+          <td>두께(width), 선처리(CAP, JOIN)과 BEVEL, type(점선 등)을 변경해서 그립니다.</td>
+        </tr>
+        <tr>
+          <td><sub>D1</sub></td>
+          <td>그라데이션을 이용해서 영역을 채웁니다.</td>
+        </tr>
+        <tr>
+          <td><sub>D2</sub></td>
+          <td>패턴을 이용해서 영역을 채웁니다.</td>
+        </tr>
+        <tr>
+          <td><sub>E</sub></td>
+          <td>대상의 투명도를 조정해서 다시 칠합니다.(루틴 시간이 걸립니다.)</td>
+        </tr>
+        <tr>
+          <td><sub>F1</sub></td>
+          <td>이미 그려진 객체를 키보드 방향키 입력에 따라 좌우, 상하로 1px씩 움직입니다.</td>
+        </tr>
+        <tr>
+          <td><sub>F2</sub></td>
+          <td>이미 그려진 객체를 키보드 좌우 버튼에 따라 시계/반시계 방향으로 15도씩 움직입니다.</td>
+        </tr>
+        <tr>
+          <td><sub>F3</sub></td>
+          <td>이미 그려진 객체를 눌려진 버튼에 따라, 확대/축소, X/Y축 반전을 합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>G</sub></td>
+          <td>성능 개선을 위해 버퍼에 그린 후 출력합니다.</td>
+        </tr>
+        <tr>
+          <td rowspan="2">예제</td>
+          <td rowspan="2"><sub>e_Example</sub></td>
+          <td><sub>textOut</sub></td>
+          <td>버튼이 눌리면 문자를 출력합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>trafficLight</sub></td>
+          <td>체크박스 상태에 따라 대상을 변경합니다.</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Swing</h1>
+    <ul>
+      <li>
+        JFrame클래스를 상속받는 것으로 구현 (AWT : Frame)
+      </li>
+      <li>
+        더 다양한 컴포넌트가 구현되어 있음 (아래 그림 참조)
+      </li>
+    </ul>
+    <div class="image-container">
+      <img src="Swing.svg">
+      <div class="img-title">swing구조</div>
+    </div>
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vT6iLDjSxQWJxQ32huB9xms1IAwM-k0KdIfzNQdps-HdZM-LdLIJMppncxGM2h_MMYWHu9IqhAYKZ34/embed?start=false&amp;loop=false&amp;delayms=3000"
+      width="95%" height="500" frameborder="0" allowfullscreen="true"></iframe>
+    <style>
+      .my-red {
+        text-decoration: underline;
+        text-decoration-color: #ffc1c8;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+
+      .my-orange {
+        text-decoration: underline;
+        text-decoration-color: #ffc9af;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+
+      .my-yellow {
+        text-decoration: underline;
+        text-decoration-color: #f6e199;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+
+      .my-green {
+        text-decoration: underline;
+        text-decoration-color: #9feec3;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+
+      .my-blue {
+        text-decoration: underline;
+        text-decoration-color: #99cefa;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+
+      .my-purple {
+        text-decoration: underline;
+        text-decoration-color: #c1bef9;
+        text-decoration-thickness: 2px;
+        text-underline-offset: 4px;
+      }
+    </style>
+
+    <table class="text-align-last-td-left">
+      <caption>Swing 단원별 목표</caption>
+      <thead>
+        <tr>
+          <th>주제</th>
+          <th>폴더</th>
+          <th>파일</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="14">컴포넌트</td>
+          <td rowspan="14"><sub>a_Component</sub></td>
+          <td><sub>A</sub></td>
+          <td><span class="my-red">JLabel</span>,
+            <span class="my-red">JTextField</span>,
+            <span class="my-red">JPasswordField</span>,
+            <span class="my-red">JFormattedTextField</span>,
+            <span class="my-red">JTextArea</span>,
+            <span class="my-red">JTextPane</span>를 이용해서 출력합니다.
+          </td>
+        <tr>
+          <td><sub>B</sub></td>
+          <td>
+            <span class="my-orange">JCheckBox</span>,
+            <span class="my-orange">JRadioButton</span>,
+            <span class="my-orange">JButton</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>C</sub></td>
+          <td>
+            <span class="my-yellow">JComboBox</span>,
+            <span class="my-yellow">JList</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>D</sub></td>
+          <td>
+            <span class="my-green">JProgressBar</span>,
+            <span class="my-green">JSlider</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>E</sub></td>
+          <td>
+            <span class="my-blue">JTree</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>F</sub></td>
+          <td>
+            <span class="my-purple">JTable</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>G1</sub></td>
+          <td>
+            <span class="my-red">JMenuItem</span>,
+            <span class="my-red">JMenu</span>,
+            <span class="my-red">JMenuBar</span>,
+          </td>
+        </tr>
+        <tr>
+          <td><sub>G2</sub></td>
+          <td>
+            <span class="my-red">JPopupMenu</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>H</sub></td>
+          <td>
+            <span class="my-orange">JToolBar</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>I</sub></td>
+          <td>
+            <span class="my-yellow">JFileChooser</span>,
+            <span class="my-yellow">JColorChooser</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>J</sub></td>
+          <td>
+            <span class="my-green">image</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>K1</sub></td>
+          <td>
+            <span class="my-blue">JPanel</span>,
+            <span class="my-blue">JScrollPane</span>,
+            <span class="my-blue">JTabbedPane</span>,
+            <span class="my-blue">JInternalFrame</span>,
+            <span class="my-blue">JSplitPane</span>
+          </td>
+        </tr>
+        <tr>
+          <td><sub>K2</sub></td>
+          <td>
+            <span class="my-blue">JLayeredPane</span>,
+          </td>
+        </tr>
+        <tr>
+          <td><sub>K2</sub></td>
+          <td>
+            <span class="my-blue">JOptionPane</span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="5">배치</td>
+          <td rowspan="5"><sub>b_Layout</sub></td>
+          <td><sub>A</sub></td>
+          <td>자동정렬을 통해 버튼 10개를 배치합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>A2</sub></td>
+          <td>우측정렬로 바꿉니다.</td>
+        </tr>
+        <tr>
+          <td><sub>B</sub></td>
+          <td>동서남북 배치를 이용해서 배치합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C1</sub></td>
+          <td>Grid정렬을 통해서 순서를 임의배치합니다.</td>
+        </tr>
+        <tr>
+          <td><sub>C2</sub></td>
+          <td>Grid를 병합해서 더 큰 영역을 만듭니다.</td>
+        </tr>
+        <tr>
+          <td>이벤트 처리</td>
+          <td><sub>c_Event</sub></td>
+          <td><sub>A</sub></td>
+          <td>이벤트를 처리합니다. 암호는 "password"입니다.</td>
+        </tr>
+      </tbody>
+    </table>
+
+
+    <h1>JavaFX</h1>
+
+    <h2>환경설정</h2>
+    <p>캡쳐는 eclipse입니다. vscode는 ScenBuilder설치 부분 참고해 주세요. vscode에서도 수행 가능합니다.</p>
+    <ol>
+      <li>
+        javaFX코드를 다운로드. 라이브러리에 추가.<br>
+        <span style="font-size:0.75em">라이브러리 추가 [ <a href="https://example-code.tistory.com/5">링크</a> ] : page 3 - 7
+          내용<br>
+          모듈 추가 [ <a href="https://example-code.tistory.com/5">링크</a> ] : page 8 -9 내용<br>
+          <blockquote>
+            --add-modules=javafx.controls,javafx.fxml
+          </blockquote>
+        </span>
+      </li>
+      <li>
+        SceneBuilder를 다운받아 설치.
+        <span style="font-size:0.75em">ScenBuilder설치 : page 11 - 14 내용<br>
+      </li>
+    </ol>
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vSE59Ye_O_zdwa7HA3z8JpObWWpPxsIJQNMpMpWUOFXIEyapPVWf3dFswXQhlGfRgzxAI3dzwrE3rAT/embed?start=false&amp;loop=false&amp;delayms=3000"
+      width="95%" height="500" frameborder="0" allowfullscreen="true"></iframe>
+    <p><a href="https://example-code.tistory.com/entry/Java-FX-%ED%99%98%EA%B2%BD%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0"
+        target="_blank">javaFX 설치과정(블로그)</a></p>
+
+    <h2>실습</h2>
+    <p>&nbsp;코드는 <em>Youtube:BroCode</em> [ <a href="https://www.youtube.com/watch?v=9XJicRt_FaI" target="_blank">링크</a>
+      ] 를 참고하였습니다. 일부 코드는 수정되었습니다.</p>
+    <iframe
+      src="https://docs.google.com/presentation/d/e/2PACX-1vQJkgjD2ykdn_ocoMo-mC-wfRLYm9LvC7GHRObGbXQkPFQlCKCP5ktpDhGMVC1nLYOYXJnc-qCXSk8u/embed?start=false&amp;loop=false&amp;delayms=3000"
+      width="95%" height="500" frameborder="0" allowfullscreen="true"></iframe>
+
+    <table class="text-align-last-td-left">
+      <caption>Swing 단원별 목표</caption>
+      <thead>
+        <tr>
+          <th>순서</th>
+          <th>주제</th>
+          <th>폴더</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>A</td>
+          <td>윈도우 생성</td>
+          <td><sub>a_Start</sub></td>
+          <td>윈도우를 생성합니다. 버튼 2개를 생성하고 이벤트를 console에 출력합니다.</td>
+        </tr>
+        <tr>
+          <td>B</td>
+          <td>전체화면</td>
+          <td><sub>b_FullScreen</sub></td>
+          <td>전체화면 모드로 프로그램을 실행합니다. 'q'를 누르면 해제됩니다.</td>
+        </tr>
+        <tr>
+          <td>C</td>
+          <td>도형출력</td>
+          <td><sub>c_Drawing</sub></td>
+          <td>자유 직선, 도형 및 그림을 출력합니다.</td>
+        </tr>
+        <tr>
+          <td>D</td>
+          <td>외부프로그램</td>
+          <td><sub>d_SceneBuilder</sub></td>
+          <td>SceneBuilder를 설치합니다. 디자인 영역(.fxml)의 에디트합니다. 앞으로 예제는 모두 SceneBuilder를 사용합니다.</td>
+        </tr>
+        <tr>
+          <td>E</td>
+          <td>연결하기</td>
+          <td><sub>e_Event</sub></td>
+          <td>이벤트와 객체를 연결합니다.</td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>CSS</td>
+          <td><sub>f_CssStyle</sub></td>
+          <td>객체에 class나 id를 부여해서 .css파일에서 디자인 합니다.</td>
+        </tr>
+        <tr>
+          <td>G</td>
+          <td>Multi Scene</td>
+          <td><sub>g_Scene</sub></td>
+          <td>두 개의 Scene을 생성하고, 이벤트에 따라 Scene을 변경합니다.</td>
+        </tr>
+        <tr>
+          <td>H</td>
+          <td>Scene Message</td>
+          <td><sub>h_Login</sub></td>
+          <td>첫 번째 화면에서 사용자 입력을 가져와서, 2번째 입력화면에서 사용합니다.</td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>Alert</td>
+          <td><sub>i_Logout</sub></td>
+          <td>간단한 팝업 메시지를 출력하고자 할 때, Alert를 사용해 경고합니다.</td>
+        </tr>
+        <tr>
+          <td>J</td>
+          <td>이미지</td>
+          <td><sub>j_ImageView</sub></td>
+          <td>이미지를 출력합니다.</td>
+        </tr>
+        <tr>
+          <td>K</td>
+          <td>Text가져오기</td>
+          <td><sub>k_HowOldAreYou</sub></td>
+          <td>입력정보를 가져와 18살 초과이면 "성인입니다."를 출력합니다.</td>
+        </tr>
+        <tr>
+          <td>L</td>
+          <td>Radio선택 가져오기</td>
+          <td><sub>l_Quiz</sub></td>
+          <td>객체지향에 대한 간단한 Quiz를 풀어봅니다.</td>
+        </tr>
+        <tr>
+          <td>M</td>
+          <td>Picker</td>
+          <td><sub>m_Picker</sub></td>
+          <td>Picker 다이얼로그를 통해 좀 더 수월하게 날짜, 색 입력을 받습니다.</td>
+        </tr>
+        <tr>
+          <td>N</td>
+          <td>선택상자</td>
+          <td><sub>n_ChoiceBox</sub></td>
+          <td>ChoiceBox를 통해 입력받습니다.</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>슬라이더</td>
+          <td><sub>o_Slider</sub></td>
+          <td>새로 슬라이더를 통해 온도계 입력을 받고 Text로 출력합니다.</td>
+        </tr>
+        <tr>
+          <td>P</td>
+          <td>진행률</td>
+          <td><sub>p_Progress</sub></td>
+          <td>hp(heal point)를 구현합니다. 타격버튼을 누르면 -10%, 물약 버튼을 누르면 55% 상승합니다.</td>
+        </tr>
+        <tr>
+          <td>Q</td>
+          <td>스피너</td>
+          <td><sub>q_Spinner</sub></td>
+          <td>textarea의 입력을 위/아래의 버튼으로 변경할 수 있습니다.</td>
+        </tr>
+        <tr>
+          <td>R</td>
+          <td>리스트</td>
+          <td><sub>r_ListView</sub></td>
+          <td>입력받을 수 있는 리스트를 나열하고, 사용자가 선택합니다.</td>
+        </tr>
+        <tr>
+          <td>S</td>
+          <td>트리뷰</td>
+          <td><sub>s_TreeView</sub></td>
+          <td>폴더구조와 같이, 입력을 트리구조로 구성하여, 나열된 선택을 '리스트'보다 효과적으로 표현합니다.</td>
+        </tr>
+        <tr>
+          <td>T</td>
+          <td>메뉴</td>
+          <td><sub>t_MenuBar</sub></td>
+          <td>어플리케이션 상단에 메뉴바를 생성합니다.</td>
+        </tr>
+        <tr>
+          <td>U</td>
+          <td>크기변경</td>
+          <td><sub>u_FlowPanel</sub></td>
+          <td>어플리케이션의 크기를 변경하면, 배치된 버튼을 자동재배치 합니다.</td>
+        </tr>
+        <tr>
+          <td>V</td>
+          <td>키보드</td>
+          <td><sub>v_KeyEvent</sub></td>
+          <td>키보드 입력을 받아 console에 출력합니다.</td>
+        </tr>
+        <tr>
+          <td>W</td>
+          <td>애니메이션</td>
+          <td><sub>w_Annimation</sub></td>
+          <td>이미지를 이동, 회전, 확대, 투명도변경을 동시에 적용합니다.</td>
+        </tr>
+        <tr>
+          <td>X</td>
+          <td>영상</td>
+          <td><sub>x_Media</sub></td>
+          <td>영상을 재생, 멈춤, 이동 합니다.</td>
+        </tr>
+        <tr>
+          <td>Y</td>
+          <td>웹페이지</td>
+          <td><sub>y_webView</sub></td>
+          <td>웹페이지에 주소를 입력하고, "불러오기"를 클릭합니다. 이동 기록을 기억하고 불러올 수 있습니다.</td>
+        </tr>
+        <tr>
+          <td>Z</td>
+          <td>음악</td>
+          <td><sub>z_Musiz</sub></td>
+          <td>MP3를 구현합니다. Song폴더에 3곡이 저장되어 있습니다.</td>
+        </tr>
+      </tbody>
+    </table>
+  </article>
+</body>
+
+</html>

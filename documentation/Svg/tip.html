@@ -1,0 +1,486 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="튜토리얼을 제공합니다.">
+  <meta keywords="iseohyun, 튜토리얼, SVG, 훔쳐오기">
+  <meta author="iseohyun">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 페이지 타이틀 -->
+  <title>팁: SVG - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/darkmoss.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">CSS: 팁</div>
+    <h1>추천 툴</h1>
+    <h3>boxy-svg</h3>
+    <a href="https://boxy-svg.com/app" target="_blank">https://boxy-svg.com/app</a>
+    <p>&nbsp;오로지 SVG제작을 위한 툴입니다. 튜토리얼 영상이 제법 예전에 작성되었는지, 예전 버젼은 이해가가지 않는 인터페이스가 간간히 보입니다. 지금은 튜토리얼 없이 사용가능합니다. 다만,
+      유료화되어서 연 15,000원정도 결제가 필요하네요. 결제하지 않더라도 찾아보고 싶은 테그를 찾아볼 때 유용하게 쓸 수 있을 것 같습니다. 라이브러리 연결을 상당히 잘 해놓았는데, 저장을 하려면 유료를
+      결제해야 합니다.<br>
+      단점이 있다면, 결과물이 깔끔하게 떨어지지는 않습니다. 중복 코드나, 삭제된 코드가 남아있는 경향이 있습니다. 자사 link가 삽입되어 있습니다.
+    </p>
+
+    <h3>iodraw</h3>
+    <a href="https://www.iodraw.com/ko/svg" target="_blank">https://www.iodraw.com/ko/svg</a>
+    <p>&nbsp;상당히 깔끔한 인터페이스를 가지고 있습니다. 게다가 무료로 사용할 수 있습니다.<br>
+      단점이 있다면, 코드를 확인하려면 다운을 받아서 열어봐야 합니다. 차후에 수정을 한다기보다 그 자체로 완성을 목표로 작성되기에 좋습니다.
+    </p>
+
+    <h3>변환 사이트</h3>
+    <p>&nbsp;변환 사이트는 대체적으로 추천하지 않습니다. 왜냐하면 미묘하게 다른 폰트 추천이나 간격이 다르게 측정되기 때문입니다. 정말 SVG를 사용해야 한다면, PPT나 PDF에디터에서 직접적으로
+      SVG로 저장하는 방법을 사용하는게 그나마 나을 것입니다. 하지만 이미 SVG가 의미없는 상황에서 굳이, 억지로 사용해야 할까요?</p>
+
+
+    <h1>다른 예제</h1>
+    <h2>CSS와 연계</h2>
+
+    <a href="https://developer.mozilla.org/en-US/docs/Web/SVG/Tutorial/SVG_and_CSS"
+      target="_blank">developer.mozilla.org</a>
+    <a href="mozit_demo.svg" download>(이미지 다운로드)</a><br>
+
+    <svg width="40%" viewBox="-300 -300 600 600" xmlns="http://www.w3.org/2000/svg"
+      xmlns:xlink="http://www.w3.org/1999/xlink">
+
+      <title>SVG demonstration</title>
+      <desc>Mozilla CSS Getting Started - SVG demonstration</desc>
+
+      <defs>
+        <radialgradient id="fade" cx="0" cy="0" r="200" gradientUnits="userSpaceOnUse">
+          <stop id="fade-stop-1" offset="33%"></stop>
+          <stop id="fade-stop-2" offset="95%"></stop>
+        </radialgradient>
+      </defs>
+
+      <text id="heading" x="-280" y="-270">SVG demonstration</text>
+      <text id="caption" x="-280" y="-250">
+        Move your mouse pointer over the flower.
+      </text>
+
+      <g id="flower">
+        <circle id="overlay" cx="0" cy="0" r="200" stroke="none" fill="url(#fade)"></circle>
+
+        <g id="outer-petals">
+          <g class="segment">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(18)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(36)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(54)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(72)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(90)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(108)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(126)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(144)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(162)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(180)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(198)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(216)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(234)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(252)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(270)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(288)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(306)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(324)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+          <g class="segment" transform="rotate(342)">
+            <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+            <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+          </g>
+        </g>
+      </g>
+
+      <g id="inner-petals" transform="rotate(9) scale(0.33)">
+        <g class="segment">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(18)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(36)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(54)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(72)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(90)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(108)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(126)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(144)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(162)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(180)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(198)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(216)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(234)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(252)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(270)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(288)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(306)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(324)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+        <g class="segment" transform="rotate(342)">
+          <path class="segment-fill" d="M0,0 v-200 a40,40 0 0,0 -62,10 z"></path>
+          <path class="segment-edge" d="M0,-200 a40,40 0 0,0 -62,10"></path>
+        </g>
+      </g>
+      <style>
+        /*** SVG demonstration ***/
+
+        /* page */
+        svg {
+          background-color: beige;
+        }
+
+        #heading {
+          font-size: 24px;
+          font-weight: bold;
+        }
+
+        #caption {
+          font-size: 12px;
+        }
+
+        /* flower */
+        #flower:hover {
+          cursor: crosshair;
+        }
+
+        /* gradient */
+        #fade-stop-1 {
+          stop-color: blue;
+        }
+
+        #fade-stop-2 {
+          stop-color: white;
+        }
+
+        /* petals */
+        .segment-fill {
+          fill: var(--segment-fill-fill);
+          stroke: var(--segment-fill-stroke);
+          stroke-width: var(--segment-fill-stroke-width);
+        }
+
+        .segment-fill:hover {
+          fill: var(--segment-fill-fill-hover);
+          stroke: var(--segment-fill-stroke-hover);
+        }
+
+        .segment-edge {
+          fill: var(--segment-edge-fill);
+          stroke: var(--segment-edge-stroke);
+          stroke-width: var(--segment-edge-stroke-width);
+        }
+
+        .segment-edge:hover {
+          stroke: var(--segment-edge-stroke-hover);
+        }
+
+        /* outer petals */
+        #outer-petals {
+          opacity: 0.75;
+          --segment-fill-fill: azure;
+          --segment-fill-stroke: lightsteelblue;
+          --segment-fill-stroke-width: 1;
+          --segment-edge-fill: none;
+          --segment-edge-stroke: deepskyblue;
+          --segment-edge-stroke-width: 3;
+          --segment-fill-fill-hover: plum;
+          --segment-fill-stroke-hover: none;
+          --segment-edge-stroke-hover: slateblue;
+        }
+
+        #outer-petals .segment-fill {
+          fill: azure;
+          stroke: lightsteelblue;
+          stroke-width: 1;
+        }
+
+        #outer-petals .segment-edge {
+          fill: none;
+          stroke: deepskyblue;
+          stroke-width: 3;
+        }
+
+        #outer-petals .segment:hover>.segment-fill {
+          fill: plum;
+          stroke: none;
+        }
+
+        #outer-petals .segment:hover>.segment-edge {
+          stroke: slateblue;
+        }
+
+        /* inner petals */
+        #inner-petals {
+          --segment-fill-fill: yellow;
+          --segment-fill-stroke: yellow;
+          --segment-fill-stroke-width: 1;
+          --segment-edge-fill: none;
+          --segment-edge-stroke: yellowgreen;
+          --segment-edge-stroke-width: 9;
+          --segment-fill-fill-hover: darkseagreen;
+          --segment-fill-stroke-hover: none;
+          --segment-edge-stroke-hover: green;
+        }
+
+        #inner-petals .segment-fill {
+          fill: yellow;
+          stroke: yellow;
+          stroke-width: 1;
+        }
+
+        #inner-petals .segment-edge {
+          fill: none;
+          stroke: yellowgreen;
+          stroke-width: 9;
+        }
+
+        #inner-petals .segment:hover>.segment-fill {
+          fill: darkseagreen;
+          stroke: none;
+        }
+
+        #inner-petals .segment:hover>.segment-edge {
+          stroke: green;
+        }
+      </style>
+    </svg>
+
+    <h2>Snap</h2>
+    <p>&nbsp;아래 예제는 SVG를 Drag & Drop 하는 동작을 보여줍니다.[출처:<a href="https://oreillymedia.github.io/svg-essentials-examples/"
+        target="_blank">oreillymedia.github.io/svg-essentials-examples/</a>]<br>
+      <a href="http://snapsvg.io/">http://snapsvg.io/</a>에서 svg를 쉽게 컨트롤 하기 위한 도구를 공유합니다.<br>
+    </p>
+    <iframe src="http://oreillymedia.github.io/svg-essentials-examples/ch14/snap_events.html"
+      style="height: 300px;width:500px; border:1px solid #eee; padding:15px; border-radius: 15px;margin:30px auto"></iframe>
+
+    <h1>저작권</h1>
+    <p>&nbsp;아래 나열한 사이트가 제시하는 대부분의 라이선스는, 상업적 사용, 2차 창작이 가능하며, 저작자 언급을 요청하지 않는 라이선스도 존재합니다. 정확한 정보는 링크를 확인하십시오.</p>
+    <table class="last-td-left">
+      <caption>저작권</caption>
+      <thead>
+        <tr>
+          <th>종류</th>
+          <th>사이트</th>
+          <th>저작권</th>
+          <th>라이선스 정보</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>폰트</td>
+          <td>fonts.google.com</td>
+          <td>SIL Open Font License</td>
+          <td><a href="https://openfontlicense.org/" target="_blank">openfontlicense.org/</a></td>
+        </tr>
+        <tr>
+          <td rowspan="5">비트맵(&SVG)</td>
+          <td>pexels.com</td>
+          <td>Pexel license</td>
+          <td><a href="https://www.pexels.com/license/" target="_blank">www.pexels.com/license/</a></td>
+        </tr>
+        <tr>
+          <td>pixabay.com</td>
+          <td>Pixabay License</td>
+          <td><a href="https://pixabay.com/service/terms/#license"
+              target="_blank">pixabay.com/service/terms/#license</a></td>
+        </tr>
+        <tr>
+          <td>unsplash.com</td>
+          <td>Unsplash License</td>
+          <td><a href="https://unsplash.com/license" target="_blank">unsplash.com/license</a></td>
+        </tr>
+        <tr>
+          <td>wikimedia.org</td>
+          <td>Creative Commons..#.#</td>
+          <td><a href="https://creativecommons.org/licenses/by-sa/4.0/"
+              target="_blank">creativecommons.org/licenses/by-sa/4.0/</a></td>
+        </tr>
+        <tr>
+          <td>wikipedia.org</td>
+          <td>CC #.#, public(저작권 포기)</td>
+          <td><a href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank">creativecommons.org/licenses/by/4.0/</a></td>
+        </tr>
+        <tr>
+          <td rowspan="5">SVG</td>
+          <td>cocomaterial.com</td>
+          <td>CCO 1.0</td>
+          <td><a href="https://cocomaterial.com/license" target="_blank">cocomaterial.com/license</a></td>
+        </tr>
+        <tr>
+          <td>github.com(microsoft.com)</td>
+          <td>MIT License</td>
+          <td><a href="https://github.com/microsoft/fluentui-system-icons/blob/master/LICENSE"
+              target="_blank">github.com/microsoft/fluentui-system-icons/blob/master/LICENSE</a></td>
+        </tr>
+        <tr>
+          <td>fonts.google.com/icons</td>
+          <td>Apache License 2.0</td>
+          <td><a href="https://www.apache.org/licenses/LICENSE-2.0.html"
+              target="_blank">www.apache.org/licenses/LICENSE-2.0.html</a></td>
+        </tr>
+        <tr>
+          <td>fonts.google.com/icons</td>
+          <td>Apache License 2.0</td>
+          <td><a href="https://www.apache.org/licenses/LICENSE-2.0.html"
+            target="_blank">www.apache.org/licenses/LICENSE-2.0.html</a></td>
+        </tr>
+        <tr>
+          <td>zhangxiaochun.com/</td>
+          <td>Apache License 2.0</td>
+          <td><a href="https://www.apache.org/licenses/LICENSE-2.0.html"
+            target="_blank">www.apache.org/licenses/LICENSE-2.0.html</a></td>
+        </tr>
+        <tr>
+          <td rowspan="2">emoji</td>
+          <td>github.com/googlefonts/noto-emoji</td>
+          <td>Apache License 2.0</td>
+          <td><a href="https://www.apache.org/licenses/LICENSE-2.0.html"
+            target="_blank">www.apache.org/licenses/LICENSE-2.0.html</a></td>
+        </tr>
+        <tr>
+          <td>github.com/twitter/twemoji</td>
+          <td>CC-BY 4.0</td>
+          <td><a href="https://creativecommons.org/licenses/by/4.0/"
+              target="_blank">creativecommons.org/licenses/by/4.0/</a></td>
+        </tr>
+    </table>
+  </article>
+</body>
+
+</html>

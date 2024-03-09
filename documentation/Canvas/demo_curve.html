@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>베지어</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="bezier" width="600" height="150"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    // 직선
+    var ctx = document.getElementById('bezier').getContext('2d');
+    var x = 25;
+    var y = 25;
+    var space = 150;
+
+    ctx.beginPath();
+    ctx.moveTo(x, y + 100);
+    ctx.lineTo(x + 100, y);
+    ctx.stroke();
+    point(ctx, x, y + 100, "blue");
+    point(ctx, x + 100, y, "blue");
+
+    // 곡선
+    x += space;
+    ctx.beginPath();
+    ctx.strokeStyle = "#aaa";
+    ctx.moveTo(x, y + 100);
+    ctx.lineTo(x + 20, y + 25);
+    ctx.lineTo(x + 100, y);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = "#000";
+    ctx.moveTo(x, y + 100);
+    ctx.quadraticCurveTo(x + 20, y + 25, x + 100, y);
+    ctx.stroke();
+
+    point(ctx, x, y + 100, "blue");
+    point(ctx, x + 100, y, "blue");
+    point(ctx, x + 20, y + 25, "red");
+
+    // 곡선2
+    x += space;
+    ctx.beginPath();
+    ctx.strokeStyle = "#aaa";
+    ctx.moveTo(x, y + 100);
+    ctx.lineTo(x - 20, y + 50);
+    ctx.lineTo(x + 100, y);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = "#000";
+    ctx.moveTo(x, y + 100);
+    ctx.quadraticCurveTo(x - 20, y + 50, x + 100, y);
+    ctx.stroke();
+
+    point(ctx, x, y + 100, "blue");
+    point(ctx, x + 100, y, "blue");
+    point(ctx, x - 20, y + 50, "red");
+
+    // 3차 곡선
+    x += space;
+    ctx.beginPath();
+    ctx.strokeStyle = "#aaa";
+    ctx.moveTo(x, y + 100);
+    ctx.lineTo(x - 10, y + 50);
+    ctx.moveTo(x + 100, y);
+    ctx.lineTo(x + 90, y + 50);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.strokeStyle = "#000";
+    ctx.moveTo(x, y + 100);
+    ctx.bezierCurveTo(x - 10, y + 50, x + 90, y + 50, x + 100, y);
+    ctx.stroke();
+
+    point(ctx, x, y + 100, "blue");
+    point(ctx, x + 100, y, "blue");
+    point(ctx, x - 10, y + 50, "red");
+    point(ctx, x + 90, y + 50, "red");
+
+  }
+
+  function point(ctx, x, y, color) {
+    ctx.beginPath();
+    ctx.fillStyle = color;
+    ctx.moveTo(x, y);
+    ctx.arc(x, y, 5, 0, Math.PI * 2, true);
+    ctx.fill();
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

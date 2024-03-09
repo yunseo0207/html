@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>채우기 규칙</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="fillrule" width="400" height="190"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('fillrule').getContext('2d');
+
+    ctx.beginPath();
+    ctx.arc(70, 70, 50, 0, Math.PI * 2, true);
+    ctx.moveTo(170, 70);
+    ctx.arc(120, 70, 50, 0, Math.PI * 2, true);
+    ctx.fill('evenodd');
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+    ctx.font = "30px serif";
+    ctx.fillText("evenodd", 42, 160);  
+
+    ctx.beginPath();
+    ctx.arc(250, 70, 50, 0, Math.PI * 2, true);
+    ctx.moveTo(350, 70);
+    ctx.arc(300, 70, 50, 0, Math.PI * 2, true);
+    ctx.fill('nonzero');
+    ctx.strokeStyle = "red";
+    ctx.stroke();
+
+    ctx.fillText("nonzero", 223, 160);  
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

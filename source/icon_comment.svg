@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg">
+  <path style="stroke: #888; fill: none; stroke-linecap: round; stroke-width: 50px;stroke-linejoin: round;" d="M150 70 H350 a130 130 0 0 1 0 260 H270 L250 450 L150 330 H150 A130 130 0 0 1 150 70"/>
+  <ellipse style="fill:#888;stroke:none" cx="130" cy="200" rx="35" ry="35" />
+  <ellipse style="fill:#888;stroke:none" cx="250" cy="200" rx="35" ry="35" />
+  <ellipse style="fill:#888;stroke:none" cx="370" cy="200" rx="35" ry="35" />
+</svg>

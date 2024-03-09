@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>글자열의 길이</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="measure" width="500" height="150"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('measure').getContext('2d');
+
+    // 글자 출력
+    printText("안녕하세요", 20, 60, 48);
+    printText("글자의 길이를 측정해서 X를 표시합니다.", 20, 90, 20);
+    printText("다양한 글자를 테스트 해보십시오.", 20, 130, 30);
+
+    function printText(input, x, y, fontSize) {
+      ctx.font = `italic bolder ${fontSize}px serif`;
+      var text = ctx.measureText(input);
+      ctx.fillText(input, x, y);
+      var offset = 5;
+
+      // 선 출력
+      ctx.beginPath();
+      ctx.moveTo(x, y);
+      ctx.strokeStyle = "#F007";
+      ctx.lineTo(x + text.width, y - fontSize + offset);
+      ctx.moveTo(x, y - fontSize + offset);
+      ctx.lineTo(x + text.width, y + offset);
+      ctx.stroke();
+    }
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

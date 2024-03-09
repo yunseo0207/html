@@ -1,0 +1,27 @@
+<svg viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg">
+  <desc>
+    (c) 2024 @iseohyun.com 
+    All rights reserved.
+    CC-BY-SA
+  </desc>
+  <title>linearGradient test</title>
+  <!-- 그라데이션 정의 -->
+  <linearGradient id="diagonalGradient" x1="0%" y1="0%" x2="0%" y2="100%">
+    <!-- 빨간색 -->
+    <stop offset="00%" stop-color="#FF0000" />
+    <!-- 주황색 -->
+    <stop offset="20%" stop-color="#FFA500" />
+    <!-- 노란색 -->
+    <stop offset="40%" stop-color="#FFFF00" />
+    <!-- 초록색 -->
+    <stop offset="60%" stop-color="#008000" />
+    <!-- 파란색 -->
+    <stop offset="80%" stop-color="#0000FF" />
+    <!-- 보라색 -->
+    <stop offset="100%" stop-color="#800080" />
+  </linearGradient>
+
+  <!-- 그라데이션을 사용하여 경로 그리기 -->
+  <path style="fill: url(#diagonalGradient); stroke: #888; stroke-linecap: round; stroke-width: 15px; stroke-linejoin: round;" d="M 120,450 V250 H50 L250 100 L450 250 H380 V450 H300 V350 a50 50 0 0 0 -100 0 V450 Z"/>
+</svg>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>설정 저장과 복원</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="saveNrestore" width="150" height="150"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var ctx = document.getElementById('saveNrestore').getContext('2d');
+
+    ctx.fillStyle = '#000'; // 검정
+    ctx.fillRect(0, 0, 150, 150); // 제일 바깥
+    ctx.save();
+
+    ctx.fillStyle = '#38F'; // 파랑
+    ctx.fillRect(15, 15, 120, 120); // 안쪽 사각
+    ctx.save();
+
+    ctx.fillStyle = '#F88'; //빨강
+    ctx.fillRect(30, 30, 90, 90); // 더 안쪽 사각
+
+    ctx.restore(); // 파랑 복원
+    ctx.fillRect(45, 45, 60, 60);
+
+    ctx.restore(); // 검정 복원
+    ctx.fillRect(60, 60, 30, 30);
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

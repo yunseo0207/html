@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>다양한 필터</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="filters" width="400" height="230"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('filters').getContext('2d');
+
+    ctx.font = "30px serif";
+    ctx.backgroundColor = "#000";
+    ctx.fillText("정상 출력", 50, 50);  
+
+    ctx.filter = "drop-shadow(3px 3px 3px black)";
+    ctx.fillText("그림자 예제(shadow)", 50, 100);  
+
+    ctx.filter = "blur(2px)";
+    ctx.fillText("흐리게 예제(blur)", 50, 150);
+
+    ctx.filter = "opacity(0.5)";
+    ctx.fillText("투명도(opacity)", 50, 200);
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

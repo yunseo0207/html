@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <!-- 모바일 스케일 고정 -->
+  <meta discription="HTML의 기초 문법과 구성에 대해서 설명합니다.">
+  <meta keywords="iseohyun, 튜토리얼, html, 문법, syntax, 예시">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>기초 문법 예시: html - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <style>
+    header {
+      width: 100%;
+      font-size: clamp(10pt, 5vw, 1.5rem);
+      font-weight: 800;
+      color: #555;
+      position: fixed;
+      top: 0;
+      z-index: 100;
+      width: 100%;
+      padding: 0 0 5px 0;
+      transition: all .3s;
+      background-color: #fffE;
+      box-shadow: 0 10px 10px -10px rgb(0 0 0 / 50%);
+      display: flex;
+      align-items: center;
+      flex-direction: column;
+    }
+
+    header a,
+    header a:active,
+    header a:focus,
+    header a:visited,
+    header a:hover {
+      color: #555;
+    }
+
+    header ul {
+      display: flex;
+      margin: 0;
+      padding: 0;
+      flex-direction: row;
+      align-items: center;
+      justify-content: space-around;
+    }
+
+    header>ul>li {
+      float: left;
+      margin: 0 auto;
+      padding: 0.5em;
+    }
+
+    header ul>li {
+      display: inline-block;
+      vertical-align: middle;
+      transform: perspective(1px) translateZ(0);
+      box-shadow: 0 0 1px rgb(0 0 0 / 0%);
+      position: relative;
+      transition: 2s background-color;
+    }
+
+    header ul>li:hover:before,
+    header ul>li:focus:before,
+    header ul>li:active:before {
+      left: 0;
+      right: 0;
+    }
+
+    header ul>li:before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 51%;
+      right: 51%;
+      bottom: 0;
+      background: #cf265e;
+      height: 3px;
+      -webkit-transition-property: left, right;
+      transition-property: left, right;
+      -webkit-transition-duration: 0.3s;
+      transition-duration: 0.3s;
+      -webkit-transition-timing-function: ease-out;
+      transition-timing-function: ease-out;
+    }
+
+    header a {
+      color: #888;
+      color: inherit;
+      font-style: inherit;
+      font-weight: inherit;
+      text-decoration: none;
+    }
+
+    header a:hover {
+      font-weight: bold;
+    }
+
+    header img {
+      width: 30px;
+      padding: 0;
+      margin: 0;
+    }
+
+    header li:hover>ul {
+      visibility: visible;
+    }
+
+    header li>ul {
+      visibility: hidden;
+      position: absolute;
+      width: max-content;
+      background-color: #fffE;
+      display: grid;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 7px;
+      top: 59px;
+      left: -5%;
+      justify-items: center;
+    }
+
+    header li>ul>li {
+      font-size: 0.8em;
+      font-weight: normal;
+      color: #888;
+      padding: 10px;
+    }
+
+    header li>ul>li::before {
+      background: rgb(0, 0, 158);
+    }
+
+    @media screen and (max-width: 400px) {
+      header ul {
+        display: flex;
+        width: 100vw;
+        margin: 0;
+        padding: 0;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+      }
+
+      header li>ul {
+        top: 55px;
+      }
+    }
+
+    article {
+      width: 95%;
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 5px;
+      color: #888;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+
+    #title {
+      position: relative;
+      font-size: xx-large;
+      color: #990077;
+      text-align: center;
+      margin: 30px;
+    }
+
+    article>table {
+      width: 95%;
+      border-spacing: 0;
+    }
+
+    article>table td {
+      border: 1px solid #BBB;
+      padding: 15px;
+      margin: 0px;
+    }
+
+    article>table thead tr:first-child {
+      background-color: #ddd;
+      text-align: center;
+    }
+
+    span {
+      color: red;
+    }
+
+    thead {
+      position: sticky;
+      top: 5px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="board"></div>
+  <article>
+    <div id="title">HTML 테그 예시</div>
+    <table>
+      <thead>
+        <tr>
+          <td>코드</td>
+          <td>구현</td>
+        </tr>
+      </thead>
+      <tr>
+        <td>
+          <span>&lt;h1></span>h1<span>&lt;/h1></span><br>
+          <span>&lt;h2></span>h2<span>&lt;/h2></span><br>
+          <span>&lt;h3></span>h3<span>&lt;/h3></span><br>
+          <span>&lt;h4></span>h4<span>&lt;/h4></span><br>
+          <span>&lt;h5></span>h5<span>&lt;/h5></span><br>
+          <span>&lt;h6></span>h6<span>&lt;/h6></span>
+        </td>
+        <td>
+          <h1>h1</h1>
+          <h2>h2</h2>
+          <h3>h3</h3>
+          <h4>h4</h4>
+          <h5>h5</h5>
+          <h6>h6</h6>
+        </td>
+      </tr>
+      <tr>
+        <td>abc<span>&lt;br></span>defg<span>&lt;hr></span>hij</td>
+        <td>abc<br>defg
+          <hr>hij
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>&lt;ol></span><br>
+          &nbsp; <span>&lt;li></span>abc<span>&lt;/li></span><br>
+          &nbsp; <span>&lt;li></span>def<span>&lt;/li></span><br>
+          <span>&lt;/ol></span><br>
+          <span>&lt;ul></span><br>
+          &nbsp; <span>&lt;li></span>ghi<span>&lt;/li></span><br>
+          &nbsp; <span>&lt;li></span>jkl<span>&lt;/li></span><br>
+          <span>&lt;/ul></span>
+        </td>
+        <td>
+          <ol>
+            <li>abc</li>
+            <li>def</li>
+          </ol>
+          <ul>
+            <li>ghi</li>
+            <li>jkl</li>
+          </ul>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>&lt;em></span>Emphasis<span>&lt;/em></span><br>
+          <span>&lt;i></span>italic<span>&lt;/i></span><br>
+          <span>&lt;strong></span>strong<span>&lt;/strong></span><br>
+          <span>&lt;b></span>bold<span>&lt;/b></span><br>
+          <span>&lt;u></span>underbar<span>&lt;/u></span><br>
+          <span>&lt;abbr</span> title="abbr"<span>></span>abbreviate<span>&lt;/abbr></span><br>
+          <span>&lt;q></span>quotation<span>&lt;/q></span><br>
+          <span>&lt;del></span>del<span>&lt;/del></span><br>
+          <span>&lt;cite></span>cite<span>&lt;/cite></span><br>
+          <span>&lt;a</span> href=""<span>></span>anchor<span>&lt;/a></span><br>
+          <span>&lt;address></span>address<span>&lt;/address></span>
+        </td>
+        <td>
+          <em>Emphasis</em><br>
+          <i>italic</i><br>
+          <strong>strong</strong><br>
+          <b>bold</b><br>
+          <u>underbar</u><br>
+          <abbr title="abbr">abbreviate</abbr><br>
+          <q>quotation</q><br>
+          <del>delete</del><br>
+          <cite>cite</cite><br>
+          <a href="">anchor</a><br>
+          <address>address</address>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          A<span>&lt;sub></span>subscript<span>&lt;/sub></span><br>
+          B<span>&lt;sup></span>superscript<span>&lt;/sup></span>
+        </td>
+        <td>
+          A<sub>subscript</sub>
+          B<sup>superscript</sup>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>&lt;pre></span>hello<br>
+          this &nbsp; &nbsp; &nbsp; is<br>
+          test code.<span>&lt;/pre></span><br>
+          <span>&lt;code></span>code<span>&lt;/code></span><br>
+          <span>&lt;var></span>variable<span>&lt;/var></span><br>
+          <span>&lt;kbd></span>keyboard tag<span>&lt;/kbd></span><br>
+          <span>&lt;samp></span>Samp<span>&lt;/samp></span><br>
+          <span>&lt;time</span> datetime="20:00"<span>></span>20:00<span>&lt;/time></span><br>
+          *Time을 코딩으로 읽기 위한 목적으로 작성됨
+        </td>
+        <td>
+          <pre>hello
+this      is
+test code.</pre><code>code</code><br>
+          <var>variable</var><br>
+          <kbd>keyboard tag</kbd><br>
+          <samp>Samp</samp><br>
+          <time datetime="20:00">20:00</time>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>&lt;table></span><br>
+          &nbsp; <span>&lt;tr></span><br>
+          &nbsp; &nbsp; <span>&lt;td></span>ABC<span>&lt;/td></span><br>
+          &nbsp; &nbsp; <span>&lt;td></span>DEF<span>&lt;/td></span><br>
+          &nbsp; <span>&lt;/tr></span><br>
+          &nbsp; <span>&lt;tr></span><br>
+          &nbsp; &nbsp; <span>&lt;td></span>가나다<span>&lt;/td></span><br>
+          &nbsp; &nbsp; <span>&lt;td></span>라마바<span>&lt;/td></span><br>
+          &nbsp; <span>&lt;/tr></span><br>
+          <span>&lt;/table></span>
+        </td>
+        <td>
+          <table>
+            <tr>
+              <td style="background-color: #fff;">ABC</td>
+              <td style="background-color: #fff;">DEF</td>
+            </tr>
+            <tr>
+              <td>가나다</td>
+              <td>라마바</td>
+            </tr>
+          </table><br>
+          * 가독성을 위해 테두리를 그렸습니다.
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>&lt;img</span> src="Domain.svg"<span>></span>
+        </td>
+        <td>
+          <img src="Domain.svg" style="border:1px solid #000;box-shadow: #8888 5px 5px 5px; margin:5px">
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>&lt;iframe</span> src="구글 제공 링크"<span>>&lt;/iframe></span>
+        </td>
+        <td>
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d8943.367346914183!2d126.97248635148046!3d37.57961023890957!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x357ca2c74aeddea1%3A0x8b3046532cc715f6!2z6rK967O16raB!5e0!3m2!1sko!2skr!4v1676215760390!5m2!1sko!2skr"
+            allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <span>&lt;input</span> type="text" value="text"><br>
+          <span>&lt;input</span> type="range"><br>
+          <span>&lt;input</span> type="checkbox"><br>
+          <span>&lt;input</span> type="number" value="1"><br>
+          <span>&lt;input</span> type="radio"><br>
+          <span>&lt;input</span> type="submit"><br>
+          <span>&lt;textarea</span> rows="3"><br>
+          여러줄 입력<br>
+          둘째줄 입력<span>&lt;/textarea><br>
+            &lt;input</span> type="file"><br>
+          <span>&lt;button></span>버튼<span>&lt;/button></span>
+        </td>
+        <td>
+          <input type="text" value="text">
+          <input type="range">
+          <input type="checkbox">
+          <input type="number" value="1">
+          <input type="radio"><input type="submit">
+          <textarea rows="3">
+여러줄 입력
+둘째줄 입력</textarea><input type="file"><button>버튼</button>
+        </td>
+      </tr>
+    </table>
+  </article>
+</body>
+
+</html>

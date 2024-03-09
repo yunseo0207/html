@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="Welcome to isoehyun.com">
+  <meta keywords="iseohyun">
+  <meta author="iseohyun">
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 페이지 타이틀 -->
+  <title>iseohyun.com </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("style.css");
+
+    #main {
+      column-count: 2;
+      column-width: 10rem;
+      text-align: justify;
+      width: 95%;
+      margin: 0 auto 30vh;
+    }
+
+    #search {
+      margin: 0 auto;
+      padding: 20vh 0;
+      width: 60%;
+      display: flex;
+      position: relative;
+      flex-direction: row;
+      align-items: center;
+    }
+
+    #search>div:first-child {
+      display: flex;
+      background-color: #eee;
+      height: 1.5rem;
+      max-height: 1.6rem;
+      padding: 0.6rem 1.5rem;
+      border-bottom-left-radius: 1.6rem;
+      border-top-left-radius: 1.6rem;
+    }
+
+    #search>div:nth-child(2) {
+      display: flex;
+      border: 1px solid #ddd;
+      height: 2.5rem;
+      border-bottom-right-radius: 1.6rem;
+      border-top-right-radius: 1.6rem;
+      flex-grow: 1;
+    }
+
+    #search input {
+      margin: auto;
+      font-size: 1.1rem;
+      border: none;
+      border-radius: 1.6rem;
+      outline: none;
+      width: 100%;
+      padding-left: 15px;
+    }
+
+    #search>div:last-child {
+      position: absolute;
+      visibility: hidden;
+      width: 120%;
+      height: 50vw;
+      overflow-y: scroll;
+      font-size: 0.8em;
+      padding: 0.5em 0.7em;
+      border: 2px solid black;
+      border-radius: 0.6em;
+      background-color: #fff;
+      top: 14.5em;
+      left: -4em;
+      z-index: 1;
+    }
+
+    #main>div {
+      border: 1px solid #AAA;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      break-inside: avoid;
+      box-shadow: #eee 5px 5px 5px;
+      font-size: 0.8rem;
+    }
+
+    article a {
+      text-underline-offset: 0px;
+      text-decoration-color: transparent;
+    }
+
+    article a:hover {
+      transition: 1s text-decoration, 0.5s text-underline-offset;
+      text-decoration: underline;
+      text-decoration-color: red;
+      text-underline-offset: 5px;
+    }
+
+    article li li {
+      position: relative;
+      left: -27px;
+    }
+
+    footer {
+      position: fixed;
+      display: flex;
+      flex-wrap: wrap;
+      width: 100%;
+      height: fit-content;
+      bottom: 0;
+    }
+
+    footer>div {
+      min-width: 100px;
+      margin: 0 20px 20px;
+    }
+
+    header {
+      font-size: 1rem
+    }
+
+    @media screen and (max-width: 500px) {
+      #main {
+        column-count: 1;
+        margin-bottom: 50vh;
+      }
+
+      #search {
+        width: 85%;
+        min-width: 0px;
+        padding: 20px 15px 100px;
+      }
+
+      #search>div:last-child {
+        width: 91%;
+        height: 100vw;
+        top: 45%;
+        left: 1%;
+      }
+
+      footer {
+        display: flex;
+        flex-direction: column;
+      }
+
+      footer div {
+        margin-bottom: 30px;
+      }
+    }
+
+    @media screen and (min-width: 1150px) {
+      article {
+        padding: 0;
+      }
+    }
+
+    #site-intro {
+      width: 90vw;
+      display: flex;
+      flex-direction: row;
+      align-content: flex-start;
+      justify-content: flex-start;
+      align-items: flex-end;
+      height: 35px;
+      padding: 10px;
+      align-items: flex-end;
+      border-bottom: 1px solid #eee;
+      margin: 20px auto 50px;
+    }
+
+    #site-icon {
+      height: 35px;
+    }
+
+    #site-name {
+      font-size: 23pt;
+      font-family: 'times new roman', serif;
+      font-style: italic;
+      margin-left: 30px;
+    }
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="site-intro">
+      <img id="site-icon" src="/source/icon_seohyun.svg">
+      <div id="site-name">iseohyun.com</div>
+    </div>
+    <!-- <div id="search">
+      <div><img src="source/icon_search.svg"></div>
+      <div><input type="search" id="input-text"></div>
+      <div></div>
+    </div> -->
+
+    <div id="main"></div>
+  </article>
+  <footer>
+    <div>
+      iseohyun@hanmail.net<br>
+    </div>
+    <div>
+      블로그:<br>
+      <a href="https://blog.naver.com/seohyun0903" target="_blank">네이버</a>,
+      <a href="https://iseohyun.tistory.com/" target="_blank">티스토리</a>
+    </div>
+    <div>
+      예제 코드<br>
+      <a href="https://github.com/iseohyun/java-example" target="_blank">java</a>,
+      <a href="https://github.com/iseohyun/c-example" target="_blank">C</a>,
+      <a href="https://github.com/iseohyun/python-example" target="_blank">python</a>
+    </div>
+    <div>
+      <a href="/info.html#소개">페이지 소개</a><br>
+      <a href="/info.html#Update정보">업데이트/소식</a><br>
+      <a href="/info.html#저작권">저작권 방침</a><br>
+    </div>
+  </footer>
+</body>
+
+</html>
+
+<!-- 메인 불러오기 / hierarchy.json-->
+<script defer>
+  var requestURL = 'hierarchy.json';
+  var request = new XMLHttpRequest();
+  request.open('GET', requestURL);
+  request.responseType = 'json';
+  request.send();
+  request.onload = function () {
+    var files = request.response;
+    var viewer = document.getElementById('main');
+
+    for (var i = 0; i < files.length; i++) {
+      viewer.appendChild(printDiv(files[i]));
+    }
+  }
+
+  function printDiv(list) {
+    var div = document.createElement('div');
+    var details = document.createElement('details');
+    var summary = document.createElement('summary');
+    var ol = document.createElement('ol');
+    summary.innerHTML = list.주제;
+
+    for (var i = 0; i < list.목록.length; i++) {
+      var li = document.createElement('li');
+      var ul = document.createElement('ul');
+
+      if (typeof list.목록[i].파일명 == "undefined") {
+        li.innerHTML = list.목록[i].주제;
+        for (var j = 0; j < list.목록[i].목록.length; j++) {
+          var li_sub = document.createElement('li');
+          li_sub.innerHTML = "<a href='" + list.디렉토리 + list.목록[i].디렉토리 + list.목록[i].목록[j].디렉토리 + list.목록[i].목록[j].파일명 + "#title'>" + list.목록[i].목록[j].주제 + "</a>";
+          ul.appendChild(li_sub);
+        }
+      } else {
+        li.innerHTML = "<a href='" + list.디렉토리 + list.목록[i].디렉토리 + list.목록[i].파일명 + "'>" + list.목록[i].주제 + "#title</a>";
+      }
+
+      li.appendChild(ul);
+      ol.appendChild(li);
+    }
+    details.appendChild(summary);
+    details.appendChild(ol);
+    div.appendChild(details);
+    return div;
+  }
+</script>
+
+<!-- <script defer>
+  var request_search = new XMLHttpRequest();
+  var search_list;
+  request_search.open('GET', 'search.json');
+  request_search.responseType = 'json';
+  request_search.send();
+  request_search.onload = function () {
+    search_list = request_search.response;
+  }
+
+  $('#search input').on("keyup", function (e) {
+    if (this.value.length == 0) {
+      $('#search>div:last-child').css('visibility', 'hidden');
+    } else {
+      $('#search>div:last-child').css('visibility', 'visible');
+      document.querySelector('#search>div:last-child').innerHTML = "";
+      for (var i = 0; i < search_list.length; i++) {
+        if (search_list[i].키워드.match(this.value))
+          document.querySelector('#search>div:last-child').innerHTML +=
+            "<a href=" + search_list[i].링크 + "#title target=_blank>" + search_list[i].주제 + "</a><br>";
+      }
+      if (document.querySelector('#search>div:last-child').textContent.trim().length === 0) {
+        document.querySelector('#search>div:last-child').innerHTML = "<추천 키워드 없음>";
+      }
+    }
+  }); -->
+</script>

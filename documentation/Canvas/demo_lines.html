@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>라인 그리기</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="line1" width="400" height="110"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    const ctx = document.getElementById('line1').getContext('2d');
+    ctx.beginPath();
+    ctx.moveTo(75, 50);
+    ctx.lineTo(100, 75);
+    ctx.lineTo(100, 25);
+    ctx.fill();
+
+    ctx.beginPath();
+    ctx.moveTo(175, 50);
+    ctx.lineTo(200, 75);
+    ctx.lineTo(200, 25);
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.moveTo(275, 50);
+    ctx.lineTo(300, 75);
+    ctx.lineTo(300, 25);
+    ctx.closePath();
+    ctx.stroke();
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

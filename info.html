@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="개인 홈페이지 메인 화면입니다.">
+  <meta keywords="iseohyun, 튜토리얼">
+  <meta author="iseohyun">
+  <meta http-equiv="Cache-Control" content="no-cache">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 페이지 타이틀 -->
+  <title>정보 - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("style.css");
+
+    #main {
+      column-count: 2;
+      column-width: 10rem;
+      text-align: justify;
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    @media screen and (max-width: 500px) {
+      #main {
+        column-count: 1;
+      }
+    }
+
+    #main>div {
+      border: 1px solid #AAA;
+      padding: 15px;
+      margin-bottom: 10px;
+      border-radius: 15px;
+      break-inside: avoid;
+      box-shadow: #AAA8 5px 5px 5px;
+      font-size: 1.3rem;
+    }
+
+    article a {
+      text-underline-offset: 0px;
+      text-decoration-color: transparent;
+    }
+
+    article a:hover {
+      transition: 1s text-decoration, 0.5s text-underline-offset;
+      text-decoration: underline;
+      text-decoration-color: red;
+      text-underline-offset: 5px;
+    }
+
+    article li li {
+      position: relative;
+      left: -27px;
+    }
+
+    #update {
+      width: 85%;
+      overflow-y: scroll;
+      max-height: 300px;
+      margin: 10px auto;
+      box-shadow: 0 10px 6px -6px #777;
+      border: 1px solid #ccc;
+      padding: 25px;
+    }
+
+    table#home-update-list {
+      border: 5px;
+    }
+
+    table#home-update-list tr+tr {
+      counter-increment: update-cnt 0;
+    }
+
+    table#home-update-list tr+tr td:first-child:before {
+      position: static;
+      counter-increment: update-cnt;
+      content: counter(update-cnt) " - ";
+    }
+
+    table#home-update-list tr+tr td:first-child {
+      text-align: left;
+      padding-left: 2em;
+    }
+
+    table#home-update-list tr+tr td:last-child {
+      text-align: center;
+    }
+
+    table#home-update-list tr+tr:nth-child(n+20) td {
+      visibility: hidden;
+    }
+  </style>
+
+  <style>
+    article>p {
+      width: 95%;
+      margin: 2em auto;
+    }
+
+    article>p::before {
+      content: none;
+    }
+
+    .update-date {
+      font-size: 0.8em;
+      color: #999;
+    }
+
+    .update-details {
+      margin-top: 0;
+      font-size: 0.9em;
+    }
+
+    header {
+      font-size: 1rem
+    }
+
+    article a {
+      text-decoration: underline;
+      text-decoration-color: red;
+      text-underline-offset: 3px
+    }
+
+    article {
+      margin: 0 auto;
+      padding: 0;
+    }
+
+    #icons-container {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: nowrap;
+      align-content: center;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    #icons-container>div {
+      height: 45px;
+      border: 1px solid #aaa;
+      padding: 3px;
+      margin: 5px;
+      display: flex;
+      flex-direction: column;
+      flex-wrap: nowrap;
+      align-items: center;
+      font-size: 10px;
+      border-radius: 7px;
+      min-width: 45px;
+      justify-content: flex-start;
+      justify-content: space-around;
+    }
+
+    #icons-container a {
+      font-size: inherit;
+      color: inherit;
+      font-style: inherit;
+      font-weight: inherit;
+      text-decoration: none;
+      display: contents;
+    }
+
+    #icons-container a span:last-child {
+      line-height: 1.1em;
+    }
+  </style>
+</head>
+
+<body>
+  <style>
+
+  </style>
+  <header>
+    <div class="home-icon">
+      <a href="/index.html">
+        <img src="source/icon_home.svg">
+      </a>
+    </div>
+    <div id="header-title">소개, 소식, 저작권</div>
+    <div id="icons-container">
+      <div>
+        <a href="info.html#소개">
+          <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+          <span class="material-symbols-outlined">person_raised_hand</span>
+          <span>who?</span>
+        </a>
+      </div>
+
+      <div>
+        <a href="info.html#Update정보">
+          <link rel="stylesheet"
+            href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+          <span class="material-symbols-outlined">upgrade</span>
+          <span>update</span>
+        </a>
+      </div>
+
+      <div>
+        <a href="info.html#저작권">
+        <link rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+        <span class="material-symbols-outlined">attribution</span>
+        <span>copyright</span>
+        </a>
+      </div>
+    </div>
+  </header>
+  <article>
+    <a href="/index.html">
+      <div id="title">iseohyun.com</div>
+    </a>
+    <div id="소개"></div>
+    <h1>About Us</h1>
+    <ul>
+      <li><u>기초 수학/과학(중/고교)</u>, <u>문서화</u>, 그리고 <u>코딩 기초</u>를 주력으로 작성하고 있습니다.<br>
+        <u>챕터별 20분 내외, 단원별 약 2시간을 목표</u>로 튜토리얼을 제공합니다.
+      </li>
+      <li>
+        금전적인 준비 없이, <u>기초지식이 없는 상태</u>에서, 누군가의 도움 없이 <u>개인이</u>,
+        <u>적은 노력으로</u> 습득 가능한 커리큘럼을 만드는 것을 목표로 합니다.
+      </li>
+    </ul>
+
+    <div id="Update정보"></div>
+    <h1>Update / news</h1>
+    <span class="update-date">2024.3.1</span>
+    <p class="update-details">
+      예제코드가 있는 문서는 상단메뉴에 "저작권표시와 링크"가 표시됩니다.<br>
+    </p>
+    <span class="update-date">2024.2.29</span>
+    <p class="update-details">
+      예제코드가 있는 문서는 상단메뉴에 "예제코드 보이기" 버튼이 활성화 됩니다.<br>
+      예시: <a href="/documentation//Javascript/basic.html">문서화> 자바스크립트> 시작하기</a>
+    </p>
+    <span class="update-date">2024.2.27</span>
+    <p class="update-details">
+      클립보드 복사기능이 업데이트 되었습니다. 이제 인용구(quote)를 클릭하거나, 코드블럭(blockquote), 코드하이라이트(pre-code-highligh)에 마우스를 올리면 COPY버튼이
+      생성됩니다.
+      드레그 없이 클릭과 동시에 클립보드에 복사가 가능합니다.<br>
+      <a href="/etc/column/vscode/emmet.html">칼럼> VScode> 에밋</a>문서가 업로드 되었습니다.
+    </p>
+    <span class="update-date">2024.2.26</span>
+    <p class="update-details">
+      최근 수정 기능이 업데이트 되었습니다. 페이지 최상단 우측에 최근 수정된 날짜를 확인 할 수 있습니다.<br>
+      <a href="/etc/column/vscode/start.html">칼럼> VScode> VScode시작하기</a>가 업로드 되었습니다.
+    </p>
+    <span class="update-date">2024.2.25</span>
+    <p class="update-details">
+      홈페이지를 재구성하였습니다. 디자인 및 구조가 바뀌었습니다(기존의 링크 중 일부가 오류가 발생할 수 있습니다).
+    </p>
+
+    <span class="update-date">2023.5.22</span>
+    <p class="update-details">
+      java 튜토리얼 > GUI프로그래밍 : window프로그래밍 코드에 대한 설명<br>
+      java 강의노트, 총 6강 업데이트 완료 - 디자인 패턴 등은 다른 문서를 통해 업로드 예정
+    </p>
+
+    <span class="update-date">2023.5.21</span>
+    <p class="update-details">
+      java 튜토리얼 > 라이브러리 사용법 : 표준 라이브러리 메서드 예제 설명<br>
+      java기본 문법 및 기존 링크/형식 복구, <br>
+      언어별 코딩 환경 재현 영상 업로드
+    </p>
+
+    <span class="update-date">2023.5.18</span>
+    <p class="update-details">
+      C언어 튜토리얼 > 클래스 :
+      C++ 강의, 객체지향에 대한 내용입니다.<br>
+      C언어 튜토리얼 > 예외처리 등 :
+      예외처리, namespace, using, new, delete등 c++에 추가된 내용을 설명합니다.<br>
+      C언어 튜토리얼 > windows :
+      Visual Studio 2023환경에서 Desktop application에 대한 구현을 설명합니다.<br>
+      C강의노트, 1차 업데이트 완료
+    </p>
+
+    <span class="update-date">2023.5.10</span>
+    <p class="update-details">
+      C언어 튜토리얼 > 기타 예약어 : C언어 예약어 중 아직 다루지 않은 내용을
+      다룹니다.(전처리기, volatile, extern, inline, Math, Malloc, File 등)
+    </p>
+    <span class="update-date">2023.5.9</span>
+    <p class="update-details">
+      C언어 튜토리얼 > 포인터, 구조체: 포인터를 다룹니다. 구조체 및 확장 데이터 타입(배열,
+      구조체, 공용체, 열거체)에 대해 서술합니다.
+    </p>
+    <span class="update-date">2023.5.1</span>
+    <p class="update-details">
+      C언어 튜토리얼 > 함수: 함수를 호출하는 방법, 변수를 전달하는 방법, 함수를 참조하는
+      방법에 대해서 다룹니다.
+    </p>
+    <span class="update-date">2023.4.30</span>
+    <p class="update-details">
+      자유주제 > 숫자 접두어: 그리스. 라틴의 숫자 접두어와 달력의 유래에 대해
+      설명합니다.<br>
+      C언어 튜토리얼 > 기초 문법: C언어 문법 중, 데이터형과 연산에 대해 다룹니다.<br>
+      C언어 튜토리얼 > 제어문: 제어문의 사용법에 대해 다룹니다.
+    </p>
+    <span class="update-date">2023.4.29</span>
+    <p class="update-details">
+      C언어 튜토리얼:
+      Github에 업로드된 C언어 예제를 이용할 수 있도록 안내합니다.
+    </p>
+    <span class="update-date">2023.4.13</span>
+    <p class="update-details">
+      남아선호사상 시뮬레이션 $2:
+      남아가 태어날 때까지 출산을 했을 때, 과연 성비가 변할지 시뮬레이션을 통해서 결과를 도출합니다.
+    </p>
+
+    <span class="update-date">2023.4.6</span>
+    <p class="update-details">
+      온라인 장기판 을 작성하였습니다.
+    </p>
+
+    <span class="update-date">2023.3.23</span>
+    <p class="update-details">
+      SVG드레그 컨트롤을 이용하여 실습페이지가 작성되었습니다.<br>
+      베지어 곡선 실습,
+      복소평면 실습
+    </p>
+
+    <span class="update-date">2023.3.20</span>
+    <p class="update-details">
+      나머지 문제에 대한 풀이법을 완성하였습니다. 자동출제를 통해서 연습할 수 있습니다.<br>
+      페이지: 나머지 문제
+    </p>
+
+    <span class="update-date">2023.3.19</span>
+    <p class="update-details">
+      "다항식 연산"과 관련된 자동 출제 페이지를 생성하였습니다.
+      <br>
+      페이지 : 덧셈 문제, 곱셈 문제, 나눗셈 문제
+    </p>
+    <span class="update-date">2023.3.18</span>
+    <p class="update-details">
+      자유주제 > 폰트:
+      명조, 고딕, 무료배포 폰트에 대해 설명합니다.<br>
+      유클리드 알고리즘 수기 구하기:
+      유클리드 알고리즘에 의해 베주 방정식을 도출하는 과정을 툴팁으로 설명합니다.<br>
+    </p>
+
+    <span class="update-date">2023.3.8</span>
+    <p class="update-details">기초학문> 삼각함수 > sin문서,
+      cos문서,
+      반각, 배각 공식 문서 작성: 애니메이션 효과를 이용하여 설명합니다.
+    </p>
+
+    <span class="update-date">2023.3.4</span>
+    <p class="update-details">기초학문> 자유주제 > 베지어: 베지어
+      곡선을 2차함수와 비교하여 설명합니다.</p>
+
+    <span class="update-date">2023.3.3</span>
+    <p class="update-details">문서화> CSS팁: flex-grow, calc 함수에 대한 내용이 추가되었습니다.</p>
+
+    <span class="update-date">2023.3.2</span>
+    <p class="update-details">
+      문서화> 수식입력기: Latex을 사용하는 방법에 대해 설명합니다.<br>
+      문서화> CSS > 폰트: 온라인 폰트를 이용하는 방법에 대한 내용이 추가 되었습니다.
+    </p>
+
+    <span class="update-date">2023.3.1</span>
+    <p class="update-details">
+      모든 페이지에 Google Analysis가 적용됩니다. 방문자 분석을 할 수 있습니다. (개인정보는 수집되지 않습니다.)<br>
+      info페이지(현재 페이지)가 생성되었습니다.<br>
+      문서화> Javascript> 팁: JQuery에 대한 내용이 추가되었습니다.
+    </p>
+
+    <div id="저작권"></div>
+    <h1>저작권 방침</h1>
+    <p>(C) 2023. iseohyun, All rights reserved. CC BY-SA</p>
+    <style>
+      .whatis {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        margin: 10px auto;
+        padding: 13px;
+        width: max(400px, 70%);
+      }
+    </style>
+    <div class="whatis">
+      저작자 : iseohyun.com<br>
+      범위 : 소유자 표시(권고)-동일조건변경허락<br>
+      2차 창작 허용, 변환 허용, 상업적 사용 가능
+    </div>
+    <p>
+      &nbsp;사이트 내에는 직접 작성한 그림, 시뮬레이션, 칼럼, 코드 등이 다수 포함되어 있습니다. 모든 저작물은 <u>상업적 인용/변경을 허용</u>합니다. 또한 저작물의 출처를 표기해 주시면
+      감사하겠습니다. 하지 않아도 문제 삼을 생각은 없습니다. 다만, 저작물이 2차, 3차 인용되는 과정에서 저작권을 의식해서 인용되지 못하는 경우가 없으려면, 출처를 표기해 주셔야
+      합니다.<br><br>
+
+    <div class="whatis">
+      참조시:<br>
+      @iseohyun.com
+    </div>
+    <p>
+      &nbsp;타 사이트를 참고한 사례도 많습니다. 저작권이 표시된 정보에 대해서는 재사용을 주의하셔야 합니다.<br><br>
+
+      &nbsp;혹시라도 저작권 침해의 소지가 있는 내용이 있다면 정정 할 수 있도록 하겠습니다.
+    </p>
+  </article>
+</body>
+
+</html>

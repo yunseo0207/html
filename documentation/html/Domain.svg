@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 300"
+  xmlns="http://www.w3.org/2000/svg">
+  <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+    <path d="M9 0L0 4 0 -4 9 0z" />
+  </marker>
+  <g style="fill:none; stroke:#888;stroke-width:3px">
+    <ellipse cx="50" cy="200" rx="15" ry="15" />
+    <ellipse cx="50" cy="200" rx="10" ry="10" />
+    <ellipse cx="200" cy="200" rx="15" ry="15" />
+    <ellipse cx="200" cy="200" rx="10" ry="10" />
+    <ellipse cx="200" cy="100" rx="15" ry="15" />
+    <ellipse cx="200" cy="100" rx="10" ry="10" />
+    <ellipse cx="400" cy="100" rx="15" ry="15" />
+    <ellipse cx="400" cy="100" rx="10" ry="10" />
+  </g>
+  <g style="fill:none; stroke:black;stroke-width:2px;stroke-dasharray:10 5;stroke-dashoffset:0;stroke-linejoin:round; stroke-linecap:round">
+    <path marker-end="url(#ah1)" d="M 70 200 H180 a20 20 0 0 1 20 -20 V120 a20 20 0 0 0 20 -20 H380 a20 20 0 0 0 20 20 V250 a20 20 0 0 1 -20 20 H70 a20 20 0 0 1 -20 -20 v-10" />
+    <animate attributeName="stroke-dashoffset" values="15;0" dur="1s" repeatCount="indefinite" />
+  </g>
+  <g style="fill:#888;font-size:17px">
+    <text x="14" y="175"> 내 컴퓨터 </text>
+    <text x="110" y="60"> 도메인 판매처 </text>
+    <text x="350" y="60"> 업로드 서버 </text>
+  </g>
+  <g style="fill:#499180;font-size:13px">
+    <text x="200" y="230"> 예) 이통사, 구글 등</text>
+    <text x="110" y="80"> 예) 가비아, 후이즈, 예스닉 등 </text>
+    <text x="350" y="80"> 예) git, tistory 등</text>
+  </g>
+  <g style="fill:red;font-size:13px">
+    <text x="80" y="100"> 1) 도메인 구매
+      <animate attributeName="fill" values="#FFF;#F00;#F00;#F00;#F00;#F00" dur="5s" repeatCount="indefinite" />
+    </text>
+    <text x="80" y="120"> 2) 업로드서버의
+      <animate attributeName="fill" values="#FFF;#FFF;#F00;#F00;#F00;#F00" dur="5s" repeatCount="indefinite" />
+    </text>
+    <text x="96" y="136"> 네임서버 등록
+      <animate attributeName="fill" values="#FFF;#FFF;#F00;#F00;#F00;#F00" dur="5s" repeatCount="indefinite" />
+    </text>
+    <text x="410" y="130"> 3) 도메인 등록 
+      <animate attributeName="fill" values="#FFF;#FFF;#FFF;#F00;#F00;#F00" dur="5s" repeatCount="indefinite" />
+    </text>
+  </g>
+</svg>

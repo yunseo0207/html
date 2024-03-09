@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:bx="https://boxy-svg.com">
+  <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+    <path d="M9 0L0 4 0 -4 9 0z"/>
+  </marker>
+
+  <g style=" stroke: #000;">
+    <path style="fill: none; stroke:#ddd;stroke-width: 1px;stroke-linecap: round" d="M150 30 C 260 380 305 380 415 30" />
+    <path style="fill: none; stroke:#ddd;stroke-width: 1px;stroke-linecap: round;stroke-dasharray: 2;" d="M470 350 C 120 240 120 195 470 85" />
+    <path style="fill: none; stroke-width: 3px;stroke-linecap: round;stroke-dasharray: 303;stroke-dashoffset:303" d="M470 350 C 120 240 120 195 470 85" />
+    <path d="M 30 250 H470" marker-end="url(#ah1)"/>
+    <path d="M 250 470 V30" marker-end="url(#ah1)"/>
+    <path style="stroke-dasharray: 5;" d="M30 470 L470 30"/>
+  </g>
+  <g style="font-family:'times new roman';font-size: 16.4px;font-style:italic">
+    <text x="258" y="30">f(x) = y</text>
+    <text x="470" y="263">x</text>
+    <text x="252" y="264">O</text>
+  </g>
+</svg>

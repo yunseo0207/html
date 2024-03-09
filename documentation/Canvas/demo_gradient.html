@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>그라데이션</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="gradient" width="250" height="200"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    ctx = document.getElementById('gradient').getContext('2d');
+
+    // 좌상단
+    var lngrad = ctx.createLinearGradient(0, 0, 0, 100);
+    lngrad.addColorStop(0, '#FFF');
+    lngrad.addColorStop(1, '#000');
+
+    ctx.fillStyle = lngrad;
+    ctx.fillRect(0, 0, 100, 100);
+    drawArrow(ctx, 50, 10, 50, 90);
+
+    // 우상단
+    lngrad = ctx.createLinearGradient(100, 0, 200, 0);
+    lngrad.addColorStop(0, '#FFF');
+    lngrad.addColorStop(1, '#000');
+
+    ctx.fillStyle = lngrad;
+    ctx.fillRect(100, 0, 100, 100);
+    drawArrow(ctx, 110, 50, 190, 50);
+
+    // 좌하단
+    lngrad = ctx.createLinearGradient(0, 100, 100, 200);
+    lngrad.addColorStop(0, '#FFF');
+    lngrad.addColorStop(0.7, '#000');
+    lngrad.addColorStop(1, '#0F0');
+
+    ctx.fillStyle = lngrad;
+    ctx.fillRect(0, 100, 100, 100);
+    drawArrow(ctx, 20, 120, 80, 180);
+
+    // 좌하단
+    lngrad = ctx.createLinearGradient(200, 200, 100, 100);
+    lngrad.addColorStop(0, '#F00');
+    lngrad.addColorStop(0.5, '#000');
+    lngrad.addColorStop(0.5, '#00F');
+    lngrad.addColorStop(1, '#003');
+
+    ctx.fillStyle = lngrad;
+    ctx.fillRect(100, 100, 100, 100);
+    drawArrow(ctx, 180, 180, 120, 120);
+
+    // 우측화살표
+    drawArrow(ctx, 220, 20, 220, 180, lngrad, 3);
+
+    function drawArrow(ctx, x1, y1, x2, y2, color = 'red', width = 1) {
+      var arrSz = 10;
+      var angle = 30;
+      var radian = (angle / 180) * Math.PI;
+      var arrowSlope = Math.atan2(y1 - y2, x1 - x2);
+
+      var lx = x2 + arrSz * Math.cos(arrowSlope + radian);
+      var ly = y2 + arrSz * Math.sin(arrowSlope + radian);
+      var rx = x2 + arrSz * Math.cos(arrowSlope - radian);
+      var ry = y2 + arrSz * Math.sin(arrowSlope - radian);
+
+      ctx.beginPath();
+      ctx.moveTo(x1, y1);
+      ctx.lineTo(x2, y2);
+      ctx.moveTo(lx, ly);
+      ctx.lineTo(x2, y2);
+      ctx.lineTo(rx, ry);
+
+      ctx.lineWidth = width;
+      ctx.lineCap = 'round';
+      ctx.strokeStyle = color;
+      ctx.stroke();
+    }
+  }
+
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

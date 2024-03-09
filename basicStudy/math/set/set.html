@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="튜토리얼을 제공합니다.">
+  <meta keywords="iseohyun, 튜토리얼, 수학, 집합">
+  <meta author="iseohyun">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 페이지 타이틀 -->
+  <title>집합: 기초수학 - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 페이지 타이틀 -->
+  <title>지수: 기초수학 - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/darkmoss.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <script>
+    hljs.highlightAll();
+    hljs.initLineNumbersOnLoad();
+  </script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">집합<span class="sub">set</span></div>
+
+    <div id="subtitle">오늘의 주제: 1 + 1은 반드시 2일까?</div>
+
+    <div class="double_column">
+      &nbsp;수학은 때때로 "<span class="hl1">현실에서 아무 쓸모 없다. 또는 일부 특수한 사람들만 사용하는 도구이다.</span>"라는 인식을 줍니다. 이렇게 생각하게 된
+      이유는 (개인적인 의견입니다만) <span class="highlight2">중·고등학교의 수학이 대수학(미지수를 활용한 수학)에 과도하게 치우쳐져 있습니다. 그래서 일부는 <font color=red>
+          \(x\)를 구하는 것이 수학이라고 오해</font>하고 있습니다.</span> 하지만 <span class="highlight1">수학은 현실을 기호로 간단하게
+        기록하기 위한 학문</span>이지, 덧셈 뺄셈을 빠르고, 틀리지 않게 하는 학문이 아니라는 것입니다. <span class="highlight2">아무리 정교하고 빨라도 계산기와
+        컴퓨터를 이길
+        수 없으며, 우리가 원하는 인재는 그런 사람이 아닙니다.</span><br>
+      &nbsp;현실에서 덧셈과 뺄셈으로 모든 것을 해결 할 수 없습니다. 예를 들어보겠습니다. "물"과 "물"를 더하면 무엇이 될까요? 그것은 "물"가 됩니다. 그렇다면, "민수"와 "예은"을
+      합치면
+      "2명"이 되는 것이 아니고 "민수와 예은"이 됩니다. 아니면 하나의 가정을 이루어 "민수네" 또는 "예은이네"라고 불리울 수도 있습니다. 이것이 현실입니다. 그렇다면, 수학적으론 어떻게 표현
+      할까요?<br>
+      &nbsp;집합<span class="sub">set</span>단원에서는 이러한 상황을 어떻게 수학적 기호로 나타낼 수 있는지 다룹니다. 또한 프로그래밍의 다른 자료형인 리스트<span
+        class="sub">list</span>, 튜플<span class="sub">tuple</span>, 맵<span class="sub">map, distionary</span>과
+      비교해보면서
+      집합<span class="sub">set</span>의 개념을 명확히 해봅시다.
+    </div>
+
+    <h1>특징</h1>
+    &nbsp; 집합은 말 그대로 어떤 것들의 모음입니다. 우리는 그 어떤 것을 원소<span class=sub>element</span> 또는 구성원<span class=sub>member</span>라고
+    합니다. 모든 것이 원소가 될 수 있습니다. 그것은 숫자가 될 수도 있고, 사람이 될 수도 있고, 개념이 될 수도 있고, 심지어는 <span class="highlight2">또 다른 집합이 집합의
+      원소가 될
+      수도 있습니다.</span> 집합은 <span class="highlight1">중괄호({ }) 안에 원소를 쉼표로 구분하여 나열</span>하도록 합니다.
+    $$ 개나리반 = \{ 김민수, 이예은, 박찬구, 최아람\} $$
+    $$ 사람 = \{ 측은지심, 수오지심, 사양지심, 시비지심 \} $$
+    $$ 소풍명단 = \{ 개나리반, 장미반, 신짱구, 송지원\} $$
+
+    <br>
+    &nbsp; <span class=highlight1>집합의 가장 큰 특징은 중복을 허용하지 않는다</span>는 것입니다. 그렇다면 중복이란 무엇이며, 허용한다는 것은 무엇을 의미할까요?
+    &nbsp; 우선 가장 간단하게 떠올릴 수 있는 쇼핑리스트를 생각해봅시다. 나의 쇼핑리스트에 지우개와 팬이 있고, 친구의 쇼핑리시트에 팬과 자가 있습니다.
+    $$ 쇼핑리스트_{나} = [지우개, 팬]$$
+    $$ 쇼핑리스트_{친구} = [팬, 자]$$
+    $$ 쇼핑리스트_{나} + 쇼핑리스트_{친구} = [지우개, 팬, 팬, 자]$$
+
+    <br>
+    &nbsp; 리스트<span class="sub">list</span>는 배열<span class="sub">array</span>의 가장 단순한 형태입니다. <span class=highlight1>리스트는
+      중복을 허용합니다.</span> 무언가 추가되면 리스트의 가장 아래에 내용을 추가하면 됩니다. 단, 집합과 혼용되는 것을 막기 위해 대괄호([ ])로 표시하는 것이 일반적입니다. 같은 예를
+    집합에
+    적용해 보겠습니다.
+    $$ 선호과목_{수학} = \{재이, 찬민, 예찬\}$$
+    $$ 선호과목_{과학} = \{예찬, 태웅\}$$
+    $$ 선호과목_{수학} + 선호과목_{과학} = \{재이, 찬민, 예찬, 태웅\}$$
+
+    &nbsp; 당연하게도 수학과 과학을 좋아하는 아이들을 열거할 때, 예찬x2가 되지 않습니다. <del>다중우주에서 예찬이를 가져오지 않습니다. 넣어둡니다.</del> 쇼핑리스트, 버킷리스트,
+    Todo리스트
+    등 우리가 실생활에서 많은 리스트를 사용합니다. <del>물론, 버킷리스트는 엄밀히 말하면 버킷세트입니다만...</del> 대부분의 경우 리스트내 원소들간의 지위는 동일합니다. 무슨 의미냐면,
+    <span class=highlight1>순서가 뒤바뀌어도 구성원이 같다면 같은 그룹으로 인정한다</span>는 의미입니다. 예를 들면:
+
+    $$ 선호과목_{수학} = \{재이, 찬민, 예찬\} = \{찬민, 예찬, 재이\}$$
+
+    <p class="summary">
+      배열 <span class=sub>array</span>: 순서 ○, 중복 ○, ( )<br>
+      리스트 <span class=sub>list</span>: 순서 ×, 중복 ○, [ ]<br>
+      집합 <span class=sub>set</span>: 순서 ×, 중복 ×, { }<br>
+    </p>
+
+    &nbsp; 깜짝 질문! <span class=highlight2>로또 번호는 배열인가요? 리스트인가요? 집합인가요?</span><br><br>
+    &nbsp; 이제 프로그램으로 구현한다고 할 때, 고려해야 할 것을 알아봅시다. <span class=highlight2>실생활에서 순서를 고려하지 않는 리스트를 만든다는 것은 불가능</span> 할
+    것입니다. 실제로도 컴퓨터에 구성된 리스트는 모두 순서를 가지고 있습니다. 다만 수학적으로 순서가 다르더라도 구성원이 같다면 같은 리스트(집합)으로 간주한다는 것을 의미합니다.<br>
+    &nbsp; 배열의 가장 흔한 예시는 좌표계나 순서쌍을 들 수 있습니다.직교좌표계에서는 (3, 4), 3차원 좌표계에서는 (4, 5, 6) 등으로 표현합니다.
+
+    <h2> 연산<sub>operator</sub> </h2>
+    &nbsp; 중복을 허용하지 않는다는 룰 때문에 더하기 연산 결과물에 차이가 난다는 것을 배웠습니다. 마찬가지로 <span class=highlight1>세트의 덧셈(∪), 뺄셈(-), 곱셈(∩)에
+      대해서
+      공부해 봅시다.</span><br>
+    &nbsp; 물론 덧셈기호를 그대로 사용해도 의미가 통합니다. 심지어 코딩에서는 당연하게 덧셈기호를 사용합니다. 이는 개념적으로도 직관적으로도 (그리고 타이핑 하기에도) +가 유리하다는 뜻입니다.
+    개인적으로는
+    고리타분한 수학 때문에 합기호(∪)를 사용한다고 생각합니다. 덧셈을 ∪으로표현하는구나, 교집합=곱셈을 ∩으로 표현하는 구나하고 넘어가시면 됩니다.(교집합이 왜 곱셈인지는 나중에 나옵니다.) 식으로
+    표현하면
+    다음과 같습니다.
+    $$ A = \{1, 2, 3\} $$
+    $$ B = \{3, 4, 5\} $$
+    $$ A∪B = \{1, 2, 3, 4, 5\} $$
+    $$ A∩B = \{3\} $$
+    뺄셈 연산은 있는 것들만 빼주면 됩니다.
+    $$ A-B = \{1, 2\} $$
+
+    &nbsp; 이외에 여집합연산이 있습니다. 여집합<sapn class="sub">complement set</sapn>의 기호는 C를 윗첨자로 사용합니다. 여집합은 전체집합 중 해당집합의 원소가
+    아닌것들의
+    집합입니다.
+    $$ U = \{1, 2, 3, 4, 5\} $$
+    $$ A = \{1, 2, 3\} $$
+    $$ A^c = \{4, 5\} $$
+
+    <h2> 벤다이어그램<sub>Venn diagram</sub> </h2>
+    <p>&nbsp; 벤다이어그램은 앞서 언급했던 집합의 형태를 그림으로 보여줍니다. 각 연산 결과는 음영으로 표시합니다. 오른쪽 버튼을 눌러서 어떤 결과를 가져오는지 직접 시험해봅시다.</p>
+    <iframe src="vanndiag.html" width="100%" height="330px"></iframe>
+    <a href="vanndiag.html" download><button>파일 다운로드</button></a>
+    <h1>조건</h1>
+
+    &nbsp; 여기까지 알아본바로 정리하자면, 1 + 1 = 2 가 맞습니다만, 세트의 경우 {1} + {1} = {1} 이고, 이것도 엄연한 수학의 영역입니다. 알아본 김에 세트의 표기법에 대해서 좀
+    더
+    알아보겠습니다.<br>
+    &nbsp; 집합을 서술하고자 할 때, 원소를 단순히 나열하는 것만으로도 충분합니다. 하지만, <span class=highlight1>간결하게 표현하고 싶을 때 조건을 나열</span>함으로써 해결
+    할 수
+    있습니다. 예를 들어보겠습니다.
+    $$ 체육대회참가자명단 = \{ 민준, 서준, 도윤, 예준, ... , 지후\}
+    \\ = \{ 참가자 | 참가자=100m달리기 기록이 15초 이하인 사람\} $$
+    $$ B = \{ x | x < 15\} $$ 아마 이해가 빠른 분들 중에서는 <span class=highlight2>배열(순서쌍)을 원소로 하는 배열도 존재하겠는데?</span>라는 의문을 가지실
+      것입니다. 맞습니다. 예를 들어보겠습니다.<br><br>
+
+      원이란 무엇이냐? 원은 중심이 있고 동그란 도형입니다. 중심에서 도형까지의 거리는 언제나 같습니다. 좀 더 정확한 정의로는 <span class=highlight1>원이란 어떤 점으로부터 거리가
+        같은
+        점들의 <font color=red>'집합'</font></span>입니다. '거리'? 거리라면 피타고라스 정리를 이용해야겠군요. 원점 (0, 0)으로부터 거리가 1인 원을
+      그려보겠습니다.
+      $$ 원 = \{(x, y)| x^2+y^2=1\} $$
+
+      조건을 서술하기 위한 또 다른 표현 방법으로는 :(콜론)을 이용한 표현 방법입니다.
+      $$ p : -3 < x < 4 $$ $$ P=\{x | -3 < x < 4\} $$ <span class=highlight1>윗 줄의 소문자 p는 명제라 하고, 아랫 줄의 대문자 P는 p의
+        진리집합이라고 합니다.</span> 명제란 참 또는 거짓이 될 수 있는 개념이고, 그 명제에서 참인 부분만 모아놓은 것이 진리 집합이라고 할 수 있습니다.<br>
+        사람은 동물이다. 그러므로 동물은 사람이다. 이 말에 어떻게 반박해야 할까요? 취향을 존중해 달라고 했더니, 취향존중을 강요하지 말라고 합니다. 한 번쯤 당해보았던 빡침의 순간들을
+        수학적으로
+        반박 할 수 있습니다. 어찌 구미가 좀 당기십니까? 명제의 세상으로 떠나 봅시다.
+
+        <h1>명제</h1>
+        <span class=highlight1>명제란 참<span class="sub">true,T</span> 또는 거짓<span class="sub">false,F</span>을 판단할 수
+          있는
+          문장</span>을 말합니다.
+        <table align="center">
+          <tr class="firstline">
+            <td>명칭</td>
+            <td>기호</td>
+            <td>읽는 법</td>
+            <td>비고</td>
+          </tr>
+          <tr class="row">
+            <td>부정</td>
+            <td>~p</td>
+            <td colspan="2">not p</td>
+          </tr>
+          <tr class="row">
+            <td>논리곱</td>
+            <td>p∧q</td>
+            <td>p and q</td>
+            <td>
+              <font color=red>×, 그리고</font>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>논리합</td>
+            <td>p∨q</td>
+            <td>p or q</td>
+            <td>
+              <font color=red>＋, 또는</font>
+            </td>
+          </tr>
+          <tr class="row">
+            <td>조건</td>
+            <td>p→q</td>
+            <td colspan="2">if p, then q</td>
+          </tr>
+          <tr class="row">
+            <td>쌍조건</td>
+            <td>p↔q</td>
+            <td colspan="2">p if and only if q(p iff q)</td>
+          </tr>
+          <tr class="row">
+            <td>배타적논리합</td>
+            <td>p⊕q</td>
+            <td colspan="2">p xor q</td>
+          </tr>
+        </table>
+        우선 우리가 주목해 보야아할 부분은 합, 곱에 대해서 입니다.<br>
+        왜 <span class=highlight1>"곱하기 = 그리고"이고, "더하기 = 또는"인지</span> 이해하기 어려울 것입니다. 우선 <span class=highlight2>"있다"와
+          "없다"부터 차근차근 가보겠습니다.</span> "없다"라는 것은 0입니다. 반대로 "있다"라는 것은 "0이 아닌 것, 즉 1 이상인 것(>1)"을 의미할 것입니다.<br>
+        <table>
+          <tr class="firstline">
+            <td>경우의 수</td>
+            <td>1번 명제</td>
+            <td>2번 명제</td>
+            <td>곱하기, 그리고</td>
+            <td>더하기, 또는</td>
+          </tr>
+          <tr class="row">
+            <td align="center">1</td>
+            <td>없다=0</td>
+            <td>없다=0</td>
+            <td>0x0=0 없다</td>
+            <td>0+0=0 없다</td>
+          </tr>
+          <tr class="row">
+            <td align="center">2</td>
+            <td>없다=0</td>
+            <td style="color:#00d">있다=1</td>
+            <td>0x1=0 없다</td>
+            <td style="color:#00d">0+1=1 있다</td>
+          </tr>
+          <tr class="row">
+            <td align="center">3</td>
+            <td style="color:#00d">있다=1</td>
+            <td>없다=0</td>
+            <td>1x0=0 없다</td>
+            <td style="color:#00d">1+0=1 있다</td>
+          </tr>
+          <tr class="row">
+            <td align="center">4</td>
+            <td style="color:#00d">있다=1</td>
+            <td style="color:#00d">있다=1</td>
+            <td style="color:#00d">1x1=1 있다</td>
+            <td bgcolor=#fdd>1+1=2 있다</td>
+          </tr>
+        </table>
+        &nbsp; 위 표를 진리표<span class="sub">truth table</span>이라고 합니다. 이 진리표는 우리의 언어와 동일한 결과를 가져옵니다. 예를 들어:<br>
+
+        <blockquote>
+          명제A : "현재 날씨는 비가 온다. <font color=red>그리고</font> 현재 날씨는 맑다."<br>
+          명제B : "현재 날씨는 비가 온다. <font color=red>또는</font> 맑다. <font color=red>또는</font> 흐리다. <font color=red>또는
+          </font> 눈이 온다."
+        </blockquote>
+
+        &nbsp; 명제A는 틀린 말임을 직감적으로 알 수 있습니다. 왜냐하면 동시에 둘 다 만족할 수는 없기 때문입니다. 명제B의 경우 "또는"으로 연결된 명제 중 하나만 맞아도 참인 문장이
+        됩니다.
+        따라서 "<u>곱하기 = 모두 참(1)이어야 결과가 참 = 그리고</u>", "<u>더하기 = 하나라도 참(1)이면 결과가 참 = 또는</u>"이 됩니다.<br>
+        &nbsp; 이러한 내용들을 종합하여 논리표로 그리면 아래와 같은 결과가 나옵니다.
+
+        <table align="center">
+          <tr class="firstline">
+            <td rowspan="3">p</td>
+            <td rowspan="3">q</td>
+            <td>Logical</td>
+            <td>Not</td>
+            <td>And</td>
+            <td>Or</td>
+            <td>Xor</td>
+            <td>If</td>
+            <td>Iff</td>
+          </tr>
+          <tr class="firstline">
+            <td>Mathmatics</td>
+            <td>~p</td>
+            <td>p ∧ q</td>
+            <td>p ∨ q</td>
+            <td>p ⊕ q</td>
+            <td>p → q<sup>*</sup></td>
+            <td>p ↔ q</td>
+          </tr>
+          <tr class="firstline">
+            <td>Programmers</td>
+            <td>!p</td>
+            <td>p & q</td>
+            <td>p | q</td>
+            <td>p ^ q</td>
+            <td>-</td>
+            <td>p=q</td>
+          </tr>
+          <tr class="row">
+            <td>F</td>
+            <td>F</td>
+            <td rowspan="5"></td>
+            <td rowspan="2">T</td>
+            <td>F</td>
+            <td>F</td>
+            <td>F</td>
+            <td>T</td>
+            <td>T</td>
+          </tr>
+          <tr class="row">
+            <td>F</td>
+            <td>T</td>
+            <td>F</td>
+            <td>T</td>
+            <td>T</td>
+            <td>T</td>
+            <td>F</td>
+          </tr>
+          <tr class="row">
+            <td>T</td>
+            <td>F</td>
+            <td rowspan="2">F</td>
+            <td>F</td>
+            <td>T</td>
+            <td>T</td>
+            <td>F</td>
+            <td>F</td>
+          </tr>
+          <tr class="row">
+            <td>T</td>
+            <td>T</td>
+            <td>T</td>
+            <td>T</td>
+            <td>F</td>
+            <td>T</td>
+            <td>T</td>
+          </tr>
+          <tr class="firstline">
+            <td colspan="2">비고</td>
+            <td>
+              <font size="0.5em">p가 아님</font>
+            </td>
+            <td>
+              <font size="0.5em">모두T면 T</font>
+            </td>
+            <td>
+              <font size="0.5em">하나라도T면 T</font>
+            </td>
+            <td>
+              <font size="0.5em">T가 홀수면 T</font>
+            </td>
+            <td>
+              <font size="0.5em">p⊂q가 성립하면 T</font>
+            </td>
+            <td>
+              <font size="0.5em">p=q가 성립하면 T</font>
+            </td>
+          </tr>
+        </table>
+
+        &nbsp; 아마도 가장 부자연스러운 부분은 p → q(p이면 q이다.) 일 것 같습니다.
+
+        <blockquote>
+          명제C : "사람이면 동물이다."<br>
+          명제D : "x는 5보다 작다. 그렇다면 x는 10보다 작다."
+        </blockquote>
+        &nbsp; <span class="highlight1">'~이다.' 는 언어를 불문하고(is, です... )의 고질적 문제라면 포함관계임에도 불구하고 동등한 관계로 오해하기 쉽다는데
+          있습니다.</span> 명제C는 '사람', '동물'이라는 개념이 들어가 있고, 명제D는 작은 명제들로 이루어진 복합명제입니다. 명제든 명사든 개념으로써 그 범위가 존재하고 어려운
+        말로는
+        외연이라고 합니다.
+
+
+
+        <h2>재정의</h2>
+        &nbsp; 수에서 합은 +, 명제에서 합은 ∨, 집합에서 합은 ∪기호를 씁니다. 다만 언어로써 우리는 모두 '합'이라고 하고, 다른 표현으로 "더하기", "그리고"를 사용합니다. 우리가
+        구두로
+        '합'이라고 말하면 이후 연산을 숫자인지, 명제인지, 집합인지(또는 리스트인지)에 따라서 알아서 연산합니다. 이를 개발자들은 연산자의 재정의라고 합니다.
+
+        <h1>수능 출제의 취향</h1>
+        <h1>구현</h1>
+        &nbsp; 이를 구현할 때, 가장 문제가 되는 것은 얼마나 큰 도화지를 준비해야 하는지, 또는 새로 추가하는 원소가 중복이 되는 지를 확인하는 작업일 것입니다. 가장 확실한 방법은 새로
+        추가할 때마다 확인하는 방법이 확실합니다만 실제로는 이미 구현된 라이브러리를 가져와 사용합니다. <br>
+  </article>
+</body>
+
+</html>

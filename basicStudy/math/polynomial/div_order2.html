@@ -1,0 +1,130 @@
+<html>
+
+<head>
+  <meta charset="UTF-8" name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <style>
+    .disable {
+      fill: #ccc;
+    }
+  </style>
+  <script>
+    var max = 20;
+    var curOrder = max;
+    function toOrder(order) {
+      if (order > max) {
+        curOrder = 1;
+      } else if (order <= 0) {
+        curOrder = max;
+      } else {
+        curOrder = Number(order);
+      }
+      for (var i = 1; i <= max; i++) {
+        if (i <= curOrder)
+          document.getElementById(('o' + i)).style.visibility = 'visible';
+        else
+          document.getElementById(('o' + i)).style.visibility = 'hidden';
+      }
+      document.getElementById('text').value = curOrder;
+      document.getElementById('curOrder').value = curOrder;
+    }
+
+    var isPlaying = false;
+    function play(btn) {
+      if (curOrder >= max) {
+        curOrder = 1;
+      }
+      if (isPlaying) {
+        btn.innerText = "▶";
+        isPlaying = false;
+      } else {
+        btn.innerText = "■";
+        isPlaying = true;
+        if (curOrder == max) {
+          curOrder = 1;
+        }
+        timer();
+      }
+    }
+
+    function timer() {
+      if (isPlaying) {
+        toOrder(curOrder);
+        curOrder++;
+        if (curOrder > max) {
+          isPlaying = false;
+          document.getElementById('playBtn').innerText = "▶";
+          return;
+        }
+        document.getElementById('text').value = curOrder;
+        document.getElementById('curOrder').value = curOrder;
+
+        setTimeout(timer, spd);
+      }
+    }
+
+    var spd = 200;
+    function changeSpd(newSpd) {
+      spd = 1000 / newSpd;
+    }
+
+    function previous() {
+      toOrder(curOrder - 1);
+    }
+
+    function next() {
+      toOrder(curOrder + 1);
+    }
+  </script>
+</head>
+
+<body style="margin:0">
+  </head>
+  <div
+    style="border: 1px solid gray; padding: 10 5;border-radius: 5px; margin: 5px; display: inline-block;vertical-align: middle; min-width: 45%;text-align: center;">
+    자동재생 :
+    <button id="playBtn" onclick="play(this)">▶</button>
+    <input type="range" id="speed" min="1" max="10" value="5" onmousemove="changeSpd(this.value)"
+      onmouseup="changeSpd(this.value)" onchange="changeSpd(this.value)" />
+  </div>
+  <div
+    style="border: 1px solid gray; padding: 10 5;border-radius: 5px; margin: 5px; display: inline-block;min-width: 45%;text-align: center;">
+    <button onclick="previous()">←</button>
+    <button onclick="next()">→</button>
+    <input type="range" id="curOrder" min="1" max="20" value="20" onmousemove="toOrder(this.value)"
+      onmouseup="toOrder(this.value)" onchange="toOrder(this.value)" />
+    <input type="text" id="text" disabled size="2" style="text-align:right" value="20" />
+  </div><br>
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 100" width="100%" style="max-height: 400px;">
+    <g style="font-family:'Times New Roman'">
+      <!-- 3 4 0 5 -->
+      <text id="o1" x="52" y="17">3</text>
+      <text id="o2" x="84" y="17">4</text> 
+      <text id="o3" x="117" y="17" >0</text> 
+      <text id="o4" x="139" y="17" style="font-family:monospace">－</text>
+      <text id="o5" x="150" y="17">5</text> 
+      
+      <!-- -2 -->
+      <text id="o6" x="20" y="37" style="font-family:monospace">－</text>
+      <text id="o7" x="31" y="37">2</text>
+
+      <path id="o8" d="M45,3 v39 h125" stroke="black" fill="none" />
+
+      <!-- -6 4 -8 -->
+      <text id="o10" x="73" y="37" style="font-family:monospace">－</text> 
+      <text id="o11" x="84" y="37">6</text> 
+      <text id="o14" x="117" y="37">4</text> 
+      <text id="o16" x="139" y="37" style="font-family:monospace">－</text> 
+      <text id="o17" x="150" y="37">8</text> 
+
+      <!-- 3 -2 4 -13 -->
+      <text id="o9" x="52" y="58">3</text>
+      <text id="o12" x="73" y="58" style="font-family:monospace">－</text> 
+      <text id="o13" x="84" y="58">2</text> 
+      <text id="o15" x="117" y="58">4</text> 
+      <text id="o19" x="139" y="58" style="font-family:monospace">－</text> 
+      <text id="o20" x="150" y="58">13</text> 
+      <path id="o18" d="M135,45 v19 h35" stroke="black" fill="none" />
+    </g>
+  </svg>
+</body>

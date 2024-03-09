@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>원 그리기</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="arcs" width="600" height="300"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var ctx = document.getElementById('arcs').getContext('2d');
+    for (var i = 0; i < 6; i++) {
+      // 0: 시계방향 그리기, 1: 시계방향 채우기, 2: 시계방향 채우기(중심점 찍기)
+      // 3: 반시계방향 그리기, 4: 반시계방향 채우기, 5:  반시계방향 채우기(중심점 찍기)
+      for (var j = 0; j < 12; j++) {
+        ctx.beginPath();
+        var x = j * 50; // 중심점 x
+        var y = 25 + i * 50; // 중심점 y
+        var radius = 20; // 반지름
+        var startAngle = 0; // 시작점(3시)
+        var endAngle = (Math.PI * j) / 6; // 도착점(+1시간)
+        var anticlockwise = i > 2 == 0 ? false : true;
+
+        if (i % 3 == 2) ctx.moveTo(x, y);
+        ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise); // 그리기
+
+        if (i % 3) {
+          ctx.fill(); // 채우기 방식
+        } else {
+          ctx.stroke(); // 그리기 방식
+        }
+      }
+    }
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

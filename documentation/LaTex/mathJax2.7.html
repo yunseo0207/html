@@ -1,0 +1,52 @@
+<html>
+
+<head>
+  <meta lang="ko">
+  <meta charset="UTF-8" language="ko">
+  <script src="https://code.jquery.com/jquery-latest.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+  <script>
+
+    MathJax.Hub.Config({
+      tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+    });
+  </script>
+  <style>
+    @import url(/style.css);
+  </style>
+</head>
+
+<body>
+  <article>
+    <p>2.7.1버전</p>
+    특징
+    <ul>
+      <li>드레그가 된다.</li>
+      <li>기본 좌측 정렬</li>
+      <li>일부 명령어가 동작하지 않음</li>
+    </ul>
+    <blockquote>
+      &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-AMS-MML_HTMLorMML">&lt;/script>
+    </blockquote>
+    <p>한줄 입력 명령어 추가</p>
+    <blockquote>
+      <pre>&lt;script>
+  MathJax.Hub.Config({
+    tex2jax: { inlineMath: [['$', '$'], ['\\(', '\\)']] },
+  })
+&lt;/script></pre>
+    </blockquote>
+    \[\begin{align} \sum_{i=1}^{n} \{ i^3 - (i+1)^3 \} &= (1 - \cancel{2^3}) + ({2^3} - {3^3}) + ... +
+    ({n^3} - (n+1)^3)
+    \\ &= 1 - (n+1)^3
+    \\ &= 1 -n^3 -3n^2 -3n {-1}
+    \end{align}\]
+    <blockquote>
+      &Backslash;[&Backslash;begin{align} &Backslash;sum_{i=1}^{n} &Backslash;{ i^3 - (i+1)^3 &Backslash;} &= (1 - &Backslash;cancel{2^3}) + ({2^3} - {3^3}) + ... +
+    ({n^3} - (n+1)^3)
+    &Backslash;&Backslash; &= 1 - (n+1)^3
+    &Backslash;&Backslash; &= 1 -n^3 -3n^2 -3n {-1}
+    &Backslash;end{align} &Backslash;]
+    </blockquote>
+  </article>
+</body>

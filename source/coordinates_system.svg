@@ -1,0 +1,62 @@
+<svg id="svg"
+  xmlns="http://www.w3.org/2000/svg" width="500" height="300" viewBox="0 0 500 300" style="cursor:none;max-width: 100%;">
+  <style type="text/css">
+  .text {
+    font-size: 27px;
+  }
+
+  .line {
+    fill: none;
+    stroke: #000;
+  }
+
+  .lineEven {
+    fill: none;
+    stroke: #aaa;
+  }
+
+  .lineOdd {
+    fill: none;
+    stroke: #ddd;
+  }
+
+  .lineDet1 {
+    fill: none;
+    stroke: #f8f8f8;
+  }
+  </style>
+  <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+    <path d="M9 0L0 4 0 -4 z" />
+  </marker>
+  <path class="lineDet1" d="M1,25 h1000 M1,75 h1000 M1,125 h1000 M1,175 h1000 M1,225 h1000 M1,275 h1000 M1,325 h1000 M1,375 h1000 M1,425 h1000 M1,475 h1000 M1,525 h1000 M1,575 h1000 M1,625 h1000 M1,675 h1000 M1,725 h1000 M1,775 h1000 M1,825 h1000 M1,875 h1000 M1,925 h1000 M1,975 h1000" />
+  <path class="lineDet1" d="M25,1 v1000 M75,1 v1000 M125,1 v1000 M175,1 v1000 M225,1 v1000 M275,1 v1000 M325,1 v1000 M375,1 v1000 M425,1 v1000 M475,1 v1000 M525,1 v1000 M575,1 v1000 M625,1 v1000 M675,1 v1000 M725,1 v1000 M775,1 v1000 M825,1 v1000 M875,1 v1000 M925,1 v1000 M975,1 v1000" />
+  <rect width="1000" height="440" style="fill:white;" />
+  <path class="lineOdd" d="M1,50 h1000 M1,150 h1000 M1,250 h1000 M1,350 h1000 M1,450 h1000 M1,550 h1000 M1,650 h1000 M1,750 h1000 M1,850 h1000 M1,950 h1000" />
+  <path class="lineOdd" d="M50,1 v1000 M150,1 v1000 M250,1 v1000 M350,1 v1000 M450,1 v1000 M550,1 v1000 M650,1 v1000 M750,1 v1000 M850,1 v1000 M950,1 v1000" />
+  <path class="lineEven" d="M1,1 h1000 M1,100 h1000 M1,200 h1000 h1000 M1,300 h1000 M1,400 h1000 M1,500 h1000 M1,600 h1000 M1,700 h1000 M1,800 h1000 M1,900 h1000" />
+  <path class="lineEven" d="M1,1 v1000 M100,1 v1000 M200,1 v1000 h1000 M300,1 v1000 M400,1 v1000 M500,1 v1000 M600,1 v1000 M700,1 v1000 M800,1 v1000 M900,1 v1000" />
+  <path marker-end="url(#ah1)" d="M20 10 h100" style="fill:none;stroke:#000" />
+  <text style="font: size 29px" x="23" y="13" alignment-baseline="hanging">x축 증가방향.</text>
+  <path marker-end="url(#ah1)" d="M10 35 v100" style="fill:none;stroke:#000" />
+  <text style="font: size 29px" x="0" y="0" alignment-baseline="hanging" transform="translate(35,35) rotate(90)">y축 증가방향.</text>
+  <text style="font: size 29px" x="73" y="63" alignment-baseline="hanging">좌표 = (x, y)</text>
+
+  <text id="text" style="font: size 29px" x="105" y="105" alignment-baseline="hanging">마우스를 가져가세요.</text>
+  <rect id="rect" x="100" y="100" width="150" height="75" style="fill:#F88; opacity: 0.3;" />
+  <script>
+  var svg = document.getElementById("svg");
+  var text = svg.getElementById("text");
+  var rect = svg.getElementById("rect");
+
+  svg.addEventListener("mousemove", (e) => {
+    x = Math.round(e.clientX - svg.getClientRects()[0].x);
+    y = Math.round(e.clientY - svg.getClientRects()[0].y);
+    text.textContent = "(" + x + "," + y + ")";
+
+    rect.x.baseVal.value = x;
+    rect.y.baseVal.value = y;
+    text.x.baseVal[0].value = x + 5;
+    text.y.baseVal[0].value = y + 5;
+  });
+  </script>
+</svg>

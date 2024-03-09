@@ -1,0 +1,73 @@
+<html>
+
+<head>
+  <title>필터 테스트</title>
+  <style>
+    body>div>div>div {
+      width: 3cm;
+      height: 3cm;
+      background-image: url("/source/icon_homeColor.svg");
+    }
+
+    body>div {
+      background-image: none;
+      width: min(100vw, 15cm);
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+    }
+
+    body>div>div {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      border: 1px solid #eee;
+      border-radius: 13px;
+      margin: 4px;
+    }
+    body>div>div>span {
+      padding: 5px;
+    }
+    
+  </style>
+</head>
+
+<body>
+  <div>
+    <div>
+      <div></div><span>Original</span>
+    </div>
+    <div>
+      <div style="filter: blur(2px);"></div><span>blur(2px)</span>
+    </div>
+    <div>
+      <div style="filter: brightness(40%);"></div><span>brightness(40%)</span>
+    </div>
+    <div>
+      <div style="filter: contrast(200%);"></div><span>contrast(200%)</span>
+    </div>
+    <div>
+      <div style="filter: grayscale(50%);"></div><span>grayscale(50%)</span>
+    </div>
+    <div>
+      <div style="filter: hue-rotate(90deg);"></div><span>hue-rotate(90deg)</span>
+    </div>
+    <div>
+      <div style="filter: invert(100%);"></div><span>invert(100%)</span>
+    </div>
+    <div>
+      <div style="filter: opacity(25%);"></div><span>opacity(25%)</span>
+    </div>
+    <div>
+      <div style="filter: saturate(30%);"></div><span>saturate(30%)</span>
+    </div>
+    <div>
+      <div style="filter: sepia(60%);"></div><span>sepia(60%)</span>
+    </div>
+    <div>
+      <div style="filter: drop-shadow(5px 5px 5px #444);"></div><span>drop-shadow(5px 5px 5px #444)</span>
+    </div>
+  </div>
+</body>
+
+</html>

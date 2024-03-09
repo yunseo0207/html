@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+  <meta charset="UTF-8">
+  <title>좌표 체계</title>
+</head>
+
+<body onload="draw()">
+  <canvas id="axis" width="350" height="170"></canvas>
+</body>
+
+</html>
+
+<script>
+  function draw() {
+    var canvas = document.getElementById('axis');
+    if (canvas.getContext) {
+      var ctx = canvas.getContext('2d');
+
+      ctx.moveTo(0, 100);
+      ctx.lineTo(150, 100);
+      ctx.lineTo(150, 0);
+      ctx.stroke();
+      ctx.font = '15px serif';
+      ctx.fillStyle = 'red';
+      ctx.fillStyle = 'gray';
+      ctx.fillText('150', 70, 120);
+      ctx.fillText('100', 155, 50);
+      point(ctx, 0, 0, "red");
+      ctx.fillText('(0,0)', 10, 20);
+      point(ctx, 150, 100, "red");
+      ctx.fillText('(150,100)', 150, 120);
+      point(ctx, 250, 110, "red");
+      ctx.fillText('(250,110)', 250, 130);
+
+    }
+
+    function point(ctx, x, y, color) {
+      ctx.beginPath();
+      ctx.fillStyle = color;
+      ctx.moveTo(x, y);
+      ctx.arc(x, y, 5, 0, Math.PI * 2, true);
+      ctx.fill();
+    }
+  }
+</script>
+<style>
+  canvas {
+    border: 1px solid #ccc;
+  }
+</style>

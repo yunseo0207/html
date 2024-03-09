@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta discription="Cos 법칙을 소개합니다.">
+  <meta keywords="iseohyun, 튜토리얼, 수학, 코사인법칙, 증명, 유도">
+  <meta author="iseohyun">
+
+  <!-- 페이지 타이틀 -->
+  <title>Cos법칙: 삼각함수 - iseohyun </title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-453XSP5W9M');
+  </script>
+
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+
+    .graph {
+      width: 300px;
+      min-width: 40vw;
+      padding: 30px;
+      margin: 10px auto;
+      display: block;
+      border: 1px solid #eee;
+      border-radius: 10px;
+    }
+
+    p {
+      line-height: 3.5em;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="title">코사인 법칙</div>
+  
+  <article>
+    <h1>코사인법칙 증명</h1>
+    <h2>유도하는 과정</h2>
+    <ul>
+      <li><u>cos <em>B</em></u>를 구하고 싶습니다. cos B가 들어간 방정식을 만들어 봅니다.</li>
+      <li><em>?</em>에 sin B를 사용하면 항등식으로 흘러가니<del>(큰 의미 없는 결과가 나오니)</del>, 다른 방법을 모색해봅니다.</li>
+    </ul>
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="graph">
+      <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M0 4 L9 0 0 -4" style="fill:none; stroke:black" />
+      </marker>
+      <!-- (50, 350) (450, 350) (150, 100) -->
+      <g style="stroke: #000;fill:none">
+        <path d="M0 350 h500"></path>
+        <path d="M150 100 v250" style="stroke-dasharray: 5;" />
+        <path d="M150 330 h20 v20" />
+
+        <g style="stroke-dasharray: 5;stroke:#aaa">
+          <path d="M150 350 Q300 300 450 350" />
+          <path d="M150 100 Q340 185 450 350" />
+          <path d="M150 100 Q190 225 150 350" />
+        </g>
+        <path d="M177 245 h48" style="stroke:#aaa" />
+
+        <path d="M420 350 A30 30 0 0 1 427 331" style="stroke:red" />
+        <path style="stroke-width:3px" d="M50 350 h400 L150 100z" />
+      </g>
+      <g style="font-family:'times new roman';font-size: 16.4px;font-style:italic">
+        <g style="font-size:20px">
+          <text x="25" y="370">A</text>
+          <text x="450" y="370">B</text>
+          <text x="140" y="90">C</text>
+        </g>
+        <text x="180" y="230" style="font-size:30px;fill:red">?</text>
+        <text x="180" y="250 " style="fill:#aaa">a sinB</text>
+        <text x="270" y="320">a cosB</text>
+        <text x="330" y="200">a</text>
+      </g>
+    </svg>
+    <h2>높이를 위한 피타고라스 정리</h2>
+    <ul>
+      <li>붉은 색 삼각형을 주목합니다.</li>
+      <li>밑변의 길이는 c에서 a cosB를 뺀 값으로 구 할 수 있습니다.</li>
+      <li>붉은 색 삼각형을 피타고라스 정리를 이용해서 높이를 구할 수 있습니다.
+        \[ 높이^2 = 빗변^2 - 밑변^2 \]
+      </li>
+      <li>\( ? = \sqrt{b^2 - (c -a\cos B)^2}\)</li>
+    </ul>
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="graph">
+      <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M0 4 L9 0 0 -4" style="fill:none; stroke:black" />
+      </marker>
+      <!-- (50, 350) (450, 350) (150, 100) -->
+      <g style="stroke: #000;fill:none">
+        <path d="M0 350 h500"></path>
+        <path d="M150 330 h20 v20" />
+
+        <g style="stroke-dasharray: 5;stroke:#aaa">
+          <path d="M150 350 Q300 300 450 350" /> <!-- a cosB -->
+          <path d="M50 350 Q50 205 150 100" /> <!-- b -->
+          <!-- <path d="M150 100 Q340 185 450 350" /> -->
+          <path d="M150 100 Q190 225 150 350" />
+          <path d="M50 350 Q100 380 150 350" />
+        </g>
+
+        <path d="M420 350 A30 30 0 0 1 427 331" style="stroke:red" />
+        <path style="fill:#fee" d="M50 350 h100 L150 100z" />
+        <path style="stroke-width:3px" d="M50 350 h400 L150 100z" />
+      </g>
+      <g style="font-family:'times new roman';font-size: 16.4px;font-style:italic">
+        <g style="font-size:20px">
+          <text x="25" y="370">A</text>
+          <text x="450" y="370">B</text>
+          <text x="140" y="90">C</text>
+        </g>
+
+        <path d="M175 245 l3 7 2 -20 h 110" style="stroke:#F88;fill:none" />
+        <text x="180" y="220" style="font-size:30px;fill:red">?= </text>
+        <g style="fill:#F88">
+          <text x="184" y="250"> b - (c - a cosB)</text>
+          <text x="192" y="241" style="font-size:12px">2</text>
+          <text x="282" y="241" style="font-size:12px">2</text>
+        </g>
+        <text x="270" y="320">a cosB</text>
+        <text x="100" y="380">c - a cosB</text>
+        <text x="50" y="220">b</text>
+      </g>
+    </svg>
+
+    <h2>완성</h2>
+    <ul>
+      <li>푸른 색 삼각형을 주목합니다.</li>
+      <li>피타고라스 정리로 식을 완성합니다.<br>
+        \( \sqrt{b^2 - (c -a\cos B)^2}^2 + a \cos B = a^2 \)</li>
+      <li>식을 정리합니다.<br>
+        <p>
+          \( b^2 - c^2 + 2ac\cos B - \cancel {(a\cos B)^2} + \cancel {(a\cos B)^2} = a^2 \)<br>
+          \(2ac \cos B = a^2 + c^2 - b^2 \)<br>
+          \( \displaystyle \cos B = \frac {a^2 + c^2 - b^2}{2ac} \)
+        </p>
+      </li>
+
+    </ul>
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg viewBox="0 0 500 400" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com" class="graph">
+      <marker id="ah1" markerWidth="20" markerHeight="20" viewBox="0 0 20 10" orient="auto">
+        <path d="M0 4 L9 0 0 -4" style="fill:none; stroke:black" />
+      </marker>
+      <!-- (50, 350) (450, 350) (150, 100) -->
+      <g style="stroke: #000;fill:none">
+        <path d="M0 350 h500"></path>
+        <path d="M150 330 h20 v20" />
+        <path style="fill:#eef" d="M150 100 v250 h300z" />
+
+        <g style="stroke-dasharray: 5;stroke:#aaa">
+          <path d="M150 350 Q300 390 450 350" /> <!-- a cosB -->
+          <path d="M150 100 Q340 185 450 350" />
+          <path d="M150 100 Q120 225 150 350" />
+        </g>
+
+        <path d="M420 350 A30 30 0 0 1 427 331" style="stroke:red" />
+        <path style="stroke-width:3px" d="M50 350 h400 L150 100z" />
+      </g>
+      <g style="font-family:'times new roman';font-size: 16.4px;font-style:italic">
+        <g style="font-size:20px">
+          <text x="25" y="370">A</text>
+          <text x="450" y="370">B</text>
+          <text x="140" y="90">C</text>
+        </g>
+
+        <path d="M155 245 l3 7 2 -20 h 110" style="stroke:#F88;fill:none" />
+        <g style="fill:#F88">
+          <text x="164" y="250"> b - (c - a cosB)</text>
+          <text x="172" y="241" style="font-size:12px">2</text>
+          <text x="262" y="241" style="font-size:12px">2</text>
+        </g>
+        <text x="270" y="390">a cosB</text>
+        <text x="330" y="200">a</text>
+      </g>
+    </svg>
+    <blockquote>
+      \[ \cos B = \frac {a^2 + c^2 - b^2}{2ac} \]
+    </blockquote>
+    <h1>응용</h1>
+    <h2>제1 코사인 법칙</h2>
+    다음을 정리합니다.<br>
+    \( \begin{aligned} a \cos B + b \cos A &= \cancel a \frac{a^2 + c^2 - b^2}{2 \cancel ac} + \cancel b \frac{b^2 + c^2
+    - a^2}{2 \cancel bc }
+    \\ &= \frac{\cancel{a^2} + c^2 - \cancel{b^2} + \cancel{b^2} + c^2 - \cancel{a^2}}{c}
+    \\ &= \frac{c ^ \cancel 2}{\cancel c} = c
+    \end{aligned} \)
+    <blockquote>
+      \[ c = a \cos A + a \cos B \]
+    </blockquote>
+
+    <h2>코사인 법칙 변형</h2>
+    <p>
+      \( \displaystyle \cos B = \frac {a^2 + c^2 - b^2}{2ac} \)<br>
+      \( 2ac \cos B = a^2 + c^2 - b^2 \)<br>
+      \( b^2 = a^2 + c^2 - b^2 - 2ac \cos B\)
+    </p>
+    <blockquote>
+      \[ b^2 = a^2 + c^2 - b^2 - 2ac \cos B\]
+    </blockquote>
+  </article>
+</body>
+
+</html>
