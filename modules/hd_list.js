@@ -365,11 +365,11 @@ board.addEventListener('scroll', (e) => {
 // reference를 문서 마지막에 추가합니다.
 document.addEventListener('DOMContentLoaded', addReference);
 
+var article = document.querySelector("article");
 function addReference() {
-  var article = document.querySelector("article");
 
   var references = document.querySelectorAll(".reference");
-  if(references.length < 1) {
+  if (references.length < 1) {
     return;
   }
 
@@ -381,7 +381,8 @@ function addReference() {
     var discription = references[i].querySelector('.discription');
     if (discription) {
       // 본인의 위치 변경
-      discription.style.left = (200 - references[i].offsetLeft) + "px";
+      discription.style.left = (article.offsetLeft - references[i].offsetLeft + ((article.offsetWidth > 860)?250:50)) + "px";
+      discription.style.width = ((article.offsetWidth > 860) ? 760 : article.offsetWidth * 0.9) + "px";
 
       // 문서 하단에 내용을 추가 기재
       var refSpan = document.createElement('span');
