@@ -61,27 +61,31 @@
       <span class="reference">위키백과
         <tspan class="discription">TeX_문법</tspan>
         <tspan class="link">https://ko.wikipedia.org/wiki/위키백과:TeX_문법</tspan>
-      </span>, 
+      </span>,
       <span class="reference">확장 문법
         <tspan class="discription">LaTeX/Advanced Mathematics</tspan>
         <tspan class="link">https://en.wikibooks.org/wiki/LaTeX/Advanced_Mathematics</tspan>
-      </span>, 
+      </span>,
       <span class="reference">블로그
         <tspan class="discription">이슬비, "MATHJAX로 수식 입력하는 방법", 2021.9.12</tspan>
         <tspan class="link">https://sasamath.com/blog/tip-collection/how-to-write-equations-in-mathjax/</tspan>
-      </span>, 
+      </span>,
       <span class="reference">나무위키
         <tspan class="discription">문법 도움말/심화/TeX</tspan>
         <tspan class="link">https://namu.wiki/w/나무위키:문법%20도움말/심화/TeX</tspan>
       </span>를 참고 하였습니다.
     </p>
-    
+
 
     <h1>MathJax</h1>
-    &nbsp;mathjax.org에서는 설명서(<a href="https://docs.mathjax.org/en/latest/">https://docs.mathjax.org/en/latest/</a>)는 물론,
-    코드 공유도 이루어지고 있습니다. 최신 버전에 대한 내용은 <a href="https://www.mathjax.org/#gettingstarted">여기</a>에서 확인 할 수 있습니다.<br>
+    <p>
+      &nbsp;mathjax.org에서는 설명서(<a href="https://docs.mathjax.org/en/latest/"
+        target="_blank">https://docs.mathjax.org/en/latest/</a>)는
+      물론,코드 공유도 이루어지고 있습니다. 최신 버전에 대한 내용은 <a href="https://www.mathjax.org/#gettingstarted" target="_blank">여기</a>에서 확인
+      할 수 있습니다.<br>
+    </p>
 
-    &nbsp;아래 코드를 페이지에 삽입하면 아래와 같은 수식을 표현할 수 있습니다.
+    <p>&nbsp;아래 코드를 페이지에 삽입하면 아래와 같은 수식을 표현할 수 있습니다.</p>
     <pre><code>&lt;script src="https://polyfill.io/v3/polyfill.min.js?features=es6">&lt;/script>
 &lt;script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js">&lt;/script></code></pre>
     </script>
@@ -93,11 +97,15 @@
       When \\(a \\ne 0\\), there are two solutions to \\(ax^2 + bx + c = 0\\) and they are<br>
       \\[x = {-b \\pm \\sqrt{b^2-4ac} \\over 2a}\\]
     </blockquote>
+
     <h2>버전</h2>
-    &nbsp;버전에 따라 브라우저에서 바로 실행하면 정상적으로 보이지 않는 경우가 있는데, 이 때는 apache나 IIS를 설치하고, 127.0.0.1 (localhost)로 접속하면 정상적으로 동작하는 것을
-    확인 할 수 있습니다.
-    <a href="https://jsbin.com/qocicuzazu/edit?html,output">https://jsbin.com/qocicuzazu/edit?html,output</a>에서 바로 테스트 해
-    볼 수 있습니다.<br>
+    <p>
+      &nbsp;버전에 따라 브라우저에서 바로 실행하면 정상적으로 보이지 않는 경우가 있는데, 이 때는 apache나 IIS를 설치하고, 127.0.0.1 (localhost)로 접속하면 정상적으로 동작하는
+      것을 확인 할 수 있습니다.<br>
+      <a href="https://jsbin.com/qocicuzazu/edit?html,output"
+        target="_blank">https://jsbin.com/qocicuzazu/edit?html,output</a>에서 바로 테스트 해
+      볼 수 있습니다.
+    </p>
     <style>
       #version271 {
         height: 500px;
@@ -186,7 +194,7 @@
 
 
     <h1>기본 문법</h1>
-    <var>\\( ... \\)</var> 또는 <var>\\[ ... \\]</var>를 페이지 중간에 삽입합니다.
+    <p><var>\( ... \)</var> 또는 <var>\[ ... \]</var>를 페이지 중간에 삽입합니다.</p>
     <table>
       <caption>수식 문서에 삽입방법</caption>
       <thead>
@@ -209,7 +217,8 @@
         </tr>
       </tbody>
     </table>
-    추가설정
+
+    <h3>추가설정</h3>
     <pre><code>&lt;script>
 MathJax = {
   tex: {
@@ -234,32 +243,35 @@ MathJax = {
     margin: 10px auto;">
       피타고라스 정리 $ a^2 + b^2 = c^2 $는 원의 방정식 $$ x^2 + y^2 = r^2 $$과 흡사합니다.
     </div>
+
     <h2>줄 바꿈</h2>
-    &nbsp;줄 바꿈을 하기 위해서 수식의 시작과 끝에 <var>\\begin{aligned}</var>과 <var>\\end{aligned}</var>으로 감싸주어야 합니다. 이후 \\\\를 이용하여 새 줄을
-    표시할 수 있습니다.
-    단, 세로줄을 일치시키기 위해서는 <var>&</var>기호를 사용합니다.
-    - 사용 안함
+    <p>
+      &nbsp;줄 바꿈을 하기 위해서 수식의 시작과 끝에 <var>\begin{aligned}</var>과 <var>\end{aligned}</var>으로 감싸주어야 합니다. 이후 \\를 이용하여 새 줄을
+      표시할 수 있습니다.
+      단, 세로줄을 일치시키기 위해서는 <var>&</var>기호를 사용합니다.
+    </p>
+    <p>- 사용 안함</p>
     <blockquote>
       \\[ a = b + c <em>\\\\</em> = d + e = f +g <em>\\\\</em> = h = i \\]
     </blockquote>
     \[ a = b + c \\ = d + e = f +g \\ = h = i \]
-    - 줄 바꿈 사용
+    <p>- 줄 바꿈 사용</p>
     <blockquote>
       \\[ <em>\\begin{aligned}</em> a = b + c \\\\ = d + e = f +g \\\\ = h = i <em>\\end{aligned}</em> \\]
     </blockquote>
     \[ \begin{aligned} a = b + c \\ = d + e = f +g \\ = h = i \end{aligned} \]
-    - <var>&</var> 사용
+    <p>- <var>&</var> 사용</p>
     <blockquote>
       \\[ \\begin{aligned} a <em>&</em>= b + c \\\\ <em>&</em>= d + e = f +g \\\\ <em>&</em>= h = i \\end{aligned} \\]
     </blockquote>
     \[ \begin{aligned} a &= b + c \\ &= d + e = f +g \\ &= h = i \end{aligned} \]
-    &nbsp; - 문제점
+    <p>&nbsp; - 문제점: "=f+g"와 "=i" 의 정렬기준이 맞지 않습니다.</p>
     <blockquote>
       \\[ \\begin{aligned} a <em>&</em>= b + c \\\\ <em>&</em>= d + e <em>&</em>= f +g \\\\ <em>&</em>= h <em>&</em>= i
       \\end{aligned} \\]
     </blockquote>
     \[ \begin{aligned} a &= b + c \\ &= d + e &= f +g \\ &= h &= i \end{aligned} \]
-    - <var>\begin{array}</var>사용 (c:center, l:left, r:right)
+    <p>- "\begin{array}"사용 (c:center, l:left, r:right)</p>
     <blockquote>
       \\[ <em>\begin{array}{lll}</em> a &= b + c \\\\ &= d + e &= f +g \\\\ &= h &= i <em>\end{array}</em>\\]
     </blockquote>
@@ -270,13 +282,16 @@ MathJax = {
       \\( a^<em> {\\color{red}</em> b <em> }</em> \\)
     </blockquote>
     \[ a^{\color{red}b} \]
-    RGB(예:#AAAAAA, #888)또는 예약어(red, blue...)를 사용할 수 있습니다.<br>
+    <p>&nbsp;RGB(예:#AAAAAA, #888)또는 예약어(red, blue...)를 사용할 수 있습니다.</p>
 
     <h2>크기</h2>
     <h3>글자의 크기</h3>
-    &nbsp;글자 크기는 <var>\\tiny</var>, <var>\scriptsize</var>, <var>\footnotesize</var>, <var>\small</var>,
-    <var>\normalsize</var>, <var>\large</var>, <var>\Large</var>, <var>\LARGE</var>, <var>\huge</var>, <var>\Huge</var>로
-    크기를 조절 할 수 있습니다. 다만 디자인 관점에서 <u>CSS를 이용해서 다루는 것이 더 통일성 있고 수월하게</u> 다룰 수 있습니다. <br>
+    <p>
+      &nbsp;글자 크기는 <var>\tiny</var>, <var>\scriptsize</var>, <var>\footnotesize</var>, <var>\small</var>,
+      <var>\normalsize</var>, <var>\large</var>, <var>\Large</var>, <var>\LARGE</var>, <var>\huge</var>,
+      <var>\Huge</var>로
+      크기를 조절 할 수 있습니다. 다만 디자인 관점에서 <u>CSS를 이용해서 다루는 것이 더 통일성 있고 수월하게</u> 다룰 수 있습니다.
+    </p>
     <blockquote>
       &lt;mjx-container ...
     </blockquote>
@@ -315,9 +330,9 @@ MathJax = {
       <caption>괄호의 크기</caption>
       <thead>
         <tr>
-          <td>크기</td>
-          <td>문법</td>
-          <td colspan="2">출력</td>
+          <th>크기</th>
+          <th>문법</th>
+          <th colspan="2">출력</th>
         </tr>
       </thead>
       <tbody>
@@ -360,8 +375,10 @@ MathJax = {
       </tbody>
     </table>
     <h1>기호</h1>
-    &nbsp;html 예약기호를 \\를 이용해서 latex에서 구현 할 수 있습니다. <a href="../html/symbol_name.html" target="_blank">참고</a><br>
-    <sup>*</sup>클릭하면 클립보드로 복사됩니다.
+    <p>
+      &nbsp;html 예약기호를 \를 이용해서 latex에서 구현 할 수 있습니다. <a href="/etc/column/font/symbol.html" target="_blank">참고</a><br>
+      <sup>*</sup>클릭하면 클립보드로 복사됩니다.
+    </p>
     <style>
       #tex-symbol {
         padding: 10px;
@@ -494,6 +511,7 @@ MathJax = {
         });
       });
     </script>
+
     <h2>함수</h2>
     <table>
       <caption>함수의 동작 사례</caption>
@@ -505,7 +523,6 @@ MathJax = {
         </tr>
       </thead>
       <tbody>
-
         <tr>
           <td>분수</td>
           <td>\(\frac{1}{2}\)</td>
