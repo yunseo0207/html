@@ -6,7 +6,7 @@
   <!-- 모바일 스케일 고정 -->
   <meta name="viewport"
     content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
-  <meta discription="튜토리얼을 제공합니다.">
+  <meta description="튜토리얼을 제공합니다.">
   <meta keywords="iseohyun, 중학과학, 중1, 지권의 변화">
   <meta author="iseohyun">
 
@@ -32,20 +32,1455 @@
     hljs.initLineNumbersOnLoad();
   </script>
 
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- 차트 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+
   <!-- 목차 생성 -->
   <script src="/modules/hd_list.js" defer></script>
 
   <!-- 공통스킨 -->
   <style type="text/css">
     @import url("/style.css");
+
+    article {
+      max-width: 1050px;
+    }
   </style>
 </head>
 
 <body>
   <article>
     <div id="title">중1: 지권의 변화</div>
-    <p>작성 대기 중입니다.</p>
+    <h1>개요</h1>
+    <p>
+      이 단원은 지각(돌)이 어디서 왔는지 알아봅니다.<br>
+      &nbsp;'지구'는 대기를 가지고 있고, 물과 생명이 존재한다는 점에서 다른 행성과 차별화됩니다.
+      '<em>지권</em>'이란 '지구'의 딱딱한 부분을 이야기합니다. '지권'은 지구의 '계(System, 또는 Sphere 권역)'중 하나입니다.
+      이번 단원에서는 지권에 집중합니다.
+    </p>
+    <table class="all-td-left">
+      <caption>
+        지구계(Earth System Science; ESS)의 분류<a class="detail" href="#references"></a>
+        <span>
+          <span class="reference">
+            지구계(Earth system science; ESS)의 분류 :
+            <a href="https://education.nationalgeographic.org/resource/earths-systems/"
+              target="_blank">네셔널지오그라피</a></span>
+        </span>
+      </caption>
+      <thead>
+        <tr>
+          <th>이름</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><em>지권</em>(geosphere)</td>
+          <td>pedosphere(토양권) + Lithosphere(암석권)으로이루어진 딱딱한 부분</td>
+        </tr>
+        <tr>
+          <td><em>수권</em>(hydrosphere)</td>
+          <td>바다영역</td>
+        </tr>
+        <tr>
+          <td><em>대기권</em>(atmosphere)</td>
+          <td>또는 기권. 지권, 수권위 공기 영역</td>
+        </tr>
+        <tr>
+          <td><em>생물권</em>(bioshere)</td>
+          <td>모든 생물</td>
+        </tr>
+        <tr>
+          <td><em>자기권</em>(megnetoshere)
+            <a class="detail" href="#references"></a>
+            <span>
+              <tspan class="description">대기권을 4권역(대류권, 성층권, 중간권, 열권)으로 구분하거나,
+                외기권까지 포함하여 5권역으로 구분하기도 합니다.
+                외기권이 대기권에 포함된다면, 자기권과 중첩될 수 있습니다.
+                권역은 어디까지나 연구의 편의를 위한 구분이기 때문에, 꼭 어떻게 해야한다는 강제사항은 없습니다.
+                다만, 소통의 혼선을 가져오는 일은 없어야 할 것입니다.</tspan>
+              <tspan class="reference">외기권: <a href="https://www.worldatlas.com/articles/how-cold-is-the-exosphere.html"
+                  target="_blank">How Cold Is The Exosphere?</a>, worldatlas.com</tspan>
+            </span>
+          </td>
+          <td>대기권 위, 대기는 희박하지만 중력, 자기력이 의미있게 작용하는 영역(모호)</td>
+        </tr>
+        <tr>
+          <td><em>빙하권</em>(cryosphere)</td>
+          <td>남극</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>본문</h1>
+    <h2>지권의 구성</h2>
+    <div class="img-box" style="min-width: 5cm; width:5cm; float: right; padding:5mm">
+      <img src="meterFrom.svg" />
+      <span class="caption">북극부터 적도</span>
+      <span class="description">"Korea_(orthographic_projection).svg", wikimedia.org, zero 1.0 deed
+        <br>/2차 수정: 2024, @iseohyun.com
+      </span>
+    </div>
+    <p>
+      지구의 반지름 6400km이 된 사연은, 우연이라기보다 그렇게 정했기 때문입니다.
+      1790년대 프랑스에서 지구반지름을 10,000km로 정의하였습니다<a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="description">
+          STRUVE GEODETIC ARC (p40), 세계 문화유산, 에 기록된 내용을 바탕으로 추정해보자면..<br>
+        </tspan>
+        <tspan class='reference'>
+          10,000km의 사연 :
+          <a href='https://web.archive.org/web/20110607152538/http/www1.bipm.org/en/si/history-si/evolution_metre.html'
+            target='_blank'>
+            국제도량형협회(BIPM)에서 최초 제정 및 관리 중</a>
+        </tspan>
+      </span>
+    </p>
+    $$ 반지름 : 둘레 = 1cm : 3.14cm = 6,400km : 40,000km $$
+    <p>
+      지구가 얼마나 깊은지는 알지만, 아직까지 지구의 내부를 들어가본 사람은 아무도 없습니다.
+      가장 깊은 동굴도 기껏해봐야 2km남짓이고, 석유<em>시추</em>의 경우 약 6km정도입니다.
+      역사적으로 가장 깊게 굴착한 기록은 러시아가 콜라반도(북유럽부근)에서 1970년부터 22년동안 시추해서 12,262m까지 성공했습니다<a class="detail"
+        href="#references"></a>.
+      <span>
+        <tspan class="description">
+          <img src='https://techstartups.com/wp-content/uploads/2020/09/Deepest-hole.jpg' style="width: 100%;" />
+          러시아, Kola 슈퍼딥 시추공
+        </tspan>
+        <tspan class="reference">
+          러시아 슈퍼딥 시추공: 이미지 출처 - The world’s deepest hole: This incredible animation shows how Russian scientists drilled
+          the 7.5-mile
+          deep hole that is deeper than the deepest ocean
+          (<a href='https://en.wikipedia.org/wiki/Kola_Superdeep_Borehole' target='_blank'>Kola_Superdeep_Borehole,
+            wikipedia.org</a>)
+        </tspan>
+      </span>
+      하지만 온도와 압력이 너무 높아 장비고장과 화재 등으로 중단했습니다. 현재, 미국과 중국이 도전중에 있습니다.
+      지구 내부로 들어갈수록 온도가 높아지는 이유는 압력 때문입니다.
+      지구의 내부는 다음과 같은 방법으로 고체와 액체로 이루어졌음을 추정하고 있습니다.
+    </p>
+    <p style="font-size:0.9em">※ 시추: 지하자원을 탐사하거나 지층의 구조나 상태를 조사하기 위해 땅속 깊이 구멍을 파는 일(표준국어대사전)</p>
+    <ul>
+      <li><em>지진파 연구</em>(seismic imaging techniques; 지진파 영상 기술)
+        <span class="info">ⓛ
+          <div>
+            <img
+              src="https://img1.daumcdn.net/thumb/R1280x0/?scode=mtistory2&fname=https%3A%2F%2Ft1.daumcdn.net%2Fcfile%2Ftistory%2F2502D94F55FF6E6925" /><br>
+            지진의 전달 속도, 굴절방향, 세기를 비교분석<br>
+            이미지 출처: 에듀넷, File:"지구_내부로_전달되는_지진파.jpg"
+          </div>
+        </span>
+      </li>
+      <li><em>자기장 연구</em>(magnetometry analysis)</li>
+      <li><em>위성을 통한 중력 연구</em>(gravity measurements)</li>
+    </ul>
+
+    <p>위 방법으로 인해 현재까지 밝혀진 바는 아래와 같습니다.</p>
+    <div class='img-box' style="max-width:15cm; padding:5mm">
+      <img src='downtoscale.svg' />
+      <span class="caption">지구 내부의 구조</span>
+      <span class="description">"Earth_poster.svg", @Kelvinsong CC BY-SA 3.0
+        <br>/2차 수정: 2024, @iseohyun.com</span>
+    </div>
+    <table class="last-td-left first-td-left">
+      <caption>지구의 내부</caption>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>깊이(km)</th>
+          <th>상태</th>
+          <th>밀도(g/cm<span style="vertical-align: super;font-size:0.7em">3</span>)</th>
+          <th>온도</th>
+          <th>경계</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><em>지각</em>(crust)</td>
+          <td>0 ~ 50</td>
+          <td>고체</td>
+          <td>2.7 ~ 3.0</td>
+          <td>15 ~ 800</td>
+          <td>모호면</td>
+        </tr>
+        <tr>
+          <td><em>맨틀</em>(mantle)</td>
+          <td>50 ~ 2900</td>
+          <td>고체</td>
+          <td>3.3 ~ 5.5</td>
+          <td>1000 ~ 2000</td>
+          <td>구텐베르크면</td>
+        </tr>
+        <tr>
+          <td><em>외핵</em>(outer core)</td>
+          <td>2900 ~ 5100</td>
+          <td>액체</td>
+          <td>9.9 ~ 12.5</td>
+          <td>5000 ~ 6900</td>
+          <td>레만면</td>
+        </tr>
+        <tr>
+          <td><em>내핵</em>(inner core)</td>
+          <td>5100 ~ 6400 </td>
+          <td>고체</td>
+          <td>12.6 ~ 13.0</td>
+          <td>3500 ~ 4500</td>
+          <td></td>
+        </tr>
+    </table>
+    <div class="img-box">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Geothermal_gradient.png" width="90%" />
+      <span class="caption">지구 깊이에 따른 온도변화</span>
+      <span class="description">"Geothermal_gradient.png", wikimedia.org (K.Panchuk(2018) CC BY 4.0)</span>
+    </div>
+
+
+    <h2>지각의 구분</h2>
+    <p>
+    <div class='img-box' style="width:9cm; float: right; padding:5mm">
+      <img src='crust.svg' />
+      <span class="caption">대륙과 해양지각</span>
+      <span class="description">Earth-cutaway-schematic-numbered.svg" @Nefronus, public domain
+        <br>/2차 수정: 2024, @iseohyun.com</span>
+    </div>
+    이제, 우리의 관심을 지권에서 지각으로 옮겨봅시다.
+    지각은 맨틀부가 외부에 노출되어 굳어진 지구의 껍질입니다.
+    지각은 배나 얼음이 물 위에 떠 있는 것과 마찬가지로, 낮은 밀도로 인해 맨틀 위에 떠 있습니다.
+    이러한 성질은 대륙지각이 더 두껍게 형성된 이유를 설명해줍니다.
+    지각이 멘틀과 구분된는 점을 <em>모호로비치치 불연속면</em> (약칭: 모호면, Moho discontinuity) 이라고 합니다. 이 면은 멘틀에서 지진파의 속도가 비약적으로 빨라진다는 것이 관측되면서
+    발견되었습니다.
+    (*밀도가 높은 물질에서 지진파의 속도가 빨라집니다.)
+    </p>
+    <div class='img-box' style="width:100%; padding:5mm">
+      <img src='Subduction-ko.svg' style="width:100%; padding:5mm" />
+      <span class="caption">모호면</span>
+      <span class="description">
+        "Subduction-en.svg" @KDS4444, 2016. CC BY-SA 4.0<br>
+        2차 수정: 2024, iseohyun.com
+        Earth-cutaway-schematic-numbered.svg" @Nefronus, public domain
+        <br>/2차 수정: 2024, @iseohyun.com</span>
+    </div>
+
+    <h3>판 구조론(plate tectonics), 대륙이동설</h3>
+    <p>
+    <div class='img-box' style="float:right">
+      <img
+        src='https://upload.wikimedia.org/wikipedia/commons/d/dc/Alfred_Wegener_Die_Entstehung_der_Kontinente_und_Ozeane_1929.jpg' />
+      <span class="caption">
+        베게너의 그림
+      </span>
+      <span class="description">"Alfred_Wegener_Die_Entstehung_der_Kontinente_und_Ozeane_1929.jpg", wikimedia.org,
+        public domain</span>
+    </div>
+    &nbsp; <em>판 구조론</em>은 다음 증거를 기반으로 <em>대륙이 맨틀위를 떠다니며 이동</em>한다는 것이 현재의 정설입니다.
+    <ul>
+      <li>빙하의 흔적</li>
+      <li>해안선의 일치</li>
+      <li>산맥 분포</li>
+      <li>화석 분포</li>
+    </ul>
+    <p>
+      암석권(lithosphere), <em>판(plate) = 지각 + 상부맨틀</em>을 의미합니다.
+      즉, 판 이동은 단순히 지각 뿐만아니라, 맨틀의 상부를 포함하여 같이 이동한다는 것입니다.
+      판의 경계는 <em>지진대와 화산대를 근거</em>로 나누고 있습니다.
+    </p>
+    <p>
+      판의 이동을 역 추적해보면, 고생대 페름기에 모든 육지가 하나의 대륙이었을 것이라는 추측을 하게 됩니다. 베게너는 이 대륙의 이름을 <em>판게아</em>(Pangaea, 모든대륙(그리스어))라고
+      불렀습니다<a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="description">
+          <img src="Pangaea_continents.svg" style="height:400px; float:right" />
+          알프레드 베게너(Alfred Wegener)<br>
+          &nbsp;최초 판 이동을 주장하였습니다. 최초 그의 이론적 미숙함(예: 250cm/year로 이동한다고 주장했지만, 유럽, 아프리카 분리속도는 대략 2.5cm/year)으로 인해 저항이 있었던
+          것은
+          사실이지만, 북미에서 받아들여지는데 오래걸렸을 뿐 널리 거부당했던 것은 아니었다고 합니다.
+        </tspan>
+        <tspan class="reference">
+          판 이동설의 반응: <a href="https://en.wikipedia.org/wiki/Alfred_Wegener#Reactions"
+            target="_blank">https://en.wikipedia.org/wiki/Alfred_Wegener#Reactions</a>
+        </tspan>
+      </span>
+    </p>
+    </p>
+    </div>
+    </p>
+    <div class='img-box' style="width:100%">
+      <img src='PlateTect2Ko.svg' style="width:100%" />
+      <span class="caption">판 경계</span>
+      <span class="description">File:Plates tect2 ko.svg", translated by Younhun Lee. Original by USGS, wikipedia.org
+        <br>/2차 수정: 2024, @iseohyun.com</span>
+    </div>
+
+    <h2>암석의 생성과 구분</h2>
+    <h3><em>마그마</em>(Magma)의 생성과 소멸</h3>
+    <p>일반적으로 암석은 1000도가 넘어가면 액체가 됩니다. 따라서 멘틀의 상부나 지각의 하부에서 다음과 같은 조건에 의해 액체가 됩니다.</p>
+    <ul>
+      <li>온도 상승</li>
+      <li>기압 저하</li>
+      <li>물 공급</li>
+    </ul>
+    <p>
+      마그마는 왜 분출될까요?
+      마그마의 밀도는 2.5~3.0g/cm<span style="vertical-align: super;font-size:0.7em">3</span>로 지각보다도 낮습니다.
+      따라서 마그마는 지표면으로 분출되려는 부력을 갖게 됩니다.
+    </p>
+
+    <h3>암석의 분류</h3>
+    <p>
+      암석은 마그마로부터 완전히 재구성 된 <em>화성암</em>(igneous;불 속성의),
+      마그마 근처에서 온도의 영향을 받아 변하는 <em>변성암</em>(metamorphic; 변형된),
+      적당히 부서졌다가 쌓인 후(<em>퇴적</em>), 압력에 의해 형성된 <em>퇴적암</em>(sedimentary; 앙금의)으로 분류합니다.<br><br>
+
+      &nbsp;화성암은 다시, '무엇이 녹았는가' 또는 '어디서 식었는가'에 따라 다릅니다.
+      분출이 되지 못하고 내부에서 서서히 식으면 <em>심성암</em>(Igneous intrusion; 침범), 화산에 의해 분출되어 밖에서 빠르게 식으며 생성되는 <em>화산암</em>(volcanic;
+      화산의)으로 구분됩니다.
+      이 둘은 모두 불로 만들어졌다는 의미에서 이라고 합니다.<br><br>
+
+      지표면에 노출되면 <em>풍화작용</em>에 의해 잘게 부서집니다. 이때는 '무엇이 쌓였는지'에 따라, '얼마나 부서졌는지'에 따라 구분합니다.
+      부서진 조각이 압력에 의해서 다시 돌이 될 수도 있습니다.
+      자갈의 함량이 높으면 <em>역암</em>(Conglomerate; 잡다한 집합체),
+      모레의 비중이 높으면 <em>사암</em>(Sandstone; 모래돌),
+      입자가 작은 진흙이 모이면 <em>이암</em>(Mudstone; 진흙돌)이라고 합니다. <em>셰일</em>(shale;
+      <span class="info">ⓛ
+        <span>
+          이 용어는 1920년에 와서야 처음 등장합니다.<br>
+          Albert H. Fay (1920) "Slate" in A Glossary of the Mining and Mineral Industry, United States Bureau of Mines.
+          p. 622.
+        </span>
+      </span>
+      )은 이암의 종류로 굉장히 무르고, 검은 속성을 가지고 있습니다.
+      이렇게 생성된 암석을 퇴적암이라고 합니다.
+      퇴적암은 퇴적되는 과정에 의해 층리가 발견되는 것이 특징입니다.
+    </p>
+
+    <table class="last-td-left">
+      <caption>
+        암석의 구분<a class="detail" href="#references"></a>
+        <span>
+          <tspan class='reference'>
+            환경지질연구정보센터 : <a href="https://data.kigam.re.kr/ieg/user/edcyard/ntrfsEdcList3.do" target="_blank">쉽게풀어보는
+              지질학</a> (암석의 분류)
+          </tspan>
+        </span>
+      </caption>
+      <thead>
+        <tr>
+          <th>명칭</th>
+          <th>세부구분</th>
+          <th>종류</th>
+          <th>원인</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="6"><em>화성암</em><br>(<em>마그마</em>가 식어서)</td>
+          <td rowspan="3">식은 속도에 따라</td>
+          <td><em>심성암</em></td>
+          <td>천천히 냉각(알갱이가 크다: <em>조립질</em>)</td>
+        </tr>
+        <tr>
+          <td>반심성암</td>
+          <td>-</td>
+        </tr>
+        <tr>
+          <td><em>화산암</em></td>
+          <td>빠르게 냉각(알갱이가 작다: <em>세립질</em>)
+            <span class="info">ⓛ
+              <div>
+                어디서 식었는지보다 식는 속도가 중요. 지하에서 생성되는 화산암도 있다.
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="3">SiO2함량에 따라</td>
+          <td>유색</td>
+          <td>색흑운모, 감섬석, 휘석, 감람석 - 고온광물, Ca. Mg, Fe 풍부</td>
+        </tr>
+        <tr>
+          <td>무색</td>
+          <td>사장석, 정장석, 석영 - 저온 광물, Na, K, Si 풍부</td>
+        </tr>
+        <tr>
+          <td>유색</td>
+          <td>염기성← 52% ― 중성 ― 66% → 산성 : 무색</td>
+        </tr>
+        <tr>
+          <td rowspan="10"><em>퇴적암</em><br>(<em>퇴적</em>물이 <em>침전</em>)</td>
+          <td rowspan="3">쇄설성 퇴적암<br>(물리적 갈림)</td>
+          <td><em>역암</em></td>
+          <td>자갈이 30%이상 + 모레 + 점토</td>
+        </tr>
+        <tr>
+          <td><em>사암</em></td>
+          <td>주로 모래로 구성 (퇴적암의 약 25%)</td>
+        </tr>
+        <tr>
+          <td><em>이암</em></td>
+          <td>주로 점토로 구성 (흔함, 퇴적암의 약 55%)</td>
+        </tr>
+        <tr>
+          <td rowspan="4">화학적 퇴적암<br>(용액의 광물질 침전)</td>
+          <td>석회암(CaCO3)</td>
+          <td>얕은 바다의 수온 상승</td>
+        </tr>
+        <tr>
+          <td>암염(NaCl)</td>
+          <td>배수강이 없는 호수나 대양까지 좁고 먼 바다물 증발</td>
+        </tr>
+        <tr>
+          <td>석고(CaSO4 2H2O)</td>
+          <td>물이 증발하면서 생성</td>
+        </tr>
+        <tr>
+          <td>쳐어트</td>
+          <td>심해저에 규질물질이 침전 or 석회암의 규질물질이 집중</td>
+        </tr>
+        <tr>
+          <td rowspan="3">유기적 퇴적암<br>(생물의 잔해물)</td>
+          <td>석회암</td>
+          <td>해조류, 산호의 침전</td>
+        </tr>
+        <tr>
+          <td>규조토</td>
+          <td>돌말류(규조류)의 유해로부터 생성</td>
+        </tr>
+        <tr>
+          <td>석탄</td>
+          <td>셀룰로스, 리그닌을 주성분으로 한 수목으로부터</td>
+        </tr>
+        <tr>
+          <td>변성암<br>(고온에 접촉해서)</td>
+          <td colspan="2">점판암(슬레이트)→천매암→편암→편마암</td>
+          <td>온도, 압력에 따라 광물의 크기 증가</td>
+        </tr>
+      </tbody>
+    </table>
+    <style>
+      .last-td-monospace td:nth-last-child(2) {
+        font-family: var(--font-monospace);
+      }
+
+      .iso14688 {
+        background-color: #eeffee;
+      }
+    </style>
+    <table class="last-td-left last-td-monospace">
+      <caption>모래의 기준
+        <a class="detail" href="#references"></a>
+        <span>
+          <tspan class="reference">ISO 14688, 4p(4.2 Particle size) :
+            <a href="https://cdn.standards.iteh.ai/samples/25260/d7c2a9901c924564878b6ef3ab2b4ca4/ISO-14688-1-2002.pdf"
+              target="_blank">https://cdn.standards.iteh.ai/samples/25260/d7c2a9901c924564878b6ef3ab2b4ca4/ISO-14688-1-2002.pdf</a>
+          </tspan>
+        </span>
+      </caption>
+      <thead>
+        <tr>
+          <th>기호</th>
+          <th>이름</th>
+          <th colspan="3">기준</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tr>
+        <td rowspan="3"></td>
+        <td rowspan="3">큰 돌</td>
+        <td rowspan="3" class="iso14688">ISO 14688</td>
+        <td class="iso14688">cobble</td>
+        <td class="iso14688"> &nbsp;63 &nbsp; &nbsp; ~ 200 &nbsp; &nbsp;mm</td>
+        <td class="iso14688"></td>
+      </tr>
+      <tr>
+        <td class="iso14688">boulder</td>
+        <td class="iso14688"> 200 &nbsp; &nbsp; ~ 630 &nbsp; &nbsp;mm</td>
+        <td class="iso14688"></td>
+      </tr>
+      <tr>
+        <td class="iso14688">large boulder</td>
+        <td class="iso14688"> 630 &nbsp; &nbsp; ~ &nbsp; &nbsp; &nbsp; &nbsp;mm</td>
+        <td class="iso14688"></td>
+      </tr>
+      <tbody>
+        <tr>
+          <td rowspan="5">G</td>
+          <td rowspan="5">자갈(gravel)</td>
+          <td rowspan="2">US</td>
+          <td>granular</td>
+          <td>&nbsp;2 &nbsp; &nbsp; &nbsp;~ &nbsp;4 &nbsp; &nbsp; mm</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>pebble</td>
+          <td>&nbsp;4 &nbsp; &nbsp; &nbsp;~ 64 &nbsp; &nbsp; mm</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="iso14688">ISO 14688</td>
+          <td class="iso14688">fine</td>
+          <td class="iso14688">&nbsp;2 &nbsp; &nbsp; &nbsp;~ &nbsp;6.3 &nbsp; mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td class="iso14688">medium</td>
+          <td class="iso14688"> &nbsp;6.3 &nbsp; &nbsp;~ 20 &nbsp; &nbsp; mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td class="iso14688">coarse</td>
+          <td class="iso14688">20 &nbsp; &nbsp; &nbsp;~ 63 &nbsp; &nbsp; mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td rowspan="4">S</td>
+          <td rowspan="4">모래(sand)</td>
+          <td colspan="2">지질학</td>
+          <td>&nbsp;0.0625 ~ &nbsp;2&nbsp; &nbsp; &nbsp;mm</td>
+          <td>0.0625 = 1/16</td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="iso14688">ISO 14688</td>
+          <td class="iso14688">fine</td>
+          <td class="iso14688">&nbsp;0.063 &nbsp;~ &nbsp;0.2 &nbsp; mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td class="iso14688">medium</td>
+          <td class="iso14688">&nbsp;0.2 &nbsp; &nbsp;~ &nbsp;0.63 &nbsp;mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td class="iso14688">coarse</td>
+          <td class="iso14688">&nbsp;0.63 &nbsp; ~ &nbsp;2&nbsp; &nbsp; &nbsp;mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td rowspan="7">M</td>
+          <td rowspan="7">실트(silt)</td>
+          <td colspan="2">지질학</td>
+          <td>&nbsp;0.004 &nbsp;~ &nbsp;0.0625mm</td>
+          <td>0.004 := 0.003906 = 1/256</td>
+        </tr>
+        <tr>
+          <td rowspan="3" class="iso14688">ISO 14688</td>
+          <td class="iso14688">fine</td>
+          <td class="iso14688">&nbsp;0.002 &nbsp;~ &nbsp;0.0063mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td class="iso14688">medium</td>
+          <td class="iso14688">&nbsp;0.0063&nbsp;~ &nbsp;0.02 &nbsp;mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td class="iso14688">coarse</td>
+          <td class="iso14688">&nbsp;0.02 &nbsp; ~ &nbsp;0.063 mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td colspan="2">ASTM</td>
+          <td>&nbsp;0.005 &nbsp;~ &nbsp;0.074 mm</td>
+          <td>American Standard of Testing Materials</td>
+        </tr>
+        <tr>
+          <td colspan="2">USDA</td>
+          <td>&nbsp;0.002 &nbsp;~ &nbsp;0.05 &nbsp;mm</td>
+          <td>United States Department of Agriculture</td>
+        </tr>
+        <tr>
+          <td colspan="2">ISSS</td>
+          <td>&nbsp;0.002 &nbsp;~ &nbsp;0.02 &nbsp;mm</td>
+          <td>International Society of Soil Science</td>
+        </tr>
+        <tr>
+          <td rowspan="3">C</td>
+          <td rowspan="3">점토(clay)</td>
+          <td colspan="2" class="iso14688">ISO 14688</td>
+          <td class="iso14688">&nbsp; &nbsp; &nbsp; &nbsp; ~ &nbsp;0.002 mm</td>
+          <td class="iso14688"></td>
+        </tr>
+        <tr>
+          <td colspan="2">퇴적학</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; ~ &nbsp;0.004 mm</td>
+          <td>4 ~ 5um</td>
+        </tr>
+        <tr>
+          <td colspan="2">colloid chemists</td>
+          <td>&nbsp; &nbsp; &nbsp; &nbsp; ~ &nbsp;0.001 mm</td>
+          <td>Guggenheim & Martin 1995, pp. 255–256.</td>
+        </tr>
+    </table>
+
+    <div class="img-box" style="width: 95%;">
+      <img src="stone size.svg" style="width: 95%;" />
+      <span class="caption">돌 크기 비교</span>
+      <span class="description">"stone_size:.svg", 2024, @iseohyun.com, CC-BY 4.0
+      </span>
+    </div>
+
+    <h3>암석학(Petrology)</h3>
+    <table class="last-td-left snd-last-td-left">
+      <caption>암석의 종류
+        <span class="info">ⓛ
+          <div>
+            사진은 단지 참고용입니다. 한국 연예인의 사진을 외우고, 친구의 얼굴은 한국인이 아니라고 비판하지 마십시오. 공통의 특징은 있지만, 보여지는 것에는 한계가 있습니다.<br>
+            <br>
+            암석의 종류는 엄청나게 많습니다. 리스트는 교과서에 등장하는 암석의 종류만 나열했습니다. 그 중 <em>강조</em>는 실생활에서 인테리어나 신문기사 등을 읽을 때, 자주등장하는 최소한의 단어를
+            강조하였습니다.
+          </div>
+        </span>
+      </caption>
+      <thead>
+        <tr>
+          <th>분류</th>
+          <th>소분류</th>
+          <th>암석명</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="6">화성암<br>
+            <a class="detail" href="#references"></a>
+            <span>
+              <tspan class="description">
+                전통 석재 건축의 80.4%를 차지한다.<br>
+                출처: 전통건축수리기술진흥재단 > 전통건축 > 전통재료 > 석재
+              </tspan>
+              <tspan class="reference">전통건축수리기술진흥재단 > 전통건축 > 전통재료 > 석재 <a
+                  href="https://www.kofta.org/architecture/Material/traditionstone.jsp"
+                  target="_blank">https://www.kofta.org/architecture/Material/traditionstone.jsp</a></tspan>
+            </span>
+          </td>
+          <td rowspan="3">심성암</td>
+          <td><em>화강암</em>(Granite)</td>
+          <td>밝다. 단단하다. SiO2 63%↑. 한반도에 흔하다<span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/62/Granite_softgreen.jpg/250px-Granite_softgreen.jpg" />
+                <img src="https://www.cha.go.kr/unisearch/images/national_treasure/1612717.jpg"
+                  style="max-width: 45%;" />
+                <br>
+                이미지 출처: 1. 위키피디아, 화강암<br>
+                2: 경주문화관광, 경주 석굴암 석굴 (from. 문화재청)<br>
+                국가 지도집 2권: 한반도 주요 암석 분포<br>
+                https://nationalatlas.ngii.go.kr/pages/page_112.php
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>섬록암(Diorite)</td>
+          <td>화강암-반려암의 경계
+            <span class="info">ⓛ
+              <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/0/0d/DioriteUSGOV.jpg" />
+                이미지: 위키피디아, 섬록암
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>반려암(Gabbro)</td>
+          <td>어둡다. 현무암과 동일한 성분
+            <span class="info">ⓛ
+              <div>
+                <img src="//upload.wikimedia.org/wikipedia/commons/thumb/9/90/1gabbro.jpg/220px-1gabbro.jpg" />
+                이미지: 위키피디아(영문), 반려암
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td rowspan="3">화산암</td>
+          <td>유문암(Rhyolite)</td>
+          <td>밝다. 화강암과 조성이 같다<span class="info">ⓛ
+              <div>
+                <img
+                  src="//upload.wikimedia.org/wikipedia/commons/thumb/7/7e/RhyoliteUSGOV.jpg/220px-RhyoliteUSGOV.jpg">
+                이미지 출처: 위키피디아, 유문암
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>안산암(Andesite)</td>
+          <td>섬록암과 조성이 같다. Andesite(안데스 산), 내구성/내화성↑, 구조/바닥재
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://rockidentifier.com/image-handle/image/1080/153420247649484816.jpeg?x-oss-process=image/format,webp"
+                  height="300px" /><br>
+                이미지 출처: Rock Identifier > 안산암<br>
+                Photo By James St. John , used under CC-BY-2.0 /Cropped and compressed from original
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td><em>현무암</em>(Basalt)</td>
+          <td>어둡다(Fe, Mg성분), 다공질, 제주도에 흔하다(돌하르방, 돌담)
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c6/VesicularBasalt1.jpg/220px-VesicularBasalt1.jpg" />
+                <img class="clipped-image"
+                  src="https://www.jeju.go.kr/files/board/dc43098f-1078-455b-94a0-f2ba110d3428.jpg"
+                  style="width:45%" /><br>
+                이미지 출처1: 위키피디아(영문), 현무암, "VesicularBasalt1.jpg", public domain<br>
+                출처2: 제특별자치도 > 공공저작물 > 자료실 > 제주의문화재 > 제주 삼양동 유적(첨부7)
+              </div>
+            </span>
+          </td>
+        </tr>
+        <td colspan="2" rowspan="4">퇴적암</td>
+        <td>역암(Conglomerate)</td>
+        <td>자갈 알갱이가 보인다
+          <span class="info">ⓛ
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/bb/Lehigh_conglom.jpg/220px-Lehigh_conglom.jpg" />
+              이미지 출처: 위키피디아(영문), "Lehigh conglom.jpg" Public Domain
+            </div>
+          </span>
+        </td>
+        </tr>
+        </tr>
+        <td>사암(Sandstone)</td>
+        <td>모래 알갱이가 보인다. 이암 다음으로 흔하다.
+          <span class="info">ⓛ
+            <div>
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/65/Arenisca.jpg/265px-Arenisca.jpg" />
+              이미지 출처: 위키피디아(에스파냐), "Arenisca.jpg" Sarranpa CC BY-SA 4.0
+            </div>
+          </span>
+        </td>
+        </tr>
+        </tr>
+        <td>이암(Mudstone)</td>
+        <td>입자가 작고, 층리가 보인다. 흔하다.
+          <span class="info">ⓛ
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c5/ShaleUSGOV.jpg/220px-ShaleUSGOV.jpg" />
+              이미지 출처: 위키피디아, "ShaleUSGOV.jpg" Public Domain
+            </div>
+          </span>
+        </td>
+        </tr>
+        <td><em>석회암</em>(Limestone)</td>
+        <td>석회(시멘트의 주원료)로 사용, 무르다 > 가공이 쉽다. 내장재(인테리어)
+          <span class="info">ⓛ
+            <div>
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/52/Chalk_%28%22Upper_Chalk%22_Formation%2C_Upper_Cretaceous%3B_White_Cliffs_of_Dover%2C_England%2C_southern_Britain%29.jpg/120px-Chalk_%28%22Upper_Chalk%22_Formation%2C_Upper_Cretaceous%3B_White_Cliffs_of_Dover%2C_England%2C_southern_Britain%29.jpg" />
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/Naracoorte-cave.jpg/300px-Naracoorte-cave.jpg" /><br>
+              이미지 출처1: 위키피디아(영문), 석회암, "Chalk ("Upper Chalk" Formation, Upper Cretaceous; White Cliffs of Dover,
+              England, southern Britain).jpg" CC BY 2.0<br>
+              출처2: 위키피디아, 석회암 동굴, "Naracoorte-cave.jpg" Kevin CC BY-SA 3.0
+            </div>
+          </span>
+        </td>
+        </tr>
+        <tr>
+          <td rowspan="7" colspan="2">변성암</td>
+          <td><em>대리암</em>(marble)</td>
+          <td>석회암, 백운암의 변성암. 건설, 조각, 도예용
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/8d/MarbleUSGOV.jpg/220px-MarbleUSGOV.jpg">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/80/Lincoln_statue%2C_Lincoln_Memorial.jpg/220px-Lincoln_statue%2C_Lincoln_Memorial.jpg" /><br>
+                이미지 출처: 1: 위키피디아, "MarbleUSGOV.jpg" Public Domain<br>
+                2: 위키피디아(영문), "Lincoln statue, Lincoln Memorial.jpg" Public Domain
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>규암(Quartzite)</td>
+          <td>사암의 변형
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b8/Sample_of_Quartzite.JPG/220px-Sample_of_Quartzite.JPG" />
+                <br>이미지 출처: 위키피디아(영문), "Sample of Quartzite.JPG", Manishwiki15, CC BY-SA 3.0
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>편마암(Gneiss)</td>
+          <td>화강암에서 (화강 편마암, 정편마암), 퇴적암에서 (준편마암) 성분에 따라
+            <span class="info">ⓛ
+              <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/60/Gneiss.jpg/220px-Gneiss.jpg" />
+                <br>사진 출처: 위키피디아, 편마암. "Gneiss.jpg", Siim Sepp, CC BY-SA 3.0
+              </div>
+            </span>
+          </td>
+
+        </tr>
+        <tr>
+          <td>점판암(Slate)</td>
+          <td>셰일(점토)의 변형, 슬레이트 석판, 벼룻돌 등
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/af/SlateUSGOV.jpg/220px-SlateUSGOV.jpg" />
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/St_Fagans_Tannery_7.jpg/220px-St_Fagans_Tannery_7.jpg" />
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>편암(Schist)</td>
+          <td>
+            이암에서, 또는 응회암(화성암)아서 변형
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6f/Schist_detail.jpg/220px-Schist_detail.jpg" /><br>
+                이미지 출처: 위키피디아(영문), 편암. Michael C. Rygel, "Schist detail.jpg", CC BY-SA 3.0
+              </div>
+            </span>
+          </td>
+        </tr>
+        <tr>
+          <td>각섬암(Amphibolite)</td>
+          <td>각섬석의 변형
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/27/Amphibolite_Geopark_Prague_2014_1.jpg/300px-Amphibolite_Geopark_Prague_2014_1.jpg"><br>
+                Karelj, "Amphibolite Geopark Prague 2014 1.jpg" CC BY-SA 3.0
+              </div>
+            </span>
+          </td>
+        </tr>
+    </table>
+
+    <h2>광물의 종류</h2>
+    <p>
+      암석은 더 작은 단위인 <em>광물</em>로 이루어져 있습니다. 앞서 살펴봤듯이 암석은 주로 ○○암(-ite, -rock) 이라고 부릅니다(기존에 사용하던 단어는 그대로 사용됩니다). 광석은 주로
+      ○○석으로 부릅니다. 단어의 사전적 정의를 살펴보면 다음과 같습니다.
+    </p>
+    <style>
+      .up-border-bold {
+        border-top: 2px solid black;
+      }
+    </style>
+    <table class="last-td-left">
+      <caption>용어</caption>
+      <thead>
+        <tr>
+          <th>용어</th>
+          <th>출처</th>
+          <th>뜻</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td class="up-border-bold">암석</td>
+          <td class="up-border-bold">지질자원연구원(re.kr)</td>
+          <td class="up-border-bold"><u>고체</u> 상태의 <u>광물입자의 집합체</u>이거나, 광물·변질된 유기물 및 <u>이들의 조합</u>으로 이루어진 자연산 고체로서 쉽게
+            말하면 견고한 <u>돌이나 바위</u></td>
+        </tr>
+        <tr>
+          <td>Rock</td>
+          <td>Wikipedia.org</td>
+          <td>any naturally occurring <u>solid</u> mass or <u>aggregate of minerals or mineraloid</u>(준광물,-oid:닮은)
+            matter.</td>
+        </tr>
+        <tr>
+          <td class="up-border-bold">광물</td>
+          <td class="up-border-bold">지질자원연구원(re.kr)</td>
+          <td class="up-border-bold"><u>자연에서</u> 산출되는 무기물로서 <u>일정한</u> 화학 <u>조성(구조)</u>과 물리적 성질을 갖는 고체.</td>
+        </tr>
+        <tr>
+          <td>Mineral<br>(미네랄)</td>
+          <td>Wikipedia.org</td>
+          <td>a solid substance with a fairly <u>well-defined</u> chemical composition and a <u>specific</u> crystal
+            <u>structure</u> that occurs <u>naturally in pure form</u>.
+          </td>
+        </tr>
+        <tr>
+          <td class="up-border-bold">광석</td>
+          <td class="up-border-bold">표준대국어사전, 나무위키</td>
+          <td class="up-border-bold"><u>경제적으로 가치</u>가 있는 (채광할 수 있는) <u>광물, 또는</u> 그것을 함유하는 <u>암석</u>(집합체).</td>
+        </tr>
+        <tr>
+          <td>Ore</td>
+          <td>wikipedia, Britannica, American Geological Institute</td>
+          <td>natural <u>rock or sediment</u>(퇴적물) that contains one or more <u>valuable</u> minerals concentrated above
+            background levels,
+            typically containing metals, that can be mined, treated and sold at a <u>profit</u>.</td>
+        </tr>
+        <tr>
+          <td class="up-border-bold">돌</td>
+          <td class="up-border-bold">표준대국어사전</td>
+          <td class="up-border-bold">흙 따위가 굳어서 된 광물질의 <u>단단한 덩어리</u>. <u>바위보다는 작고</u> 모래보다는 큰 것을 이른다.(순우리말)
+          </td>
+        </tr>
+        <tr>
+          <td>Stone</td>
+          <td>Merriam-Webster</td>
+          <td> a <u>hard substance</u> that comes from the ground and is used for building, carving, etc.</td>
+        </tr>
+        <tr>
+          <td class="up-border-bold">바위</td>
+          <td class="up-border-bold">표준대국어사전</td>
+          <td class="up-border-bold"><u>부피가</u> 매우 <u>큰</u> 돌</td>
+          </td>
+        </tr>
+        <tr>
+          <td>Boulder</td>
+          <td>wikipedia, American Geological Institute</td>
+          <td>a rock fragment with size <u>greater than 25.6 centimetres</u> (10.1 in) in diameter.</td>
+        </tr>
+    </table>
+
+    <p>이를 토대로 작성해보면 다음과 같습니다. 아래 예시와 같이 광물의 정의는 조성이 일정한가에 관심이 있으므로 크기와는 연관이 없고, 충분히 크면 돌이나 바위로 부를수도 있습니다.
+    </p>
+
+    <table>
+      <caption>암석의 구성</caption>
+      <thead>
+        <tr>
+          <th colspan="9">암석의 구성</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="2" style="text-wrap: nowrap;">원자(Atom)<br>
+            (118개<a class="detail" href="#references"></a>)
+            <span>
+              <tspan class="description">
+                원자는 알갱이, 원소는 원자의 종류(이름)입니다. 국제 화학 연합(IUPAC)에서 원소의 발견유무를 관리합니다.
+              </tspan>
+              <tspan class="reference"><a href="https://iupac.org/what-we-do/periodic-table-of-elements/"
+                  target="_blank">IUPAC</a>(국제순수·응용화학연합) > 'What we do' > Periodic table of elements
+              </tspan>
+            </span>
+          </td>
+          <td rowspan="2">></td>
+          <td rowspan="2">분자(Molecule)</td>
+          <td rowspan="2">></td>
+          <td rowspan="2">
+            광물(Mineral)<br>
+            (6031개<a class="detail" href="#references"></a>)
+            <span>
+              <tspan class="description">
+                2024년 3월 현재 IMA(국제 광물학 협회)에 등재된 광물의 갯수는 6031개입니다.<br>
+                IMA는 International Mineralogical Association(광물 협회))외에도, institute of management accountants(회계 관리 협회)도
+                있으니 주의
+              </tspan>
+              <tspan class="reference"><a href="https://mineralogy-ima.org/Minlist.htm" target="_blank">IMA</a>(국제광물협회:
+                List
+                of Minerals) 링크를 타고가면 최신 리스트로 업데이트 됩니다.</tspan>
+            </span>
+          </td>
+          <td rowspan="2">></td>>
+          <td colspan="2">암석(Rock) = Stone</td>
+        </tr>
+        <tr>
+          <td>돌</td>
+          <td>바위(Boulder)</td>
+        </tr>
+        <tr>
+          <td class="up-border-bold">규소(Si)</td>
+          <td class="up-border-bold">></td>
+          <td class="up-border-bold">산화규소(SiO2)</td>
+          <td class="up-border-bold">></td>
+          <td class="up-border-bold">석영</td>
+          <td class="up-border-bold">></td>
+          <td class="up-border-bold" colspan="2">화강암(석영+정장석+사장석...)</td>
+        </tr>
+        <tr>
+          <td>탄소(C)</td>
+          <td>></td>
+          <td>8면체구조<span class="info">ⓛ
+              <div style="text-align: left;">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/28/Diamonds_glitter.png/200px-Diamonds_glitter.png" />
+                <br>이미지 출처: "위키피디아, 공유 결정", Anton, CC BY-SA 3.0
+              </div>
+            </span>
+          </td>
+          <td>></td>
+          <td colspan="4">금강석(다이아몬드)</td>
+        </tr>
+        <tr>
+          <td colspan="4"></td>
+          <td colspan="4" style="text-align: left;">광석(Ore)<br>
+            Mining(채굴 -> Ore(광석)) > Crushing(파쇄) > Separation(분리) > Smelting(제련) > Casting(주조-> ingots(주괴)) >
+            Fabrication(제작-> sheets, bars)) </td>
+        </tr>
+    </table>
+
+    <p>지각에는 너무 많은 종류의 광물이 있기 때문에 이를 다 다루는데는 한계가 있습니다. 아래는 미국지질협회(USGS)가 제공하는 원소의 비중으로 산소(O)와 규소(Si)가 압도적인 비중을 차지합니다.</p>
+    <div class="img-box">
+      <img src="Elemental abundances_ko.svg" />
+      <span class="caption">지각에 존재하는 원소의 비율</span>
+      <span class="description">File:Elemental abundances.svg", Gordon B. Haxel, Sara Boore, and Susan Mayfield from
+        USGS(미국지질협회), Public Domain
+        <br>/2차 수정: 2024, @iseohyun.com</span>
+    </div>
+    <p>따라서, <em>조암</em>(암석을 조성하는)원소의 많은 부분은 규산(SiO(규소-산소))광물이 차지합니다. 규산염 광물이 90%이상 차지하고 있을 것으로 추산하고 있습니다.
+      <span class="info">ⓛ
+        <span>
+          조암광물이라는 말은 언듯 이상하게 들립니다.
+          왜냐하면, 광물을 앞서 '암석을 이루는 물질'이라고 정의했고, 조암은 '암석을 이루는'이라는 뜻을 가지고 있기 때문입니다.
+          합쳐보면, '암석을 이루는 암석을 이루는 물질'이 됩니다. 주요 물질이라고 정의하기에도 '주요'라는 단어는 전혀 객관적이지 않습니다.
+          단, 원소의 경우 다릅니다. 모든 원소가 암석을 만들지는 않습니다. 금속을 이루거나, 유기물을 이룰 수 있습니다.
+          (조암광물은 위키에서 한국어만 지원하고 있습니다.)
+        </span>
+      </span>
+      교육과정에 등장하는 광물은 다음과 같습니다. 자세한 내용은 국제지질학회(IMA)의 DB를 참고하십시오<a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="reference">광물 DB(@IMA)<a href="https://rruff.info/ima/">https://rruff.info/ima/</a></tspan>
+      </span>
+      차트(붉은 계열: 규산염 광물)<a class="detail" href="#references"></a>
+      <span>
+        <tspan class="description">중1과학 35p. 그림15 지각을 이루는 조암 광물의 비율(부피비)</tspan>
+        <tspan class="reference">중1과학 35p. 그림15 지각을 이루는 조암 광물의 비율(부피비)</tspan>
+      </span>
+    </p>
+    <canvas id="pie-chart" style="width:95%;max-height: 300px; padding:5px"></canvas>
+    <script>
+      new Chart(document.getElementById("pie-chart"), {
+        type: 'doughnut',
+        data: {
+          labels: ["석영", "휘석", "각섬석", "흑운모", "기타", "장석"],
+          datasets: [{
+            data: [12, 11, 5, 5, 16, 51],
+            borderColor: '#888',
+            borderWidth: 1,
+            backgroundColor: ['#FAA', '#F88', '#F66', '#F44', '#ddd', '#FCC'],
+          }]
+        }
+      });
+    </script>
+
+    <table class="all-td-left">
+      <caption>광물의 종류</caption>
+      <thead>
+        <tr>
+          <th>광물명</th>
+          <th>특징</th>
+          <th>성분</th>
+          <th>기타</th>
+          <th>굳기</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>활석(Talc)</td>
+          <td>마그네슘을 포함한 규산염 광물</td>
+          <td>\(H_2Mg_3(SiO_3)_4\) 혹은 \(Mg_3Si_4O_{10}(OH)_2\)</td>
+          <td>700~900 -> 각섬석,<br>1,000~1,200 -> 휘석,<br>1,250~1,350-> 단사휘석, 석영
+            <a class="detail" href="#references"></a>
+            <span>
+              <tspan class="description">온도에 따라 광물이 변형될 수 있다는 것을 보여줍니다.</tspan>
+              <tspan class="reference">한국민족문화대백과사전 : <a href="https://encykorea.aks.ac.kr/Article/E0065027"
+                  target="_blank">활석 (滑石)</a></tspan>
+            </span>
+          </td>
+          <td>1</td>
+        </tr>
+        <tr>
+          <td><em>석고</em>(Gypsum)</td>
+          <td>황산 칼슘을 주성분으로 하는 매우 부드러운 황산염 광물</td>
+          <td>\(CaSO_4\)</td>
+          <td>깁스 붕대, 모형제작, 석고벽, 분필 등에 사용</td>
+          <td>2</td>
+        </tr>
+        <tr>
+          <td><em>방해석</em>(Calcite)</td>
+          <td>탄산염 광물, 석회암, 대리석의 주성분</td>
+          <td>\(CaCO_3\)</td>
+          <td>모래(2번째로 많은), 복굴절 특징
+            <span class="info">ⓛ
+              <div>
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Calcite.jpg/300px-Calcite.jpg">
+                <br>이미지 출처 : "Calcite.jpg", ?, 위키피디아(복굴절), Public Domain
+              </div>
+            </span>
+          </td>
+          <td>3</td>
+        </tr>
+        <tr>
+          <td>형석(Fluorite)</td>
+          <td>할로젠 광물, 유리빛이 나는 광물</td>
+          <td>\(CaF\)</td>
+          <td>형광 현상(이름 유래)</td>
+          <td>4</td>
+        </tr>
+        <tr>
+          <td>인회석(Apatite)</td>
+          <td>인산염 광물</td>
+          <td>\(Ca_5(PO_4)_3(OH, F, Cl)\)</td>
+          <td>치아의 에나멜질 주성분, 뼈에 포함</td>
+          <td>5</td>
+        </tr>
+        <tr>
+          <td>정장석(Orthoclase)</td>
+          <td>알칼리성 장석, 규산염 광물</td>
+          <td>\(KAlSi_3O_8\)</td>
+          <td>장석(feldspar):지각의 51%</td>
+          <td>6</td>
+        </tr>
+        <tr>
+          <td><em>석영</em>(Quartz)</td>
+          <td>육방정계의 규산염 광물</td>
+          <td>\(SO_2\)</td>
+          <td>장석다음으로 풍부, 모래의 대다수, 별명:수정
+            <span class="info">ⓛ
+              <div>
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/14/Quartz%2C_Tibet.jpg/300px-Quartz%2C_Tibet.jpg">
+                <br>이미지 출처: "Quartz, Tibet.jpg", JJ Harrison, jjharrison.com.au, CC BY-SA 2.5
+              </div>
+            </span>
+          </td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td>황옥(Topaz)</td>
+          <td>알루미늄과 불소의 규산염광물</td>
+          <td>\(Al_2SiO_4(F,OH)_2\)</td>
+          <td>보석: 자연상태 무색, 노란색 외 다양한 색</td>
+          <td>8</td>
+        </tr>
+        <tr>
+          <td>강옥(Corundum)</td>
+          <td>산화 광물</td>
+          <td>\(Al_2O_3\)</td>
+          <td>루비(적색), 사파이어(파란색, 노란색 등)</td>
+          <td>9</td>
+        </tr>
+        <tr>
+          <td>금강석(Diamond)</td>
+          <td>탄소 동소체</td>
+          <td>\(C\)</td>
+          <td>무색, 노랑, 파랑, 초록, 빨강 등</td>
+          <td>10</td>
+        </tr>
+        <tr>
+          <td class="up-border-bold"><em>장석</em>(Feldspar)</td>
+          <td class="up-border-bold">망상 이산화규소(SiO2)</td>
+          <td class="up-border-bold">\((K, Na, Ca)AlSi_3O_8\)</td>
+          <td class="up-border-bold">
+            K = 정장석(단사정계)<br>
+            Na:Ca = 사장석<br>
+            K = 미사정석(삼사정계)
+          </td>
+          <td class="up-border-bold">6~6.5</td>
+        </tr>
+        <tr>
+          <td><em>휘석</em>(Pyroxene)</td>
+          <td>단사슬 규산염 광물 통칭</td>
+          <td>\((SiO_3)^{-2}\) 또는
+            \((Si_2O_6)^{-4}\)를 단위</td>
+          <td>사슬형 통칭, 상부멘틀의 주요 구성</td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td>감람석(Olivine)</td>
+          <td>독립사면체 규산염 광물</td>
+          <td>\((Mg^{2+},Fe^{2+})_2SiO_4\)</td>
+          <td>황록색(조흔색:흰색)<br>
+            상부멘틀의 주요 구성</td>
+          <td>7</td>
+        </tr>
+        <tr>
+          <td><em>각섬석</em>(Amphibole)</td>
+          <td>복사슬 규산염 광물 그룹(바늘모양 결정)</td>
+          <td>\(Si_8O_{22}^{-1}\)을 기본 단위</td>
+          <td>어원: 모호함(그리스어) 변종이 많은 슈퍼그룹</td>
+          <td>.</td>
+        </tr>
+        <tr>
+          <td><em>운모</em>(Mica)</td>
+          <td>판상 규산염 광물 그룹</td>
+          <td>\(AB_{2–3}(X, Si)_4O_{10}(O, F, OH)_2\)</td>
+          <td>극도로 얇은 탄성판으로 분해, 페인트, 충전재 등</td>
+          <td>2.5-4</td>
+        </tr>
+        <tr>
+          <td>황장석(melilite)</td>
+          <td>복사면체 규산염 광물</td>
+          <td>\((Ca,Na)_2(Al,Mg,Fe^{2+})\)\([(Al,Si)SiO_7]\)</td>
+          <td>노란색, 녹갈색</td>
+          <td>5~5.5</td>
+        </tr>
+        <tr>
+          <td>녹주석(Beryl)</td>
+          <td>환상 규산염 광물</td>
+          <td>\(Be_3Al_2Si_6O_{18}\)</td>
+          <td>보석(별명): 아쿠아마린, 에메랄드, 산타마리아, 헤리오도르..</td>
+          <td>7.5</td>
+        </tr>
+        <tr>
+          <td class="up-border-bold"><em>자철석</em>(Magnetite)</td>
+          <td class="up-border-bold">산화 광물</td>
+          <td class="up-border-bold">\(Fe^{2+}Fe^{3+}_2O_4\)</td>
+          <td class="up-border-bold">
+            자성을 띈다</td>
+          <td class="up-border-bold">6~6.5</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>겉보기 색, 알갱이 색</h2>
+    <p>
+      <em>겉보기 색</em>은 암석내 불순물(소량의 첨가물)로 인해 바뀔 수 있습니다. 광물의 알갱이 색을 확인 하려면(<em>조흔색</em>), 직접 부수거나 <em>조흔판</em>에 긁어서 사용할 수
+      있습니다. 조흔판은 유약을 칠하지 않은 도자기 타일입니다. 저렴하고 제작이 쉽습니다. 확인하려는 광물에 맞추어 검정색이나 흰색으로 제작할 수 있습니다. 하지만 조흔판은 모스(Mohs) 굳기경도 7로 이보다
+      경도가 높은 광물은 긁어서 조흔색을 볼 수 없습니다.
+    </p>
+    <h3>경도 vs 강도</h3>
+    <p>경도(hardness)는 풍화에 얼마나 견딜 수 있는지를 의미합니다. 강도(strength)와는 다릅니다.</p>
+    <table class="all-td-left">
+      <caption>물체의 강함</caption>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>항목</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td rowspan="4">경도<br>(Hardness)<br> = 굳기</td>
+          <td colspan="2">누르거나 긁음으로 인해 해당 부위가 변형되지 않는 저항성</td>
+        </tr>
+        <tr>
+          <td>스크레치 경도(Scratch)</td>
+          <td>표면을 딱딱한 물질로 만든 테스터기로 끌어당겨 측정, 예: Mohs(<em>모스</em>)</td>
+        </tr>
+        <tr>
+          <td>압흔 경도(Indentation)</td>
+          <td>표면을 날카로운 물질로 일정 하중으로 눌러서 측정, 예: Rockwell, Vickers, Shore, Brinell</td>
+        </tr>
+        <tr>
+          <td>반동 경도(Rebound)</td>
+          <td>고정된 높이에서 표면에 다이아몬드 팁 해머를 낙하하여 반동높이를 측정, 예: Leeb, Bennett</td>
+        </tr>
+        <tr>
+          <td rowspan="5">강도<br>(Strength)</td>
+          <td colspan="2">힘(응력, Stress)을 받았을 때, 버티는 힘(또는 변형률(Strain))</td>
+        </tr>
+        <tr>
+          <td>압축 강도(Compressive)</td>
+          <td>크기를 줄이기 방향으로 힘을 받았을 때, 파괴되지 않고 뭉쳐있는 힘</td>
+        </tr>
+        <tr>
+          <td>인장 강도(Tensile)</td>
+          <td>잡아당기는 방향으로 힘을 받았을 때, 파괴되지 않고 뭉쳐있는 힘</td>
+        </tr>
+        <tr>
+          <td>전단 강도(Shear)</td>
+          <td>뒤틀리는 방향으로 힘을 받았을 때, 파괴되지 않고 뭉쳐있는 힘</td>
+        </tr>
+        <tr>
+          <td>휨 강도(flexural)</td>
+          <td>양 끝이 고정된 상태에서 중간 부분이 눌리는 힘을 받았을 때, 파괴되지 않고 뭉쳐있는 힘</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>모스(mohs)굳기계의 경우 상대적 강함이기 때문에 절대적 수치와는 차이가 있습니다
+      <a class="detail" href="#references"></a>
+      <span>
+        <tspan class="reference">모스경도 스케일(아카이브): <a
+            href="https://web.archive.org/web/20081017152845/http://www.inlandlapidary.com/user_area/hardness.asp"
+            target="_blank">Mineral Hardness and Hardness Scales 2008-10-17 at the Wayback Machine. Inland Lapidary</a>
+        </tspan>
+      </span>.
+      모스굳기계는 흔한 광물과의 관계를 직관적으로 알아내는 데 유용합니다. 다만 7이상의 강도를 갖는 광물은 보석류의 광물과 소모적인 테스트를 해야합니다. 모조품으로 알아내더라도 정확도가 떨어지고 정확한 값을
+      얻는 것이 번거롭습니다.
+    </p>
+    <div class="img-box">
+      <img src="mohs.svg" />
+      <span class="caption">모스 강도 비교</span>
+      <span class="description">"moth.svg", 2024, @iseohyun.com, CC-BY 4.0</span>
+    </div>
+
+    <h2>토양의 생성</h2>
+    <ol>
+      <li><em>기반암</em>이 지표에 노출되면 기계적 풍화(물, 바람, 식물 등)과 화학적 풍화(물, 산소, 이산화탄소 등)로 인해 잘게 부서지며 '<em>모질물</em>(자갈, 모레, 점토)'이
+        됩니다.</li>
+      <li>모질물에 식물이 생육하면서 부식물이 주입되고 <em>흙</em>이 형성됩니다.<br>
+        ※ 풍화된 광석과 광물에 <em>유기물</em>(생물, 생물의 사체, 배설물..)이 혼합되면 흙이 됩니다.
+      </li>
+      <li><em>표토</em>(표면의 토양)의 물질이 아래로 운반되면서 <em>심토</em>가 생성됩니다(<u>유기질은 적게 운반</u>됩니다).</li>
+    </ol>
+
+    <table class="all-td-left">
+      <caption>지각의 구분</caption>
+      <thead>
+        <tr>
+          <th>구분</th>
+          <th>정의</th>
+          <th>특성</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>표토(Topsoil, A horizon)</td>
+          <td>흙의 윗부분</td>
+          <td>유기물의 축적이 가장 많은 층</td>
+        </tr>
+        <tr>
+          <td>심토(Subsoil, B horizon)</td>
+          <td>흙의 아랫부분</td>
+          <td>유기물은 적지만, 점토 광물이 축적되는 층</td>
+        </tr>
+        <tr>
+          <td>모질물(Parent material, C horizon)</td>
+          <td>기반암이 풍화되어 만들어진, 유기물 축적 이전의 층</td>
+          <td>토양(포토+심토)가 생성되면 풍화가 일어나지 않음</td>
+        </tr>
+        <tr>
+          <td>기반암(bedrock, R)</td>
+          <td>겉흙의 아래 놓여있는 굳은 암석</td>
+          <td>고층빌딩, 아파트의 지지기반이 됨</td>
+        </tr>
+    </table>
+    <div class="img-box">
+      <img src="soil.svg" />
+      <span class="caption">토양의 생성과정</span>
+      <span class="description">"soil.svg", iseohyun.com, CC BY-SA 4.0<br>
+        wind, rain @Esther Moreno, Universil (CC0 1.0) public Domain Dedication<br>
+        tree @ILzolende, CC BY-SA 4.0 DEED<br>
+        grass @Gabriel VanHelsing CC0 1.0 DEED Public Domain<br>
+        drop @QYYZ CC0 1.0 DEED Public Domain<br>
+        poop @Smasongarrison Apache License Ver.2.0<br>
+        bone @Yuo CC BY-SA 4.0 DEED
+      </span>
+    </div>
+
+    <h2>견학</h2>
+    <h3>국가지질공원</h3>
+    <a href="https://www.koreageoparks.kr/topublic/main.do"
+      target="_blank">https://www.koreageoparks.kr/topublic/main.do</a>
+
+    <h1>퀴즈</h1>
+    <ol>
+      <li>지구는 여러가지 계(권역)으로 이루어져 있는데, 단단한 고체인 <button class="quiz">지권</button>, 바다를 구성하는 <button class="quiz">수권</button>, 공기층을 이루는 <button class="quiz">대기권</button>,
+        생명체가 서로 상호작용하는 <button class="quiz">생물권</button>, 자기력장을 생성하고 태양풍으로부터 생명체를 보호하는 자기권, 남극의 빙하권, 대기권 밖의 외권 등으로 구분 할 수 있습니다.
+      </li>
+      <li>지구의 둘레는 <button class="quiz">40,000</button>km 입니다.</li>
+      <li>광물 채취나 탐사 등으로 땅을 파는 행위를 <button class="quiz">시추</button>라고 합니다.</li>
+      <li>지구의 내부를 아는 방법으로는 두들겨 보는 <button class="quiz">지진파</button>연구, 자성의 흐름을 측정하는 <button class="quiz">자기장</button>연구, 위성을 통한 <button
+          class="quiz">중력</button>연구 등이 있습니다.</li>
+      <li>지구의 내부는 (바깥부터) <button class="quiz">지각</button>, <button class="quiz">맨틀</button>, <button
+          class="quiz">외핵</button>, <button class="quiz">내핵</button>으로 이루어져 있습니다.</li>
+      <li>지각은 맨틀보다 (<button class="quiz2 group1 answer">가볍</button>, <button class="quiz2 group1">무겁</button>)습니다.
+      따라서 <button class="quiz">대륙</button>지각이 <button class="quiz">해양</button>지각보다 두껍습니다.</li>
+      <li>지각과 맨틀의 경계면을 <button class="quiz">모호면</button>이라고 합니다.</li>
+      <li><button class="quiz">대륙이동설</button>은 맨틀 상부 + 지각이 <button class="quiz">판</button>이되어 맨틀 위를 떠다니며 이동한다는 이론입니다.</li>
+      <li>위 이론의 근거로는, 과거 연결되 대륙이었을 때 남긴 <button class="quiz">빙하</button>의 흔적, <button class="quiz">지진</button>과 <button class="quiz">화산</button>활동의 일치, 해안선의 일치 등을 들고 있습니다.</li>
+      <li>고생대에 모든 대륙이 하나의 초 거대 대륙이었으며, 이 대륙의 이름을 <button class="quiz">판게아</button>라고 합니다.</li>
+      <li>다양한 이유로 운반되어 일정한 곳에 쌓이는 것을 <button class="quiz">퇴적</button>이라고 합니다.</li>
+      <li>고온, 고압으로 돌이 지하에서 지구의 열에 의해 녹으면 <button class="quiz">마그마</button>라고 부릅니다.</li>
+      <li>지각을 이루는 암석은 ①마그마가 식어서 생기는 <button class="quiz">화성암</button>, ②퇴적물이 쌓여서 생기는 <button class="quiz">퇴적암</button>, ③고온 또는 고압으로 변형되어 생기는 <button class="quiz">변성암</button>이 있습니다.</li>
+      <li>화성암은 식는 속도에 따라 빠르게 식으면 <button class="quiz">화산암</button>, 느리게 식으면 <button class="quiz">심성암</button>이라고 부릅니다.</li>
+      <li>퇴적암은 퇴적물의 굵기에 따라 굵은 것부터 <button class="quiz">역암</button>, <button class="quiz">사암</button>, <button class="quiz">이암</button>이라고 부릅니다.</li>
+      <li>암석의 입자가 크면 <button class="quiz">조립질</button>, 작으면 <button class="quiz">세립질</button>이라고 부릅니다.</li>
+      <li>돌의 크기는 그 크기에 따라 (큰 것 부터) <button class="quiz">바위</button>, 자갈, <button class="quiz">모래</button>,실트, <button class="quiz">점토</button>로 불립니다.</li>
+      <li>화강암은 밝고 단단한, 화성암-심성암 입니다.</li>
+      <li>현무암은 어둡고 구멍이난, 화성암-화산암 입니다.</li>
+      <li>석회암은 무르고, 가공이 쉬운, 퇴적암입니다.</li>
+      <li>대리암은 석회암이 변한 변성암으로 조각, 건설에 애용됩니다.</li>
+      <li>암석은 <button class="quiz">광물</button>로 이루어져 있습니다.</li>
+      <li><button class="quiz">광석</button>은 경제적 가치가 있는 광물 또는 암석을 이야기 합니다.</li>
+      <li>모래의 가장 많은 비중을 차지하고 있는 광물은 <button class="quiz">석영</button>과 <button class="quiz">방해석</button>입니다.</li>
+      <li>광물은 6000종이 넘지만 대부분은 <button class="quiz">규산염</button>광물입니다. 그 이유는 지각에 <button class="quiz">산소</button>와 <button class="quiz">규소</button>가 많기 때문입니다.</li>
+      <li>광물을 구별하는 방법에는 (<button class="quiz">겉보기</button>~) 색을 관찰하거나, 유황을 바르지 않은 도자기(=<button class="quiz">조흔판</button>)을 통해 <button class="quiz">조흔색</button>(알갱이의 색)을 확인 할 수 있습니다.</li>
+      <li>또 다른 방법에는 누르거나 긁힘에 대한 저항성인<button class="quiz">경도</button>, 힘을 받았을 때 버티는 힘인 <button class="quiz">강도</button>를 관찰해서 구별 할 수 있습니다.</li>
+      <li>토양의 생성과정의 시작은 아직 풍화되지 않은 크고 단단한<button class="quiz">기반암</button>부터 입니다.</li>
+      <li>기반암이 풍화되면, 모래, 자갈, 점토 등의 <button class="quiz">모질물</button>이 형성됩니다.</li>
+      <li>모질물 위에 생물이 살면서 <button class="quiz">유기물</button>이 섞인 <button class="quiz">흙</button>이 생성됩니다.</li>
+      <li>흙에서 점토 광물 등이 아래로 가라앉으면서, <button class="quiz">심토</button>가 형성됩니다. 바깥쪽의 흙은 <button class="quiz">표토</button>라고 부릅니다.</li>
+    </ol>
   </article>
 </body>
 
 </html>
+<style>
+  button.quiz {
+    border: 1px solid #ddd;
+    padding: 3px;
+    background-color: #444;
+    color: #444;
+  }
+
+  button.quiz2 {
+    border: 1px solid #ddd;
+    padding: 3px;
+    background-color: #444;
+    color: #FFF;
+  }
+</style>
+<script>
+  var quiz = document.querySelectorAll("button.quiz");
+  quiz.forEach((kdb) => {
+    kdb.toggle = false;
+    kdb.setAttribute("show", "false");
+    kdb.addEventListener("click", () => {
+      var show = kdb.getAttribute("show");
+      if (show == "false") {
+        kdb.setAttribute("show", "true");
+        kdb.style.backgroundColor = "#fff";
+      } else {
+        kdb.setAttribute("show", "false");
+        kdb.style.backgroundColor = "#444";
+      }
+    });
+  });
+  var quiz = document.querySelectorAll("button.quiz2");
+  quiz.forEach((kdb) => {
+    kdb.toggle = false;
+    kdb.setAttribute("show", "false");
+    kdb.addEventListener("click", () => {
+      // class목록에 answer가 있으면
+      var hasAnswerClass = kdb.classList.contains("answer");
+      
+      if (hasAnswerClass) {
+        kdb.style.color = "#444";
+        var groupName;
+        kdb.classList.forEach((className) => {
+          if(className.startsWith("group")) {
+            groupName = className;
+          }
+        });
+  
+        var group = document.querySelectorAll(`button.${groupName}`);
+        console.log(groupName);
+        group.forEach((member) => {
+          member.style.backgroundColor = "#fff";
+        });
+      }
+      
+
+      if (kdb.getElementsByClassName)
+        var show = kdb.getAttribute("show");
+      if (show == "false") {
+        kdb.setAttribute("show", "true");
+        kdb.style.backgroundColor = "#fff";
+      } else {
+        kdb.setAttribute("show", "false");
+        kdb.style.backgroundColor = "#444";
+      }
+    });
+  });
+</script>

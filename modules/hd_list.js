@@ -135,6 +135,7 @@ function addContentsList(object) {
       if (!header.classList.contains("hide")) {
         header.classList.add("hide");
         header.style.top = "-" + header.offsetHeight + "px";
+        document.documentElement.style.setProperty('--header-height', '10px');
       }
     });
 
@@ -234,6 +235,8 @@ document.addEventListener("scroll", function () {
       if (accumulatedScroll > 10) {
         // 올라간 상태 : 헤더 숨겨짐
         header.style.top = "-" + header.offsetHeight + "px";
+        document.documentElement.style.setProperty('--header-height', '10px');
+
       }
     } else {
       // 올라가고 있습니까?
@@ -242,6 +245,8 @@ document.addEventListener("scroll", function () {
       var headerClass = document.querySelector("header").getAttribute("class");
       if (headerClass !== "hide") {
         document.querySelector("header").style.top = 0;
+        document.documentElement.style.setProperty('--header-height', '70px');
+
       }
     }
     lastScrollTop = scrollPosition;
@@ -367,33 +372,65 @@ document.addEventListener('DOMContentLoaded', addReference);
 
 var article = document.querySelector("article");
 function addReference() {
-
-  var references = document.querySelectorAll(".reference");
-  if (references.length < 1) {
+  var details = document.querySelectorAll("a.detail");
+  var detailsInfos = document.querySelectorAll("a.detail+span");
+  if (details.length < 1) {
     return;
   }
 
   var refheader = document.createElement("h1");
-  refheader.innerText = "references"
+  refheader.innerText = "References"
+  refheader.id = "references"
   article.appendChild(refheader);
 
-  for (i = 0; i < references.length; i++) {
-    var discription = references[i].querySelector('.discription');
-    if (discription) {
-      // 본인의 위치 변경
-      discription.style.left = (article.offsetLeft - references[i].offsetLeft + ((article.offsetWidth > 860)?250:50)) + "px";
-      discription.style.width = ((article.offsetWidth > 860) ? 760 : article.offsetWidth * 0.9) + "px";
+  for (i = 0; i < details.length; i++) {
+    details[i].id = `detail-${i}`;
+    details[i].innerHTML = `[${i + 1}]`;
 
-      // 문서 하단에 내용을 추가 기재
-      var refSpan = document.createElement('span');
-      var link = references[i].querySelector('.link');
-      var title = references[i].innerHTML.split('<')[0].trim();
-      if (link) {
-        refSpan.innerHTML = `[ ${i + 1} ] ${title}: <a href="${link.innerHTML}" target="_blank">${discription.innerHTML}</a><br>`;
-      } else {
-        refSpan.innerHTML = `[ ${i + 1} ] ${title}: ${discription.innerHTML}<br>`;
-      }
-      article.appendChild(refSpan);
+    var description = detailsInfos[i].querySelector('.description');
+    if (description) {
+      // 본인의 위치 변경
+      description.style.left = (- details[i].offsetLeft + article.offsetLeft + 50) + "px";
+      description.style.width = ((article.offsetWidth > 860) ? 760 : article.offsetWidth * 0.9) + "px";
+    }
+
+    // 문서 하단에 내용을 추가 기재
+    var refSpan = document.createElement('p');
+    refSpan.style.textAlign = 'left';
+    refSpan.style.textIndent = '-2em';
+    refSpan.style.paddingLeft = '2em';
+    var reference = detailsInfos[i].querySelector('.reference');
+
+    refSpan.innerHTML = `[ <a href="#detail-${i}">${i + 1}</a> ] ${reference.innerHTML}`;
+    article.appendChild(refSpan);
+  }
+
+  addReferenceImage();
+}
+
+function addReferenceImage() {
+  var imgBoxs = document.querySelectorAll(".img-box");
+  if (imgBoxs.length < 1) {
+    return;
+  }
+
+  var refheader = document.createElement("h2");
+  refheader.innerText = "그림 출처"
+  refheader.id = "references-image"
+  article.appendChild(refheader);
+
+  for (i = 0; i < imgBoxs.length; i++) {
+    var caption = imgBoxs[i].querySelector('.caption');
+    imgBoxs[i].id = `ImageBox-${i}`;
+    if (caption) {
+      var imgInfoLine = document.createElement('p');
+      imgInfoLine.style.textAlign = 'left';
+      imgInfoLine.style.textIndent = '-2em';
+      imgInfoLine.style.paddingLeft = '2em';
+      var description = imgBoxs[i].querySelector('.description');
+      // var link = imgBoxs[i].querySelector('img').attributes['src'];
+      imgInfoLine.innerHTML = `[<a href="#ImageBox-${i}"> ${i + 1} </a>] ${caption.innerHTML}: ${description.innerHTML}<br>`;
+      article.appendChild(imgInfoLine);
     }
   }
 }

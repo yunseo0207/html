@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 7000 500"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:bx="https://boxy-svg.com">
+  <style>
+@font-face {
+  font-family: 'RegularFont';
+  font-weight: 400;
+  font-style: normal;
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.eot');
+  src: url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.eot?#iefix') format('embedded-opentype'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.woff2') format('woff2'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.woff') format('woff'),
+    url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.ttf') format("truetype");
+  font-display: swap;
+}
+  </style>
+  <defs>
+    <linearGradient id="gradient-1" bx:pinned="true">
+      <stop offset="0" style="stop-color: rgba(0, 0, 0, 0.05);"/>
+      <stop offset="1" style="stop-color: rgba(128, 0, 0, 0.1);"/>
+    </linearGradient>
+    <linearGradient id="gradient-1-0" gradientUnits="userSpaceOnUse" x1="50" y1="50" x2="6300" y2="50" xlink:href="#gradient-1"/>
+    <marker id="marker-1" viewBox="-50 -25 50 50" overflow="visible" orient="auto">
+      <path style="fill: black;" d="M-50 -25 L0 0 L-50 25z"/>
+    </marker>
+    <clipPath id="cut-off-bottom">
+      <rect x="0" y="0" width="7000" height="500" />
+    </clipPath>
+  </defs>
+  <g style="stroke:black; stroke-width: 5px; fill: none;">
+    <path d="M 30 250 h6950"/>
+    <ellipse style="fill: rgb(216, 216, 216); " cx="50" cy="250" rx="20" ry="20"/>
+  <g style="stroke:#ddd;">
+    <ellipse style="fill: url('#gradient-1-0');" cx="40" cy="250" rx="75" ry="75" clip-path="url(#cut-off-bottom)"/>
+    <ellipse style="fill: url('#gradient-1-0');" cx="40" cy="250" rx="210" ry="210" clip-path="url(#cut-off-bottom)"/>
+    <ellipse style="fill: url('#gradient-1-0');" cx="40" cy="250" rx="640" ry="640" clip-path="url(#cut-off-bottom)"/>
+    <ellipse style="fill: url('#gradient-1-0');" cx="40" cy="250" rx="2010" ry="2010" clip-path="url(#cut-off-bottom)"/>
+    <ellipse style="fill: url('#gradient-1-0');" cx="40" cy="250" rx="6300" ry="6300" clip-path="url(#cut-off-bottom)"/>
+    </g>
+    <path d="M 123 225 L 103 275"/>
+    <path d="M 260 225 L 240 275"/>
+    <path d="M 690 225 L 670 275"/>
+    <path d="M 2060 225 L 2040 275"/>
+    <path d="M 6360 225 L 6340 275"/>
+    <path style="marker-end: url('#marker-1');" d="M 151 111 C 95.772 111 51 155.772 51 211 L 51 221"/>
+    <path style="marker-end: url('#marker-1');" d="M 151 411 a 100 100 1 0 1 -100 -100 v -10"/>
+  </g>
+  <g style="fill: #666; font-family: RegularFont, sans-serif; font-size: 90px; white-space: pre;">
+    <text x="180" y="130">점토</text>
+    <text x="159" y="460">모래(최대: 2mm)</text>
+    <text x="700" y="200">실트</text>
+    <text x="700" y="365">자갈(최대: 6.3cm)</text>
+    <text x="2070" y="200">작은모래</text>
+    <text x="2070" y="380">돌멩이(cobble, 최대:20cm)</text>
+    <text x="4000" y="367">바위(boulder)</text>
+    <text x="6370" y="207">중간모래</text>
+    <text x="5870" y="380">큰 바위(boulder, 63cm이상)</text>
+  </g>
+</svg>

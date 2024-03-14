@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 300"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:bx="https://boxy-svg.com">
+  <!-- 눈금 선 뒤 빨간 선 -->
+  <g style="fill:none;stroke:#fcc">
+    <path d="M149 280h26M149 280h26M149 278h26M149 276h26M149 272h26M149 268h26M149 263h26M149 245h26M149 211h26M149 20h26"/>
+    <path d="M250 258h32M250 235h32M250 173h32M250 160h32M250 133h32M250 120h32M250 109h32M250 87h32M250 65h32M250 22h32"/>
+  </g>
+  <!-- 눈금선 -->
+  <g style="stroke:black;fill:none">
+    <path d="M50 20h20 M50 46h20M50 72h20M50 98h20M50 124h20M50 150h20M50 176h20M50 202h20M50 228h20M50 254h20M50 280h20M60 20v260"/>
+    <path d="M150 20h20M150 37h20M150 54h20M150 72h20M150 89h20M150 106h20M150 124h20M150 141h20M150 158h20M150 176h20M150 193h20M150 210h20M150 228h20M150 245h20M150 262h20M150 280h20M160 20v260"/>
+    <path d="M250 280h20M260 258h5M260 235h5M260 222h5M260 213h5M260 206h10M250 183h20M260 161h5M260 148h5M260 139h5M260 132h10M250 109h20M260 87h5M260 74h5M260 65h5M260 57h10M250 35h20M260 32h5M260 29h5M260 27h5M260 24h5M260 22h10M260 20h10M260 20v260"/>
+  </g>
+  <!-- 강도끼리 연결하는 빨간 대각선들 -->
+  <g style="fill:none;stroke:#faa">
+    <path d="M75 254L149 280M75 228L149 280M75 202L149 278M75 176L149 276M75 150L149 272M75 124L149 268M75 98L149 263M75 72L149 245M75 46L149 211M75 20L149 20"/>
+    <path d="M175 280L250 258M175 280L250 235M175 278L250 173M175 276L250 160M175 272L250 133M175 268L250 120M175 263L250 109M175 245L250 87M175 211L250 65M175 20L250 22"/>
+    <path d="M282 258L309 264M282 235L309 238M282 173L309 212M282 160L309 186M282 133L309 160M282 120L309 134M282 109L309 108M282 87L309 82M282 65L309 56M282 22L309 30"/>
+  </g>
+  <g style="fill:#ccc; font-size: 6px;">
+    <text x="70" y="280">0</text>
+    <text x="70" y="254">1</text>
+    <text x="70" y="228">2</text>
+    <text x="70" y="202">3</text>
+    <text x="70" y="176">4</text>
+    <text x="70" y="150">5</text>
+    <text x="70" y="124">6</text>
+    <text x="70" y="98">7</text>
+    <text x="70" y="72">8</text>
+    <text x="70" y="46">9</text>
+    <text x="70" y="20">10</text>
+    <text x="170" y="280">0</text>
+    <text x="170" y="262">100</text>
+    <text x="170" y="245">200</text>
+    <text x="170" y="228">300</text>
+    <text x="170" y="210">400</text>
+    <text x="170" y="20">1500</text>
+    <text x="170" y="193">500</text>
+    <text x="170" y="176">600</text>
+    <text x="170" y="158">700</text>
+    <text x="170" y="141">800</text>
+    <text x="170" y="124">900</text>
+    <text x="170" y="106">1000</text>
+    <text x="170" y="89">1100</text>
+    <text x="170" y="72">1200</text>
+    <text x="170" y="54">1300</text>
+    <text x="170" y="37">1400</text>
+    <text x="270" y="280">0</text>
+    <text x="270" y="258">1</text>
+    <text x="270" y="235">2</text>
+    <text x="270" y="222">3</text>
+    <text x="270" y="213">4</text>
+    <text x="270" y="206">5</text>
+    <text x="270" y="183">10</text>
+    <text x="270" y="161">20</text>
+    <text x="270" y="148">30</text>
+    <text x="270" y="139">40</text>
+    <text x="270" y="132">50</text>
+    <text x="270" y="109">100</text>
+    <text x="270" y="87">200</text>
+    <text x="270" y="74">300</text>
+    <text x="270" y="65">400</text>
+    <text x="270" y="57">500</text>
+    <text x="270" y="35">1000</text>
+    <text x="270" y="20">1600</text>
+  </g>
+  <g style="fill:#666; font-size: 13px;">
+    <text x="310" y="270">활석<tspan style="font-size:8; fill:#aaa">(1)</tspan></text>
+    <text x="310" y="244">석고<tspan style="font-size:8; fill:#aaa">(2)</tspan></text>
+    <text x="310" y="218">방해석<tspan style="font-size:8; fill:#aaa">(14)</tspan></text>
+    <text x="310" y="192">형석<tspan style="font-size:8; fill:#aaa">(21)</tspan></text>
+    <text x="310" y="166">인회석<tspan style="font-size:8; fill:#aaa">(48)</tspan></text>
+    <text x="310" y="140">정장석<tspan style="font-size:8; fill:#aaa">(72)</tspan></text>
+    <text x="310" y="114">석영<tspan style="font-size:8; fill:#aaa">(100)</tspan></text>
+    <text x="310" y="88">황옥<tspan style="font-size:8; fill:#aaa">(200)</tspan></text>
+    <text x="310" y="62">강옥<tspan style="font-size:8; fill:#aaa">(400)</tspan></text>
+    <text x="310" y="36">금강석<tspan style="font-size:8; fill:#aaa">(1500)</tspan></text>
+    <text x="40" y="11" style="font-size: 10px;">모스강도(상대)</text>
+    <text x="140" y="11" style="font-size: 10px;">절대 강도</text>
+    <text x="240" y="11" style="font-size: 10px;">log2 Scale</text>
+  </g>
+</svg>
