@@ -37,6 +37,7 @@
   <!-- 공통스킨 -->
   <style type="text/css">
     @import url("/style.css");
+
     #board {
       background-color: white;
       opacity: 0.95;
@@ -478,55 +479,74 @@
 
     <h1>필터</h1>
     <span class="tutorial">C_Reference >> filter.svg</span>
-    <svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:bx="https://boxy-svg.com">
+
+    <?xml version="1.0" encoding="utf-8"?>
+    <svg viewBox="0 0 500 300" xmlns="http://www.w3.org/2000/svg" style="max-width:80%;padding:5px">
+      <desc>
+        (c) 2024 @iseohyun.com
+        All rights reserved.
+        CC-BY-SA
+      </desc>
+      <title>filter test</title>
       <defs>
-        <filter id="drop-shadow-filter">
-          <!-- 그림자 위치, 색 -->
-          <feOffset dx="10" dy="10" />
-          <feComponentTransfer result="offsetblur">
-            <feFuncA id="spread-ctrl" type="linear" slope="0.5" />
-          </feComponentTransfer>
-          <feFlood flood-color="rgba(0,0,0,0.3)" />
-          <feComposite in2="offsetblur" operator="in" />
-          <!-- 원본과 그림자를 그린다. -->
-          <feMerge>
-            <feMergeNode />
-            <feMergeNode in="SourceGraphic" />
-          </feMerge>
-        </filter>
-
-        <filter id="gaussian-blur-filter">
-          <feGaussianBlur stdDeviation="5 5" edgeMode="none" />
-        </filter>
+        <linearGradient id="rainbow" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0.1" stop-color="red" />
+          <stop offset="0.3" stop-color="orange" />
+          <stop offset="0.4" stop-color="yellow" />
+          <stop offset="0.5" stop-color="green" />
+          <stop offset="0.7" stop-color="blue" />
+          <stop offset="0.9" stop-color="purple" />
+        </linearGradient>
       </defs>
-      <rect x="100" y="100" width="200" height="100"
-        style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); filter: url('#drop-shadow-filter');" rx="18" ry="18" />
-      <rect x="100" y="300" width="200" height="100"
-        style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0); filter: url('#gaussian-blur-filter');" rx="18" ry="18" />
-    </svg>
 
-    <pre><code>&lt;defs>
-  &lt;filter id="drop-shadow-filter">
-    &lt;!-- 그림자 위치, 색 -->
-    &lt;feOffset dx="10" dy="10"/>
-    &lt;feComponentTransfer result="offsetblur">
-      &lt;feFuncA id="spread-ctrl" type="linear" slope="0.5"/>
-    &lt;/feComponentTransfer>
-    &lt;feFlood flood-color="rgba(0,0,0,0.3)"/>
-    &lt;feComposite in2="offsetblur" operator="in"/>
-    &lt;!-- 원본과 그림자를 그린다. -->
-    &lt;feMerge>
-      &lt;feMergeNode/>
-      &lt;feMergeNode in="SourceGraphic"/>
-    &lt;/feMerge>
-  &lt;/filter>
-  
-  &lt;filter id="gaussian-blur-filter">
-    &lt;feGaussianBlur stdDeviation="5 5" edgeMode="none"/>
-  &lt;/filter>
-&lt;/defs>
-&lt;rect x="100" y="100" width="200" height="100" style="fill: #ddd; stroke: #000; filter: url('#drop-shadow-filter');" rx="18" ry="18"/>
-&lt;rect x="100" y="300" width="200" height="100" style="fill: #ddd; stroke: #000; filter: url('#gaussian-blur-filter');" rx="18" ry="18"/></code></pre>
+      <rect x="0" y="10" rx="18" ry="18" width="80" height="65" style="fill:url(#rainbow); stroke: #000;" />
+      <rect x="100" y="10" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:blur(5px);" />
+      <rect x="200" y="10" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:brightness(0.5)" />
+      <rect x="300" y="10" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:contrast(0.5)" />
+      <rect x="400" y="10" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:drop-shadow(2px 4px 6px black)" />
+      <rect x="0" y="100" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:grayscale(1)" />
+      <rect x="100" y="100" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:hue-rotate(45deg)" />
+      <rect x="200" y="100" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:invert(1)" />
+      <rect x="300" y="100" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:opacity(0.5)" />
+      <rect x="400" y="100" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:saturate(0.5)" />
+      <rect x="0" y="200" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:sepia(1)" />
+      <rect x="100" y="200" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:sepia(1) blur(2px)" />
+      <rect x="200" y="200" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:invert(1) drop-shadow(2px 4px 6px black)" />
+      <rect x="300" y="200" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:grayscale(1) drop-shadow(2px 4px 6px red)" />
+      <rect x="400" y="200" rx="18" ry="18" width="80" height="65"
+        style="fill:url(#rainbow); stroke: #000; filter:drop-shadow(2px 4px 6px red) grayscale(1)" />
+
+      <text x="10" y="90">None</text>
+      <text x="110" y="90">blur</text>
+      <text x="210" y="90">brightness</text>
+      <text x="310" y="90">contrast</text>
+      <text x="410" y="90">drop-shadow</text>
+      <text x="10" y="190">grayscale</text>
+      <text x="110" y="190">hue-rotate</text>
+      <text x="210" y="190">invert</text>
+      <text x="310" y="190">opacity</text>
+      <text x="410" y="190">saturate</text>
+      <text x="10" y="290">sepia</text>
+      <text x="110" y="290">sepia+blur</text>
+      <text x="210" y="290">inv+shd</text>
+      <text x="295" y="290">gray+shd(red)</text>
+      <text x="405" y="290">shd(red)+gray</text>
+    </svg>
+    <pre><code>&lt;rect x="0" y="10" rx="18" ry="18" width="80" height="65" style="fill:url(#rainbow); stroke: #000;"/>
+&lt;rect x="100" y="10" rx="18" ry="18" width="80" height="65" style="fill:url(#rainbow); stroke: #000; filter:blur(5px);" /></code></pre>
 
     <h1>글꼴</h1>
     <span class="tutorial">C_Reference >> font.svg</span>
