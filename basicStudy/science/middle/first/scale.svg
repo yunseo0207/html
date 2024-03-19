@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="weight" viewBox="0 0 20 20" style="stroke:black;fill:rgb(216, 30, 0); stroke-linecap: square; stroke-linejoin: round;">
+      <path d="M2 6C2 6 5 9 10 9C15 9 18 6 18 6L18 19L2 19L2 6" style="fill:rgb(102, 140, 224);"/>
+      <path d="M18 6C18 6 15 3 10 3C5 3 2 6 2 6C2 6 5 9 10 9C15 9 18 6 18 6" style="fill:rgb(70, 96, 154);"/>
+    </symbol>
+  </defs>
+  <path style="stroke:black;fill:rgb(216, 71, 51);" d="M96 122C94 120 90 119.421 90 110C90 104 97 113 98 113C100 116 102 108 104 110C105 112 106 113 107 114C109 116 115 111 117 112C120 116 109 121 108 122"/>
+  <path style="stroke:black;fill:rgb(184, 60, 43);" d="M83.006 140C80 134.009 76.081 130 83 123C89.745 116.176 110 120 120 127.019C125.524 130 118 139 115 141"/>
+  <use width="50" height="25" transform="matrix(1, 0, 0, 1, 355, 117)" style="fill:rgb(94, 40, 44);" xlink:href="#weight"/>
+  <use width="50" height="25" transform="matrix(0.4, 0, 0, 0.6, 386, 126)" xlink:href="#weight"/>
+  <use width="50" height="25" transform="matrix(0.4, 0, 0, 0.6, 396, 126)" xlink:href="#weight"/>
+  <path style="stroke:black;fill:rgb(215, 205, 52);" d="M100 60C100 60 150 60 170 50C190 40 300 40 320 50C340 60 390 60 390 60z"/>
+  <ellipse style="stroke:black;fill:rgb(216, 165, 50);" cx="245" cy="44" rx="15" ry="12"/>
+  <path style="stroke:black;fill:rgb(174, 107, 16);" d="M260 270C270 280 260 310 280 320C290 320 310 340 310 340 L 180 340C180 340 200 320 210 320C230 310 220 280 230 270C240 260 240 60 240 50C240 40 250 40 250 50C250 60 250 260 260 270 Z"/>
+  <path style="stroke:black;fill:rgb(215, 205, 52);" d="M270 270C260 260 230 260 220 270C210 280 210 270 220 280C230 290 260 290 270 280C280 270 280 280 270 270Z"/>
+  <path style="stroke:black;fill:none;" d="M100 60 L 70 140 L 130 140 L 100 60 Z"/>
+  <path style="stroke:black;fill:none;" d="M390 60 L 360 139.5 L 420 139.5 L 390 60 Z"/>
+  <path style="stroke:black;fill:rgb(216, 134, 75);" d="M360 140C370 150 370 150 380 150C390 150 390 150 400 150C410 150 410 150 420 140"/>
+  <path style="stroke:black;fill:rgb(216, 134, 75);" d="M70 140C80 150 80 150 90 150C100 150 100 150 110 150C120 150 120 150 130 140z"/>
+  <path d="M90 144H122L122 137L140 150L122 163L122 156H90V144Z" style="stroke:black;fill:rgb(216, 71, 51);" transform="matrix(0, 1, -1, 0, 250, 60)"/>
+  <path d="M90 144H122L122 137L140 150L122 163L122 156H90V144Z" style="stroke:black;fill:rgb(216, 71, 51);" transform="matrix(0, -1, 1, 0, 241, 149)"/>
+  <path d="M90 144H122L122 137L140 150L122 163L122 156H90V144Z" style="stroke:black;fill:rgb(63, 66, 216);" transform="matrix(0, 1, -1, 0, 541, 60)"/>
+</svg>

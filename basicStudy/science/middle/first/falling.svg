@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 420 150"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient id="RadialGradient" cx="0.5" cy="0.5" r="1" fx="0.3" fy="0.3">
+      <stop offset="0%" stop-color="#eee" />
+      <stop offset="50%" stop-color="#888" />
+      <stop offset="100%" stop-color="#fff" />
+    </radialGradient>
+    <radialGradient id="BrickRadialGradient" cx="0.6" cy="0.8" r="1" fx="0.01" fy="0.01">
+      <stop offset="0%" stop-color="#988" />
+      <stop offset="50%" stop-color="#655" />
+      <stop offset="100%" stop-color="#fdd" />
+    </radialGradient>
+    <symbol id="wind" viewBox="0 0 50 60">
+      <path d="M0 0v60M10 4v35M5 23v27M20 12v40M23 5v25M27 30v17M35 5v37M39 20v15M45 0v60" stroke="#fff8" fill="none" stroke-width="3"/>
+    </symbol>
+    <symbol id="brick" viewBox="0 0 20 10">
+      <rect x="0" y="0" width="18" height="8" rx="1" fill="url(#BrickRadialGradient)" style="filter: drop-shadow(2px 2px 1px #a66);"/>
+    </symbol>
+  </defs>
+  <g clip-path="url(#background)">
+    <animateMotion path="M0 0 v-50" dur="3s" repeatCount="indefinite"/>
+    <rect x="0" y="0" width="420" height="300" fill="#ccc"/>
+    <!-- <animate attributeName="clip-path" from="none" to="url(#background)" dur="2s" repeatCount="indefinite"/> -->
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -15, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 35, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 85, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 135, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 185, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 235, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 285, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 335, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 385, 0)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -35, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 15, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 65, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 115, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 165, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 215, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 265, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 315, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 365, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 415, 25)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -15, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 35, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 85, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 135, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 185, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 235, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 285, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 335, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 385, 50)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -35, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 15, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 65, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 115, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 165, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 215, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 265, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 315, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 365, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 415, 75)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -15, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 35, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 85, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 135, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 185, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 235, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 285, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 335, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 385, 100)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -35, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 15, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 65, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 115, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 165, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 215, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 265, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 315, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 365, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 415, 125)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -15, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 35, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 85, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 135, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 185, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 235, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 285, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 335, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 385, 150)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -35, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 15, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 65, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 115, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 165, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 215, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 265, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 315, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 365, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 415, 175)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -15, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 35, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 85, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 135, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 185, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 235, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 285, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 335, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 385, 200)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, -35, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 15, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 65, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 115, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 165, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 215, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 265, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 315, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 365, 225)"/>
+    <use width="50" height="25" xlink:href="#brick" transform="matrix(1, 0, 0, 1, 415, 225)"/>
+  </g>
+  <g style="stroke: none" fill="url(#RadialGradient)">
+    <ellipse cx="70" cy="100" rx="32" ry="32" style="filter: drop-shadow(6px 6px 3px #000d);"/>
+    <ellipse cx="140" cy="100" rx="25" ry="25" style="filter: drop-shadow(6px 6px 3px #000d);"/>
+    <ellipse cx="210" cy="100" rx="25" ry="25" style="filter: drop-shadow(6px 6px 3px #000d);"/>
+    <ellipse cx="280" cy="100" rx="25" ry="25" style="filter: drop-shadow(6px 6px 3px #000d);"/>
+    <ellipse cx="350" cy="100" rx="25" ry="25" style="filter: drop-shadow(6px 6px 3px #000d);"/>
+    <text style="fill:#000;font-size: 17px; text-anchor: middle;" x="70" y="104">2kg</text>
+    <text style="fill:#000;font-size: 17px; text-anchor: middle;" x="140" y="104">1kg</text>
+    <text style="fill:#000;font-size: 17px; text-anchor: middle;" x="210" y="104">1kg</text>
+    <text style="fill:#000;font-size: 17px; text-anchor: middle;" x="280" y="104">1kg</text>
+    <text style="fill:#000;font-size: 17px; text-anchor: middle;" x="350" y="104">1kg</text>
+  </g>
+  <g>
+    <use width="100" height="100" xlink:href="#wind" transform="matrix(0.5, 0, 0, 0.6, 45, 5)"/>
+    <use width="100" height="100" xlink:href="#wind" transform="matrix(0.4, 0, 0, 0.6, 120, 5)"/>
+    <use width="100" height="100" xlink:href="#wind" transform="matrix(0.4, 0, 0, 0.6, 190, 5)"/>
+    <use width="100" height="100" xlink:href="#wind" transform="matrix(0.4, 0, 0, 0.6, 260, 5)"/>
+    <use width="100" height="100" xlink:href="#wind" transform="matrix(0.4, 0, 0, 0.6, 330, 5)"/>
+  </g>
+  <path style="stroke: rgb(0, 0, 0); fill: none; stroke-width:2">
+    <animate attributeName="d" values="
+    M132 43C144 46 133 54 136 59C137 61 140 63 141 65C143 66 141 75 140 75; 
+    M142 45C141 48 139 52 142 55C144 59 144 57 144 63C143 71 139 73 140 75; 
+    M135 49C141 50 146 50 143 57C141 63 137 60 136 67C135 74 139 73 140 75;
+    M132 43C144 46 133 54 136 59C137 61 140 63 141 65C143 66 141 75 140 75; 
+    " dur="1.9s" repeatCount="indefinite"/>
+    <!-- animation-direction -->
+  </path>
+
+
+  <path style="stroke: rgb(0, 0, 0); fill: none; stroke-width:2">
+    <animate attributeName="d" values="
+    M184 60C196 52 196 61 201 66C205 70 212 66 212 75; 
+    M188 54C204 54 197 59 202 64C206 68 212 66 212 75;
+    M191 59C194 63 195 66 199 68C204 71 212 66 212 75;
+    M184 60C196 52 196 61 201 66C205 70 212 66 212 75; 
+    " dur="1s" repeatCount="indefinite"/>
+  </path>
+
+  <path style="stroke: rgb(0, 0, 0); fill: none; stroke-width:2">
+  <animate attributeName="d" values="
+    M281 75C284 72 288 68 290 66C294 63 304 70 307 71C313 74 318 69 322 67C327 64 343 74 343 76;
+    M281 75C284 72 286 63 292 63C299 64 301 72 307 73C313 76 320 66 327 66C335 65 343 74 343 76;
+    M281 75C284 72 288 68 290 66C294 63 304 70 307 71C313 74 318 69 322 67C327 64 343 74 343 76;
+    " dur="1.5s" repeatCount="indefinite"/>
+  />
+</path>
+</svg>

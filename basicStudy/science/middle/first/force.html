@@ -32,6 +32,10 @@
     hljs.initLineNumbersOnLoad();
   </script>
 
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!-- 목차 생성 -->
   <script src="/modules/hd_list.js" defer></script>
 
@@ -44,8 +48,425 @@
 <body>
   <article>
     <div id="title">중1: 2. 여러가지 힘</div>
-    <p>작성 대기 중입니다.</p>
+    <h1>개요</h1>
+    <p>
+      <em>힘</em>(force)란 물체의 <u>모양을 변화</u>시키거나 어떠한 <u>방향, 속도를 변하게</u> 하는 원인입니다.
+      이 단원에서는 힘의 크기를 측정하는 방법과, 방향이 왜 중요한지, 힘의 합성과 상쇄에 대해 고민해 봅니다.
+    </p>
+    <!-- 이를 공식화하면 F = ma이고 단위는 kg*m/s^2 = N(Newton, 뉴턴)이 된다. -->
+
+    <h1>본문</h1>
+    <h2>중력</h2>
+    <div class="img-box" style="float:right">
+      <img src="gravity.svg" style="width:300px" />
+      <span class="caption">중력</span>
+      <span class="description">"gravity.svg", iseohyun.com, public domain</span>
+    </div>
+    <p>
+      모든 물체는 떨어집니다. 그 이유는 지구가 모든 물체를 지구 방향으로 끌어당기기 때문입니다.
+      지구가 물체를 당기는 힘을 <u>지구의 <em>중력</em></u>(gravity)이라 합니다. 지구만 중력을 갖는 것은 아닙니다.
+      <em>만유인력</em>(萬有引力; universal gravity)이라는 말은, 모든 것은 당기는 힘이 있다는 뜻 입니다.
+    </p>
+    \[F= G{{m_1 m_2} \over {r^2}} \]
+    <p style="text-indent: 0; width:fit-content;padding-left:10%;margin-bottom: 50px;">
+      <span style="font:italic 1em 'times new roman'">G</span>: 중력상수(\(6.67384 \times 10^{11}N~m^2~kg^{-2} \)), 항상
+      일정<br>
+      \(m_1, m_2\): 물체1, 2의 <em>질량</em><br>
+      \(r\): 물체1과 물체2 까지의 거리<br>
+      ※ <em>질량</em>: 어떤 물질가 가지고 있는 고유의 양(kg)
+    </p>
+    <p>
+      지구 중력의 경우, "<span style="font:italic 1em 'times new roman'">r</span> = 6,400km + 높이"이기 때문에,
+      높이가 높아질수록 중력이 작아지는 것은 맞지만, 우주 멀리 나가지 않는 이상 높이가 사실상 무의미합니다.<br>
+      이 때, 순수하게 중력의 힘으로만 낙하하는 물체를 <em>자유 낙하</em>(free fall)상태에 있다고 합니다. 자유 낙하하는 물체들은 다음과 같은 특징이 있습니다:
+    </p>
+    <div class="img-box" style="float:right;width:500px;">
+      <img src="falling.svg" style="border-radius: 20px;" />
+      <span class="caption">물체의 무게와 낙하속도</span>
+      <span class="description">"falling.svg" @iseohyun.com 2024 CC-BY-SA 4.0</span>
+    </div>
+    <ol>
+      <li>물체은 <u>무게와 상관없이</u> 동시에 떨어집니다.<br>
+        * 사고실험[그림: 물체의 무게와 낙하속도] : '실로 연결된' 1kg의 구술 2개와, '실로 연결되지 않은' 1kg의 구슬 2개를 떨어뜨렸을 때, 무엇이 먼저 떨어질까요? 동시에 떨어집니다.<br>
+        <B>왜?</B> 무거운 물체일수록 더 많은 중력의 힘을 받습니다. 다만, 그 물체를 움직이는데 필요한 에너지 또한 더 필요하므로, 결론적으로 같은 속력을 갖게 됩니다.
+      </li>
+      <li>
+        같은 물체라도 지구에서의 무게와 <u>달 또는 목성에서의 무게가 다릅니다.</u><br>
+        *천체의 질량(\(m_1\))에 비례해서 무게가 나갑니다. 달은 지구보다 1/6배 가벼우므로, 물체도 1/6배 가볍습니다(-> 1/6배 무겁다).
+      </li>
+    </ol>
+    <div class="simple-box" style="width:90%;margin:30px auto 80px">
+      결론 : 지구의 중력은 지구의 &nbsp;<u>중심 방향</u>으로 작용한다.
+    </div>
+    <div class="img-box" style="float:left;padding-right:30px;">
+      <img src="desk_stone.svg" style="width:200px; height:200px" />
+      <span class="caption">책상과 돌</span>
+      <span class="description">"desk_stone.svg", iseohyun.com, 2024, CC-BY-SA 4.0<br>
+        이미지 출처1, desk: "Nuvola desk 2.svg", Adrignola, Wikimedia.org, GUN LesserGeneral Public License<br>
+        이미지 출처2, stone: "Stone No Shadow.svg", CaciStaccingCrane, Wikimedia.org, Wikimedia.org</span>
+    </div>
+    <p>
+      <span style="font: italic 900 2em /0.7em var(--font-serif)">Q.</span> 왜, 모든 물체는 땅속으로 사라지지 않을까?
+    </p>
+    <p>
+      [그림. 책상과 돌]과 같이 모든 물체는 지구방향으로의 지구중력을 가지고 있습니다. 이를 표시하면 파란색 화살표와 같습니다.
+      힘을 표시하는 방법에는 3가지를 주의해야합니다.<br>
+      1. <em>작용점</em>: 힘이 작용하는 위치, 화살표의 시작 위치<br>
+      2. <em>크기</em>: 힘의 세기(강도), 길이<br>
+      3. <em>방향</em>: 힘의 방향, 각도<br>
+      <del>0. 화살표의 굵기</del><br>
+      <del>0. 화살표의 색</del><br>
+      [그림. 책상과 돌]에서 <span style="color:blue">파란색 화살표는 돌의 지구 중력</span>을 <span style="color:red">빨간색 화살표는 책상이 돌을 받치는
+        힘</span>을 표시합니다. 이 힘은 책상 위에서 서로 같은 크기 힘으로 정반대 방향으로 상쇄하고 있습니다.
+    </p>
+    <div class="img-box" style="float:right">
+      <img src="stress_strain_curve.svg" width="400px" />
+      <span class="caption">물질에 가해지는 힘과 변형 및 강도</span>
+      <span class="description">"stress_strain_curve.svg", @iseohyun.com, 2024 CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      [그림. 책상과 돌]에서 <span style="color:blue">돌이 바닥으로 누르는 힘(파랑 화살표)</span>을 어떻게 <em>측정</em> 할까요?<br>
+      ①<u>누르는 힘을 기계적 장치를 이용해 다른 것과 비교하는 방법</u>을 이용할 수 있습니다.<br>
+      또는 ②<u><em>탄성</em>(elasticity)을 이용</u>할 수 있습니다. 그림 [물질에 가해지는 힘과 변형 및 강도]의 그래프는 물질에 힘이 가해졌을 때, 물질이 어떻게 반응하는지
+      설명합니다.<br>
+      『"<a href="geosphere.html#경도와 강도">지권의 변화: 경도와 강도</a>"에서 강도(hardness)에 관한 이야기가 있었습니다.』<br>
+      그래프를 좀 더 자세히 설명하자면, 모든 물체는 부서지기 이전에 복원력을 가지며, 일정수준 (그림에서 항복점)을 넘어가면 더 이상 원래대로 복원되지 못 합니다. 극한강도를 넘어가면 이미 파괴가 진행되어 더
+      적은 양의 힘으로도 물질의 파괴가 진행됩니다.<br>
+      [그림. 책상과 돌]에서 책상은 탄성률(일정한 변형의 기울기)가 좋지 못하고, 만약 돌이 좀 더 무거워서 극한 강도를 벗어나면 부서져버릴 것입니다.
+    </p>
+
+    <h2>측정</h2>
+
+    <div class="img-box" style="float:right;">
+      <img src="scale.svg" style="width:300px" />
+      <span class="caption">양팔저울</span>
+      <span class="description">"scale.svg", @iseohyun.com, CC BY-SA 4.0</span>
+    </div>
+    <h3>방법 1) 양팔저울</h3>
+    <p>
+      지레를 이용해서 원기와 비교하는 방식입니다. 평형상태가 될 때까지, 측정할 무게 추를 더하거나 뺍니다.<br><br>
+      [그림. 양팔저울] 왼쪽의 빨간색 물체가 갖는 지구 중력을 빨간색 화살표로 표시했습니다.
+      양팔저울의 지렛대 원리를 이용해 반대편에 똑같은 힘이 주어지도록 합니다.
+      그리고, 그 무게만큼 "이미 무게를 알고 있는" 추를 올려놓음으로써 알 수 있습니다.<br>
+      아마 여러분 중의 몇몇은 지렛대의 원리를 이용해서 좀 더 정교한 저울을 제작 할 수 있겠다는 상상을 할지도 모릅니다.<br><br>
+    </p>
+
+    <h3 class="clear-both">방법 2) 용수철</h3>
+    <div class="img-box" class="clear-right" style="float: right">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fc/Hookes-law-springs.png/220px-Hookes-law-springs.png" />
+      <span class="caption">용수철을 이용한 측정</span>
+      <span class="description">"220px-Hookes-law-springs.svg", Svjo, wikimedia.org, CC BY-SA 3.0</span>
+    </div>
+
+    <p>
+      탄성력은 물체가 변형되었을 때, 원래의 형태나 크기로 돌아가려는 힘입니다.
+      용수철에 늘어나는 길이를 측정하여 중력의 크기를 알아낼 수 있습니다.<br>
+      탄성력이 항복점 이전까지 일정하다는 뜻은 <u>용수철이 늘어난 만큼 (비례하게) 무게가 증가했다</u>는 것을 의미합니다.<br>
+      예를들어, 1N의 힘으로 2cm가 늘어난 용수철은 2N은 4cm, 4N은 6cm가 늘어납니다.
+      반대로, 10N에 1mm가 줄어든 용수철이 있다면, 20N에는 2mm가, 30N에는 3mm가 줄어듭니다.
+    </p>
+
+    <div class="simple-box">
+      1) 무거운 물체일수록 중력이 강하다. -> 중력은 무게와 정비례한다.<br>
+      2) 두 물체의 중력은 더해져서 더 강한 중력이 된다. -> 힘의 방향(아래)이 같으면 두 힘이 합해진다.
+    </div>
+    <h3>단위</h3>
+    <p>
+      힘은 <em>기호로 F</em>(force)를 사용하고, 단위는 <em>뉴턴</em>(<span style="font-style:italic">N</span> )을 사용합니다.
+    </p>
+    \[1N = 1kg \times 1 m/s^2\]
+    <p>
+      이 의미는 1kg의 물체를 1\(m/s^2\)로 가속하는데 드는 힘을 의미합니다.
+      <em>지구의 중력 가속도</em>는 대략 <em>9.8\(m/s^2\)</em>입니다.
+      따라서 지구는 1kg의 물체를 9.8N으로 당기고 있습니다.<br>
+      힘은 <em>질량</em>(mass)과 <em>가속도</em>(acceleration)의 곱으로 표현됩니다(뉴턴의 제2 법칙).
+    </p>
+    \[F = ma \]
+    <p>
+      만약 4kg의 물건이 10\(m/s^2\)에서 15\(m/s^2\)가 되었다면, 총 (15 - 10) x 4 = 20N의 힘이 물건에 작용한 것입니다.
+    </p>
+    <table class="last-td-left snd-last-td-left">
+      <caption>뉴턴의 법칙, 『Mathematical Principles of Natural Philosophy』</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>제목</th>
+          <th>의미</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>제1 법칙</td>
+          <td>관성의 법칙(Law of Inertia)</td>
+          <td>모든 물체는 정지하거나 등속운동을 유지하려 한다</td>
+        </tr>
+        <tr>
+          <td>제2 법칙</td>
+          <td>운동의 법칙(Law of Motion)</td>
+          <td>모든 물체에 작용하는 힘은 질량과 가속도에 비례한다</td>
+        </tr>
+        <tr>
+          <td>제3 법칙</td>
+          <td>작용 반작용의 법칙(Action and reaction)</td>
+          <td>힘을 발생시키면, 반대 방향의 힘이 발생한다</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h2>힘의 합성</h2>
+    <div class="img-box" style="float: right;">
+      <?xml version="1.0" encoding="utf-8"?>
+      <svg viewBox="20 80 320 320" xmlns="http://www.w3.org/2000/svg" style="width:500px">
+        <g style="fill:none; stroke:#ddd">
+          <path d="M50 112 h250" />
+          <path d="M50 199 h250" />
+          <path d="M50 330 L208 239 M100 359 L282 252 M56 280 L200 346 M144 239 L 288 305" />
+        </g>
+        <g id="arrow1">
+          <text x="65" y="98" style="font-size:15px">합성1</text>
+          <path id="arrows" d="M 100 109 H 183 L 183 104 L 200 112 L 183 120 L 183 115 H 100 V 109 Z"
+            style="stroke: rgb(0, 0, 0); fill: rgb(216, 71, 51);" />
+          <path d="M 100 109 H 136 L 136 104 L 153 112 L 136 120 L 137 116 H 100 V 109 Z"
+            style="stroke: rgb(0, 0, 0); fill: #00F8">
+            <animateMotion path="M 0 0" calcMode="linear" begin="arrow1.click" restart="whenNotActive" dur="0.5s"
+              fill="freeze" />
+            <animateMotion path="M 0 0 h100" calcMode="linear" begin="arrow1.click + 0.5s" restart="whenNotActive"
+              dur="1s" fill="freeze" />
+          </path>
+          <path d="M 100 139 H 237 L 237 135 L 254 142 L 237 150 L 237 146 H 100 V 139 Z"
+            style="stroke: rgb(0, 0, 0); fill:#0808;" transform="matrix(1, 0, 0, 1, 0, -15)">
+            <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;0 0"
+              begin="arrow1.click" dur="1.5s" keyTimes="0; 1" />
+            <animateTransform type="scale" additive="sum" attributeName="transform" values="0 1;1 1"
+              begin="arrow1.click + 1.5s" dur="1s" keyTimes="0; 1" />
+            <animateMotion path="M100 -15 h-100" calcMode="linear" begin="arrow1.click + 1.5s" dur="1s" fill="freeze" />
+          </path>
+        </g>
+        <g id="arrow2">
+          <text x="65" y="185" style="font-size:15px">합성2</text>
+          <path d="M 100 196 H 183 L 183 191 L 200 199 L 183 207 L 183 203 H 100 V 196 Z"
+            style="stroke: rgb(0, 0, 0); fill: rgb(216, 71, 51);" />
+          <path d="M 200 196 H 239 L 239 191 L 256 199 L 239 207 L 239 203 H 200 V 196 Z"
+            style="stroke: rgb(0, 0, 0); fill: #00F8" transform="matrix(-1, 0, 0, -1, 301, 399)">
+            <animateMotion path="M 0 0" calcMode="linear" begin="arrow2.click" restart="whenNotActive" dur="0.5s"
+              fill="freeze" />
+            <animateMotion path="M 0 0 h100" calcMode="linear" begin="arrow2.click + 0.5s" dur="1s" fill="freeze" />
+          </path>
+          <path d="M 100 227 H 127 L 127 223 L 144 231 L 127 239 L 127 234 H 100 V 228 Z"
+            style="stroke: rgb(0, 0, 0); fill:#0808;" transform="matrix(1, 0, 0, 1, 0, -15)">
+            <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;0 0"
+              begin="arrow2.click" dur="1.5s" keyTimes="0; 1" />
+            <animateTransform type="scale" additive="sum" attributeName="transform" values="0 1;1 1"
+              begin="arrow2.click + 1.5s" dur="1s" fill="freeze" keyTimes="0; 1" />
+            <animateMotion path="M100 -16h-100" calcMode="linear" begin="arrow2.click + 1.5s" dur="1s" fill="freeze" />
+          </path>
+        </g>
+        <g id="arrow3">
+          <text x="65" y="265" style="font-size:15px">합성3</text>
+          <path d="M 100 297 H 174 L 174 292 L 191 300 L 174 308 L 174 303 H 100 V 297 Z"
+            style="stroke: rgb(0, 0, 0); fill: rgb(216, 71, 51);" transform="matrix(0.87, -0.5, 0.5, 0.87, -136, 90)" />
+          <path d="M 100 297 H 142 L 142 292 L 159 300 L 142 308 L 142 303 H 100 V 297 Z"
+            style="stroke: rgb(0, 0, 0); fill: #00F8 " transform="matrix(0.9, 0.42, -0.42, 0.9, 137, -12)">
+            <animateMotion path="M 0 0" calcMode="linear" begin="arrow3.click" dur="0.5s" fill="freeze" />
+            <animateMotion path="M 0 0 L 80.401 -45.183" calcMode="linear" begin="arrow3.click + 0.5s" dur="1s"
+              fill="freeze" />
+          </path>
+          <path d="M 100 139 H 216 L 216 135 L 233 142 L 216 150 L 216 146 H 100 V 139 Z"
+            style="stroke: rgb(0, 0, 0); fill:#0808" transform="matrix(1, -0.145, 0.145, 1, -19, 172)">
+            <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;0 0"
+              begin="arrow3.click" dur="1.5s" keyTimes="0; 1" />
+            <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;1 1"
+              begin="arrow3.click + 1.5s" dur="1s" fill="freeze" keyTimes="0; 1" />
+            <animateMotion path="M130 129 L0 0" calcMode="linear" begin="arrow3.click + 1.5s" dur="1s" fill="freeze" />
+          </path>
+        </g>
+      </svg>
+      <span class="caption">힘의 합성 규칙</span>
+      <span class="description">"force_add_cancel.svg", iseohyun.com, CC BY-SA 4.0</span>
+    </div>
+    <p>
+      2가지 이상의 힘은 끝점과 시작점을 연결하여 최종 시작-끝의 모형으로 합성이 가능합니다.
+      이 때 방향이 같으면 힘이 누적 된 것 처럼, 방향이 반대라면 서로 상쇄되는 것 처럼 보여집니다.
+      <br><br>
+      &nbsp;힘의 합성은 합성될 힘 화살표가 마치 꼬리에 꼬리를 무는 것 처럼 계산됩니다. [그림. 힘의 합성 규칙]에서 화살표를 클릭하여 합성 과정을 살펴봅니다.
+      <span style="color:red;font-weight:900;">→</span> + <span style="color:blue;font-weight:900;">→</span> = <span
+        style="color:green;font-weight:900;">→</span>
+    </p>
+    <p>
+      합성과 관련하여 몇 가지 사례를 나열하면 다음과 같습니다.
+
+      <!-- 낙하산을 타고 내려오는 속력과 낙하산 없이 자유낙하하는 속력이 다를까? 왜 배는 가라앉지 않고
+      물위에 떠 있을 수 있을까?
+      이는 낙하산이나 배가 중력 반대되는 방향으로 힘이 상쇄가 되고 있다고 보는 것이다. -->
+    </p>
+    <h2 class="clear-both">마찰력</h2>
+    <div class="img-box" style="float:right;margin-left:25px">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/f/f7/Friction_Animation_2_Blocks.gif"
+        style="width:480px;border-radius: 15px;" />
+      <span class="caption">마찰력</span>
+      <span class="description">"220px-Friction_Animation_2_Blocks.gif", Casint, wikipedia.org(en), CC BY-SA 4.0</span>
+    </div>
+    <p>
+      <em>마찰력</em>(friction)은 맞닿은 물체가 미끄러질 때, 운동 방향에 반대되는 방향으로 작용하는 힘입니다. 마찰력은 다음과 같이 구해집니다.
+    </p>
+    \[F=\mu N\]
+    <p style="text-indent: 0; width:fit-content;margin: 0 10px 0px;">
+      \(\mu\): 마찰계수 <br>&nbsp;(\(\mu_s\) 정지(static)마찰계수, \(\mu_k\) 운동(kinetic)~)<br>
+      <span style="font:italic 1em 'times new roman'">N</span>: 수직 항력<br>
+    </p>
+    <p>
+      <u>마찰계수</u>는 얼마나 잘 미끄러지지 않는가에 대한 상수입니다.
+      이 상수가 <u>작을수록 잘 미끄러지며</u>, 이 상수가 <u>클수록 미끄러지지 않습니다.</u>
+      마찰계수는 온도, 마찰면의 상태 등의 여러가지 요소에 의해 실험적으로 측정됩니다.
+      운동 에너지는 열 에너지와 마모로 인한 에너지, 소리 에너지로 변환되면서 회수되지 않는 에너지와 연관이 있습니다.
+      마찰계수는 일반적으로 0.4 ~ 0.6의 값을 갖지만, 1보다 클수도 있습니다. 이 경우 들어올려지는 힘보다 끌리는 저항이 더 크다는 것을 의미합니다.
+    </p>
+    <div class="img-box" style="width:95%">
+      <img src="friction.svg" style="width:100%" />
+      <span class="caption">마찰력</span>
+      <span class="description">"friction.svg", iseohyun.com, 2024, CC BY-SA 4.0</span>
+    </div>
+    <p>
+      <u>수직항력은 누르는 힘에 대한 반발력</u>입니다. [그림. 마찰력]에는 중력에 대한 반발력을 그리고 있지만, 어떠한 형식이라도 상관이 없습니다. 예를들어
+      스포일러<a class="detail" href="#references"></a>
+      <span>
+        <tspan class="description">
+          <img
+            src="https://pds.joongang.co.kr/news/component/htmlphoto_mmdata/201010/htm_2010101200573560006010-001.JPG"
+            width="100%">
+          그림: 중앙일보, "한국도 F1 시대 ④ F1에 숨은 과학"<br>
+          공기가 주변을 통과할 때 다운포스(down force)를 생성하도록 설계된 장치
+        </tspan>
+        <tspan class="reference">스포일러: 공기가 주변을 통과할 때 다운포스를 생성하도록 설계된 장치</tspan>
+      </span>(spoiler)는 공기의 힘으로 차체를 바닥으로 누릅니다. 이 힘은 수직항력을 증가시켜 마찰력을 상승시킵니다.<br>
+      마찰력의 함정은 <u>마찰면의 넓이가 마찰력에 영향을 주지 않는다</u>는 것입니다.<br>
+      마찰력은 고체-고체 외에도 액체, 기체에서 작용할 수 있습니다. 낙하산의 하강 속도가 증가하거나 감소하지 않는다면, 아래로 향하는 중력과 위로 향하는 마찰력이 정확하게 똑같아서 상쇄가 된 상태가 됩니다.
+    </p>
+
+    <h2>부력</h2>
+    <p>
+      <em>부력</em>(buoyancy)은 어떤 물체가 다른 물질에 잠겼을 때, 어떤 물체가 중력에 반하여 밀어 올려지는 힘을 말합니다.
+      배가 바다에 잠길 때, 배는 바닷물의 일부를 다른 곳으로 밀어냅니다. 밀려난 물의 무게 만큼 배는 위쪽 방향으로 부력의 힘을 받습니다.
+      배가 더 이상 가라앉지 않는다면, 아래로 향하는 중력과 위로 향하는 부력이 정확하게 똑같은 상태입니다.
+    </p>
+    <p>
+      부력은 <u>잠기는 물체의 부피와 관련</u>이 있고(무게 관계x), <u>밀려난 물체의 중량</u>(부피x)과 관련이 있습니다.
+      잠수함이 깊은 바다에서 더 큰 부력을 받는 원리는, 잠수함이 밀어내는 물의 양이 같은 부피일지라도, 밀려난 물의 밀도(무게)가 심해에서 더 크기 때문입니다.
+    </p>
+    <h3>평형수(Ballast Water)<a class="detail" href="#references"></a>
+      <span>
+        <tspan class="reference">평형수: "궁금, 평형수", 유튜브, <a href="https://www.youtube.com/watch?v=P-netOG2eSw"
+            target="_blank">https://www.youtube.com/watch?v=P-netOG2eSw</a></tspan>
+      </span>
+    </h3>
+    <p>
+      배의 경우 무게중심이 높으면 쉽게 전복됩니다.
+      특히 화물선은 만선(짐이 가득 찬 상태)와 공선(짐이 없는 상태)의 차이가 큽니다.
+      공선인 상태에서 중력을 더 받으려면 평형수(ballast)를 넣어야 합니다.</p>
+    <div class="img-box">
+      <img src="ballast_water.svg" />
+      <span class="caption">평형수</span>
+      <span class="description">"ballast_water.svg", iseohyun.com, 2024, CC BY-SA 4.0 </span>
+    </div>
+    <div class="img-box" style="float:right">
+      <img
+        src="https://i0.wp.com/filtersafe.net/wp-content/uploads/2021/04/ten_most_unwanted-02.png?fit=800%2C829&ssl=1"
+        height="400px" />
+      <span class="caption">해양 생태계 교란</span>
+      <span class="description">"ten_most_unwanted-02.png", filtersafe.net, intro page</span>
+    </div>
+    <p>
+      평형수는 배에 싣혀 이동합니다. 이때 해양 생물도 같이 딸려 이동합니다.
+      이러한 생물들은 외래종으로 생태계 파괴를 우려하고 있습니다.<br>
+      2004 세계 평형수관리 협약 -> 20107.9 발효<br><br>
+      평형수 처리장치(BWTS)를 이용하여 반드시 살균하여 방류하여야 합니다.
+    </p>
+    <div class="simple-box">
+      대문: 해양 식물과 동물, 미생물이 선박의 선체와 평형수에 의해 전 세계로 운반되고 있습니다.
+      이 생물들은 토착 생태계를 심각하게 파괴할 수 있습니다.
+      만들어진 병원체가 인간에게 질병과 사망을 일으킬지도 모릅니다.
+    </div>
+
+    <h1>퀴즈</h1>
+    <ol>
+      <li>힘은 <button class="quiz">크기</button>와 <button class="quiz">방향</button>으로 정의된다.</li>
+      <li>모든 물질은 <button class="quiz">중력</button>(당기는 힘)을 가지고 있다: <button class="quiz">만유인력</button>(4글자)</li>
+      <li>지구의 <button class="quiz">중력</button>은 물체를 지구 <button class="quiz">중심</button>방향로 발생하는 힘이다.</li>
+      <li>중력의 힘만으로 떨어지는 상태를 <button class="quiz">자유 낙하</button>상태라 한다.</li>
+      <li>중력을 받아 낙하할 때, 물체가 무거우면 빨리 떨어진다. (<button class="quiz2 group1">O</button>, <button
+          class="quiz2 group1 answer">X</button>) </li>
+      <li>질량이 2배인 행성에서, 물체의 무게는(<button class="quiz2 group2 answer">2배 무겁다.</button>,
+        <button class="quiz2 group2">2배 가볍다</button>, <button class="quiz2 group2">같다</button>).
+      </li>
+      <li>힘의 크기를 나타내는 화살표에서 시작점은 <button class="quiz">작용점</button>을, 길이는 힘의 <button class="quiz">크기</button>를, 방향은 힘의
+        <button class="quiz">방향</button>을 의미하며,
+      </li>
+      <li>화살표의 굵기나 색이 의미하는 것은 없다.</li>
+      <li>힘을 측정하는 방법에는 ① <button class="quiz">양팔</button>저울을 이용하여 이미 알고 있는 힘과 비교하는 방법과</li>
+      <li>②용수철의 <button class="quiz">탄성력</button>을 이용한 용수철 저울을 사용할 수 있다.</li>
+      <li>용수철 저울의 길이는 받은힘에 <button class="quiz">비례해서</button> 증가한다.</li>
+      <li>즉, <span id="var1"></span>kg을 매달았을 때, <span id="var2"></span>cm늘어난 용수철은 <span id="var3"></span>kg을 매달면,
+        <button class="quiz" id="random-reset1"><span id="var4"></span></button>cm가 늘어난다.<button
+          onclick="resetRandom();">←</button>
+      </li>
+      <li>힘은 기호로 <button class="quiz">F</button>를 쓰고, 단위는 <button class="quiz">뉴턴</button>, 기호는 <button
+          class="quiz">N</button>을 사용한다.</li>
+      <li>1N은 <button class="quiz">1kg</button>을 <button class="quiz">\(1m/s^2\)</button>만큼 변화시키는 데 필요한 힘이다.</li>
+      <li>F =<button class="quiz">ma</button>(뉴턴의 제2 법칙)</li>
+      <li>위 식에서 m은 <button class="quiz">질량</button>, a는 <button class="quiz">가속도</button>이다.</li>
+      <li>뉴턴의 제1 법칙 : <button class="quiz">관성</button>의 법칙, 정지/등속 운동을 유지하려는 성질</li>
+      <li>뉴턴의 제3 법칙 : <button class="quiz">작용 반작용</button>의 법칙, 힘을 생성할 때, 같은 크기의 다른 방향의 힘이 생기는 현상</li>
+      <li>지구의 중력의 중력가속도는 대략 <button class="quiz">9.8</button> \(kg/s^2\)이다.</li>
+      <li>중력가속도가 <span id="var7"></span>\(m/s^2\)일 때, <span id="var5"></span>kg의 물체는 초당 <button class="quiz"
+          id="random-reset2"><span id="var6"></span></button>N의 힘을 받는다(F=ma).<button
+          onclick="resetRandom2();">←</button>
+      </li>
+      <li>힘의 합성은 모든 화살표를 (<button class="quiz2 group3">작용점을 하나로 모아서</button>,
+        <button class="quiz2 group3 answer">꼬리에 꼬리를 문 상태로</button>, <button class="quiz2 group3">하나의 방향으로
+          회전시켜서</button>) 구할 수 있다.
+      </li>
+      <li>맞닿은 물체가 미끄러질 때 작용하는 힘으로, <button class="quiz">마찰력</button>은 운동 방향에 (<button class="quiz2 group4">같은</button>,
+        <button class="quiz2 group4 answer">반대</button>)방향으로 작용한다.
+      </li>
+      <li>마찰력을 구하는 식은 <button class="quiz">마찰계수</button> x <button class="quiz">수직항력</button>입니다.</li>
+      <li><span style="font-style:italic">μ</span>는 실험적으로 구할 수 있으며, 표면상태나 온도 등 다양한 환경에 영향을 받는다.</li>
+      <li><button class="quiz">수직항력</button>은 마찰면에 수직으로 작용하는 힘입니다.
+        물체의 무게에 따라 (<button class="quiz2 group5 answer">증가</button>, <button class="quiz2 group5">감소</button>,
+        <button class="quiz2 group5">일정</button> )하며, 접촉면의 넓이에 따라 (<button class="quiz2 group6">증가</button>,
+        <button class="quiz2 group6">감소</button>,<button class="quiz2 group6 answer">일정</button> )하다(한다).
+      </li>
+      <li><button class="quiz">부력</button>은 어떤 물체가 다른 물질에 잠겼을 때, 그 물체가 중력에 반하여 밀어 올려지는 힘이다.</li>
+      <li>부력은 잠기는 물체의 무게가 무거우면 증가한다.(<button class="quiz2 group7">O</button>,<button class="quiz2 group7 answer">X</button>)</li>
+      <li>부력은 잠기는 물체의 부피가 크면 증가한다.(<button class="quiz2 group8 answer">O</button>,<button class="quiz2 group8">X</button>)</li>
+      <li>부력은 잠그는 물체의 밀려난 무게가 크면 증가한다.(<button class="quiz2 group9 answer">O</button>,<button class="quiz2 group9">X</button>)</li>
+    </ol>
+
   </article>
 </body>
 
 </html>
+<script>
+  resetRandom();
+  resetRandom2();
+
+  function resetRandom() {
+    var var1 = Math.floor(Math.random() * 5) + 1;
+    var var2 = Math.floor(Math.random() * 5) + 1;
+    var var3 = Math.floor(Math.random() * 3) + 2;
+    document.getElementById("var1").innerHTML = var1;
+    document.getElementById("var2").innerHTML = var2;
+    document.getElementById("var3").innerHTML = var1 * var3;
+    document.getElementById("var4").innerHTML = var2 * var3;
+    document.getElementById("random-reset1").style.backgroundColor = 'black';
+  }
+
+  function resetRandom2() {
+    var var5 = Math.floor(Math.random() * 5) + 1;
+    var var7 = Math.floor(Math.random() * 2) * 5 + 5;
+    document.getElementById("var5").innerHTML = var5;
+    document.getElementById("var7").innerHTML = var7;
+    document.getElementById("var6").innerHTML = var5 * var7;
+    document.getElementById("random-reset2").style.backgroundColor = 'black';
+  }
+</script>

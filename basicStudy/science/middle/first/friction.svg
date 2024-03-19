@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 360 170"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="brick" viewBox="0 0 60 40">
+      <path style="fill:#fa1;" d="M60 0h-60v40l5-5v-30h50l5-5"/>
+      <path style="fill:#b71;" d="M0 40l5-5h50v-30l5-5v40h-60"/>
+      <rect x="5" y="5" width="50" height="30" style="fill:#e91"/>
+    </symbol>
+    <marker id="arrow" viewBox="-4 0 10 8" overflow="visible" orient="auto" markerWidth="4" markerHeight="4" style="fill:red;">
+      <path d="M0-4L10 0L0 4Z"/>
+    </marker>
+  </defs>
+
+  <use width="60" height="40" transform="matrix(1, 0, 0, 1, 60, 50)" xlink:href="#brick"/>
+  <path style="fill:rgb(216, 216, 216);" d="M20 90L160 90C160 144 102 178 55 151C33 138 20 115 20 90"/>
+  <g style="stroke:red;fill:none;stroke-width:3">
+    <path style="marker-end: url('#arrow');filter:hue-rotate(270deg)" d="M110 70h40"/>
+    <path style="marker-end: url('#arrow');" d="M90 70v50"/>
+    <path style="marker-end: url('#arrow');filter:hue-rotate(45deg)" d="M100 90v-50"/>
+    <path style="marker-end: url('#arrow');filter:hue-rotate(90deg)" d="M80 89h-30"/>
+  </g>
+
+  <use width="60" height="40" transform="matrix(1, 0.5, -0.5, 1, 263, 37)" xlink:href="#brick"/>
+  <path style="fill:#ddd" d="M200 54L340 125 A50 50 1 1 1 200 54"/>
+  <path d="M217 48L337 108 M315 11L243 148" style="stroke:#8888"/>
+  <path style="stroke:#000; fill:none; stroke-dasharray: 2;" d="M255 126L280 140L305 92"/>
+  <path style="fill:none; stroke: #444;" d="M267 102A20 20 1 0 0 280 105"/>
+  <g style="stroke:red;fill:none;stroke-width:3">
+    <path style="marker-end: url('#arrow');" d="M279.5 78v50"/>
+    <path style="marker-end: url('#arrow');filter:hue-rotate(10deg)" d="M279 78L260 115"/>
+    <path style="marker-end: url('#arrow');filter:hue-rotate(45deg)" d="M279 79L297 45"/>
+    <path style="marker-end: url('#arrow');filter:hue-rotate(90deg)" d="M255 81L235 71"/>
+    <path style="marker-end: url('#arrow'); filter: hue-rotate(270deg);" d="M300 80L334 97"/>
+  </g>
+  <g style="fill:#888; font-family:'times new roman', serif; font-size:8px">
+    <text x="22" y="80">마찰력</text>
+    <text x="28" y="104" style="font-style:italic">μN = μmg</text>
+    <text x="97" y="116">중력(<tspan style="font-style:italic">mg</tspan>)</text>
+    <text x="65" y="23">수직 항력(<tspan style="font-style:italic">N = mg</tspan>)</text>
+    <text x="125" y="62">운동 에너지(<tspan style="font-style:italic">F</tspan>)</text>
+    <text x="268" y="115" style="font-style:italic">θ</text>
+    <text x="260" y="154">경사각(<tspan style="font-style:italic">θ</tspan>)</text>
+    <text x="185" y="105">중력의 수직성분<tspan x="210" dy="1.2em">​</tspan>(<tspan style="font-style:italic">mgCosθ</tspan>)</text>
+    <text x="308" y="40" style="font-style:italic">N=mgCosθ</text>
+    <text x="0" y="0" style="font-style:italic" transform="matrix(1, 0.5, -0.5, 1, 210, 40)">μmgCosθ</text>
+  </g>
+</svg>

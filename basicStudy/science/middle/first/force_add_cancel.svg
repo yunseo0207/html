@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="80 80 320 320"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:bx="https://boxy-svg.com">
+  <g style="fill:none; stroke:#ddd">
+    <path d="M50 112 h250"/>
+    <path d="M50 199 h250"/>
+    <path d="M50 330 L208 239 M100 359 L282 252 M56 280 L200 346 M144 239 L 288 305"/>
+  </g>
+  <g id="arrow1">
+    <text x="65" y="98" style="font-size:15px">합성</text>
+    <path id="arrows" d="M 100 109 H 183 L 183 104 L 200 112 L 183 120 L 183 115 H 100 V 109 Z" style="stroke: rgb(0, 0, 0); fill: rgb(216, 71, 51);"/>
+    <path d="M 100 109 H 136 L 136 104 L 153 112 L 136 120 L 137 116 H 100 V 109 Z" style="stroke: rgb(0, 0, 0); fill: #00F8">
+      <animateMotion path="M 0 0" calcMode="linear" begin="arrow1.click" restart="whenNotActive" dur="0.5s" fill="freeze"/>
+      <animateMotion path="M 0 0 h100" calcMode="linear" begin="arrow1.click + 0.5s" restart="whenNotActive" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 100 139 H 237 L 237 135 L 254 142 L 237 150 L 237 146 H 100 V 139 Z" style="stroke: rgb(0, 0, 0); fill:#0808;" transform="matrix(1, 0, 0, 1, 0, 0)">
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;0 0" begin="arrow1.click" dur="1.5s" keyTimes="0; 1"/>
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="0 1;1 1" begin="arrow1.click + 1.5s" dur="1s" keyTimes="0; 1"/>
+      <animateMotion path="M100 -30 h-100" calcMode="linear" begin="arrow1.click + 1.5s" dur="1s" fill="freeze"/>
+    </path>
+  </g>
+  <g id="arrow2">
+    <text x="65" y="185" style="font-size:15px">상쇄</text>
+    <path d="M 100 196 H 183 L 183 191 L 200 199 L 183 207 L 183 203 H 100 V 196 Z" style="stroke: rgb(0, 0, 0); fill: rgb(216, 71, 51);"/>
+    <path d="M 200 196 H 239 L 239 191 L 256 199 L 239 207 L 239 203 H 200 V 196 Z" style="stroke: rgb(0, 0, 0); fill: #00F8" transform="matrix(-1, 0, 0, -1, 301, 399)">
+      <animateMotion path="M 0 0" calcMode="linear" begin="arrow2.click" restart="whenNotActive" dur="0.5s" fill="freeze"/>
+      <animateMotion path="M 0 0 h100" calcMode="linear" begin="arrow2.click + 0.5s" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 100 227 H 127 L 127 223 L 144 231 L 127 239 L 127 234 H 100 V 228 Z" style="stroke: rgb(0, 0, 0); fill:#0808;">
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;0 0" begin="arrow2.click" dur="1.5s" keyTimes="0; 1"/>
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="0 1;1 1" begin="arrow2.click + 1.5s" dur="1s" fill="freeze" keyTimes="0; 1"/>
+      <animateMotion path="M100 -31h-100" calcMode="linear" begin="arrow2.click + 1.5s" dur="1s" fill="freeze"/>
+    </path>
+  </g>
+  <g id="arrow3">
+    <text x="65" y="265" style="font-size:15px">합성2</text>
+    <path d="M 100 297 H 174 L 174 292 L 191 300 L 174 308 L 174 303 H 100 V 297 Z" style="stroke: rgb(0, 0, 0); fill: rgb(216, 71, 51);" transform="matrix(0.87, -0.5, 0.5, 0.87, -136, 90)"/>
+    <path d="M 100 297 H 142 L 142 292 L 159 300 L 142 308 L 142 303 H 100 V 297 Z" style="stroke: rgb(0, 0, 0); fill: #00F8 " transform="matrix(0.9, 0.42, -0.42, 0.9, 137, -12)">
+      <animateMotion path="M 0 0" calcMode="linear" begin="arrow3.click" dur="0.5s" fill="freeze"/>
+      <animateMotion path="M 0 0 L 80.401 -45.183" calcMode="linear" begin="arrow3.click + 0.5s" dur="1s" fill="freeze"/>
+    </path>
+    <path d="M 100 139 H 216 L 216 135 L 233 142 L 216 150 L 216 146 H 100 V 139 Z" style="stroke: rgb(0, 0, 0); fill:#0808" transform="matrix(1, -0.145, 0.145, 1, -19, 172)">
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;0 0" begin="arrow3.click" dur="1.5s" keyTimes="0; 1"/>
+      <animateTransform type="scale" additive="sum" attributeName="transform" values="0 0;1 1" begin="arrow3.click + 1.5s" dur="1s" fill="freeze" keyTimes="0; 1"/>
+      <animateMotion path="M130 129 L0 0" calcMode="linear" begin="arrow3.click + 1.5s" dur="1s" fill="freeze"/>
+    </path>
+  </g>
+</svg>

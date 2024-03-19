@@ -375,6 +375,7 @@ function addReference() {
   var details = document.querySelectorAll("a.detail");
   var detailsInfos = document.querySelectorAll("a.detail+span");
   if (details.length < 1) {
+    addReferenceImage("no-reference");
     return;
   }
 
@@ -405,16 +406,21 @@ function addReference() {
     article.appendChild(refSpan);
   }
 
-  addReferenceImage();
+  addReferenceImage("");
 }
 
-function addReferenceImage() {
+function addReferenceImage(args) {
   var imgBoxs = document.querySelectorAll(".img-box");
   if (imgBoxs.length < 1) {
     return;
   }
 
-  var refheader = document.createElement("h2");
+  var refheader;
+  if(args == "no-reference"){
+    refheader = document.createElement("h1");
+  }else{
+    refheader = document.createElement("h2");
+  }
   refheader.innerText = "그림 출처"
   refheader.id = "references-image"
   article.appendChild(refheader);
@@ -434,3 +440,56 @@ function addReferenceImage() {
     }
   }
 }
+
+var quiz = document.querySelectorAll("button.quiz");
+quiz.forEach((kdb) => {
+  kdb.toggle = false;
+  kdb.setAttribute("show", "false");
+  kdb.addEventListener("click", () => {
+    var show = kdb.getAttribute("show");
+    if (show == "false") {
+      kdb.setAttribute("show", "true");
+      kdb.style.backgroundColor = "#fff";
+    } else {
+      kdb.setAttribute("show", "false");
+      kdb.style.backgroundColor = "#444";
+    }
+  });
+});
+
+var quiz2 = document.querySelectorAll("button.quiz2");
+quiz2.forEach((kdb) => {
+  kdb.toggle = false;
+  kdb.setAttribute("show", "false");
+  kdb.addEventListener("click", () => {
+    // class목록에 answer가 있으면
+    var hasAnswerClass = kdb.classList.contains("answer");
+    
+    if (hasAnswerClass) {
+      kdb.style.color = "#444";
+      var groupName;
+      kdb.classList.forEach((className) => {
+        if(className.startsWith("group")) {
+          groupName = className;
+        }
+      });
+
+      var group = document.querySelectorAll(`button.${groupName}`);
+      console.log(groupName);
+      group.forEach((member) => {
+        member.style.backgroundColor = "#fff";
+      });
+    }
+    
+
+    if (kdb.getElementsByClassName)
+      var show = kdb.getAttribute("show");
+    if (show == "false") {
+      kdb.setAttribute("show", "true");
+      kdb.style.backgroundColor = "#fff";
+    } else {
+      kdb.setAttribute("show", "false");
+      kdb.style.backgroundColor = "#444";
+    }
+  });
+});

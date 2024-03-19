@@ -46,10 +46,6 @@
   <!-- 공통스킨 -->
   <style type="text/css">
     @import url("/style.css");
-
-    article {
-      max-width: 1050px;
-    }
   </style>
 </head>
 
@@ -462,6 +458,8 @@
         </tr>
       </tbody>
     </table>
+    <p>※ <em>지질학</em>: 지구의 구성물질, 형성 과정, 과거 살았던 생물을 연구하는 학문</p>
+
     <style>
       .last-td-monospace td:nth-last-child(2) {
         font-family: var(--font-monospace);
@@ -1247,7 +1245,7 @@
       있습니다. 조흔판은 유약을 칠하지 않은 도자기 타일입니다. 저렴하고 제작이 쉽습니다. 확인하려는 광물에 맞추어 검정색이나 흰색으로 제작할 수 있습니다. 하지만 조흔판은 모스(Mohs) 굳기경도 7로 이보다
       경도가 높은 광물은 긁어서 조흔색을 볼 수 없습니다.
     </p>
-    <h3>경도 vs 강도</h3>
+    <h3 id="경도와 강도">경도 vs 강도</h3>
     <p>경도(hardness)는 풍화에 얼마나 견딜 수 있는지를 의미합니다. 강도(strength)와는 다릅니다.</p>
     <table class="all-td-left">
       <caption>물체의 강함</caption>
@@ -1380,6 +1378,7 @@
       </li>
       <li>지구의 둘레는 <button class="quiz">40,000</button>km 입니다.</li>
       <li>광물 채취나 탐사 등으로 땅을 파는 행위를 <button class="quiz">시추</button>라고 합니다.</li>
+      <li><button class="quiz">지질학</button>은 "지구의 구성물질, 형성 과정, 과거 살았던 생물을 연구하는 학문"입니다.</li>
       <li>지구의 내부를 아는 방법으로는 두들겨 보는 <button class="quiz">지진파</button>연구, 자성의 흐름을 측정하는 <button class="quiz">자기장</button>연구, 위성을 통한 <button
           class="quiz">중력</button>연구 등이 있습니다.</li>
       <li>지구의 내부는 (바깥부터) <button class="quiz">지각</button>, <button class="quiz">맨틀</button>, <button
@@ -1416,71 +1415,3 @@
 </body>
 
 </html>
-<style>
-  button.quiz {
-    border: 1px solid #ddd;
-    padding: 3px;
-    background-color: #444;
-    color: #444;
-  }
-
-  button.quiz2 {
-    border: 1px solid #ddd;
-    padding: 3px;
-    background-color: #444;
-    color: #FFF;
-  }
-</style>
-<script>
-  var quiz = document.querySelectorAll("button.quiz");
-  quiz.forEach((kdb) => {
-    kdb.toggle = false;
-    kdb.setAttribute("show", "false");
-    kdb.addEventListener("click", () => {
-      var show = kdb.getAttribute("show");
-      if (show == "false") {
-        kdb.setAttribute("show", "true");
-        kdb.style.backgroundColor = "#fff";
-      } else {
-        kdb.setAttribute("show", "false");
-        kdb.style.backgroundColor = "#444";
-      }
-    });
-  });
-  var quiz = document.querySelectorAll("button.quiz2");
-  quiz.forEach((kdb) => {
-    kdb.toggle = false;
-    kdb.setAttribute("show", "false");
-    kdb.addEventListener("click", () => {
-      // class목록에 answer가 있으면
-      var hasAnswerClass = kdb.classList.contains("answer");
-      
-      if (hasAnswerClass) {
-        kdb.style.color = "#444";
-        var groupName;
-        kdb.classList.forEach((className) => {
-          if(className.startsWith("group")) {
-            groupName = className;
-          }
-        });
-  
-        var group = document.querySelectorAll(`button.${groupName}`);
-        console.log(groupName);
-        group.forEach((member) => {
-          member.style.backgroundColor = "#fff";
-        });
-      }
-      
-
-      if (kdb.getElementsByClassName)
-        var show = kdb.getAttribute("show");
-      if (show == "false") {
-        kdb.setAttribute("show", "true");
-        kdb.style.backgroundColor = "#fff";
-      } else {
-        kdb.setAttribute("show", "false");
-        kdb.style.backgroundColor = "#444";
-      }
-    });
-  });
-</script>

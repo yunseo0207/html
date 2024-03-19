@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500"
+  xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" viewBox="0 -4 10 8" orient="auto">
+      <path d="M0 -4L10 0L0 4z"/>
+    </marker>
+    <marker id="arrow-st" markerWidth="10" markerHeight="10" viewBox="-10 -4 10 8" orient="auto">
+      <path d="M0 -4L-10 0L0 4z"/>
+    </marker>
+  </defs>
+  <g style="fill:none; stroke:black">
+    <path style="marker-end: url('#arrow');" d="M60 450h400"/>
+    <path style="marker-end: url('#arrow');" d="M60 450v-400"/>
+    <path style="marker-end: url('#arrow'); stroke-width:3" d="M60 450L160 220C190 190 300 130 350 130C430 130 460 150 460 150"/>
+    <path style="marker-start: url('#arrow-st'); marker-end: url('#arrow');" d="M72 90L148 90"/>
+    <path style="marker-start: url('#arrow-st'); marker-end: url('#arrow');" d="M172 90L338 90"/>
+    <path style="stroke-dasharray: 2;" d="M160 80L160 210"/>
+    <path style="stroke-dasharray: 2;" d="M350 80L350 120"/>
+    <path style="marker-end: url('#arrow'); stroke-dasharray: 2; stroke:#aaa" d="M350 130L210 440"/>
+  </g>
+  <ellipse style="stroke: rgb(0, 0, 0);" cx="160" cy="220" rx="5" ry="5"/>
+  <ellipse style="stroke: rgb(0, 0, 0);" cx="350" cy="130" rx="5" ry="5"/>
+  <g style="fill:#888; stroke:none; font-size:20px; font-family: var(--font-sans-serif) sans-serif;">
+    <text style="font-size:25px" x="200" y="480">변형률(strain)</text>
+    <text style="font-size:25px" transform="matrix(0, -1, 1, 0, 41, 350)">가해진 힘(Stress)</text>
+    <text transform="matrix(0.395, -0.919, 0.919, 0.394, 110, 400)">일정한 변형</text>
+    <text transform="matrix(0.395, -0.919, 0.919, 0.394, 280, 349)">복원</text>
+    <text x="70" y="82">탄성영역</text>
+    <text x="170" y="82">소성영역(strain hardening)</text>
+    <text x="168" y="235">항복점(Yield Strength)</text>
+    <text x="252" y="121">극한강도(Ultimate Strength)</text>
+    <text x="350" y="181">파괴(fracture)</text>
+  </g>
+</svg>

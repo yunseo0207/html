@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 450 350"
+  xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink"
+  xmlns:bx="https://boxy-svg.com">
+  <defs>
+    <symbol id="boat" viewBox="0 0 200 250">
+      <path style="stroke:#000; fill:#fff;" d="M40 195C80 227 119 227 159 195L159 120L40 120L40 195 Z"/>
+      <path style="stroke-dasharray: 3; stroke: rgb(170, 170, 170);" d="M40 150L159 150"/>
+      <path style="stroke-dasharray: 3; stroke: rgb(170, 170, 170);" d="M40 180L159 180"/>
+      <path style="stroke:#000; fill: none;" d="M50 120L50 70L20 70L20 60L179 60L179 70L150 70L150 120L50 120 Z"/>
+      <path style="stroke:#000; fill: none;" d="M20 120L20 211C60 227 60 240 100 240C140 240 139 227 179 211L180 120L159 120L159 195C119 227 80 227 40 195L40 120L20 120 Z"/>
+      <g style="stroke:#000; fill: none; stroke-opacity: 0.5;">
+        <rect x="58" y="105" width="5" height="8" rx="3"/>
+        <rect x="83" y="105" width="5" height="8" rx="3"/>
+        <rect x="112" y="105" width="5" height="8" rx="3"/>
+        <rect x="137" y="105" width="5" height="8" rx="3"/>
+        <rect x="55" y="86" width="5" height="8" rx="3"/>
+        <rect x="74.5" y="86" width="5" height="8" rx="3"/>
+        <rect x="97" y="86" width="5" height="8" rx="3"/>
+        <rect x="119.5" y="86" width="5" height="8" rx="3"/>
+        <rect x="140" y="86" width="5" height="8" rx="3"/>
+        <rect x="65" y="66" width="5" height="8" rx="3"/>
+        <rect x="86" y="66" width="5" height="8" rx="3"/>
+        <rect x="110" y="66" width="5" height="8" rx="3"/>
+        <rect x="130" y="66" width="5" height="8" rx="3"/>
+        <path d="M40 74v6L160 80v-6M41 74v6M42 74v6M43 74v6M44 74v6M45 74v6M159 74v6M158 74v6M157 74v6M156 74v6M155 74v6"/>
+        <path d="M40 93v6L160 99v-6M41 93v6M42 93v6M43 93v6M44 93v6M45 93v6M159 93v6M158 93v6M157 93v6M156 93v6M155 93v6"/>
+        <path d="M54 60L50 41L46 60M106 25 v10 h-12 v-10M40 60 v-9 h119 v9M94 32 h12M94 29 h12M90 20 h20M100 10 v50M20 63 h159M150 51v9M140 51v9M130 59v9M120 51v9M110 51v9M90 51v9M80 51v9M70 51v9M60 51v9M50 51 v9M40 57 h 119M40 54 h 119"/>
+      </g>
+      <ellipse style="fill:#ddd; stroke:#000;" cx="50" cy="43" rx="5" ry="5"/>
+    </symbol>
+    <symbol id="water" viewBox="0 0 200 250">
+      <path style="fill:#fff;" d="M20 120L20 211C60 227 60 240 100 240C140 240 139 227 179 211L180 120L159 120L159 195C119 227 80 227 40 195L40 120L20 120 Z"/>
+      <path style="fill: rgb(157, 168, 216);" d="M20 148L20 211C60 227 60 240 100 240C140 240 139 227 179 211L179 148C169 159 159 148 159 148L159 195C119 227 80 227 40 195L40 148C31 159 20 148 20 148 Z"/>
+      <path style="stroke:#000; fill: none;" d="M20 120L20 211C60 227 60 240 100 240C140 240 139 227 179 211L180 120L159 120L159 195C119 227 80 227 40 195L40 120L20 120 Z"/>
+    </symbol>
+    <symbol id="no-water" viewBox="0 0 200 250">
+      <path style="stroke:#000; fill:#fff;" d="M20 120L20 211C60 227 60 240 100 240C140 240 139 227 179 211L180 120L159 120L159 195C119 227 80 227 40 195L40 120L20 120 Z"/>
+    </symbol>
+    <symbol id="water2" viewBox="0 0 200 250">
+      <path style="fill:#fff;" d="M20 120L20 211C60 227 60 240 100 240C140 240 139 227 179 211L180 120L159 120L159 195C119 227 80 227 40 195L40 120L20 120 Z"/>
+      <path style="fill: rgb(157, 168, 216);" d="M20 204L20 211C60 227 60 240 100 240C140 240 139 227 179 211L180 120L159 120L159 195C119 227 80 227 40 195L40 180C35 194 37 196 20 204 Z"/>
+      <path style="stroke:#000; fill: none;" d="M20 120L20 211C60 227 60 240 100 240C140 240 139 227 179 211L180 120L159 120L159 195C119 227 80 227 40 195L40 120L20 120 Z"/>
+    </symbol>
+    <marker id="arrow" viewBox="-4 0 10 8" overflow="visible" orient="auto" markerWidth="4" markerHeight="4" style="fill:red;">
+      <path d="M0-4L10 0L0 4Z"/>
+    </marker>
+  </defs>
+  <path style="fill: rgb(157, 168, 216); stroke:#000;" d="M0 90C0 99 30 99 30 90C30 99 60 99 60 90C60 99 90 99 90 90C90 99 120 99 120 90C120 99 150 99 150 90C150 99 180 99 180 90C180 99 210 99 210 90C210 99 240 99 240 90C240 99 270 99 270 90C270 99 300 99 300 90C300 99 330 99 330 90C330 99 360 99 360 90C360 99 390 99 390 90C390 99 420 99 420 90C420 99 450 99 450 90L450 150L0 150L0 90 Z"/>
+  <use width="100" height="100" transform="matrix(1, 0, 0, 1, 40, 20)" xlink:href="#no-water"/>
+  <use width="100" height="100" transform="matrix(1, 0, 0, 1, 40, 20)" xlink:href="#boat"/>
+  <use width="100" height="100" transform="matrix(1, 0, 0, 1, 170, 35)" xlink:href="#no-water"/>
+  <use width="100" height="100" transform="matrix(1, 0, 0, 1, 170, 35)" xlink:href="#boat"/>
+  <use width="100" height="100" transform="matrix(1, 0, 0, 1, 300, 35)" xlink:href="#water"/>
+  <use width="100" height="100" transform="matrix(1, 0, 0, 1, 300, 35)" xlink:href="#boat"/>
+  <g style="fill:#ddd; stroke:#000;">
+    <rect x="199" y="86" width="20" height="8"/>
+    <rect x="224" y="86" width="16" height="8"/>
+    <rect x="199" y="98" width="10" height="8"/>
+    <rect x="212" y="98" width="10" height="8"/>
+    <rect x="226" y="98" width="13" height="8"/>
+    <rect x="218" y="110" width="13" height="8"/>
+    <rect x="208" y="110" width="5" height="8"/>
+  </g>
+  <path style="fill:rgb(157, 168, 216); stroke:#000;" d="M0 270C0 279 30 279 30 270C30 279 60 279 60 270C60 279 90 279 90 270C90 279 120 279 120 270C120 279 150 279 150 270C150 279 180 279 180 270C180 279 210 279 210 270C210 279 240 279 240 270C240 279 270 279 270 270C270 279 300 279 300 270C300 279 330 279 330 270C330 279 360 279 360 270C360 279 390 279 390 270C390 279 420 279 420 270C420 279 450 279 450 270L450 350L0 350L0 270 Z"/>
+  <use width="100" height="100" transform="matrix(0.866, 0.5, -0.5, 0.866, 80, 212)" style="transform-box: fill-box; transform-origin: 50% 50%;" xlink:href="#water2"/>
+  <use width="100" height="100" transform="matrix(0.866, 0.5, -0.5, 0.866, 91, 215)" style="transform-box: fill-box; transform-origin: 50% 50%;" xlink:href="#boat"/>
+  <path style="fill: none; stroke:#000;" d="M105 319L186 189"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');filter:hue-rotate(120deg);" d="M135 272L135 302"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');filter:hue-rotate(240deg);" d="M137 294L137 254"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');" d="M220 258 A 70 70 1 0 0 190 210"/>
+
+  <use width="100" height="100" transform="matrix(0.866, 0.5, -0.5, 0.866, 304, 175)" xlink:href="#no-water"/>
+  <use width="100" height="100" transform="matrix(0.866, 0.5, -0.5, 0.866, 304, 175)" xlink:href="#boat"/>
+  <path style="fill: none; stroke:#000;" d="M277 313L358 183"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');filter:hue-rotate(120deg);" d="M316 251L316 281"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');filter:hue-rotate(240deg);" d="M310 281L310 268"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');" d="M360 210C376 221 387 238 390 258"/>
+  <g style="font:15px 'RegularFont', 'Nanum Gothic', Arial, sans-serif;fill:#888;text-anchor:middle">
+    <text x="90" y="19">공선</text>
+    <text x="220" y="19">만선</text>
+    <text x="350" y="19">평형수</text>
+    <text x="140" y="180">복원</text>
+    <text x="340" y="180">전복</text>
+  </g>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');filter:hue-rotate(120deg);" d="M10 180h20"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');filter:hue-rotate(240deg);" d="M10 195h20"/>
+  <path style="fill: none; stroke: red;marker-end: url('#arrow');" d="M10 210h20"/>
+  <g style="font:10px 'RegularFont', 'Nanum Gothic', Arial, sans-serif;">
+    <text x="40" y="185" style="fill:#484">배의 무게 중심</text>
+    <text x="40" y="200" style="fill:#88f">부력의 중심</text>
+    <text x="40" y="215" style="fill:#f88">배의 회전</text>
+  </g>
+</svg>

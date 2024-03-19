@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 420 200"
+  xmlns="http://www.w3.org/2000/svg">
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="100" cy="100" rx="85" ry="85"/>
+  <ellipse style="fill: rgb(216, 216, 216); stroke: rgb(0, 0, 0);" cx="370" cy="100" rx="30" ry="30"/>
+  <path style="stroke: rgb(0, 0, 0); fill: none;" d="M 100 100 L 370 100"/>
+  <path style="stroke: rgb(0, 0, 0); fill: none; stroke-dasharray: 2; stroke-opacity: 0.3;" d="M 100 100 C 130 130 340 130 370 100"/>
+  <g style="font:italic 23pt 'times new roman'">
+    <text x="232" y="133">r</text>
+    <text x="80" y="90">m<tspan y="93" style="font-size:10pt;">1</tspan></text>
+    <text x="360" y="93">m<tspan y="96" style="font-size:10pt;">2</tspan></text>
+  </g>
+</svg>

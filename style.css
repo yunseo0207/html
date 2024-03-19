@@ -143,7 +143,7 @@ footer>div>a:hover {
 
 article {
   width: 95%;
-  max-width: 860px;
+  max-width: 1200px;
   margin: 0 auto;
   padding: 0;
   counter-increment: table-no 0;
@@ -350,6 +350,7 @@ h1 {
   border-bottom: 3px solid #ddd;
   counter-reset: h2-no;
   counter-increment: reference-no 0 h1-no 1;
+  clear: both;
 }
 
 h1:nth-child(-n + 10)::before {
@@ -370,6 +371,7 @@ h2 {
   border-bottom: 1px solid #CCC;
   margin: 30px 12px 8px;
   counter-increment: h2-no;
+  clear: both;
 }
 
 h2:before {
@@ -719,7 +721,7 @@ table.hljs-ln tbody tr:hover {
 }
 
 p {
-  text-indent: 0.3em;
+  /* text-indent: 0.3em; */
   margin: 10px;
 }
 
@@ -1080,11 +1082,30 @@ a.detail+span .reference {
   max-height: 300px;
 }
 
-@media screen and (min-width: 1150px) {
-  .idea div {
-    left: 380px;
-    max-width: 860px;
-  }
+button.quiz {
+  border: 1px solid #ddd;
+  padding: 3px;
+  background-color: #444;
+  color: #444;
+}
+
+button.quiz2 {
+  border: 1px solid #ddd;
+  padding: 3px;
+  background-color: #444;
+  color: #FFF;
+}
+
+.clear-both {
+  clear: both;
+}
+
+.clear-right {
+  clear: both;
+}
+
+.clear-left {
+  clear: both;
 }
 
 @media screen and (max-width: 400px) {
@@ -1101,14 +1122,24 @@ a.detail+span .reference {
   header li>ul {
     top: 55px;
   }
+
+  .idea div {
+    left: 50px;
+    max-width: 300px;
+  }
 }
 
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1500px) {
   article {
-    padding-left: 200px;
+    padding-left: 300px;
   }
 
   #board {
     visibility: visible;
+  }
+
+  .idea div {
+    left: 350px;
+    max-width: 800px;
   }
 }
