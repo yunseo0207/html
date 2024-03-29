@@ -45,7 +45,7 @@ function renderHierarchy(data, parentElement, parentDirectories, directory) {
       const currentDirectory = item.디렉토리;
 
       // 목록이 파일인지 디렉토리인지 확인한다.
-      if (item.hasOwnProperty('파일명') && item.파일명) {
+      if (item.hasOwnProperty('파일명') && (item.파일명 != 'science.html' || directory === 'science.html')) {
         // 현재 파일인 확인한다.
 
         if ((currentDirectory + item.파일명) === directory) {
@@ -373,7 +373,7 @@ document.addEventListener('DOMContentLoaded', addReference);
 var article = document.querySelector("article");
 function addReference() {
   var details = document.querySelectorAll("a.detail");
-  var detailsInfos = document.querySelectorAll("a.detail+span");
+  var detailsInfos = document.querySelectorAll("a.detail+*");
   if (details.length < 1) {
     addReferenceImage("no-reference");
     return;

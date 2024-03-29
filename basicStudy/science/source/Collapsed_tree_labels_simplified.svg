@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 1200 700"
+  xmlns="http://www.w3.org/2000/svg">  
+  <path style="stroke: #000; fill: none; stroke-width:3" d="M 425 393 L 549 377 L 685 248"/>
+  <g style="fill: none; stroke: #2a2aff;stroke-width:3">
+    <path d="M573 87L557 189A190 190 0 0 1 737 377L741 377"/>
+    <path d="M681 230L678 234A193 193 0 0 1 677 520L680 523"/>
+    <path d="M631 192L629 197A197 197 0 0 1 721 281L725 278"/>
+    <path d="M622 125L605 182A202 202 0 0 1 655 204L658 200"/>
+    <path d="M661 149L642 190A209 209 0 0 1 674 209L687 190"/>
+    <path d="M748 212L705 248A202 202 0 0 1 740 311L745 309"/>
+    <path d="M784 256L737 287A209 209 0 0 1 752 331L796 321"/>
+    <path d="M741 433L737 432A193 193 0 0 1 585 569L586 576"/>
+    <path d="M753 388L749 388A197 197 0 0 1 723 476L728 479"/>
+    <path d="M795 369L754 370A205 205 0 0 1 752 407L761 408"/>
+    <path d="M800 398L763 395A209 209 0 0 1 759 421L792 427"/>
+    <path d="M802 469L740 453A206 206 0 0 1 712 502L717 506"/>
+    <path d="M772 517L728 491A209 209 0 0 1 705 520L760 568"/>
+    <path d="M644 563L642 558A205 205 0 0 1 529 579L529 585"/>
+    <path d="M705 611L666 551A209 209 0 0 1 620 573L635 624"/>
+    <path d="M578 635L572 585A209 209 0 0 1 486 576L484 583"/>
+    <path d="M509 635L522 593A217 217 0 0 1 447 569L438 587"/>
+    <path d="M447 635L462 600A239 239 0 0 1 413 574L386 623"/>
+  </g>
+  <g style="fill: none; stroke: #f03232;stroke-width:3">
+    <path d="M423 392A126 126 0 0 0 433 429L 381 451"/>
+    <path d="M354 434L372 427A195 195 0 0 0 393 474L319 523"/>
+    <path d="M296 424L349 415A203 203 0 0 0 359 450L305 471"/>
+  </g>
+  <g style="fill: none; stroke: #96503c;stroke-width:3">
+    <path d="M352 342L424 355A126 126 0 0 0 423 392"/>
+    <path d="M348 300L360 305A201 201 0 0 0 347 378L284 378"/>
+    <path d="M366 250L373 255A213 213 0 0 0 335 353L283 347"/>
+    <path d="M407 200L410 203A222 222 0 0 0 338 307L333 305"/>
+    <path d="M300 267L340 286A228 228 0 0 0 327 325L286 315"/>
+    <path d="M445 171L447 175A228 228 0 0 0 373 233L365 227"/>
+    <path d="M336 170L379 211A237 237 0 0 0 352 245L303 213"/>
+    <path d="M475 152L477 158A230 230 0 0 0 415 189L384 145"/>
+    <path d="M429 118L449 163A237 237 0 0 1 505 145L500 104"/>
+  </g>
+  <style>
+    text tspan{
+      font-size:0.7em;
+    }
+  </style>
+  <g style="font-family: Arial, sans-serif; font-size: 30px;text-anchor:middle">
+    <text x="470" y="250" style="fill:#96503c;font-weight:bold">Eukaryota<tspan x="470" dy="1.2em">진핵생물</tspan></text>
+    <text x="480" y="480" style="fill:#f03232;font-weight:bold">Archaea<tspan x="480" dy="1.2em">고세균</tspan></text>
+    <text x="650" y="430" style="fill:#2a2aff;font-weight:bold">bacteria<tspan x="650" dy="1.2em">세균</tspan></text>
+    <text x="500" y="60">Fungi<tspan x="500" dy="1.2em">균류</tspan></text>
+    <text x="420" y="85">Animals<tspan x="420" dy="1.2em">동물</tspan></text>
+    <text x="280" y="115">Slime moulds<tspan x="310" dy="1.2em">세포성 점균류</tspan></text>
+    <text x="260" y="175">Plants<tspan dx="10">식물</tspan></text>
+    <text x="230" y="210.465">Algae<tspan dx="10">조류</tspan></text>
+    <text x="200" y="287.756">Protozoa<tspan x="200" dy="1.2em">원생동물</tspan></text>
+    <text x="180" y="415">Crenarchaeota<tspan x="180" dy="1.2em">크렌고세균</tspan></text>
+    <text x="190" y="480">Nanoarchaeota<tspan x="190" dy="1.2em">나노고세균</tspan></text>
+    <text x="210" y="545">Euryarchaeota<tspan x="210" dy="1.2em">유리고세균</tspan></text>
+    <text x="460" y="670">Proteobacteria<tspan x="460" dy="1.2em">프로테오박테리아</tspan></text>
+    <text x="750" y="650">Acidobacteria <tspan x="750" dy="1.2em">아키도박테리아</tspan></text>
+    <text x="980" y="540">Thermophilic sulfate-reducers<tspan x="880" dy="1.2em">호열성 황산염-환원</tspan></text>
+    <text x="985" y="460">Cyanobacteria<tspan dx="10">시아노 박테리아</tspan></text>
+    <text x="970" y="490" style="font-size: 25px">(blue-green algae)<tspan dx="10">(청록색 세균)</tspan></text>
+    <text x="970" y="405">Fusobacteria<tspan dx="10">푸소 박테리아</tspan></text>
+    <text x="960" y="325">Spirochaetes<tspan dx="10">스피로헤테스</tspan></text>
+    <text x="940" y="261">Planctomycetes<tspan dx="10">부유균</tspan></text>
+    <text x="890" y="203">Actinobacteria<tspan dx="10">방선균</tspan></text>
+    <text x="830" y="140">Green nonsulfur bacteria<tspan x="750" dy="1.2em">녹색비황세균</tspan></text>
+    <text x="751" y="100">Chlamydiae<tspan dx="10">클라메디아</tspan></text>
+    <text x="650" y="40">Gram-positives<tspan x="610" dy="1.2em">그램양성균</tspan></text>
+  </g>
+</svg>

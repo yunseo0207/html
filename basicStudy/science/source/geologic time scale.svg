@@ -1,0 +1,369 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="-25 0 565 500"
+  xmlns="http://www.w3.org/2000/svg">
+
+  <linearGradient x1="0" y1="0" x2="1" y2="0" id="shodow">
+    <stop offset="0" style="stop-color: #fff;stop-opacity:0"/>
+    <stop offset="0.5" style="stop-color: #fff;stop-opacity:0.1"/>
+    <stop offset="1" style="stop-color: #ccc;stop-opacity:0.9"/>
+  </linearGradient>
+  <linearGradient x1="0" y1="0" x2="1" y2="0" id="light">
+    <stop offset="0" style="stop-color: #fff;stop-opacity:0.7"/>
+    <stop offset="0.2" style="stop-color: #fff;stop-opacity:0.3"/>
+    <stop offset="1" style="stop-color: #fff;stop-opacity:0"/>
+  </linearGradient>
+
+  <style>
+  .Eon tspan {
+    font-size:0.8em;
+    fill:#b88;
+  }
+  </style>
+  <path d="M45 20h75V76.86h-75z" style="fill:#fce"/>
+  <path d="M45 76.86h20V500h-20z" style="fill:#bcd"/>
+  <path d="M65 76.86h55V282.75h-55z" style="fill:#cef"/>
+  <path d="M65 282.75h55V440.41h-55z" style="fill:#e4e4f4"/>
+  <path d="M65 440.41h125V500h-125z" style="fill:#e4e4e4"/>
+
+  <path d="M120 20h70V26.94h-70z" style="fill:#fdd"/>
+  <path d="M120 26.94h70V46.5h-70z" style="fill:#fed"/>
+  <path d="M120 46.5h70V76.86h-70z" style="fill:#ffc"/>
+  <path d="M120 76.86h70V125.1h-70z" style="fill:#c8e4f4"/>
+  <path d="M120 125.1h70V188.16h-70z" style="fill:#c0d8f0"/>
+  <path d="M120 188.16h70V282.75h-70z" style="fill:#b4c8e8"/>
+  <path d="M120 282.75h70V314.29h-70z" style="fill:#dde"/>
+  <path d="M120 314.29h70V356.33h-70z" style="fill:#ccd"/>
+  <path d="M120 356.33h70V398.37h-70z" style="fill:#bbc"/>
+  <path d="M120 398.373h70V440.41h-70z" style="fill:#aab"/>
+
+  <!-- 연결 -->
+  <path d="M190 76.86Q280 76.86 280 490L280 46.5H190z" style="fill:#ffc;"/>
+  <path d="M190 76.86Q280 76.86 280 490L280 46.5H190z" style="fill:url(#shodow);"/>
+  <path d="M190 26.94Q280 26.94 280 78.56L280 243.74Q280 46.5 190 46.5z" style="fill:#fed"/>
+  <path d="M190 26.94Q280 26.94 280 78.56L280 243.74Q280 46.5 190 46.5z" style="fill:url(#shodow);"/>
+  <path d="M190 20V26.94Q280 26.94 280 78.56L280 20z" style="fill:#fdd;"/>
+  <path d="M190 20V26.94Q280 26.94 280 78.56L280 20z" style="fill:url(#shodow);"/>
+
+  <!-- 2번째 판 -->
+  <path d="M280 20h75V78.56h-75z" style="fill:#fdd"/>
+  <path d="M280 20h75V78.56h-75z" style="fill:url(#light)"/>
+  <path d="M280 78.56h75V243.74h-75z" style="fill:#fed"/>
+  <path d="M280 78.56h75V243.74h-75z" style="fill:url(#light)"/>
+  <path d="M280 243.74h75V500h-75z" style="fill:#ffc"/>
+  <path d="M280 243.74h75V500h-75z" style="fill:url(#light)"/>
+
+  <path d="M355 20h75V22.29h-75z" style="fill:#fdd"/>
+  <!-- 신생 -->
+  <path d="M355 22.29h75V40.43h-75z" style="fill:#fbb"/>
+  <path d="M355 40.43h75V78.56h-75z" style="fill:#faa"/>
+  <path d="M355 78.56h75V148.65h-75z" style="fill:#f8e8d8"/>
+  <!-- 중생 -->
+  <path d="M355 148.65h75V198.6h-75z" style="fill:#f8e0c0"/>
+  <path d="M355 198.6h75V243.74h-75z" style="fill:#e8c8b0"/>
+  <path d="M355 243.74h75V285.2h-75z" style="fill:#ffb"/>
+  <!-- 고생 -->
+  <path d="M355 285.2h75V338.43h-75z" style="fill:#eec"/>
+  <path d="M355 338.43h75V391.93h-75z" style="fill:#eea"/>
+  <path d="M355 391.93h75V413.76h-75z" style="fill:#dda"/>
+  <path d="M355 413.76h75V450.67h-75z" style="fill:#cc9"/>
+  <path d="M355 450.67h75V500h-75z" style="fill:#bb8"/>
+
+  <path d="M420 20h100V20.01h-100" style="fill:#fdd"/>
+  <!-- 4기 -->
+  <path d="M420 20.01h100V22.29h-100" style="fill:#fcc"/>
+  <path d="M420 22.29h100V24.73h-100" style="fill:#fee"/>
+  <!-- 신진기 -->
+  <path d="M420 24.73h100V40.43h-100" style="fill:#fcc"/>
+  <path d="M420 40.43h100V50.08h-100" style="fill:#faa"/>
+  <!-- 고진기 -->
+  <path d="M420 50.08h100V69.69h-100" style="fill:#fcc"/>
+  <path d="M420 69.69h100V78.56h-100" style="fill:#faa"/>
+  <path d="M420 78.56h100V109.17h-100" style="fill:#f8e8d8"/>
+  <!-- 중생,백악기 -->
+  <path d="M420 109.17h100V148.65h-100" style="fill:#fff4ef"/>
+  <path d="M420 148.65h100V165.06h-100" style="fill:#f8e0c0"/>
+  <!-- 쥐라기 -->
+  <path d="M420 165.06h100V174.47h-100" style="fill:#fff4ef"/>
+  <path d="M420 174.47h100V198.6h-100" style="fill:#f8e0c0"/>
+  <path d="M420 198.6h100V230.28h-100" style="fill:#e8c8b0"/>
+  <!-- 트라이아스 -->
+  <path d="M420 230.28h100V239.33h-100" style="fill:#f8e0c0"/>
+  <path d="M420 239.33h100V243.74h-100" style="fill:#e8c8b0"/>
+  <path d="M420 243.74h100V250.51h-100" style="fill:#ffb"/>
+  <!-- 고생 폐름 -->
+  <path d="M420 250.51h100V261.6h-100" style="fill:#ffe"/>
+  <path d="M420 261.6h100V285.2h-100" style="fill:#ffb"/>
+  <path d="M420 285.2h100V306.76h-100" style="fill:#eec"/>
+  <!-- 석탄 -->
+  <path d="M420 306.76h100V338.43h-100" style="fill:#ffe"/>
+  <path d="M420 338.43h100V359.55h-100" style="fill:#eea"/>
+  <!-- 데본 -->
+  <path d="M420 359.55h100V368.95h-100" style="fill:#ffe"/>
+  <path d="M420 368.95h100V391.93h-100" style="fill:#eea"/>
+  <path d="M420 391.93h100V395.3h-100" style="fill:#dda"/>
+  <!-- 실루아기 -->
+  <path d="M420 395.3h100V399.21h-100" style="fill:#eec"/>
+  <path d="M420 399.21h100V404.53h-100" style="fill:#dda"/>
+  <path d="M420 404.53h100V413.76h-100" style="fill:#eec"/>
+  <path d="M420 413.76h100V426.71h-100" style="fill:#cc9"/>
+  <!-- 오르도비스 -->
+  <path d="M420 426.71h100V437.01h-100" style="fill:#eea"/>
+  <path d="M420 437.01h100V450.67h-100" style="fill:#cc9"/>
+  <path d="M420 450.67h100V460.96h-100" style="fill:#dda"/>
+  <!-- 캄브리아 -->
+  <path d="M420 460.96h100V471.61h-100" style="fill:#bb8"/>
+  <path d="M420 471.61h100V482.26h-100" style="fill:#dda"/>
+  <path d="M420 482.26h100V500h-100" style="fill:#bb8"/>
+
+  <g style="fill:none; stroke:#444;">
+    <path d="M-10 20h-10v480h10M-20 125.1h10M-20 230.2h10M-20 335.30h10M-20 440.4h10"/>
+    <path d="M530 20h10v480h-10M530 108.8h10M530 197.4h10M530 286.2h10 M530 374.9h10 M530 463.6h10"/>
+    <path d="M40 20h5M35 20.27h10M40 20.56h5M35 22.42h10M40 23.56h5M40 25.89h5M30 26.94h15M40 30.56h5M35 35.24h10M40 37.18h5M40 38.3h5M35 41.16h10M40 44.91h5M40 45.98h5M30 46.5h15M40 47.31h5M40 48.62h5M35 51.41h10M40 53.97h5M35 57.72h10M40 60.22h5M40 61.34h5M35 64.06h10M40 64.46h5M40 64.92h5M40 65.55h5M35 66.64h10M40 68.18h5M40 69.4h5M35 71.02h10M40 72.24h5M40 73.5h5M40 74.76h5M30 76.86h15M35 125.1h10M35 188.16h10M30 282.75h15M35 314.29h10M35 356.33h10M35 398.37h10M30 440.41h15M25 500h20M45 20v480"/>
+    <path d="M275 20.01h5M270 22.29h10M275 24.73h5M270 40.43h10M275 50.08h5M275 69.69h5M265 78.56h15M275 109.17h5M270 148.65h10M275 165.06h5M275 174.47h5M270 198.6h10M275 230.28h5M275 239.33h5M265 243.74h15M275 250.51h5M275 261.6h5M270 285.2h10M275 306.76h5M270 338.43h10M275 359.55h5M275 368.95h5M270 391.93h10M275 395.3h5M275 399.21h5M275 404.53h5M270 413.76h10M275 426.71h5M275 437.01h5M270 450.67h10M275 460.96h5M275 471.61h5M275 482.26h5M265 500h15M280 20v480"/>
+  </g>
+
+  <g style="font-size:10" class="Eon">
+    <text x="70" y="450.41">명왕누대      <tspan x="70" dy="1em">Hadean</tspan>
+    </text>
+    <text x="70" y="292.75">시생누대      <tspan x="70" dy="1em">Archean</tspan>
+    </text>
+    <text x="70" y="86.86">원생누대      <tspan x="70" dy="1em">Proterozoic</tspan>
+    </text>
+    <text x="60" y="30">현생누대      <tspan x="60" dy="1em">Proterozoic</tspan>
+    </text>
+    <text x="55" y="85" style="writing-mode:vertical-rl;">선캄프리아      <tspan>Precambrian</tspan>
+    </text>
+    <text x="125" y="28">신생대      <tspan>Cenozoic</tspan>
+    </text>
+    <text x="125" y="40">중생대대      <tspan>Mesozoic</tspan>
+    </text>
+    <text x="125" y="57.31">고생대      <tspan x="125" dy="1em">Paleozoic</tspan>
+    </text>
+    <text x="125" y="86.86">신생원대      <tspan x="125" dy="1em">Neoproterozoic</tspan>
+    </text>
+    <text x="125" y="135.1">중생원대      <tspan x="125" dy="1em">Mesoproterozoic</tspan>
+    </text>
+    <text x="125" y="198.16">고생원대      <tspan x="125" dy="1em">Paleoproterozoic</tspan>
+    </text>
+    <text x="125" y="292.75">신시생대      <tspan x="125" dy="1em">Neoarchean</tspan>
+    </text>
+    <text x="125" y="324.29">중시생대      <tspan x="125" dy="1em">Mesoarchean</tspan>
+    </text>
+    <text x="125" y="366.33">고시생대      <tspan x="125" dy="1em">Paleoarchean</tspan>
+    </text>
+    <text x="125" y="408.37">초시생대      <tspan x="125" dy="1em">Eoarchean</tspan>
+    </text>
+
+    <text x="290" y="30">신생대      <tspan x="290" dy="1em">Neoproterozoic</tspan>
+    </text>
+    <text x="290" y="88.56">중생대      <tspan x="290" dy="1em">Mesoproterozoic</tspan>
+    </text>
+    <text x="290" y="253.74">고생대      <tspan x="290" dy="1em">Paleoproterozoic</tspan>
+    </text>
+
+    <text x="360" y="12">제4기<tspan x="360" dy="1em">Quaternary</tspan>
+    </text>
+    <text x="360" y="32.29">신진기      <tspan x="360" dy="1em">Neogene</tspan>
+    </text>
+    <text x="360" y="50.43">고진기      <tspan x="360" dy="1em">Paleogene</tspan>
+    </text>
+    <text x="360" y="88.56">백악기      <tspan x="360" dy="1em">Cretaceous</tspan>
+    </text>
+    <text x="360" y="158.65">쥐라기      <tspan x="360" dy="1em">Jurassic</tspan>
+    </text>
+    <text x="360" y="208.6">트라이아스기      <tspan x="360" dy="1em">Triassic</tspan>
+    </text>
+    <text x="360" y="253.74">페름기      <tspan x="360" dy="1em">Permian</tspan>
+    </text>
+    <text x="360" y="295.2">석탄기      <tspan x="360" dy="1em">Carboniferous</tspan>
+    </text>
+    <text x="360" y="348.43">데본기      <tspan x="360" dy="1em">Devonian</tspan>
+    </text>
+    <text x="360" y="401.93">실루아기      <tspan x="360" dy="1em">Silurian</tspan>
+    </text>
+    <text x="360" y="423.76">오르도비스      <tspan x="360" dy="1em">Ordovician</tspan>
+    </text>
+    <text x="360" y="460.67">캄브리아기      <tspan x="360" dy="1em">Cambrian</tspan>
+    </text>
+  </g>
+
+  <g style="font-size:8" class="Eon">
+    <text x="420" y="13">홀로세      <tspan>Holocene</tspan>
+    </text>
+    <text x="440" y="22">플라이스토세      <tspan>Pleistocene</tspan>
+    </text>
+    <text x="430" y="30">플리오세      <tspan>Pliocene</tspan>
+    </text>
+    <text x="430" y="38">마이오세      <tspan>Miocene</tspan>
+    </text>
+    <text x="430" y="50">올리고세      <tspan>Oligocene</tspan>
+    </text>
+    <text x="430" y="60.08">에오세      <tspan>Eocene</tspan>
+    </text>
+    <text x="430" y="78.69">팔리오세      <tspan>Paleocene</tspan>
+    </text>
+    <text x="430" y="89.56">후기      <tspan>late</tspan>
+    </text>
+    <text x="430" y="118.17">전기      <tspan>early</tspan>
+    </text>
+    <text x="430" y="156.65">후기      <tspan>late</tspan>
+    </text>
+    <text x="430" y="173.06">중기      <tspan>middle</tspan>
+    </text>
+    <text x="430" y="182.47">전기      <tspan>early</tspan>
+    </text>
+    <text x="430" y="206.6">후기      <tspan>late</tspan>
+    </text>
+    <text x="430" y="238.28">중기      <tspan>middle</tspan>
+    </text>
+    <text x="480" y="244.33">전기      <tspan>early</tspan>
+    </text>
+    <text x="430" y="249.74">러핑세      <tspan>Lopingian</tspan>
+    </text>
+    <text x="430" y="258.51">과달루페세      <tspan>Guadalupian</tspan>
+    </text>
+    <text x="430" y="269.6">시스우랄세      <tspan>Cisuralian</tspan>
+    </text>
+    <text x="430" y="293.2">펜실베이니아기      <tspan>Pennsylvanian</tspan>
+    </text>
+    <text x="430" y="314.76">미시시피기      <tspan>Mississippian</tspan>
+    </text>
+    <text x="430" y="346.43">후기      <tspan>Late</tspan>
+    </text>
+    <text x="430" y="367.55">중기      <tspan>Middle</tspan>
+    </text>
+    <text x="430" y="376.95">전기      <tspan>Early</tspan>
+    </text>
+    <text x="430" y="394.93">프리돌리세      <tspan>~</tspan>
+    </text>
+    <text x="480" y="399.3">러들로세      <tspan>~</tspan>
+    </text>
+    <text x="430" y="405.21">웬록세      <tspan>~</tspan>
+    </text>
+    <text x="430" y="414.53">란도베리세      <tspan>Llandovery</tspan>
+    </text>
+    <text x="430" y="422.76">후기      <tspan>Late</tspan>
+    </text>
+    <text x="430" y="434.71">중기      <tspan>Middle</tspan>
+    </text>
+    <text x="430" y="445.01">전기      <tspan>Early</tspan>
+    </text>
+    <text x="430" y="458.67">푸룽세      <tspan>Furongian</tspan>
+    </text>
+    <text x="430" y="468.96">먀오링세      <tspan>Miaolingian</tspan>
+    </text>
+    <text x="430" y="479.61">제2세<tspan>Series 2</tspan>
+    </text>
+    <text x="430" y="490.26">테르뇌브세      <tspan>Terreneuvian</tspan>
+    </text>
+  </g>
+
+  <g style="font-size:8;fill:#f80;text-anchor:end">
+    <text x="30" y="26">66M</text>
+    <text x="30" y="45">252.17M</text>
+    <text x="30" y="76">541M</text>
+    <text x="9" y="125.1">1G</text>
+    <text x="9" y="188.16">1.6G</text>
+    <text x="9" y="282.75">2.5G</text>
+    <text x="9" y="314.29">2.8G</text>
+    <text x="9" y="356.33">3.2G</text>
+    <text x="9" y="398.37">3.6G</text>
+    <text x="9" y="440.41">4G</text>
+    <text x="30" y="497">4.567G</text>
+    <text x="230" y="18">11.7K</text>
+    <text x="230" y="26">2.58M</text>
+    <text x="230" y="33">5.333M</text>
+    <text x="230" y="43">23.03M</text>
+    <text x="230" y="53">33.9M</text>
+    <text x="230" y="73">56M</text>
+    <text x="230" y="82">66M</text>
+    <text x="230" y="112">100.5M</text>
+    <text x="230" y="151">145M</text>
+    <text x="230" y="168">163.5M</text>
+    <text x="230" y="177">174.1M</text>
+    <text x="230" y="202">201.3M</text>
+    <text x="230" y="232">237M</text>
+    <text x="230" y="239">247.2M</text>
+    <text x="230" y="247">252.17M</text>
+    <text x="230" y="254">259.8M</text>
+    <text x="230" y="265">272.3M</text>
+    <text x="230" y="288">298.9M</text>
+    <text x="230" y="310">323.2M</text>
+    <text x="230" y="342">358.9M</text>
+    <text x="230" y="363">382.7M</text>
+    <text x="230" y="373">393.3M</text>
+    <text x="230" y="387">419.2M</text>
+    <text x="230" y="394">423M</text>
+    <text x="230" y="401">427.4M</text>
+    <text x="230" y="409">433.4M</text>
+    <text x="230" y="418">443.8M</text>
+    <text x="230" y="431">458.4M</text>
+    <text x="230" y="440">470M</text>
+    <text x="230" y="453">485.4M</text>
+    <text x="230" y="464">497M</text>
+    <text x="230" y="475">509M</text>
+    <text x="230" y="486">521M</text>
+    <text x="230" y="500">541M</text>
+  </g>
+
+  <g style="font-size:8;fill:'#2b1818';text-anchor:end">
+    <g style="writing-mode:vertical-lr;text-orientation:sideways;fill:red">
+      <text x="-16" y="120">10억년전</text>
+      <text x="-16" y="225">20억년전</text>
+      <text x="-16" y="330">30억년전</text>
+      <text x="-16" y="435">40억년전</text>
+    </g>
+    <g style="writing-mode:vertical-lr;text-orientation:upright;fill:red">
+      <text x="531" y="104">1억년전</text>
+      <text x="531" y="190">2억년전</text>
+      <text x="531" y="278">3억년전</text>
+      <text x="531" y="366">4억년전</text>
+      <text x="531" y="456">5억년전</text>
+    </g>
+    <text x="30" y="34">6600만</text>
+    <text x="30" y="54">2.5217억</text>
+    <text x="30" y="84">5.41억</text>
+    <text x="30" y="125.1">10억</text>
+    <text x="30" y="188.16">16억</text>
+    <text x="30" y="282.75">25억</text>
+    <text x="30" y="314.29">28억</text>
+    <text x="30" y="356.33">32억</text>
+    <text x="30" y="398.37">36억</text>
+    <text x="30" y="440.41">40억</text>
+    <text x="30" y="487">45.67억</text>
+    <text x="264" y="18">1.17만</text>
+    <text x="264" y="26">258만</text>
+    <text x="264" y="33">533.3만</text>
+    <text x="264" y="43">2303만</text>
+    <text x="264" y="53">3390만</text>
+    <text x="264" y="73">5600만</text>
+    <text x="264" y="82">6600만</text>
+    <text x="264" y="112">1.005억</text>
+    <text x="264" y="151">1.45억</text>
+    <text x="264" y="168">1.635억</text>
+    <text x="264" y="177">1.741억</text>
+    <text x="264" y="202">2.013억</text>
+    <text x="264" y="232">2.37억</text>
+    <text x="264" y="239">2.472억</text>
+    <text x="264" y="247">2.5217억</text>
+    <text x="264" y="254">2.598억</text>
+    <text x="264" y="265">2.723억</text>
+    <text x="264" y="288">2.989억</text>
+    <text x="264" y="310">3.232억</text>
+    <text x="264" y="342">3.589억</text>
+    <text x="264" y="363">3.827억</text>
+    <text x="264" y="373">3.933억</text>
+    <text x="264" y="387">4.192억</text>
+    <text x="264" y="394">4.23억</text>
+    <text x="264" y="401">4.274억</text>
+    <text x="264" y="409">4.334억</text>
+    <text x="264" y="418">4.438억</text>
+    <text x="264" y="431">4.584억</text>
+    <text x="264" y="440">4.7억</text>
+    <text x="264" y="453">4.854억</text>
+    <text x="264" y="464">4.97억</text>
+    <text x="264" y="475">5.09억</text>
+    <text x="264" y="486">5.21억</text>
+    <text x="264" y="500">5.41억</text>
+  </g>
+</svg>

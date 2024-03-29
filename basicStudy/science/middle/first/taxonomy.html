@@ -38,13 +38,929 @@
   <!-- 공통스킨 -->
   <style type="text/css">
     @import url("/style.css");
+
+    span.tutorial {
+      animation: none;
+      font-weight: normal;
+      margin: 0 20px 0 auto;
+      width: 95%;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #4dd;
+    }
   </style>
 </head>
 
 <body>
   <article>
     <div id="title">중1: 3. 생물의 다양성</div>
-    <p>작성 대기 중입니다.</p>
+    <h1>개요</h1>
+    <p>
+      이 단원은 <em>생물학</em>(biology)의 시작입니다.
+      생물학은 인간을 안전하고 윤택하게 하는 고부가가치 산업입니다.
+      현대의 생물학은, 특히 분류학은 과거 린네의 분류부터, 생김새를 넘어 유전자 분석에 이르렀습니다(단지 비슷한 생김새만으로 그들이 친척인지 알 수 없다는 뜻입니다). 생물의 분류 체계를 이해합시다.
+    </p>
+
+    <h1>본문</h1>
+    <h3>생물의 정의</h3>
+    <p>
+      <em>생물</em>이란 <em>물질대사</em>(metabolism, 생존에 필요한 물질과 에너지를 획득), <em>생식</em>(reproduction, 자손의 번식),
+      <em>성장</em>(growth, 크기, 세포의 수) 등의 활동을 하는 것을 말합니다.
+      우리가 '생명은 이것이다'라고 명확하게 인식하는 것과는 별개로, '~등의 활동'과 같은 생명의 애매한 범주 때문에 <em>바이러스</em>(virus)도 생명으로 간주 할 수 있는가에 대한 논의가
+      있습니다.
+      바이러스는 유전물질, 진화, 증식을 할 수 있으나, 세포구조가 없고, 숙주가 반드시 존재해야 하는 특징이 있습니다.
+      <span class="tutorial" style="display:none">
+        비슷한 예로, "어디까지 사람으로 보아야 할 것인가?"를 생각해 볼 수 있습니다.
+        정자와 난자는 사람이 아니고, 출산 후는 명확히 사람이지만, 출산 일주일 전, 2주일 전도 사람이라고 할 수 있을까요? 임신 3달 후는 어떨까요?
+      </span>
+    </p>
+
+    <h2>분류체계</h2>
+    <p>
+      <em>생물의 분류</em> 또는 <em>분류학</em>(생물)(Taxonomy (biology))는 인간의 (연구) 편의에 의해서 분류한 체계입니다. 각자 발달하던 학문은 린네(Carl von
+      Linné, 1707~1778)에 의해 체계화되었습니다. 다음 표와 같이 8개의 큰 기준에 의해 구분합니다(역 - 계 - 문 - 강 -목 - 과 - 속 - 종).
+    </p>
+    <p>
+      각 기준은 하위 기준을 아우르는 범위로써 정의됩니다('속'은 자신의 모든 하위 '종'을 포함합니다).
+      이 기준은 상당히 애매할 수 있습니다.
+      예를들어, 동물은 척삭의 유무로 Phylum(문)이 갈리지만, 여타 생물은 해당 기준으로 분류 할 수 없습니다.
+      최종적으로 린네의 체계를 기준으로 조금씩 수정되어 사용되고 있습니다. '역'과 '계'사이에 공통의 조상이 추측되는 경우 '상계'단위를 고려할 수 있습니다.
+    </p>
+    <span class="tutorial" style="display:none">표를 외우라는 의미가 아닙니다. 단지, 모든 생물이 정확하게 8단계로 나누어지지 않는다는 것을 확인하십시오.</span>
+    <style>
+      .all-td-top td {
+        vertical-align: top;
+      }
+
+      .emphasize-td {
+        vertical-align: middle !important;
+        background-color: #eee;
+      }
+    </style>
+    <table class="all-td-top">
+      <caption>분류</caption>
+      <thead>
+        <tr>
+          <th>Giga<br>&nbsp;</th>
+          <th>Mega<br>(거)</th>
+          <th>Gran<br>(대)</th>
+          <th>Hyper<br>(중)</th>
+          <th>Super<br>(상)</th>
+          <th>Ultra<br>&nbsp;</th>
+          <th>분류명</th>
+          <th>Nan<br>&nbsp;</th>
+          <th>Hypo<br>&nbsp;</th>
+          <th>Min<br>&nbsp;</th>
+          <th>Sub<br>(아)</th>
+          <th>Infra<br>(하)</th>
+          <th>Subter<br>(준)</th>
+          <th>Parv<br>(소)</th>
+          <th>Micro<br>(미)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="emphasize-td">Domain<br>(역)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>super<br>kingdom<br>(상계)</td>
+          <td></td>
+          <td class="emphasize-td">Kingdom<br>(계)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Sub<br>kingdom<br>(아계)</td>
+          <td>Infra<br>kingdom<br>(하계)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Super<br>phylum<br>(상문)</td>
+          <td></td>
+          <td class="emphasize-td">Phylum<br>(문)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Sub<br>phylum<br>(아문)</td>
+          <td>Infra<br>phylum<br>(하문)</td>
+          <td></td>
+          <td>Parv<br>phylum<br>(소문)</td>
+          <td>Micro<br>phylum<br>(미문)</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Super<br>class<br>(상강)</td>
+          <td></td>
+          <td class="emphasize-td">Class<br>(강)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Sub<br>class<br>(아강)</td>
+          <td>Infra<br>class<br>(하강)</td>
+          <td>Subter<br>class<br>(준강)</td>
+          <td>Parv<br>class<br>(소강)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>Mega<br>order<br>(거목)</td>
+          <td>Grand<br>order<br>(대목)</td>
+          <td>Hyper<br>order<br>(중목)</td>
+          <td>Super<br>order<br>(상목)</td>
+          <td></td>
+          <td class="emphasize-td">Order<br>(목)</td>
+          <td>Nan<br>order</td>
+          <td>Hypo<br>order</td>
+          <td>Min<br>order</td>
+          <td>Sub<br>order<br>(아목)</td>
+          <td>Infra<br>order<br>(하목)</td>
+          <td></td>
+          <td>Parv<br>order<br>(소목)</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>Giga<br>family</td>
+          <td>Mega<br>family</td>
+          <td>Grand<br>family</td>
+          <td>Hyper<br>family </td>
+          <td>Super<br>family<br>(상과)</td>
+          <td></td>
+          <td class="emphasize-td">Family<br>(과)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Sub<br>family<br>(아과)</td>
+          <td>Infra<br>family<br>(하과)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="emphasize-td">Genus<br>(속)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Subgenus<br>(아속)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td class="emphasize-td">Species<br>(종)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Subspecies<br>(아종)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Variety<br>(변종)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Subvariety<br>(아변종)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Cultivar<br>(품종)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>Subform<br>(아품종)</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      종의 가장 기본적인 기준은 번식의 가능성을 기준으로 합니다. 다만, 라이거(호랑이와 사자)나 노새의 경우 같은 속에서 번식이 가능한 경우가 있고, 박테리아와 같은 경우 생식의 개념이 다르므로 조금 더
+      정확한 논의가 필요합니다. 실제로 종 개념(Species concept)
+      <a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="reference">종 개념: 위키피디아, <a href="https://en.wikipedia.org/wiki/Species_concept"
+            target="_blank">https://en.wikipedia.org/wiki/Species_concept</a></tspan>
+      </span>에 대한 다양한 논의가 있습니다. 종이란 무엇인지 정의하기 위해 무려 26가지 종 개념에 대해 정의하기도 합니다<a class="detail" href="#references"></a>
+      <span>
+        <tspan class="reference">종 개념: <a
+            href="https://scienceblogs.com/evolvingthoughts/2006/10/01/a-list-of-26-species-concepts" target="_blank">A
+            list of 26 Species "Concepts"</a>,
+          By evolvingthoughts on October 1, 2006. </tspan>
+      </span>
+    </p>
+
+    <div class="simple-box">
+      호랑이(동물계 - 척삭동물문 - 포유강 - 식육목 - 고양이과 - 표범속 - 호랑이)<br>
+      사자(동물계 - 척삭동물문 - 포유강 - 식육목 - 고양이과 - 표범속 - 사자)<br>
+      말(동물계 - 척삭동물문 - 포유강 - 기제목 - 말과 - 말속- 야생말-말)<br>
+      당나귀(동물계 - 척삭동물문 - 포유강 - 기제목 - 말과 - 말속- 아프리카야생당나귀-당나귀)<br>
+      다만, 라이거나 노새는 생식능력이 없다. 2세대의 생식능력 여부로 종을 구분하면 대체로 맞는다.
+    </div>
+
+    <h2>대분류</h2>
+    <table class="last-td-left">
+      <caption>생물의 분류 및 정의</caption>
+      <thead>
+        <tr>
+          <th colspan="2">분류</th>
+          <th>특징</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>원핵생물</td>
+          <td>prokaryon</td>
+          <td>유전물질이 내핵으로 보호되지 않고 그대로 노출된 단일핵생물<br>
+            (vs 고등생물은 핵막으로 한 번 더 보호)</td>
+        </tr>
+        <tr>
+          <td>식물계</td>
+          <td>plants</td>
+          <td>광합성으로 물질대사를 하는 생물</td>
+        </tr>
+        <tr>
+          <td>균계</td>
+          <td>fungi</td>
+          <td>사체로부터 물질대사를 하는 생물</td>
+        </tr>
+        <tr>
+          <td>동물계</td>
+          <td>animals</td>
+          <td>운동능력이 있는 생물. 세포벽이 없음</td>
+        </tr>
+        <tr>
+          <td>원생생물</td>
+          <td>protist</td>
+          <td>기타 생물. <span class="china-char">原<sub>근원 원</sub>生<sub>날 생</sub></span>:
+            진화하지 못하고 그대로의 상태, Protist(protos: 원시의)</td>
+        </tr>
+    </table>
+
+    <p>
+      주로 인용되는 아래 그림은 <em>박테리아</em> + <em>고세균</em> = <em>원핵생물</em>에 해당합니다.
+      <em>진핵생물</em> = <em>식물계</em> + <em>균계</em> + <em>동물계</em> + <em>원생생물</em>이 포함됩니다. 생명은 다양합니다. 아래 그림들은 <u>생물이 공통의
+        조상으로부터 분화되었다</u>는 사실을 암시합니다. 이는 돌연변이(mutation)로인해 다양해진 개체가 생존능력을 기반으로 선택되었다는 가정을 하게 합니다.
+    </p>
+
+    <style>
+      .china-char {
+        font-size: 1.2em;
+        font-family: 'RegularFont';
+      }
+
+      .china-char sub {
+        font-size: 0.6em;
+        vertical-align: sub;
+      }
+    </style>
+    <div class="img-box" width="95%">
+      <img src="../../source/Phylogenetic_tree.svg" width="100%" />
+      <span class="caption">대분류, 트리</span>
+      <span class="description">"Phylogenetic_tree.svg", Eric Gaba, NASA Astrobiology Institute, 2006.9.22, 퍼블릭 도메인
+        <br>/2차 수정: 한글화(기타언어 제거), 2024, @iseohyun.com</span>
+    </div>
+
+    <div class="img-box">
+      <img src="../../source/Collapsed_tree_labels_simplified.svg" />
+      <span class="caption">대분류, 원형</span>
+      <span class="description">"Collapsed tree labels simplified.png", TimVickers, wikipedia.org, 퍼블릭 도메인
+        <br>/2차 수정: 한글화/svg파일로 변경, 2024, @iseohyun.com</span>
+    </div>
+
+    <h2>화석</h2>
+    <p>
+      생물군은 계속 증가하는 것은 아닙니다. <u>우리는 현재의 패턴에서 과거를 유추하고(지질학), 과거의 기록에서 변화를 추적해왔습니다(화석).</u> 아래 그림은 위 그림에서 "진핵생물" - "동물" -
+      "척추동물"에서의 분화와 절멸에 대한 그림을 보여줍니다. 지구는 지금까지 수번의 대폭발(생명의 객체가 늘어나는 사건)과 멸종을 겪었습니다. 환경의 급격한 변화는 생물양의 변화를 가져오고, 시대를 구분하는
+      기준이 됩니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/Spindle_diagram.svg" />
+      <span class="caption">척추동물의 분화와 멸종</span>
+      <span class="description">"Spindle_diagram.jpg", Petter Bockman, wikipedia, 퍼블릭 라이선스
+        <br>/2차 수정: SVG파일로 변경, 한글 추가, 2024, @iseohyun.com</span>
+    </div>
+
+    <h3>분화의 특성</h3>
+    <p>
+      환경의 변화에 따라 수 많은 돌연변이가 분화했을 것입니다. 일부는 실패했고, 또 일부는 성공했습니다. 아래는 진핵생물 중에서 성공한 돌연변이들의 계보를 보여줍니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/PhylogeneticTreeOfAllLife.svg" />
+      <span class="caption">진핵생물의 예시</span>
+      <span class="description">"PhylogeneticTreeOfAllLife.jpg", 미상, 나무위키, CC BY-NC-SA 2.0 KR DEED
+        <br>/2차 수정: SVG,위치 변경, 2024, @iseohyun.com</span>
+    </div>
+
+    <table class="last-td-left">
+      <caption>진핵생물 상세도, 용어설명</caption>
+      <thead>
+        <tr>
+          <th>용어</th>
+          <th>설명</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>미트콘드리아, 핵</td>
+          <td>유전물질을 보호하는 핵막이 생깁니다.</td>
+        </tr>
+        <tr>
+          <td>엽록체</td>
+          <td>에너지를 얻기 위해 광합성을 하는 기관</td>
+        </tr>
+        <tr>
+          <td>기관</td>
+          <td>특정 목적을 위한 분업화, 고도화</td>
+        </tr>
+        <tr>
+          <td>신경계, 혈관계</td>
+          <td>
+            신경계: 두화(뇌)의 발달을 암시<br>
+            혈관계: 에너지 순환(호흡)을 암시
+          </td>
+        </tr>
+        <tr>
+          <td>선구 vs 후구</td>
+          <td>배아 발생시 원구(최초의 구멍)이 입(선구)가 되는지, 항문(후구)가 되는지 여부</td>
+        </tr>
+        <tr>
+          <td>물관부(체관부)</td>
+          <td>뿌리에서 잎과 열매까지 물(영양분)의 이동로가 있는지</td>
+        </tr>
+        <tr>
+          <td>속씨 vs 겉씨</td>
+          <td>씨가 겉으로 드러나는지 여부, 속씨(활엽수), 겉씨(침엽수)</td>
+        </tr>
+        <tr>
+          <td>천공 vs 온혈, 털</td>
+          <td>
+            천공: 신체의 구멍, 체온 조절 등의 이유로 추측<br>
+            온혈: 일정 이상의 체온을 유지, 보온의 목적
+          </td>
+        </tr>
+        <tr>
+          <td>태반 vs 유대류</td>
+          <td>
+            태반: 태아에게 영양분을 전달하고, 태아의 노폐물을 모체로 전달하는 기관<br>
+            유대류: 암컷의 육아낭에 어린 짐승을 기르는 동물. 캥거루, 코알라, 주머니쥐 등
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>종합</h1>
+    <p>
+      분화와 분류체계를 종합하면 대략 아래와 같은 모형이 됩니다. 공통의 조상으로부터 사람까지 다음과 같은 계보를 갖습니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/taxonomy.svg" />
+      <span class="caption">계통도</span>
+      <span class="description">"taxonomy.svg", @iseohyun.com, 2024, CC BY-SA 4.0<br>
+        "Chilopoda icon.svg", Shyamal, wikimedia.org, CC0 1.0 DEED<br>
+        "FP Snail icon.svg", MaxxL, wikimedia.org, CC BY-SA 3.0 DEED<br>
+        "Jellyfish - Lorc - game-icons.svg", FSock, wikimedia.org, CC BY 3.0 DEED<br>
+        "Sea-star - Delapouite - game-icons.svg", FSock, wikimedia.org, CC BY 3.0 DEED<br>
+        "202112 Japanese earthworm.svg", Togopic, wikimedia.org, CC BY 4.0 DEED 테두리 차용<br>
+        "Silhouette of a woman walking.svg", Mettiina, wikimedia.org, CC0 1.0 DEED<br>
+        "Bird 1010720 drawing.svg", Nevit, wikimedia.org, CC BY-SA 4.0 DEED<br>
+        "Frog or Toad Shape Icon SVG Repo.svg", JOGOS Public Assets CC0 1.0 DEED<br>
+        "Heraldry Fish 103.svg", Mrmw, wikimedia.org, CC0 1.0 DEED<br>
+        "Monkey icon svg.svg", Perexil, wikimedia.org, CC BY-SA 4.0 DEED<br>
+        "Mushroom - Lorc - game-icons.svg", FSock, wikimedia.org, CC BY 3.0 DEED<br>
+        "Tree-12361.svg", MikeRun, wikimedia.org, CC BY 3.0 DEED<br>
+        "Prokaryote cell-es.svg", Ali Zifan, wikimedia.org, CC BY-SA 4.0 DEED 흑백적용<br>
+        "202002 Microorganism amoeba.svg", Togopic, wikimedia.org, CC BY 4.0 DEED 흑백적용<br>
+        "Simple diagram of virus (blank).svg", Domdomegg, wikimedia.org, CC BY 4.0 DEED 아이디어 차용<br>
+      </span>
+    </div>
+    <table class="last-td-left">
+      <caption>계통도 설명</caption>
+      <thead>
+        <tr>
+          <th>주제</th>
+          <th>내용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>박테리아</td>
+          <td>질병을 일으키는 대부분의 세균(황색포도상구균, 살모넬라균)이 여기에 속합니다.</td>
+        </tr>
+        <tr>
+          <td>고세균</td>
+          <td>고등생물의 경우 세포안에 핵을 보호하는 막을 추가로 갖습니다. 세포가 서로 포식하는 과정에서 다른 세포의 일부를 기관으로 받아들이고, 본인이 핵막으로 보호되는 공생에 대한 가설이 있습니다.
+          </td>
+        </tr>
+        <tr>
+          <td>원생생물</td>
+          <td>범위가 매우 넓습니다. 식물의 특징(광합성)기관과, 곰팡이 + 동물의 특징을 제외한 모든 생물을 원생생물로 볼 수 있습니다.</td>
+        </tr>
+        <tr>
+          <td>원핵생물, 비척추동물</td>
+          <td>not진핵, not척추와 같은 분류는 통상적이고 편의적인 분류입니다.</td>
+        </tr>
+        <tr>
+          <td>선구 vs 후구</td>
+          <td>배아 발달과정에 대한 연구입니다. 해부학 지식이 첨가되었습니다.</td>
+        </tr>
+        <tr>
+          <td>포유류 vs 포유강</td>
+          <td>
+            '~류'는 '~하는 부류'라는 용어입니다.<br>
+            포유류와 같이 정확하게 공통의 조상을 갖는 경우 포유강으로 쓰지만, 어류와 같이 "네발 달리지 않으면서~" 와 같이 정의되는 경우는 분류명으로 사용되지 않습니다. (어강(X))
+          </td>
+        </tr>
+        <tr>
+          <td>Sauropsid<br>석형류</td>
+          <td>용궁강(석형류)로 양막류의 분파, 아래로 조류와 파충류를 포함함<br>
+            (양막류(폐호흡) = 석형류 + 단궁류)</td>
+        </tr>
+        <tr>
+          <td>아모르페아</td>
+          <td>
+            단편모생물, 편모(flagellum, flagella)는 운동성을 제공하기 위해 특정 식물과 동물의 정자 세포와 다양한 미생물이 가진 돌출된 털이 있는 부속 기관<br>
+            vs 편모충류: 편모가 있는 많은 원생생물
+          </td>
+        </tr>
+    </table>
+
+    <div class="img-box">
+    <img src="../../source/geologic time scale.svg"/>
+    <span class="caption">지질역사</span>
+    <span class="description">"geologic time scale.svg", @iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <h2>진화</h2>
+    <p>
+      돌연변이는 유전(heredity)정보의 착오로부터 시작합니다. 돌연변이의 발견은 현대사회에서도 비교적 흔하게 발현됩니다. 이는 특성이 되기도 하고, 질병이 되기도 합니다<a class="detail"
+        href="#references"></a>.<span>
+        <tspan class="description">다운 증후군(Down syndrome)은 21번째 염색체가 정상적인 2개가 아니라 3개 존재하여 정신 지체, 신체 기형, 전신 기능 이상, 성장 장애등을
+          일으키는 유전 질환입니다.<br>
+          클라인펠터 증후군(Klinefelter syndrome)은 성 염색체 이상 증후군으로 XY가 아닌 XXY를 가집니다. 무정자증, 경계선 지능, 불임, 학습장애 등이 원인이 됩니다.<br>
+          넓은 의미의 유전병은 '윺전자로 인한 질병'이며, 좁은 의미의 유전병은 '유전되는 병(hereditary disease)'으로 봅니다.
+        </tspan>
+        <tspan class="reference">유전병: <a href="http://www.snuh.org/health/nMedInfo/nView.do?category=DIS&medid=AA000074"
+            target="_blank">다운증후군</a>, 서울대학병원</tspan>
+      </span>
+      진화론은 (성공적인) 변이의 누적으로 인해 가시적 다양성이 드러났다고 가정하였습니다(자연 선택설, natural selection).
+    </p>
+    <ul>
+      <li>생물 - 세포 - 핵 - 염색체 - DNA - 유전정보</li>
+    </ul>
+    <p>
+      변이의 누적을 확인하는 방법은, 화석(fossil)을 연구하는 것입니다. 어떤 화석들은 두 종간의 차이가 큽니다. 이 둘간의 진화 과정을 보여주는 화석을 중간 화석(Transitional fossil,
+      중간 단계 화석)이라고 합니다. 우리는 현재까지 지역, 시기, 모습을
+      종합하여 진화가 이루어지고 있다고 확신하게 되었습니다.
+    </p>
+    <p>
+      진화의 증거 중에는 안타깝게도 거짓 증거가 있었습니다<a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="description">필트다운인 조작사건(1912)<br>
+          &nbsp; 새로 발견한 연대 측정법을 이용해 검증: 두개골(현대인), 턱뼈(오랑우탄), 이빨(침팬지, 갈아낸 흔적) 및 화학처리<br>
+          네브라스카인 오해(1917)<br>
+          &nbsp; 페커리(돼지아목-패커리과)의 이빨로 판명, 논문 철회<br>
+          오스트랄로피테쿠스 아파렌시스(Australopithecus afarensis) 애칭: 루시(Lucy)<br>
+          &nbsp; 오해1: 3km 떨어진 곳(아파르 삼각주)에서 같은 팀(도널드 조핸슨)의 발굴이 있었다(1974).<br>
+          &nbsp; 오해2: &nbsp;네이처>에 두 발보행을 병행했을 것으로 추측(2000)<br>
+          Evidence that humans evolved from a knuckle-walking ancestor<br>
+        </tspan>
+        <tspan class="reference">주먹-보행의 진화 증거: "<a href="https://www.nature.com/articles/35006045"
+            target="_blank">Evidence that humans evolved from a knuckle-walking ancestor</a>", Brian G. Richmond,
+          nature, 2000.3.23</tspan>
+      </span>
+      그것은 단순한 착오도 있었지만, 부와 명예를 노린 범죄도 있어왔습니다.
+    </p>
+
+    <h3>창조론과의 대립</h3>
+    <p>
+      창조론은 구약성경 창세기 제1장, "7일 동안 하나님이 세상을 창조했다."는 대목이 진실이라는 믿음에서 시작합니다.
+    </p>
+    <p>1982 McLean v. Arkansas: 창조과학이 진화론과 동등한가? => 아니다.<br>
+      1987 Edwards v. Aguilard : 창조론(creationism)은 과학인가? => 과학X<a class="detail" href="#references"></a>
+      <span>
+        <tspan class="description">
+          특정 종교를 공교육에서 가르치는 것은 헌법에 위배된다.<br>
+          훗날, 창조론에서 지적설계로 이름을 바꾸는 계기가 된다.
+        </tspan>
+        <tspan class="reference">창조론은 과학인가? : <a href="https://en.wikipedia.org/wiki/Edwards_v._Aguillard"
+            target="_blank">에드워드 vs 아길레라 재판</a></tspan>
+      </span><br>
+
+      2005 Kitzmiller v. Dover Area School District : Intelligent Design(ID, 지적설계)는 과학인가? => 과학X<a class="detail"
+        href="#references"></a>
+      <span>
+        <tspan class="description">
+          사건<br>
+          &nbsp; 도버 지역 교육 위원회가 과학시간에 지적설계론을 가르치겠다는 계획을 발표<br>
+          원고<br>
+          &nbsp; Tammy kitzmiller(학부모 외 11명)<br>
+          &nbsp; Kenneth Miller(브라운대학 생물학 교수 외 7명)<br>
+          피고<br>
+          &nbsp; Dover Area School District(도버 지역 교육구)<br>
+          &nbsp; Michael Behe(디스커버리 연구원 8명)<br>
+          &nbsp; Discovery Institute(디스커버리 연구소)<br>
+          쟁점<br>
+          &nbsp; 1. 환원불가능한 복잡성이 보이는가? (아니오)<br>
+          &nbsp; &nbsp; 박테리아 편모는 약 40개의 단백질이 결합하여 모터기능을 수행하며, 한 개라도 부족하면 모터기능을 수행하지 못 하므로 한꺼번에 누군가에 의해 제작되었을 것(환원불가능한
+          복잡성)이라는 주장<br>
+          "박테리아의 편모는 그 어떤 모터보다 인간이 만든 모터를 닮았다", David DeRosier(1998. 브랜다이스대학 생물학 교수) -> 반박: 굴절 진화 예시로, 다른 기능을 수행 할 수
+          있다.<br>
+          &nbsp; 2. 종교적 의도를 가지고 있는가? (예)<br>
+          &nbsp; &nbsp; 저서 "Of pandas and people"는 헌법을 우회하기 위해 '창조'에서 '지적설계'로 단어적 변경만 있었다.<br>
+          판결 후 기사: judge rules intelligent design is 'not science'
+        </tspan>
+        <tspan class="reference">
+          지적설계는 과학인가? :
+          <a href="https://en.wikipedia.org/wiki/Kitzmiller_v._Dover_Area_School_District#cite_note-1"
+            target="_blank">키즈밀러 v. 도버 지역 교육 위원회 재판
+          </a>
+        </tspan>
+      </span>
+    </p>
+    <h4 style="text-indent: 10px;">결론</h4>
+    <ol>
+      <li>
+        지적설계는 초자연적인 인과관계에 기반한다. 아직 밝혀지지 않은 자연 현상의 원인을 검증 불가능한 초자연적 힘으로 돌리게 되면, 우리는 호기심을 가질 이유가 없어진다. 우리는 항상 답을 알고있기
+        때문이다.
+      </li>
+      <li>
+        환원불가능한 복잡성 논증은 모두 반박되었다. 만약 반박되지 못한다 하더라도 이는 진화에 대한 검증이지, 설계론에 대한 반증이 아니다.
+      </li>
+      <li>
+        창조론은 진화론에 대한 논란만 가르치려 한다.
+        (지적 설계는 동료 검토를 거치는 학술지에 논문을 발표한 적이 없다.)
+      </li>
+    </ol>
+    <span class="tutorial" style="display:none">
+      진화론이 영원히 옳고, 앞으로 새로운 것이 없다는 뜻은 아닙니다.
+      수 십년에서 수 백, 수 천년 후에 완전히 새로운 패러다임이 나올지도 모릅니다.
+      새로운 것에는 늘 공격이 따릅니다.
+      진화론이 처음 주장되었을 때 그랬고, 인류의 기원을 다루면서도 그랬습니다.
+      주류 학회가 인류의 기원이 "아시아"에서 "아프리카"로 넘어가는 동안 많은 공격이 있어왔습니다.
+      그 때 마다, 과학은 증거로 입증해 왔습니다.<br><br>
+
+      다만, 신앙이 신앙으로 남을 때, 존중 받을 수 있습니다.
+      현재까지 그릇된 신앙은 자기 기사를 참고하는 순환논리 오류를 범하거나,
+      네이처지나 사이언스지 등에 발표된 진화론의 검증 자료를 가져와서 창조론이 옳다는 식의 선언지 부정의 오류 이상의 논리를 펼치지 못하고 있습니다.
+    </span>
+
+    <h3>한국의 사례</h3>
+    <p>
+      한국이 창조론자들에 의해 고등교과서에서 진화론의 사례를 제거하기로 결정한 사례가 있습니다<a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="reference">한국의 창조론: <a href="https://www.nature.com/articles/486014a" target="_blank">"South Korea
+            surrenders to creationist demands"</a>, nature, 2012.6.5.
+        </tspan>
+      </span>
+    </p>
+
+    <h2>물질대사</h2>
+    <p>
+      모든 생물은 에너지를 필요로 합니다.
+      <em>물질대사</em>(Metabolism)란, 양분과 물질을 습득하는 과정을 말합니다.
+      가장 기본적인 물질대사는 포식입니다.
+      포식 활동은 손쉽게 에너지를 획득 할 수 있습니다. 하지만 모든 생물이 포식을 하는 것은 아닙니다. 왜냐하면 피식자의 생물양에 따라 번성할 수도 멸종 할 수도 있기 때문입니다.
+    </p>
+    <ul>
+      <li>
+        메갈로돈 : 먹이 경쟁에서 밀린 사례<a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">독일 막스 플랑크 진화인류학연구소, 괴테대학 연구원 예레미 맥코르마크 박사가 이끄는 연구팀이 백상아리 이빨의 에나멜에 쌓인 아연의
+            안정동위원소(66Zn) 값을 토대로 '영양단계'를 분석했다. - 네이처 커뮤니케이션(Nature Communications) -</tspan>
+          <tspan class="reference">"<a
+              href="https://scienceon.kisti.re.kr/srch/selectPORSrchTrend.do?cn=SCTM00230380&dbt=SCTM"
+              target="_blank">몸길이 20ｍ 메갈로돈,
+              백상아리와 먹이경쟁서 져 멸종했을 수도
+            </a>", scienceon.kisti.re.kr, 2022-06-02</tspan>
+        </span>
+      </li>
+      <li>
+        육상공룡 : 생육에 너무 많은 에너지가 필요했던 사례
+        <a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">육상공룡이 성체가 되기까지 약 2,500배 몸무게가 필요했다 ,스위스 취리히 대학, 바이올로지 레터스</tspan>
+          <tspan class="reference">"<a href="https://kid.chosun.com/site/data/html_dir/2012/04/18/2012041801995.html"
+              target="_blank">알에서 태어난 게 육상 공룡 멸망 이유?</a>", 방종임, 어린이조선일보, 2012.04.19</tspan>
+        </span>
+      </li>
+      <li>
+        해파리: Bloom(블룸, 번성) 현상 연구<a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">마산만의 지속적인 개발로 해파리가 늘고 요각류(먹이)가 줄고, 요각류의 먹이인 식물플랑크톤의 번성을 예측</tspan>
+          <tspan class="reference">"<a href="https://sciwatch.kiost.ac.kr/handle/2020.kiost/30160?mode=simple"
+              target="_blank">마산만에서 보름달 물 해파리 Bloom 현상</a>", 신경순, 이우진, 한국환경과학회 2007년 가을학술발표회 및 발표논문집, pp.185 - 188, 2007
+          </tspan>
+        </span>
+      </li>
+      <li>
+        쥐: 인간이 버린 쓰레기로 인해 억제에도 불구하고 번식 성공<a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">뉴욕시의 쥐와의 전쟁을 다룬 포트햄대학교 생물학과 교수의 투고문</tspan>
+          <tspan class="reference">"<a
+              href="https://premium.sbs.co.kr/article/isjac6L0lJI?utm_source=sbsnews&ref=sbsnews_bottom"
+              target="_blank">12년 간 쥐를 연구한
+              전문가는 이렇게 말했다 "문제는 쥐가 아니라 사람"</a>", sbs(by 뉴욕타임즈), 2023.9.4
+            <br>
+            "<a href="https://www.nytimes.com/2023/08/27/opinion/nyc-rats-eric-adams.html" target="_blank">I’ve Studied
+              N.Y.C. Rodents for 12 Years. The Enemy Is Us, By Jason Munshi-South</a>", nytimes.com, 2023.8.27
+          </tspan>
+        </span>
+      </li>
+      <li>
+        눈덧신토끼와 캐나다 스라소니의 포식자 피식자 연구<a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">포식자가 번성하면 피식자가 줄어들고, 피식자가 줄어들면 포식자가 감소한다. 이는 로트카-볼테라 방정식(Lotka–Volterra
+            equations)모델을 따른 관찰사례 중 하나이다.</tspan>
+          <tspan class="reference">토끼와 스라소니 포식-피식 관찰, "
+            <a href="https://www.globalchange.umich.edu/globalchange1/current/lectures/predation/predation.html"
+              target="_blank">Trophic Links: Predation and Parasitism</a>", globalchange.umich.edu, 2005.11.2
+          </tspan>
+        </span>
+      </li>
+    </ul>
+
+    <p>
+      포식의 경쟁에서 태양 에너지를 이용한 광합성은 또 다른 생존 가능성을 제시합니다(식물).
+      어떤 생명은 사체로부터 남은 에너지를 흡수 하여 생존 합니다(균류).
+      일부의 생명은 다른 생명의 에너지를 훔치는 방향으로 진화했습니다(박테리아와 면역계, 공생관계 등).
+      어떠한 형식이든 영양이 충분하면 번성의 기회를 갖습니다.
+    </p>
+
+    <h1>단어</h1>
+    <style>
+      table.vocabulary td:nth-child(1) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(3) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(3) {
+        border-right: 2px solid;
+      }
+    </style>
+    <table class="all-td-left vocabulary">
+      <caption>영어단어</caption>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>영어</th>
+          <th>국어</th>
+          <th>영어</th>
+          <th>국어</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>biology</td>
+          <td>생물학</td>
+          <td>Mushrooms</td>
+          <td>버섯</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>metabolism</td>
+          <td>물질대사</td>
+          <td>Sponges</td>
+          <td>스폰지</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>reproduction</td>
+          <td>생식</td>
+          <td>Jellyfish</td>
+          <td>해파리</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>growth</td>
+          <td>성장, 생장</td>
+          <td>Insects</td>
+          <td>곤충</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>virus</td>
+          <td>바이러스</td>
+          <td>starfish</td>
+          <td>불가사리</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>taxonomy</td>
+          <td>분류학</td>
+          <td>Lizards</td>
+          <td>도마뱀</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>domain</td>
+          <td>역(생물학), 영역</td>
+          <td>snakes</td>
+          <td>뱀</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>kingdom</td>
+          <td>계(생물학), 왕국</td>
+          <td>crocodiles</td>
+          <td>악어</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>phylum</td>
+          <td>문(생물학)</td>
+          <td>whales</td>
+          <td>고래</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>class</td>
+          <td>강(생물학), 학급</td>
+          <td>chimpanzees</td>
+          <td>침팬지</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>order</td>
+          <td>목(생물학), 순서, 정돈</td>
+          <td>heredity</td>
+          <td>유전</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>family</td>
+          <td>과(생물학), 가족</td>
+          <td>natural selection</td>
+          <td>자연 선택설</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>genus</td>
+          <td>속(생물학)</td>
+          <td>fossil</td>
+          <td>화석</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>species</td>
+          <td>종</td>
+          <td>Transitional fossil</td>
+          <td>중간 화석</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>prokaryon</td>
+          <td>원핵생물</td>
+          <td>creationism</td>
+          <td>창조론</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>plant</td>
+          <td>식물</td>
+          <td>metabolism</td>
+          <td>물질대사</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>fungus</td>
+          <td>균류, 곰팡이류</td>
+          <td>bloom</td>
+          <td>번성</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>animal</td>
+          <td>동물</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>protist</td>
+          <td>원생생물</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>bacteria</td>
+          <td>박테리아</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>archaea</td>
+          <td>고세균</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>eukarya</td>
+          <td>진핵생물</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>reptile</td>
+          <td>파충류</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>mammal</td>
+          <td>포유류</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>vertebrate</td>
+          <td>척추동물</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>퀴즈</h1>
+    <ol>
+      <li>생물의 정의는 생존에 필요한 에너지와 물질을 획득하는 <button class="quiz">물질대사</button>, 자손을 번식하는 <button class="quiz">생식</button>,
+        세포의 수를 증가시켜 몸집을 불리는 <button class="quiz">성장</button> 등의 활동을 하는 개체를 말합니다.</li>
+      <li>
+        생물의 분류는 큰 분류부터 <button class="quiz">역</button>-<button class="quiz">계</button>-<button
+          class="quiz">문</button>-<button class="quiz">강</button>-<button class="quiz">목</button>-<button
+          class="quiz">과</button>-<button class="quiz">속</button>-<button class="quiz">종</button>으로 분류한다.
+      </li>
+      <li>
+        생물을 분류하는 학문을 <button class="quiz">분류학</button>(생물)이라고 합니다.
+      </li>
+      <li>속에 대한 정확한 정의는 매우 어렵지만, <button class="quiz">번식</button>이 가능한 개체들로 분류 할 수도 있습니다.</li>
+      <li>대분류를 5종으로 했을 때, <button class="quiz">원핵생물</button>(핵막이 없음), <button class="quiz">식물</button>(광합성을 함), <button
+          class="quiz">균계</button>(사체로부터 물질대사), <button class="quiz">동물</button>(운동 능력이 큰 생물), <button
+          class="quiz">원생생물</button>(기타 생물)로 분류할 수 있습니다.</li>
+      <li>원핵생물은 <button class="quiz">고세균</button>과 <button class="quiz">박테리아</button>로 분류 할 수 있습니다.</li>
+      <li>원핵생물과 달리 새포핵이 막으로 보호되어 진화한 생물을 <button class="quiz">진핵생물</button>이라 합니다.</li>
+      <li><button class="quiz">화석</button>의 발굴을 통해, 과거에 생존했던 생물을 관찰 할 수 있습니다.</li>
+      <li><button class="quiz">중간</button>화석을 통해, 서서히 외형이 변화하는 모습을 관찰 할 수 있습니다.</li>
+      <li>(도전) 사람은 진화의 과정에서<button class="quiz">기관</button>(장기), <button class="quiz">신경</button>(두뇌 등), <button
+          class="quiz">척추</button>(뼈 대), <button class="quiz">네 발</button>(지상 진출), <button class="quiz">호흡기</button>(지상
+        진출2), <button class="quiz">털</button>(생존 효율성), <button class="quiz">테반</button>(번식 효율성)의 순서로 진화하였습니다.</li>
+      <li>환경에 적합한 개체가 살아남아 자손을 번식할 것이라는 이론을 <button class="quiz">자연 선택설</button>이라고 합니다.</li>
+      <li>화석 증거가 항상 진실되게 발표되지 않습니다. 면밀하고 정확하게 검증을 해야 합니다.</li>
+      <li>종교적 교리로 신이 모든 것을 창조했다는 주장은 <button class="quiz">창조론</button>이라고 합니다. 아직 검증된 증거가 발견지 않았습니다.</li>
+      <li>어떤 식이든 생물이 양분을 구하기 쉬워지면(단어: <button class="quiz">부영양화</button>) 개체 수는 증가합니다.</li>
+
+    </ol>
   </article>
 </body>
 

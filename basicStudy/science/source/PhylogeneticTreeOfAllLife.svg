@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 620 525"
+  xmlns="http://www.w3.org/2000/svg">
+  <style>
+  text tspan {
+    font-size:0.9em;
+    fill: #a8a;
+  }
+  </style>
+  <g style="stroke:none">
+    <path d="M0 0h20v135h-20z" style="fill:#eee"/>
+    <path d="M20 0h160v135h-160z" style="fill:#fee"/>
+    <path d="M180 0h40v135h-40z" style="fill:#efe"/>
+    <path d="M220 0h380v135h-380z" style="fill:#eef"/>
+    <path d="M280 40h60v95h-60z" style="fill:#ddf"/>
+    <path d="M380 40h60v95h-60z" style="fill:#ddf"/>
+    <path d="M500 40h100v95h-100z" style="fill:#ddf"/>
+  </g>
+  <g style="font-size: 15px;text-anchor: middle;">
+    <text x="100" y="16">식물<tspan x="100" dy="1.2em">Plants</tspan></text>
+    <text x="200" y="16">균류<tspan x="200" dy="1.2em">Fungi</tspan></text>
+    <text x="405" y="16">동물 <tspan>Animals</tspan></text>
+    <text x="310" y="30">절지동물<tspan x="310" dy="1em">Arthropods</tspan></text>
+    <text x="410" y="35">파충류<tspan x="410" dy="1em">Reptiles</tspan></text>
+    <text x="530" y="35">포유류<tspan x="530" dy="1em">Mammals</tspan></text>
+    <text x="40" y="500" style="text-anchor: start">공통조상<tspan>LUCA(Last Universal Common Ancestor)</tspan></text>
+  </g>
+  <g style="font-size: 13px;writing-mode:vertical-rl;text-anchor: end;">
+    <text x="10" y="120">Bacteria</text>
+    <text x="30" y="120">Green Algae</text>
+    <text x="50" y="120">Hornworts</text>
+    <text x="70" y="120">Ferns</text>
+    <text x="90" y="120">Conifers</text>
+    <text x="110" y="120">Dicots</text>
+    <text x="130" y="120">Palms</text>
+    <text x="150" y="120">Grasses</text>
+    <text x="170" y="120">Bananas</text>
+    <text x="190" y="120">Yeasts</text>
+    <text x="210" y="120">Mushrooms</text>
+    <text x="230" y="120">Sponges</text>
+    <text x="250" y="120">Jellyfish</text>
+    <text x="270" y="120">Mollusks</text>
+    <text x="290" y="120">Crustaceans</text>
+    <text x="310" y="120">Millipede</text>
+    <text x="330" y="120">Insects</text>
+    <text x="350" y="120">Starfish</text>
+    <text x="370" y="120">Fish</text>
+    <text x="390" y="120">Amphbians</text>
+    <text x="410" y="120">Iguamnas</text>
+    <text x="430" y="120">Lizards</text>
+    <text x="450" y="120">Snakes</text>
+    <text x="470" y="120">Crocodiles</text>
+    <text x="490" y="120">Birds</text>
+    <text x="510" y="120">Marsupials</text>
+    <text x="530" y="120">Whales</text>
+    <text x="550" y="120">Cows</text>
+    <text x="570" y="120">Chimpanzees</text>
+    <text x="590" y="120">Humans</text>
+  </g>
+  <g style="font-size: 10px;writing-mode:vertical-rl;text-anchor: end;">
+    <text x="17" y="450">박테리아</text>
+    <text x="37" y="300">녹조류</text>
+    <text x="57" y="280">뿔이끼류</text>
+    <text x="77" y="260">양치류</text>
+    <text x="97" y="240">침엽수</text>
+    <text x="117" y="220">쌍떡잎식물</text>
+    <text x="137" y="200">야자수</text>
+    <text x="157" y="180">잔디</text>
+    <text x="177" y="180">바나나</text>
+    <text x="197" y="180">효모</text>
+    <text x="217" y="180">버섯</text>
+    <text x="237" y="380">스펀지</text>
+    <text x="257" y="360">해파리</text>
+    <text x="277" y="240">연체동물</text>
+    <text x="297" y="220">갑각류</text>
+    <text x="317" y="200">노래기</text>
+    <text x="337" y="200">곤충</text>
+    <text x="357" y="320">불가사리</text>
+    <text x="377" y="300">물고기</text>
+    <text x="397" y="280">양서류</text>
+    <text x="417" y="220">이구아나</text>
+    <text x="437" y="200">도마뱀</text>
+    <text x="457" y="200">뱀</text>
+    <text x="477" y="200">악어</text>
+    <text x="497" y="200">조류</text>
+    <text x="517" y="240">유대류</text>
+    <text x="537" y="200">고래</text>
+    <text x="557" y="200">소</text>
+    <text x="577" y="200">침팬지</text>
+    <text x="597" y="200">인간</text>
+  </g>
+  <g style="fill:none;stroke:#000;">
+    <path d="M10 125v335h135v-30M80 480v-20"/>
+    <path d="M30 125v180h40v-20"/>
+    <path d="M50 125v160h40v-20"/>
+    <path d="M70 125v140h39v-20"/>
+    <path d="M90 125v120h38v-20"/>
+    <path d="M110 125v100h35v-20"/>
+    <path d="M130 125v80h30v-20"/>
+    <path d="M150 125v60h20v-60"/>
+    <path d="M190 125v60h20v-60"/>
+    <path d="M50 305v125h181v-25"/>
+    <path d="M200 185v220h60v-20"/>
+    <path d="M230 125v260h60v-20"/>
+    <path d="M250 125v240h80v-20"/>
+    <path d="M270 125v120h35v-20"/>
+    <path d="M290 125v100h30v-20"/>
+    <path d="M310 125v80h20v-80"/>
+    <path d="M288 245v100h91v-20"/>
+    <path d="M350 125v200h56v-20"/>
+    <path d="M370 125v180h72v-20"/>
+    <path d="M390 125v160h105v-20"/>
+    <path d="M410 125v100h30v-20"/>
+    <path d="M430 125v80h20v-80"/>
+    <path d="M470 125v80h20v-80"/>
+    <path d="M425 225v20h55v-40"/>
+    <path d="M510 125v120h50v-20"/>
+    <path d="M530 125v80h20v-80"/>
+    <path d="M570 125v80h20v-80"/>
+    <path d="M540 205v20h40v-20"/>
+    <path d="M455 245v20h80v-20"/>
+  </g>
+  <g style="fill:blue;stroke:none">
+    <ellipse cx="145" cy="445" rx="3" ry="3"/>
+    <ellipse cx="50" cy="413" rx="3" ry="3"/>
+    <ellipse cx="90" cy="275" rx="3" ry="3"/>
+    <ellipse cx="109" cy="254" rx="3" ry="3"/>
+    <ellipse cx="128" cy="234" rx="3" ry="3"/>
+    <ellipse cx="145" cy="215" rx="3" ry="3"/>
+    <ellipse cx="290" cy="375" rx="3" ry="3"/>
+    <ellipse cx="330" cy="355" rx="3" ry="3"/>
+    <ellipse cx="288" cy="335" rx="3" ry="3"/>
+    <ellipse cx="305" cy="235" rx="3" ry="3"/>
+    <ellipse cx="379" cy="335" rx="3" ry="3"/>
+    <ellipse cx="406" cy="315" rx="3" ry="3"/>
+    <ellipse cx="442" cy="295" rx="3" ry="3"/>
+    <ellipse cx="495" cy="275" rx="3" ry="3"/>
+    <ellipse cx="455" cy="255" rx="3" ry="3"/>
+    <ellipse cx="535" cy="255" rx="3" ry="3"/>
+    <ellipse cx="560" cy="235" rx="3" ry="3"/>
+    <ellipse cx="490" cy="205" rx="3" ry="3"/>
+  </g>
+  <g style="font-size: 11px;text-anchor: start;fill:#a0a">
+    <text x="151" y ="446">미토콘드리아, 핵<tspan x="151" dy="1em">mitochondria, nucleus</tspan></text>
+    <text x="57" y ="413">엽록체<tspan x="57" dy="1em">chloroplasts</tspan></text>
+    <text x="80" y ="300">물관부, 체관부<tspan x="80" dy="1em">xylem, phloem</tspan></text>
+    <text x="113" y ="265">씨<tspan x="113" dy="1em">seed</tspan></text>
+    <text x="133" y ="245">속씨식물<tspan x="133" dy="1em">angiospermic</tspan></text>
+    <text x="150" y ="218">외떡잎<tspan x="150" dy="1em">monocots</tspan></text>
+    <text x="281" y ="400">기관<tspan x="281" dy="1em">organs</tspan></text>
+    <text x="311" y ="377">신경계와 혈관계<tspan x="311" dy="1em">nervous and vascular system</tspan></text>
+    <text x="381" y ="350">후구동물<tspan x="381" dy="1em">deuterostome</tspan></text>
+    <text x="293" y ="330">선구동물<tspan x="293" dy="1em">protostome</tspan></text>
+    <text x="309" y ="245">외골격<tspan x="305" dy="1em">external<tspan x="305" dy="1em">skeleton</tspan></tspan></text>
+    <text x="411" y ="320">척추동물<tspan x="411" dy="1em">vertebrae</tspan></text>
+    <text x="447" y ="300">4족 동물<tspan x="457" dy="1em">digits</tspan></text>
+    <text x="500" y ="287">양막(호흡기)<tspan x="500" dy="1em">amniote</tspan></text>
+    <text x="540" y ="264">털, 온혈<tspan x="530" dy="1em">hair, endothermy</tspan></text>
+    <text x="564" y ="237">태반<tspan x="564" dy="1em">placenta</tspan></text>
+    <text x="407" y ="263">천공 2개<tspan x="407" dy="1em">two fenestrae</tspan></text>
+    <text x="483" y ="219">깃털<tspan x="463" dy="1em">feathers</tspan></text>
+  </g>
+</svg>

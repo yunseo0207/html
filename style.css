@@ -18,7 +18,6 @@
   font-style: normal;
 }
 
-
 @font-face {
   font-family: 'RegularFont';
   font-weight: 400;
@@ -290,7 +289,6 @@ blockquote {
   content: " :";
 }
 
-
 .blockquote-title+blockquote,
 .blockquote-name+blockquote {
   margin-top: 0;
@@ -300,7 +298,7 @@ a {
   text-decoration: none;
   color: #89f;
   font-style: normal;
-  font-weight: 650;
+  /* font-weight: 650; */
 }
 
 a:hover {
@@ -510,7 +508,7 @@ button:disabled {
   --font-table: 'NanumBarunpen', sans-serif;
   --font-title: 'Times New Roman', Arial, serif;
   --font-monospace: 'D2Coding', monospace;
-  --board-font-color: #aaa;
+  --board-font-color: #aaaaaa;
   --board-head-font-color: #888;
   --button-color: #888;
   --button-bg-color: #eee;
