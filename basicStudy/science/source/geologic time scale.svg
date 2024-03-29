@@ -38,19 +38,15 @@
 
   <!-- 연결 -->
   <path d="M190 76.86Q280 76.86 280 490L280 46.5H190z" style="fill:#ffc;"/>
-  <path d="M190 76.86Q280 76.86 280 490L280 46.5H190z" style="fill:url(#shodow);"/>
   <path d="M190 26.94Q280 26.94 280 78.56L280 243.74Q280 46.5 190 46.5z" style="fill:#fed"/>
-  <path d="M190 26.94Q280 26.94 280 78.56L280 243.74Q280 46.5 190 46.5z" style="fill:url(#shodow);"/>
   <path d="M190 20V26.94Q280 26.94 280 78.56L280 20z" style="fill:#fdd;"/>
-  <path d="M190 20V26.94Q280 26.94 280 78.56L280 20z" style="fill:url(#shodow);"/>
+  <path d="M190 20H280V500Q280 76.86 190 76.86z" style="fill:url(#shodow)"/>
 
   <!-- 2번째 판 -->
   <path d="M280 20h75V78.56h-75z" style="fill:#fdd"/>
-  <path d="M280 20h75V78.56h-75z" style="fill:url(#light)"/>
   <path d="M280 78.56h75V243.74h-75z" style="fill:#fed"/>
-  <path d="M280 78.56h75V243.74h-75z" style="fill:url(#light)"/>
   <path d="M280 243.74h75V500h-75z" style="fill:#ffc"/>
-  <path d="M280 243.74h75V500h-75z" style="fill:url(#light)"/>
+  <path d="M280 20h75V500h-75z" style="fill:url(#light)"/>
 
   <path d="M355 20h75V22.29h-75z" style="fill:#fdd"/>
   <!-- 신생 -->
@@ -123,139 +119,75 @@
   </g>
 
   <g style="font-size:10" class="Eon">
-    <text x="70" y="450.41">명왕누대      <tspan x="70" dy="1em">Hadean</tspan>
-    </text>
-    <text x="70" y="292.75">시생누대      <tspan x="70" dy="1em">Archean</tspan>
-    </text>
-    <text x="70" y="86.86">원생누대      <tspan x="70" dy="1em">Proterozoic</tspan>
-    </text>
-    <text x="60" y="30">현생누대      <tspan x="60" dy="1em">Proterozoic</tspan>
-    </text>
-    <text x="55" y="85" style="writing-mode:vertical-rl;">선캄프리아      <tspan>Precambrian</tspan>
-    </text>
-    <text x="125" y="28">신생대      <tspan>Cenozoic</tspan>
-    </text>
-    <text x="125" y="40">중생대대      <tspan>Mesozoic</tspan>
-    </text>
-    <text x="125" y="57.31">고생대      <tspan x="125" dy="1em">Paleozoic</tspan>
-    </text>
-    <text x="125" y="86.86">신생원대      <tspan x="125" dy="1em">Neoproterozoic</tspan>
-    </text>
-    <text x="125" y="135.1">중생원대      <tspan x="125" dy="1em">Mesoproterozoic</tspan>
-    </text>
-    <text x="125" y="198.16">고생원대      <tspan x="125" dy="1em">Paleoproterozoic</tspan>
-    </text>
-    <text x="125" y="292.75">신시생대      <tspan x="125" dy="1em">Neoarchean</tspan>
-    </text>
-    <text x="125" y="324.29">중시생대      <tspan x="125" dy="1em">Mesoarchean</tspan>
-    </text>
-    <text x="125" y="366.33">고시생대      <tspan x="125" dy="1em">Paleoarchean</tspan>
-    </text>
-    <text x="125" y="408.37">초시생대      <tspan x="125" dy="1em">Eoarchean</tspan>
-    </text>
+    <text x="70" y="450.41">명왕누대<tspan x="70" dy="1em">Hadean</tspan></text>
+    <text x="70" y="292.75">시생누대<tspan x="70" dy="1em">Archean</tspan></text>
+    <text x="70" y="86.86">원생누대<tspan x="70" dy="1em">Proterozoic</tspan></text>
+    <text x="60" y="30">현생누대<tspan x="60" dy="1em">Proterozoic</tspan></text>
+    <text x="55" y="85" style="writing-mode:vertical-rl;">선캄프리아<tspan>Precambrian</tspan></text>
+    <text x="125" y="28">신생대<tspan>Cenozoic</tspan></text>
+    <text x="125" y="40">중생대대<tspan>Mesozoic</tspan></text>
+    <text x="125" y="57.31">고생대<tspan x="125" dy="1em">Paleozoic</tspan></text>
+    <text x="125" y="86.86">신생원대<tspan x="125" dy="1em">Neoproterozoic</tspan></text>
+    <text x="125" y="135.1">중생원대<tspan x="125" dy="1em">Mesoproterozoic</tspan></text>
+    <text x="125" y="198.16">고생원대<tspan x="125" dy="1em">Paleoproterozoic</tspan></text>
+    <text x="125" y="292.75">신시생대<tspan x="125" dy="1em">Neoarchean</tspan></text>
+    <text x="125" y="324.29">중시생대<tspan x="125" dy="1em">Mesoarchean</tspan></text>
+    <text x="125" y="366.33">고시생대<tspan x="125" dy="1em">Paleoarchean</tspan></text>
+    <text x="125" y="408.37">초시생대<tspan x="125" dy="1em">Eoarchean</tspan></text>
 
-    <text x="290" y="30">신생대      <tspan x="290" dy="1em">Neoproterozoic</tspan>
-    </text>
-    <text x="290" y="88.56">중생대      <tspan x="290" dy="1em">Mesoproterozoic</tspan>
-    </text>
-    <text x="290" y="253.74">고생대      <tspan x="290" dy="1em">Paleoproterozoic</tspan>
-    </text>
+    <text x="290" y="30">신생대<tspan x="290" dy="1em">Neoproterozoic</tspan></text>
+    <text x="290" y="88.56">중생대<tspan x="290" dy="1em">Mesoproterozoic</tspan></text>
+    <text x="290" y="253.74">고생대<tspan x="290" dy="1em">Paleoproterozoic</tspan></text>
 
-    <text x="360" y="12">제4기<tspan x="360" dy="1em">Quaternary</tspan>
-    </text>
-    <text x="360" y="32.29">신진기      <tspan x="360" dy="1em">Neogene</tspan>
-    </text>
-    <text x="360" y="50.43">고진기      <tspan x="360" dy="1em">Paleogene</tspan>
-    </text>
-    <text x="360" y="88.56">백악기      <tspan x="360" dy="1em">Cretaceous</tspan>
-    </text>
-    <text x="360" y="158.65">쥐라기      <tspan x="360" dy="1em">Jurassic</tspan>
-    </text>
-    <text x="360" y="208.6">트라이아스기      <tspan x="360" dy="1em">Triassic</tspan>
-    </text>
-    <text x="360" y="253.74">페름기      <tspan x="360" dy="1em">Permian</tspan>
-    </text>
-    <text x="360" y="295.2">석탄기      <tspan x="360" dy="1em">Carboniferous</tspan>
-    </text>
-    <text x="360" y="348.43">데본기      <tspan x="360" dy="1em">Devonian</tspan>
-    </text>
-    <text x="360" y="401.93">실루아기      <tspan x="360" dy="1em">Silurian</tspan>
-    </text>
-    <text x="360" y="423.76">오르도비스      <tspan x="360" dy="1em">Ordovician</tspan>
-    </text>
-    <text x="360" y="460.67">캄브리아기      <tspan x="360" dy="1em">Cambrian</tspan>
-    </text>
+    <text x="360" y="12">제4기<tspan x="360" dy="1em">Quaternary</tspan></text>
+    <text x="360" y="32.29">신진기<tspan x="360" dy="1em">Neogene</tspan></text>
+    <text x="360" y="50.43">고진기<tspan x="360" dy="1em">Paleogene</tspan></text>
+    <text x="360" y="88.56">백악기<tspan x="360" dy="1em">Cretaceous</tspan></text>
+    <text x="360" y="158.65">쥐라기<tspan x="360" dy="1em">Jurassic</tspan></text>
+    <text x="360" y="208.6">트라이아스기<tspan x="360" dy="1em">Triassic</tspan></text>
+    <text x="360" y="253.74">페름기<tspan x="360" dy="1em">Permian</tspan></text>
+    <text x="360" y="295.2">석탄기<tspan x="360" dy="1em">Carboniferous</tspan></text>
+    <text x="360" y="348.43">데본기<tspan x="360" dy="1em">Devonian</tspan></text>
+    <text x="360" y="401.93">실루아기<tspan x="360" dy="1em">Silurian</tspan></text>
+    <text x="360" y="423.76">오르도비스<tspan x="360" dy="1em">Ordovician</tspan></text>
+    <text x="360" y="460.67">캄브리아기<tspan x="360" dy="1em">Cambrian</tspan></text>
   </g>
 
   <g style="font-size:8" class="Eon">
-    <text x="420" y="13">홀로세      <tspan>Holocene</tspan>
-    </text>
-    <text x="440" y="22">플라이스토세      <tspan>Pleistocene</tspan>
-    </text>
-    <text x="430" y="30">플리오세      <tspan>Pliocene</tspan>
-    </text>
-    <text x="430" y="38">마이오세      <tspan>Miocene</tspan>
-    </text>
-    <text x="430" y="50">올리고세      <tspan>Oligocene</tspan>
-    </text>
-    <text x="430" y="60.08">에오세      <tspan>Eocene</tspan>
-    </text>
-    <text x="430" y="78.69">팔리오세      <tspan>Paleocene</tspan>
-    </text>
-    <text x="430" y="89.56">후기      <tspan>late</tspan>
-    </text>
-    <text x="430" y="118.17">전기      <tspan>early</tspan>
-    </text>
-    <text x="430" y="156.65">후기      <tspan>late</tspan>
-    </text>
-    <text x="430" y="173.06">중기      <tspan>middle</tspan>
-    </text>
-    <text x="430" y="182.47">전기      <tspan>early</tspan>
-    </text>
-    <text x="430" y="206.6">후기      <tspan>late</tspan>
-    </text>
-    <text x="430" y="238.28">중기      <tspan>middle</tspan>
-    </text>
-    <text x="480" y="244.33">전기      <tspan>early</tspan>
-    </text>
-    <text x="430" y="249.74">러핑세      <tspan>Lopingian</tspan>
-    </text>
-    <text x="430" y="258.51">과달루페세      <tspan>Guadalupian</tspan>
-    </text>
-    <text x="430" y="269.6">시스우랄세      <tspan>Cisuralian</tspan>
-    </text>
-    <text x="430" y="293.2">펜실베이니아기      <tspan>Pennsylvanian</tspan>
-    </text>
-    <text x="430" y="314.76">미시시피기      <tspan>Mississippian</tspan>
-    </text>
-    <text x="430" y="346.43">후기      <tspan>Late</tspan>
-    </text>
-    <text x="430" y="367.55">중기      <tspan>Middle</tspan>
-    </text>
-    <text x="430" y="376.95">전기      <tspan>Early</tspan>
-    </text>
-    <text x="430" y="394.93">프리돌리세      <tspan>~</tspan>
-    </text>
-    <text x="480" y="399.3">러들로세      <tspan>~</tspan>
-    </text>
-    <text x="430" y="405.21">웬록세      <tspan>~</tspan>
-    </text>
-    <text x="430" y="414.53">란도베리세      <tspan>Llandovery</tspan>
-    </text>
-    <text x="430" y="422.76">후기      <tspan>Late</tspan>
-    </text>
-    <text x="430" y="434.71">중기      <tspan>Middle</tspan>
-    </text>
-    <text x="430" y="445.01">전기      <tspan>Early</tspan>
-    </text>
-    <text x="430" y="458.67">푸룽세      <tspan>Furongian</tspan>
-    </text>
-    <text x="430" y="468.96">먀오링세      <tspan>Miaolingian</tspan>
-    </text>
-    <text x="430" y="479.61">제2세<tspan>Series 2</tspan>
-    </text>
-    <text x="430" y="490.26">테르뇌브세      <tspan>Terreneuvian</tspan>
-    </text>
+    <text x="420" y="13">홀로세<tspan>Holocene</tspan></text>
+    <text x="440" y="22">플라이스토세<tspan>Pleistocene</tspan></text>
+    <text x="430" y="30">플리오세<tspan>Pliocene</tspan></text>
+    <text x="430" y="38">마이오세<tspan>Miocene</tspan></text>
+    <text x="430" y="50">올리고세<tspan>Oligocene</tspan></text>
+    <text x="430" y="60.08">에오세<tspan>Eocene</tspan></text>
+    <text x="430" y="78.69">팔리오세<tspan>Paleocene</tspan></text>
+    <text x="430" y="89.56">후기<tspan>late</tspan></text>
+    <text x="430" y="118.17">전기<tspan>early</tspan></text>
+    <text x="430" y="156.65">후기<tspan>late</tspan></text>
+    <text x="430" y="173.06">중기<tspan>middle</tspan></text>
+    <text x="430" y="182.47">전기<tspan>early</tspan></text>
+    <text x="430" y="206.6">후기<tspan>late</tspan></text>
+    <text x="430" y="238.28">중기<tspan>middle</tspan></text>
+    <text x="480" y="244.33">전기<tspan>early</tspan></text>
+    <text x="430" y="249.74">러핑세<tspan>Lopingian</tspan></text>
+    <text x="430" y="258.51">과달루페세<tspan>Guadalupian</tspan></text>
+    <text x="430" y="269.6">시스우랄세<tspan>Cisuralian</tspan></text>
+    <text x="430" y="293.2">펜실베이니아기<tspan>Pennsylvanian</tspan></text>
+    <text x="430" y="314.76">미시시피기<tspan>Mississippian</tspan></text>
+    <text x="430" y="346.43">후기<tspan>Late</tspan></text>
+    <text x="430" y="367.55">중기<tspan>Middle</tspan></text>
+    <text x="430" y="376.95">전기<tspan>Early</tspan></text>
+    <text x="430" y="394.93">프리돌리세<tspan>~</tspan></text>
+    <text x="480" y="399.3">러들로세<tspan>~</tspan></text>
+    <text x="430" y="405.21">웬록세<tspan>~</tspan></text>
+    <text x="430" y="414.53">란도베리세<tspan>Llandovery</tspan></text>
+    <text x="430" y="422.76">후기<tspan>Late</tspan></text>
+    <text x="430" y="434.71">중기<tspan>Middle</tspan></text>
+    <text x="430" y="445.01">전기<tspan>Early</tspan></text>
+    <text x="430" y="458.67">푸룽세<tspan>Furongian</tspan></text>
+    <text x="430" y="468.96">먀오링세<tspan>Miaolingian</tspan></text>
+    <text x="430" y="479.61">제2세<tspan>Series 2</tspan></text>
+    <text x="430" y="490.26">테르뇌브세<tspan>Terreneuvian</tspan></text>
   </g>
 
   <g style="font-size:8;fill:#f80;text-anchor:end">
