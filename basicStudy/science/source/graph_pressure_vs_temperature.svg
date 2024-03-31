@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style>
+      @import url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.ttf');
+    </style>
+    <marker id="marker01" markerWidth="10" markerHeight="10" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" fill="none"/>
+    </marker>
+  </defs>
+  <path
+    d="M10 30H490M10 90H490M10 150H490M10 210H490M10 270H490M10 330H490M10 390H490M50 10V450M100 10V450M150 10V450M200 10V450M300 10V450M350 10V450M400 10V450M450 10V450"
+    style="stroke:#eee" />
+  <path d="M10 450H490" style="stroke:#000" marker-end="url(#marker01)" />
+  <path d="M250 450V10" style="stroke:#000" marker-end="url(#marker01)" />
+  <path d="M0 430.5L 500 -10.5" style="stroke:#555; stroke-width:3; fill:none" />
+  <g style="fill:red">
+    <ellipse rx="3" ry="3" cx="114" cy="330" />
+    <ellipse rx="3" ry="3" cx="250" cy="210" />
+    <ellipse rx="3" ry="3" cx="386" cy="90" />
+  </g>
+  <g style="font-family: 'Tmoney RoundWind'; font-style:bold; font-size:15;">
+    <text x="390" y="487" style="font-size:20;">절대 온도<tspan style="font-size:0.8em">(K)</tspan></text>
+    <text x="390" y="422" style="font-size:20;">상대 온도<tspan style="font-size:0.8em">(℃)</tspan></text>
+    <text x="0" y="35" style="font-size:25;">부피<tspan dx="-37" dy="1.1em" style="font-size:0.8em">(v)</tspan></text>
+    <g style="text-anchor:end">
+      <text x="245" y="395">0.25배</text>
+      <text x="245" y="335">0.5배</text>
+      <text x="245" y="210">1배</text>
+      <text x="245" y="95">1.5배</text>
+    </g>
+    <g style="text-anchor:middle">
+      <text x="50" y="468">73</text>
+      <text x="150" y="468">173</text>
+      <text x="250" y="468">273</text>
+      <text x="350" y="468">373</text>
+      <text x="450" y="468">473</text>
+      <text x="50" y="444">-200</text>
+      <text x="150" y="444">-100</text>
+      <text x="260" y="444">0</text>
+      <text x="350" y="444">100</text>
+      <text x="450" y="444">200</text>
+      <g style="font-size:0.6em">
+        <text x="100" y="463">123</text>
+        <text x="200" y="463">223</text>
+        <text x="300" y="463">323</text>
+        <text x="400" y="463">423</text>
+        <text x="100" y="445">-150</text>
+        <text x="200" y="445">-50</text>
+        <text x="300" y="445">50</text>
+        <text x="400" y="445">100</text>
+      </g>
+    </g>
+    <text style="text-anchor:end" x="115" y="320">-273/2, -0.5배</text>
+    <text style="text-anchor:end" x="391" y="80">273/2, +0.5배</text>
+    <text x="320" y="250" style="font:italic 35pt 'times new roman';">
+      P
+      <tspan style="font:normal 1em 'Tmoney RoundWind';">∝</tspan>
+      <tspan>T</tspan>
+    </text>
+  </g>
+</svg>

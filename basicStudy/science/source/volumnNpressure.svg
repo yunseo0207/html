@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 360 135" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="grad001" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#aaa" />
+      <stop offset="0.3" stop-color="#eee" />
+      <stop offset="1" stop-color="#888" />
+    </linearGradient>
+    <radialGradient id="grad002" cx="0.45" cy="0.5" rx="1.5" ry="1">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="0.5" stop-color="#ddd" />
+      <stop offset="1" stop-color="#bbb" />
+    </radialGradient>
+    <symbol id="weight" viewBox="0 0 180 150">
+      <path d="M20 43v100c0 28 160 28 160 0v-100" style="stroke:#000; fill:url(#grad001)" />
+      <ellipse cx="100" cy="43" rx="80" ry="14" style="stroke:#000; fill:#888" />
+      <path d="M40 29v10c0 10 120 10 120 0v-10" style="stroke:#000; fill:url(#grad001)" />
+      <path d="M20 11v10c0 15 160 15 160 0v-10" style="stroke:#000; fill:url(#grad001)" />
+      <ellipse cx="100" cy="11" rx="80" ry="10" style="stroke:#000; fill:url(#grad002)" />
+    </symbol>
+    <pattern id="patt001" x="0" y="0" viewBox="0 0 100 100" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect x="0" y="0" width="100" height="100" style="fill:#fed" />
+      <g style="stroke:#eca; fill:none; stroke-width:3">
+        <ellipse cy="71" rx="8" ry="8" cx="17" />
+        <ellipse cx="88" cy="87" rx="8" ry="8" />
+        <ellipse cx="28" cy="42" rx="12" ry="12" />
+        <ellipse cx="60" cy="21" rx="15" ry="15" />
+        <ellipse cx="90" cy="50" rx="15" ry="15" />
+        <ellipse cx="-10" cy="51" rx="15" ry="15" />
+        <ellipse cx="53" cy="76" rx="20" ry="20" />
+        <ellipse cx="90" cy="15" rx="8" ry="8" />
+        <ellipse cx="19" cy="6" rx="15" ry="15" />
+        <ellipse cx="19" cy="106" rx="15" ry="15" />
+      </g>
+    </pattern>
+    <marker id="marker001" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#F00" />
+    </marker>
+  </defs>
+  <path d="M5 70h365" style="fill:none; stroke:#ddd; stroke-width:1; stroke-dasharray:2" />
+  <g style="fill:url(#patt001); filter:hue-rotate(165deg); opacity:0.3">
+    <path d="M20 70v50a10 10 0 0 0 10 10h70a10 10 0 0 0 10-10v-50" />
+    <path d="M140 90v30a10 10 0 0 0 10 10h70a10 10 0 0 0 10-10v-30" />
+    <path d="M260 50v70a10 10 0 0 0 10 10h70a10 10 0 0 0 10-10v-70" />
+  </g>
+  <g style="stroke:#000; fill:none">
+    <path d="M10 10a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10h70a10 10 0 0 0 10-10v-100a10 10 0 0 1 10-10" />
+    <path d="M130 10a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10h70a10 10 0 0 0 10-10v-100a10 10 0 0 1 10-10" />
+    <path d="M250 10a10 10 0 0 1 10 10v100a10 10 0 0 0 10 10h70a10 10 0 0 0 10-10v-100a10 10 0 0 1 10-10" />
+  </g>
+  <g style="stroke:#888; stroke-width:5;">
+    <path d="M20 70h90" />
+    <path d="M140 90h90" />
+    <path d="M260 50h90" />
+  </g>
+  <ellipse cx="30" cy="90" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="45" cy="78" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="62" cy="88" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="75" cy="80" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="95" cy="86" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="35" cy="102" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="50" cy="96" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="67" cy="104" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="83" cy="94" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="102" cy="103" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="28" cy="119" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="45" cy="113" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="60" cy="122" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="80" cy="110" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="93" cy="120" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+
+  <ellipse cx="150" cy="100" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="165" cy="97" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="183" cy="100" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="199" cy="97" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="215" cy="99" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="155" cy="110" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="173" cy="106" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="189" cy="110" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="208" cy="107" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="222" cy="110" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="148" cy="120" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="165" cy="116" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="180" cy="122" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="200" cy="117" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="213" cy="122" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+
+  <ellipse cx="270" cy="69" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="285" cy="60" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="300" cy="69" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="315" cy="59" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="335" cy="68" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="275" cy="92" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="293" cy="82" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="309" cy="95" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="328" cy="87" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="342" cy="100" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="268" cy="117" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="285" cy="106" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="300" cy="122" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="317" cy="110" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <ellipse cx="333" cy="118" rx="3" ry="3" style="stroke:none; fill:url(#grad002)" />
+  <use width="20" height="20" transform="matrix(1, 0, 0, 1, 40, 50)" xlink:href="#weight" />
+  <use width="10" height="10" transform="matrix(1, 0, 0, 1, 65, 60)" xlink:href="#weight" />
+  <use width="20" height="20" transform="matrix(1, 0, 0, 1, 155, 70)" xlink:href="#weight" />
+  <use width="10" height="10" transform="matrix(1, 0, 0, 1, 180, 80)" xlink:href="#weight" />
+  <use width="10" height="10" transform="matrix(1, 0, 0, 1, 195, 80)" xlink:href="#weight" />
+  <use width="20" height="20" transform="matrix(1, 0, 0, 1, 280, 30)" xlink:href="#weight" />
+
+  <g style="fill:none; stroke:#F00">
+    <path d="M90 70v-20" marker-end="url(#marker001)"/>
+    <path d="M90 70v20" marker-end="url(#marker001)" filter="hue-rotate(240deg)"/>
+    <path d="M215 90v-30" marker-end="url(#marker001)"/>
+    <path d="M215 90v30" marker-end="url(#marker001)" filter="hue-rotate(240deg)"/>
+    <path d="M325 50v-10" marker-end="url(#marker001)"/>
+    <path d="M325 50v10" marker-end="url(#marker001)" filter="hue-rotate(240deg)"/>
+  </g>
+</svg>

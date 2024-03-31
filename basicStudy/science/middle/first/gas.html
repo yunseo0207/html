@@ -32,6 +32,10 @@
     hljs.initLineNumbersOnLoad();
   </script>
 
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!-- 목차 생성 -->
   <script src="/modules/hd_list.js" defer></script>
 
@@ -44,7 +48,459 @@
 <body>
   <article>
     <div id="title">중1: 4. 기체의 성질</div>
-    <p>작성 대기 중입니다.</p>
+    <p>
+      <em>화학</em>(chemistry)은 매우 작은 세계를 연구하는 학문입니다.
+      이 학문은 실제 보거나 만질 수 없는 아주 작은 세계를 다룹니다.
+      따라서 많은 부분이 상상에 의해서 이론이 만들어집니다.
+      구체화된 가설을 <em>모형</em>(model)이라고 합니다.
+    </p>
+    <p>
+      모형은 실제 하진 않지만 실제 세상을 대변합니다. 모형은 모든 현상을 완벽히 설명 할 수 있어야 합니다.
+      만약 반박할 수 있거나 더 잘 설명할 수 있는 모형이 제시된다면 늘 그렇듯이 대체될 것입니다.
+      입자 모형(모델)은 지금까지 모든 현상을 훌륭하게 설명했지만,
+      새로운 발견이 추가 될 때마다 계속 수정 보안되어왔습니다.
+      우리는 앞으로 새로운 현상을 목격할 것이고, 완벽하게 해석할 것이며,
+      더 나은 모형을 제시할 것입니다.
+    </p>
+
+    <h1>증발과 확산</h1>
+    <div class="img-box" style="width:30%;min-width: 300px;float:right">
+      <img src="../../source/particle.svg" />
+      <span class="caption">입자</span>
+      <span class="description">"particle.svg", iseohyun.com, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      과거 사람들은 빈 공간에 아무것도 없다고 생각했습니다. 보이지 않고 만져지지도 않습니다. 그러면 우리가 어떻게 바람을 불어 물체를 넘어뜨릴 수 있을까요?(<u><em>기체</em>(gas) 발사
+        실험</u>) 무언가 넘어갔다면,
+      무언가 밀었다고 생각하는 것이
+      상식적입니다. 보이지는 않지만, 우리가 볼 수 없을 만큼 작다면 말이 됩니다. 우리는 이 작은 것들을 <em>입자</em>(particle)라고 부릅니다.
+    </p>
+    <p>
+      이 입자는 액체(liquid)가 <em>증발</em>(evaporate) 될 때도 생성됩니다.
+      <u>향수나 방귀 실험</u>으로 냄새가 널리 퍼져나가는 경험을 통해서 알 수 있습니다.
+      이 입자들이 한 군데 머무르지 않고 넓게 퍼지는 현상을 <em>확산</em>(diffusion)이라고 부릅니다.
+    </p>
+
+    <h3 style="clear:both">질량</h3>
+    <div class="img-box" style="float:right">
+      <img src="../../source/weight of gas.svg" style="width:50%; min-width:400px; margin:0 auto" />
+      <span class="caption">공기의 무게</span>
+      <span class="description">"weight of gas.svg", @iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p style="min-width:300px;">
+      <u>입자가 실제로 존재한다면, 무게도 있을 것</u>입니다. 풍선의 <em>부피</em>(volume)가 커져도 무게가 늘어나지 않는 것은 풍선의 누르는 입자의 갯수(무게)가 변하지 않았기 때문입니다.
+      부피가 한정된 튜브나 유리병을
+      있는 힘 껏 불어서 무게를 제보면 1 ~ 2g이 증가 한 것을 알 수 있습니다. 입자는 존재하고, 무게를 가지고 있습니다.
+    </p>
+    <div class="simple-box" style="clear:both">
+      - 빈 풍선과 가득찬 풍선의 무게는 왜 같을까?<br>
+      &nbsp;풍선 안에도 입자가 있고, 풍선 밖에도 입자가 있다. 저울이 기록한 무게는 결국 같은 공간에 있는 같은 물질의 무게이다. 팔을 벌리고 몸무게를 젠 것과 팔을 내리고 몸무게를 젠 것이 같은
+      이치이다.
+      이 실험을 통해, 입자는 모든 공간에 고르게 퍼져 있음을 알 수 있다.
+    </div>
+    <h3>공기의 무게</h3>
+    <div class="img-box" style="float:right">
+      <img
+        src="http://upload.wikimedia.org/wikipedia/commons/thumb/7/7a/Atmosphere_gas_proportions.svg/220px-Atmosphere_gas_proportions.svg.png" />
+      <span class="caption">공기 성분 분석</span>
+      <span class="description">"Atmosphere gas proportions.svg", Mysid, en.wikipedia.org/wiki/Atmosphere_of_Earth,
+        Public Domain
+    </div>
+    <p>
+      공기 1cm<sup>3</sup>에는 약 2.5 x 10<sup>19</sup>개의 입자가 들어있습니다<a class="detail" href="#references"></a>
+      <span>
+        <tspan class="description">아보가드로 수는 1몰(mol)에 들어있는 원자 수를 의미합니다.</tspan>
+        <tspan class="reference">아보가드로 수: <a href="https://physics.nist.gov/cgi-bin/cuu/Value?na"
+            target="_blank">Avogadro constant</a>, NIST</tspan>
+      </span><a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="description">이상기체 방정식에 의하면 0℃ 1기압에서 1mol이 차지하는 부피는 22.4l이다.</tspan>
+        <tspan class="reference"><a href="https://ko.wikipedia.org/wiki/%EC%9D%B4%EC%83%81%EA%B8%B0%EC%B2%B4"
+            target="_blank">이상 기체 방정식</a>, 위키피디아</tspan>
+      </span>
+      \[1(atm) = {{8.31442 \times 293.15(K)} \over {V(m^3)}}\]
+      1기압 공기에 입자가 질소 78%와 산소 22%들어있으므로(그림 참조), 1리터의 공기의 무게는 대략 1.2g이 된다.
+      (보급된 주택 일반적인 안방(4m x 4m x 2.3m)에 채워진 공기의 무게는 대략 44.2kg이다.)
+    </p>
+    <table class="all-td-left">
+      <thead>
+        <tr>
+          <th>항목</th>
+          <th>기호</th>
+          <th>값</th>
+          <th>단위</th>
+          <th>비고</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>기압</td>
+          <td>P</td>
+          <td><input id="paskal" type="number" value=1 style="width:50px" onchange="getMol()" /></td>
+          <td>Pa(파스칼)</td>
+          <td>=1.01325 x10<sup>5</sup></td>
+        </tr>
+        <tr>
+          <td>부피</td>
+          <td>V</td>
+          <td>1</td>
+          <td>m<sup>3</sup></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>이상 기체 상수</td>
+          <td>R</td>
+          <td>8.314325</td>
+          <td>N · m / mol · K</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>온도(섭씨)</td>
+          <td>K</td>
+          <td><input id="kelvin" type="number" value=20 style="width:50px" onchange="getMol()" /></td>
+          <td>K(켈빈)</td>
+          <td>절대 온도</td>
+        </tr>
+        <tr>
+          <td>입자수</td>
+          <td>n</td>
+          <td><input id="mol" type="number" value="41.57115" style="width:70px" disabled /></td>
+          <td>n = P x V / R x K</td>
+          <td>mol(몰)</td>
+        </tr>
+    </table>
+
+    <table class="last-td-left">
+      <thead>
+        <tr>
+          <th>성분</th>
+          <th>원자무게<br>(g/mol)</th>
+          <th>분자무게<br>(g/입자)</th>
+          <th>대기량</th>
+          <th>mol</th>
+          <th>g</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>산소</td>
+          <td>16</td>
+          <td>32</td>
+          <td>22%</td>
+          <td><input id="mol-o" type="number" value="9.145653001" style="width:70px" disabled /></td>
+          <td><input id="g-o" type="number" value="292.660896" style="width:70px" disabled /></td>
+        </tr>
+        <tr>
+          <td>질소</td>
+          <td>14</td>
+          <td>28</td>
+          <td>78%</td>
+          <td><input id="mol-n" type="number" value="32.425497" style="width:70px" disabled /></td>
+          <td><input id="g-n" type="number" value="907.9139161" style="width:70px" disabled /></td>
+        </tr>
+        <tr>
+          <td>합계</td>
+          <td></td>
+          <td></td>
+          <td>100%</td>
+          <td><input id="mol-sum" type="number" value="41.57115" style="width:70px" disabled /></td>
+          <td><input id="g-sum" type="number" value="1200.574812" style="width:70px" disabled /></td>
+        </tr>
+      </tbody>
+    </table>
+    <script>
+      function getMol() {
+        var P = document.getElementById("paskal").value * 101325;
+        var R = 8.314325;
+        var K = parseFloat(document.getElementById("kelvin").value) + 273.15;
+        var n = P / (R * K);
+        document.getElementById("mol-sum").value = n;
+        document.getElementById("mol").value = n;
+        document.getElementById("mol-o").value = n * 0.22;
+        document.getElementById("mol-n").value = n * 0.78;
+        document.getElementById("g-o").value = n * 0.22 * 32;
+        document.getElementById("g-n").value = n * 0.78 * 28;
+
+        var g_air = n * 0.22 * 32 + n * 0.78 * 28;
+        document.getElementById("g-sum").value = g_air;
+        document.getElementById("milk-pack").value = g_air / 1000;
+        document.getElementById("soccer-ball").value = g_air * 0.00629279;
+        document.getElementById("room").value = g_air * 4 * 4 * 2.3 / 1000;
+
+      }
+    </script>
+
+    <table class="last-td-left">
+      <caption>공기의 무게</caption>
+      <tbody>
+        <tr>
+          <td>1리터 우유팩</td>
+          <td><input id="milk-pack" type="number" value="1.200596" style="width:70px" disabled /> g</td>
+        </tr>
+        <tr>
+          <td>지름 21cm 축구공</td>
+          <td><input id="soccer-ball" type="number" value="7.555098" style="width:70px" disabled /> g</td>
+        </tr>
+        <tr>
+          <td>4m x 4m 방(층고 2.3m)</td>
+          <td><input id="room" type="number" value="44.181934" style="width:70px" disabled /> kg</td>
+        </tr>
+    </table>
+
+    <h3 style="clear:both">감압실험</h3>
+    <p>
+      <em>감압</em>(decompression) 실험을 통해 공기중에 떠다니는 입자가 줄어들면, 밖에서 안으로 누르는 힘이 약해져서 부풀어 오르는 것을 볼 수 있습니다.
+      또한 그 힘이 모든 방향으로 봉투를 밀어내고 있다는 사실을 알 수 있습니다.
+
+      이렇게 입자가 밀어내는 힘을 <em>압력</em>(pressure)이라고 부릅니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/presure.svg" width="80%" />
+      <span class="caption">감압으로 인한 부피 증가</span>
+      <span class="description">"presure.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      이 실험으로 알 수 있는 것은 <u>모든 잠겨있는 물체는 둘러쌓인 물체로부터 기본적인 압력을 받고 있다</u>는 사실입니다.
+      그것이 공기라면 <em>기압</em>(atmospheric/air
+      pressure, 대기압/공기압), 물이라면 <em>수압</em>(water pressure)이라고 합니다.</p>
+    <ul>
+      <li>
+        만약 음압(negative pressure)에 노출된다면?
+        <a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">음압(신체 외부보다 내부가 더 높은 상태)<br>
+            보일의 법칙에 의해 1㎠당 1.03kg의 외부로의 압력을 받습니다. <br>
+            외부로 압력이 생물의 피부 인장강도에 의해 버텨지면서 부풀어오르지 않을 것입니다.
+          </tspan>
+          <tspan class="reference"><a
+              href="https://post.naver.com/viewer/postView.naver?volumeNo=17850432&memberNo=41062464"
+              target="_blank">"우주에서
+              우주복을 벗으면 우리 몸은 얼마나 버틸 수 있을까?"</a>, 스피드1분, 네이버포스트, 2019.2.12</tspan>
+        </span>
+        <a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">실제 사례에서 외형의 두드러진 변화가 없었습니다.</tspan>
+          <tspan class="reference"><a
+              href="https://namu.wiki/w/%EC%9A%B0%EC%A3%BC%20%EA%B3%B5%EA%B0%84%EC%97%90%20%EB%A7%A8%EB%AA%B8%EC%9C%BC%EB%A1%9C%20%EB%82%98%EA%B0%80%EB%A9%B4%20%ED%84%B0%EC%A0%B8%20%EC%A3%BD%EB%8A%94%EB%8B%A4#toc"
+              target="_blank">
+              우주 공간에 맨몸으로 나가면 터져 죽는다?</a>, 나무위키, 2023.12</tspan>
+        </span>
+      </li>
+    </ul>
+    <div class="simple-box">
+      - 빨때 잠수부 실험<br>
+      &nbsp;부피를 줄인다. 물병 압력이 높아진다. 빨대의 부피가 줄어든다. 빨대의 부력이 낮아진다. 부력-중력 싸움에서 중력이 이긴다. 가라앉는다.
+    </div>
+
+    <h1>압력과 부피, 온도</h1>
+    <h2>부피와 압력</h2>
+    <div class="img-box" style="float:right">
+      <img src="../../source/graph_pressure_vs_volume.svg" style="min-width:300px;width:50%; margin-left:30px" />
+      <span class="caption">기압과 부피변화(보일의 법칙)</span>
+      <span class="description">"graph_pressure_vs_volume.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      <u>부피를 강제로 늘리면 압력이 줄어듭니다.</u> 입자의 출입이 없는 상태라면 폐쇄된 공간에서의 입자의 숫자는 동일할 것입니다. [그림. 부피와 압력관계]는 중력으로 누르는 힘과 기압으로
+      들어올리는
+      힘의 평형 관계를 보여줍니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/volumnNpressure.svg" style="width:90%" />
+      <span class="caption">부피와 압력관계</span>
+      <span class="description">"volumnNpressure.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      <em>보일의 법칙</em>(Boyle's law)은 <u>입자의 수가 일정할 때, 부피와 압력이 서로 반비례하다</u>는 법칙입니다.
+    </p>
+    \[ p ∝ {1 \over v} \]
+
+    <h2>온도와 압력</h2>
+    <div class="img-box" style="float:right">
+      <img src="../../source/graph_pressure_vs_temperature.svg" style="min-width:300px;width:50%;margin-left:30px" />
+      <span class="caption">온도와 압력 관계</span>
+      <span class="description">"graph_pressure_vs_temperature.svg", iseohyun.com, 2024, CC-BY-SA 4.0 </span>
+    </div>
+    <p>
+      밀폐된 공간에서 입자를 넣고, 가열하면 부피가 늘어납니다.
+      부피가 늘어난 이유는, 내부의 압력이 외부의 압력보다 강하게 밖으로 밀어냈다는 의미일 것입니다.
+      이는 <u>온도가 올라갔을 때, 내부의 입자들이 더 많이 더 세게 부딪혔다</u>는 (더 많이 밀어냈다는) 의미가 됩니다.
+    </p>
+    <p>
+      <em>샤를의 법칙</em>(Charles's law)은 <u>입자의 수가 일정할 때, 온도가 올라갈수록 부피가 증가한다는 법칙</u>입니다. 이 때, 온도는 절대온도이며, 상대온도(섭씨: 물이 얼
+      때(0℃) ~ 물이 끓을
+      때(100℃))기준으로 -273.15℃가 0K(Kelvin, 켈빈)이 됩니다.
+    </p>
+    <div class="simple-box">
+      <p>
+        온도를 올렸을 때 드라마틱하게 부피가 증가하지 않는 이유는,
+        <em>상온</em>(Room-temperature(=실온), 평상시 온도) 20℃(가정)에서 100℃까지 증가 시켰을 때,
+        부피비가 25% 증가하지만, 길이로는 7.9% 증가하기 때문입니다.
+        예를들어, 10cm 풍선의 내부가 100℃가 되었을 때 고작 8mm 증가합니다.<br>
+        &nbsp;만약 전자레인지 등으로 용기나 봉투가 과도하게 부풀어 오르는 실험을 진행하였다면, 액체가 증발하여 새로운 기체가 생성되는 잘못된 실험을 진행했기 때문입니다.
+      </p>
+    </div>
+    \[ 293 : 373 ≒ 1 : 1.255892 \]
+    \[ 1.255892 ≒ 1.07890729^3\]
+
+    <h1>단어</h1>
+    <style>
+      table.vocabulary td:nth-child(1) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(3) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(5) {
+        border-right: 2px solid;
+      }
+    </style>
+    <table class="all-td-left vocabulary">
+      <caption>영단어</caption>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>영어</th>
+          <th>국어</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>chemistry</td>
+          <td>화학</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>model</td>
+          <td>모형</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>particle</td>
+          <td>입자</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>evaporate</td>
+          <td>증발</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>liquid</td>
+          <td>액체</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>gas</td>
+          <td>기체</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>solid</td>
+          <td>고체</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>diffusion</td>
+          <td>확산</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>volume</td>
+          <td>부피</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>decompression</td>
+          <td>감압</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>pressure</td>
+          <td>압력</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>atmospheric</td>
+          <td>기압/대기압</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>air pressure</td>
+          <td>공기압</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>water pressure</td>
+          <td>수압</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>hydraulic</td>
+          <td>유압, 유체역학</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>Boyle's law</td>
+          <td>보일의 법칙</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>Charles's law</td>
+          <td>샤를의 법칙</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>Kelvin</td>
+          <td>켈빈(절대온도)</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>Room-temperature</td>
+          <td>실온, 상온</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>Quiz</h1>
+    <ol>
+      <li>
+        현상을 설명하기 위해 도입된 가설 체계를 <button class="quiz">모형</button>
+        또는 <button class="quiz">모델</button>이라고 합니다.
+      </li>
+      <li>
+        기체 발사 실험을 통해 기체 속에 물체와 부딪히는 <button class="quiz">입자</button>의 존재를 가정 할 수 있습니다.
+      </li>
+      <li>
+        입자는 <button class="quiz">질량</button>을 가지고 있습니다.
+      </li>
+      <li>
+        <button class="quiz">감압</button>은 압력을 감소시키는 것을 의미합니다.<br>
+
+        <button class="quiz">감압</button>상자 안의 봉지나 풍선의 부피는 (<button class="quiz2 group1 answer">증가</button>,
+        <button class="quiz2 group1">감소</button>)합니다.
+      </li>
+      <li>
+        <button class="quiz">보일</button>의 법칙은 부피와 압력의 관계를 설명합니다.<br>
+        이 법칙에 따르면 입자의 수가 일정할 때, 부피와 압력은(<button class="quiz2 group2">비례</button>,
+        <button class="quiz2 group2 answer">반비례</button>)합니다.
+      </li>
+      <li>
+        온도가 올라갈 때, 부풀어오르는 현상을 설명하려면, 입자가 더 (<button class="quiz2 group3 answer">격렬하게</button>,
+        <button class="quiz2 group3">느긋하게</button>) 움직인다고 추론 할 수 있습니다.
+      </li>
+      <li>
+        <button class="quiz">샤를</button>의 법칙은 부피와 온도의 관계를 설명합니다.<br>
+        이 법칙에 따르면 입자의 수가 일정할 때, 부피와 압력은(<button class="quiz2 group4 answer">비례</button>,
+        <button class="quiz2 group4">반비례</button>)합니다.
+      </li>
+      <li>
+        <button class="quiz">절대온도</button>란 물질의 특이성에 의존하지 않는 온도입니다.<br>
+        <button class="quiz">섭씨</button>온도는 물의 상태변화에 의존하여(얼때, 증발할 때) 측정한 온도입니다.
+      </li>
+    </ol>
   </article>
 </body>
 

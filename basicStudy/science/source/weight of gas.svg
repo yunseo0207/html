@@ -1,0 +1,117 @@
+<svg viewBox="0 0 300 130" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient id="ball" cx="0.3" cy="0.3">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#888" />
+    </radialGradient>
+    <radialGradient id="ballon" cx="0.45" cy="0.45">
+      <stop offset="0" stop-color="#fff0" />
+      <stop offset="0.8" stop-color="#8882" />
+      <stop offset="1" stop-color="#8887" />
+    </radialGradient>
+    <symbol id="scale" viewBox="30 50 70 80">
+      <path d="M24 86v7q0 5 10 5h64q8 0 8-5v-7" fill="#eee" />
+      <path d="M50 50q-10 0 -15 10l-10 20q-5 10 10 10h60q15 0 10-10l-10-20q-5-10-15-10z" fill="#ccc" />
+      <path d="M40 98v7q0 5 10 5h32q8 0 8-5v-7" />
+    </symbol>
+    <marker id="arrow" markerUnits="userSpaceOnUse" markerWidth="8" markerHeight="8" viewBox="0 0 20 10" orient="auto">
+      <path d="M9 0L0 4 0 -4 9 0z" fill="#000" />
+    </marker>
+    <symbol id="particle" viewBox="0 0 6 9">
+      <ellipse rx="3" ry="3" cx="3" cy="3" fill="url(#ball)" />
+      <path d="M3 3v6" marker-end="url(#arrow)" style="stroke:#222" />
+    </symbol>
+  </defs>
+  <use width="100" height="100" transform="matrix(0.7, 0, 0, 0.7, 10, 70)" xlink:href="#scale" />
+  <use width="100" height="100" transform="matrix(0.7, 0, 0, 0.7, 110, 70)" xlink:href="#scale" />
+  <use width="100" height="100" transform="matrix(0.7, 0, 0, 0.7, 210, 70)" xlink:href="#scale" />
+  <use width="6" height="17" x="10" y="10" xlink:href="#particle" />
+  <use width="6" height="17" x="25" y="5" xlink:href="#particle" />
+  <use width="6" height="17" x="50" y="1" xlink:href="#particle" />
+  <use width="6" height="17" x="63" y="7" xlink:href="#particle" />
+  <use width="6" height="17" x="87" y="2" xlink:href="#particle" />
+  <use width="6" height="17" x="105" y="6" xlink:href="#particle" />
+  <use width="6" height="17" x="125" y="3" xlink:href="#particle" />
+  <use width="6" height="17" x="143" y="10" xlink:href="#particle" />
+  <use width="6" height="17" x="167" y="5" xlink:href="#particle" />
+  <use width="6" height="17" x="180" y="1" xlink:href="#particle" />
+  <use width="6" height="17" x="199" y="9" xlink:href="#particle" />
+  <use width="6" height="17" x="220" y="4" xlink:href="#particle" />
+  <use width="6" height="17" x="238" y="8" xlink:href="#particle" />
+  <use width="6" height="17" x="255" y="6" xlink:href="#particle" />
+  <use width="6" height="17" x="280" y="1" xlink:href="#particle" />
+  <use width="6" height="17" x="15" y="31" xlink:href="#particle" />
+  <use width="6" height="17" x="31" y="27" xlink:href="#particle" />
+  <use width="6" height="17" x="51" y="20" xlink:href="#particle" />
+  <use width="6" height="17" x="71" y="20" xlink:href="#particle" />
+  <use width="6" height="17" x="91" y="30" xlink:href="#particle" />
+  <use width="6" height="17" x="111" y="20" xlink:href="#particle" />
+  <use width="6" height="17" x="129" y="25" xlink:href="#particle" />
+  <use width="6" height="17" x="145" y="29" xlink:href="#particle" />
+  <use width="6" height="17" x="157" y="23" xlink:href="#particle" />
+  <use width="6" height="17" x="175" y="27" xlink:href="#particle" />
+  <use width="6" height="17" x="195" y="37" xlink:href="#particle" />
+  <use width="6" height="17" x="210" y="27" xlink:href="#particle" />
+  <use width="6" height="17" x="230" y="37" xlink:href="#particle" />
+  <use width="6" height="17" x="238" y="34" xlink:href="#particle" />
+  <use width="6" height="17" x="246" y="34" xlink:href="#particle" />
+  <use width="6" height="17" x="255" y="37" xlink:href="#particle" />
+  <use width="6" height="17" x="275" y="31" xlink:href="#particle" />
+  <use width="6" height="17" x="15" y="51" xlink:href="#particle" />
+  <use width="6" height="17" x="35" y="45" xlink:href="#particle" />
+  <use width="6" height="17" x="55" y="42" xlink:href="#particle" />
+  <use width="6" height="17" x="75" y="40" xlink:href="#particle" />
+  <use width="6" height="17" x="98" y="40" xlink:href="#particle" />
+  <use width="6" height="17" x="120" y="45" xlink:href="#particle" />
+  <use width="6" height="17" x="140" y="45" xlink:href="#particle" />
+  <use width="6" height="17" x="162" y="40" xlink:href="#particle" />
+  <use width="6" height="17" x="178" y="47" xlink:href="#particle" />
+  <use width="6" height="17" x="200" y="57" xlink:href="#particle" />
+  <use width="6" height="17" x="218" y="55" xlink:href="#particle" />
+  <use width="6" height="17" x="225" y="45" xlink:href="#particle" />
+  <use width="6" height="17" x="235" y="45" xlink:href="#particle" />
+  <use width="6" height="17" x="245" y="47" xlink:href="#particle" />
+  <use width="6" height="17" x="252" y="49" xlink:href="#particle" />
+  <use width="6" height="17" x="262" y="45" xlink:href="#particle" />
+  <use width="6" height="17" x="268" y="52" xlink:href="#particle" />
+  <use width="6" height="17" x="276" y="50" xlink:href="#particle" />
+  <use width="6" height="17" x="5" y="60" xlink:href="#particle" />
+  <use width="6" height="17" x="16" y="70" xlink:href="#particle" />
+  <use width="6" height="17" x="30" y="66" xlink:href="#particle" />
+  <use width="6" height="17" x="48" y="60" xlink:href="#particle" />
+  <use width="6" height="17" x="65" y="63" xlink:href="#particle" />
+  <use width="6" height="17" x="80" y="65" xlink:href="#particle" />
+  <use width="6" height="17" x="95" y="80" xlink:href="#particle" />
+  <use width="6" height="17" x="108" y="60" xlink:href="#particle" />
+  <use width="6" height="17" x="121" y="70" xlink:href="#particle" />
+  <use width="6" height="17" x="135" y="65" xlink:href="#particle" />
+  <use width="6" height="17" x="150" y="76" xlink:href="#particle" />
+  <use width="6" height="17" x="153" y="59" xlink:href="#particle" />
+  <use width="6" height="17" x="170" y="66" xlink:href="#particle" />
+  <use width="6" height="17" x="190" y="76" xlink:href="#particle" />
+  <use width="6" height="17" x="210" y="76" xlink:href="#particle" />
+  <use width="6" height="17" x="225" y="60" xlink:href="#particle" />
+  <use width="6" height="17" x="233" y="58" xlink:href="#particle" />
+  <use width="6" height="17" x="240" y="60" xlink:href="#particle" />
+  <use width="6" height="17" x="248" y="60" xlink:href="#particle" />
+  <use width="6" height="17" x="257" y="58" xlink:href="#particle" />
+  <use width="6" height="17" x="263" y="62" xlink:href="#particle" />
+  <use width="6" height="17" x="283" y="68" xlink:href="#particle" />
+  <use width="6" height="17" x="220" y="67" xlink:href="#particle" />
+  <use width="6" height="17" x="228" y="72" xlink:href="#particle" />
+  <use width="6" height="17" x="235" y="72" xlink:href="#particle" />
+  <use width="6" height="17" x="243" y="72" xlink:href="#particle" />
+  <use width="6" height="17" x="253" y="68" xlink:href="#particle" />
+  <ellipse rx="30" ry="30" cx="45" cy="65" fill="url(#ballon)" stroke="#ccc" />
+  <ellipse rx="50" ry="50" cx="145" cy="51" fill="url(#ballon)" stroke="#ccc" />
+  <ellipse rx="30" ry="30" cx="245" cy="65" fill="url(#ballon)" stroke="#ccc" />
+  <g style="font-size:8;fill:#fff">
+    <text x="40" y="120">50g</text>
+    <text x="140" y="120">50g</text>
+    <text x="235" y="120">50.5g</text>
+  </g>
+  <g style="stroke:#F008; stroke-width:8; fill:none">
+    <path d="M70 50 h27M70 65h27" />
+    <path d="M218 42l-25 16 25 16" />
+  </g>
+</svg>

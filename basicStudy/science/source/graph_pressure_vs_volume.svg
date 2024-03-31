@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <style>
+      @import url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.ttf');
+    </style>
+    <marker id="marker01" markerWidth="10" markerHeight="10" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" />
+    </marker>
+  </defs>
+  <path
+    d="M50 50H500M50 100H500M50 150H500M50 200H500M50 250H500M50 300H500M50 350H500M50 400H500M100 10V450M150 10V450M200 10V450M250 10V450M300 10V450M350 10V450M400 10V450M450 10V450"
+    style="stroke:#eee" />
+  <path d="M94 0C123 310 190 377 500 406" style="stroke:#555; stroke-width:3; fill:none" />
+  <g style="fill:red">
+    <ellipse rx="3" ry="3" cx="100" cy="50" />
+    <ellipse rx="3" ry="3" cx="150" cy="250" />
+    <ellipse rx="3" ry="3" cx="250" cy="350" />
+    <ellipse rx="3" ry="3" cx="450" cy="400" />
+  </g>
+  <path d="M10 450H490" style="stroke:#000" marker-end="url(#marker01)" />
+  <path d="M50 490V10" style="stroke:#000" marker-end="url(#marker01)" />
+  <g style="font-family: 'Tmoney RoundWind'; font-style:bold; font-size:15">
+    <text x="425" y="475" style="font-size:25;">기압<tspan style="font-size:0.8em">(p)</tspan></text>
+    <text x="0" y="35" style="font-size:25;">부피<tspan dx="-37" dy="1.1em" style="font-size:0.8em">(v)</tspan></text>
+    <text x="0" y="406">0.25배</text>
+    <text x="10" y="356">0.5배</text>
+    <text x="24" y="256">1배</text>
+    <text x="10" y="156">1.5배</text>
+    <text x="53" y="56">2배</text>
+    <text x="88" y="468">0.5</text>
+    <text x="145" y="468">1</text>
+    <text x="245" y="468">2</text>
+    <text x="345" y="468">3</text>
+    <text x="445" y="444">4</text>
+    <text x="105" y="44">0.5기압 x 2배 = 1</text>
+    <text x="155" y="244">1기압 x 1배 = 1</text>
+    <text x="255" y="344">2기압 x 0.5배 = 1</text>
+    <text x="360" y="420">4기압 x 0.25배 = 1</text>
+    <text x="320" y="150" style="font:italic 35pt 'times new roman';">
+      P
+      <tspan style="font:normal 1em 'Tmoney RoundWind';">∝</tspan>
+      <tspan dx="2" dy="-0.6em">1</tspan>
+      <tspan dx="-37" dy="0.1em">_</tspan>
+      <tspan dx="-37" dy="1em">v</tspan>
+    </text>
+  </g>
+</svg>

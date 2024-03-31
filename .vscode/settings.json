@@ -1,2 +1,9 @@
 {
+  "emmet.variables": {
+    "lang": "kr",
+    "charset": "UTF-8"
+  },
+  "emmet.includeLanguages": {
+    "svg": "svg"
+  }
 }

@@ -3,7 +3,7 @@
 /* Noto Serif KR */
 /* Nanum Myeongjo */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Nanum+Myeongjo&family=Noto+Serif+KR&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Nanum+Myeongjo&family=Noto+Serif+KR&family=Dongle&display=swap');
 
 @font-face {
   font-family: 'D2Coding';
@@ -319,10 +319,6 @@ sub {
   font-size: .9em;
   vertical-align: baseline;
   color: #943200;
-}
-
-sup {
-  color: red;
 }
 
 q:hover {
