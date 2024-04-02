@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 260" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" />
+    </marker>
+    <style>
+      @import url('https://cdn.jsdelivr.net/gh/webfontworld/tmoney/TmoneyRoundWind-Regular.ttf');
+    </style>
+  </defs>
+  <rect width="445" height="90" x="50" y="80" fill="#f4f4f4" />
+  <g style="stroke:#000; fill:none">
+    <path d="M50 260V15" marker-end="url(#marker01)" />
+    <path d="M10 240H490" marker-end="url(#marker01)" />
+    <path d="M50 80H495" stroke-dasharray="2" fill="#888" stroke-width="0.5" />
+    <path d="M50 170H495" stroke-dasharray="2" fill="#888" stroke-width="0.5" />
+    <path d="M55 30l40 50 90 0 40 50" marker-end="url(#marker01)" />
+    <path d="M55 120l40 50 90 0 40 50" marker-end="url(#marker01)" />
+    <path d="M305 130l40-50 90 0 40-50" marker-end="url(#marker01)" />
+    <path d="M305 220l40-50 90 0 40-50" marker-end="url(#marker01)" />
+  </g>
+  <!-- <g style="stroke:red; fill:none">
+    <ellipse cx="230" cy="80" rx="2" ry="2" />
+    <ellipse cx="230" cy="170" rx="2" ry="2" />
+    <path d="M230 82l10 15h5" />
+    <path d="M230 172l10 15h5" />
+  </g> -->
+  <g style="font:1em 'Tmoney RoundWind'; text-anchor:middle">
+    <text x="475" y="258" style="font-weight:800">시간</text>
+    <text x="15" y="25" style="text-anchor:start; font-weight:800">온도</text>
+    <g style="font-size:2em; fill:#666">
+      <text x="265" y="60">기체</text>
+      <text x="265" y="140">액체</text>
+      <text x="265" y="230">고체</text>
+    </g>
+    <text x="30" y="85" style="font-size:0.8em; fill:#888">끓는점</text>
+    <text x="30" y="175" style="font-size:0.8em; fill:#888">녹는점</text>
+    <text x="140" y="75">액화<tspan style="font-size:0.8em; fill:#864">액화열</tspan></text>
+    <text x="390" y="75">기화<tspan style="font-size:0.8em; fill:#864">기화열</tspan></text>
+    <text x="140" y="165">응고<tspan style="font-size:0.8em; fill:#864">응고열</tspan></text>
+    <text x="390" y="165">융해<tspan style="font-size:0.8em; fill:#864">융해열</tspan></text>
+    <g style="font-size:0.6em; fill:#080">
+      <text x="140" y="92">액화 동안 에너지<tspan style="fill:#F00">방출</tspan></text>
+      <text x="400" y="92">증발하는 동안 에너지<tspan style="fill:#F00">흡수</tspan></text>
+      <text x="140" y="182">녹는 동안 에너지<tspan style="fill:#F00">흡수</tspan></text>
+      <text x="390" y="182">어는 동안 에너지<tspan style="fill:#F00">방출</tspan></text>
+    </g>
+    <!-- <g style="font-size:0.7em; fill:red">
+      <text x="271" y="100">거의 일치</text>
+      <text x="271" y="191">거의 일치</text>
+    </g> -->
+  </g>
+</svg>

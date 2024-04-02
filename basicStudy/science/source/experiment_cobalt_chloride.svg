@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 260 125" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="grad01" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.4" stop-color="#88f" />
+      <stop offset="0.5" stop-color="#fcc" />
+      <stop offset="0.7" stop-color="#fcc" />
+      <stop offset="1" stop-color="#88f" />
+    </linearGradient>
+    <pattern id="patt01" x="0" y="0" viewBox="0 0 100 100" width="10" height="10" patternUnits="userSpaceOnUse">
+      <rect x="-25" y="0" width="150" height="100" style="fill:#fed" />
+      <g style="stroke:#eca; fill:none; stroke-width:3">
+        <ellipse cy="71" rx="8" ry="8" cx="17" />
+        <ellipse cx="88" cy="87" rx="8" ry="8" />
+        <ellipse cx="28" cy="42" rx="12" ry="12" />
+        <ellipse cx="60" cy="21" rx="15" ry="15" />
+        <ellipse cx="90" cy="50" rx="15" ry="15" />
+        <ellipse cx="-10" cy="51" rx="15" ry="15" />
+        <ellipse cx="53" cy="76" rx="20" ry="20" />
+        <ellipse cx="90" cy="15" rx="8" ry="8" />
+        <ellipse cx="19" cy="6" rx="15" ry="15" />
+        <ellipse cx="19" cy="106" rx="15" ry="15" />
+      </g>
+    </pattern>
+    <symbol id="symbol01" viewBox="0 0 100 50">
+      <path d="M1 10q50 40 90 30l-10-5Q45 40 8 11z" style="stroke:none; fill:url(#grad01)" />
+    </symbol>
+    <symbol id="symbol02" viewBox="-2 0 40 52">
+      <path d="M10 1c0 25-25 25 0 50c25-25 0-25 0-50" style="stroke:none; fill:red" />
+      <path d="M10 15c0 15-15 15 0 35c15-15 0-20 0-35" style="stroke:none; fill:yellow; filter:blur(1px)" />
+      <ellipse cx="10" cy="37" rx="2" ry="8" style="stroke:none; fill:white" />
+    </symbol>
+  </defs>
+  <path d="M6 70q5 2 10 0t10 0 10 0 10 0 10 0 10 0 10 0v35a10 10 0 0 1-10 10h-50a10 10 0 0 1-10-10z"
+    style="stroke:none; fill:#eef" />
+  <path d="M1 50a5 5 0 0 1 5 5v50a10 10 0 0 0 10 10h50a10 10 0 0 0 10-10v-50a5 5 0 0 1 5-5"
+    style="stroke:#000; fill:none" />
+  <use width="80" height="80" transform="matrix(1, 0, 0, 1, 3, 18)" xlink:href="#symbol01" />
+
+  <path d="M120 70l-30 30 70 20 27-40z" style="stroke:#000; fill:url(#patt01)" />
+  <path d="M115 60v30l30 10v-33zl22-10 27 8v24l-19 18v-33l19-9" style="stroke:#none; fill:#FFFE; filter:blur(4px)" />
+  <path d="M115 60v30l30 10v-33zl22-10 27 8v24l-19 18v-33l19-9" style="stroke:#ddd; stroke-width:0.3; fill:none;" />
+  <use width="80" height="80" transform="matrix(1, 0, 0, 1, 98, 10)" xlink:href="#symbol01" />
+
+  <use width="20" height="20" transform="matrix(1, 0, 0, 1, 195, 100)" xlink:href="#symbol02" />
+  <use width="20" height="20" transform="matrix(1, 0, 0, 1, 210, 100)" xlink:href="#symbol02" />
+  <use width="20" height="20" transform="matrix(1, 0, 0, 1, 225, 100)" xlink:href="#symbol02" />
+  <use width="20" height="20" transform="matrix(1, 0, 0, 1, 240, 100)" xlink:href="#symbol02" />
+
+
+  <use width="80" height="80" transform="matrix(1, 0, 0, 1, 178, -10)" xlink:href="#symbol01" />
+  <path d="M199 102a25 4 0 0 1 50 0" style="stroke:#bbb; fill:none" />
+  <path d="M216 48a2 2 0 0 0 0 4v10l-17 40a25 8 0 0 0 50 0l-17-40v-10a2 2 0 0 0 0-4z" style="stroke:#000; fill:none" />
+  <path d="M209 79l-10 23a25 8 0 0 0 50 0l-10-23a15 3 0 0 0-30 0a15 3 0 0 0 30 0" style="stroke:#000; fill:#eefc" />
+  <ellipse cx="220" cy="75" rx="5" ry="5" style="stroke:#ddd; stroke-width:0.2; fill:#fffe"/>
+  <ellipse cx="228" cy="73" rx="5" ry="5" style="stroke:#ddd; stroke-width:0.2; fill:#fffe"/>
+  <ellipse cx="228" cy="45" rx="5" ry="5" style="stroke:#ccc; stroke-width:0.2; fill:#fffc"/>
+  <ellipse cx="223" cy="60" rx="5" ry="5" style="stroke:#bbb; stroke-width:0.2; fill:#fffc"/>
+</svg>

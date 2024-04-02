@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 75 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+
+  <path d="M15 55c-10 10 -20 28 0 28h46c20 0 10-18 0-28Q37 51 15 55" style="stroke:#000; fill:#fda"/>
+  <path d="M31 4v7h1v10h12v-10h1v-7z" style="stroke:none; fill:#555"/>
+  <path d="M13 64a25 4 0 0 1 50 0" style="stroke:#bbb; stroke-width:0.5; fill:none" />
+  <path d="M30 10a2 2 0 0 0 0 4v10l-17 40a25 8 0 0 0 50 0l-17-40v-10a2 2 0 0 0 0-4z" style="stroke:#000; fill:#fffa" />
+  <!-- <path d="M23 41l-10 23a25 8 0 0 0 50 0l-10-23a15 3 0 0 0-30 0a15 3 0 0 0 30 0" style="stroke:#000; fill:#eefc" /> -->
+  <!-- <path d="M15.5 58L13 64a25 8 0 0 0 50 0l-2.5-6A23 5 0 0 0 15.5 58" style="stroke:#000; fill:#eefc" /> -->
+  <path d="M25 64a13 4 0 0 0 26 0 a13 4 0 0 0-26 0" style="stroke:#000; fill:#eefc" />
+  <path d="M26 73h26l2 8h-30z" style="fill:#000"/>
+  <text x="35" y="79" style="fill:white; font-size:7">5g</text>
+</svg>

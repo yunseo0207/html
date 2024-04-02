@@ -160,7 +160,7 @@
     <text x="23" y="268">Bacteria<tspan dx="-55" dy="1.5em" style="font-size:10px">(박테리아, 세균)</tspan></text>
     <text x="122" y="268">Archaea<tspan dx="-48" dy="1.5em" style="font-size:10px">(고세균)</tspan></text>
     <text x="200" y="268">Plants<tspan dx="-34" dy="1.5em" style="font-size:10px">(식물)</tspan></text>
-    <text x="253" y="268">Protist<tspan dx="-45" dy="1.5em" style="font-size:10px">(원생 생물)</tspan></text>
+    <text x="253" y="268">Protozoa<tspan dx="-65" dy="1.5em" style="font-size:10px">(원생 생물)</tspan></text>
     <text x="331" y="268">Fungi<tspan dx="-48" dy="1.5em" style="font-size:10px">(균계, 곰팡이)</tspan></text>
     <text x="406" y="268">Animals<tspan dx="-42" dy="1.5em" style="font-size:10px">(동물)</tspan></text>
     <text x="170" y="163">Invertebrate<tspan dx="-68" dy="1.2em" style="font-size:10px">(무척추동물)</tspan></text>

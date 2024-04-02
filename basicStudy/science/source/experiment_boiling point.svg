@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 500" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" />
+    </marker>
+
+  </defs>
+  <g style="stroke:#000; fill:none; stroke-linecap:round">
+    <path
+      d="M20 20H490M20 66H490M20 112H490M20 158H490M20 204H490M20 250H490M20 296H490M20 342H490M20 388H490M20 434H490M66 10V480M112 10V480M158 10V480M204 10V480M250 10V480M296 10V480M342 10V480M388 10V480M434 10V480M480 10V480"
+      style="stroke:#eee;" />
+    <path d="M20 388L388 20H480" style="stroke:#88F; stroke-width:5" />
+    <path d="M20 250L135 20H480" style="stroke:#ccF; stroke-width:2" />
+    <path d="M20 119.50H480" style="stroke-width:0.5;" stroke-dasharray="3 2" />
+    <path d="M20 388L230.84 119.50H480" style="stroke:#393; stroke-width:5" />
+    <path d="M20 388L125.42 119.50H480" style="stroke:#8a8; stroke-width:2" />
+    <path d="M20 182.38H480" style="stroke-width:0.5;" stroke-dasharray="3 2" />
+    <path d="M20 388L202.81 182.38H480" style="stroke:#F77; stroke-width:5" />
+    <path d="M20 388L111.41 182.38H480" style="stroke:#Faa; stroke-width:2" />
+    <rect width="20" height="500" fill="#FFF" stroke="none" />
+    <path d="M20 495V10" marker-end="url(#marker01)" />
+    <path d="M5 480H490" marker-end="url(#marker01)" />
+    <g style="stroke:none; fill:#f00;">
+      <ellipse cx="20" cy="250" rx="3" ry="3" />
+      <ellipse cx="66" cy="158" rx="3" ry="3" />
+      <ellipse cx="112" cy="66" rx="3" ry="3" />
+      <ellipse cx="158" cy="20" rx="3" ry="3" />
+      <ellipse cx="204" cy="20" rx="3" ry="3" />
+      <ellipse cx="250" cy="20" rx="3" ry="3" />
+    </g>
+    <path d="M112 66S135 20 158 20" style="stroke-width:1;" stroke-dasharray="3 2" />
+    <path d="M135 38l10 10m-10 0l10-10" />
+  </g>
+  <g style="text-anchor:end; font-size:13">
+    <text x="15" y="25">100</text>
+    <text x="15" y="71">90</text>
+    <text x="15" y="117">80</text>
+    <text x="15" y="163">70</text>
+    <text x="15" y="209">60</text>
+    <text x="15" y="255">50</text>
+    <text x="15" y="301">40</text>
+    <text x="15" y="347">30</text>
+    <text x="15" y="393">20</text>
+    <text x="15" y="439">10</text>
+    <text x="15" y="475">0</text>
+  </g>
+  <g style="text-anchor:middle; font-size:13">
+    <text x="66" y="495">1</text>
+    <text x="112" y="495">2</text>
+    <text x="158" y="495">3</text>
+    <text x="204" y="495">4</text>
+    <text x="250" y="495">5</text>
+    <text x="296" y="495">6</text>
+    <text x="342" y="495">7</text>
+    <text x="388" y="495">8</text>
+    <text x="434" y="495">9</text>
+    <text x="480" y="495">10</text>
+  </g>
+  <g style="font-size:13">
+    <text x="400" y="35" fill="#00F">물 10g</text>
+    <text x="250" y="35" fill="#88F">물 5g</text>
+    <text x="23" y="115" fill="#888" style="font-size:10">78.37</text>
+    <text x="400" y="115" fill="#080">에탄올 10g</text>
+    <text x="120" y="115" fill="#6a6">에탄올 5g</text>
+    <text x="23" y="177" fill="#888" style="font-size:10">64.7</text>
+    <text x="120" y="177" fill="#F00">메탄올 5g</text>
+    <text x="400" y="177" fill="#b00">메탄올 10g</text>
+  </g>
+</svg>
