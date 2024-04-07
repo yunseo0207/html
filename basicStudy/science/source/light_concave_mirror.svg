@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="concave-mirror" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" style="cursor:none">
+  <clipPath id="total-size">
+    <rect width="1000" height="500" />
+  </clipPath>
+  <defs>
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+      <path d="M-6-2L0 0-6 2" style="stroke:#000; fill:none" />
+    </marker>
+    <marker id="marker02" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+      <path d="M-6-2L0 0-6 2" style="stroke:#866; fill:none" />
+    </marker>
+  </defs>
+  <path
+    d="M0 10H1000M0 20H1000M0 30H1000M0 40H1000M0 50H1000M0 60H1000M0 70H1000M0 80H1000M0 90H1000M0 100H1000M0 110H1000M0 120H1000M0 130H1000M0 140H1000M0 150H1000M0 160H1000M0 170H1000M0 180H1000M0 190H1000M0 200H1000M0 210H1000M0 220H1000M0 230H1000M0 240H1000M0 250H1000M0 260H1000M0 270H1000M0 280H1000M0 290H1000M0 300H1000M0 310H1000M0 320H1000M0 330H1000M0 340H1000M0 350H1000M0 360H1000M0 370H1000M0 380H1000M0 390H1000M0 400H1000M0 410H1000M0 420H1000M0 430H1000M0 440H1000M0 450H1000M0 460H1000M0 470H1000M0 480H1000M0 490H1000M0 500H1000M10 0V500M20 0V500M30 0V500M40 0V500M50 0V500M60 0V500M70 0V500M80 0V500M90 0V500M100 0V500M110 0V500M120 0V500M130 0V500M140 0V500M150 0V500M160 0V500M170 0V500M180 0V500M190 0V500M200 0V500M210 0V500M220 0V500M230 0V500M240 0V500M250 0V500M260 0V500M270 0V500M280 0V500M290 0V500M300 0V500M310 0V500M320 0V500M330 0V500M340 0V500M350 0V500M360 0V500M370 0V500M380 0V500M390 0V500M400 0V500M410 0V500M420 0V500M430 0V500M440 0V500M450 0V500M460 0V500M470 0V500M480 0V500M490 0V500M500 0V500M510 0V500M520 0V500M530 0V500M540 0V500M550 0V500M560 0V500M570 0V500M580 0V500M590 0V500M600 0V500M610 0V500M620 0V500M630 0V500M640 0V500M650 0V500M660 0V500M670 0V500M680 0V500M690 0V500M700 0V500M710 0V500M720 0V500M730 0V500M740 0V500M750 0V500M760 0V500M770 0V500M780 0V500M790 0V500M800 0V500M810 0V500M820 0V500M830 0V500M840 0V500M850 0V500M860 0V500M870 0V500M880 0V500M890 0V500M900 0V500M910 0V500M920 0V500M930 0V500M940 0V500M950 0V500M960 0V500M970 0V500M980 0V500M990 0V800"
+    style="fill:none; stroke:#eef; stroke-width:0.5" />
+  <path d="M0 250H1000" style="fill:none; stroke:black;" />
+
+  <!-- 오목거울: 
+  초점 : 160 => (1/640)x^2 
+  포물선 높이: 97.656 -->
+  <path d="M510 500V0h-107.656q195.312 250 0 500z" style="fill:#eee7; stroke:#bbb" />
+
+  <!-- 커서 -->
+  <g style="stroke-width:3">
+    <path id="guideTop" d="M100 100H465L132 500 " style="fill:none; stroke:#fdd" />
+    <path id="guideTop2" d="M465 100L548 0 " style="fill:none; stroke:#fdd; stroke-dasharray:5 2;" />
+    <path id="guideDown" d="M100 100L500 250 -167 500 " style="fill:none; stroke:#ddf" />
+    <path id="guideDown2" d="M500 250L1167 0 " style="fill:none; stroke:#ddf; stroke-dasharray:5 2;" />
+  </g>
+  <g style="stroke-width:3">
+    <path id="origin" d="M100 250V100" marker-end="url(#marker01)" style="fill:none; stroke:#000;" />
+    <path id="ret" d="M267 250V337 " marker-end="url(#marker02)" style="fill:none; stroke:#866;" />
+  </g>
+
+  <!-- 초점 -->
+  <ellipse cx="340" cy="250" rx="2" ry="2" style="fill:#000" />
+  <ellipse cx="500" cy="250" rx="2" ry="2" style="fill:#000" />
+
+  <text id="pA" x="470" y="105">A(35,150)</text>
+  <text id="pS" x="100" y="90" style="text-anchor:middle">(400, 150)</text>
+  <text id="pD" x="267" y="245" style="text-anchor:middle">x0.58</text>
+  <text x="500" y="265">O(0, 0)</text>
+  <text x="340" y="265">f(0, 160)</text>
+
+  <script>
+    var svg = document.getElementById("concave-mirror");
+
+    svg.addEventListener("mousemove", (e) => {
+      x = Math.round(e.clientX - svg.getClientRects()[0].x);
+      y = Math.round(e.clientY - svg.getClientRects()[0].y);
+      if(y==250)
+        return;
+
+      document.getElementById('origin').setAttribute('d', `M${x} 250V${y}`);
+      var pAx = 500 - (y - 250)*(y - 250)/640;
+
+      // Top가이드라인 그리기
+      TopToX = (340 - pAx) * ((500 - y) / (250 - y));
+      document.getElementById('guideTop').setAttribute('d', `M${x} ${y}H${pAx}l${TopToX} ${500 - y}`);
+      TopToX2 = (340 - pAx) * (y / (y - 250)) + pAx;
+      document.getElementById('guideTop2').setAttribute('d', `M${pAx} ${y}L${TopToX2} 0`);
+
+      // down가이드라인 그리기
+      DownToX = (x - 500) * (250 / (250 - y)) + 500;
+      document.getElementById('guideDown').setAttribute('d', `M${x} ${y}L500 250 ${DownToX} 500`);
+      DownToX2 = -(x - 500) * (250 / (250 - y)) + 500;
+      document.getElementById('guideDown2').setAttribute('d', `M500 250L${DownToX2} 0`);
+
+      // 상(결과) 그리기
+      retXY = findIntersection(pAx, y, pAx + TopToX, 500, 500, 250, DownToX, 500);
+      var retD = ""
+      if(0>retXY.x)
+        retD = `M50 ${(retXY.y>250)?270:230}H20`;
+      else if(retXY.x>1000)
+        retD = `M950 ${(retXY.y>250)?270:230}H980`;
+      else
+        retD = `M${retXY.x} 250V${retXY.y}`;
+
+      document.getElementById('ret').setAttribute('d', retD);
+
+      pS = document.getElementById('pS');
+      pS.setAttribute('x', x);
+      pS.setAttribute('y', (y>250)?y+12:y-5);
+      pSi = {x: 500-x, y: 250-y, text: `S(${500-x},${250-y})`}
+      pS.textContent = pSi.text;
+
+      pD = document.getElementById('pD');
+      pD.setAttribute('x', (retXY.x>30)?(retXY.x>970?970:retXY.x):30);
+      pD.setAttribute('y', (retXY.y>250)?245:265);
+      pDi = {x: 500 - retXY.x.toFixed(0), y: 250 - retXY.y.toFixed(0), text: `x${Math.abs(((250 - retXY.y) / (y - 250)).toFixed(2))}`}
+      pD.textContent = pDi.text;
+
+      pA = document.getElementById('pA');
+      pA.setAttribute('x', pAx + 5);
+      pA.setAttribute('y', y + 5);
+      pAi = {x: 500 - pAx.toFixed(0), y: 250 - y.toFixed(0), text:`A(${(500-pAx).toFixed(0)},${250-y})`};
+      pA.textContent = pAi.text;
+
+      console.log(`S:${pSi.x}, ${pSi.y}: A:${pAi.x},${pAi.y}, D:${pDi.x},${pDi.y}`);
+    });
+
+    function findIntersection(a_x, a_y, b_x, b_y, c_x, c_y, d_x, d_y) {
+      // 첫 번째 직선의 기울기를 계산합니다.
+      var slope1 = (b_y - a_y) / (b_x - a_x);
+      // 두 번째 직선의 기울기를 계산합니다.
+      var slope2 = (d_y - c_y) / (d_x - c_x);
+
+      // 두 직선이 평행인 경우, 교차 지점은 존재하지 않습니다.
+      if (slope1 === slope2) {
+        return null;
+      }
+
+      // 두 직선의 교차점의 x 좌표를 계산합니다.
+      var x = ((c_y - a_y) + (slope1 * a_x) - (slope2 * c_x)) / (slope1 - slope2);
+      // 교차점의 y 좌표를 계산합니다.
+      var y = slope1 * (x - a_x) + a_y;
+
+      return { x: x, y: y };
+    }
+  </script>
+</svg>

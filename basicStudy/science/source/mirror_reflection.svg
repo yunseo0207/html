@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 410 135" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" />
+    </marker>
+  </defs>
+  <g style="stroke:#000; fill:none">
+    <path d="M1 90h190" style="stroke:#ccc; stroke-width:10;" />
+    <path d="M50 86h100" />
+    <path d="M10 10L100 85 190 10" marker-end="url(#marker01)" />
+    <g style="stroke:#F00;">
+      <path d="M100 40V96" />
+      <path d="M82 70A25 25 0 0 1 100 60" />
+      <path d="M100 55A30 30 0 0 1 123 65" />
+    </g>
+
+    <path d="M200 80q100 90 200 0" style="stroke:#ccc; stroke-width:10;" />
+    <path d="M220 10V90L380 30" marker-end="url(#marker01)" />
+    <path d="M205 80l30 23" />
+    <path d="M280 10v108l25 -108" marker-end="url(#marker01)" />
+    <path d="M260 117l40 5" />
+    <path d="M360 10V103L239 30" marker-end="url(#marker01)" />
+    <path d="M346 113l30-18" />
+    <g style="stroke:#F00;">
+      <path d="M248 51l-41 56" />
+      <path d="M284.5 79l-6.5 56" />
+      <path d="M336.5 64l34.5 56" />
+    </g>
+    <ellipse cx="293" cy="62.5" rx="2" ry="2" style="stroke:#000; fill:none"/>
+  </g>
+  <g style="font-size:9; fill:#888">
+    <text x="70" y="58">입사각</text>
+    <text x="108" y="52">반사각</text>
+    <text x="301" y="67">초점</text>
+  </g>
+</svg>

@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 230 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <clipPath id="eyes-clip">
+      <path d="M100 50L20 17a15 40 0 0 0 0 68z" />
+    </clipPath>
+    <symbol id="eyes" viewBox="0 0 100 100">
+      <path d="M100 50Q50 10 20 17a15 40 0 0 0 0 68Q50 80 100 50" style="stroke:none; fill:#fff" />
+      <g style="stroke:#888; fill:none">
+        <path d="M10 10q75 20 90 40 -25 20 -90 40" style="stroke-width:5;" />
+        <path d="M16 7q75 20 90 40" />
+        <path d="M20 17a15 40 0 0 0 0 68" />
+        <g style="fill:#fff">
+          <path d="M18 11q0-6 5-9q-2 6 0 12" />
+          <path d="M28 16q0-6 5-9q-2 6 0 12" />
+          <path d="M38 22q0-6 5-9q-2 6 0 12" />
+          <path d="M18 89q0 6 5 7q-4-6-2-9" />
+          <path d="M25 86q0 6 5 7q-4-6-2-9" />
+        </g>
+        <ellipse rx="25" ry="25" cx="13" cy="48" clip-path="url(#eyes-clip)" style="fill:#000" />
+        <ellipse rx="30" ry="30" cx="13" cy="48" clip-path="url(#eyes-clip)" style="stroke-width:3;" />
+        <ellipse rx="10" ry="10" cx="15" cy="40" clip-path="url(#eyes-clip)" style="fill:#fff;" />
+        <ellipse rx="5" ry="5" cx="25" cy="48" clip-path="url(#eyes-clip)" style="fill:#fff;stroke: none" />
+      </g>
+    </symbol>
+    <radialGradient id="moon-grad" cx="0.7" cy="0.5" fx="0.7" fy="0.5">
+      <stop offset="0" stop-color="#ff8" />
+      <stop offset="1" stop-color="#660" />
+    </radialGradient>
+    <radialGradient id="sun-grad" cx="0.3" cy="0.3" fx="0.3" fy="0.3">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#ff8" />
+    </radialGradient>
+    <radialGradient id="sun-grad2" cx="0.5" cy="0.5" fx="0.5" fy="0.5">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#fff0" />
+    </radialGradient>
+    <radialGradient id="earth-grad" cx="0.7" cy="0.3" fx="0.7" fy="0.3">
+      <stop offset="0" stop-color="#eef" />
+      <stop offset="0.7" stop-color="#88f" />
+      <stop offset="1" stop-color="#008" />
+    </radialGradient>
+    <linearGradient id="grad02" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF0" />
+      <stop offset="0.2" stop-color="#FF00" />
+    </linearGradient>
+    <linearGradient id="grad03" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF0" />
+      <stop offset="0.3" stop-color="#FF00" />
+    </linearGradient>
+    <linearGradient id="half-moon" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.4" stop-color="#000" />
+      <stop offset="1" stop-color="#0001" />
+    </linearGradient>
+    <linearGradient id="half-moon2" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#0001" />
+      <stop offset="0.25" stop-color="#000" />
+    </linearGradient>
+    <linearGradient id="mountine" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#060" />
+      <stop offset="1" stop-color="#000" />
+    </linearGradient>
+    <symbol id="moon" viewBox="0 0 100 100">
+      <ellipse rx="50" ry="50" cx="50" cy="50" style="fill:url(#moon-grad)" />
+      <g style="stroke:none;fill:#0003">
+        <path
+          d="M 26 11 C 26 13 22 14 20 15 C 19 18 18 17 16 19 C 15 22 16 23 16 23 C 16 25 17 27 19 24 C 23 20 21 19 23 16 C 25 15 25 16 27 16 C 30 11 41 10 45 14 C 49 15 49 16 49 21 C 49 26 42 30 44 33 C 46 35 49 32 50 31 C 50 31 56 31 56 31 C 57 32 57 33 58 35 C 59 37 56 37 55 37 C 53 37 50 33 47 38 C 46 39 47 40 48 41 C 51 41 53 44 53 45 C 52 46 50 47 47 45 C 45 44 47 47 46 49 C 45 50 43 49 42 50 C 42 50 44 54 47 54 C 49 56 45 59 50 56 C 50 63 47 61 52 67 C 51 69 50 69 48 71 C 50 75 44 71 42 73 C 40 75 41 73 40 73 C 38 74 38 75 39 76 C 41 76 42 76 42 77 C 37 81 35 79 35 76 C 37 73 35 73 33 74 C 33 75 34 75 33 77 C 23 79 22 68 26 69 C 28 67 27 65 26 64 C 24 62 20 62 19 68 C 14 68 12 64 10 62 C 9 61 7 63 6 59 C 8 56 3 50 2 48 C 0 31 13 16 15 15 C 15 15 16 18 17 16 C 19 14 25 11 26 11 Z" />
+        <path
+          d="M 56 11 C 59 13 61 14 60 15 C 59 16 57 15 54 14 C 53 15 49 21 53 25 C 57 29 65 27 66 28 C 64 30 64 31 65 34 C 67 38 67 38 70 40 C 74 40 72 43 75 43 C 78 40 75 38 77 37 C 81 38 83 37 84 38 C 83 42 84 43 85 45 C 87 49 90 47 93 48 C 92 50 91 52 89 53 C 91 55 91 55 91 56 C 94 53 94 47 95 46 C 91 43 95 43 93 36 C 89 36 87 32 85 30 C 73 27 82 23 74 23 C 74 29 70 24 69 22 C 67 16 61 17 65 14 C 71 17 65 13 70 13 C 67 11 68 12 65 11 C 61 11 61 12 56 11 Z" />
+        <path
+          d="M 83 20 C 81 22 83 22 84 24 C 85 27 86 27 87 27 C 89 28 90 29 90 27 C 91 26 89 26 91 25 C 90 24 90 24 88 21 C 86 21 87 18 83 20 Z" />
+      </g>
+    </symbol>
+    <symbol id="earth" viewBox="0 0 100 100">
+      <ellipse rx="50" ry="50" cx="50" cy="50" style="fill:url(#earth-grad)" />
+      <g style="stroke:none;fill:#080">
+        <path
+          d="M 26 11 C 26 13 22 14 20 15 C 19 18 18 17 16 19 C 15 22 16 23 16 23 C 16 25 17 27 19 24 C 23 20 21 19 23 16 C 25 15 25 16 27 16 C 30 11 41 10 45 14 C 49 15 49 16 49 21 C 49 26 42 30 44 33 C 46 35 49 32 50 31 C 50 31 56 31 56 31 C 57 32 57 33 58 35 C 59 37 56 37 55 37 C 53 37 50 33 47 38 C 46 39 47 40 48 41 C 51 41 53 44 53 45 C 52 46 50 47 47 45 C 45 44 47 47 46 49 C 45 50 43 49 42 50 C 42 50 44 54 47 54 C 49 56 45 59 50 56 C 50 63 47 61 52 67 C 51 69 50 69 48 71 C 50 75 44 71 42 73 C 40 75 41 73 40 73 C 38 74 38 75 39 76 C 41 76 42 76 42 77 C 37 81 35 79 35 76 C 37 73 35 73 33 74 C 33 75 34 75 33 77 C 23 79 22 68 26 69 C 28 67 27 65 26 64 C 24 62 20 62 19 68 C 14 68 12 64 10 62 C 9 61 7 63 6 59 C 8 56 3 50 2 48 C 0 31 13 16 15 15 C 15 15 16 18 17 16 C 19 14 25 11 26 11 Z" />
+        <path
+          d="M 56 11 C 59 13 61 14 60 15 C 59 16 57 15 54 14 C 53 15 49 21 53 25 C 57 29 65 27 66 28 C 64 30 64 31 65 34 C 67 38 67 38 70 40 C 74 40 72 43 75 43 C 78 40 75 38 77 37 C 81 38 83 37 84 38 C 83 42 84 43 85 45 C 87 49 90 47 93 48 C 92 50 91 52 89 53 C 91 55 91 55 91 56 C 94 53 94 47 95 46 C 91 43 95 43 93 36 C 89 36 87 32 85 30 C 73 27 82 23 74 23 C 74 29 70 24 69 22 C 67 16 61 17 65 14 C 71 17 65 13 70 13 C 67 11 68 12 65 11 C 61 11 61 12 56 11 Z" />
+        <path
+          d="M 83 20 C 81 22 83 22 84 24 C 85 27 86 27 87 27 C 89 28 90 29 90 27 C 91 26 89 26 91 25 C 90 24 90 24 88 21 C 86 21 87 18 83 20 Z" />
+      </g>
+    </symbol>
+  </defs>
+  <rect x="0" y="0" width="220" height="150" style="stroke:none;fill:#000" />
+  <g style="stroke:#ddd;stroke-width:0.5; fill:url(#grad02)">
+    <path d="M200 5L20 25 200 45" />
+    <path d="M200 75H20v35z" style="fill:url(#grad03)" />
+  </g>
+
+  <ellipse cx="19" cy="110" rx="35" ry="35" style="stroke:#eee; fill:none; stroke-width:0.5; stroke-dasharray:2" />
+  <ellipse cx="19" cy="25" rx="35" ry="35" style="stroke:#eee; fill:none; stroke-width:0.5; stroke-dasharray:2" />
+  <use width="7" height="7" transform="matrix(1, 0, 0, 1, 50, 21.5)" xlink:href="#moon" />
+  <use width="10" height="10" transform="matrix(-1, 0, 0, 1, 18, 20)" xlink:href="#eyes" />
+  <ellipse cx="199" cy="25" rx="19" ry="19" style="stroke:none; fill:url(#sun-grad)" />
+  <ellipse cx="199" cy="25" rx="30" ry="30" style="stroke:none; fill:url(#sun-grad2)" />
+
+  <ellipse cx="199" cy="75" rx="19" ry="19" style="stroke:none; fill:url(#sun-grad)" />
+  <ellipse cx="199" cy="75" rx="30" ry="30" style="stroke:none; fill:url(#sun-grad2)" />
+  <use width="7" height="7" transform="matrix(1, 0, 0, 1, 16, 71)" xlink:href="#moon" />
+  <use width="8" height="15" transform="matrix(1, 0, 0, 1, 16, 103)" xlink:href="#earth" />
+  <rect width="4" height="7" x="16" y="71" style="fill:url(#half-moon) " />
+
+  <path d="M100 145q20-20 40 0" style="stroke:#ccc; fill:url(#mountine)" />
+  <path d="M167 145q20-20 40 0" style="stroke:#ccc; fill:url(#mountine)" />
+  <path d="M130 146q20-20 40 0" style="stroke:#ccc; fill:url(#mountine)" />
+  <ellipse cx="119" cy="130" rx="3" ry="3" style="stroke:none; fill:url(#sun-grad)" />
+  <ellipse cx="119" cy="130" rx="5" ry="5" style="stroke:none; fill:url(#sun-grad2)" />
+  <use width="7" height="7" transform="matrix(1, 0, 0, 1, 170, 121)" xlink:href="#moon" />
+  <path d="M119 130L152 148L174 124" style="fill:none; stroke:#fff; stroke-width:0.5; stroke-dasharray:1" />
+  <rect width="5" height="7" x="173" y="121" style="fill:url(#half-moon2);"/>
+
+  <g style="stroke:#F00;fill:none;">
+    <path d="M40 22.5a20 20 0 0 1 0 5" />
+    <path d="M20 100a15 15 0 0 1 13 8" />
+    <path d="M145 144a10 10 0 0 1 12-1" />
+  </g>
+
+  <g style="font-size:5;fill:#eee">
+    <text x="12" y="40">
+      달과 태양의 시지름이
+      <tspan fill="red">같다</tspan>
+    </text>
+    <text x="9" y="97">
+      달과 태양의 각:
+      <tspan fill="red">89.85</tspan>
+    </text>
+    <text x="147" y="92">
+      <tspan fill="red">400</tspan>배 더 크다.
+      <tspan x="147" dy="1.5em" fill="red">400</tspan>배 더 멀다.
+    </text>
+    <text x="140" y="134" fill="red">89.85</text>
+  </g>
+</svg>

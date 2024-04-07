@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 360 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <clipPath id="clipPath01">
+    <path d="M0 25Q50 -23 100 25 50 52 0 25" />
+  </clipPath>
+  <symbol id="eye" viewBox="0 0 100 40">
+    <path d="M0 25Q50 -23 100 25 50 52 0 25" style="stroke:#000; fill:none" />
+    <ellipse cx="50" cy="20" rx="23" ry="23" style="stroke:none; fill:#000" clip-path="url(#clipPath01)" />
+    <ellipse cx="50" cy="19" rx="7" ry="7" style="stroke:none; fill:#fff" />
+    <ellipse cx="45" cy="12" rx="3" ry="3" style="stroke:none; fill:#fff" />
+  </symbol>
+
+  <!-- 예1: 시야각 -->
+  <use width="50" height="20" transform="matrix(0, -0.5, 0.5, 0, 1, 50)" xlink:href="#eye" />
+  <use width="50" height="20" transform="matrix(0, -0.5, 0.5, 0, 1, 80)" xlink:href="#eye" />
+  <path d="M12 38L100 53 12 68" style="stroke:#000; fill:none" />
+  <ellipse cx="110" cy="53" rx="5" ry="5" style="stroke:#000; stroke-width:5; fill:none" />
+  <path d="M70 48a10 10 0 0 0 0 10" style="stroke:#f00; fill:none" />
+
+  <!-- 예2: 거울의 상 -->
+  <use width="50" height="20" transform="matrix(0.3, -0.3, 0.3, 0.3, 150, 13)" xlink:href="#eye" />
+  <use width="50" height="20" transform="matrix(0.3, -0.3, 0.3, 0.3, 133, 30)" xlink:href="#eye" />
+  <path d="M140 50h100" style="stroke:#888; stroke-width:5; fill:none" />
+  <path d="M148 30L180 47 220 25 200 47 165 13" style="stroke:#000; fill:none" />
+  <path d="M180 38v20M200 38v20" style="stroke:#f00; fill:none" />
+  <path d="M180 47L220 68 200 47" style="stroke:#aaa; fill:none" />
+  <ellipse cx="227" cy="19" rx="5" ry="5" style="stroke:#000; stroke-width:5; fill:none" />
+  <ellipse cx="227" cy="73" rx="5" ry="5" style="stroke:#aaa; stroke-width:5; fill:none" />
+
+  <!-- 예3: 굴절의 상 -->
+  <use width="50" height="20" transform="matrix(0.3, -0.3, 0.3, 0.3, 270, 13)" xlink:href="#eye" />
+  <use width="50" height="20" transform="matrix(0.3, -0.3, 0.3, 0.3, 253, 30)" xlink:href="#eye" />
+  <path d="M260 40h100V100h-100z" style="stroke:#none; fill:#ddf" />
+  <path d="M268 30L295 41 337 79 316 41 285 13" style="stroke:#000; fill:none" />
+  <path d="M295 41L335 57 316 41" style="stroke:#aaa; fill:none" />
+  <!-- <path d="M268 30L335 57 285 13" style="stroke:#000; fill:none" />
+  <path d="M295 41L337 79 316 41" style="stroke:#aaa; fill:none" /> -->
+  <path d="M295 31v20M316 31v20" style="stroke:#f00; fill:none" />
+  <ellipse cx="343" cy="62" rx="5" ry="5" style="stroke:#aaa; stroke-width:5; fill:none" />
+  <ellipse cx="343" cy="85" rx="5" ry="5" style="stroke:#000; stroke-width:5; fill:none" />
+  <g style="font-size:6; fill:#444">
+    <text x="30" y="80">아하, 이 정도 거리에 물체가 있군!</text>
+    <text x="180" y="90">거울 뒤에 사물이 있군!</text>
+    <text x="325" y="30">얕은 곳에<tspan x="325" dy="1.2em">사물이 있군!</tspan></text>
+    <text x="225" y="10">실물</text>
+    <text x="325" y="95">실물</text>
+  </g>
+</svg>

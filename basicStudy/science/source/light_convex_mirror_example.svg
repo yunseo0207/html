@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 750 185" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient id="grad01" cx="0.5" cy="0.5" fx="0.5" fy="0.5">
+      <stop offset="0" stop-color="#080" />
+      <stop offset="0.6" stop-color="#080" />
+      <stop offset="0.9" stop-color="#4a4" />
+      <stop offset="1" stop-color="#080" />
+    </radialGradient>
+    <linearGradient id="grad02" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0.1" stop-color="#FF0" stop-opacity="0" />
+      <stop offset="1" stop-color="#FF0" />
+    </linearGradient>
+    <symbol id="symbol01" viewBox="0 0 100 100">
+      <path d="M43 64q0 20-10 30q5 0 10-5q5 0 5 10q0-5 5-10q5 5 10 5q-10-10-10-30  " style="stroke:#000; fill:#864" />
+      <g style="fill:url(#grad01)">
+        <ellipse cx="50" cy="15" rx="10" ry="10" />
+        <ellipse cx="40" cy="26" rx="10" ry="10" />
+        <ellipse cx="55" cy="24" rx="10" ry="10" />
+        <ellipse cx="36" cy="42" rx="10" ry="10" />
+        <ellipse cx="59" cy="40" rx="10" ry="10" />
+        <ellipse cx="50" cy="38" rx="10" ry="10" />
+        <ellipse cx="32" cy="60" rx="10" ry="10" />
+        <ellipse cx="64" cy="63" rx="10" ry="10" />
+        <ellipse cx="61" cy="55" rx="10" ry="10" />
+        <ellipse cx="46" cy="66" rx="10" ry="10" />
+        <ellipse cx="47" cy="56" rx="10" ry="10" />
+      </g>
+    </symbol>
+    <clipPath id="clipPath01">
+      <path d="M100 50L20 17a15 40 0 0 0 0 68z" />
+    </clipPath>
+    <symbol id="symbol02" viewBox="0 0 100 100">
+      <g style="stroke:#000; fill:none">
+        <path d="M10 10q75 20 90 40 -25 20 -90 40" style="stroke-width:5;" />
+        <path d="M16 7q75 20 90 40" />
+        <path d="M20 17a15 40 0 0 0 0 68" />
+        <g style="fill:#000">
+          <path d="M18 11q0-6 5-9q-2 6 0 12" />
+          <path d="M28 16q0-6 5-9q-2 6 0 12" />
+          <path d="M38 22q0-6 5-9q-2 6 0 12" />
+          <path d="M18 89q0 6 5 7q-4-6-2-9" />
+          <path d="M25 86q0 6 5 7q-4-6-2-9" />
+        </g>
+        <ellipse rx="25" ry="25" cx="13" cy="48" clip-path="url(#clipPath01)" style="fill:#000" />
+        <ellipse rx="30" ry="30" cx="13" cy="48" clip-path="url(#clipPath01)" style="stroke-width:3;" />
+        <ellipse rx="10" ry="10" cx="15" cy="40" clip-path="url(#clipPath01)" style="fill:#fff;" />
+        <ellipse rx="5" ry="5" cx="25" cy="48" clip-path="url(#clipPath01)" style="fill:#fff;stroke: none" />
+      </g>
+    </symbol>
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" />
+    </marker>
+  </defs>
+  <use width="80" height="80" transform="matrix(1, 0, 0, 1, 128, 20)" xlink:href="#symbol01" />
+  <use width="40" height="40" transform="matrix(1, 0, 0, 1, 200, 60)" xlink:href="#symbol01"
+    style="filter:blur(1px);opacity:0.6" />
+  <use width="15" height="15" transform="matrix(1, 0, 0, 1, 240, 55)" xlink:href="#symbol02" />
+  <ellipse cx="10" cy="100" rx="2" ry="2" style="stroke:none; fill:#000" />
+  <path d="M82 30V170a200 200 0 0 0 0-140" style="stroke:#000; fill:#eee" />
+  <path d="M10 100L200 10M10 100L200 40M10 100L200 70M10 100L200 100M10 100L200 130M10 100L200 160M10 100L200 190"
+    style="stroke:#888; stroke-width:0.5; stroke-dasharray:3 2; fill:none;" />
+  <path d="M168 25L91 62H230" style="stroke:#000; fill:none" marker-end="url(#marker01)" />
+
+  <!-- <rect width="100" height="100" style="fill:none;stroke:#000" /> -->
+  <use width="80" height="80" transform="matrix(1, 0, 0, 1, 378, 20)" xlink:href="#symbol01"
+    style="filter:blur(1px);opacity:0.6" />
+  <use width="40" height="40" transform="matrix(1, 0, 0, 1, 420, 60)" xlink:href="#symbol01" />
+  <use width="15" height="15" transform="matrix(1, -.45, .45, 1, 445, 5)" xlink:href="#symbol02" />
+  <ellipse cx="260" cy="100" rx="2" ry="2" style="stroke:none; fill:#000" />
+  <path d="M332 30V170a200 200 0 0 0 0-140" style="stroke:#000; fill:#eee" />
+  <path
+    d="M260 100L450 10M260 100L450 40M260 100L450 70M260 100L450 100M260 100L450 130M260 100L450 160M260 100L450 190"
+    style="stroke:#888; stroke-width:0.5; stroke-dasharray:3 2; fill:none;" />
+  <path d="M440 62H341L438 15" style="stroke:#000; fill:none" marker-end="url(#marker01)" />
+
+  <path d="M582 30V170a200 200 0 0 0 0-140" style="stroke:#000; fill:#eee" />
+  <use width="80" height="80" transform="matrix(1, 0, 0, 1, 628, 20)" xlink:href="#symbol01" />
+  <use width="30" height="30" transform="matrix(1, 0, 0, 1, 553, 71)" xlink:href="#symbol01" />
+  <use width="15" height="15" transform="matrix(1, 0, 0, 1, 710, 95)" xlink:href="#symbol02" />
+  <ellipse cx="510" cy="100" rx="2" ry="2" style="stroke:none; fill:#000" />
+  <path
+    d="M510 100L700 10M510 100L700 40M510 100L700 70M510 100L700 100M510 100L700 130M510 100L700 160M510 100L700 190"
+    style="stroke:#888; stroke-width:0.5; stroke-dasharray:3 2; fill:none;" />
+
+  <path d="M700 100L594 77 685 10" style="stroke:#000; fill:none" marker-end="url(#marker01)" />
+  <path d="M700 100H605" style="stroke:#000; fill:none" marker-end="url(#marker01)" />
+  <path d="M670 22L595 100L670 178" style="stroke:#000; fill:none" marker-end="url(#marker01)" />
+  <path
+    d="M514 15L681 190"
+    style="stroke:#888; stroke-width:0.5; stroke-dasharray:3 2; fill:none;" />
+  <path d="M594 100H700L594 77z" style="stroke:none; fill:url(#grad02)" />
+
+  <g style="font-size:13;">
+    <g style="fill:#F00;">
+      <text x="10" y="10">사례 1</text>
+      <text x="260" y="10">사례 2</text>
+      <text x="510" y="10">사례 3</text>
+    </g>
+    <text x="100" y="115">큰 물체가 작아보였던가?</text>
+    <text x="350" y="115">작은 물체가 커보였던가?</text>
+    <text x="644" y="20">실물</text>
+    <text x="552" y="72">상</text>
+    <text x="600" y="115">상이 언제나
+      <tspan style="fill:#F00;">작다</tspan>
+      <tspan x="600" dy="1.2em">실물이 언제나</tspan>
+      <tspan style="fill:#F00;"> 크다</tspan>
+    </text>
+  </g>
+</svg>

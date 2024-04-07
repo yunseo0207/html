@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg id="convex-lens" viewBox="-500 -250 1000 500" xmlns="http://www.w3.org/2000/svg"
+  xmlns:xlink="http://www.w3.org/1999/xlink" style="cursor:none">
+  <clipPath id="total-size">
+    <rect width="1000" height="500" />
+  </clipPath>
+  <defs>
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+      <path d="M-6-2L0 0-6 2" style="stroke:#000; fill:none" />
+    </marker>
+    <marker id="marker02" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+      <path d="M-6-2L0 0-6 2" style="stroke:#866; fill:none" />
+    </marker>
+  </defs>
+  <path
+    d="M-500 10H500M-500 20H500M-500 30H500M-500 40H500M-500 50H500M-500 60H500M-500 70H500M-500 80H500M-500 90H500M-500 100H500M-500 110H500M-500 120H500M-500 130H500M-500 140H500M-500 150H500M-500 160H500M-500 170H500M-500 180H500M-500 190H500M-500 200H500M-500 210H500M-500 220H500M-500 230H500M-500 240H500M-500 250H500
+    M-500-10H500M-500-20H500M-500-30H500M-500-40H500M-500-50H500M-500-60H500M-500-70H500M-500-80H500M-500-90H500M-500-100H500M-500-110H500M-500-120H500M-500-130H500M-500-140H500M-500-150H500M-500-160H500M-500-170H500M-500-180H500M-500-190H500M-500-200H500M-500-210H500M-500-220H500M-500-230H500M-500-240H500M-500-250H500    
+    M10-250V250M20-250V250M30-250V250M40-250V250M50-250V250M60-250V250M70-250V250M80-250V250M90-250V250M100-250V250M110-250V250M120-250V250M130-250V250M140-250V250M150-250V250M160-250V250M170-250V250M180-250V250M190-250V250M200-250V250M210-250V250M220-250V250M230-250V250M240-250V250M250-250V250M260-250V250M270-250V250M280-250V250M290-250V250M300-250V250M310-250V250M320-250V250M330-250V250M340-250V250M350-250V250M360-250V250M370-250V250M380-250V250M390-250V250M400-250V250M410-250V250M420-250V250M430-250V250M440-250V250M450-250V250M460-250V250M470-250V250M480-250V250M490-250V250M500-250V250
+    M-10-250V250M-20-250V250M-30-250V250M-40-250V250M-50-250V250M-60-250V250M-70-250V250M-80-250V250M-90-250V250M-100-250V250M-110-250V250M-120-250V250M-130-250V250M-140-250V250M-150-250V250M-160-250V250M-170-250V250M-180-250V250M-190-250V250M-200-250V250M-210-250V250M-220-250V250M-230-250V250M-240-250V250M-250-250V250M-260-250V250M-270-250V250M-280-250V250M-290-250V250M-300-250V250M-310-250V250M-320-250V250M-330-250V250M-340-250V250M-350-250V250M-360-250V250M-370-250V250M-380-250V250M-390-250V250M-400-250V250M-410-250V250M-420-250V250M-430-250V250M-440-250V250M-450-250V250M-460-250V250M-470-250V250M-480-250V250M-490-250V250M-500-250V250"
+    style="fill:none; stroke:#eef; stroke-width:0.5" />
+  <path d="M-500 0H500" style="fill:none; stroke:black;" />
+
+  <!-- 볼록렌즈(초점 : 250) -->
+  <path d="M10-250q90 250 0 500h-20q-90-250 0-500z" style="fill:#eee7; stroke:#bbb" />
+
+  <!-- 가이드라인 -->
+  <g style="stroke-width:3">
+    <path id="lx_guideTop" d="M-500-80H0L990 250 " style="fill:none; stroke:#fdd" />
+    <path id="lx_guideTop2" d="M-510-250L0-80 " style="fill:none; stroke:#fdd; stroke-dasharray:5 2;" />
+    <path id="lx_guideDown" d="M-500 -250L500 250 " style="fill:none; stroke:#ddf" />
+    <!-- <path id="guideDown2" d="M500 250L1167 0 " style="fill:none; stroke:#ddf; stroke-dasharray:5 2;" /> -->
+  </g>
+
+  <!-- 커서 -->
+  <g style="stroke-width:3">
+    <path id="lx_origin" d="M-160 0V-80" marker-end="url(#marker01)" style="fill:none; stroke:#000;" />
+    <path id="lx_dest" d="M-480 0V-240 " marker-end="url(#marker02)" style="fill:none; stroke:#866;" />
+  </g>
+
+  <!-- 초점 -->
+  <ellipse id="lx_pF" cx="240" cy="0" rx="2" ry="2" style="fill:#000" />
+  <ellipse id="lx_pFn" cx="-240" cy="0" rx="2" ry="2" style="fill:#000" />
+
+  <!-- 원점 -->
+  <ellipse id="pO" cx="0" cy="0" rx="2" ry="2" style="fill:#000" />
+
+  <text id="lx_pA" x="0" y="-80">A(0,-80)</text>
+  <text id="lx_pS" x="-160" y="-90" style="text-anchor:middle">S(-160, -80)</text>
+  <text id="lx_pD" x="-480" y="20" style="text-anchor:middle">x3.00</text>
+  <text x="2" y="16">O(0, 0)</text>
+  <text x="252" y="16">f(0, 240)</text>
+
+  <script>
+    var svg_ccvlen = document.getElementById("convex-lens");
+    var lx_pS = {ctx:document.getElementById('lx_pS'), x:0, y:0, text:""};
+    var lx_pD = {ctx:document.getElementById('lx_pD'), x:0, y:0, text:"", d:"", dest:document.getElementById('lx_dest')};
+    var lx_pA = {ctx:document.getElementById('lx_pA'), x:0, y:0, text:""};
+    var lx_f = {x:240, y:0};
+    var lx_o = {x:500, y:250};
+    var lx_view = {x1:-500, y1:-250, x2:500, y2:250};
+    var lx_e ={clientX: 340, clientY: 170}
+
+    svg_ccvlen.addEventListener("mousemove", e => {lx_draw(e)});
+    lx_draw(lx_e);
+
+    function lx_draw(e) {
+      lx_pS.x = Math.round(e.clientX - svg_ccvlen.getClientRects()[0].x) - lx_o.x;
+      lx_pS.y = Math.round(e.clientY - svg_ccvlen.getClientRects()[0].y) - lx_o.y;
+      if(lx_pS.y==0||lx_pS.x==0)
+        return;
+
+      // 기본 화살표
+      document.getElementById('lx_origin').setAttribute('d', `M${lx_pS.x} 0V${lx_pS.y}`);
+
+      // 변수 초기화
+      lx_pA.x = 0;
+      lx_pA.y = lx_pS.y;
+      lx_pA.text = `A(${lx_pA.x.toFixed(0)},${lx_pA.y})`;
+
+      lx_pA.ctx.setAttribute('x', lx_pA.x + 5);
+      lx_pA.ctx.setAttribute('y', lx_pA.y + 5);
+      lx_pA.ctx.textContent = lx_pA.text;
+
+      lx_pS.ctx.setAttribute('x', lx_pS.x);
+      lx_pS.ctx.setAttribute('y', (lx_pS.y>0)?lx_pS.y+12:lx_pS.y-10);
+      lx_pS.text = `S(${lx_pS.x},${lx_pS.y})`;
+      lx_pS.ctx.textContent = lx_pS.text;
+
+      // top가이드라인 그리기(빨)
+      TopS = (lx_f.x-lx_pA.x)/lx_pS.y*lx_o.y + lx_f.x;
+      TopE = -(lx_f.x-lx_pA.x)/lx_pS.y*lx_o.y + lx_f.x;
+      if(lx_pS.y>0){
+        document.getElementById('lx_guideTop').setAttribute('d', `M${lx_view.x1} ${lx_pS.y}H0L${TopS} ${lx_view.y1}`);
+        document.getElementById('lx_guideTop2').setAttribute('d', `M${TopE} ${lx_view.y2}L0 ${lx_pA.y}`);
+      }else{
+        document.getElementById('lx_guideTop').setAttribute('d', `M${lx_view.x1} ${lx_pS.y}H0L${TopE} ${lx_view.y2}`);
+        document.getElementById('lx_guideTop2').setAttribute('d', `M${TopS} ${lx_view.y1}L0 ${lx_pA.y}`);
+      }
+
+      // down가이드라인 그리기(파랑)
+      DownS = (-lx_pS.x)/lx_pS.y*lx_o.y;
+      DownE = -(-lx_pS.x)/lx_pS.y*lx_o.y;
+      document.getElementById('lx_guideDown').setAttribute('d', `M${DownS} ${lx_view.y1}L${DownE} ${lx_view.y2}`);
+
+      // 교차점 구하기
+      retXY = findIntersection(TopS, lx_view.y1, TopE, lx_view.y2, DownS, lx_view.y1, DownE, lx_view.y2);
+      if(retXY==null) return;
+
+      if(lx_view.x1>retXY.x)
+        lx_pD.d = `M${lx_view.x1+50} ${(retXY.y>0)?20:-20}h-30`;
+      else if(retXY.x>lx_view.x2)
+        lx_pD.d = `M${lx_view.x2-50} ${(retXY.y>0)?20:-20}h30`;
+      else
+        lx_pD.d = `M${retXY.x} 0V${retXY.y}`;
+      lx_pD.dest.setAttribute('d', lx_pD.d);
+      
+      lx_pD.x = lx_view.x1>retXY.x?(lx_view.x1+30):(retXY.x>lx_view.x2?(lx_view.x2-30):retXY.x);
+      lx_pD.y = retXY.y>0?-5:15;
+      lx_pD.text = `x${Math.abs(retXY.y / lx_pS.y).toFixed(2)}`;
+      lx_pD.ctx.setAttribute('x', lx_pD.x);
+      lx_pD.ctx.setAttribute('y', lx_pD.y);
+      lx_pD.ctx.textContent = lx_pD.text;
+    }
+        
+    function findIntersection(a_x, a_y, b_x, b_y, c_x, c_y, d_x, d_y) {
+      // 첫 번째 직선의 기울기를 계산합니다.
+      var slope1 = (b_y - a_y) / (b_x - a_x);
+      // 두 번째 직선의 기울기를 계산합니다.
+      var slope2 = (d_y - c_y) / (d_x - c_x);
+
+      // 두 직선이 평행인 경우, 교차 지점은 존재하지 않습니다.
+      if (slope1 === slope2) {
+        return null;
+      }
+
+      // 두 직선의 교차점의 x 좌표를 계산합니다.
+      var x = ((c_y - a_y) + (slope1 * a_x) - (slope2 * c_x)) / (slope1 - slope2);
+      // 교차점의 y 좌표를 계산합니다.
+      var y = slope1 * (x - a_x) + a_y;
+
+      return { x: x, y: y };
+    }
+  </script>
+</svg>

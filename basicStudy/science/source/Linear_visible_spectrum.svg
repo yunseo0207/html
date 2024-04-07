@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1010 330">
+  <linearGradient id="lgSpectrum" x1="0" y1="0" x2="1" y2="0">
+    <stop id="s380nm" offset="0" style="stop-color:#020005;" />
+    <stop id="s385nm" offset="0.013514" style="stop-color:#020006;" />
+    <stop id="s390nm" offset="0.027027" style="stop-color:#030008;" />
+    <stop id="s395nm" offset="0.040541" style="stop-color:#04000A;" />
+    <stop id="s400nm" offset="0.054054" style="stop-color:#06000D;" />
+    <stop id="s405nm" offset="0.067568" style="stop-color:#080110;" />
+    <stop id="s410nm" offset="0.081081" style="stop-color:#0C0117;" />
+    <stop id="s415nm" offset="0.094595" style="stop-color:#11021F;" />
+    <stop id="s420nm" offset="0.108108" style="stop-color:#17032A;" />
+    <stop id="s425nm" offset="0.121622" style="stop-color:#1F053A;" />
+    <stop id="s430nm" offset="0.135135" style="stop-color:#25084B;" />
+    <stop id="s435nm" offset="0.148649" style="stop-color:#290A5C;" />
+    <stop id="s440nm" offset="0.162162" style="stop-color:#2B0E6F;" />
+    <stop id="s445nm" offset="0.175676" style="stop-color:#291380;" />
+    <stop id="s450nm" offset="0.189189" style="stop-color:#1F237B;" />
+    <stop id="s455nm" offset="0.202703" style="stop-color:#132E74;" />
+    <stop id="s460nm" offset="0.216216" style="stop-color:#09376C;" />
+    <stop id="s465nm" offset="0.229730" style="stop-color:#0A3E66;" />
+    <stop id="s470nm" offset="0.243243" style="stop-color:#0C4667;" />
+    <stop id="s475nm" offset="0.256757" style="stop-color:#0E4F6A;" />
+    <stop id="s480nm" offset="0.270270" style="stop-color:#10596C;" />
+    <stop id="s485nm" offset="0.283784" style="stop-color:#11636D;" />
+    <stop id="s490nm" offset="0.297297" style="stop-color:#146E6F;" />
+    <stop id="s495nm" offset="0.310811" style="stop-color:#177970;" />
+    <stop id="s500nm" offset="0.324324" style="stop-color:#178672;" />
+    <stop id="s505nm" offset="0.337838" style="stop-color:#1A9574;" />
+    <stop id="s510nm" offset="0.351351" style="stop-color:#1DA375;" />
+    <stop id="s515nm" offset="0.364865" style="stop-color:#1DB273;" />
+    <stop id="s520nm" offset="0.378378" style="stop-color:#20C070;" />
+    <stop id="s525nm" offset="0.391892" style="stop-color:#22CB6B;" />
+    <stop id="s530nm" offset="0.405405" style="stop-color:#21D662;" />
+    <stop id="s535nm" offset="0.418919" style="stop-color:#23E054;" />
+    <stop id="s540nm" offset="0.432432" style="stop-color:#36E842;" />
+    <stop id="s545nm" offset="0.445946" style="stop-color:#50ED28;" />
+    <stop id="s550nm" offset="0.459459" style="stop-color:#73EB22;" />
+    <stop id="s555nm" offset="0.472973" style="stop-color:#8FE722;" />
+    <stop id="s560nm" offset="0.486486" style="stop-color:#A5E221;" />
+    <stop id="s565nm" offset="0.500000" style="stop-color:#B9DC22;" />
+    <stop id="s570nm" offset="0.513514" style="stop-color:#CBD621;" />
+    <stop id="s575nm" offset="0.527027" style="stop-color:#DCCE20;" />
+    <stop id="s580nm" offset="0.540541" style="stop-color:#ECC420;" />
+    <stop id="s585nm" offset="0.554054" style="stop-color:#F2B735;" />
+    <stop id="s590nm" offset="0.567568" style="stop-color:#F5AB42;" />
+    <stop id="s595nm" offset="0.581081" style="stop-color:#F69F49;" />
+    <stop id="s600nm" offset="0.594595" style="stop-color:#F7944B;" />
+    <stop id="s605nm" offset="0.608108" style="stop-color:#F98848;" />
+    <stop id="s610nm" offset="0.621622" style="stop-color:#FA7B42;" />
+    <stop id="s615nm" offset="0.635135" style="stop-color:#FB6C39;" />
+    <stop id="s620nm" offset="0.648649" style="stop-color:#FD5B2E;" />
+    <stop id="s625nm" offset="0.662162" style="stop-color:#FC471F;" />
+    <stop id="s630nm" offset="0.675676" style="stop-color:#F7300F;" />
+    <stop id="s635nm" offset="0.689189" style="stop-color:#EA220D;" />
+    <stop id="s640nm" offset="0.702703" style="stop-color:#D42215;" />
+    <stop id="s645nm" offset="0.716216" style="stop-color:#BF2318;" />
+    <stop id="s650nm" offset="0.729730" style="stop-color:#A92309;" />
+    <stop id="s655nm" offset="0.743243" style="stop-color:#981F07;" />
+    <stop id="s660nm" offset="0.756757" style="stop-color:#871B06;" />
+    <stop id="s665nm" offset="0.770270" style="stop-color:#771805;" />
+    <stop id="s670nm" offset="0.783784" style="stop-color:#671504;" />
+    <stop id="s675nm" offset="0.797297" style="stop-color:#591303;" />
+    <stop id="s680nm" offset="0.810811" style="stop-color:#4D1103;" />
+    <stop id="s685nm" offset="0.824324" style="stop-color:#420E02;" />
+    <stop id="s690nm" offset="0.837838" style="stop-color:#370C01;" />
+    <stop id="s695nm" offset="0.851351" style="stop-color:#2E0A01;" />
+    <stop id="s700nm" offset="0.864865" style="stop-color:#270801;" />
+    <stop id="s705nm" offset="0.878378" style="stop-color:#210600;" />
+    <stop id="s710nm" offset="0.891892" style="stop-color:#1E0400;" />
+    <stop id="s715nm" offset="0.905405" style="stop-color:#1A0300;" />
+    <stop id="s720nm" offset="0.918919" style="stop-color:#170200;" />
+    <stop id="s725nm" offset="0.932432" style="stop-color:#130100;" />
+    <stop id="s730nm" offset="0.945946" style="stop-color:#100100;" />
+    <stop id="s735nm" offset="0.959459" style="stop-color:#0C0100;" />
+    <stop id="s740nm" offset="0.972973" style="stop-color:#080100;" />
+    <stop id="s745nm" offset="0.986486" style="stop-color:#060100;" />
+    <stop id="s750nm" offset="1" style="stop-color:#040100;" />
+  </linearGradient>
+  <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+    <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" />
+  </marker>
+
+  <g style="fill:none;stroke:#000">
+    <path
+      d="M0 20 q0.5 35 1 0t2 0 3 0 4 0 5 0 6 0 7 0 8 0 9 0 10 0 11 0 12 0 13 0 14 0 15 0 16 0 17 0 18 0 19 0 20 0 21 0 22 0 23 0 24 0 25 0 26 0 27 0 28 0 29 0 30 0 31 0 32 0 33 0 34 0 35 0 36 0 37 0 38 0 39 0 40 0 41 0 44 0 47 0 50 0" />
+    <rect x="2" y="60" width="1010" height="64" style="fill:#000" />
+    <rect x="474" y="60" width="18" height="64" style="fill:url(#lgSpectrum);" stroke="none"/>
+    <path d="M63 130v39" />
+    <path d="M188 130v39" />
+    <path d="M375 130v39" />
+    <path d="M500 130v39" />
+    <path d="M625 130v39" />
+    <path d="M750 130v39" />
+    <path d="M875 130v39" />
+    <path d="M999 130v39" />
+    <path d="M474 169v10L153 200v10" />
+    <path d="M491 169v10L752 200v10" />
+  </g>
+  <g style="fill:none;stroke:#000">
+    <path d="M875 200h63" style="stroke-width:10" />
+    <path d="M875 210h58" marker-end="url(#marker01)" />
+    <path d="M938 225h-58" marker-end="url(#marker01)" />
+    <path d="M875 250h126" style="stroke-width:10" />
+    <path d="M875 260h118" marker-end="url(#marker01)" />
+  </g>
+  <g font-size="10" text-anchor="middle">
+    <text x="901" y="221">10배</text>
+    <text x="901" y="236">0.1배</text>
+    <text x="935" y="271">100배</text>
+  </g>
+  <g style="fill:none;stroke:#fff">
+    <path d="M188 60v64" />
+    <path d="M375 60v64" />
+    <path d="M375 60v64" />
+    <path d="M688 60v64" />
+  </g>
+  <g fill="#fff" font-size="16" text-anchor="middle">
+    <text x="94" y="83">감마선<tspan x="94" dy="1em">Gamma rays</tspan></text>
+    <text x="282" y="83">X선<tspan x="282" dy="1em">X-ray</tspan></text>
+    <text x="424" y="83">자외선<tspan x="424" dy="1em">Ultraviolet</tspan></text>
+    <text x="590" y="83">적외선<tspan x="590" dy="1em">Infrared</tspan></text>
+    <text x="844" y="83">전파 대역<tspan x="844" dy="1em">Radio waves</tspan></text>
+    <text x="764" y="120">레이더</text>
+    <text x="854" y="120">TV</text>
+    <text x="904" y="120">FM</text>
+    <text x="984" y="120">AM</text>
+  </g>
+  <text x="55" y="288">가시 광선<tspan dx="-65" dy="1em">Visible light</tspan></text>
+  <g fill="#000" font-size="10" transform="rotate(-90)" text-anchor="end">
+    <text x="-133" y="58">0.0001nm</text>
+    <text x="-133" y="183">0.01nm</text>
+    <text x="-133" y="370">10nm</text>
+    <text x="-133" y="495">1000nm</text>
+    <text x="-133" y="620">0.1mm</text>
+    <text x="-133" y="745">10mm</text>
+    <text x="-133" y="870">1m</text>
+    <text x="-133" y="994">100m</text>
+  </g>
+  <g transform="matrix(1,0,0,1,150,208)">
+    <g style="fill:none;stroke:#000">
+      <rect x="2" y="47" width="599" height="64" style="fill:url(#lgSpectrum);" />
+      <path d="m 2.5,4 0,39" />
+      <path d="m 188.5,4 0,39" />
+      <path d="m 308.5,4 0,39" />
+      <path d="m 344.5,4 0,39" />
+      <path d="m 392.5,4 0,39" />
+      <path d="m 602.5,4 0,39" />
+      <path d="m 116.5,4 0,39" />
+    </g>
+    <g font-size="16" text-anchor="middle">
+      <text x="497" y="10">빨강<tspan x="497" dy="1em">Red</tspan></text>
+      <text x="368" y="10">주황<tspan x="368" dy="1em">O</tspan></text>
+      <text x="325" y="10">노랑<tspan x="325" dy="1em">Y</tspan></text>
+      <text x="248" y="10">초록<tspan x="248" dy="1em">Green</tspan></text>
+      <text x="152" y="10">파랑<tspan x="152" dy="1em">Blue</tspan></text>
+      <text x="59" y="10">보라<tspan x="59" dy="1em">Violet</tspan></text>
+      <g font-size="10" transform="rotate(-90)">
+        <text x="-27" y="13">380nm</text>
+        <text x="-27" y="113">450nm</text>
+        <text x="-27" y="185">495nm</text>
+        <text x="-27" y="305">570nm</text>
+        <text x="-27" y="341">590nm</text>
+        <text x="-27" y="389">620nm</text>
+        <text x="-27" y="599">750nm</text>
+      </g>
+    </g>
+  </g>
+</svg>

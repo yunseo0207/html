@@ -32,19 +32,929 @@
     hljs.initLineNumbersOnLoad();
   </script>
 
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
   <!-- 목차 생성 -->
   <script src="/modules/hd_list.js" defer></script>
 
   <!-- 공통스킨 -->
   <style type="text/css">
     @import url("/style.css");
+
+    span.tutorial {
+      animation: none;
+      font-weight: normal;
+      margin: 0 20px 0 auto;
+      width: 95%;
+      margin: 15px auto;
+      padding: 15px;
+      border-radius: 8px;
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 
 <body>
   <article>
+
     <div id="title">중1: 6. 빛과 파동</div>
-    <p>작성 대기 중입니다.</p>
+    <p>
+      빛은 직진하기 때문에 우리는 그림자를 볼 수 있습니다.
+      하지만 이 때문에 우리는 착각을 하기도 합니다.
+      거울과 렌즈의 예시를 통해 빛의 성질을 이해합니다.<br>
+      &nbsp; 또한 빛에는 여러 색이 있습니다.
+      어떤 성질에 의해 다양하게 발현되는지 알아봅시다(파장).
+    </p>
+
+    <h1>빛의 특징</h1>
+    <h3>직진성</h3>
+    <div class="img-box" style="float:right; width:30%">
+      <img src="../../source/directness_of_light.svg" />
+      <span class="caption">빛의 직진성</span>
+      <span class="description">"directness_of_light.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      우리는 빛을 통해 물체를 인식합니다. 만약 물체 사이에 장애물이 있다면 물체를 볼 수 없습니다.
+      물체와 눈 사이를 가리면 보이지 않습니다(Line of sight; 시계선). 따라서 <u>빛은 직진한다</u>는 것을 알 수 있습니다.<br>
+    </p>
+
+    <h2 style="clear:both">크기</h2>
+    <p>
+      빛의 직진하는 성질 때문에 우리는 물체의 크기를 가늠할 수 있습니다.
+      같은 물체라도 더 가까이 가면 크게 보입니다.
+      물체를 바라볼 때, 크다/작다의 기준은 커/작아 보인다 이며, <em>시지름</em>(Apparent diameter)이 크다/작다에 따릅니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/light_size.svg" width="85%" />
+      <span class="caption">원근법</span>
+      <span class="description">"directness_of_light.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <div class="simple-box" style="display: block">
+      태양과 달의 크기<a class="detail" href="#references"></a>(중2. 태양계 단원 참조)
+      <span>
+        <tspan class="reference"><a href="https://m.khan.co.kr/science/science-general/article/202106172130005#c2b"
+            target="_blank">(17)우주에 나가보지 않고도 어떻게 달과 태양의 크기 계산했을까</a>, 이종필, 경향신문(칼럼), 2021.06.17
+        </tspan>
+      </span>
+      <hr>
+      &nbsp;일식
+      <span class="info">ⓛ
+        <div>
+          <img
+            src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/fe/2023-04-20_Solar_Eclipse_in_Timor-Leste_6.jpg/320px-2023-04-20_Solar_Eclipse_in_Timor-Leste_6.jpg" /><br>
+          개기 일식 사진<br>
+          "320px-2023-04-20_Solar_Eclipse_in_Timor-Leste_6.svg",
+          Nacional Metereologia e Geofisica,
+          https://ko.wikipedia.org/wiki/2023년 4월 20일 일식, 퍼블릭 도메인
+        </div>
+      </span>
+      (solar Eclipse)을 관찰하면서, 태양과 달의 시지름이 거의 같다는 사실을 알고 있습니다. 반달일 때, 태양과의 각도를 구하면 달과 태양의 거리를 짐작할 수 있고, 거리비를 알면, 지름비를 알 수
+      있습니다.
+    </div>
+    <div class="img-box">
+      <img src="../../source/sun_distance.svg" />
+      <span class="caption">태양까지의 거리</span>
+      <span class="description">"sun_distance.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+
+    <h2>거리</h2>
+    <p>
+      우리는 두 눈에 보이는 영상의 각도를 통해 물체와의 거리를 유추합니다. 이것이 우리가 일반적으로 사물을 인식하는 방법입니다. 하지만 이 때문에 우리는 <em>상</em>(image/ 허상, virtual
+      image)을 보게 됩니다.<br>
+      &nbsp;거울은 거울 표면에 일정각도로 반사되어 물체를 인식하지만, 마치 연장선에 물체가 있는 것으로 인식하게 됩니다.
+      물은 일정각도로 빛을 왜곡합니다. 이 때문에 물체가 실제보다 더 얕은 곳에 있다고 느끼게 됩니다. 이는 우리가 늘 사물을 인식하는 자연스러운 방법에 의존하기 때문에 벌어지는 현상입니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/virtual_image.svg" />
+      <span class="caption">사물의 인식</span>
+      <span class="description">"virtual_image.svg", iseohyun.com, 2024, CC-BY-SA</span>
+    </div>
+    <h3>반사</h3>
+    <p>
+      거울의 <em>반사</em>(reflection)는 입사와 반사로 나뉘며, 곡률이 어떻다 하더라도 접선을 그엇을 때 이 두 각은 항상 같습니다.
+      일반적으로 볼록거울이든 오목렌즈든 특수한 목적에 의해 제작되므로 일정한 곡률을 가집니다.
+      이를 응용하면 포물선(예:\(y=ax^2\))에서 정면에서 들어온 모든 빛이
+      한 점(<em>초점</em>(focus))을 지나도록 만들 수 있습니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/mirror_reflection.svg" />
+      <span class="caption">거울 반사각</span>
+      <span class="description">"mirror_reflection.svg", iseohyun, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      내가 누군가를 봤다는 것은 누군가도 나를 본다는 의미입니다<a class="detail" href="#references"></a>.
+      <span>
+        <tspan class="description">
+          타조증후군(Ostrich effect, 2003 ~)<br>
+          타조가 위험을 감지하면 머리를 모래속에 넣는다는 속설에서 유래했습니다. (영미권 속담: 'Don't bury your head in the sand.')<br>
+          실제로 그런 것은 아닙니다. 위기를 외면하려는 아둔한 행위를 묘사한 심리학 용어입니다.
+        </tspan>
+        <tspan class="reference">
+          <a href="https://en.wikipedia.org/wiki/Ostrich_effect" target="_blank">타조 증후군</a>, 위키피디아
+        </tspan>
+      </span>
+      정면으로 들어온 빛이 초점을 통해 빠져나갔다면, 초점을 통해 들어온 빛은 정면으로 빠져나갑니다.
+      다음 그림 [<b>볼록렌즈 예제</b>]는 볼록렌즈에 반사되는 빛의 경로를 보여줍니다.
+      사례1과 사례2에서 빛 경로상의 오류는 없습니다.<br>
+      &nbsp; 볼록렌즈에 비친 물체는 크게 보입니까? 작게 보입니까?
+      관찰자가 거울에 다가가면 크게 보여야 합니까? 작게 보여야 합니까?
+      단순 암기식의 지식은 [사례1]과 [사례2]처럼 우리를 헷갈리게 합니다. 우리가 물체의 크기를 인식하는 방법, 거리를 인식하는 방법을 떠올려봅시다. 사물은 물체 뒤에 있고, 시지름으로 크기를 인식합니다.
+    </p>
+    <div class="img-box" style="width:100%;">
+      <img src="../../source/light_convex_mirror_example.svg" />
+      <span class="caption">볼록거울 예시</span>
+      <span class="description">"light_convex_mirror_example.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+
+    <p>
+      사례3과 같이 우리는 거울 뒤에 물체가 있는 것처럼 느낍니다.
+      상의 위치와 크기를 거울의 반사 특성을 이용하여, 다음과 같이 작도할 수 있습니다.
+    </p>
+
+    <div class="img-box" style="width:100%">
+      <?xml version="1.0" encoding="utf-8"?>
+      <svg id="concave-mirror" viewBox="0 0 1000 500" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" style="cursor:none">
+        <clipPath id="total-size">
+          <rect width="1000" height="500" />
+        </clipPath>
+        <defs>
+          <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+            <path d="M-6-2L0 0-6 2" style="stroke:#000; fill:none" />
+          </marker>
+          <marker id="marker02" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+            <path d="M-6-2L0 0-6 2" style="stroke:#866; fill:none" />
+          </marker>
+        </defs>
+        <path
+          d="M0 10H1000M0 20H1000M0 30H1000M0 40H1000M0 50H1000M0 60H1000M0 70H1000M0 80H1000M0 90H1000M0 100H1000M0 110H1000M0 120H1000M0 130H1000M0 140H1000M0 150H1000M0 160H1000M0 170H1000M0 180H1000M0 190H1000M0 200H1000M0 210H1000M0 220H1000M0 230H1000M0 240H1000M0 250H1000M0 260H1000M0 270H1000M0 280H1000M0 290H1000M0 300H1000M0 310H1000M0 320H1000M0 330H1000M0 340H1000M0 350H1000M0 360H1000M0 370H1000M0 380H1000M0 390H1000M0 400H1000M0 410H1000M0 420H1000M0 430H1000M0 440H1000M0 450H1000M0 460H1000M0 470H1000M0 480H1000M0 490H1000M0 500H1000M10 0V500M20 0V500M30 0V500M40 0V500M50 0V500M60 0V500M70 0V500M80 0V500M90 0V500M100 0V500M110 0V500M120 0V500M130 0V500M140 0V500M150 0V500M160 0V500M170 0V500M180 0V500M190 0V500M200 0V500M210 0V500M220 0V500M230 0V500M240 0V500M250 0V500M260 0V500M270 0V500M280 0V500M290 0V500M300 0V500M310 0V500M320 0V500M330 0V500M340 0V500M350 0V500M360 0V500M370 0V500M380 0V500M390 0V500M400 0V500M410 0V500M420 0V500M430 0V500M440 0V500M450 0V500M460 0V500M470 0V500M480 0V500M490 0V500M500 0V500M510 0V500M520 0V500M530 0V500M540 0V500M550 0V500M560 0V500M570 0V500M580 0V500M590 0V500M600 0V500M610 0V500M620 0V500M630 0V500M640 0V500M650 0V500M660 0V500M670 0V500M680 0V500M690 0V500M700 0V500M710 0V500M720 0V500M730 0V500M740 0V500M750 0V500M760 0V500M770 0V500M780 0V500M790 0V500M800 0V500M810 0V500M820 0V500M830 0V500M840 0V500M850 0V500M860 0V500M870 0V500M880 0V500M890 0V500M900 0V500M910 0V500M920 0V500M930 0V500M940 0V500M950 0V500M960 0V500M970 0V500M980 0V500M990 0V800"
+          style="fill:none; stroke:#eef; stroke-width:0.5" />
+        <path d="M0 250H1000" style="fill:none; stroke:black;" />
+
+        <!-- 오목거울: 
+        초점 : 160 => (1/640)x^2 
+        포물선 높이: 97.656 -->
+        <path d="M510 500V0h-107.656q195.312 250 0 500z" style="fill:#eee7; stroke:#bbb" />
+
+        <!-- 커서 -->
+        <g style="stroke-width:3">
+          <path id="guideTop" d="M100 100H465L132 500 " style="fill:none; stroke:#fdd" />
+          <path id="guideTop2" d="M465 100L548 0 " style="fill:none; stroke:#fdd; stroke-dasharray:5 2;" />
+          <path id="guideDown" d="M100 100L500 250 -167 500 " style="fill:none; stroke:#ddf" />
+          <path id="guideDown2" d="M500 250L1167 0 " style="fill:none; stroke:#ddf; stroke-dasharray:5 2;" />
+        </g>
+        <g style="stroke-width:3">
+          <path id="origin" d="M100 250V100" marker-end="url(#marker01)" style="fill:none; stroke:#000;" />
+          <path id="ret" d="M267 250V337 " marker-end="url(#marker02)" style="fill:none; stroke:#866;" />
+        </g>
+
+        <!-- 초점 -->
+        <ellipse cx="340" cy="250" rx="2" ry="2" style="fill:#000" />
+        <ellipse cx="500" cy="250" rx="2" ry="2" style="fill:#000" />
+
+        <text id="pA" x="470" y="105">A(35,150)</text>
+        <text id="pS" x="100" y="90" style="text-anchor:middle">(400, 150)</text>
+        <text id="pD" x="267" y="245" style="text-anchor:middle">x0.58</text>
+        <text x="500" y="265">O(0, 0)</text>
+        <text x="340" y="265">f(0, 160)</text>
+
+        <script>
+          var svg = document.getElementById("concave-mirror");
+
+          svg.addEventListener("mousemove", (e) => {
+            x = Math.round(e.clientX - svg.getClientRects()[0].x);
+            y = Math.round(e.clientY - svg.getClientRects()[0].y);
+            if (y == 250)
+              return;
+
+            document.getElementById('origin').setAttribute('d', `M${x} 250V${y}`);
+            var pAx = 500 - (y - 250) * (y - 250) / 640;
+
+            // Top가이드라인 그리기
+            TopToX = (340 - pAx) * ((500 - y) / (250 - y));
+            document.getElementById('guideTop').setAttribute('d', `M${x} ${y}H${pAx}l${TopToX} ${500 - y}`);
+            TopToX2 = (340 - pAx) * (y / (y - 250)) + pAx;
+            document.getElementById('guideTop2').setAttribute('d', `M${pAx} ${y}L${TopToX2} 0`);
+
+            // down가이드라인 그리기
+            DownToX = (x - 500) * (250 / (250 - y)) + 500;
+            document.getElementById('guideDown').setAttribute('d', `M${x} ${y}L500 250 ${DownToX} 500`);
+            DownToX2 = -(x - 500) * (250 / (250 - y)) + 500;
+            document.getElementById('guideDown2').setAttribute('d', `M500 250L${DownToX2} 0`);
+
+            // 상(결과) 그리기
+            retXY = findIntersection(pAx, y, pAx + TopToX, 500, 500, 250, DownToX, 500);
+            var retD = ""
+            if (0 > retXY.x)
+              retD = `M50 ${(retXY.y > 250) ? 270 : 230}H20`;
+            else if (retXY.x > 1000)
+              retD = `M950 ${(retXY.y > 250) ? 270 : 230}H980`;
+            else
+              retD = `M${retXY.x} 250V${retXY.y}`;
+
+            document.getElementById('ret').setAttribute('d', retD);
+
+            pS = document.getElementById('pS');
+            pS.setAttribute('x', x);
+            pS.setAttribute('y', (y > 250) ? y + 12 : y - 5);
+            pSi = { x: 500 - x, y: 250 - y, text: `S(${500 - x},${250 - y})` }
+            pS.textContent = pSi.text;
+
+            pD = document.getElementById('pD');
+            pD.setAttribute('x', (retXY.x > 30) ? (retXY.x > 970 ? 970 : retXY.x) : 30);
+            pD.setAttribute('y', (retXY.y > 250) ? 245 : 265);
+            pDi = { x: 500 - retXY.x.toFixed(0), y: 250 - retXY.y.toFixed(0), text: `x${Math.abs(((250 - retXY.y) / (y - 250)).toFixed(2))}` }
+            pD.textContent = pDi.text;
+
+            pA = document.getElementById('pA');
+            pA.setAttribute('x', pAx + 5);
+            pA.setAttribute('y', y + 5);
+            pAi = { x: 500 - pAx.toFixed(0), y: 250 - y.toFixed(0), text: `A(${(500 - pAx).toFixed(0)},${250 - y})` };
+            pA.textContent = pAi.text;
+
+            console.log(`S:${pSi.x}, ${pSi.y}: A:${pAi.x},${pAi.y}, D:${pDi.x},${pDi.y}`);
+          });
+
+          function findIntersection(a_x, a_y, b_x, b_y, c_x, c_y, d_x, d_y) {
+            // 첫 번째 직선의 기울기를 계산합니다.
+            var slope1 = (b_y - a_y) / (b_x - a_x);
+            // 두 번째 직선의 기울기를 계산합니다.
+            var slope2 = (d_y - c_y) / (d_x - c_x);
+
+            // 두 직선이 평행인 경우, 교차 지점은 존재하지 않습니다.
+            if (slope1 === slope2) {
+              return null;
+            }
+
+            // 두 직선의 교차점의 x 좌표를 계산합니다.
+            var x = ((c_y - a_y) + (slope1 * a_x) - (slope2 * c_x)) / (slope1 - slope2);
+            // 교차점의 y 좌표를 계산합니다.
+            var y = slope1 * (x - a_x) + a_y;
+
+            return { x: x, y: y };
+          }
+        </script>
+      </svg>
+      <span class="caption">오목거울 작도 프로그램</span>
+      <span class="description"><a href="../../source/light_concave_mirror.svg" download>"light_concave_mirror.svg"</a>,
+        iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <div class="img-box" style="float:right; width:30%">
+      <img src="../../source/fastest_path.svg" />
+      <span class="caption">가장 빠른 경로</span>
+      <span class="description">"fastest_path.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      랜즈의 경우 조금 다른 방식으로 동작합니다.
+      빛은 물과 같은 (높은 밀도의) 매질에서 느려집니다. (반면 소리는 물과 같은 매질에서 빨라집니다.)
+      속도에 관한 성질은 [그림. 가장 빠른 경로]에서와 같이 가장 빠른 경로에 대한 다른 해답을 제시합니다.
+    </p>
+    <p>
+      가장 빠른 경로에 대한 해답은 매질이 달라지는 것과 같이 중력에 영향을 받습니다.
+      이를 <em>중력 렌즈 효과</em>라고 합니다.
+    </p>
+    <!-- <div class="img-box">
+      <img src="../../source/gravity_light.svg" />
+      <span class="caption">아웃포커스</span>
+      <span class="description">"gravity_light.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div> -->
+    <div class="img-box" style="clear:right; float:right">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d6/BlackHole_Lensing.gif/300px-BlackHole_Lensing.gif" />
+      <span class="caption">중력렌즈효과 시뮬레이션</span>
+      <span class="description">"BlackHole Lensing.gif", Falcorian, wikimedia.org, CC-BY-SA 3.0</span>
+    </div>
+    <p>
+      빛의 왜곡 성질을 이용하여 오목렌즈와 볼록렌즈를 그리면 다음과 같습니다. (렌즈의 두께는 임의로 작성되었습니다.)
+    </p>
+    <div class="img-box">
+      <?xml version="1.0" encoding="utf-8"?>
+      <svg id="convex-lens" viewBox="-500 -250 1000 500" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" style="cursor:none">
+        <clipPath id="total-size">
+          <rect width="1000" height="500" />
+        </clipPath>
+        <defs>
+          <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+            <path d="M-6-2L0 0-6 2" style="stroke:#000; fill:none" />
+          </marker>
+          <marker id="marker02" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+            <path d="M-6-2L0 0-6 2" style="stroke:#866; fill:none" />
+          </marker>
+        </defs>
+        <path
+          d="M-500 10H500M-500 20H500M-500 30H500M-500 40H500M-500 50H500M-500 60H500M-500 70H500M-500 80H500M-500 90H500M-500 100H500M-500 110H500M-500 120H500M-500 130H500M-500 140H500M-500 150H500M-500 160H500M-500 170H500M-500 180H500M-500 190H500M-500 200H500M-500 210H500M-500 220H500M-500 230H500M-500 240H500M-500 250H500
+    M-500-10H500M-500-20H500M-500-30H500M-500-40H500M-500-50H500M-500-60H500M-500-70H500M-500-80H500M-500-90H500M-500-100H500M-500-110H500M-500-120H500M-500-130H500M-500-140H500M-500-150H500M-500-160H500M-500-170H500M-500-180H500M-500-190H500M-500-200H500M-500-210H500M-500-220H500M-500-230H500M-500-240H500M-500-250H500    
+    M10-250V250M20-250V250M30-250V250M40-250V250M50-250V250M60-250V250M70-250V250M80-250V250M90-250V250M100-250V250M110-250V250M120-250V250M130-250V250M140-250V250M150-250V250M160-250V250M170-250V250M180-250V250M190-250V250M200-250V250M210-250V250M220-250V250M230-250V250M240-250V250M250-250V250M260-250V250M270-250V250M280-250V250M290-250V250M300-250V250M310-250V250M320-250V250M330-250V250M340-250V250M350-250V250M360-250V250M370-250V250M380-250V250M390-250V250M400-250V250M410-250V250M420-250V250M430-250V250M440-250V250M450-250V250M460-250V250M470-250V250M480-250V250M490-250V250M500-250V250
+    M-10-250V250M-20-250V250M-30-250V250M-40-250V250M-50-250V250M-60-250V250M-70-250V250M-80-250V250M-90-250V250M-100-250V250M-110-250V250M-120-250V250M-130-250V250M-140-250V250M-150-250V250M-160-250V250M-170-250V250M-180-250V250M-190-250V250M-200-250V250M-210-250V250M-220-250V250M-230-250V250M-240-250V250M-250-250V250M-260-250V250M-270-250V250M-280-250V250M-290-250V250M-300-250V250M-310-250V250M-320-250V250M-330-250V250M-340-250V250M-350-250V250M-360-250V250M-370-250V250M-380-250V250M-390-250V250M-400-250V250M-410-250V250M-420-250V250M-430-250V250M-440-250V250M-450-250V250M-460-250V250M-470-250V250M-480-250V250M-490-250V250M-500-250V250"
+          style="fill:none; stroke:#eef; stroke-width:0.5" />
+        <path d="M-500 0H500" style="fill:none; stroke:black;" />
+
+        <!-- 볼록렌즈(초점 : 250) -->
+        <path d="M10-250q90 250 0 500h-20q-90-250 0-500z" style="fill:#eee7; stroke:#bbb" />
+
+        <!-- 가이드라인 -->
+        <g style="stroke-width:3">
+          <path id="lx_guideTop" d="M-500-80H0L990 250 " style="fill:none; stroke:#fdd" />
+          <path id="lx_guideTop2" d="M-510-250L0-80 " style="fill:none; stroke:#fdd; stroke-dasharray:5 2;" />
+          <path id="lx_guideDown" d="M-500 -250L500 250 " style="fill:none; stroke:#ddf" />
+          <!-- <path id="guideDown2" d="M500 250L1167 0 " style="fill:none; stroke:#ddf; stroke-dasharray:5 2;" /> -->
+        </g>
+
+        <!-- 커서 -->
+        <g style="stroke-width:3">
+          <path id="lx_origin" d="M-160 0V-80" marker-end="url(#marker01)" style="fill:none; stroke:#000;" />
+          <path id="lx_dest" d="M-480 0V-240 " marker-end="url(#marker02)" style="fill:none; stroke:#866;" />
+        </g>
+
+        <!-- 초점 -->
+        <ellipse id="lx_pF" cx="240" cy="0" rx="2" ry="2" style="fill:#000" />
+        <ellipse id="lx_pFn" cx="-240" cy="0" rx="2" ry="2" style="fill:#000" />
+
+        <!-- 원점 -->
+        <ellipse id="pO" cx="0" cy="0" rx="2" ry="2" style="fill:#000" />
+
+        <text id="lx_pA" x="0" y="-80">A(0,-80)</text>
+        <text id="lx_pS" x="-160" y="-90" style="text-anchor:middle">S(-160, -80)</text>
+        <text id="lx_pD" x="-480" y="20" style="text-anchor:middle">x3.00</text>
+        <text x="2" y="16">O(0, 0)</text>
+        <text x="252" y="16">f(0, 240)</text>
+      </svg>
+      <script>
+        var svg_ccvlen = document.getElementById("convex-lens");
+        var lx_pS = { ctx: document.getElementById('lx_pS'), x: 0, y: 0, text: "" };
+        var lx_pD = { ctx: document.getElementById('lx_pD'), x: 0, y: 0, text: "", d: "", dest: document.getElementById('lx_dest') };
+        var lx_pA = { ctx: document.getElementById('lx_pA'), x: 0, y: 0, text: "" };
+        var lx_f = { x: 240, y: 0 };
+        var lx_o = { x: 500, y: 250 };
+        var view = { x1: -500, y1: -250, x2: 500, y2: 250 };
+        var e = { clientX: 340, clientY: 170 }
+
+        svg_ccvlen.addEventListener("mousemove", e => { lx_draw(e) });
+
+        function lx_draw(e) {
+          lx_pS.x = Math.round(e.clientX - svg_ccvlen.getClientRects()[0].x) - lx_o.x;
+          lx_pS.y = Math.round(e.clientY - svg_ccvlen.getClientRects()[0].y) - lx_o.y;
+          if (lx_pS.y == 0 || lx_pS.x == 0)
+            return;
+
+          // 기본 화살표
+          document.getElementById('lx_origin').setAttribute('d', `M${lx_pS.x} 0V${lx_pS.y}`);
+
+          // 변수 초기화
+          lx_pA.x = 0;
+          lx_pA.y = lx_pS.y;
+          lx_pA.text = `A(${lx_pA.x.toFixed(0)},${lx_pA.y})`;
+
+          lx_pA.ctx.setAttribute('x', lx_pA.x + 5);
+          lx_pA.ctx.setAttribute('y', lx_pA.y + 5);
+          lx_pA.ctx.textContent = lx_pA.text;
+
+          lx_pS.ctx.setAttribute('x', lx_pS.x);
+          lx_pS.ctx.setAttribute('y', (lx_pS.y > 0) ? lx_pS.y + 12 : lx_pS.y - 10);
+          lx_pS.text = `S(${lx_pS.x},${lx_pS.y})`;
+          lx_pS.ctx.textContent = lx_pS.text;
+
+          // top가이드라인 그리기(빨)
+          TopS = (lx_f.x - lx_pA.x) / lx_pS.y * lx_o.y + lx_f.x;
+          TopE = -(lx_f.x - lx_pA.x) / lx_pS.y * lx_o.y + lx_f.x;
+          if (lx_pS.y > 0) {
+            document.getElementById('lx_guideTop').setAttribute('d', `M${view.x1} ${lx_pS.y}H0L${TopS} ${view.y1}`);
+            document.getElementById('lx_guideTop2').setAttribute('d', `M${TopE} ${view.y2}L0 ${lx_pA.y}`);
+          } else {
+            document.getElementById('lx_guideTop').setAttribute('d', `M${view.x1} ${lx_pS.y}H0L${TopE} ${view.y2}`);
+            document.getElementById('lx_guideTop2').setAttribute('d', `M${TopS} ${view.y1}L0 ${lx_pA.y}`);
+          }
+
+          // down가이드라인 그리기(파랑)
+          DownS = (-lx_pS.x) / lx_pS.y * lx_o.y;
+          DownE = -(-lx_pS.x) / lx_pS.y * lx_o.y;
+          document.getElementById('lx_guideDown').setAttribute('d', `M${DownS} ${view.y1}L${DownE} ${view.y2}`);
+
+          // 교차점 구하기
+          retXY = findIntersection(TopS, view.y1, TopE, view.y2, DownS, view.y1, DownE, view.y2);
+          if (retXY == null) return;
+
+          if (view.x1 > retXY.x)
+            lx_pD.d = `M${view.x1 + 50} ${(retXY.y > 0) ? 20 : -20}h-30`;
+          else if (retXY.x > view.x2)
+            lx_pD.d = `M${view.x2 - 50} ${(retXY.y > 0) ? 20 : -20}h30`;
+          else
+            lx_pD.d = `M${retXY.x} 0V${retXY.y}`;
+          lx_pD.dest.setAttribute('d', lx_pD.d);
+
+          lx_pD.x = view.x1 > retXY.x ? (view.x1 + 30) : (retXY.x > view.x2 ? (view.x2 - 30) : retXY.x);
+          lx_pD.y = retXY.y > 0 ? -5 : 15;
+          lx_pD.text = `x${Math.abs(retXY.y / lx_pS.y).toFixed(2)}`;
+          lx_pD.ctx.setAttribute('x', lx_pD.x);
+          lx_pD.ctx.setAttribute('y', lx_pD.y);
+          lx_pD.ctx.textContent = lx_pD.text;
+        }
+
+        function findIntersection(a_x, a_y, b_x, b_y, c_x, c_y, d_x, d_y) {
+          // 첫 번째 직선의 기울기를 계산합니다.
+          var slope1 = (b_y - a_y) / (b_x - a_x);
+          // 두 번째 직선의 기울기를 계산합니다.
+          var slope2 = (d_y - c_y) / (d_x - c_x);
+
+          // 두 직선이 평행인 경우, 교차 지점은 존재하지 않습니다.
+          if (slope1 === slope2) {
+            return null;
+          }
+
+          // 두 직선의 교차점의 x 좌표를 계산합니다.
+          var x = ((c_y - a_y) + (slope1 * a_x) - (slope2 * c_x)) / (slope1 - slope2);
+          // 교차점의 y 좌표를 계산합니다.
+          var y = slope1 * (x - a_x) + a_y;
+
+          return { x: x, y: y };
+        }
+      </script>
+
+      <span class="caption">볼록렌즈</span>
+      <span class="description"><a href="../../source/light_convex_lens.svg" download>"light_convex_lens.svg"</a>,
+        iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      오목렌즈의 작도방법입니다.
+    </p>
+    <div class="img-box" style="clear:both">
+      <?xml version="1.0" encoding="utf-8"?>
+      <svg id="concave-lens" viewBox="-500 -250 1000 500" xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink" style="cursor:none">
+        <clipPath id="total-size">
+          <rect width="1000" height="500" />
+        </clipPath>
+        <defs>
+          <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+            <path d="M-6-2L0 0-6 2" style="stroke:#000; fill:none" />
+          </marker>
+          <marker id="marker02" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+            <path d="M-6-2L0 0-6 2" style="stroke:#866; fill:none" />
+          </marker>
+        </defs>
+        <path
+          d="M-500 10H500M-500 20H500M-500 30H500M-500 40H500M-500 50H500M-500 60H500M-500 70H500M-500 80H500M-500 90H500M-500 100H500M-500 110H500M-500 120H500M-500 130H500M-500 140H500M-500 150H500M-500 160H500M-500 170H500M-500 180H500M-500 190H500M-500 200H500M-500 210H500M-500 220H500M-500 230H500M-500 240H500M-500 250H500
+    M-500-10H500M-500-20H500M-500-30H500M-500-40H500M-500-50H500M-500-60H500M-500-70H500M-500-80H500M-500-90H500M-500-100H500M-500-110H500M-500-120H500M-500-130H500M-500-140H500M-500-150H500M-500-160H500M-500-170H500M-500-180H500M-500-190H500M-500-200H500M-500-210H500M-500-220H500M-500-230H500M-500-240H500M-500-250H500    
+    M10-250V250M20-250V250M30-250V250M40-250V250M50-250V250M60-250V250M70-250V250M80-250V250M90-250V250M100-250V250M110-250V250M120-250V250M130-250V250M140-250V250M150-250V250M160-250V250M170-250V250M180-250V250M190-250V250M200-250V250M210-250V250M220-250V250M230-250V250M240-250V250M250-250V250M260-250V250M270-250V250M280-250V250M290-250V250M300-250V250M310-250V250M320-250V250M330-250V250M340-250V250M350-250V250M360-250V250M370-250V250M380-250V250M390-250V250M400-250V250M410-250V250M420-250V250M430-250V250M440-250V250M450-250V250M460-250V250M470-250V250M480-250V250M490-250V250M500-250V250
+    M-10-250V250M-20-250V250M-30-250V250M-40-250V250M-50-250V250M-60-250V250M-70-250V250M-80-250V250M-90-250V250M-100-250V250M-110-250V250M-120-250V250M-130-250V250M-140-250V250M-150-250V250M-160-250V250M-170-250V250M-180-250V250M-190-250V250M-200-250V250M-210-250V250M-220-250V250M-230-250V250M-240-250V250M-250-250V250M-260-250V250M-270-250V250M-280-250V250M-290-250V250M-300-250V250M-310-250V250M-320-250V250M-330-250V250M-340-250V250M-350-250V250M-360-250V250M-370-250V250M-380-250V250M-390-250V250M-400-250V250M-410-250V250M-420-250V250M-430-250V250M-440-250V250M-450-250V250M-460-250V250M-470-250V250M-480-250V250M-490-250V250M-500-250V250"
+          style="fill:none; stroke:#eef; stroke-width:0.5" />
+        <path d="M-500 0H500" style="fill:none; stroke:black;" />
+
+        <!-- 볼록렌즈(초점 : 240) -->
+        <path d="M50-250q-90 250 0 500h-100q90-250 0-500z" style="fill:#eee7; stroke:#bbb" />
+
+        <!-- 가이드라인 -->
+        <g style="stroke-width:3">
+          <path id="lv_guideTop" d="M-500-150H0L160-250 " style="fill:none; stroke:#fdd" />
+          <path id="lv_guideTop2" d="M-640 250L0-150 " style="fill:none; stroke:#fdd; stroke-dasharray:5 2;" />
+          <path id="lv_guideDown" d="M-500 -250L500 250 " style="fill:none; stroke:#ddf" />
+        </g>
+
+        <!-- 커서 -->
+        <g style="stroke-width:3">
+          <path id="lv_origin" d="M-300 0V-150" marker-end="url(#marker01)" style="fill:none; stroke:#000;" />
+          <path id="lv_dest" d="M-133 0V-67 " marker-end="url(#marker02)" style="fill:none; stroke:#866;" />
+        </g>
+
+        <!-- 초점 -->
+        <ellipse id="lv_pF" cx="240" cy="0" rx="2" ry="2" style="fill:#000" />
+        <ellipse id="lv_pFn" cx="-240" cy="0" rx="2" ry="2" style="fill:#000" />
+
+        <!-- 원점 -->
+        <ellipse id="lv_pO" cx="0" cy="0" rx="2" ry="2" style="fill:#000" />
+
+        <text id="lv_pA" x="5" y="-145">A(0,-150)</text>
+        <text id="lv_pS" x="-300" y="-155" style="text-anchor:middle">S(-300, -150)</text>
+        <text id="lv_pD" x="-133" y="20" style="text-anchor:middle">x0.44</text>
+        <text x="2" y="16">O(0, 0)</text>
+        <text x="252" y="16">f(0, 240)</text>
+      </svg>
+      <script>
+        var lv_svg = document.getElementById("concave-lens");
+        var lv_pS = { ctx: document.getElementById('lv_pS'), x: 0, y: 0, text: "" };
+        var lv_pD = { ctx: document.getElementById('lv_pD'), x: 0, y: 0, text: "", d: "", dest: document.getElementById('lv_dest') };
+        var lv_pA = { ctx: document.getElementById('lv_pA'), x: 0, y: 0, text: "" };
+        var lv_f = { x: 240, y: 0 };
+        var lv_o = { x: 500, y: 250 };
+        var lv_view = { x1: -500, y1: -250, x2: 500, y2: 250 };
+        var lv_e = { clientX: 200, clientY: 100 }
+
+        lv_svg.addEventListener("mousemove", e => { lv_draw(e) });
+
+        function lv_draw(e) {
+          lv_pS.x = Math.round(e.clientX - lv_svg.getClientRects()[0].x) - lv_o.x;
+          lv_pS.y = Math.round(e.clientY - lv_svg.getClientRects()[0].y) - lv_o.y;
+          if (lv_pS.y == 0 || lv_pS.x == 0)
+            return;
+
+          // 기본 화살표
+          document.getElementById('lv_origin').setAttribute('d', `M${lv_pS.x} 0V${lv_pS.y}`);
+
+          // 변수 초기화
+          lv_pA.x = 0;
+          lv_pA.y = lv_pS.y;
+          lv_pA.text = `A(${lv_pA.x.toFixed(0)},${lv_pA.y})`;
+
+          lv_pA.ctx.setAttribute('x', lv_pA.x + 5);
+          lv_pA.ctx.setAttribute('y', lv_pA.y + 5);
+          lv_pA.ctx.textContent = lv_pA.text;
+
+          lv_pS.ctx.setAttribute('x', lv_pS.x);
+          lv_pS.ctx.setAttribute('y', (lv_pS.y > 0) ? lv_pS.y + 12 : lv_pS.y - 10);
+          lv_pS.text = `S(${lv_pS.x},${lv_pS.y})`;
+          lv_pS.ctx.textContent = lv_pS.text;
+
+          // top가이드라인 그리기(빨)
+          TopS = -(lv_f.x - lv_pA.x) / lv_pS.y * lv_o.y - lv_f.x;
+          TopE = (lv_f.x - lv_pA.x) / lv_pS.y * lv_o.y - lv_f.x;
+          if (lv_pS.y > 0) {
+            document.getElementById('lv_guideTop').setAttribute('d', `M${lv_view.x1} ${lv_pS.y}H0L${TopE} ${lv_view.y2}`);
+            document.getElementById('lv_guideTop2').setAttribute('d', `M${TopS} ${lv_view.y1}L0 ${lv_pA.y}`);
+          } else {
+            document.getElementById('lv_guideTop').setAttribute('d', `M${lv_view.x1} ${lv_pS.y}H0L${TopS} ${lv_view.y1}`);
+            document.getElementById('lv_guideTop2').setAttribute('d', `M${TopE} ${lv_view.y2}L0 ${lv_pA.y}`);
+          }
+
+          // down가이드라인 그리기(파랑)
+          DownS = (-lv_pS.x) / lv_pS.y * lv_o.y;
+          DownE = -(-lv_pS.x) / lv_pS.y * lv_o.y;
+          document.getElementById('lv_guideDown').setAttribute('d', `M${DownS} ${lv_view.y1}L${DownE} ${lv_view.y2}`);
+
+          // 교차점 구하기
+          retXY = findIntersection(TopS, lv_view.y1, TopE, lv_view.y2, DownS, lv_view.y1, DownE, lv_view.y2);
+          if (retXY == null) return;
+
+          if (lv_view.x1 > retXY.x)
+            lv_pD.d = `M${lv_view.x1 + 50} ${(retXY.y > 0) ? 20 : -20}h-30`;
+          else if (retXY.x > lv_view.x2)
+            lv_pD.d = `M${lv_view.x2 - 50} ${(retXY.y > 0) ? 20 : -20}h30`;
+          else
+            lv_pD.d = `M${retXY.x} 0V${retXY.y}`;
+          lv_pD.dest.setAttribute('d', lv_pD.d);
+
+          lv_pD.x = lv_view.x1 > retXY.x ? (lv_view.x1 + 30) : (retXY.x > lv_view.x2 ? (lv_view.x2 - 30) : retXY.x);
+          lv_pD.y = retXY.y > 0 ? -5 : 15;
+          lv_pD.text = `x${Math.abs(retXY.y / lv_pS.y).toFixed(2)}`;
+          lv_pD.ctx.setAttribute('x', lv_pD.x);
+          lv_pD.ctx.setAttribute('y', lv_pD.y);
+          lv_pD.ctx.textContent = lv_pD.text;
+        }
+
+        function findIntersection(a_x, a_y, b_x, b_y, c_x, c_y, d_x, d_y) {
+          // 첫 번째 직선의 기울기를 계산합니다.
+          var slope1 = (b_y - a_y) / (b_x - a_x);
+          // 두 번째 직선의 기울기를 계산합니다.
+          var slope2 = (d_y - c_y) / (d_x - c_x);
+
+          // 두 직선이 평행인 경우, 교차 지점은 존재하지 않습니다.
+          if (slope1 === slope2) {
+            return null;
+          }
+
+          // 두 직선의 교차점의 x 좌표를 계산합니다.
+          var x = ((c_y - a_y) + (slope1 * a_x) - (slope2 * c_x)) / (slope1 - slope2);
+          // 교차점의 y 좌표를 계산합니다.
+          var y = slope1 * (x - a_x) + a_y;
+
+          return { x: x, y: y };
+        }
+      </script>
+
+      <span class="caption">오목렌즈</span>
+      <span class="description">"<a href="../../source/light_concave_lens.svg" download>light_concave_lens.svg</a>",
+        iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+
+    <table class="all-td-left">
+      <caption>거울과 렌즈</caption>
+      <thead>
+        <tr>
+          <th>종류</th>
+          <th>결과</th>
+          <th>응용</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>볼록 거울</td>
+          <td>작게 보임</td>
+          <td>넓은 면을 봐야 할 때 (예: 커브길, 자동차 사이드미러 보조)</td>
+        </tr>
+        <tr>
+          <td>오목 거울</td>
+          <td>초점 안(부근): 크게 보임<br>
+            초점 밖(부근): 점점 작아짐(상이 뒤집힌다)
+          </td>
+          <td>자세히 봐야 할 때 (예: 화장거울)</td>
+        </tr>
+        <tr>
+          <td>볼록 렌즈</td>
+          <td>초점 안: 크게 보인다<br>
+            초점 밖: 점점 작게 보인다.(뒤집힌 상)
+          </td>
+          <td>돋보기, 망원경</td>
+        </tr>
+        <tr>
+          <td>오목 렌즈</td>
+          <td>작게 보인다.</td>
+          <td>각종 특수 망원경, 원시(먼거리)용 렌즈</td>
+        </tr>
+    </table>
+
+    <h1>색</h1>
+    <p>
+      우리가 보는 빛은 <em>전자기파</em>(electromagnetic wave) 중 극히 일부지만, 그 안에 여러 가지 색이 혼합되어 있습니다.
+      우리가 볼 수 있는 빛을 <em>가시광선</em>(Visible light)라고 합니다.
+      가시광선은 프리즘으로 분리시킬 수 있습니다.
+    </p>
+    <div class="img-box" style="width:100%">
+      <img src="../../source/Linear_visible_spectrum.svg" style="width:100%" />
+      <span class="caption">가시광선 스펙트럼</span>
+      <span class="description">
+        2차 수정 됨- "Linear_visible_spectrum.svg", Gringer, wikipedia.org, 퍼블릭 도메인<br>
+        "https://cdn.kastatic.org/ka-perseus-images/1f69f2373d9136ed9a061a3a1b64cbffe3abc9b2.png",
+        "1f69f2373d9136ed9a061a3a1b64cbffe3abc9b2.png",
+        Image modified from "Electromagnetic spectrum(Opens in a new window)," by Inductiveload (CC BY-SA 3.0), and "EM
+        spectrum," by Philip Ronan (CC BY-SA 3.0). The modified image is licensed under a CC BY-SA 3.0 license
+      </span>
+    </div>
+    <p>
+      위 스펙트럼을 통해 우리는 빛이 파동의 특징이 있음을 볼 수 있습니다.
+      파동은 주파수(Frequency)와 진폭(Apmlitude), 위상(Phase)으로 정의됩니다.
+      주파수의 정의는 1초 동안 진동 횟수를 의미하며, 파장과 주파수는 역수관계입니다.
+      [그림. 가시광선 스펙트럼]에서 m, mm, nm는 파장의 길이를 의미합니다.
+      <u>주파수(진폭)가 달라지면, 다른 색으로 보이고, 진폭이 커지면 더 강렬하게 느낍니다.</u>
+      동기(시간 기준)를 맞춘 컴퓨터는 위상의 변조를 이해할 수 있지만, 우리가 위상의 변조를 느끼지는 못합니다.
+    </p>
+    \[주파수 = {1 \over 파장}\]
+    <div class="img-box" style="width:70%; margin:0 auto">
+      <img src="../../source/definitionOfWave.svg" />
+      <span class="caption">파동의 정의</span>
+      <span class="description">"definitionOfWave.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <div class="img-box" style="float:right; width:30%">
+      <img src="../../source/music_frequency.svg" />
+      <span class="caption">악보와 주파수</span>
+      <span class="description">"music_frequency.svg", iseohyun, 2024, CC-BY-SA 4.0<br>
+        참고: "GClef.svg", ? , wikimedia.org, 퍼블릭 도메인<br>
+        "Dotted note samples.svg", Wahoofive,wikipedia.org, 퍼블릭 도메인
+      </span>
+    </div>
+    <p>
+      물체의 진동을 나타내는 소리의 경우, 주파수가 올라가면 더 높은 소리로 인식하고, 진폭이 올라가면 크게 들립니다.
+      인간이 들을 수 있는 주파수를 <em>가청주파수</em>(audio frequency)라고 하며 20Hz ~ 20kHz 대역으로 알려져 있습니다.
+      이 영역은 일반적으로 나이가 들수록 좁아집니다(진폭을 늘리면 들을 수는 있습니다).
+    </p>
+    <div class="img-box" style="float:right; clear:both;">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/8/8f/CIE_1931_XYZ_Color_Matching_Functions.svg" />
+      <span class="caption">원추세포 빛 민감도</span>
+      <span class="description">"CIE_1931_XYZ_Color_Matching_Functions.svg", Quibik , wikimedia.org, 퍼블릭 도메인</span>
+    </div>
+    <div class="img-box" style="clear:both; float:right">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/5d/Seurat-La_Parade_detail.jpg/170px-Seurat-La_Parade_detail.jpg" />
+      <span class="caption">포인티니즘, Seurat 의 '서커스 퍼레이드'</span>
+      <span class="description">"Seurat-La_Parade_detail.jpg", Georges Seurat - Metropolitan Museum of Art,
+        wikipedia.org, Public Domain</span>
+    </div>
+    <p>
+      이 때, 우리가 빨간 물체를 볼 수 있는 것은 물체가 빨간색 빛만 반사시키기 때문입니다.
+      우리 눈은 빨강, 녹색, 파랑의 빛 수용체(원추세포, Cone cell)로 색을 인식합니다. [그림. 원추세포 빛 민감도]는 우리의 눈이 어떤 방식으로 색을 인식하는지 보여줍니다.
+    </p>
+    <p>
+      가시광선 스펙트럼은 일렬로 늘어선 색의 나열을 보여줍니다. 하지만 색상환에서 우리는 붉은색과 보라색이 매우 가까운 색으로 인식합니다. 우리는 3종류의 수용체만으로 수많은 색을 인식하는 방식에 대해서
+      고민해야 합니다.
+    </p>
+    <div class="img-box">
+      <img
+        src="//upload.wikimedia.org/wikipedia/commons/thumb/3/3e/MunsellColorWheel.svg/300px-MunsellColorWheel.svg.png" />
+      <span class="caption">먼셀의 20 색상환</span>
+      <span class="description">"MunsellColorWheel.svg", Thenoizz, wikimedia.org, CC-BY-SA 3.0</span>
+    </div>
+    <p>
+      예를 들어 노란색을 인식하는 방법은 빨강과 초록 수용체가 강하게 반응하기 때문입니다. 반대로 빨강과 초록빛이 섞였을 때, 노란빛이라고 생각합니다. 회화에서 점묘법(Pointillism)은 가까이서
+      보았을 때 각각의 점으로 보이지만, 멀리서 바라보았을 때, 혼합된 색으로 인식하도록 합니다. 이는 TV나 모니터의 기술과 비슷한 기술입니다.
+    </p>
+
+    <h2>3원색</h2>
+    <p>
+      TV나 모니터와 같이 직접 발광하는 물체는 우리 눈에 직접 빛을 조사하면 되지만,
+      인쇄물은 전체 빛을 종이에 투사한 후에 반사되는 빛을 이용해야 하기 때문에, 혼합되는 규칙이 조금 다릅니다.
+      모니터의 경우 가산혼합(좌), 인쇄물의 경우 감산혼합(우)을 합니다.
+    </p>
+    <div class="img-box" style="width:70%;margin:0 auto">
+      <img src="../../source/primary_colors.svg" />
+      <span class="caption">삼원색</span>
+      <span class="description">"primary_colors.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <span class="tutorial" style="display: none;">
+      위 그림에서 주파수가 더해지는 방식은 각각의 성분이 각각 더해진다는 의미이지, 없던 주파수가 새로 생기는 것이 아닙니다.
+    </span>
+
+
+    <h1>단어</h1>
+    <style>
+      table.vocabulary td:nth-child(1) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(3) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(5) {
+        border-right: 2px solid;
+      }
+    </style>
+    <table class="all-td-left vocabulary">
+      <caption>영단어</caption>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>영어</th>
+          <th>국어</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>Line of sight</td>
+          <td>시계선</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>apparent diameter</td>
+          <td>시지름</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>solar Eclipse</td>
+          <td>일식</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>lunar eclipse</td>
+          <td>월식</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>image</td>
+          <td>상</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>virtual image</td>
+          <td>허상</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>reflection</td>
+          <td>반사</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>focus</td>
+          <td>초점</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>convex lens</td>
+          <td>볼록 렌즈</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>concave lens</td>
+          <td>오목 렌즈</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>convex mirror</td>
+          <td>볼록 거울</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>concave mirror</td>
+          <td>오목 거울</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>visible light</td>
+          <td>가시광선</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>gamma rays</td>
+          <td>감마선</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>x-ray</td>
+          <td>x 선</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>ultraviolet</td>
+          <td>자외선</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>infrared</td>
+          <td>적외선</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>radio waves</td>
+          <td>전파대역</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>frequency</td>
+          <td>주파수</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>apmlitude</td>
+          <td>진폭</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>phase</td>
+          <td>위상</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>audio frequency</td>
+          <td>가청주파수</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>cone cell</td>
+          <td>원추세포(빛 수용세포)</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>pointillism</td>
+          <td>점묘법</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>primary color</td>
+          <td>원색</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>퀴즈</h1>
+    <ul>
+      <li>빛은 (기본적으로) 직진합니다.
+        (<button class="quiz2 group1 answer">O</button>, <button class="quiz2 group1">X</button>)</li>
+      <li><button class="quiz">시지름</button>의 크기를 가늠하여 물체의 크기를 알 수 있습니다.</li>
+      <li>우리의 눈은 빛의 출발점으로 여겨지는 곳에서 <button class="quiz">상</button>을 봅니다.</li>
+      <li>
+        거울에 들어가는 빛이 이루는 각을 <button class="quiz">입사각</button>
+        거울에서 반사된 빛이 이루는 각을 <button class="quiz">반사각</button>
+        이라 하며, 이 두 각은 항상 같습니다.
+      </li>
+      <li>
+        빛이 직진하는 것보다 더 빠른 길이 존재한다면 <button class="quiz">굴절</button>합니다.
+      </li>
+      <li>
+        빛은 물과 같은 (높은 밀도의) 매질에서
+        (<button class="quiz2 group2">빨라집니다</button>,
+        <button class="quiz2 group2 answer">느려집니다.</button>).
+      </li>
+      <li>
+        소리는 물과 같은 (높은 밀도의) 매질에서
+        (<button class="quiz2 group3 answer">빨라집니다</button>,
+        <button class="quiz2 group3">느려집니다.</button>).
+      </li>
+      <li>
+        빛은 중력으로 굴절될 수 있으며, 이를 <button class="quiz">중력렌즈효과</button>라고 합니다.
+      </li>
+      <li>
+        빛은 <button class="quiz">전자기파</button>의 일종으로,
+        우리가 볼 수 있는 영역을 <button class="quiz">가시 광선</button>영역이라고 합니다.
+      </li>
+      <li>
+        빛은 <button class="quiz">주파수</button>에 의해 다양한 색이 나옵니다.
+      </li>
+      <li>
+        파동은 1초당 몇 번의 파장의 횟수인 <button class="quiz">주파수</button>,
+        파장의 크기인 <button class="quiz">진폭</button>,
+        파장이 밀려난 각도를 나타내는 <button class="quiz">위상</button>으로 기술할 수 있습니다.
+      </li>
+      <li>
+        소리도 <button class="quiz">파동</button>으로 이루어져 있으며,
+        사람이 들을 수 있는 주파수를 <button class="quiz">가청주파수</button>라고 합니다.
+      </li>
+      <li>
+        사람은 <button class="quiz">빨강</button>, <button class="quiz">녹색</button>,
+        <button class="quiz">파랑</button> 이 3개 색을 기본적으로 인지합니다.
+      </li>
+    </ul>
   </article>
 </body>
 

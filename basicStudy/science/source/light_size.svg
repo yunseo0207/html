@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 230 150" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <symbol id="symbol03" viewBox="0 0 50 100">
+      <path
+        d="M31 18C31 10 21 12 21 17C21 21 24 21 24 23C26 25 22 26 20 26C14 25 12 12 12 10C12 8 14 7 13 5C12 3 9 3 8 5C6 7 9 8 9 10C9 13 9 28 17 30C20 31 24 53 21 59C16 70 21 88 20 91C20 94 12 94 13 96C15 98 25 97 25 95C25 92 24 83 24 76C25 70 26 57 28 57C30 57 32 71 32 77C32 83 30 93 31 94C31 95 36 99 38 99C41 99 42 98 39 96C37 94 36 95 36 92C36 89 37 80 38 77C38 73 38 65 34 55C31 48 35 35 35 35C35 35 38 39 39 42C39 45 39 51 39 51C39 51 37 51 36 53C35 55 37 60 40 57C42 55 41 55 42 53C43 48 42 43 42 43C42 43 40 32 38 28C35 25 27 26 28 23C28 20 31 22 31 18Z"
+        style="fill:black; stroke:none" />
+    </symbol>
+    <clipPath id="clipPath01">
+      <path d="M100 50L20 17a15 40 0 0 0 0 68z" />
+    </clipPath>
+    <symbol id="symbol02" viewBox="0 0 100 100">
+      <path d="M100 50L20 17a15 40 0 0 0 0 68z" style="stroke:none; fill:#fff" />
+      <g style="stroke:#000; fill:none">
+        <path d="M10 10q75 20 90 40 -25 20 -90 40" style="stroke-width:5;" />
+        <path d="M16 7q75 20 90 40" />
+        <path d="M20 17a15 40 0 0 0 0 68" />
+        <g style="fill:#000">
+          <path d="M18 11q0-6 5-9q-2 6 0 12" />
+          <path d="M28 16q0-6 5-9q-2 6 0 12" />
+          <path d="M38 22q0-6 5-9q-2 6 0 12" />
+          <path d="M18 89q0 6 5 7q-4-6-2-9" />
+          <path d="M25 86q0 6 5 7q-4-6-2-9" />
+        </g>
+        <ellipse rx="25" ry="25" cx="13" cy="48" clip-path="url(#clipPath01)" style="fill:#000" />
+        <ellipse rx="30" ry="30" cx="13" cy="48" clip-path="url(#clipPath01)" style="stroke-width:3;" />
+        <ellipse rx="10" ry="10" cx="15" cy="40" clip-path="url(#clipPath01)" style="fill:#fff;" />
+        <ellipse rx="5" ry="5" cx="25" cy="48" clip-path="url(#clipPath01)" style="fill:#fff;stroke: none" />
+      </g>
+      <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+        <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#000" />
+      </marker>
+    </symbol>
+    <linearGradient id="grad02" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#FF0" />
+      <stop offset="0.8" stop-color="#FF00" />
+    </linearGradient>
+  </defs>
+  <rect x="0" y="50" width="220" height="50" style="stroke:0;fill:#f8f8f8" />
+  <g style="stroke:#ddd;stroke-width:0.5; fill:url(#grad02)">
+    <path d="M120 2L20 22 120 42" />
+    <path d="M120 52L20 72 120 92" fill="none" />
+    <path d="M200 52L20 72 200 92" />
+    <path d="M200 102L20 122 200 142" fill="none" />
+    <path d="M200 102L70 122 200 142" />
+    <path d="M200 102L150 122 200 142" fill="none" />
+  </g>
+  <g style="stroke:#F00;fill:none;">
+    <path d="M45 17a20 20 0 0 1 0 10" />
+    <path d="M46 69a20 20 0 0 1 0 6" />
+    <path d="M97 118a20 20 0 0 1 0 8" />
+  </g>
+  <g style="font-size:5;fill:#888">
+    <text x="12" y="40">
+      <tspan fill="red">시지름</tspan>: 물체의 크기를 가늠한다
+    </text>
+    <text x="12" y="90">
+      <tspan fill="red">시지름</tspan>이 작다: 작게 보인다
+    </text>
+    <text x="30" y="141">
+      <tspan fill="red">시지름</tspan>이 커진다: 커지는 것처럼 보인다
+    </text>
+    <text x="139" y="70">물체가 멀어진다</text>
+    <text x="12" y="108">내가 다가간다</text>
+  </g>
+  <g style="stroke:#000; fill:none;">
+    <path d="M135 72h50" marker-end="url(#marker01)" />
+    <path d="M10 110h40" marker-end="url(#marker01)" />
+  </g>
+  <use width="40" height="40" transform="matrix(1, 0, 0, 1, 100, 2)" xlink:href="#symbol03" />
+  <use width="40" height="40" transform="matrix(1, 0, 0, 1, 180, 52)" xlink:href="#symbol03" />
+  <use width="40" height="40" transform="matrix(1, 0, 0, 1, 100, 52)" xlink:href="#symbol03" opacity="0.1" />
+  <use width="40" height="40" transform="matrix(1, 0, 0, 1, 180, 102)" xlink:href="#symbol03" />
+  <use width="15" height="15" transform="matrix(-1, 0, 0, 1, 20, 15)" xlink:href="#symbol02" />
+  <use width="15" height="15" transform="matrix(-1, 0, 0, 1, 20, 65)" xlink:href="#symbol02" />
+  <use width="15" height="15" transform="matrix(-1, 0, 0, 1, 20, 115)" xlink:href="#symbol02" opacity="0.1" />
+  <use width="15" height="15" transform="matrix(-1, 0, 0, 1, 70, 115)" xlink:href="#symbol02" />
+  <use width="15" height="15" transform="matrix(-1, 0, 0, 1, 150, 115)" xlink:href="#symbol02" opacity="0.1" />
+</svg>
