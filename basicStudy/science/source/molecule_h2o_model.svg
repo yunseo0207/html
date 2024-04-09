@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient id="grad01" cx="0.3" cy="0.3" fx="0.3" fy="0.3">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#F00" />
+    </radialGradient>
+    <radialGradient id="grad02" cx="0.3" cy="0.3" fx="0.3" fy="0.3">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#aaa" />
+    </radialGradient>
+    <clipPath id="clippath01">
+      <path d="M84 44a40 40 0 0 0 39 42a60 60 0 0 1 0 28a40 40 0 0 0-39 42A60 60 0 1 1 84 44"
+        style="fill:none;stroke:#FFF" />
+    </clipPath>
+  </defs>
+  <ellipse cx="110" cy="60" rx="30" ry="30" style="stroke:#000; fill:url(#grad02)" />
+  <ellipse cx="110" cy="140" rx="30" ry="30" style="stroke:#000; fill:url(#grad02)" />
+  <ellipse cx="65" cy="100" rx="60" ry="60" style="stroke:#000; fill:url(#grad01)" clip-path="url(#clippath01)" />
+  <g style="font-size:40">
+    <text x="32" y="110">O</text>
+    <text x="100" y="70">H</text>
+    <text x="100" y="160">H</text>
+    <text x="10" y="50">-</text>
+    <text x="10" y="170">-</text>
+    <text x="127" y="37">+</text>
+    <text x="127" y="187">+</text>
+  </g>
+</svg>

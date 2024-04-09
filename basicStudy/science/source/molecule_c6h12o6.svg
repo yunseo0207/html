@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 -27 178 152" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="fill:#000; stroke:none; font-size:20">
+    <text x="0" y="20">H</text>
+    <text x="0" y="50">O</text>
+    <text x="27" y="50">C</text>
+    <text x="54" y="50">C</text>
+    <text x="54" y="-10">H</text>
+    <text x="54" y="20">O</text>
+    <text x="81" y="50">C</text>
+    <text x="81" y="80">O</text>
+    <text x="81" y="110">H</text>
+    <text x="108" y="50">C</text>
+    <text x="108" y="-10">H</text>
+    <text x="108" y="20">O</text>
+    <text x="135" y="50">C</text>
+    <text x="135" y="80">O</text>
+    <text x="135" y="110">H</text>
+    <text x="162" y="50">C</text>
+    <text x="162" y="20">O</text>
+    <text x="162" y="80">H</text>
+  </g>
+  <path
+    d="M15 43h10M7 23v10M42 43h10M61 23v10M61-7v10M69 43h10M88 82v10M88 53v10M96 43h10M115 23v10M115-7v10M123 43h10M142 82v10M142 53v10M150 43h10M169 53v10M167 23v10M172 23v10"
+    style="fill:none;stroke:black" />
+</svg>

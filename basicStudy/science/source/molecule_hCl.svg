@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="fill:#000; stroke:none; font-size:20">
+    <text x="25" y="35">H</text>
+    <text x="55" y="35">Cl</text>
+  </g>
+  <path d="M42 28h10" style="fill:none;stroke:black"/>
+</svg>

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 175 82" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="fill:#000; stroke:none; font-size:20">
+    <text x="0" y="50">H</text>
+    <text x="27" y="50">C</text>
+    <text x="27" y="20">H</text>
+    <text x="27" y="80">H</text>
+    <text x="54" y="50">C</text>
+    <text x="54" y="20">H</text>
+    <text x="54" y="80">H</text>
+    <text x="81" y="50">C</text>
+    <text x="81" y="20">H</text>
+    <text x="81" y="80">H</text>
+    <text x="108" y="50">C</text>
+    <text x="108" y="20">H</text>
+    <text x="108" y="80">H</text>
+    <text x="135" y="50">C</text>
+    <text x="135" y="20">H</text>
+    <text x="135" y="80">H</text>
+    <text x="162" y="50">H</text>
+    
+  </g>
+  <path d="M15 43h10M34 23v10M34 53v10M42 43h10M61 23v10M61 53v10M69 43h10M88 23v10M88 53v10M96 43h10M115 23v10M115 53v10M123 43h10M142 23v10M142 53v10M150 43h10" style="fill:none;stroke:black"/>
+</svg>

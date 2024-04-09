@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="fill:#000; stroke:none; font-size:20">
+    <text x="40" y="25">O</text>
+    <text x="20" y="45">H</text>
+    <text x="61" y="45">H</text>
+  </g>
+  <path d="M41 25l-6 6M55 25l6 6" style="fill:none;stroke:black"/>
+</svg>

@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 500 115" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <radialGradient id="grad01" cx="0.3" cy="0.3" fx="0.3" fy="0.3">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#ddd" />
+    </radialGradient>
+    <radialGradient id="grad02" cx="0.3" cy="0.3" fx="0.3" fy="0.3">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#F00" />
+    </radialGradient>
+    <radialGradient id="grad03" cx="0.3" cy="0.3" fx="0.3" fy="0.3">
+      <stop offset="0" stop-color="#fff" />
+      <stop offset="1" stop-color="#00F" />
+    </radialGradient>
+    <radialGradient id="grad04" cx="0.3" cy="0.3" fx="0.3" fy="0.3">
+      <stop offset="0" stop-color="#999" />
+      <stop offset="1" stop-color="#222" />
+    </radialGradient>
+
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0 5 0 0-2" stroke="#800" fill="none" />
+    </marker>
+  </defs>
+  <!-- 원자모형(테두리) 5개 -->
+  <g style="stroke:none; fill:url(#grad01)">
+    <ellipse cx="50" cy="50" rx="45" ry="45" stroke="#888" />
+    <ellipse cx="150" cy="50" rx="45" ry="45" stroke="#888" />
+    <ellipse cx="250" cy="50" rx="45" ry="45" />
+    <ellipse cx="350" cy="50" rx="45" ry="45" />
+    <ellipse cx="450" cy="50" rx="45" ry="45" />
+  </g>
+  <!-- 2번 모형 -->
+  <g style="stroke:none; fill:url(#grad02)">
+    <ellipse cx="120" cy="50" rx="4" ry="4" />
+    <ellipse cx="130" cy="70" rx="4" ry="4" />
+    <ellipse cx="135" cy="25" rx="4" ry="4" />
+    <ellipse cx="160" cy="30" rx="4" ry="4" />
+    <ellipse cx="150" cy="50" rx="4" ry="4" />
+    <ellipse cx="155" cy="80" rx="4" ry="4" />
+    <ellipse cx="170" cy="65" rx="4" ry="4" />
+    <ellipse cx="180" cy="40" rx="4" ry="4" />
+  </g>
+  <!-- 3번 모형 -->
+  <g style="stroke:none; fill:url(#grad03)">
+    <ellipse cx="252" cy="45" rx="5" ry="5" />
+    <ellipse cx="255" cy="48" rx="5" ry="5" />
+    <ellipse cx="246" cy="47" rx="5" ry="5" />
+    <ellipse cx="245" cy="55" rx="5" ry="5" />
+    <ellipse cx="255" cy="55" rx="5" ry="5" />
+    <ellipse cx="250" cy="58" rx="5" ry="5" />
+    <ellipse cx="250" cy="50" rx="5" ry="5" />
+  </g>
+  <path d="M205 50a45 12 0 0 0 90 0a45 12 0 0 0-90 0" style="fill:none;stroke:#FFF" />
+  <path d="M227.5 11a25 7 60 0 0 45 78a25 7 60 0 0-45-78" style="fill:none;stroke:#FFF" />
+  <path d="M227.5 89a25 7-60 0 0 45-78a25 7-60 0 0-45 78" style="fill:none;stroke:#FFF" />
+  <g style="stroke:#red; fill:url(#grad02)">
+    <ellipse cx="250" cy="62" rx="4" ry="4" />
+    <ellipse cx="227" cy="70" rx="4" ry="4" />
+    <ellipse cx="248" cy="25" rx="4" ry="4" />
+  </g>
+  <!-- 4번 모형 -->
+  <g style="stroke:none; fill:url(#grad03)">
+    <ellipse cx="351" cy="43" rx="5" ry="5" />
+    <ellipse cx="355" cy="47" rx="5" ry="5" />
+    <ellipse cx="346" cy="46" rx="5" ry="5" />
+    <ellipse cx="345" cy="54" rx="5" ry="5" />
+    <ellipse cx="355" cy="54" rx="5" ry="5" />
+    <ellipse cx="350" cy="57" rx="5" ry="5" />
+    <ellipse cx="350" cy="49" rx="5" ry="5" />
+  </g>
+  <g style="stroke:#fff; fill:none">
+    <ellipse cx="350" cy="50" rx="17" ry="17" />
+    <ellipse cx="350" cy="50" rx="27" ry="27" />
+    <ellipse cx="350" cy="50" rx="37" ry="37" />
+    <ellipse cx="350" cy="50" rx="47" ry="47" />
+  </g>
+  <g style="stroke:#red; fill:url(#grad02)">
+    <ellipse cx="350" cy="66" rx="4" ry="4" />
+    <ellipse cx="326" cy="60" rx="4" ry="4" />
+    <ellipse cx="348" cy="25" rx="4" ry="4" />
+  </g>
+  <path d="M350 66q3 0 0 3t1 3 1 3 1 3l1 2 " style="fill:none; stroke:#800; marker-end:url(#marker01)" />
+
+  <!-- 5번 모형 -->
+  <g style="stroke:none; fill:url(#grad04)">
+    <ellipse cx="451" cy="43" rx="5" ry="5" />
+    <ellipse cx="445" cy="54" rx="5" ry="5" />
+    <ellipse cx="455" cy="54" rx="5" ry="5" />
+  </g>
+  <g style="stroke:none; fill:url(#grad03)">
+    <ellipse cx="455" cy="47" rx="5" ry="5" />
+    <ellipse cx="446" cy="46" rx="5" ry="5" />
+    <ellipse cx="450" cy="57" rx="5" ry="5" />
+    <ellipse cx="450" cy="49" rx="5" ry="5" />
+  </g>
+  <g style="stroke:#f00; fill:none; filter:blur(2px)">
+    <ellipse cx="450" cy="50" rx="17" ry="17" />
+    <ellipse cx="450" cy="50" rx="27" ry="27" />
+    <ellipse cx="450" cy="50" rx="37" ry="37" />
+  </g>
+  <path d="M350 66q3 0 0 3t1 3 1 3 1 3l1 2 " style="fill:none; stroke:#800; marker-end:url(#marker01)" />
+  <g style="fill:#444; stroke:none; font-size:10; text-anchor:middle">
+    <text x="50" y="110">돌턴(1803)</text>
+    <text x="150" y="110">톰슨(1897)</text>
+    <text x="250" y="110">러더퍼드(1909)</text>
+    <text x="350" y="110">보어(1913)</text>
+    <text x="450" y="110">슈뢰팅거(1926)이후</text>
+  </g>
+</svg>

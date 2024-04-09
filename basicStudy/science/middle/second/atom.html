@@ -38,13 +38,1291 @@
   <!-- 공통스킨 -->
   <style type="text/css">
     @import url("/style.css");
+
+    .tutorial {
+      /* display: none; */
+      width: 0;
+      animation: none;
+      font-weight: normal;
+      margin: 0 20px 0 auto;
+      border: 1px solid #ddd;
+    }
   </style>
 </head>
 
 <body>
   <article>
     <div id="title">중2: 1. 물질의 구성</div>
-    <p>작성 대기 중입니다.</p>
+    <p>
+      이전 단원에서 우리는 지각에서 여러 가지 광물들이 생성된다는 것을 배웠습니다.
+      채취된 광물을 가공하여 <em>원자</em>를 얻어낼 수 있습니다.
+      원자는 너무 작아서 눈에 보이지 않지만 <em>불꽃반응</em>이나 <em>선스팩트럼 분석</em>으로 구분해 낼 수 있습니다.
+    </p>
+    <p>
+      이렇게 분류된 <em>원소</em>는 발견된 광물 이름, 광산, 특징, 색 등에 의해서 이름 지어졌습니다.
+      현재는 <em>IUPAC</em>(아이유팩, 국제화학협회)에서 이름과 기호의 등록을 관리하고 있습니다.
+    </p>
+    <p>
+      이 원소들은 자연계에서 존재 할 때, 홀로 존재하지 않고, <em>분자</em>를 이루어 <u>전기적 중성</u>을 띕니다.
+      이 분자들은 물에 녹였을 때, <em>앙금</em>(sediment)으로 남기도 하지만, 물에 녹아 <em>이온</em>으로 분리되기도 합니다.
+      이렇게 만들어진 용액들끼리 섞였을 때, 결합력이 강한 이온들이 만나면 <em>침전물</em>이 생기기도 합니다.
+    </p>
+    <p>
+      우리는 이전 단원에서 미시의 세계를 설명하기 위해 <u>입자 모형</u>을 배웠었습니다.
+      원자, 분자, 이온을 설명하기 위해 <em>원자핵</em>-<em>전자</em> 모형이 제시되었습니다.
+    </p>
+    <p>
+      주요 실험: *불꽃 반응 실험, *선스팩트럼 관찰, *질산은 침전물 실험
+    </p>
+
+    <h1>불꽃 실험</h1>
+    <p>
+      <a href="../first/geosphere.html">중1: 지각의 구성</a> 단원에서 우리는 지각에 다양한 광물들이 존재한다는 것을 배웠습니다.
+      대부분의 시료는 순수하게 얻을 수 없고, 퇴적광물을 분쇄와 재 결정화 작업을 반복하여 순도 높은 시료를 구할 수 있습니다.
+      불꽃실험에서 사용되는 다음 시료들은 아래와 같은 광산에서 채굴됩니다.
+    </p>
+    <style>
+      .exep-sample td:first-child,
+      .exep-sample td:nth-child(2),
+      .exep-sample td:nth-child(3) {
+        text-wrap: nowrap;
+      }
+    </style>
+    <table class="all-td-left exep-sample">
+      <caption>시료와 출처</caption>
+      <thead>
+        <tr>
+          <th>시료명</th>
+          <th>광물명</th>
+          <th>종류</th>
+          <th>분포</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>염화 소듐</td>
+          <td>암염<br>(halite)</td>
+          <td>퇴적암</td>
+          <td> 볼리비아(Salar de Uyuni, 우유강), 오스트리아(Salzkammergut), 칠레(Salar de Atacama), 볼리비아(Salar de Caracoles)</td>
+        </tr>
+        <tr>
+          <td>질산 소듐</td>
+          <td>칠레 초석</td>
+          <td>퇴적암</td>
+          <td>칠레, 페루 사막지역(Atacama Desert, Andes Mountains, Kalama, Iquique)
+            (Chile saltpeter, sodium nitrate, soda niter)</td>
+        </tr>
+        <tr>
+          <td>염화 포타슘</td>
+          <td rowspan="2">포타슘 염<br>(Potassium salt)</td>
+          <td rowspan="2">주로 퇴적암</td>
+          <td rowspan="2">캐나다(Saskatchewan), 러시아(Novocheboksarsk, Minsk), 벨라루스(Soligorsk, Gomel), 독일(Duisburg), 중국(최대)
+          </td>
+        </tr>
+        <tr>
+          <td>질산 포타슘</td>
+        </tr>
+        <tr>
+          <td>염화 스트론튬</td>
+          <td rowspan="2">스트론티안염<br>(Strontianite)</td>
+          <td rowspan="2">변성암</td>
+          <td rowspan="2">스코트랜드(Strontian, 최초), 미국(Strontian, Ohio), 맥시코(Aguascalientes), 폴란드(Scorz)</td>
+        </tr>
+        <tr>
+          <td>질산 스트론튬</td>
+        </tr>
+        <tr>
+          <td>염화 리튬</td>
+          <td rowspan="2">엽장석, 리튬염<br>(Lithium salt)</td>
+          <td rowspan="2">주로 퇴적암</td>
+          <td rowspan="2">엽장석(브라질, 최초), 체코(Sedlčany, 최장), 러시아, 그린란드, 중국(티벳, 쓰촨),
+            호주(Greenbushes, 최대), 칠레(Salar de Atacama, 호수), 아르헨티나(아르헨티나)</td>
+        </tr>
+        <tr>
+          <td>질산 리튬 </td>
+        </tr>
+        <tr>
+          <td>염화 구리 </td>
+          <td rowspan="2">주로 황화구리<br>(Chalcopyrite)</td>
+          <td rowspan="2">주로 퇴적암</td>
+          <td rowspan="2">칠레(Antofagasta, 최대), 중국(쿤란다 지역), 페루, 미국,
+            호주(Greenbushes, Kalgoorlie), 캐나다(Saskatchewan, British Columbia), 잠비아</td>
+        </tr>
+      </tbody>
+    </table>
+    <p>
+      상기 시료들은 금속과 비금속이 합성된 형태로 존재합니다.
+      예를 들어, 염화소듐은 염소(비금속) + 소듐(금속)의 화합물입니다.
+      모든 시료가 모두 풍부한 것은 아닙니다.
+    </p>
+    <div class="img-box">
+      <img src="../../source/Elemental abundances_ko.svg" />
+      <span class="caption">지각에 존재하는 원소의 비율</span>
+      <span class="description">File:Elemental abundances.svg", Gordon B. Haxel, Sara Boore, and Susan Mayfield from
+        USGS(미국지질협회), Public Domain
+        <br>/2차 수정: 2024, @iseohyun.com</span>
+    </div>
+    <p>
+      <em>불꽃 반응</em>은 시료가 어떤 성분으로 이루어져 있는지 알 수 있는 방법입니다.
+      <u>적은양으로 판별이 가능하다는 장점</u>을 가지고 있습니다.
+      주로 <u>금속원소가 불꽃과 반응</u>시켜 불꽃의 색을 확인하는 방법으로,
+      예를 들어, 실험에서 '염화○○'와 '질산○○'은 언제나 같은 불꽃 색이 관찰됩니다.
+      따라서 불꽃색은 ○○에의해 결정된다는 것을 알 수 있습니다.
+      같은 이유로 불꽃놀이의 색을 보고 어떤 화약을 사용했는지 알 수 있습니다.<a class="detail" href="#references"></a>
+      <span>
+        <tspan class="description">
+          <image
+            src="https://media-cldnry.s-nbcnews.com/image/upload/t_fit-760w,f_auto,q_auto:best/msnbc/2015_27/357091/20150705_fireworks.jpg" />
+        </tspan>
+        <tspan class="reference">불꽃놀이 이미지: <a
+            href="https://www.msnbc.com/rachel-maddow-show/week-geek-the-atomic-science-fireworks-msna632421"
+            target="_blank">Week in Geek: The atomic science of fireworks</a>, Summer Ash, msnbc.com, 2015. 7. 6.
+        </tspan>
+      </span>
+    </p>
+    <style>
+      th {
+        text-align: center;
+      }
+
+      sub {
+        font-size: .7em;
+        vertical-align: sub;
+        color: inherit;
+      }
+    </style>
+    <table class="all-td-center">
+      <caption>불꽃 실험 결과</caption>
+      <thead>
+        <tr>
+          <th></th>
+          <th>시료명</th>
+          <th>화학식</th>
+          <th>시료명</th>
+          <th>화학식</th>
+          <th>시료명</th>
+          <th>화학식</th>
+          <th>시료명</th>
+          <th>화학식</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <th rowspan="2">시료명</th>
+          <td>염화 <span style="color:red">소듐</span></td>
+          <td><span style="color:red">Na</span>Cl</td>
+          <td>염화 <span style="color:red">포타슘</span></td>
+          <td><span style="color:red">K</span>Cl</td>
+          <td>염화 <span style="color:red">스트론튬</span></td>
+          <td><span style="color:red">Sr</span>Cl<sub>2</sub></td>
+          <td>염화 <span style="color:red">구리</span></td>
+          <td><span style="color:red">Cu</span>Cl<sub>2</sub></td>
+        </tr>
+        <tr>
+          <td>질산 <span style="color:red">소듐</span></td>
+          <td><span style="color:red">Na</span>NO<sub>3</sub></td>
+          <td>질산 <span style="color:red">포타슘</span></td>
+          <td><span style="color:red">K</span>NO<sub>3</sub></td>
+          <td>질산 <span style="color:red">스트론튬</span></td>
+          <td><span style="color:red">Sr</span>(NO<sub>3</sub>)<sub>2</sub></td>
+          <td>질산 <span style="color:red">구리</span></td>
+          <td><span style="color:red">Cu</span>(NO<sub>3</sub>)<sub>2</sub></td>
+        </tr>
+        <tr>
+          <th>불꽃 색</th>
+          <td colspan="2">노란 색</td>
+          <td colspan="2">보라 색</td>
+          <td colspan="2">붉은 색</td>
+          <td colspan="2">녹 색</td>
+        </tr>
+    </table>
+    <table class="last-td-left" style="float:right">
+      <caption>불꽃색 요약</caption>
+      <thead>
+        <tr>
+          <th>원소명</th>
+          <th>기호</th>
+          <th>불꽃색</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>리튬</td>
+          <td>Li</td>
+          <td>붉은색 (핑키)</td>
+        </tr>
+        <tr>
+          <td>스트론튬</td>
+          <td>St</td>
+          <td>붉은색 (쌔빨간)</td>
+        </tr>
+        <tr>
+          <td>칼슘</td>
+          <td>Ca</td>
+          <td>주황색</td>
+        </tr>
+        <tr>
+          <td>소듐(나트륨)</td>
+          <td>Na</td>
+          <td>노랑색</td>
+        </tr>
+        <tr>
+          <td>구리</td>
+          <td>Cu</td>
+          <td>파란색(에메랄드색)<br>교과: 청록색</td>
+        </tr>
+        <tr>
+          <td>바륨</td>
+          <td>Ba</td>
+          <td>녹색(풀색)<br>교과: 황록색</td>
+        </tr>
+        <tr>
+          <td>루비듐</td>
+          <td>Rb</td>
+          <td>보라</td>
+        </tr>
+        <tr>
+          <td>세슘</td>
+          <td>Cs</td>
+          <td>청색(연보라)</td>
+        </tr>
+        <tr>
+          <td>포타슘(칼륨)</td>
+          <td>K</td>
+          <td>보라색</td>
+        </tr>
+        <tr>
+          <td>알루미늄</td>
+          <td>Al</td>
+          <td>은색</td>
+        </tr>
+    </table>
+
+    <div class="img-box" style="width:60%; margin:0 auto">
+      <img src="../../source/flame_color.gif" style="width:100%" />
+      <span class="caption">불 무지개</span>
+      <span class="description">"flame_color.gif", Thoisoi, <a
+          href="https://youtu.be/ZJJLW1GrVBU?si=YrLW3-RefaJ8_dr1&t=264" target="_blank">불 무지개를 만드는 방법? 세계 최대!
+        </a>,https://www.youtube.com/@Thoisoi</span>
+    </div>
+    <p>
+      이 시료(화합물)는 화학적으로 둘 이상으로 쪼갤 수 있습니다.
+      <u><em>원소</em>는 화학적으로 자를 수 있는 최소한의 단위</u>입니다.
+      리튬은 원소이고, 리튬 하고 화합된 염화 리튬은 <em>분자</em>라고 합니다.
+      이러한 불꽃색을 관찰하는 사람마다 정성적인 평가로 인해 정확한 판단이 어려울 것 같지만,
+      불꽃에서 발생하는 빛을 <u><em>스펙트럼 분석</em>하면, 그 원소가 방출하는 정확한 색을 알 수 있습니다</u>.
+    </p>
+    <ul>
+      <li>
+        원소(element) : 화학적으로 분리할 수 있는 가장 작은 단위<br>
+        *물리적으로 더 작게, 양성자, 중성자, 쿼크로 분리가 가능
+      </li>
+      <li>원자(atom) : 원소 입자</li>
+    </ul>
+    <p>
+      아래 스펙트럼은 수소가 연소하면서 발광한 빛을 굴절의 원리(<a href="../first/light.html">중1: 빛과 파동</a>)를 이용하여 분광한 결과입니다.
+    </p>
+    <div class="img-box">
+      <img src="//upload.wikimedia.org/wikipedia/commons/4/4c/Emission_spectrum-H.png" />
+      <span class="caption">요한 발머가 관측한 수소 스펙트럼(1885)</span>
+      <span class="description">"Emission_spectrum-H.png", Merikanto, wikimedia.org, public domain</span>
+    </div>
+    <p>
+      스펙트럼 분석을 통해서 <u>무언가 공통되지만 확실히 구분 지을 수 있는 물질이 있다는 확신</u>을 하게 됩니다.
+    </p>
+
+    <h1>원소</h1>
+    <p>
+      불꽃반응 스펙트럼에서는 금속원소만 색으로 구분을 했지만, 모든 물질이 원소로 이루어져 있습니다.
+      일찍이 선사시대부터 사용해 왔던 원소부터 최근에 발견, 인공 생성한 원소까지 총 118개의 원소가 등록되어 있습니다.
+      [표. 원소의 발견]은 잘 알려진 원소와 그 발견된 시기 및 이름의 유래를 정리한 것입니다.
+    </p>
+    <span class="tutorial">
+      [표. 원소의 발견]을 정리하면서 정보를 전달함에 있어서 고민이 있었습니다.
+      하나의 원소에서도 발견된 시기, 정제된 시기, 원소로 인식한 시기
+      (또는 원소가 존재할 것이라고 예측한 시기), 명명이 된 시기가 다 다르기 때문이었습니다.
+      각각의 업적이 어느 것 하나 사소하다고 할 수 없었지만, 모든 정보를 포함할 수 없기에,
+      일부를 누락하더라도 최대한 정보의 왜곡 없이 작성하려고 노력하였습니다.
+      정렬은 최초 분리시기를 기준으로 하되
+      분리가 필요 없이 자연존재하는 원소의 경우 최초 발견시기를 기준으로 하였습니다.
+    </span>
+    <style>
+      .atom-table td:first-child,
+      .atom-table td:nth-child(2),
+      .atom-table td:nth-child(3),
+      .atom-table td:nth-child(5) {
+        text-align: center;
+      }
+
+      .atom-table td:nth-child(4),
+      .atom-table td:nth-child(6) {
+        word-wrap: nowrap;
+        text-wrap: nowrap;
+      }
+
+      .atom-table td:nth-child(7) {
+        vertical-align: top;
+      }
+    </style>
+    <table class="all-td-left atom-table">
+      <caption>원소의 발견</caption>
+      <thead>
+        <tr>
+          <th>원소 번호</th>
+          <th>원소명<br>(영문)</th>
+          <th>기호</th>
+          <th>최초 분리(국적)<br></th>
+          <th>연도</th>
+          <th>기원</th>
+          <th>상세</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>수소<br>(Hydrogen)</td>
+          <td>H</td>
+          <td>Antoine Lavoisier<br>(앙투앙 라부아지에, 프랑스)</td>
+          <td>1787</td>
+          <td>물질특성</td>
+          <td>hydro(물) + gen(만들다) : 수소는 물을 만드는 물질</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>헬륨<br>(Helium)</td>
+          <td>He</td>
+          <td>He Ramsay, Rayleigh<br>(렘지, 레일리, 영국)</td>
+          <td>1895</td>
+          <td>관련 신화</td>
+          <td>helios(헬리오스, 로마 태양신), 태양 관측중 발견 : 태양을 이루는 물질</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>리튬<br>(Lithium)</td>
+          <td>Li</td>
+          <td>William Thomas Brande<br>(윌리엄 토마스 브랜드, 영국)</td>
+          <td>1821</td>
+          <td>발견된 광석명</td>
+          <td>íthos(그리스어, 돌) 스웨덴 광산으로부터</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>베릴륨<br>(Beryllium)</td>
+          <td>Be</td>
+          <td>Wöhler<br>(프리드리히 뵐러, 독일)</td>
+          <td>1828</td>
+          <td>발견된 광석명</td>
+          <td>beryllus(에메랄드(녹주석)색, 라틴어) : 실제 에메랄드는 크롬 또는 벤듐</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>붕소<br>(Boron)</td>
+          <td>B</td>
+          <td>Humphry Davy<br>(험프리 데이비, 영국)</td>
+          <td>1808</td>
+          <td>물질특성</td>
+          <td>borex(붕사, 하얗다(būraq, 아랍어)) 광산, 염호에서 추출</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>탄소<br>(Carbon)</td>
+          <td>C</td>
+          <td>고대 이집트로부터</td>
+          <td>-3750</td>
+          <td>발견된 광석명</td>
+          <td> carbo(석탄, 라틴어)</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>질소<br>(Nitrogen)</td>
+          <td>N</td>
+          <td>Daniel Rutherford(발견)<br>(다니엘 러더퍼드, 스코트랜드)</td>
+          <td>1790</td>
+          <td>물질특성</td>
+          <td>azotikos(생명이 없음=질식성, 그리스어)->nitrogène (프랑스어)</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>산소<br>(Oxygen)</td>
+          <td>O</td>
+          <td>Michael Sendivogius(발견)<br>(마이클 샌디보기우스, 폴린드)</td>
+          <td>1604</td>
+          <td>물질특성</td>
+          <td>oxys("날카로운", 산의 맛(그리스)) + genēs(생산자, 그리스) : 산을 만드는(불타는) 물질</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>플루오린<br>(Fluorine)</td>
+          <td>F</td>
+          <td>Henri Moissan<br>(헨리 무아상, 프랑스)</td>
+          <td>1886</td>
+          <td>발견된 광석명</td>
+          <td>floēs (형광, 라틴어) + ine(음성 물질) : fluorite(형석, 형광색 광물)</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>네온<br>(Neon)</td>
+          <td>Ne</td>
+          <td>Ramsay, Rayleigh<br>(렘지, 레일리, 영국)</td>
+          <td>1898</td>
+          <td>발견된 환경</td>
+          <td>novum(새로운, 라틴어) -> neon(그리스어)</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>소듐(나트륨)<br>(Sodium)</td>
+          <td>Na</td>
+          <td>Humphry Davy<br>(험프리 데이비, 영국)</td>
+          <td>1807</td>
+          <td>사용특성</td>
+          <td>natron(씻다, 라틴어, 이집트):베르셀리우스 원소기호법<br>
+            suda(두통, 아랍어) 두통제: IUPAC 원소명명법</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>마그네슘<br>(Magnesium)</td>
+          <td>Mg</td>
+          <td>Humphry Davy<br>(험프리 데이비, 영국)</td>
+          <td>1808</td>
+          <td>발견된 지역명</td>
+          <td>magnesia(지역명, 그리스어), 백색 돌 -> 마그네슘</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>알루미늄<br>(Aluminium)</td>
+          <td>Al</td>
+          <td>Hans Christian Ørsted(발견)<br>(외르스테르, 덴마크)</td>
+          <td>1824</td>
+          <td>물질특성</td>
+          <td>alumen(쓴, 라틴어), 알칼리 = 쓴 맛</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>규소<br>(Silicon)</td>
+          <td>Si</td>
+          <td>Jöns Jacob Berzelius<br>(베르셀리우스, 스웨덴)</td>
+          <td>1823</td>
+          <td>발견된 광석명</td>
+          <td>silex(부싯돌, 라틴어), 부싯돌:석영(SiO2,이산화규소가 주광물인 돌)</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>인<br>(Phosphorus)</td>
+          <td>P</td>
+          <td>Hennig Brand(발견)<br>(헤니그 브랜드, 독일)</td>
+          <td>1669</td>
+          <td>관련신화</td>
+          <td>phōsphoros(빛을 가져오는자, 그리스신화, 금성(해가 뜨기 전에 뜨는 별)), 인의 강한 폭발성</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>황<br>(Sulfur)</td>
+          <td>S</td>
+          <td>고대시대로 추정<br>(-3500 ~ 500)</td>
+          <td>-2000</td>
+          <td>물질특성</td>
+          <td>Sulvere (불을 키다, 라틴어), 불이 잘 붙음</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>염소<br>(Chlorine)</td>
+          <td>Cl</td>
+          <td>Carl Wilhelm Scheele<br>(빌헬름 셀레, 스웨덴)</td>
+          <td>1774</td>
+          <td>물질특성</td>
+          <td>chlōros(녹황색, 그리스어), 염소 기체의 색</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>아르곤<br>(Argon)</td>
+          <td>Ar</td>
+          <td>Ramsay, Rayleigh<br>(렘지, 레일리, 영국)</td>
+          <td>1894</td>
+          <td>물질특성</td>
+          <td>argon(게으른, 그리스어), 반응성이 낮음</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>포타슘(칼륨)<br>(Potassium)</td>
+          <td>K</td>
+          <td>Humphry Davy<br>(험프리 데이비, 영국)</td>
+          <td>1807</td>
+          <td>출처오해</td>
+          <td>potash(pott냄비+aschen잿물), kali(어근 alkaly(식물의 재, 아랍어), 칼륨염을 추출하는 초기 방법</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>칼슘<br>(Calcium)</td>
+          <td>Ca</td>
+          <td>Humphry Davy<br>(험프리 데이비, 영국)</td>
+          <td>1808</td>
+          <td>발견된 광석명</td>
+          <td>calx (석회, 라틴어)</td>
+        </tr>
+        <tr>
+          <td>25</td>
+          <td>망가니즈<br>(Manganese)</td>
+          <td>Mn</td>
+          <td>Johan Gottlieb Gahn<br>(요한 고틀립 간, 스웨덴)</td>
+          <td>1774</td>
+          <td>발견된 지역명</td>
+          <td>magnesia(지역명, 그리스어), 흑색 돌: Mangan(망간, 독일어), 그리스어가 학술적통일성이 있다고 판단</td>
+        </tr>
+        <tr>
+          <td>26</td>
+          <td>철<br>(Iron)</td>
+          <td>Fe</td>
+          <td>철기부터 사용 됨</td>
+          <td>-1180</td>
+          <td>발견된 광석명</td>
+          <td>ferrum(철, 라틴어)</td>
+        </tr>
+        <tr>
+          <td>28</td>
+          <td>니켈<br>(Nickel)</td>
+          <td>Ni</td>
+          <td>Axel Fredrik Cronstedt<br>(크론스테트, 스웨덴)</td>
+          <td>1751</td>
+          <td>관련 신화</td>
+          <td>nickel(장난꾸러기 요정, 독일신화) 중세독일 구리광산에서 구리가 추출되지 않자</td>
+        </tr>
+        <tr>
+          <td>29</td>
+          <td>구리<br>(Copper)</td>
+          <td>Cu</td>
+          <td>석기시대 이후부터 사용 됨</td>
+          <td>-9000</td>
+          <td>발견된 지역명</td>
+          <td>cyprium(키프레스, 로마어) 구리가 많이 채굴된 공화국</td>
+        </tr>
+        <tr>
+          <td>30</td>
+          <td>아연<br>(Zinc)</td>
+          <td>Zn</td>
+          <td>Andreas Sigismund Marggraf<br>(마르그라프, 독일)</td>
+          <td>1746</td>
+          <td>물질특성</td>
+          <td>zinke(뾰족한, 들쭉날쭉한, 독일어)>금속 아연 모양 결정, seng(돌, 페르시아어)</td>
+        </tr>
+        <tr>
+          <td>33</td>
+          <td>비소<br>(Arsenic)</td>
+          <td>As</td>
+          <td>아랍시기부터 사용 됨</td>
+          <td>815</td>
+          <td>물질특성</td>
+          <td>the orpiment(노란색, 아랍어) ->arsenicum(라틴어)-> arsenic(프랑스어)</td>
+        </tr>
+        <tr>
+          <td>47</td>
+          <td>은<br>(Silver)</td>
+          <td>Ag</td>
+          <td>선사시대 이후로 추정</td>
+          <td>-5000</td>
+          <td>물질특성</td>
+          <td>argentum(은, 라틴어) -> 흰색, 빛나는(인도)의 영향, silver는 silubra(게르만조어) 파생 </td>
+        </tr>
+        <tr>
+          <td>50</td>
+          <td>주석<br>(Tin)</td>
+          <td>Sn</td>
+          <td>청동기 초기</td>
+          <td>-3000</td>
+          <td>잘 모름</td>
+          <td>stannum(주석, 라틴어) 기원은 알려지지 않음. Tin은 tin-om(게르만조어)파생</td>
+        </tr>
+        <tr>
+          <td>53</td>
+          <td>아이오딘<br>(Iodine)</td>
+          <td>I</td>
+          <td>Bernard Courtois<br>(베르나르 쿠루투아, 프랑스)</td>
+          <td>1811</td>
+          <td>물질특성</td>
+          <td>Iodine(보라색, 고대 그리스어)> 분해과정에서 과도한 황산 첨가, 보라색 증기 구름/ Jod(요어드, 독어)</td>
+        </tr>
+        <tr>
+          <td>78</td>
+          <td>백금<br>(Platinum)</td>
+          <td>Pt</td>
+          <td>Antonio de Ulloa(발견)<br>(안토니오 드 울로아, 스페인)</td>
+          <td>1735</td>
+          <td>물질특성</td>
+          <td>platina(작은 은백색의 (불순물)금속, 스페인어)</td>
+        </tr>
+        <tr>
+          <td>79</td>
+          <td>금<br>(Gold)</td>
+          <td>Au</td>
+          <td>선사시대 이후로 추정</td>
+          <td>-6000</td>
+          <td>물질특성</td>
+          <td>Aurora(빛나는 새벽, 인도유럽조어) > aurum(금, 라틴어)/ gulba(빛나다, 노란색, 게르만어)<br>
+            *백금(Platinum)과 백금(White Gold, 합금, 싸다)는 다르다.
+          </td>
+        </tr>
+        <tr>
+          <td>80</td>
+          <td>수은<br>(Mercury)</td>
+          <td>Hg</td>
+          <td>대략 고대이집트시기</td>
+          <td>-1500</td>
+          <td>물질특성</td>
+          <td>hydrargyrum(수은, 고대 그리스) = hydro(물) + argyrum(은)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      원소는 발견된 위치나 광물과 관련하여 라틴어를 기준으로 기호를 만듭니다.
+      다만, 그 명칭은 기존에 사용하던 명칭을 그대로 사용하는 편입니다.
+      현대에 들어서 <u>발견한 원소들은 국제표준(IUPAC)에 의거하여 이름을 정합니다.</u>
+    <ol>
+      <li>
+        발견 인정<br>
+        * 실험실에서 재현 가능한 방법으로 10<sup>-14</sup>초 동안 유지되어야 발견한 것으로 인정
+      </li>
+      <li>발견자 제안</li>
+      <li>
+        전문가 검토(일관성, 번역용이성(영문) 등)<br>
+        * 일관성 예 : -ium(금속류), -n(비금속류)
+      </li>
+      <li>추천안 공고(5개월)</li>
+      <li>공식 승인</li>
+    </ol>
+    </p>
+    <div class="img-box" style="width:100%">
+      <img
+        src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/2e/Simple_Periodic_Table_Chart-en.svg/800px-Simple_Periodic_Table_Chart-en.svg.png?20210705055228"
+        style="width:100%" />
+      <span class="caption">주기율표</span>
+      <span class="description">"500px-Simple_Periodic_Table_Chart-en.svg", Offnfopt, wikimedia.org, public domain
+      </span>
+    </div>
+    <p>
+      주기율표의 가장 최근의 정보는 IUPAC홈페이지<a class="detail" href="#references"></a>에서 확인할 수 있습니다.
+      <span>
+        <tspan class="reference">주기율표: <a href="https://iupac.org/what-we-do/periodic-table-of-elements/"
+            target="_blank"> IUPAC홈페이지</a></tspan>
+      </span>
+    </p>
+
+    <h1>분자</h1>
+    <p>
+      원소를 찾아내는 과정에서 작은 알갱이(입자: <a href="../first/gas.html">중1: 기체의 성질</a>)들은 어떻게 결합해 있는 걸까요?
+      원자들이 모여 하나의 입자로 이루어진 형태를 분자라고 합니다.
+    </p>
+    <ul>
+      <li>
+        분자(molecule) : 한 개 이상의 비금속 원자가 화학결합에 의해 전기적으로 '중성'을 띠는 원자 그룹.
+        고유한 성질을 가지는 가장 작은 단위 입자.
+      </li>
+    </ul>
+    <p>
+      분자는 특별합니다.
+      수소와 산소는 모두 폭발성이 강하지만, 수소 2개와 산소 1개가 결합한 물은 불을 끄는데도 사용됩니다.
+      과학자들은 원자들이 무작위로 결합하는 것이 아니고, 어떠한 결합법칙을 갖고 분자들이 결합한다는 것을 찾아냈습니다.
+      분자모형은 원자들의 결합된 모양을 보여줍니다.
+      분광실험에서도 보았듯이 특정원소가 특정 색을 발광하지는 않지만
+      시뮬레이션 또는 모형에서 자주 표현되는 색이 있습니다.
+    </p>
+    <table class="last-td-left">
+      <caption>원소 모형의 색 <span class="info">ⓛ
+          <div>
+            <image src="//kuryong.co.kr/web/product/big/14029.jpg" /><br>
+            구룡과학, 상품 판매 페이지(이산화탄소)<br>
+            https://kuryong.co.kr/product/%EC%9D%B4%EC%82%B0%ED%99%94%ED%83%84%EC%86%8C-%EB%B6%84%EC%9E%90%EA%B5%AC%EC%A1%B0%EB%AA%A8%ED%98%95%EC%A1%B0%EB%A6%BD%EC%84%B8%ED%8A%B8/19906/
+          </div>
+        </span></caption>
+      <thead>
+        <tr>
+          <th>기호</th>
+          <th>원소</th>
+          <th>색</th>
+          <th>유래</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>C</td>
+          <td>탄소</td>
+          <td>검은색</td>
+          <td>숯</td>
+        </tr>
+        <tr>
+          <td>H</td>
+          <td>수소</td>
+          <td>흰색</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>N</td>
+          <td>질소</td>
+          <td>파란색</td>
+          <td>공기78%, 하늘</td>
+        </tr>
+        <tr>
+          <td>O</td>
+          <td>산소</td>
+          <td>적색</td>
+          <td>연소</td>
+        </tr>
+        <tr>
+          <td>F</td>
+          <td>플루오린</td>
+          <td>노란색</td>
+          <td>액체색</td>
+        </tr>
+        <tr>
+          <td>Cl</td>
+          <td>염소</td>
+          <td>초록색</td>
+          <td>기체색</td>
+        </tr>
+        <tr>
+          <td>Br</td>
+          <td>브롬</td>
+          <td>갈색</td>
+          <td>액체색</td>
+        </tr>
+        <tr>
+          <td>I</td>
+          <td>요오드</td>
+          <td>보라색</td>
+          <td>기체색</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <table class="last-td-left">
+      <caption>분자의 예시</caption>
+      <thead>
+        <tr>
+          <th>분자명</th>
+          <th>분자식</th>
+          <th>분자 모형</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>산소</td>
+          <td>O<sub>2</sub></td>
+          <td><img src="../../source/molecule_o2.svg" width="80"></td>
+        </tr>
+        <tr>
+          <td>물</td>
+          <td>H<sub>2</sub>O</td>
+          <td><img src="../../source/molecule_h2o.svg" width="80"></td>
+        </tr>
+        <tr>
+          <td>염화수소</td>
+          <td>HCl</td>
+          <td><img src="../../source/molecule_hCl.svg" width="80"></td>
+        </tr>
+        <tr>
+          <td>이산화탄소</td>
+          <td>CO<sub>2</sub></td>
+          <td><img src="../../source/molecule_co2.svg" width="80"></td>
+        </tr>
+        <tr>
+          <td>일산화탄소</td>
+          <td>CO</td>
+          <td><img src="../../source/molecule_co.svg" width="80"></td>
+        </tr>
+        <tr>
+          <td>암모니아</td>
+          <td>NH<sub>3</sub></td>
+          <td><img src="../../source/molecule_nh3.svg" width="80"></td>
+        </tr>
+        <tr>
+          <td>메테인<br>(메탄)</td>
+          <td>CH<sub>4</sub></td>
+          <td><img src="../../source/molecule_ch4.svg" width="80"></td>
+        </tr>
+        <style>
+          .td-middle {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+          }
+        </style>
+        <tr>
+          <td>프로판<br>(옥탄가 3)</td>
+          <td>C<sub>3</sub>H<sub>8</sub></td>
+          <td class="td-middle"><img src="../../source/molecule_c3h8.svg" width="80"> &nbsp; 또는
+            <img src="../../source/molecule_propane.svg" width="80">
+          </td>
+        </tr>
+        <tr>
+          <td>휘발유<br>(옥탄가 4~9)</td>
+          <td style="line-height: 0.9em;">C<sub>n</sub>H<sub>2n+2</sub><br><span style="font-size: 0.8em;">(n =
+              4~9)</span></td>
+          <td class="td-middle"><img src="../../source/molecule_c5h10.svg" width="120"> &nbsp; 또는
+            <img src="../../source/molecule_gasoline.svg" width="80">
+          </td>
+        </tr>
+        <tr>
+          <td>벤젠</td>
+          <td>C<sub>6</sub>H<sub>12</sub></td>
+          <td class="td-middle"><img src="../../source/molecule_c6h12.svg" width="80"> &nbsp; 또는
+            <img src="../../source/molecule_benzene.svg" width="80">
+          </td>
+        </tr>
+        <tr>
+          <td>포도당</td>
+          <td>C<sub>6</sub>H<sub>12</sub>O<sub>6</sub></td>
+          <td class="td-middle"><img src="../../source/molecule_c6h12o6.svg" width="120"> &nbsp; 또는 &nbsp;
+            <img src="../../source/molecule_grape_suger.svg" width="120">
+          </td>
+        </tr>
+    </table>
+    <p>분자명과 분자모델</p>
+    <ul>
+      <li>분자명은 분자가 포함된 이름으로 부른다.(염화+수소, 2-산화-탄소, 1-산화-탄소...)</li>
+      <li>이미 이름을 가지고 있는 경우 그대로 부른다.(물, 암모니아, 메테인...)</li>
+      <li>모형: 결합은 -로 연결한다. (= 이중결합, ≡ 삼중결합)</li>
+      <li>모형: 결합각을 표현할 수 있다. (물 vs 이산화탄소)</li>
+      <li>모형: 결합각을 표현할 수 있다(2). (암모니아 - 두꺼운 선, 점선)</li>
+      <li>모형: 수소는 생략할 수도 있다. (프로판, 휘발유, 벤젠...)</li>
+      <li>모형: 탄소는 글자만 생략한다. (프로판, 휘발유, 벤젠, 포도당...)</li>
+    </ul>
+
+    <p>
+      자연계에서 원자들이 어떠한 결합법칙에 의해서 분자가 되었다는 것을 알았습니다.
+      그런데, <u>어떻게 원자들이 분자들로 뭉쳐져 있었을까요?</u>
+    </p>
+
+    <h2>전하</h2>
+    <div class="img-box" style="float:right; width:40%">
+      <img
+        src="//upload.wikimedia.org/wikipedia/commons/thumb/1/15/Andreas_Cunaeus_discovering_the_Leyden_jar.png/500px-Andreas_Cunaeus_discovering_the_Leyden_jar.png"
+        style="width:100%" />
+      <span class="caption">전기를 모으는 실험(라이덴 병)</span>
+      <span class="description">"500px-Andreas_Cunaeus_discovering_the_Leyden_jar.png", Chetvorno, wikimedia.org, public
+        domain</span>
+    </div>
+    <p>
+      <em>전하</em>(electronic charge)란 물체가 띄고 있는 정전기의 양입니다.
+      원소 발견 과정은 전기와 연관이 많았습니다.
+      특히 물에 녹인 물질이 전기에 의해서 양극단에 몰려가는 모습은 물질이 전기에 의해 이끌린다고 생각하는 것이 합리적이었습니다.
+      또한 모든 물질을 마찰했을 때, 그 크기는 다를지언정 전기가 생성된다는 사실은 모든 물질이 전기와 관련된 물질을 가지고 있다고 보아야 했습니다.
+      이것이 바로 <em>원자핵(양성자)-전자 모델</em>입니다.
+      원자핵-전자 모델에서, 원자핵을 기준(+)으로 잡고, 그 주위에 전하의 평형을 이뤄줄 물질을 전하(-)라고 이름 붙였습니다.
+      원자 전자 모델은 다음 현상을 완벽히 설명했습니다.
+    </p>
+    <ul>
+      <li>원소들이 각각 자성을 띄기 때문에 서로 다른 원소가 서로 뭉쳐있을 수 있습니다.</li>
+      <li>모든 물체가 마구잡이로 결합하는 것이 아니고, 극성이 중성이 되는 만큼 결합한다고 하면 모든 결합이 설명이 됩니다.</li>
+      <li>물체의 극성은 원소의 질량과 관계가 높았으므로 핵이+, 전자가- 라면 전자가 쉬이 이탈하지 않는 현상과,
+        특정조건에서 전자가 이탈하는 현상 모두 설명이 됩니다.</li>
+      <li>모든 물체가 전자를 가지고 있다면, 모든 물체에서 정전기가 일어나는 현상을 설명할 수 있습니다.</li>
+    </ul>
+    <div class="img-box" style="float:right">
+      <img
+        src="//upload.wikimedia.org/wikipedia/commons/thumb/d/df/Rutherford_Scattering.svg/220px-Rutherford_Scattering.svg.png" />
+      <span class="caption">러더퍼드 금박 산란실험</span>
+      <span class="description">"220px-Rutherford_Scattering", Fujnky, wikipedia.org, public domain</span>
+    </div>
+    <p>
+      최초의 원자핵-전자 모델은 거대한 푸딩에 전자들이 박혀있는 구조를 상상했습니다(톰슨).
+      이 구조는 다음 2가지를 설명하지 못했습니다.
+    </p>
+    <ul>
+      <li>러더퍼드 금박 산란실험: 전자가 물질을 쉽게 통과하는 이유가 뭐지? (핵의 크기가 생각보다 작다)</li>
+      <li>특정 원소가 특정 불꽃색을 나타내는 이유가 뭐지? (에너지 준위를 갖는 괘도가 있다)</li>
+      <li>양성자가 서로 밀어내지 않는 이유는? (중성자가 있다)</li>
+      <li>설명이 어려운 추가 스펙트럼의 등장! (전자궤도가 확률에 의해 존재한다.)</li>
+    </ul>
+    <div class="img-box">
+      <img src="../../source/atom_model.svg" />
+      <span class="caption">원자 모델</span>
+      <span class="description">"atom_model.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      원자핵-전자 모델은 물질의 전기적 성질을 아주 잘 설명하기 때문에 지금까지 사용되고 있습니다.
+      최초의 주장은 전자는 원자 주위 어딘가에 있을 것이라고 추정했습니다.
+    </p>
+    <div class="img-box" style="float:right">
+      <img src="../../source/molecule_h2o_model.svg" />
+      <span class="caption">물분자 모형</span>
+      <span class="description">"molecule_h2o_model.svg", iseohyun.com, 2024, CC-BY-SA 4.0</span>
+    </div>
+    <p>
+      물에 녹이는 행위도 어떤 의미로 전기분해에 해당합니다.
+      물 분자는 결합된 모양(H<sub>2</sub>0의 결합각; 전기쌍극자)으로 인해서 기본적으로 극성을 가지고 있습니다.
+      용질의 결합이 충분히 강하지 않고, 용매의 크기에 적절할 때,
+      용질은 비교적 안정한 상태(옥탯규칙)을 만족하는 형태로 분리되어 해리되게 됩니다.
+      이때, 용매에 전기를 가하면 각각의 방향으로 끌려서 분리가 되기 시작합니다.
+      1821년 영국의 윌리엄 토머스 브랜드가 산화리튬을 전기분해하여 리튬을 추출해 내었습니다.
+    </p>
+    <ul>
+      <li>용액(Solution) : 두 물질이 균질하게 혼합되어 있는 상태 (예: 소금물)</li>
+      <li>용매(Solvent) : 녹이는 역할을 하는 물질(예: 물)</li>
+      <li>용질(Solute) : 녹는 물질(예: 소금)</li>
+    </ul>
+
+    <p>
+      이온은 원자 상태일수도 있고, 분자상태일 수도 있습니다.
+      원소가 안정성을 찾으려는 힘(원리)에 따라서 원소의 이온의 형태는 정해져 있습니다.
+    </p>
+    <table class="last-td-left">
+      <caption>이온과 결합</caption>
+      <thead>
+        <tr>
+          <th>양이온</th>
+          <th>음이온</th>
+          <th>결합</th>
+          <th>이름</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Na<sup>+</sup></td>
+          <td>Cl<sup>-</sup></td>
+          <td>NaCl</td>
+          <td>염화나트륨(소금)</td>
+        </tr>
+        <tr>
+          <td>Ca<sup>2+</sup></td>
+          <td>O<sup>2-</sup></td>
+          <td>CaO</td>
+          <td>산화칼슘(석회)</td>
+        </tr>
+        <tr>
+          <td>Mg<sup>2+</sup></td>
+          <td>CO<sub>3</sub><sup>2-</sup></td>
+          <td>MgCO<sub>3</sub></td>
+          <td>탄산마그네슘(마그네사이트, 광물)</td>
+        </tr>
+        <tr>
+          <td>NH<sub>4</sub><sup>+</sup></td>
+          <td>NO<sub>3</sub><sup>-</sup>
+          <td>NO<sub>3</sub>NH<sub>4</sub></td>
+          <td>질산암모늄(비료, 화약, 냉각제)</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <p>
+      이온은 특정한 상황에서 다른 이온과 반응하여 앙금이 생성될 수 있습니다.
+      이온상태로 존재하다가 더 강한 결합을 만나면 입자를 이루어 침전물이 되기도 합니다.
+      즉, 투명해 보이는 물이라도 특정 수용액과의 반응을 통하여 어떤 수용액이었는지 유추할 수 있습니다.
+    </p>
+    <div class="simple-box">
+      ※ 질산은 앙금생성 실험(<a href="https://www.youtube.com/watch?v=LFNkHByO7N0" target="_blank">실험영상</a>)
+      <ol>
+        <li>물에 녹아 이온화 되는 현상을 확인한다.</li>
+        <li>이온이 결합하여 앙금이 생성되는 경우가 있음을 확인한다.</li>
+      </ol>
+      <style>
+        .simple-box {
+          display: block;
+        }
+
+        .agcl-exep th {
+          font-weight: normal;
+          width: 60px;
+          background-color: #f0f0f0;
+          color: #888;
+        }
+      </style>
+      <table class="all-td-center agcl-exep">
+        <caption>질산은 앙금생성 실험 결과</caption>
+        <thead>
+          <tr>
+            <th></th>
+            <th>Na<span style="color:red">Cl</span></th>
+            <th><span style="color:blue">Ca</span><span style="color:red">Cl<sub>2</sub></span></th>
+            <th>NaNO<sub>3</sub></th>
+            <th><span style="color:blue">Ca</span>(NO<sub>3</sub>)<sub>2</sub></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th><span style="color:red">Ag</span>NO<sub>3</sub></th>
+            <td><span style="color:red">AgCl</span></td>
+            <td><span style="color:red">AgCl</span></td>
+            <td>-</td>
+            <td>-</td>
+          </tr>
+          <tr>
+            <th>Na<sub>2</sub><span style="color:blue">CO<sub>3</sub></span></th>
+            <td>-</td>
+            <td><span style="color:blue">Ca<sub>2</sub>CO<sub>3</sub></span></td>
+            <td>-</td>
+            <td><span style="color:blue">Ca<sub>2</sub>CO<sub>3</sub></span></td>
+          </tr>
+      </table>
+
+      <table class="last-td-left agcl-exep">
+        <caption>앙금의 색</caption>
+        <thead>
+          <tr>
+            <th>AgCl</th>
+            <th>Ca<sub>2</sub>CO<sub>3</sub></th>
+            <th>PbI<sub>2</sub></th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>흰색</td>
+            <td>흰색</td>
+            <td>노란색</td>
+          </tr>
+      </table>
+      <p>
+        질산은(AgNO<sub>3</sub>)과, 탄산나트륨(Na<sub>2</sub>CO<sub>3</sub>)에 모두 앙금이 생겼다면,
+        최초 수용액이 염화칼슘(CaCl<sub>2</sub>)였음을 유추할 수 있습니다.
+        질산은은 염화이온을 찾아내는데 좋은 효과가 있으므로,
+        수돗물에 염소이온(Cl<sup>-</sup>)이 있는지 확인할 수 있습니다. (소독)
+      </p>
+    </div>
+
+    <ul>
+      <li>이온(cation) : 전기를 띈 원자 또는 원자단 (양이온(cation), 음이온(anion))</li>
+    </ul>
+
+    <h1>이야깃거리</h1>
+    <ul>
+      <li>
+        화학교수님이 운영하는 유튜브 채널:<br>
+        <a href="https://www.youtube.com/watch?v=aX2j0FDGQ78" target="_blank">(3분 화학 기초편) 원소 원자 분자 이해하기</a>
+      </li>
+      <li>
+        자원 발굴: 대한민국 아르헨티나 리튬광산(2023)<br>
+        지하수에 녹은 리튬이온을 농축하는 염전과 같은 모습입니다.
+      </li>
+      <li>
+        수돗물 소독<br>
+        수돗물 소독 방법은 염소소독법, 오존살균처리법, 자외선살균처리법 등이 있고, 한국은 염소소독법을 채택하고 있습니다<a class="detail" href="#references"></a>.
+        <span>
+          <tspan class="reference"><a href="https://www.donga.com/news/Life/article/all/20151112/74747413/2"
+              target="_blank">[엠디팩트] 수돗물 냄새 원인은 ‘잔류염소’ … 소독 돕지만 건강 해칠 수도</a>, 현정석, 동아일보, 2015.11.16</tspan>
+        </span>
+      </li>
+      <li>
+        음이온 제품<br>
+        음이온이 분사되면, 양이온과 반응하여 중성이 되거나, 기존의 약한 결합을 끊고(파괴하고) 새로운 결합을 만들어 냅니다(수돗물 염소 소독의 예시).
+        음이온 제품의 주장은 음이온이 분사되면 나쁜 세균들만 죽일 수 있다고 합니다.<a class="detail" href="#references"></a>
+        <span>
+          <tspan class="description">도널드 트럼프(미국 45대 대통령): 소독제를 주사해서 코로나바이러스를 치료하자.</tspan>
+          <tspan class="reference"><a
+              href="https://www.nbcnews.com/politics/donald-trump/trump-suggests-injection-disinfectant-beat-coronavirus-clean-lungs-n1191216"
+              target="_blank">Trump suggests 'injection' of disinfectant to beat coronavirus and 'clean' the lungs</a>,
+            Dartunorro Clark, nbcnews.com, 2020. 4. 24 </tspan>
+        </span>
+        <br>
+        음이온 제품(2019.7이후 광고 금지, 표시·광고의 공정화에 관한 법률 시행령)은 전기 분해로 인한 방출, 라돈 등의 방사선 배출 제품으로 구분됩니다.
+        판매자는 판매 중인 제품의 광고 내용에 대한 실증 책임이 있습니다.
+        단순히 과학 용어가 들어있는 것인지, 실증 내용이 합리적인지 따져보아야 할 것입니다.
+      </li>
+    </ul>
+
+    </p>
+    <h1>단어</h1>
+    <style>
+      table.vocabulary td:nth-child(1) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(3) {
+        border-right: 2px solid;
+      }
+
+      table.vocabulary td:nth-child(5) {
+        border-right: 2px solid;
+      }
+    </style>
+    <table class="all-td-left vocabulary">
+      <caption>영단어</caption>
+      <thead>
+        <tr>
+          <th>No</th>
+          <th>영어</th>
+          <th>국어</th>
+          <th>영어</th>
+          <th>국어</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>atom</td>
+          <td>원자</td>
+          <td>gold</td>
+          <td>금</td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>hydrogen</td>
+          <td>수소</td>
+          <td>Zinc</td>
+          <td>아연</td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>helium</td>
+          <td>헬륨</td>
+          <td>arsenic</td>
+          <td>비소</td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td>lithium</td>
+          <td>리튬</td>
+          <td>silver</td>
+          <td>은</td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td>beryllium</td>
+          <td>베릴륨</td>
+          <td>tin</td>
+          <td>주석</td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>boron</td>
+          <td>붕소</td>
+          <td>iodine</td>
+          <td>아이오딘</td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>carbon</td>
+          <td>탄소</td>
+          <td>platinum</td>
+          <td>백금</td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>nitrogen</td>
+          <td>질소</td>
+          <td>mercury</td>
+          <td>수은</td>
+        </tr>
+        <tr>
+          <td>9</td>
+          <td>oxygen</td>
+          <td>산소</td>
+          <td>element</td>
+          <td>원소</td>
+        </tr>
+        <tr>
+          <td>10</td>
+          <td>fluorine</td>
+          <td>플루오린</td>
+          <td>molecule</td>
+          <td>분자</td>
+        </tr>
+        <tr>
+          <td>11</td>
+          <td>neon</td>
+          <td>네온</td>
+          <td>ion</td>
+          <td>이온</td>
+        </tr>
+        <tr>
+          <td>12</td>
+          <td>sodium</td>
+          <td>소듐(나트륨)</td>
+          <td>cation</td>
+          <td>이온, 양이온</td>
+        </tr>
+        <tr>
+          <td>13</td>
+          <td>magnesium</td>
+          <td>마그네슘</td>
+          <td>anion</td>
+          <td>음이온</td>
+        </tr>
+        <tr>
+          <td>14</td>
+          <td>aluminium</td>
+          <td>알루미늄</td>
+          <td>sediment</td>
+          <td>앙금, 침전물</td>
+        </tr>
+        <tr>
+          <td>15</td>
+          <td>silicon</td>
+          <td>규소, 실리콘</td>
+          <td>electronic charge</td>
+          <td>전하</td>
+        </tr>
+        <tr>
+          <td>16</td>
+          <td>phosphorus</td>
+          <td>인</td>
+        </tr>
+        <tr>
+          <td>17</td>
+          <td>sulfur</td>
+          <td>황</td>
+        </tr>
+        <tr>
+          <td>18</td>
+          <td>chlorine</td>
+          <td>염소</td>
+        </tr>
+        <tr>
+          <td>19</td>
+          <td>potassium</td>
+          <td>포타슘(칼륨)</td>
+        </tr>
+        <tr>
+          <td>20</td>
+          <td>calcium</td>
+          <td>칼슘</td>
+        </tr>
+        <tr>
+          <td>21</td>
+          <td>manganese</td>
+          <td>망가니즈</td>
+        </tr>
+        <tr>
+          <td>22</td>
+          <td>iron</td>
+          <td>철</td>
+        </tr>
+        <tr>
+          <td>23</td>
+          <td>nickel</td>
+          <td>니켈</td>
+        </tr>
+        <tr>
+          <td>24</td>
+          <td>copper</td>
+          <td>구리</td>
+        </tr>
+      </tbody>
+    </table>
+
+    <h1>퀴즈</h1>
+    <ul>
+      <li><button class="quiz">원소</button>는 화학적으로 자를 수 있는 최소한의 단위(개념)입니다.</li>
+      <li><button class="quiz">원자</button>는 화학적으로 자를 수 있는 최소한의 단위 입자(실제)입니다.</li>
+      <li><button class="quiz">불꽃반응</button>은 원소를 불꽃에 넣었을 때 나타나는 색입니다.</li>
+      <li>특정 원소는 특정 불꽃 반응 색(<button class="quiz">스펙트럼</button>)을 가집니다.
+        (<button class="quiz2 group1 answer">O</button>, <button class="quiz2 group1">X</button>)</li>
+      <li>원소의 발견과 관리는 <button class="quiz">국제화학협회(IUPAC)</button>에서 관리합니다.</li>
+      <li><button class="quiz">분자</button>는 1개 이상의 비금속 원자가 화학결합에 의해 전기적 중성을 띠는 원자 그룹입니다.</li>
+      <li><button class="quiz">전하</button>는 물체가 띄고 있는 정전기의 양입니다.</li>
+      <li>
+        정전기는 서로 다른 극끼리 당기는 힘(<button class="quiz">인력</button>)이 존재합니다.
+        같은 극끼리는 밀어냅니다(<button class="quiz">척력</button>).</li>
+      <li><button class="quiz">핵</button> - <button class="quiz">전자</button> 입자모형에서
+        <button class="quiz">핵</button>은 양전하를, <button class="quiz">전자</button>는 음전하를 띕니다.
+      </li>
+      <li>원자가 <button class="quiz">전자</button>를 잃으면 양전하를, <button class="quiz">전자</button>를 얻으면 음전하를 띕니다.</li>
+      <li>전하를 띄는 입자를 <button class="quiz">이온</button>이라고 합니다.</li>
+      <li>이온은 결합하여 <button class="quiz">분자</button>를 이룹니다.</li>
+      <li>분자는 고유한 성질을 가집니다.</li>
+      <li>어떤 물질은 물에 <button class="quiz">용해, 해리</button>됩니다.</li>
+      <li>녹이는 물질을 <button class="quiz">용매</button>, 녹는 물질을 <button class="quiz">용질</button>,
+        이렇게 혼합된 물질을 <button class="quiz">용액</button>이라고 합니다.</li>
+      <li>용액 속에서 이온이 결합하면 <button class="quiz">앙금</button>이 생기고, <button class="quiz">침전</button>(가라앉아 쌓임)됩니다.</li>
+    </ul>
   </article>
 </body>
 

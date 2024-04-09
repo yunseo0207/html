@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 110" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="fill:#000; stroke:none; font-size:15">
+    <text x="45" y="40">C</text>
+    <text x="28" y="54">C</text>
+    <text x="28" y="74">C</text>
+    <text x="45" y="86">C</text>
+    <text x="62" y="74">C</text>
+    <text x="62" y="54">C</text>
+    <text x="45" y="15">H</text>
+    <text x="10" y="41">H</text>
+    <text x="10" y="88">H</text>
+    <text x="45" y="110">H</text>
+    <text x="82" y="41">H</text>
+    <text x="82" y="88">H</text>
+  </g>
+  <path d="M50 17v10M45 40l-6 4M29 44l-6-4M32 55v6M35 55v6M29 73l-6 4M39 72l6 4M50 88v10M59 80l6-4M56 77l6-4M68 61v-6M65 40l-6-4M63 43l-6-4M74 72l6 4M74 45l6-4" style="fill:none;stroke:black"/>
+</svg>

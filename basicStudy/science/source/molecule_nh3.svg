@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 50" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <g style="fill:#000; stroke:none; font-size:20">
+    <text x="37" y="20">N</text>
+    <text x="15" y="40">H</text>
+    <text x="65" y="40">H</text>
+    <text x="45" y="50">H</text>
+  </g>
+  <path d="M37 22l-6 6M55 22l6 6" style="fill:none;stroke:black" />
+  <path d="M48 24l2 10" style="fill:none;stroke:black;stroke-dasharray:2" />
+</svg>
