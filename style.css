@@ -587,7 +587,6 @@ button:disabled {
 }
 
 .simple-box {
-  display: flex;
   border: 1px solid #aaa;
   border-radius: 5px;
   margin: 25px 10px;

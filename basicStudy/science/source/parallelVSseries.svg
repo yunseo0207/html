@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 260 140" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+      <path d="M0 -2L5 0 0 2 5 0 0 0" stroke="#00f" fill="none" />
+    </marker>
+  </defs>
+  <g style="stroke:#000; fill:none">
+    <path d="M30 65v-50h60v23l5 2-10 4 10 4-10 4 10 4-10 4 5 2v20l5 2-10 4 10 4-10 4 10 4-10 4 5 2v23h-60v-58 M20 65h20" />
+    <path d="M25 70h10" style="stroke-width:3" />
+
+    <path d="M102 25v90" style="stroke:#00F; fill:none; stroke-dasharray:2;" marker-end="url(#marker01)" />
+
+    <g style="font-size:9; stroke:none">
+      <text x="0" y="0" style="fill:#F00;" transform="matrix(0, -1, 1, 0, 80, 55)">R1</text>
+      <text x="0" y="0" style="fill:#F00;" transform="matrix(0, -1, 1, 0, 80, 100)">R2</text>
+      <text x="0" y="0" style="fill:#00F;" transform="matrix(0, 1, -1, 0, 105, 61)">전류</text>
+    </g>
+  </g>
+  <g style="stroke:#000; fill:none" transform="matrix(1, 0, 0, 1, 110, 0)">
+    <path d="M30 65v-50h80v23h20v20l5 2-10 4 10 4-10 4 10 4-10 4 5 2v20h-20m0-64h-20v20l5 2-10 4 10 4-10 4 10 4-10 4 5 2v20h20v25h-80v-56 M20 65h20" />
+    <path d="M25 70h10" style="stroke-width:3" />
+
+    <path d="M115 25v13a5 5 0 0 1-5 5h-5a5 5 0 0 0-5 5v42a5 5 0 0 0 5 5h5a5 5 0 0 1 5 5m0-62a5 5 0 0 0 5 5h15a5 5 0 0 1 5 5v42a5 5 0 0 1-5 5h-15a5 5 0 0 0-5 5v12" style="stroke:#00F; fill:none; stroke-dasharray:2;" marker-end="url(#marker01)" />
+
+    <g style="font-size:9; stroke:none">
+      <text x="0" y="0" style="fill:#F00;" transform="matrix(0, -1, 1, 0, 80, 75)">R1</text>
+      <text x="0" y="0" style="fill:#F00;" transform="matrix(0, -1, 1, 0, 120, 75)">R2</text>
+    </g>
+  </g>
+</svg>

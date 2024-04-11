@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 200 170" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+    <path d="M0 -2L5 0 0 2 5 0 0 0" stroke="#00f" fill="none" />
+  </marker>
+  <marker id="marker02" markerWidth="7" markerHeight="6" viewBox="-6 -3 6 6" orient="auto">
+    <path d="M0 -2L-5 0 0 2-5 0 0 0" stroke="#00f" fill="none" />
+  </marker>
+  <path d="M30 85v-70h140v63l5 2-10 4 10 4-10 4 10 4-10 4 5 2v63h-140v-74
+    M20 85h20" style="stroke:#000; fill:none" />
+  <path d="M25 90h10" style="stroke:#000; fill:none; stroke-width:3" />
+  <path d="M38 77h8m-4-4v8M38 100h8" style="stroke:#F00; fill:none;" />
+  <path d="M40 55v-20a10 10 0 0 1 10-10h10" style="stroke:#00F; fill:none;" marker-end="url(#marker01)" />
+  <path d="M40 125v20a10 10 0 0 0 10 10h10" style="stroke:#00F; fill:none; filter:hue-rotate(270deg)"
+    marker-end="url(#marker01)" />
+  <path d="M120 35v110" style="stroke:#00F; fill:none; stroke-dasharray:2; filter:hue-rotate(30deg)" marker-end="url(#marker01)" marker-start="url(#marker02)" />
+
+  <g style="font-size:10">
+    <text x="90" y="10" style="fill:#F00">전선</text>
+    <text x="50" y="45" style="fill:#00F">전류(I)</text>
+    <text x="48" y="93" style="fill:#F00">건전지</text>
+    <text x="0" y="0" style="fill:#F00;" transform="matrix(0, -1, 1, 0, 155, 103)">저항(R)</text>
+    <text x="0" y="0" style="fill:#80F;" transform="matrix(0, -1, 1, 0, 112, 123)">차이: 전압(V)</text>
+    <text x="50" y="145" style="fill:#080">전자</text>
+  </g>
+</svg>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <marker id="marker01" markerWidth="7" markerHeight="6" viewBox="0 -3 6 6" orient="auto">
+    <path d="M0 -2L5 0 0 2 5 0 0 0" stroke="#000" fill="none" />
+  </marker>
+  <g style="stroke:#000; fill:none">
+    <path d="M40 70L10 90" marker-end="url(#marker01)" />
+    <path d="M40 70H90" marker-end="url(#marker01)" />
+    <path d="M40 70V25" marker-end="url(#marker01)" />
+    <g style="stroke-width:0.3">
+      <path d="M40 65l-3 2v5" stroke="red" />
+      <path d="M40 65h5v5" stroke="red" />
+      <path d="M45 70l-3 2h-5" stroke="red" />
+    </g>
+  </g>
+  <g style="fill:#888; stroke:none; font-size:5">
+    <text x="20" y="90">F(force; 힘)</text>
+    <text x="60" y="65">I(current; 전류)</text>
+    <text x="20" y="15">B(magnetic field; 자속밀도)</text>
+  </g>
+  <g style="fill:#a44; stroke:none; font:italic bold 8px 'times new roman';">
+    <text x="8" y="85">x</text>
+    <text x="85" y="77">y</text>
+    <text x="45" y="27">z</text>
+  </g>
+</svg>
