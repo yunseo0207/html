@@ -135,9 +135,10 @@
       src="https://docs.google.com/presentation/d/e/2PACX-1vRWdMu3YIng9H-JtxV7m_okSPgllb4iIcnNjITR4_KckQA-rvqjaHyVV2Pwe577vNIl5SvHDgswYu5W/embed?start=false&loop=false&delayms=3000"
       frameborder="0" width="960" height="569" allowfullscreen="true" mozallowfullscreen="true"
       webkitallowfullscreen="true"></iframe>
-      <p>&nbsp;레포지토리에서
-        <span class="tutorial" style="display:inline;padding:5px 10px; margin:0">B_CSS</span>폴더를 참고해주십시오.</p>
-        <hr>
+    <p>&nbsp;레포지토리에서
+      <span class="tutorial" style="display:inline;padding:5px 10px; margin:0">B_CSS</span>폴더를 참고해주십시오.
+    </p>
+    <hr>
 
 
     <h1>문법</h1>
@@ -722,10 +723,44 @@ span {
       </tr>
     </table>
 
-    <h2>단위</h2>
+    <h3>Tip: has선택자</h3>
+    <blockquote>
+      &lt;div id="A"> a<br>
+      &nbsp; &lt;div id="B"> b
+    </blockquote>
+    <p>
+      위에서 B를 선택하는 방법은 <var>A>div</var>가 있지만, B에서 A를 선택하는 방법은 javascript를 사용해야 했습니다.
+      <var>div:has(#B)</var>를 통해서 선택할 수 있습니다.
+    </p>
+    <style>
+      div:has(#B) {
+        color: red;
+        border: 1px solid #888;
+        width: 50%;
+        margin: 0 auto;
+        padding-left: 5px;
+      }
 
-    <p>디스플레이의 크기와 해상도에 따라서 보여지는 크기를 조절 할 수 있습니다. 같은 10픽셀<sub>pixel</sub>이어도 사용자의 디바이스 해상도에 따라 의도하지 않게 연출 될 수 있다는 의미입니다.
-      (버전에 따라 px가 절대출력크기로 보여질 수 있습니다.) <u>사용자에게 보여지는 크기를 지정하고 싶다면, inch 나 cm 단위를 사용하는 것이 좋습니다.</u></p>
+      #B {
+        color: initial;
+        border: 1px solid #888;
+        margin: 2px;
+        padding-left: 5px;
+      }
+    </style>
+    <div>
+      a
+      <div id="B">b</div>
+    </div>
+    <blockquote>div:has(#B) { color: red; }</blockquote>
+
+    <h2>단위</h2>
+    <p>
+      디스플레이의 크기와 해상도에 따라서 보여지는 크기를 조절 할 수 있습니다.
+      같은 10픽셀<sub>pixel</sub>이어도 사용자의 디바이스 해상도에 따라 의도하지 않게 연출 될 수 있다는 의미입니다.
+      (버전에 따라 px가 절대출력크기로 보여질 수 있습니다.)
+      <u>사용자에게 보여지는 크기를 지정하고 싶다면, inch 나 cm 단위를 사용하는 것이 좋습니다.</u>
+    </p>
 
     <span class="tutorial">C_size >> [No].html</span>
     <table>

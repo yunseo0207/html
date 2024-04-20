@@ -37,10 +37,6 @@
   <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
   <script src="/highlight/highlight.min.js"></script>
   <script src="/highlight/highlightjs-line-numbers.js"></script>
-  <script>
-    hljs.highlightAll();
-    hljs.initLineNumbersOnLoad();
-  </script>
 
   <!-- 공통스킨 -->
   <style type="text/css">
@@ -53,7 +49,7 @@
     <div id="title"> VScode사용법 </div>
 
     <h1>화면구성</h1>
-    <p>&nbsp;화면구성(layout)에 대해 알아봅니다.</p>
+    <h2>기본 화면 구성(layout)</h2>
 
     <iframe
       src="https://docs.google.com/presentation/d/e/2PACX-1vTASWXI6QKp-pmjGIEmnnUQZXOpe0MagqDI8t-MEgHLAKWVpUhjZbmxfKe8wbvC3ADmdlakV6dLLyFy/embed?start=false&loop=false&delayms=3000"
@@ -147,7 +143,7 @@
         </tr>
     </table>
 
-    <h1>메뉴와 아이콘</h1>
+    <h2>메뉴와 아이콘</h2>
     <style>
       .vscode-menu-icon td:last-child {
         padding: 0 10px;
@@ -231,9 +227,13 @@
     <p>온라인 설명서 : <a href="https://developer.mozilla.org/en-US/" target="_blank">https://developer.mozilla.org/en-US/</a>
     </p>
 
-    <h2>단축키</h2>
-    <p>&nbsp;모든 설정은 keyboard shortcuts 세팅에서 검색할 수 있습니다. 세팅은 Command Palette(ctrl + shift + p)에서 "keyboard shortcuts"을
-      검색합니다(또는 Ctrl + k, s). 아래는 주요 단축키를 나열하였습니다.상위단은 일반 에디터에서 공통으로 지원하는 사항, 아래는 VScode에서 지원하는 단축키입니다.</p>
+    <h1>단축키</h1>
+    <p>
+      모든 설정은 keyboard shortcuts 세팅에서 검색할 수 있습니다.
+      세팅은 Command Palette(ctrl + shift + p)에서 "keyboard shortcuts"을 검색합니다(또는 Ctrl + k, s).
+      아래는 주요 단축키를 나열하였습니다.
+      상위단은 일반 에디터에서 공통으로 지원하는 사항, 아래는 VScode에서 지원하는 단축키입니다.
+    </p>
     <style>
       #vscode-shortcut td:last-child {
         text-align: left;
@@ -385,8 +385,7 @@
       </tr>
     </table>
 
-
-    <h1>세팅 추천</h1>
+    <h2>추천 커스터마이즈</h2>
     <table class="all-td-left">
       <caption>세팅 추천</caption>
       <thead>
@@ -430,7 +429,7 @@
           <td>Git: Revert Selected Ranges</td>
           <td><var>ctrl</var> + <var>F12</var></td>
           <td>isInDiffEditor && !operationInProgress<br>
-          (GitEditer에 있을 때)</td>
+            (GitEditer에 있을 때)</td>
         </tr>
         <tr>
           <td>북마크(설치)</td>
@@ -478,16 +477,50 @@
       </tr>
     </table>
 
-    <h2>에밋</h2>
-    <p>&nbsp;에밋(emmet)은 타이핑 자동 완성 기능입니다. VScode에서 확장기능 설치 없이 바로 사용이 가능합니다.</p>
+    <h1>테마</h1>
+    <p>
+      light version은 디자인이 깔끔하지만, 장시간 이용시 눈에 피로감을 줍니다.
+      명령어 팔렛에서, 다음 설정으로 들어가면 Color를 변경 할 수 있습니다.
+    </p>
+
+    <blockquote>Preferences: Color Theme</blockquote>
+
+    <h3>커스터마이즈</h3>
+    <p>
+      Dark Theme은 눈의 피로가 적지만, 활성중인 텝과 비활성의 탭 구분이 명확하지 않습니다.
+      setting.json의 마지막에 다음을 추가하면 특정 부분만 색을 변경 할 수 있습니다.
+    </p>
+
+    <pre><code>"workbench.colorCustomizations": {
+    "tab.activeBackground": "#FFF",
+    "tab.activeForeground": "#000",
+    "tab.inactiveBackground": "#000",
+    "tab.inactiveForeground": "#FFF",
+}</code></pre>
+    <p>
+      예제 코드 다음 줄에서 <var>"</var>(큰 따옴표)를 입력하면 수정하고자 하는 부분을 검색할 수 있습니다.
+    </p>
+
+
+    <h1>에밋</h1>
+    <h2>자동완성</h2>
+    <p>
+      에밋(emmet)은 타이핑 자동 완성 기능입니다. VScode에서 확장기능 설치 없이 바로 사용이 가능합니다.
+    </p>
     <div style="width:90%; margin:10px auto">
       <img src="https://code.visualstudio.com/assets/docs/editor/emmet/emmet.gif" width="100%" />
       이미지 출처:
       <a href="https://code.visualstudio.com/assets/docs/editor/emmet/emmet.gif">
         https://code.visualstudio.com/assets/docs/editor/emmet/emmet.gif</a>
     </div>
-    <p>&nbsp;기본 제공되는 기능과 커스터마이징 해서 사용이 가능합니다. 일부를 type후에 ctrl + space를 눌러 추천되는 문구를 선택하면 됩니다.</p>
-    <p>자세한 내용은 <a href="emmet.html">다음</a>을 참고하십시오..</p>
+
+    <h2>커스터마이즈</h2>
+    <p>
+      내가 주로 사용하는 타이핑 패턴을 미리 입력해두고 사용할 수 있습니다.
+    </p>
+    <p>
+      자세한 내용은 <a href="emmet.html">다음</a>을 참고하십시오.
+    </p>
   </article>
 </body>
 

@@ -26,7 +26,7 @@
 
   <!-- 공통스킨 -->
   <style type="text/css">
-    @import url("style.css");
+    /* @import url("style.css"); */
 
     #main {
       column-count: 2;
@@ -120,11 +120,19 @@
 
     footer {
       position: fixed;
-      display: flex;
-      flex-wrap: wrap;
+      left:0;
+      bottom: 0;
       width: 100%;
       height: fit-content;
-      bottom: 0;
+      color: #eee;
+      background-color: #aaa;
+      font-size: .7em;
+      padding: 10px;
+      display: flex;
+      align-items: flex-start;
+      flex-direction: row;
+      justify-content: space-evenly;
+      flex-wrap: wrap;
     }
 
     footer>div {
@@ -134,6 +142,19 @@
 
     header {
       font-size: 1rem
+    }
+
+    footer>div {
+      line-height: 1.5em;
+    }
+
+    footer>div>a {
+      color: #fff;
+    }
+
+    footer>div>a:hover {
+      text-decoration: underline;
+      text-decoration-color: black;
     }
 
     @media screen and (max-width: 500px) {

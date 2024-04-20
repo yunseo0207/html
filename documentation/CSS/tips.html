@@ -17,6 +17,11 @@
   gtag('config', 'G-453XSP5W9M');
 </script>
 
+<!-- 소스코드 스타일 -->
+<link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+<script src="/highlight/highlight.min.js"></script>
+<script src="/highlight/highlightjs-line-numbers.js"></script>
+
 <!-- 페이지 타이틀 -->
 <title>팁: css - iseohyun </title>
 <link rel="shortcut " type="image/x-" href="/source/_seohyun.svg">
@@ -34,12 +39,15 @@
   <article>
     <div id="title"> CSS 팁 </div>
     <h1>표준과 비표준</h1>
-    <p>&nbsp;W3C홈페이지(w3.org)에는 CSS 표준(standard)를 발표하고 있습니다. 문제는 기술선도보다 표준이 항상 늦다는 겁니다(당연하게도). 각 진영에서는 해당브라우저의 실험버전의 테그들을
-      선보이고 있습니다. 물론 지금도 진행중입니다. 퍼블리셔(제작자) 입장에서는 최신기술을 접목하는 것과 레거시 사용자들에 대한 서비스 둘 다 제공하고 싶어합니다.
+    <p>
+      W3C홈페이지(w3.org)에는 CSS 표준(standard)를 발표하고 있습니다.
+      문제는 기술선도보다 표준이 항상 늦다는 겁니다(당연하게도).
+      각 진영에서는 해당브라우저의 실험버전의 테그들을 선보이고 있습니다. 물론 지금도 진행중입니다.
+      퍼블리셔(제작자) 입장에서는 최신기술을 접목하는 것과 레거시 사용자들에 대한 서비스 둘 다 제공하고 싶어합니다.
     </p>
     <table class="all-td-left">
       <caption>
-        CSS3 표준과 브라우저 프리픽스, 
+        CSS3 표준과 브라우저 프리픽스,
         자료: 마켓쉐어@<a href="https://www.oberlo.com/statistics/browser-market-share" target="_blank">boerlo</a>
       </caption>
       <thead>
@@ -84,9 +92,15 @@
           <td>100%</td>
         </tr>
     </table>
-    
 
-    <p>&nbsp;위 예시는 2010년 쯤 CSS3가 제정되기 이전에 난립(?)한 브라우져들의 인터페이스이고, 아래 표는 각 브라우저들이 적용한 시점입니다. 이상합니다. CSS Backgrounds and Borders Module Level 3가 적립된 것이 2023-12-19인데, 어째서 그 이전에 다 적용이 되었을까요? 이는 이미 거의 모든 브라우져가 미리 적용을 해주었기 때문입니다. 이 때문에 이미 표준 제정 이전부터 이 속성은 거의 확실히 표준에 들어갈 것이라는 확신이 있었습니다. 이전의 퍼블리셔들은 표준 이전에 사용하기위해 접두어를 붙여제공했습니다. 예를들면, 다음과 같습니다.</p>
+    <p>
+      위 예시는 2010년 쯤 CSS3가 제정되기 이전에 난립(?)한 브라우져들의 인터페이스이고,
+      아래 표는 각 브라우저들이 적용한 시점입니다. 이상합니다.
+      CSS Backgrounds and Borders Module Level 3가 적립된 것이 2023-12-19인데, 어째서 그 이전에 다 적용이 되었을까요?
+      이는 이미 거의 모든 브라우져가 미리 적용을 해주었기 때문입니다.
+      이 때문에 이미 표준 제정 이전부터 이 속성은 거의 확실히 표준에 들어갈 것이라는 확신이 있었습니다.
+      이전의 퍼블리셔들은 표준 이전에 사용하기위해 접두어를 붙여제공했습니다. 예를들면, 다음과 같습니다.
+    </p>
 
     <blockquote>
       <pre>
@@ -154,28 +168,137 @@ div {
       </tbody>
     </table>
 
-    <p>&nbsp;전략을 짠다면 어떨까요? <u>1. 표준코드만 씁니다.</u> 현재 제정된 효과들로만 페이지를 구성한다고 해도, 충분히 세련되게 꾸밀 수 있습니다. 게다가 실험적인 코드를 굳이 사용해서 소외받는 고객이 생기게 만들 이유도 없습니다. 좋은 전략입니다.<br>
-      &nbsp;<u>2. prefix를 씁니다.</u> 모든 prefix를 붙인다 해도 특성당 고작 4줄입니다. 게다가, CSS3가 제정되기 이전에도 사람들은 투박한 페이지에 만족했었다는 것을 기억해야 합니다. 지금은 webkit만 지원해도 88%가 넘는 고객에게 제공할 수 있습니다. webkit이 선두하는 분위기가 당분간은 지속될 것 같습니다. 역시 좋은 전략입니다.</p>
+    <p>
+      전략을 짠다면 어떨까요? <u>1. 표준코드만 씁니다.</u>
+      현재 제정된 효과들로만 페이지를 구성한다고 해도, 충분히 세련되게 꾸밀 수 있습니다.
+      게다가 실험적인 코드를 굳이 사용해서 소외받는 고객이 생기게 만들 이유도 없습니다. 좋은 전략입니다.
+    </p>
+    <p>
+      <u>2. prefix를 씁니다.</u> 모든 prefix를 붙인다 해도 특성당 고작 4줄입니다.
+      게다가, CSS3가 제정되기 이전에도 사람들은 투박한 페이지에 만족했었다는 것을 기억해야 합니다.
+      지금은 webkit만 지원해도 88%가 넘는 고객에게 제공할 수 있습니다.
+      webkit이 선두하는 분위기가 당분간은 지속될 것 같습니다. 역시 좋은 전략입니다.
+    </p>
+
 
     <h1>캐시 데이터 업데이트</h1>
     <h3 id="캐시 데이터">캐시 데이터 컨트롤(새로고침)</h3>
-    <p>&nbsp;페이지가 로딩 될 때, 성능개선을 위해서 일부 데이터는 기존에 가지고 있는 데이터를 사용 할 수 있습니다. 최신 데이터로 새로고침을 할 때는 <u>('Ctrl + F5')</u>를 해야합니다.
-      다만 사용자에게 캐시 새로고침을 요구할 수 없는 것이 아쉽습니다.<br>
-      &nbsp;방법1: 캐쉬에 만료를 설정하여 해결 할 수 있습니다.
+    <p>
+      페이지가 로딩 될 때, 성능개선을 위해서 일부 데이터는 기존에 가지고 있는 데이터를 사용 할 수 있습니다.
+      최신 데이터로 새로고침을 할 때는 <u>('Ctrl + F5')</u>를 해야합니다.
+      다만 사용자에게 캐시 새로고침을 요구할 수 없는 것이 아쉽습니다.
+    </p>
+    <p>
+      방법1: 캐쉬에 만료를 설정하여 해결 할 수 있습니다.
     </p>
     <blockquote>
       &lt;meta http-equiv="Cache-Control" content="max-age=86400">
     </blockquote>
 
-    <p>&nbsp;방법2: 캐쉬를 거부할 수도 있습니다.</p>
+    <p>
+      방법2: 캐쉬를 거부할 수도 있습니다.
+    </p>
     <blockquote>
       &lt;meta http-equiv="Cache-Control" content="no-cache">
     </blockquote>
 
-    <p>&nbsp;만기된 데이터라도, 새로고침을 해야 갱신이 됩니다. 어떤 버튼이 눌렸을 때, 새로고침을 강재할 수 있습니다.</p>
+    <p>
+      만기된 데이터라도, 새로고침을 해야 갱신이 됩니다.
+      어떤 버튼이 눌렸을 때, 새로고침을 강재할 수 있습니다.
+    </p>
     <blockquote>
       &lt;button onClick="location.reload(true)">다시 로드&lt;/button>
     </blockquote>
+
+    <h1>약간 답답한 기본 디자인</h1>
+    <h2>list 디자인</h2>
+    <style>
+      #default-setting li::marker {
+        content: initial
+      }
+
+      .float-right {
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        padding: 5px 30px;
+        margin: 5px 30px 0 20px;
+        width: 200px;
+        float: right;
+        clear: both;
+      }
+
+      #no-marker li::marker {
+        content: "";
+      }
+    </style>
+    <div class="float-right" id="default-setting">
+      <ul>
+        <li>
+          1차 리스트
+          <ul>
+            <li>2차 리스트
+              <ul>
+                <li>3차 리스트
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="float-right">
+      <ul>
+        <li>
+          1차 리스트
+          <ul>
+            <li>2차 리스트
+              <ul>
+                <li>3차 리스트
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <div class="float-right" id="no-marker">
+      <ul>
+        <li>
+          1차 리스트
+          <ul>
+            <li>2차 리스트
+              <ul>
+                <li>3차 리스트
+              </ul>
+            </li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+    <p>
+      위 예제는 기본 디자인이고, 바로 아래는 marker를 변경한 디자인, 마지막은 marker를 제거한 디자인입니다.
+      기본 디자인에서 <u>marker와 항목의 거리가 유독 멀어보이는 이유</u>는 marker의 특수문자를 잘 못 선택해서 그렇습니다.
+    </p>
+    <p><a href="/etc/column/font/symbol.html" target="_blank">특수문자 보기</a></p>
+    <p>
+      선택한 특수문자에 좌우 여백이 상당히 있는 편에 사이띄기까지 더해져 더 멀어보입니다.
+      아래 코드는 다음과 같은 스타일을 적용하였습니다.
+    </p>
+    <pre><code>ul>li::marker {
+  content: "•";
+}
+
+ul>li>ul>li::marker {
+  content: "⁃ ";
+}
+
+ul>li>ul>li>ul>li::marker {
+  content: "· ";
+}
+
+li>ul {
+  font-size: 0.95em; /* 글자가 점점 작아집니다. */
+  margin-top: 0.1em;
+  margin-bottom: 0.35em;
+}</code></pre>
   </article>
 </body>
 

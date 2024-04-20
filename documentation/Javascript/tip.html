@@ -19,10 +19,6 @@
   <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
   <script src="/highlight/highlight.min.js"></script>
   <script src="/highlight/highlightjs-line-numbers.js"></script>
-  <script>
-    hljs.highlightAll();
-    hljs.initLineNumbersOnLoad();
-  </script>
 
   <!-- 목차 생성 -->
   <script src="/modules/hd_list.js" defer></script>
@@ -38,7 +34,10 @@
     <div id="title">javascript 팁</div>
 
     <h1 id="JQuery">jQuery</h1>
-    <p>&nbsp;JQuery는 조금 더 간결하게 javascript를 작성하게 도와줍니다. 선택사항입니다. JQuery를 사용하기 위해서는 반드시 jquery가 먼저 불려야 합니다.</p>
+    <p>
+      JQuery는 조금 더 간결하게 javascript를 작성하게 도와줍니다. 선택사항입니다.
+      JQuery를 사용하기 위해서는 반드시 jquery가 먼저 불려야 합니다.
+    </p>
     <pre><code>// JQuery를 사용하겠다는 선언
 &lt;script src="https://code.jquery.com/jquery-latest.min.js">&lt;/script>
     </code></pre>
@@ -50,18 +49,26 @@
     &lt;td>여기&lt;/td>
   &lt;/tr>
 &lt;table></code></pre>
-    <p>&nbsp;javascript로 구현한다면 다음과 같습니다.</p>
+    <p>
+      javascript로 구현한다면 다음과 같습니다.
+    </p>
     <pre><code>var lastTd =document.querySelector("#data-news tr>td:last-child");
 lastTd.style.backgroundColor = "red";
 lastTd.style.fontSize = "1.1em";</code></pre>
-    <p>&nbsp;jQuery를 사용한다면 다음과 같습니다.</p>
+    <p>
+      jQuery를 사용한다면 다음과 같습니다.
+    </p>
     <pre><code> // JQuery
 $("#data-news tr>td:last-child").css({backgroundColor: "red", fontSize: "1.1em"});</code></pre>
     <span class="tutorial">E_tips >> a_jQuery.html</span>
 
     <h2>생성하기</h2>
-    <p>&nbsp;querySelector가 객체를 반환하기 때문에 이어붙여서 사용 할 수 있습니다.</p>
-    <p>&nbsp;tag로 검색하였기 때문에 1개짜리 배열로 취급하여, 배열[0]을 붙여서 접근합니다.</p>
+    <p>
+      querySelector가 객체를 반환하기 때문에 이어붙여서 사용 할 수 있습니다.
+    </p>
+    <p>
+      tag로 검색하였기 때문에 1개짜리 배열로 취급하여, 배열[0]을 붙여서 접근합니다.
+    </p>
     <pre><code>// 방법1
 var header = document.createElement('header');
 $("body")[0].appendChild(header);
@@ -86,7 +93,9 @@ if ($("#myDiv").attr("attr1") === "value1") { ... } // 속성 확인
     <span class="tutorial">E_tips >> a2_jQueryEdit.html</span>
 
     <h2 id="화면 스크롤">화면 스크롤</h2>
-    &nbsp;아래 코드는 일정 스크롤이 내려갔을 때, 해당 element를 숨기는 기능을 합니다.
+    <p>
+      아래 코드는 일정 스크롤이 내려갔을 때, 해당 element를 숨기는 기능을 합니다.
+    </p>
     <pre><code>$(window).scroll(function () {
   var scrollTop = $(this).scrollTop(); // 스크롤바 수직 위치를 가져옵니다
   if (scrollTop > 200) {
@@ -95,8 +104,11 @@ if ($("#myDiv").attr("attr1") === "value1") { ... } // 속성 확인
 });</code></pre>
 
     <h1>소스코드 예쁘게..</h1>
-    <p>&nbsp;<a href="https://highlightjs.org/" target="_blank">https://highlightjs.org/</a>에서 링크를 얻거나, 패키지를 다운받아 서버에
-      복사하는 방식으로 진행 할 수 있습니다. 아래 방식은 페키지를 다운받아 진행한 형식에서의 예시를 보여줍니다.</p>
+    <p>
+      <a href="https://highlightjs.org/" target="_blank">https://highlightjs.org/</a>에서 링크를 얻거나,
+      패키지를 다운받아 서버에 복사하는 방식으로 진행 할 수 있습니다.
+      아래 방식은 페키지를 다운받아 진행한 형식에서의 예시를 보여줍니다.
+    </p>
 
     <pre><code>&lt;!-- 소스코드 스타일 -->
 &lt;link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
@@ -106,7 +118,10 @@ if ($("#myDiv").attr("attr1") === "value1") { ... } // 속성 확인
   hljs.highlightAll();
   hljs.initLineNumbersOnLoad();
 &lt;/script></code></pre>
-    <p>&nbsp;<var>classic-light.min.css</var>를 변경하면 스타일을 변경 할 수 있습니다. 페이지 내에 다음과 같이 코드를 삽입할 수 있습니다.</p>
+    <p>
+      <var>classic-light.min.css</var>를 변경하면 스타일을 변경 할 수 있습니다.
+      페이지 내에 다음과 같이 코드를 삽입할 수 있습니다.
+    </p>
 
     <pre><code class="language-HTML">&lt;pre>
   &lt;code class="language-javascript">
@@ -116,7 +131,10 @@ if ($("#myDiv").attr("attr1") === "value1") { ... } // 속성 확인
 
 
     <h1>방문자 기록</h1>
-    <p> &nbsp;<a href="https://analytics.google.com/">구글 analytics을</a> 이용하면 방문자 집계를 할 수 있습니다. </p>
+    <h2>기본 설정</h2>
+    <p>
+      <a href="https://analytics.google.com/">구글 analytics을</a> 이용하면 방문자 집계를 할 수 있습니다.
+    </p>
     <ol>
       <li> 회원 가입을 하고, 속성을 생성한다.</li>
       <li> google태그를 가져온다.
@@ -140,6 +158,42 @@ if ($("#myDiv").attr("attr1") === "value1") { ... } // 속성 확인
       </li>
       <li>모든 페이지에 첨부한다.</li>
       <li>구글 analytics에 접속하여 보고서를 확인한다.</li>
+    </ol>
+
+    <h2>내 트래픽 빼기</h2>
+    <p>
+      <a href="https://support.google.com/analytics/answer/1034840?hl=ko" target="_blank">
+        [내부 트래픽 제외하기 - 애널리틱스 고객센터]</a><br>
+      <a href="https://www.youtube.com/watch?v=Kv4htBpOGts" target="_blank">
+        [Filter out internal traffic]: 공식 안내 동영상</a>
+    </p>
+
+    <span class="list-title">필터 생성하기</span>
+    <ol>
+      <li>관리(좌하단 톱니) > 속성설정 > 데이터 수집 및 설정 > 데이터 스트림</li>
+      <li>데이터 스트림에서 제어하고자하는 스트림 선택</li>
+      <li>Google 태그 > 태그 설정 구성</li>
+      <li>설정 > 자세히 보기 > 내부 트래픽 정의</li>
+      <li>정보 입력
+        <ul>
+          <li>규칙 이름 "예: developer"</li>
+          <li>traffic_type: "예(default): internal"</li>
+          <li>IP주소(내 IP 주소 알아보기 주소): "[XXX.XXX.XXX.XXX/24](http://xxx.xxx.xxx.xxx/24)"설정</li>
+        </ul>
+      </li>
+      <li>저장</li>
+    </ol>
+
+    <span class="list-title">필터 적용하기</span>
+    <ol>
+      <li>관리(좌하단 톱니) > 속성설정 > 데이터 수집 및 설정</li>
+      <li>정보 입력
+        <ul>
+          <li>데이터 필터 이름: "예: developer"</li>
+          <li>traffic_type: "예(default): internal"</li>
+          <li>필터 상태: "사용중"</li>
+        </ul>
+      </li>
     </ol>
   </article>
 </body>

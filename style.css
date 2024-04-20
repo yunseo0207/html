@@ -2,8 +2,9 @@
 /* Nanum Gothic Coding */
 /* Noto Serif KR */
 /* Nanum Myeongjo */
+/* Open Sans */
 @import url(http://fonts.googleapis.com/earlyaccess/nanumgothic.css);
-@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Nanum+Myeongjo&family=Noto+Serif+KR&family=Dongle&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Nanum+Gothic+Coding&family=Nanum+Myeongjo&family=Noto+Serif+KR&family=Dongle&display=swap&family=Open+Sans:ital,wdth,wght@0,75..100,300..800;1,75..100,300..800&display=swap');
 
 @font-face {
   font-family: 'D2Coding';
@@ -57,8 +58,8 @@ body {
 
 ::-webkit-scrollbar-thumb {
   /* border: 2px solid #9b6a2f; */
-  background-color: #eee;
-  border-radius: 12px 0 0 12px;
+  background-color: #bbb;
+  border-radius: 12px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -112,34 +113,6 @@ header img {
   margin: 0;
 }
 
-footer {
-  font-family: var(--font-sans-serif);
-  height: -webkit-fill-available;
-  margin-top: 30px;
-  font-size: .7em;
-  color: #eee;
-  padding: 10px;
-  background-color: #aaa;
-  display: flex;
-  align-items: flex-start;
-  flex-direction: row;
-  justify-content: space-evenly;
-  flex-wrap: wrap;
-}
-
-footer>div {
-  line-height: 1.5em;
-}
-
-footer>div>a {
-  color: #fff;
-}
-
-footer>div>a:hover {
-  text-decoration: underline;
-  text-decoration-color: black;
-}
-
 article {
   width: 95%;
   max-width: 1200px;
@@ -155,12 +128,12 @@ article {
 table {
   font-family: var(--font-table);
   border-spacing: 0px;
-  width: 95%;
   margin: 20px;
   word-break: break-all;
   border: 1px solid #ccc;
   counter-increment: table-no;
   width: fit-content;
+  font-stretch: 75%;
 }
 
 table pre {
@@ -230,6 +203,14 @@ table.first-td-left td:first-child {
   padding-left: 10px;
 }
 
+table.only-first-td-center td {
+  text-align: left;
+}
+
+table.only-first-td-center td:first-child {
+  text-align: center;
+}
+
 table caption {
   text-align: left;
   caption-side: bottom;
@@ -238,6 +219,117 @@ table caption {
 
 table caption:before {
   content: "[표 " counter(table-no) "] "
+}
+
+caption {
+  line-height: 0.8em;
+  font-size: 0.8em;
+}
+
+table table {
+  margin: 5px 0;
+  padding: 0;
+  border-color: #bbb;
+}
+
+table table th {
+  background-color: #bbb;
+}
+
+ol,
+ul {
+  margin-left: 0.7em;
+  padding-left: 0;
+}
+
+li {
+  line-height: 1.2em;
+  margin-bottom: 0;
+}
+
+li>ol,
+li>ul {
+  font-size: 0.95em;
+  margin-top: 0.1em;
+  margin-bottom: 0.35em;
+}
+
+article>ul,
+article>ol {
+  margin-left: 2.3em;
+}
+
+article>ul>li,
+article>ol>li {
+  line-height: 1.35em;
+  margin-bottom: 0.3em;
+}
+
+td>ul,
+td>ol {
+  margin-left: 0.8em;
+}
+
+ul>li::marker {
+  content: "•";
+}
+
+ul>li>ul>li::marker {
+  content: "⁃ ";
+}
+
+ul>li>ul>li>ul>li::marker {
+  content: "· ";
+}
+
+.list-title {
+  line-height: 2.5em;
+}
+
+.list-title+ol,
+.list-title+ul {
+  padding-top: 0px;
+  margin-top: 0px;
+  margin-bottom: 5px;
+}
+
+article>span.list-title {
+  margin-left: 1em;
+  color: #000;
+  font-weight: bold;
+}
+
+.list-title+ul>li:first-child,
+.list-title+ol>li:first-child {
+  line-height: 0.5em;
+  padding-bottom: 0.5em;
+}
+
+td>.list-title+ul>li:first-child,
+td>.list-title+ol>li:first-child {
+  line-height: 0;
+  padding-bottom: 0.5em;
+}
+
+td>.list-title+ul li,
+td>.list-title+ol li {
+  line-height: 1em;
+}
+
+b {
+  color: #000;
+}
+
+.expendable>li::marker {
+  content: "▼ ";
+}
+
+.expendable>li code {
+  margin: 0;
+}
+
+.content {
+  display: none;
 }
 
 .img-box {
@@ -316,9 +408,9 @@ u {
 }
 
 sub {
-  font-size: .9em;
-  vertical-align: baseline;
-  color: #943200;
+  /* font-size: .9em; */
+  /* vertical-align: baseline; */
+  /* color: #943200; */
 }
 
 q:hover {
@@ -501,7 +593,7 @@ button:disabled {
   --font-main: 'RegularFont', 'Nanum Gothic', '맑은 고딕', Arial, sans-serif;
   --font-serif: 'Noto Serif KR', 'Times New Roman', serif;
   --font-sans-serif: '맑은 고딕', 'Nanum Gothic', Arial, sans-serif;
-  --font-table: 'NanumBarunpen', sans-serif;
+  --font-table: 'Open Sans', 'NanumBarunpen', sans-serif;
   --font-title: 'Times New Roman', Arial, serif;
   --font-monospace: 'D2Coding', monospace;
   --board-font-color: #aaaaaa;
@@ -714,8 +806,7 @@ table.hljs-ln tbody tr:hover {
 }
 
 p {
-  /* text-indent: 0.3em; */
-  margin: 10px;
+  margin: 10px 30px 0 10px;
 }
 
 p::before {
@@ -791,7 +882,7 @@ em {
   width: min(300px, 30vw);
   top: 0;
   padding: 32px 0 0 32px;
-  backdrop-filter: blur(30px);
+  background-color: #FFF;
   border-right: 1px solid #ddd;
   z-index: 11;
   overflow-y: scroll;
@@ -803,34 +894,38 @@ em {
 }
 
 #board ul {
-  padding-left: 2px;
+  padding-bottom: 5px;
 }
 
-#board li span:hover {
-  color: rgb(88, 88, 38);
+#board li>ul {
+  font-size: 0.95em;
 }
 
-#board li li {
-  margin-left: 4px;
-  font-size: 0.9em;
-  font-family: var(--font-serif);
-  list-style: circle;
+#board li::marker {
+  content: "";
 }
 
-#board li li li {
-  list-style: disc;
+#board li:last-child {
+  margin-bottom: 5px;
 }
 
-/* 최상위 목록 */
-#board>ul {
-  padding-left: 12px;
-  padding-bottom: 60px;
+#board>ul>li>ul>li {
+  text-indent: 10px;
 }
 
-#board>ul>li {
-  font-size: 1.1em;
-  font-family: var(--font-main);
-  list-style: square;
+#board>ul>li>ul>li>ul>li {
+  text-indent: 20px;
+}
+
+#board>ul>li>ul>li>ul>li>ul>li {
+  text-indent: 30px;
+}
+
+#board a,
+#board span {
+  display: block;
+  width: 100%;
+  position: relative;
 }
 
 #board a {
@@ -840,17 +935,9 @@ em {
   text-underline-offset: 5px;
 }
 
-#board a:visited {
-  color: var(--board-font-color);
-}
-
 #board a:hover {
-  text-decoration: underline;
+  color: black;
   text-decoration-color: red;
-}
-
-#board ul ul {
-  display: block;
 }
 
 #board li.collapsed ul {
@@ -863,20 +950,52 @@ em {
   font-weight: bold;
 }
 
+#board .this-doc::before {
+  content: "> ";
+  color: black;
+}
+
+#board .this-doc {
+  font-size: 1.2em;
+  background-color: #eee4;
+  line-height: 1.5em;
+  padding: 2px 15px 0 0;
+  font-family: var(--font-main);
+  z-index: -2;
+}
+
 #board .this-doc ul {
   border-left: 1px solid #ddd;
 }
 
-#board .this-doc li {
-  list-style: none;
-  font-size: 1.2em;
-  line-height: 1.5em;
-  padding: 2px 15px 0 0;
-  font-family: var(--font-main);
+#board .this-doc a span {
+  display: inline;
 }
 
-#board .this-doc a {
-  color: var(--board-head-font-color);
+#board a:hover::before,
+#board span:hover::before {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+#board a::before,
+#board span::before {
+  transform: scaleX(0);
+  transform-origin: right;
+  content: " ";
+  position: absolute;
+  inset: 0 0 0 0;
+  background: #fff0fa;
+  z-index: -1;
+  transition: transform .5s ease;
+}
+
+#board span::before{
+  background: #f0f0f0;
+}
+
+#board a span::before {
+  display: none;
 }
 
 #board #board-icons {

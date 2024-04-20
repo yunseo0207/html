@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8" lang="ko">
+  <!-- 모바일 스케일 고정 -->
+  <meta name="viewport"
+    content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <meta description="정보처리기사 정보 정리">
+  <meta keywords="소프트웨어 개발, 정보처리기사">
+  <meta author="iseohyun">
+  <!-- 페이지 타이틀 -->
+  <title>소프트웨어 개발: 정보처리기사</title>
+  <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-453XSP5W9M"></script>
+  <script>window.dataLayer = window.dataLayer || []; function gtag() { dataLayer.push(arguments); } gtag('js', new Date()); gtag('config', 'G-453XSP5W9M');</script>
+  <!-- 소스코드 스타일 -->
+  <link rel="stylesheet" href="/highlight/styles/base16/classic-light.min.css" />
+  <script src="/highlight/highlight.min.js"></script>
+  <script src="/highlight/highlightjs-line-numbers.js"></script>
+  <!-- 수식 -->
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- 차트 -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <!-- 목차 생성 -->
+  <script src="/modules/hd_list.js" defer></script>
+  <!-- 공통스킨 -->
+  <style type="text/css">
+    @import url("/style.css");
+  </style>
+</head>
+
+<body>
+  <article>
+    <div id="title">소프트웨어 개발</div>
+    <h1>입출력 구현</h1>
+    <h2>자료구조</h2>
+    <div class="img-box" style="float:right">
+      <img src="../source/tree.svg" />
+      <span class="caption">트리구조</span>
+      <span class="description">"tree.svg", iseohyun.com, 2024, CC BY-SA 4.0</span>
+    </div>
+    <ul>
+      <li>
+        Linear Structure(선형 구조)
+        <ul>
+          <li>Array(배열): 동일한 기본 자료형 나열</li>
+          <li>
+            Linear List(선형 리스트)
+            <ul>
+              <li>Contiguous List(연속 리스트): 동일한 자료형 나열</li>
+              <li>Linked List(연결 리스트): 포인터를 포함한 나열(부피 증가, 다음 찾기가 빠름)</li>
+            </ul>
+          </li>
+          <li>Stack: LIFO(Last in, First out), 바구니에 쌓는 방식</li>
+          <li>Queue: FIFO(First in, First out), 순차처리</li>
+          <li>Deque: 양방형 Queue처리</li>
+        </ul>
+      </li>
+      <li>
+        Non-Linear Structure(비선형)
+        <ul>
+          <li>
+            Tree: 하나의 부모로 시작하여, 여러개의 가지를 갖는 방식으로 저장
+            <ul>
+              <li>Preorder(전행): A → B(전) → C</li>
+              <li>Inorder(중위): B → A(중) → C</li>
+              <li>Postorder(후행): B → C(후) → A</li>
+              <li>Degree(차수): 부모가 가질 수 있는 최대의 자식 수</li>
+              <li>Terminal Node(말단 노드): 자식이 없는 노드</li>
+            </ul>
+          </li>
+          <li>Graph: Tree + 사이클 구조(순환 참조), 정점: 객체, 간선:연결(단방향, 2정점은 최대 2간선 가능(왕복))</li>
+        </ul>
+      </li>
+    </ul>
+    <table class="all-td-left">
+      <caption>tree연산 연습</caption>
+      <thead>
+        <tr>
+          <th>상황</th>
+          <th>중위</th>
+          <th>전위</th>
+          <th>후위</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><img src="../source/tree1.svg" style="width:80px" /></td>
+          <td>A + B</td>
+          <td>+ A B</td>
+          <td>A B +</td>
+        </tr>
+        <tr>
+          <td><img src="../source/tree2.svg" style="width:80px" /></td>
+          <td>A + (B * C)<br>= A + □</td>
+          <td>+ A * B C<br>= + A (* B C)<br>= + A □</td>
+          <td>A B C * +<br>= A (B C *) +<br>= A □ +</td>
+        </tr>
+    </table>
+
+    <h2>정렬</h2>
+    <ul class="expendable">
+      <li>
+        <div>
+          <span class="header" onclick="toggleContent(this)">
+            Insertion Sort(삽입 정렬): 2번부터(~끝) 가장 작은 수를 앞으로</span>
+          <pre class="content" style="display: block;"><code href="insertionSort.py"></code></pre>
+        </div>
+      </li>
+      <li>
+        <span class="header" onclick="toggleContent(this)">
+          Shell Sort: 삽입과 동일한 알고리즘 + 건너뛰면서 검증</span>
+        <pre class="content"><code href="shellSort.py"></code></pre>
+      </li>
+      <li>
+        <span class="header" onclick="toggleContent(this)">
+          Selection Sort(선택 정렬): 최소값을 찾아 1번자리에, 두번째로 작은 값을 찾아 2번째 자리에...</span>
+        <pre class="content"><code href="selectionSort.py"></code></pre>
+      </li>
+      <li>
+        <span class="header" onclick="toggleContent(this)">
+          Bubble Sort(거품 정렬):
+          1회 정렬: 가장 큰 것이 맨 뒤, 2회 정렬: 2번째 큰 것이 뒤에서 2 번째 자리...</span>
+        <pre class="content"><code href="BubbleSort.py"></code></pre>
+      </li>
+      <li>
+        <span class="header" onclick="toggleContent(this)">
+          Quick Sort: 재귀적으로 호출(분할과 정복), <br>
+          나보다 작은 모임 + 나 + 나보다 큰 모임으로 계속 쪼갬</span>
+        <pre class="content"><code href="quickSort.py"></code></pre>
+      </li>
+      <li>
+        <span class="header" onclick="toggleContent(this)">Heap Sort: 최악=평균 O(n log<sub>2</sub>n)<br>
+          1: 모든 트리에 대해 제일 큰 놈을 부모로 만듬, 2:제일 큰 놈을 뒤로 옮기고, 결승만 진행</span>
+        <pre class="content"><code href="HeapSort.py"></code></pre>
+      </li>
+      <li>
+        <span class="header" onclick="toggleContent(this)">
+          Merge Sort(합병 정렬): 작게 쪼개서 정렬을 하고, 정렬된 리스트끼리 정렬을 수행한다.</span>
+        <pre class="content"><code href="mergeSort.py"></code></pre>
+      <li>
+        <span class="header" onclick="toggleContent(this)">
+          Radix Sort(기수 정렬): 자릿수별로 정렬을 함</span>
+        <pre class="content"><code href="radixSort.py"></code></pre>
+      </li>
+    </ul>
+
+    <h2>검색</h2>
+    <p>
+      <span class="header" onclick="toggleContent(this)">
+        Binary Search(이진 검색): 정렬된 상태에서 검색</span>
+    <pre class="content" style="display: block;"><code href="binarySearch.py"></code></pre>
+    </p>
+
+    <h2>Hashing</h2>
+
+    <span class="list-title">hash 용어</span>
+    <ul>
+      <li>Hash Table: 여러 버킷으로 구성된 기억공간</li>
+      <li>Bucket: 하나의 주소를 갖는 하나의 구역, 버킷의 크기 = 레코드 수</li>
+      <li>Slot: 한 개의 레코드를 저장할 수 있는 공간</li>
+      <li>Collision(충돌): 두개 이상의 레코드가 같은 주소를 갖는 현상
+        <ul>
+          <li>Chaining: 버킷을 Linked List로 구성하여 충돌 데이터를 버리거나 덮어쓰지 않고 계속 수집</li>
+          <li>Open Address(개방 주소법): 다음 빈 버킷에 저장</li>
+          <li>Rehashing: 새 hashing주소 산출</li>
+        </ul>
+      </li>
+      <li>Synonym: 충돌로 인해 같은 Home Address를 갖는 레코드 집단</li>
+      <li>Overflow: 버킷에 저장할 공간이 없는 상태</li>
+    </ul>
+
+    <span class="list-title">hash function</span>
+    <ul>
+      <li>Division(제산법): Hash(key) = key mod P (단, P: table size보다 큰 소수)</li>
+      <li>Mid-Square(제곱법): Hash(key) = mid(key^2, n, m) (단, n, m: len(key)보다 작은 임의의 수)</li>
+      <li>Folding: Hash(key) = key[1] xor ..key[n]</li>
+      <li>Radix(기수(진법) 변환법): Hash(key) = key<sub>(n)</sub></li>
+      <li>Algebraic Coding(대수적 코딩법): Hash(key) = key[0]x<sup>0</sup> + key[1]x<sup>1</sup> ...</li>
+      <li>Digit Analysis(계수 분석법): key의 분포도를 분석하여 임의적으로 고르게 분배</li>
+      <li>Random: 난수를 발생시켜 나온 값을 주소로 배정</li>
+    </ul>
+
+    <h2>데이터베이스</h2>
+    <span class="list-title">종류</span>
+    <ul>
+      <li>Integrate Data(통합 데이터): 자료 중복을 배제한 데이터</li>
+      <li>Stored Data(저장 데이터): 저장매체에 저장된 데이터</li>
+      <li>Operational Data(운영 데이터): 운영에 실제로 사용되는 데이터(일시적 자료X)</li>
+      <li>Shared Data(공용 데이터): 여러 시스템에서 공동으로 관리하는 데이터</li>
+    </ul>
+
+    <span class="list-title">
+      DBMS(DataBase Management System):
+      <tspan style="font-weight: normal;">DB관리에 다음 서비스를 제공하는 시스템</tspan>
+    </span>
+    <ul>
+      <li>Definition(정의): 데이터 테이블 생성에 관한 명령을 수행</li>
+      <li>Manipulation(조작): 생성된 테이블의 검색, 갱신, 삽입, 삭제 기능을 수행</li>
+      <li>Control(제어): 보안(Security), 권한(Authority), 병행제어(Concurrency Control)...</li>
+    </ul>
+
+    <span class="list-title">
+      Schema(스키마)
+      <tspan style="font-weight: normal;">전반적인 명세(Specification)를 기술한 메타데이터 집합</tspan>
+    </span>
+    <ul>
+      <li>Definition(정의): 데이터 테이블 생성에 관한 명령을 수행</li>
+      <li>Manipulation(조작): 생성된 테이블의 검색, 갱신, 삽입, 삭제 기능을 수행</li>
+      <li>Control(제어): 보안(Security), 권한(Authority), 병행제어(Concurrency Control)...</li>
+    </ul>
+    <ul>
+      <li>외부 스키마: 논리적 구조 정의</li>
+      <li>개념 스키마: 개체간 관계와 제약조건, 접근권한, 보안, 무결성 규칙을 명세</li>
+      <li>내부 스키마: 물리적 저장장치 입장에서 본 구조, 형식, 항목 표현방법, 순서 등...</li>      
+    </ul>
+
+
+    <h1>통합 구현</h1>
+
+
+    <h1>패키징</h1>
+
+
+    <h1>테스트 관리</h1>
+
+
+    <h1>인터페이스 구현</h1>
+
+  </article>
+</body>
+
+</html>

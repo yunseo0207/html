@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg viewBox="0 0 75 85" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <ellipse cx="30" cy="13" rx="10" ry="10" style="stroke:#000; fill:none" />
+  <ellipse cx="13" cy="40" rx="10" ry="10" style="stroke:#000; fill:none" />
+  <ellipse cx="47" cy="40" rx="10" ry="10" style="stroke:#000; fill:none" />
+  <ellipse cx="32" cy="67" rx="10" ry="10" style="stroke:#000; fill:none" />
+  <ellipse cx="62" cy="67" rx="10" ry="10" style="stroke:#000; fill:none" />
+  <path d="M25 22l-6.5 9.5M35 22l6.5 9.5M42 49l-6.5 9.5M52 49l6.5 9.5" style="stroke:#000; fill:none" />
+  <g style="font-size:10; fill:#000; stroke:none; text-anchor:middle">
+    <text x="30" y="17">+</text>
+    <text x="13" y="44">A</text>
+    <text x="47" y="44">x</text>
+    <text x="32" y="71">B</text>
+    <text x="62" y="71">C</text>
+  </g>
+</svg>

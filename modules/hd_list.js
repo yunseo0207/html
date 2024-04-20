@@ -45,10 +45,10 @@ function renderHierarchy(data, parentElement, parentDirectories, directory) {
       const currentDirectory = item.디렉토리;
 
       // 목록이 파일인지 디렉토리인지 확인한다.
-      if (item.hasOwnProperty('파일명') && (item.파일명 != 'science.html' || directory === 'science.html')) {
-        // 현재 파일인 확인한다.
-
+      // if (item.hasOwnProperty('파일명') && (item.파일명 != 'science.html' || directory === 'science.html')) {
+      if (item.hasOwnProperty('파일명')) {
         if ((currentDirectory + item.파일명) === directory) {
+          // 현재 파일인가?
           listItem.textContent = item.주제;
           const sublist = document.createElement('ul');
           listItem.classList.toggle('this-doc');
@@ -61,20 +61,30 @@ function renderHierarchy(data, parentElement, parentDirectories, directory) {
             event.stopPropagation();
             this.classList.toggle('collapsed');
           });
+
         } else {
           const anchor = document.createElement('a');
           anchor.href = `/${parentDirectories}${currentDirectory}${item.파일명}`;
           anchor.textContent = item.주제;
 
           listItem.appendChild(anchor);
+
+          if (item.hasOwnProperty('목록')) {
+            if (directory.startsWith(currentDirectory)) {
+              directory = directory.substring(currentDirectory.length);
+              anchor.classList.add('this-path');
+              category += " >> " + item.주제;
+            } else {
+              listItem.classList.add('collapsed');
+            }
+          }
         }
       } else {
-        // 디렉토리인 경우에 수행한다.
         const text = document.createElement('span');
         text.textContent = item.주제;
 
-        listItem.appendChild(text);
         listItem.classList.add('folder');
+        listItem.appendChild(text);
 
         if (directory.startsWith(currentDirectory)) {
           directory = directory.substring(currentDirectory.length);
@@ -212,6 +222,7 @@ document.addEventListener("scroll", function () {
         arrow.className = "arrow";
         arrow.innerHTML = "&nbsp; &DoubleLongLeftArrow;";
         arrow.style.color = "red";
+        arrow.style.display = "inline";
         anchor.appendChild(arrow);
       }
     }
@@ -416,9 +427,9 @@ function addReferenceImage(args) {
   }
 
   var refheader;
-  if(args == "no-reference"){
+  if (args == "no-reference") {
     refheader = document.createElement("h1");
-  }else{
+  } else {
     refheader = document.createElement("h2");
   }
   refheader.innerText = "그림 출처"
@@ -464,12 +475,12 @@ quiz2.forEach((kdb) => {
   kdb.addEventListener("click", () => {
     // class목록에 answer가 있으면
     var hasAnswerClass = kdb.classList.contains("answer");
-    
+
     if (hasAnswerClass) {
       kdb.style.color = "#444";
       var groupName;
       kdb.classList.forEach((className) => {
-        if(className.startsWith("group")) {
+        if (className.startsWith("group")) {
           groupName = className;
         }
       });
@@ -480,7 +491,7 @@ quiz2.forEach((kdb) => {
         member.style.backgroundColor = "#fff";
       });
     }
-    
+
 
     if (kdb.getElementsByClassName)
       var show = kdb.getAttribute("show");
@@ -493,3 +504,49 @@ quiz2.forEach((kdb) => {
     }
   });
 });
+
+// code에 소스코드 불러와 붙이기
+var codes = Array.from(document.getElementsByTagName("code"));
+var fileCount = 0; // 파일의 총 수
+var loadedCount = 0; // 로드된 파일의 수
+
+codes.forEach((code) => {
+  if (code.getAttribute('href') != undefined) {
+    fileCount++;
+    readFile(code, code.getAttribute('href'));
+  }
+});
+
+if (fileCount == 0) runHighlight();
+
+function readFile(code, filename) {
+  var xhr = new XMLHttpRequest();
+  xhr.onreadystatechange = function () {
+    if (xhr.readyState === 4) {
+      if (xhr.status === 200) {
+        code.textContent = xhr.responseText;
+      }
+      loadedCount++;
+
+      if (loadedCount === fileCount) runHighlight(); // 모든 파일의 로딩이 끝남
+    }
+  };
+  xhr.open("GET", filename, true);
+  xhr.send();
+}
+
+function runHighlight() {
+  hljs.highlightAll();
+  hljs.initLineNumbersOnLoad();
+}
+
+// open-close: 펼치기 붙이기
+function toggleContent(header) {
+  var container = header.parentNode;
+  var content = container.querySelector(".content");
+  if (content.style.display === "none" || content.style.display === "") {
+    content.style.display = "block"; // 내용을 펼침
+  } else {
+    content.style.display = "none"; // 내용을 접음
+  }
+}
