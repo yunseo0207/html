@@ -99,6 +99,10 @@
     }
 
     /* select checkboxes */
+    .checkbox-wrapper-10 {
+      margin: 1px;
+    }
+
     .checkbox-wrapper-10 .tgl {
       display: none;
     }
@@ -255,6 +259,18 @@
       align-items: center;
       justify-content: center;
     }
+
+    #my-number {
+      display: grid;
+      grid-template-columns: repeat(7, 1fr);
+      grid-gap: 1px;
+    }
+
+    #winning-price,
+    #winning-probability {
+      display: flex;
+      flex-direction: column;
+    }
   </style>
 
   <!-- 기타 설정 -->
@@ -286,8 +302,9 @@
       +
       <div id="win7">7</div>
     </div>
+
     <div style="display:flex">
-      <div class="pannel" style="min-width: 251px;">
+      <div id="my-number" class="pannel" style="min-width: 251px;">
         <div class="checkbox-wrapper-10">
           <input class="tgl tgl-flip" id="cb1" type="checkbox" onclick="chMyNum(this, 1)" />
           <label class="tgl-btn" data-tg-off="1" data-tg-on="1" for="cb1"></label>
@@ -316,7 +333,6 @@
           <input class="tgl tgl-flip" id="cb7" type="checkbox" onclick="chMyNum(this, 7)" />
           <label class="tgl-btn" data-tg-off="7" data-tg-on="7" for="cb7"></label>
         </div>
-        <br>
         <div class="checkbox-wrapper-10">
           <input class="tgl tgl-flip" id="cb8" type="checkbox" onclick="chMyNum(this, 8)" />
           <label class="tgl-btn" data-tg-off="8" data-tg-on="8" for="cb8"></label>
@@ -345,7 +361,6 @@
           <input class="tgl tgl-flip" id="cb14" type="checkbox" onclick="chMyNum(this, 14)" />
           <label class="tgl-btn" data-tg-off="14" data-tg-on="14" for="cb14"></label>
         </div>
-        <br>
         <div class="checkbox-wrapper-10">
           <input class="tgl tgl-flip" id="cb15" type="checkbox" onclick="chMyNum(this, 15)" />
           <label class="tgl-btn" data-tg-off="15" data-tg-on="15" for="cb15"></label>
@@ -374,7 +389,6 @@
           <input class="tgl tgl-flip" id="cb21" type="checkbox" onclick="chMyNum(this, 21)" />
           <label class="tgl-btn" data-tg-off="21" data-tg-on="21" for="cb21"></label>
         </div>
-        <br>
         <div class="checkbox-wrapper-10">
           <input class="tgl tgl-flip" id="cb22" type="checkbox" onclick="chMyNum(this, 22)" />
           <label class="tgl-btn" data-tg-off="22" data-tg-on="22" for="cb22"></label>
@@ -403,7 +417,6 @@
           <input class="tgl tgl-flip" id="cb28" type="checkbox" onclick="chMyNum(this, 28)" />
           <label class="tgl-btn" data-tg-off="28" data-tg-on="28" for="cb28"></label>
         </div>
-        <br>
         <div class="checkbox-wrapper-10">
           <input class="tgl tgl-flip" id="cb29" type="checkbox" onclick="chMyNum(this, 29)" />
           <label class="tgl-btn" data-tg-off="29" data-tg-on="29" for="cb29"></label>
@@ -432,7 +445,6 @@
           <input class="tgl tgl-flip" id="cb35" type="checkbox" onclick="chMyNum(this, 35)" />
           <label class="tgl-btn" data-tg-off="35" data-tg-on="35" for="cb35"></label>
         </div>
-        <br>
         <div class="checkbox-wrapper-10">
           <input class="tgl tgl-flip" id="cb36" type="checkbox" onclick="chMyNum(this, 36)" />
           <label class="tgl-btn" data-tg-off="36" data-tg-on="36" for="cb36"></label>
@@ -461,7 +473,6 @@
           <input class="tgl tgl-flip" id="cb42" type="checkbox" onclick="chMyNum(this, 42)" />
           <label class="tgl-btn" data-tg-off="42" data-tg-on="42" for="cb42"></label>
         </div>
-        <br>
         <div class="checkbox-wrapper-10">
           <input class="tgl tgl-flip" id="cb43" type="checkbox" onclick="chMyNum(this, 43)" />
           <label class="tgl-btn" data-tg-off="43" data-tg-on="43" for="cb43"></label>
@@ -474,64 +485,71 @@
           <input class="tgl tgl-flip" id="cb45" type="checkbox" onclick="chMyNum(this, 45)" />
           <label class="tgl-btn" data-tg-off="45" data-tg-on="45" for="cb45"></label>
         </div>
-        <span style="margin-left: 30px;">번호 락</span>
-        <div class="checkbox-wrapper-2">
-          <input type="checkbox" class="sc-gJwTLC ikxBAC" onclick="lock=!lock">
-        </div>
-      </div>
-      <div>
-        <div class="pannel" style="text-align: left;">
-          <div>
-            1등 당첨금: <input type="text" id="price_1st" class="price" size="7" onchange="chPrice(this.value, 1, this)">
-          </div>
-          <div>
-            2등 당첨금 : <input type="text" id="price_2nd" class="price" size="7" onchange="chPrice(this.value, 2, this)">
-          </div>
-          <div>
-            3등 당첨금 : <input type="text" id="price_3rd" class="price" size="7" onchange="chPrice(this.value, 3, this)">
-          </div>
-          <div>
-            4등 당첨금 : <input type="text" id="price_4th" class="price" value="5만원" size="7" disabled>
-          </div>
-          <div>
-            5등 당첨금 : <input type="text" id="price_5th" class="price" value="5천원" size="7" disabled>
-          </div>
-          <span style="display:block;width: 100%; text-align: right;font-size: 0.7em;">(수령액 기준)</span>
-        </div>
-      </div>
-      <div>
-        <div class="pannel" style="text-align: left;">
-          <div>
-            1등 확률(0.000012%): <input type="text" id="_1st" disabled>
-          </div>
-          <div>
-            2등 확률(0.000074%): <input type="text" id="_2nd" disabled>
-          </div>
-          <div>
-            3등 확률(0.002799%): <input type="text" id="_3rd" disabled>
-          </div>
-          <div>
-            4등 확률(0.136426%): <input type="text" id="_4th" disabled>
-          </div>
-          <div>
-            5등 확률(2.222222%): <input type="text" id="_5th" disabled>
-          </div>
-        </div>
-      </div>
-      <div style="display: inline-block;">
-        <div class="pannel" style="text-align: left;">
-          <div>
-            주당 시도 횟수 <input type="number" id="times-a-week" value="5" onchange="changeTimesAweek(this.value)">
-          </div>
-          <div>
-            시도 연도<input type="text" id="cur-year" disabled>
-          </div>
-          <div>
-            언제부터?<input type="text" id="from-year" disabled>
+        <div style="grid-column:4 / 8; border:1px solid #ddd; display:flex; flex-direction: row;
+        justify-content: space-around; align-items: center; ">
+          <span>번호 락</span>
+          <div class="checkbox-wrapper-2">
+            <input type="checkbox" class="sc-gJwTLC ikxBAC" onclick="lock=!lock">
           </div>
         </div>
       </div>
     </div>
+
+    <div>
+      <div id="winning-price" class="pannel" style="text-align: left;">
+        <div>
+          1등 당첨금: <input type="text" id="price_1st" class="price" size="7" onchange="chPrice(this.value, 1, this)">
+        </div>
+        <div>
+          2등 당첨금 : <input type="text" id="price_2nd" class="price" size="7" onchange="chPrice(this.value, 2, this)">
+        </div>
+        <div>
+          3등 당첨금 : <input type="text" id="price_3rd" class="price" size="7" onchange="chPrice(this.value, 3, this)">
+        </div>
+        <div>
+          4등 당첨금 : <input type="text" id="price_4th" class="price" value="5만원" size="7" disabled>
+        </div>
+        <div>
+          5등 당첨금 : <input type="text" id="price_5th" class="price" value="5천원" size="7" disabled>
+        </div>
+        <span style="display:block;width: 100%; text-align: right;font-size: 0.7em;">(수령액 기준)</span>
+      </div>
+    </div>
+    <div>
+      <div id="winning-probability" class="pannel" style="text-align: left;">
+        <div>
+          1등 확률(0.000012%): <input type="text" id="_1st" disabled>
+        </div>
+        <div>
+          2등 확률(0.000074%): <input type="text" id="_2nd" disabled>
+        </div>
+        <div>
+          3등 확률(0.002799%): <input type="text" id="_3rd" disabled>
+        </div>
+        <div>
+          4등 확률(0.136426%): <input type="text" id="_4th" disabled>
+        </div>
+        <div>
+          5등 확률(2.222222%): <input type="text" id="_5th" disabled>
+        </div>
+      </div>
+    </div>
+  </div>
+  <hr>
+  <div style="display: inline-block;">
+    <div class="pannel" style="text-align: left;">
+      <div>
+        주당 시도 횟수 <input type="number" id="times-a-week" value="5" onchange="changeTimesAweek(this.value)">
+      </div>
+      <div>
+        시도 연도<input type="text" id="cur-year" disabled>
+      </div>
+      <div>
+        언제부터?<input type="text" id="from-year" disabled>
+      </div>
+    </div>
+  </div>
+  <div>
     <div style="display: contents;width: 100%;">
       횟수 : <input type="text" id="count" size=12 disabled>
       누적 상금 : <input type="text" id="total-price" size=7 disabled>
@@ -540,443 +558,444 @@
     <div style="width: 100%;">
       이벤트 : <input type="text" id="event" style="width: 80%;" disabled>
     </div>
+  </div>
 
-    <svg id="graph" viewbox="0 0 300 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
-      style="border:1px solid gray;padding:5px;border-radius: 10px;" font-size="8">
-      <g style="stroke:#ddd;stroke-linecap: round;stroke-width:1px">
-        <path d="M5,10 h290" />
-        <path d="M5,30 h290" />
-        <path d="M5,50 h290" />
-        <path d="M5,70 h290" />
-        <path d="M5,90 h290" />
-        <path d="M5,110 h290" />
-      </g>
-      <path id="svg-luck" d="M10 80 H280" style="stroke:red;fill:none" stroke-dasharray="9 1" stroke-dashoffset="0">
-        <animate attributeName="stroke-dashoffset" values="10;0" dur="0.5s" repeatCount="indefinite" />
-      </path>
-      <path id="svg-minor-luck" d="" style="stroke:blue;fill:none" stroke-dasharray="9 1" stroke-dashoffset="0">
-        <animate attributeName="stroke-dashoffset" values="10;0" dur="0.5s" repeatCount="indefinite" />
-      </path>
-      <rect x="45" y="2" width="10" height="10" style="stroke:none;fill:blue"></rect>
-      <rect x="45" y="13" width="10" height="10" style="stroke:none;fill:red"></rect>
-      <text x="10" y="10" fill="black">총 운</text>
-      <text x="10" y="20" fill="black" font-size="6">잔잔바리 운</text>
-    </svg>
-    <script>
-      var auto = true;
-      var myNum = new Array(6);
-      var winNum = new Array(7);
-      var count = 0;
-      var nWin = [0, 0, 0, 0, 0, 0];
-      var price = [2000000000, 80000000, 1500000, 50000, 5000];
-      var winCase = [8145060, 1357510, 35724, 733, 45]; // 등수별 승리 확률(경우의 수: 1/n)
-      var total_price = 0;
-      var times_a_week = 5;
-      var spd = 1;  // 자동으로 다시 뽑기 속도
-      var fUpdateMyNumbers = false;
-      var fUpdateSvg = false;
-      var lock = false;
-      var _price_1st = document.getElementById('price_1st');
-      var _price_2nd = document.getElementById('price_2nd');
-      var _price_3rd = document.getElementById('price_3rd');
-      var _count = document.getElementById('count');
-      var _1st = document.getElementById('_1st');
-      var _2nd = document.getElementById('_2nd');
-      var _3rd = document.getElementById('_3rd');
-      var _4th = document.getElementById('_4th');
-      var _5th = document.getElementById('_5th');
-      var _total_price = document.getElementById('total-price');
-      var _cur_year = document.getElementById("cur-year");
-      var _from_year = document.getElementById('from-year');
-      var _times_a_week = document.getElementById('times-a-week');
-      var _event = document.getElementById('event');
-      var historicalEvent = [
-        [1945, "광복절을 맞이하다."],
-        [1443, "세종대왕이 한글을 창제했다."],
-        [612, "을지문덕이 살수대첩에서 승리했다."],
-        [-2333, "단군이 조선을 건국했다."],
-        [-10000, ":오스트랄로 피테쿠스(100만년~)"],
-      ];
-      nHistoryEvent = 0;
+  <svg id="graph" viewbox="0 0 300 120" version="1.1" xmlns="http://www.w3.org/2000/svg"
+    style="border:1px solid gray;padding:5px;border-radius: 10px;" font-size="8">
+    <g style="stroke:#ddd;stroke-linecap: round;stroke-width:1px">
+      <path d="M5,10 h290" />
+      <path d="M5,30 h290" />
+      <path d="M5,50 h290" />
+      <path d="M5,70 h290" />
+      <path d="M5,90 h290" />
+      <path d="M5,110 h290" />
+    </g>
+    <path id="svg-luck" d="M10 80 H280" style="stroke:red;fill:none" stroke-dasharray="9 1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="10;0" dur="0.5s" repeatCount="indefinite" />
+    </path>
+    <path id="svg-minor-luck" d="" style="stroke:blue;fill:none" stroke-dasharray="9 1" stroke-dashoffset="0">
+      <animate attributeName="stroke-dashoffset" values="10;0" dur="0.5s" repeatCount="indefinite" />
+    </path>
+    <rect x="45" y="2" width="10" height="10" style="stroke:none;fill:blue"></rect>
+    <rect x="45" y="13" width="10" height="10" style="stroke:none;fill:red"></rect>
+    <text x="10" y="10" fill="black">총 운</text>
+    <text x="10" y="20" fill="black" font-size="6">잔잔바리 운</text>
+  </svg>
+  <script>
+    var auto = true;
+    var myNum = new Array(6);
+    var winNum = new Array(7);
+    var count = 0;
+    var nWin = [0, 0, 0, 0, 0, 0];
+    var price = [2000000000, 80000000, 1500000, 50000, 5000];
+    var winCase = [8145060, 1357510, 35724, 733, 45]; // 등수별 승리 확률(경우의 수: 1/n)
+    var total_price = 0;
+    var times_a_week = 5;
+    var spd = 1;  // 자동으로 다시 뽑기 속도
+    var fUpdateMyNumbers = false;
+    var fUpdateSvg = false;
+    var lock = false;
+    var _price_1st = document.getElementById('price_1st');
+    var _price_2nd = document.getElementById('price_2nd');
+    var _price_3rd = document.getElementById('price_3rd');
+    var _count = document.getElementById('count');
+    var _1st = document.getElementById('_1st');
+    var _2nd = document.getElementById('_2nd');
+    var _3rd = document.getElementById('_3rd');
+    var _4th = document.getElementById('_4th');
+    var _5th = document.getElementById('_5th');
+    var _total_price = document.getElementById('total-price');
+    var _cur_year = document.getElementById("cur-year");
+    var _from_year = document.getElementById('from-year');
+    var _times_a_week = document.getElementById('times-a-week');
+    var _event = document.getElementById('event');
+    var historicalEvent = [
+      [1945, "광복절을 맞이하다."],
+      [1443, "세종대왕이 한글을 창제했다."],
+      [612, "을지문덕이 살수대첩에서 승리했다."],
+      [-2333, "단군이 조선을 건국했다."],
+      [-10000, ":오스트랄로 피테쿠스(100만년~)"],
+    ];
+    nHistoryEvent = 0;
 
-      _price_1st.value = numberToText(price[0]) + "원";
-      _price_2nd.value = numberToText(price[1]) + "원";
-      _price_3rd.value = numberToText(price[2]) + "원";
-      var cur_year = new Date().getFullYear();
-      var from_year = cur_year;
-      _cur_year.value = cur_year;
+    _price_1st.value = numberToText(price[0]) + "원";
+    _price_2nd.value = numberToText(price[1]) + "원";
+    _price_3rd.value = numberToText(price[2]) + "원";
+    var cur_year = new Date().getFullYear();
+    var from_year = cur_year;
+    _cur_year.value = cur_year;
+    _from_year.value = from_year;
+
+    function chPrice(money, rank, target) {
+      //money = docEle.value;
+      //alert(docEle.id);
+      money = money.replace("원", "");
+      var num = parseInt(money);
+
+      if (money.match("천") != null)
+        num *= 1000;
+      if (money.match("만") != null)
+        num *= 10000;
+      if (money.match("억") != null)
+        num *= 100000000;
+      if (money.match("조") != null)
+        num *= 1000000000000;
+      price[rank - 1] = num;
+      target.value = numberToText(num) + "원";
+
+
+    }
+
+    // 주간 시도 횟수 변경
+    function changeTimesAweek(value) {
+      times_a_week = value;
+      from_year = Math.round(cur_year - count / times_a_week / 52);
       _from_year.value = from_year;
+      _count.value = ": " + numberToText(count) + " 회(" + timeToText() + ")";
+      nHistoryEvent = 0;
+      _event.value = "";
+    }
 
-      function chPrice(money, rank, target) {
-        //money = docEle.value;
-        //alert(docEle.id);
-        money = money.replace("원", "");
-        var num = parseInt(money);
-
-        if (money.match("천") != null)
-          num *= 1000;
-        if (money.match("만") != null)
-          num *= 10000;
-        if (money.match("억") != null)
-          num *= 100000000;
-        if (money.match("조") != null)
-          num *= 1000000000000;
-        price[rank - 1] = num;
-        target.value = numberToText(num) + "원";
-
-
-      }
-
-      // 주간 시도 횟수 변경
-      function changeTimesAweek(value) {
-        times_a_week = value;
-        from_year = Math.round(cur_year - count / times_a_week / 52);
-        _from_year.value = from_year;
-        _count.value = ": " + numberToText(count) + " 회(" + timeToText() + ")";
-        nHistoryEvent = 0;
-        _event.value = "";
-      }
-
-      function chMyNum(chbox, num) {
-        if (chbox.checked == true) {
-          for (var i = 0; i < 6; i++) {
-            if (myNum[i] == 0) { // 번호 추가
-              myNum[i] = num;
-              myNum.sort(function (a, b) {
-                if (a > b) return 1;
-                if (a === b) return 0;
-                if (a < b) return -1;
-              });
-              return;
-            }
+    function chMyNum(chbox, num) {
+      if (chbox.checked == true) {
+        for (var i = 0; i < 6; i++) {
+          if (myNum[i] == 0) { // 번호 추가
+            myNum[i] = num;
+            myNum.sort(function (a, b) {
+              if (a > b) return 1;
+              if (a === b) return 0;
+              if (a < b) return -1;
+            });
+            return;
           }
-          // 추가할 수 없음
-          chbox.checked = false;
+        }
+        // 추가할 수 없음
+        chbox.checked = false;
+      } else {
+        //번호 해제
+        for (var i = 0; i < 6; i++) {
+          if (myNum[i] == num) { // 번호 추가
+            myNum[i] = 0;
+            myNum.sort(function (a, b) {
+              if (a > b) return 1;
+              if (a === b) return 0;
+              if (a < b) return -1;
+            });
+            return;
+          }
+        }
+      }
+    }
+
+    function checkout() {
+      var hit = 0;
+      for (var i = 0; i < 6; i++) {
+        for (var j = 0; j < 6; j++) {
+          if (myNum[i] == winNum[j])
+            hit++;
+        }
+      }
+      if (hit == 6) {
+        auto = false;
+        lock = true;
+        alert("1등 당첨!"); // 1등이 당첨되면 자동진행을 멈춥니다.
+        return 1;
+      }
+
+      if (hit == 5) {
+        // 2등 여부
+        for (var i = 0; i < 6; i++) {
+          if (myNum[i] == winNum[6]) {
+            return 2;
+          }
+        }
+        return 3;
+      }
+
+      if (hit == 4) return 4;
+
+      if (hit == 3) return 5;
+
+      return 6;
+    }
+
+    function genWinNum() {
+      for (var i = 0; i < 6; i++) {
+        winNum[i] = Math.floor(Math.random() * 45) + 1;
+        for (var j = 0; j < i; j++) {
+          if (winNum[j] == winNum[i]) {
+            i--;
+            break;
+          }
+        }
+      }
+      winNum = winNum.slice(0, 6).sort(function (a, b) {
+        if (a > b) return 1;
+        if (a === b) return 0;
+        if (a < b) return -1;
+      });
+
+      winNum[6] = Math.floor(Math.random() * 45) + 1;
+      for (var i = 0; i < 6; i++) {
+        if (winNum[i] == winNum[6]) {
+          winNum[6] = Math.floor(Math.random() * 45) + 1;
+          i = 0;
+        }
+      }
+
+      for (var i = 0; i < 7; i++) {
+        var curdiv = document.getElementById('win' + (i + 1));
+        curdiv.innerHTML = winNum[i];
+        curdiv.style.color = "white";
+        switch (true) {
+          case winNum[i] < 10:
+            curdiv.style.backgroundColor = "#FDB635"; break;
+          case winNum[i] < 20:
+            curdiv.style.backgroundColor = "#1763D4"; break;
+          case winNum[i] < 30:
+            curdiv.style.backgroundColor = "#C53B1E"; break;
+          case winNum[i] < 40:
+            curdiv.style.backgroundColor = "#60666F"; break;
+          default:
+            curdiv.style.backgroundColor = "#22AE18"; break;
+        }
+      }
+      printOut(checkout());
+    }
+
+    function play() {
+      if (auto) {
+        setTimeout(play, 500 / spd);
+        if (spd > 3) {
+          // 가속
+          nplay(Math.pow(3, spd));
         } else {
-          //번호 해제
-          for (var i = 0; i < 6; i++) {
-            if (myNum[i] == num) { // 번호 추가
-              myNum[i] = 0;
-              myNum.sort(function (a, b) {
-                if (a > b) return 1;
-                if (a === b) return 0;
-                if (a < b) return -1;
-              });
-              return;
-            }
-          }
-        }
-      }
-
-      function checkout() {
-        var hit = 0;
-        for (var i = 0; i < 6; i++) {
-          for (var j = 0; j < 6; j++) {
-            if (myNum[i] == winNum[j])
-              hit++;
-          }
-        }
-        if (hit == 6) {
-          auto = false;
-          lock = true;
-          alert("1등 당첨!"); // 1등이 당첨되면 자동진행을 멈춥니다.
-          return 1;
-        }
-
-        if (hit == 5) {
-          // 2등 여부
-          for (var i = 0; i < 6; i++) {
-            if (myNum[i] == winNum[6]) {
-              return 2;
-            }
-          }
-          return 3;
-        }
-
-        if (hit == 4) return 4;
-
-        if (hit == 3) return 5;
-
-        return 6;
-      }
-
-      function genWinNum() {
-        for (var i = 0; i < 6; i++) {
-          winNum[i] = Math.floor(Math.random() * 45) + 1;
-          for (var j = 0; j < i; j++) {
-            if (winNum[j] == winNum[i]) {
-              i--;
-              break;
-            }
-          }
-        }
-        winNum = winNum.slice(0, 6).sort(function (a, b) {
-          if (a > b) return 1;
-          if (a === b) return 0;
-          if (a < b) return -1;
-        });
-
-        winNum[6] = Math.floor(Math.random() * 45) + 1;
-        for (var i = 0; i < 6; i++) {
-          if (winNum[i] == winNum[6]) {
-            winNum[6] = Math.floor(Math.random() * 45) + 1;
-            i = 0;
-          }
-        }
-
-        for (var i = 0; i < 7; i++) {
-          var curdiv = document.getElementById('win' + (i + 1));
-          curdiv.innerHTML = winNum[i];
-          curdiv.style.color = "white";
-          switch (true) {
-            case winNum[i] < 10:
-              curdiv.style.backgroundColor = "#FDB635"; break;
-            case winNum[i] < 20:
-              curdiv.style.backgroundColor = "#1763D4"; break;
-            case winNum[i] < 30:
-              curdiv.style.backgroundColor = "#C53B1E"; break;
-            case winNum[i] < 40:
-              curdiv.style.backgroundColor = "#60666F"; break;
-            default:
-              curdiv.style.backgroundColor = "#22AE18"; break;
-          }
-        }
-        printOut(checkout());
-      }
-
-      function play() {
-        if (auto) {
-          setTimeout(play, 500 / spd);
-          if (spd > 3) {
-            // 가속
-            nplay(Math.pow(3, spd));
-          } else {
-            genRdnNum();
-            genWinNum();
-          }
-        } else {
-          // 단발성 플레이
-          genRdnNum();
-        }
-      }
-      function nplay(n) {
-        for (var i = 0; i < n; i++) {
           genRdnNum();
           genWinNum();
         }
+      } else {
+        // 단발성 플레이
+        genRdnNum();
+      }
+    }
+    function nplay(n) {
+      for (var i = 0; i < n; i++) {
+        genRdnNum();
+        genWinNum();
+      }
+    }
+
+    function repaintTimer() {
+      setTimeout(repaintTimer, 300);
+      if (fUpdateMyNumbers) {
+        printMyNum();
+        fUpdateMyNumbers = false;
+      }
+      if (fUpdateSvg) {
+        printSvg();
+        updateInputs();
+        fUpdateSvg = false;
+      }
+    }
+
+    function changSpd(newSpd) {
+      spd = newSpd;
+    }
+
+    function printOut(rank) {
+      count++;
+      switch (rank) {
+        case 1:
+          nWin[0]++;
+          total_price += price[0];
+          break;
+        case 2:
+          nWin[1]++;
+          total_price += price[1];
+          break;
+        case 3:
+          nWin[2]++;
+          total_price += price[2];
+          break;
+        case 4:
+          nWin[3]++;
+          total_price += price[3];
+          break;
+        case 5:
+          nWin[4]++;
+          total_price += price[4];
+          break;
       }
 
-      function repaintTimer() {
-        setTimeout(repaintTimer, 300);
-        if (fUpdateMyNumbers) {
-          printMyNum();
-          fUpdateMyNumbers = false;
+      total_price -= 1000;
+      fUpdateSvg = true;
+    }
+    function updateInputs() {
+      _1st.value = ": " + numberToText(nWin[0]) + " 번(" + Percent(nWin[0]) + "%)";
+      _2nd.value = ": " + numberToText(nWin[1]) + " 번(" + Percent(nWin[1]) + "%)";
+      _3rd.value = ": " + numberToText(nWin[2]) + " 번(" + Percent(nWin[2]) + "%)";
+      _4th.value = ": " + numberToText(nWin[3]) + " 번(" + Percent(nWin[3]) + "%)";
+      _5th.value = ": " + numberToText(nWin[4]) + " 번(" + Percent(nWin[4]) + "%)";
+      _count.value = ": " + numberToText(count) + " 회(" + timeToText() + ")";
+
+      _total_price.value = ": " + numberToText(total_price) + "원";
+      from_year = Math.round(cur_year - count / times_a_week / 52);
+      _from_year.value = from_year;
+      if ((historicalEvent.length >= nHistoryEvent) && (historicalEvent[nHistoryEvent][0] > from_year)) {
+        _event.value = historicalEvent[nHistoryEvent][1] + "(" + historicalEvent[nHistoryEvent][0] + ")";
+        nHistoryEvent++;
+      }
+    }
+    var _luck = new Array();
+    var _minor_luck = new Array();
+    var luck = new Array();
+    var minor_luck = new Array();
+    var graph_col = 0; // 현재 그려야 하는 y축 좌표
+
+    function printSvg() {
+      // 데이터 넣는 단계
+      if (graph_col <= 28) { /* _luck.length = 28 */
+        luck.push(calLuck());
+        minor_luck.push(calMinorLuck());
+      } else {
+        for (var i = 1; i <= graph_col; i++) {
+          luck[i - 1] = luck[i];
+          minor_luck[i - 1] = minor_luck[i];
         }
-        if (fUpdateSvg) {
-          printSvg();
-          updateInputs();
-          fUpdateSvg = false;
-        }
+        luck[graph_col - 1] = calLuck();
+        minor_luck[graph_col - 1] = calMinorLuck();
       }
 
-      function changSpd(newSpd) {
-        spd = newSpd;
+      // 그래프 넣는 단계
+      // 최대값 구하기
+      var max_luck = 0;
+      var max_minor_luck = 0;
+      for (i = 0; i <= graph_col; i++) {
+        if (max_luck < Math.abs(luck[i]))
+          max_luck = Math.abs(luck[i]);
+        if (max_minor_luck < Math.abs(minor_luck[i]))
+          max_minor_luck = Math.abs(minor_luck[i]);
+      }
+      if (max_luck > max_minor_luck) {
+        max_minor_luck = max_luck;
+      } else {
+        max_luck = max_minor_luck;
+      }
+      var luck_path_d = "M10 ";
+      var minor_luck_path_d = "M10 ";
+      luck_path_d += GraphVal(luck[0], max_luck);
+      minor_luck_path_d += GraphVal(minor_luck[0], max_minor_luck);
+
+      for (i = 1; i < graph_col - 1; i++) {
+        luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(luck[i], max_luck);
+        minor_luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(minor_luck[i], max_minor_luck);
       }
 
-      function printOut(rank) {
-        count++;
-        switch (rank) {
-          case 1:
-            nWin[0]++;
-            total_price += price[0];
-            break;
-          case 2:
-            nWin[1]++;
-            total_price += price[1];
-            break;
-          case 3:
-            nWin[2]++;
-            total_price += price[2];
-            break;
-          case 4:
-            nWin[3]++;
-            total_price += price[3];
-            break;
-          case 5:
-            nWin[4]++;
-            total_price += price[4];
-            break;
-        }
-
-        total_price -= 1000;
-        fUpdateSvg = true;
+      if (graph_col <= 28) { /* _luck.length = 28 */
+        graph_col++;
+      } else {
+        luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(luck[graph_col - 1], max_luck);
+        minor_luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(minor_luck[graph_col - 1], max_minor_luck);
       }
-      function updateInputs() {
-        _1st.value = ": " + numberToText(nWin[0]) + " 번(" + Percent(nWin[0]) + "%)";
-        _2nd.value = ": " + numberToText(nWin[1]) + " 번(" + Percent(nWin[1]) + "%)";
-        _3rd.value = ": " + numberToText(nWin[2]) + " 번(" + Percent(nWin[2]) + "%)";
-        _4th.value = ": " + numberToText(nWin[3]) + " 번(" + Percent(nWin[3]) + "%)";
-        _5th.value = ": " + numberToText(nWin[4]) + " 번(" + Percent(nWin[4]) + "%)";
-        _count.value = ": " + numberToText(count) + " 회(" + timeToText() + ")";
 
-        _total_price.value = ": " + numberToText(total_price) + "원";
-        from_year = Math.round(cur_year - count / times_a_week / 52);
-        _from_year.value = from_year;
-        if ((historicalEvent.length >= nHistoryEvent) && (historicalEvent[nHistoryEvent][0] > from_year)) {
-          _event.value = historicalEvent[nHistoryEvent][1] + "(" + historicalEvent[nHistoryEvent][0] + ")";
-          nHistoryEvent++;
-        }
+      document.getElementById('svg-luck').setAttribute("d", luck_path_d);
+      document.getElementById('svg-minor-luck').setAttribute("d", minor_luck_path_d);
+    }
+
+    function calLuck() {
+      return (((nWin[0] / count) - (1 / winCase[0])) * winCase[0])
+        + (((nWin[1] / count) - (1 / winCase[1])) * winCase[1])
+        + (((nWin[2] / count) - (1 / winCase[2])) * winCase[2])
+        + (((nWin[3] / count) - (1 / winCase[3])) * winCase[3])
+        + (((nWin[4] / count) - (1 / winCase[4])) * winCase[4]);
+    }
+
+    function calMinorLuck() {
+      return ((nWin[4] / count) - (1 / winCase[4])) * winCase[4] * 100;
+    }
+
+    function GraphVal(index, max) {
+      var mid = 60; // 5 ~ 115
+      var pos = -index / max * 55 + mid;
+      return parseInt(Math.floor(pos));
+    }
+
+    function Percent(num) {
+      return Math.round(num * 10000000 / count) / 100000;
+    }
+
+    // 한국인에게 익숙한 단위로 변경
+    function numberToText(num) {
+      var minus = false;
+      var text;
+      if (num < 0) {
+        minus = true;
+        num = -num;
       }
-      var _luck = new Array();
-      var _minor_luck = new Array();
-      var luck = new Array();
-      var minor_luck = new Array();
-      var graph_col = 0; // 현재 그려야 하는 y축 좌표
 
-      function printSvg() {
-        // 데이터 넣는 단계
-        if (graph_col <= 28) { /* _luck.length = 28 */
-          luck.push(calLuck());
-          minor_luck.push(calMinorLuck());
-        } else {
-          for (var i = 1; i <= graph_col; i++) {
-            luck[i - 1] = luck[i];
-            minor_luck[i - 1] = minor_luck[i];
+      if (num < 1000) {
+        text = num;
+      } else if (num < 10000) {
+        text = (Math.round(num / 100) / 10 + "천");
+      } else if (num < 100000000) {
+        text = (Math.round(num / 1000) / 10 + "만");
+      } else if (num < 1000000000000) {
+        text = (Math.round(num / 10000000) / 10 + "억");
+      } else if (num < 10000000000000000) {
+        text = (Math.round(num / 100000000000) / 10 + "조");
+      } else {
+        text = (Math.round(num / 1000000000000000) / 10 + "경");
+      }
+      if (minus) {
+        return "-" + text;
+      } else {
+        return text;
+      }
+    }
+
+    function timeToText() {
+      var week = count / times_a_week;
+      if (week < 52)
+        return Math.ceil(week) + "주";
+      else {
+        var time = Math.round(week * 10 / 52) / 10;
+        return numberToText(time) + "년";
+      }
+    }
+
+    function genRdnNum() {
+      if (lock) return;
+      for (var i = 0; i < 6; i++) {
+        myNum[i] = Math.floor(Math.random() * 45) + 1;
+        for (var j = 0; j < i; j++) {
+          if (myNum[j] == myNum[i]) {
+            i--;
+            break;
           }
-          luck[graph_col - 1] = calLuck();
-          minor_luck[graph_col - 1] = calMinorLuck();
-        }
-
-        // 그래프 넣는 단계
-        // 최대값 구하기
-        var max_luck = 0;
-        var max_minor_luck = 0;
-        for (i = 0; i <= graph_col; i++) {
-          if (max_luck < Math.abs(luck[i]))
-            max_luck = Math.abs(luck[i]);
-          if (max_minor_luck < Math.abs(minor_luck[i]))
-            max_minor_luck = Math.abs(minor_luck[i]);
-        }
-        if (max_luck > max_minor_luck) {
-          max_minor_luck = max_luck;
-        } else {
-          max_luck = max_minor_luck;
-        }
-        var luck_path_d = "M10 ";
-        var minor_luck_path_d = "M10 ";
-        luck_path_d += GraphVal(luck[0], max_luck);
-        minor_luck_path_d += GraphVal(minor_luck[0], max_minor_luck);
-
-        for (i = 1; i < graph_col - 1; i++) {
-          luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(luck[i], max_luck);
-          minor_luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(minor_luck[i], max_minor_luck);
-        }
-
-        if (graph_col <= 28) { /* _luck.length = 28 */
-          graph_col++;
-        } else {
-          luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(luck[graph_col - 1], max_luck);
-          minor_luck_path_d += " L" + (i * 10 + 10) + " " + GraphVal(minor_luck[graph_col - 1], max_minor_luck);
-        }
-
-        document.getElementById('svg-luck').setAttribute("d", luck_path_d);
-        document.getElementById('svg-minor-luck').setAttribute("d", minor_luck_path_d);
-      }
-
-      function calLuck() {
-        return (((nWin[0] / count) - (1 / winCase[0])) * winCase[0])
-          + (((nWin[1] / count) - (1 / winCase[1])) * winCase[1])
-          + (((nWin[2] / count) - (1 / winCase[2])) * winCase[2])
-          + (((nWin[3] / count) - (1 / winCase[3])) * winCase[3])
-          + (((nWin[4] / count) - (1 / winCase[4])) * winCase[4]);
-      }
-
-      function calMinorLuck() {
-        return ((nWin[4] / count) - (1 / winCase[4])) * winCase[4] * 100;
-      }
-
-      function GraphVal(index, max) {
-        var mid = 60; // 5 ~ 115
-        var pos = -index / max * 55 + mid;
-        return parseInt(Math.floor(pos));
-      }
-
-      function Percent(num) {
-        return Math.round(num * 10000000 / count) / 100000;
-      }
-
-      // 한국인에게 익숙한 단위로 변경
-      function numberToText(num) {
-        var minus = false;
-        var text;
-        if (num < 0) {
-          minus = true;
-          num = -num;
-        }
-
-        if (num < 1000) {
-          text = num;
-        } else if (num < 10000) {
-          text = (Math.round(num / 100) / 10 + "천");
-        } else if (num < 100000000) {
-          text = (Math.round(num / 1000) / 10 + "만");
-        } else if (num < 1000000000000) {
-          text = (Math.round(num / 10000000) / 10 + "억");
-        } else if (num < 10000000000000000) {
-          text = (Math.round(num / 100000000000) / 10 + "조");
-        } else {
-          text = (Math.round(num / 1000000000000000) / 10 + "경");
-        }
-        if (minus) {
-          return "-" + text;
-        } else {
-          return text;
         }
       }
+      myNum.sort(function (a, b) {
+        if (a > b) return 1;
+        if (a === b) return 0;
+        if (a < b) return -1;
+      });
 
-      function timeToText() {
-        var week = count / times_a_week;
-        if (week < 52)
-          return Math.ceil(week) + "주";
-        else {
-          var time = Math.round(week * 10 / 52) / 10;
-          return numberToText(time) + "년";
+      fUpdateMyNumbers = true;
+    }
+
+    function printMyNum() {
+      if (lock) return;
+      var j = 0;
+      for (var i = 1; i <= 45; i++) {
+        if (myNum[j] == i) {
+          document.getElementById('cb' + i).checked = true;
+          if (j < 5) j++;
         }
+        else
+          document.getElementById('cb' + i).checked = false;
       }
-
-      function genRdnNum() {
-        if (lock) return;
-        for (var i = 0; i < 6; i++) {
-          myNum[i] = Math.floor(Math.random() * 45) + 1;
-          for (var j = 0; j < i; j++) {
-            if (myNum[j] == myNum[i]) {
-              i--;
-              break;
-            }
-          }
-        }
-        myNum.sort(function (a, b) {
-          if (a > b) return 1;
-          if (a === b) return 0;
-          if (a < b) return -1;
-        });
-
-        fUpdateMyNumbers = true;
-      }
-
-      function printMyNum() {
-        if (lock) return;
-        var j = 0;
-        for (var i = 1; i <= 45; i++) {
-          if (myNum[j] == i) {
-            document.getElementById('cb' + i).checked = true;
-            if (j < 5) j++;
-          }
-          else
-            document.getElementById('cb' + i).checked = false;
-        }
-      }
-    </script>
+    }
+  </script>
 </body>
 
 </html>
