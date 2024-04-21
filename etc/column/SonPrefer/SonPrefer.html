@@ -11,7 +11,7 @@
   <meta author="iseohyun">
 
   <!-- 페이지 타이틀 -->
-  <title>Son Preference: Simulation - iseohyun </title>
+  <title>남아선호사상: 시뮬레이션 - iseohyun </title>
   <link rel="shortcut icon" type="image/x-icon" href="/source/icon_seohyun.svg">
 
   <!-- Google tag (gtag.js) -->
@@ -26,36 +26,72 @@
   <!-- 목차 생성 -->
   <script src="/modules/hd_list.js" defer></script>
 
-  <!-- 수식 -->
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
-
   <!-- 공통스킨 -->
   <style type="text/css">
     @import url("/style.css");
-    
+
+    #resault {
+      border: 1px solid #eee;
+      border-radius: 5px;
+      padding: 0.5em;
+      display: flex;
+      flex-direction: row;
+      margin-top: 5px;
+    }
+
+    svg {
+      display: block;
+      width: 80%;
+      height: 380px;
+      border: 1px solid #fdd;
+      border-radius: 5px;
+      margin: 5px auto;
+    }
+
+    .color-box {
+      width: 10px;
+      height: 10px;
+      border: 2px solid #000;
+      margin: 1px;
+      display: inline-block;
+    }
+
+    .comment {
+      text-align: center;
+    }
+
+    .comment span {
+      display: block;
+    }
   </style>
 </head>
 
 <body>
   <article>
-    <div id="title">남아선호사상이 남녀비에 영향을 주는가?</div>
-    <div>
-      <span class="arguments">Households:</span>
-      <span class="alt"> 가구수 </span>
-      <input type="number" id="number-of-households" value="16000000">
-    </div>
-    <div>
-      <span class="arguments">Sex ratio at birth:</span>
-      <span class="alt"> 자연성비 : 여자 100에 대한 남녀 자연 발생 비율. Y염색체를 가진 정자가 수정에 더 유리하기 때문에 105:100(남:여)가 발생한다고 합니다. </span>
-      <input type="number" id="sex-ratios" value="105">
+    <div id="title">남아선호사상이 남녀 성비에 영향을 주는가?</div>
+    <div style="border: 1px solid #eee; padding: 0.5em;">
+      <div>
+        <span style="font-size:1.2em; font-weight:bold; display:block">시뮬레이션 환경</span>
+        <span class="alt">가구수(테스트 횟수): </span>
+        <input type="number" id="number-of-households" value="16000000">
+      </div>
+      <div>
+        <span class="alt">자연성비: </span>
+        <input type="number" id="sex-ratios" value="105"><br>
+        <span style="font-size: 0.8em;">
+          &nbsp; 여자 100명에 대한 남녀 자연 발생 비율.
+          Y염색체를 가진 정자가 수정에 더 유리하기 때문에 105:100(남:여)가 발생한다고 합니다.
+        </span>
+      </div>
     </div>
     <div id="resault">
-      <button type="button" id="go" onclick="getDate()">Go</button><br>
-      <span> For the boy(ratio) : </span>
-      <input type="number" id="ratio-resault1" disabled><br>
-      <span> only child(ratio) : </span>
-      <input type="number" id="ratio-resault2" disabled>
+      <button type="button" id="go" onclick="getDate()">테스트 실행</button><br>
+      <div style="margin-left:5px;">
+        <span> 남아 선호사상(결과) : </span>
+        <input type="number" id="ratio-resault1" disabled><br>
+        <span> 1가구 1자녀(결과) : </span>
+        <input type="number" id="ratio-resault2" disabled>
+      </div>
     </div>
 
     <svg xmlns="http://www.w3.org/2000/svg">
@@ -64,17 +100,18 @@
       <g id="vertical-text" stroke="none" fill="#ccc"> </g>
     </svg>
     <div class="comment">
-      * The 'Left graph' represents the number of children born until a son is born, and the 'Right graph' represents
-      the number of children born when only one child is born regardless of gender.
       <span class="alt">
-        각 항목에서 '왼쪽 그래프'는 '남아가 나올 때까지 출산한 경우', '오른쪽 그래프'는 '남녀를 불문하고 단 한명의 자녀를 두었을 경우' 출산된 자녀의 수를 나타냅니다.
+        <div class="color-box" style="background-color:#F00;"></div>
+        <div class="color-box" style="background-color:#00F;"></div>
+        '남아가 나올 때까지 출산한 경우
       </span>
-    </div>
-    <div class="comment">
-      ** In the case of son preference, every household must have at least one daughter, so the number of households and
-      the number of daughters are equal
-      <span class="alt">
-        남아선호사상의 경우 모든 가구는 반드시 1명의 여아를 갖게 되므로, 가구수와 여아의 수는 같습니다
+      <span>
+        <div class="color-box" style="background-color:#F88;"></div>
+        <div class="color-box" style="background-color:#88F;"></div>
+        '남녀를 불문하고 단 한명의 자녀를 두었을 경우'
+      </span>
+      <span>
+        주사위를 여러번 굴린다고 3이 더 나오지 않습니다.
       </span>
     </div>
   </article>
@@ -88,9 +125,9 @@
   var chartY = 300; // 높이 400중, 상-하단 여백 각 50을 제외한 300에서 n개의 영역으로 구분선을 그린다.
   var timer; // 애니메이션 효과를 나타낼 때 사용됩니다.
   var t = 0; // 현재 애니메이션 위치를 나타냅니다.[0 ~ 1]
-  var data = [{ name: "Boys", value: [105, 105], chartElement: null }, { name: "Girls", value: [100, 100], chartElement: null }];
+  var data = [{ name: "남아", value: [105, 105], chartElement: null }, { name: "여아", value: [100, 100], chartElement: null }];
   var max = 0;
-  var colors = ["blue", "red"];
+  var colors = ["#00F", "#F00", "#88F", "#F88"];
 
   initVariables();
 
@@ -146,7 +183,7 @@
 
         item.chartElement.bar[j].setAttribute("x", (chartX / (data.length + 1)) * (i + 1) - ((barWidth + 5) * item.value.length) / 2 + (barWidth + 5) * j);
         item.chartElement.bar[j].setAttribute("width", barWidth);
-        item.chartElement.bar[j].setAttribute("fill", colors[i]);
+        item.chartElement.bar[j].setAttribute("fill", colors[2 * j + i]);
       }
     });
 
@@ -194,7 +231,6 @@
       text.innerHTML = yUnit * i;
       verticalText.appendChild(text);
     }
-
 
     // 애니메이션 효과를 이용해서 그립니다.
     onAnimate();
